@@ -13,10 +13,11 @@ classifiers = [
   'Natural Language :: Portuguese (Brazilian)',
   "Programming Language :: Python",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.7",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
   'Topic :: Software Development :: Libraries :: Python Modules',
   'Topic :: Utilities',
 ]
@@ -49,39 +50,27 @@ gencl = 'incolumepy.utils.cli:changelog'
 gchangelog = 'incolumepy.utils.cli:changelog'
 
 [tool.poetry.dependencies]
-python = "^3.7"
-Deprecated = "^1.2.10"
-rstr = "^2.2.6"
+python = "^3.8"
 toml = {extras = ["tomli"], version = "^0.10.2"}
 click = "^8.1.5"
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.10.0"
-furo = "^2022.3.4"
-isort = "^5.10.1"
-mypy = "^0.931"
-myst-parser = "^0.16"
-py3kwarn = "^0.4.4"
-pydocstyle = "^6.1.1"
-pylama = "^8.4.1"
-pylint = "^2.12.2"
-pytest-cov = "^3.0.0"
-pytest-mock = "^3.6.0"
-safety = "^2.2.0"
-Sphinx = "^4.4.0"
-tox = "^3.20.1"
-types-Deprecated = "^1.2.5"
-types-toml = "^0.10.3"
 
+
+
+[tool.poetry.group.doc.dependencies]
+mkdocs = "^1.5.3"
+mkdocstrings = "^0.24.0"
+mkdocstrings-python = "^1.7.5"
+mkdocs-material = "^9.5.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-#log_format = '%(asctime)s %(levelname)s %(message)s'
 log_format = '%(asctime)s; %(levelname)-8s; %(name)s; %(module)s; %(funcName)s; %(message)s'
-log_date_format ='%F@%T'
+log_date_format ='%FT%T%N%z'
 addopts = "--cov=incolumepy"
 testpaths = [
   "tests",
