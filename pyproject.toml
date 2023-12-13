@@ -50,11 +50,23 @@ gencl = 'incolumepy.utils.cli:changelog'
 gchangelog = 'incolumepy.utils.cli:changelog'
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.8.1"
 toml = {extras = ["tomli"], version = "^0.10.2"}
 click = "^8.1.5"
 
 [tool.poetry.group.dev.dependencies]
+blue = "^0.9.0"
+flake8 = "^6.1.0"
+isort = "^5.13.1"
+mypy = "^1.7.1"
+mypy-extensions = "^1.0.0"
+pydocstyle = "^6.3.0"
+pylint = "^3.0.3"
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+ruff = "^0.1.7"
+taskipy = "^1.12.2"
+tox = "^4.11.4"
 
 
 
