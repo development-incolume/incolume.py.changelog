@@ -6,16 +6,15 @@ from pathlib import Path
 from typing import Any, Collection, List, Union
 
 import toml
-from deprecated import deprecated
 
-confproject = Path(__file__).parents[2] / "pyproject.toml"
+confproject = Path(__file__).parents[3] / "pyproject.toml"
 versionfile = Path(__file__).parent / "version.txt"
 versionfile.write_text(
     toml.load(confproject)["tool"]["poetry"]["version"] + "\n"
 )
 
 __version__ = versionfile.read_text().strip()
-__title__ = "incolumepy.utils"
+__title__ = "incolume.py.changelog"
 
 
 def key_versions_2_sort(
@@ -63,29 +62,6 @@ def key_versions_2_sort(
     return result
 
 
-@deprecated(
-    reason="Use incolumepy.utils.changelog.update_changelog",
-    version="2.6.0-alpha.4",
-)
-def update_changelog(
-    changelog_file: Union[str, Path],
-    reverse: bool = True,
-    urlcompare: str = "",
-):
-    """
-    Update Changelog.md file.
-
-    :param urlcompare: url compare from repository of project.
-    :param reverse: bool.
-    :param changelog_file:  changelog full filename.
-    :return:
-    """
-    raise NotImplementedError(
-        "This function was replaced. "
-        "Use incolumepy.utils.changelog.update_changelog"
-    )
-
-
 def logger(str_format="", datefmt="", level=0, filelog=None):
     """Logger function for log.
 
@@ -115,26 +91,6 @@ def logger(str_format="", datefmt="", level=0, filelog=None):
     logging.getLogger("").addHandler(console)
 
     return logging.getLogger()
-
-
-@deprecated(
-    reason="Use pathlib.Path.read_text or pathlib.Path.read_bytes.",
-    version="2.6.0a0",
-)
-def read(*rnames):
-    """Return content from file informed in '*rnames'.
-
-    :param rnames:
-    :return:
-    >>> read(os.path.dirname(__file__), 'version.txt')
-    '0.9.4'
-
-    >>> read(os.path.dirname(__file__), 'README')
-    'incolumepy.utils'
-
-    """
-    with open(os.path.join(os.path.dirname(__file__), *rnames)) as f:
-        return f.read().strip()
 
 
 def namespace(package_name: str) -> List[str]:

@@ -4,13 +4,12 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile, gettempdir
 
 import pytest
-import rstr
 
 
 @pytest.fixture(scope="function")
 def temp_file_name():
     """Generate aleatory filename into tempdir for tests."""
-    return Path(gettempdir()) / rstr.letters(15)
+    return Path(NamedTemporaryFile().name)
 
 
 @pytest.fixture(scope="function")
