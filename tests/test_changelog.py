@@ -3,8 +3,8 @@ from tempfile import gettempdir
 
 import pytest
 
-import incolumepy.utils.changelog
-from incolumepy.utils.changelog import (
+
+from incolume.py.changelog.changelog import (
     Changelog,
     __version__,
     changelog_messages,
@@ -16,6 +16,7 @@ __author__ = "@britodfbr"  # pragma: no cover
 
 
 class TestCase:
+    """Class test case."""
     @pytest.mark.parametrize(
         "entrance",
         (

@@ -4,7 +4,7 @@ import re
 
 import pytest
 
-from incolumepy.utils import __version__
+from incolume.py.changelog import __version__
 
 __author__ = "@britodfbr"  # pragma: no cover
 

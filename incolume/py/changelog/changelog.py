@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
-from incolumepy.utils import __title__, __version__, key_versions_2_sort
+from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 
 logging.basicConfig(
     level=logging.DEBUG,
