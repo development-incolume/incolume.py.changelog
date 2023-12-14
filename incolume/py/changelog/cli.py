@@ -10,6 +10,7 @@ if TYPE_CHECKING:
     from pathlib import Path  # pragma: no cover
 
 
+
 @click.command()
 @click.argument('nome', envvar='USERNAME', type=click.STRING)
 def greeting(nome: str) -> None:
