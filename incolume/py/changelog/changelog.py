@@ -22,12 +22,15 @@ CHANGELOG_FILE = Path(__file__).parents[2] / 'CHANGELOG.md'
 def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     """Classify and sort one record for messages git tag -n.
 
-    :param lang:
-    :param msg: str
-    :return: dict
+    Args:
+        lang: Language of command.
+        msg: Message of command.
+
+    Returns:
+        dict: 
 
     Raises:
-        ValueError: Invalid format string
+        ValueError: If lang selected don't have support.
     """
     logging.debug(lang)
     suport_lang: dict[Any, Any] = {
@@ -87,10 +90,16 @@ def changelog_messages(
 ) -> list[tuple[str, dict[str, Any]]]:
     """Changelog messages sort and classify.
 
-    :param text: str
-    :param start: (int, str, None)
-    :param end: (int, str, None)
-    :return: list
+    Args:
+        text: str
+        start: (int, str, None)
+        end: (int, str, None)
+
+    Returns:
+        list: return a list with a changelog menssage.
+
+    Raises:
+        None
     """
     logging.debug('parameters: (%s %s %s %s)', text, start, end, kwargs)
     lang = kwargs.get('lang', '')
@@ -108,11 +117,59 @@ def changelog_messages(
 
 
 def changelog_header(
-    url_keepachangelog: str = '',
-    url_semver: str = '',
-    url_convetional_commit: str = '',
+    url_keepachangelog: str = "",
+    url_semver: str = "",
+    url_convetional_commit: str = "",
 ) -> list[str]:
-    """Header of changelog file."""
+    r"""
+    Header of changelog file.
+
+    Args:
+        url_keepachangelog: str
+        url_semver: str
+        url_convetional_commit: str
+
+    Returns:
+        list: Return a list with a header of changelog file.
+
+    Raises:
+        None
+
+    **Examples:**
+
+        >>> changelog_header()
+        ['# CHANGELOG\n\n\n',
+        'All notable changes to this project',
+        ' will be documented in this file.\n\n',
+        'The format is based on ',
+        '[Keep a Changelog](https://keepachangelog.com/en/1.0.0/), ',
+        'this project adheres to'
+        '[Semantic Versioning](https://semver.org/spec/v2.0.0.html) '
+        'and [Conventional Commit]'
+        '(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n',
+        'This file was automatically generated for',
+        ' [incolume.py.changelog](https://gitlab.com/development-incolume/'
+        'incolumepy.utils/-/tree/0.2.0a2)',
+        '\n\n---\n']
+
+        >>> changelog_header(
+            url_keepachangelog='https://keepachangelog.com/en/2.0.0/',
+            url_semver=https://semver.org/spec/v1.0.0.html,
+            )
+        ["# CHANGELOG\n\n\n",
+        "All notable changes to this project",
+        " will be documented in this file.\n\n",
+        "The format is based on ",
+        "[Keep a Changelog](https://keepachangelog.com/en/2.0.0/),",
+        "this project adheres to "
+        "[Semantic Versioning](https://semver.org/spec/v1.0.0.html)"
+        "and [Conventional Commit]"
+        "(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n",
+        "This file was automatically generated for",
+        "[incolume.py.changelog](https://gitlab.com/development-incolume/"
+        "incolumepy.utils/-/tree/0.2.0a0)",
+        "\n\n---\n"]
+    """
     url_keepachangelog = (
         url_keepachangelog or 'https://keepachangelog.com/en/1.0.0/'
     )
@@ -142,7 +199,19 @@ def changelog_body(
     content_formated: list[str],
     **kwargs,
 ) -> list[str]:
-    """Body of changelog file."""
+    """
+    Body of changelog file.
+
+    Args:
+        content: List[Tuple[str, Dict[str, Any]]]
+        content_formated: list
+
+    Returns:
+        list: Return a list with a content of changelog's body.
+
+    Raises:
+        None
+    """
     content_formated.extend(Changelog.iter_logs(content[:-1]))
     content_formated.extend(Changelog.iter_logs(content[-1:], linked=False))
     return content_formated
@@ -153,7 +222,20 @@ def changelog_footer(
     content_formated: list[str],
     **kwargs,
 ) -> list[str]:
-    """Footer of changelog file."""
+    """
+    Footer of changelog file.
+
+    Args:
+        content: List[Tuple[str, Dict[str, Any]]]
+        content_formated: list
+        urlcompare: str
+
+    Returns:
+        list: Return a list with a footer of changelog file.
+
+    Raises:
+        None
+    """
     urlcompare = (
         kwargs.get('urlcompare')
         or 'https://gitlab.com/development-incolume/incolumepy.utils/-/compare'
@@ -175,10 +257,15 @@ def changelog_write(
 ) -> bool:
     """Write CHANGELOG.md file formatted.
 
-    :param content: List[Tuple[str, Dict[str, Any]]]
-    :param changelog_file: str, pathlib
-    :param urlcompare: str
-    :return: bool. True if success.
+    Args:
+        content: List[Tuple[str, Dict[str, Any]]]
+        changelog_file: str, pathlib
+
+    Returns:
+        bool: True if success.
+        
+    Raises:
+        None
     """
     changelog_file = Path(kwargs.get('changelog_file') or CHANGELOG_FILE)
     logging.debug('changelog_file=%s', changelog_file)
@@ -200,19 +287,27 @@ def update_changelog(
 ) -> bool:
     """Update Changelog.md file.
 
-    :param urlcompare: url compare from repository of project.
-    :param reverse: bool.
-    :param changelog_file:  changelog full filename.
-    :return: bool. True if success
+    Args:
+        urlcompare: str
+        reverse: bool
+        changelog_file:  changelog full filename.
+        
+    Returns:
+        bool: True if success
 
-    >>> update_changelog()
-    True
-    >>> update_changelog(changelog_file='/tmp/CHANGELOG.md')
-    True
-    >>> update_changelog(changelog_file=Path('CHANGELOG.md'),
-    urlcompare="https://gitlab.com/development-incolume
-    /incolumepy.utils/-/compare")
-    True
+    Raises:
+        None
+
+    **Examples:**
+
+        >>> update_changelog()
+        True
+        >>> update_changelog(changelog_file='/tmp/CHANGELOG.md')
+        True
+        >>> update_changelog(changelog_file=Path('CHANGELOG.md'),
+        urlcompare="https://gitlab.com/development-incolume
+        /incolumepy.utils/-/compare")
+        True
     """
     logging.debug('argumentos=%s,%s,%s', changelog_file, reverse, kwargs)
     urlcompare: str = (
@@ -249,12 +344,19 @@ class Changelog:
         reverse: bool = True,
         **kwargs,
     ):
-        """Initialize from Changelog class.
-
-        :param: file_output: Path
-
         """
-        self.file_output = file_output or Path('CHANGELOG.md')
+        Initialize from Changelog class.
+        
+        Args:
+            file_output: str, Path
+            url_compare: str
+            reverse: bool
+            url_principal: str
+            url_keepachangelog: str
+            url_semver: str
+            url_convetional_commit: str
+        """
+        self.file_output = file_output or Path("CHANGELOG.md")
         self.url_compare = url_compare
         self.reverse = reverse
         self.url_principal = kwargs.get(
@@ -274,9 +376,21 @@ class Changelog:
 
     @staticmethod
     def iter_logs(
-        content: list[tuple[str, dict[str, Any]]], *, linked: bool = True,
+        content: list[tuple[str, dict[str, Any]]], linked: bool = True
     ) -> list[str]:
-        """Iterador de registros git."""
+        """
+        Iterador de registros git.
+
+        Args:
+            content: List[Tuple[str, Dict[str, Any]]]
+            linked: bool
+
+        Return:
+            list
+
+        Raises:
+            None
+        """
         result = []
         for _, entrada in content:
             logging.debug(entrada)
@@ -298,27 +412,37 @@ class Changelog:
                     result.append(f'\n  - {frase};')
         return result
 
-    def header(self: Changelog) -> list[str]:
-        """Header of changelog file."""
+
+    def header(self) -> list[str]:
+        """
+        Header of changelog file.
+
+        Returns:
+            list: Return a list with a header of changelog file.
+
+        Raises:
+            None
+        """
         return [
-            '# CHANGELOG\n\n\n',
-            'All notable changes to this project',
-            ' will be documented in this file.\n\n',
-            'The format is based on ',
-            f'[Keep a Changelog]({self.url_keepachangelog}), ',
-            'this project adheres to '
-            f'[Semantic Versioning]({self.url_semver}) '
-            f'and [Conventional Commit]({self.url_convetional_commit}).\n\n',
-            'This file was automatically generated for',
-            f' [{__title__}]({self.url_principal}/-/tree/{__version__})',
-            '\n\n---\n',
-        ]
+            "# CHANGELOG\n\n\n",
+            "All notable changes to this project",
+            " will be documented in this file.\n\n",
+            "The format is based on ",
+            f"[Keep a Changelog]({self.url_keepachangelog}), ",
+            "this project adheres to "
+            f"[Semantic Versioning]({self.url_semver}) "
+            f"and [Conventional Commit]({self.url_convetional_commit}).\n\n",
+            "This file was automatically generated for",
+            f" [{__title__}]({self.url_principal}/-/tree/{__version__})",
+            "\n\n---\n",
+            ]
 
 
 def run():
     """Examples ran.
 
-    :return: None
+    Returns:
+        None
     """
     msg = subprocess.getoutput('git tag -n').splitlines()[-14]
     logging.debug(msg)
