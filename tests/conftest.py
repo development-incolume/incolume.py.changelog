@@ -5,11 +5,10 @@ from tempfile import NamedTemporaryFile, gettempdir
 
 import pytest
 
-
-@pytest.fixture(scope="function")
-def temp_file_name():
-    """Generate aleatory filename into tempdir for tests."""
-    return Path(NamedTemporaryFile().name)
+@pytest.fixture(scope='session')
+def semver_regex() -> str:
+    """Fixture para regex de validação do Versionamento Semântico."""
+    return r'^\d+(\.\d+){2}((-\w+\.\d+)|(\w+\d+))?$'
 
 
 @pytest.fixture(scope="function")
@@ -27,7 +26,7 @@ def return_git_tag():
     2.2.0 Security: Fake record; other record; Fake fixed"""
 
 
-@pytest.fixture
-def ftemp():
-    """Return NamedTemporaryFile."""
+@pytest.fixture()
+def file_temp():
+    """Generate aleatory filename into tempdir for tests."""
     return NamedTemporaryFile(delete=False).name
