@@ -19,7 +19,7 @@ class TestCase:
     """Class test case."""
     @pytest.mark.parametrize(
         "entrance",
-        (
+        pytest.param(
             "1.0.0 Added: Fake record; other fake record; Fixed: Fake fixed",
             "1.3.0 Fixed: Fake record; other fake record; Changed: Fake fixed",
             "2.2.1 Security: Fake record; other fake record; Fake fixed",
@@ -31,7 +31,7 @@ class TestCase:
 
     @pytest.mark.parametrize(
         "entrance",
-        (
+        pytest.param(
             "1.0.0 Added: Fake record; other fake record; Fixed: Fake fixed",
             "1.0.5 Added: Fake record; other fake record; Fixed: Fake fixed",
             "1.3.0 Fixed: Fake record; other fake record; Changed: Fake fixed",
@@ -62,7 +62,7 @@ class TestCase:
                         "Fixed": ["Fake fixed"],
                     },
                 },
-                # marks=pytest.mark.skip(reason='skiped')
+                marks=(),
             ),
             pytest.param(
                 {
@@ -78,7 +78,7 @@ class TestCase:
                         "Fixed": ["Fake fixed"],
                     },
                 },
-                # marks=pytest.mark.skip(reason='skiped')
+                marks=(),
             ),
             pytest.param(
                 {
@@ -96,7 +96,7 @@ class TestCase:
                         ]
                     },
                 },
-                # marks=pytest.mark.skip(reason='skiped')
+                marks=(),
             ),
             pytest.param(
                 {
@@ -115,7 +115,7 @@ class TestCase:
                         ]
                     },
                 },
-                # marks=pytest.mark.skip(reason='skiped')
+                marks=(),
             ),
             pytest.param(
                 {
@@ -143,7 +143,7 @@ class TestCase:
                         "Deprecated": ["Fake record"],
                     },
                 },
-                # marks=pytest.mark.skip(reason='skiped')
+                marks=(),
             ),
             pytest.param(
                 {
@@ -195,8 +195,8 @@ class TestCase:
                             "em caso de vulnerabilidades.",
                         ],
                     },
-                }
-                # marks=pytest.mark.skip(reason='skiped')
+                },
+                marks=(),
             ),
         ),
     )
@@ -206,7 +206,7 @@ class TestCase:
 
     @pytest.mark.parametrize(
         "entrance expected".split(),
-        (
+        [
             pytest.param(
                 {
                     "text": "1.0.1 Obsoleto: Fake record; Removed: other fake;"
@@ -278,9 +278,9 @@ class TestCase:
                         },
                     ),
                 ],
-                # marks=pytest.mark.skip(reason='skiped')
+                marks=(),
             ),
-            (
+            pytest.param(
                 {
                     "text": """
                     1.0.0 Added: Fake record; other fake; Fixed: Fake fixed",
@@ -338,8 +338,9 @@ class TestCase:
                         },
                     ),
                 ],
+                marks=(),
             ),
-            (
+            pytest.param(
                 {
                     "text": "1.0.0 Security: a;b;c; "
                     "Removed: 1;2;3; Changed: a;b;c;d;e; "
@@ -366,25 +367,29 @@ class TestCase:
                         },
                     )
                 ],
+                marks=(),
             ),
-        ),
+        ],
     )
     def test_changelog_messages(self, entrance, expected):
         assert changelog_messages(**entrance) == expected
 
     @pytest.mark.parametrize(
         "entrance",
-        (
-            {"changelog_file": Path(gettempdir()) / "CHANGELOG.md"},
+        [
+            pytest.param(
+                {"changelog_file": Path(gettempdir()) / "CHANGELOG.md"},
+                marks=(),
+            ),
             pytest.param(
                 {"changelog_file": None},
-                # marks=pytest.mark.skip(
-                #     reason='need mock to write CHANGELOG.md')
+                marks=(),
             ),
             pytest.param(
                 {},
+                marks=(),
             ),
-        ),
+        ],
     )
     def test_changelog_write(self, entrance, ftemp, return_git_tag, mocker):
         result = changelog_messages(text=return_git_tag)

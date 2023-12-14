@@ -30,3 +30,5 @@ def return_git_tag():
 def file_temp():
     """Generate aleatory filename into tempdir for tests."""
     return NamedTemporaryFile(delete=False).name
+
+
