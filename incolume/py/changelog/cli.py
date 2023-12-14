@@ -32,15 +32,14 @@ def greeting(nome: str) -> None:
 @click.option(
     "--url",
     "-u",
-    default="https://gitlab.com/development-incolume/"
-    "incolumepy.utils/-/compare",
+    default="https://github.com/development-incolume/incolume.py.changelog/-/compare",
     help="Url compare from repository of project.",
 )
 @click.option(
     "--reverse", "-r", default=True, help="Reverse order of records."
 )
 def changelog(file_changelog: str | Path, url: str = "", reverse: bool = True):
-    """Operacionaliza uma interface CLI para módulo incolumepy.utils.changelog.
+    """Operacionaliza uma interface CLI para módulo incolume.py.changelog.
 
     :param changelog_file:  changelog full filename.
     :param url: url compare from repository of project.
