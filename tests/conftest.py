@@ -1,9 +1,10 @@
 """Configurate tests."""
 # -*- coding: utf-8 -*-
 from pathlib import Path
-from tempfile import NamedTemporaryFile, gettempdir
+from tempfile import NamedTemporaryFile
 
 import pytest
+
 
 @pytest.fixture(scope='session')
 def semver_regex() -> str:
@@ -29,6 +30,4 @@ def return_git_tag():
 @pytest.fixture()
 def file_temp():
     """Generate aleatory filename into tempdir for tests."""
-    return NamedTemporaryFile(delete=False).name
-
-
+    return Path(NamedTemporaryFile(delete=False).name)
