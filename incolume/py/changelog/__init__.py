@@ -27,7 +27,9 @@ def key_versions_2_sort(
     :return: list sorted
     """
     qdig = qdig or 5
-    assert isinstance(x, (tuple, list)), "'x' must be tuple or list."
+    if not isinstance(x, (tuple, list)):
+        raise TypeError("'x' must be tuple or list.")
+
     classifies = {
         'post': 9 * 10**qdig,
         'rc': 8 * 10 ** (qdig - 1),
