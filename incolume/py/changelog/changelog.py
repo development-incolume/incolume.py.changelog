@@ -25,6 +25,9 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     :param lang:
     :param msg: str
     :return: dict
+    
+    Raises: 
+        ValueError: Invalid format string
     """
     logging.debug(lang)
     suport_lang: dict[Any, Any] = {
