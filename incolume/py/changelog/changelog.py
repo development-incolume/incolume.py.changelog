@@ -249,7 +249,11 @@ class Changelog:
         reverse: bool = True,
         **kwargs,
     ):
-        """Initialize from Changelog class."""
+        """Initialize from Changelog class.
+        
+        :param: file_output: Path
+        
+        """
         self.file_output = file_output or Path('CHANGELOG.md')
         self.url_compare = url_compare
         self.reverse = reverse

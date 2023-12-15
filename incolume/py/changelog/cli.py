@@ -1,4 +1,4 @@
-"""Command Line Interface module."""
+"""Command Line Interface (CLI) module."""
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -15,16 +15,23 @@ if TYPE_CHECKING:
 def greeting(nome: str) -> None:
     """Retorna o cumprimento para o nome passado.
 
-    :param nome: str
-    :return: None
+    Args:
+      nome: Nome de usuário
 
-    Examples:
-    >>> greeting Yoda
-    Oi Yoda!
+    Returns:
+      Não há retorno. Uma saudação é exibida na tela.
 
-    >>> greeting
-    Oi <usuário logado>
+    Raises:
+      None
 
+    **Examples:**
+
+        >>> greeting Yoda
+        Oi Yoda!
+    
+        >>> greeting
+        Oi <usuário logado>
+    
     """
     click.echo(f'Oi {nome.title()}!')
 
@@ -43,10 +50,16 @@ def greeting(nome: str) -> None:
 def changelog(file_changelog: str | Path, url: str = '', reverse: bool = True):
     """Operacionaliza uma interface CLI para módulo incolume.py.changelog.
 
-    :param changelog_file:  changelog full filename.
-    :param url: url compare from repository of project.
-    :param reverse: bool.
-    :return: bool. True if success
+    Args:
+        changelog_file(Path|str):  changelog full filename.
+        url: url compare from repository of project.
+        reverse: Reverse order of records.
+
+    Returns:
+        True if success
+
+    Raises:
+        ValueError: When there is not git tag records.
 
     """
     return update_changelog(
