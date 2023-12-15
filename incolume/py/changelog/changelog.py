@@ -54,8 +54,9 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         )
 
     key, msg = msg.split(maxsplit=1)
+    element = re.escape('%s^{commit}' % key)
     date = subprocess.getoutput(
-        'git show -s --format=%%cs %s^{commit}' % key,  # pylint: disable=C0209
+        f'git show -s --format=%%cs {element}',  # pylint: disable=C0209
     )
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
     selected_lang = suport_lang.get(lang, suport_lang['all'])
