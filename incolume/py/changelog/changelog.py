@@ -57,7 +57,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         )
 
     key, msg = msg.split(maxsplit=1)
-    cmd = re.escape('git show -s --format=%%cs %s^{commit}' % key)
+    cmd = 'git show -s --format=%%cs %s^{commit}' % key
     logging.debug(cmd)
     date = subprocess.getoutput(cmd)
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
