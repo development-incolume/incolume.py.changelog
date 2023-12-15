@@ -1,9 +1,8 @@
 """incolumepy.utils module."""
 import logging
-import os
 import re
 from pathlib import Path
-from typing import Any, Collection, List, Union
+from typing import Any, Collection, List
 
 import toml
 

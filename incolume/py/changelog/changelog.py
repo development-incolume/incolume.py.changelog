@@ -262,7 +262,7 @@ class Changelog:
         self.reverse = reverse
         self.url_principal = kwargs.get(
             "url_pricipal",
-            "https://gitlab.com/development-incolume/incolumepy.utils",
+            "https://gitlab.com/development-incolume/incolume.py.changelog",
         )
         self.url_keepachangelog = kwargs.get(
             "url_keepachangelog", "https://keepachangelog.com/en/1.0.0/"
