@@ -89,9 +89,13 @@ build-backend = "poetry.core.masonry.api"
 [tool.pytest.ini_options]
 log_format = '%(asctime)s; %(levelname)-8s; %(name)s; %(module)s; %(funcName)s; %(message)s'
 log_date_format ='%FT%T%N%z'
-addopts = "--cov=incolumepy"
+addopts = "--doctest-modules --cov=incolume -sx --cov-report term-missing --cov-report html:coverage_report/html --cov-report xml:coverage_report/cov.xml"
 testpaths = [
   "tests",
+]
+python_files = [
+  "test_*.py",
+  "*_tests.py"
 ]
 markers = [
   "slow: marks tests as slow (deselect with '-m \"not slow\"')",
@@ -254,24 +258,30 @@ warn_unreachable = true
 warn_unused_configs = true
 no_implicit_reexport = true
 
+[[tool.mypy.overrides]]
+disable_error_code = "attr-defined"
+disallow_untyped_defs = true
+
+
 [tool.isort]
-multi_line_output = 3
-#line_length = 120
+ensure_newline_before_comments = true
+extend_skip = [".md", ".json"]
+extend_skip_glob = ["my_*_module.py"]
+force_grid_wrap = 0
 include_trailing_comma = true
+known_first_party = "poetry"
+line_length = 79
+multi_line_output = 3
+profile = "black"
+skip = [".gitignore", ".dockerignore"]
+skip_glob = ["example/*"]
+use_parentheses = true
+
 
 [pycodestyle]
+ignore = ['E203']
 #max_line_length = 120
 
-# Fail
-# TODO verificar disponibilidade no futuro; não funciona com pyproject.toml
-#[pylava]
-#format = 'pylint'
-#async = 1
-## ignore = D203,D213,F0401,C0111,E731,I0011
-## linters = pycodestyle,pyflakes,mccabe,pydocstyle,pylint
-#paths = ['src']
-## skip = pylava/inirama.py,pylava/libs/*
-#verbose = 0
 
 [tool.tox]
 legacy_tox_ini = """
@@ -351,3 +361,259 @@ commands = poetry run black --check incolumepy/ tests/
 [testenv:safety]
 commands = poetry run safety check
 """
+
+[tool.bandit]
+exclude_dirs = ["tests", "examples", "coverage_report"]
+tests = ["B201", "B301"]
+skips = ["B101", "B601"]
+
+
+[tool.bandit.any_other_function_with_shell_equals_true]
+no_shell = [
+  "os.execl",
+  "os.execle",
+  "os.execlp",
+  "os.execlpe",
+  "os.execv",
+  "os.execve",
+  "os.execvp",
+  "os.execvpe",
+  "os.spawnl",
+  "os.spawnle",
+  "os.spawnlp",
+  "os.spawnlpe",
+  "os.spawnv",
+  "os.spawnve",
+  "os.spawnvp",
+  "os.spawnvpe",
+  "os.startfile"
+]
+shell = [
+  "os.system",
+  "os.popen",
+  "os.popen2",
+  "os.popen3",
+  "os.popen4",
+  "popen2.popen2",
+  "popen2.popen3",
+  "popen2.popen4",
+  "popen2.Popen3",
+  "popen2.Popen4",
+  "commands.getoutput",
+  "commands.getstatusoutput"
+]
+subprocess = [
+  "subprocess.Popen",
+  "subprocess.call",
+  "subprocess.check_call",
+  "subprocess.check_output"
+]
+
+[tool.ruff]
+# required-version = "0.1.6"
+
+# Decrease the maximum line length to 79 character.
+line-length = 79
+
+# Allow imports relative to directories
+src = ["incolume/", "tests/"]
+select = [
+  "A",    #flake8-builtins
+  "AIR",    #Airflow
+  "ANN",    #flake8-annotations
+  "ARG",    #flake8-unused-arguments
+  "ASYNC",    #flake8-async
+  "B",    #flake8-bugbear
+  "BLE",    #flake8-blind-except
+  "C4",    #flake8-comprehensions
+  "C90",    #mccabe
+  "COM",    #flake8-commas
+  "CPY",    #flake8-copyright
+  "D",   # pydocstyle
+  "DJ",    #flake8-django
+  "DTZ",    #flake8-datetimez
+  "E",   # pycodestyle
+  "W",    #pycodestyle
+  "EM",    #flake8-errmsg
+  "ERA",    #eradicate
+  "EXE",    #flake8-executable
+  "F",   # pyflakes
+  "FA",    #flake8-future-annotations
+  "FBT",    #flake8-boolean-trap
+  "FIX",    #flake8-fixme
+  "FLY",    #flynt
+  "FURB",    #refurb
+  "G",    #flake8-logging-format
+  "I",    #isort
+  "ICN",    #flake8-import-conventions
+  "INP",    #flake8-no-pep420
+  "INT",    #flake8-gettext
+  "ISC",    #flake8-implicit-str-concat
+  "N",    #pep8-naming
+  "NPY",    #NumPy-specific rules
+  "PD",    #pandas-vet
+  "PERF",    #Perflint
+  "PGH",    #pygrep-hooks
+  "PIE",    #flake8-pie
+  "PL",    #Pylint
+  "PT",    #flake8-pytest-style
+  "PTH",    #flake8-use-pathlib
+  "PYI",    #flake8-pyi
+  "Q",    #flake8-quotes
+  "RET",    #flake8-return
+  "RSE",    #flake8-raise
+  "RUF",    #Ruff-specific rules
+  "S",    #flake8-bandit
+  "SIM",    #flake8-simplify
+  "SLF",    #flake8-self
+  "SLOT",    #flake8-slots
+  "T10",    #flake8-debugger
+  "T20",    #flake8-print
+  "TCH",    #flake8-type-checking
+  "TD",    #flake8-todos
+  "TID",    #flake8-tidy-imports
+  "TRY",    #tryceratops
+  "UP",  # pyupgrade
+  "YTT",    #flake8-2020
+]
+
+# Never enforce `E501` (line length violations).
+ignore = ["INP001", "CPY001"]
+
+# Avoid trying to fix flake8-bugbear (`B`) violations.
+unfixable = ["B"]
+
+namespace-packages = ["incolume/py"]
+fix = true
+force-exclude = true
+task-tags = ["TODO", "FIXME"]
+
+# Enumerate all fixed violations.
+show-fixes = true
+
+# By default, always show source code snippets.
+show-source = true
+
+# Enable preview features.
+preview = true
+
+# Group violations by containing file. "text" | "json" | "junit" | "github" | "gitlab" | "pylint" | "azure"
+output-format = "grouped"
+
+# Require explicit selection of preview rules.
+explicit-preview-rules = true
+
+# Allow applying all unsafe fixes in the `E` rules and `F401` without the `--unsafe-fixes` flag
+extend-safe-fixes = ["E", "F401"]
+
+[tool.ruff.format]
+indent-style = "space"
+
+[tool.ruff.per-file-ignores]
+# Ignore `E402` (import violations) in all `__init__.py` files, and in `path/to/file.py`.
+#"__init__.py" = ["E402"]
+#"path/to/file.py" = ["E402"]
+#"**/{tests,docs,tools}/*" = ["E402"]
+"**/{tests,docs,tools,utils}/*" = ["EXE002"]
+"**/*_tests.py" = [
+  "ANN001",
+  "ANN101",
+  "EXE002",
+  "I001",
+  "PLR6301",
+  "S101",
+]
+"**/test_*.py" = [
+  "ANN001",
+  "ANN101",
+  "EXE002",
+  "I001",
+  "PLR6301",
+  "S101",
+]
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 5
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.flake8-annotations]
+allow-star-arg-any = true
+ignore-fully-untyped = true
+suppress-dummy-args = true
+mypy-init-return = true
+
+[tool.ruff.lint.flake8-comprehensions]
+allow-dict-calls-with-keyword-arguments = true
+
+[tool.ruff.lint.flake8-copyright]
+author = "Ruff"
+# Avoid enforcing a header on files smaller than 1024 bytes.
+min-file-size = 2
+
+[tool.ruff.flake8-quotes]
+# Don't bother trying to avoid escapes.
+avoid-escape = false
+docstring-quotes = "double"
+inline-quotes = "single"
+multiline-quotes = "double"
+
+
+[tool.ruff.lint.flake8-pytest-style]
+parametrize-names-type = "list"
+parametrize-values-row-type = "tuple"
+
+[tool.taskipy.settings]
+use_vars = true
+
+[tool.taskipy.variables]
+path = "incolume/ tests/"
+VERSIONFILE = "incolume/py/changelog/version.txt"
+CHANGELOGFILE = "docs/about/CHANGELOG.md"
+URLCOMPARE = "https://github.com/development-incolume/incolume.py.changelog/compare"
+
+[tool.taskipy.tasks]
+#bandit={help='', cmd='poetry run bandit -c pyproject.toml -r {path}', use_vars=true}
+#pre_check-all = {cmd='echo Starting Check all ..', help=''}
+#check-all = {cmd='poetry run task clean-all; poetry run task lint; poetry run task sec',  help = "Checking all" }
+#post_check-all = {cmd='echo Checking finished!', help=''}
+clean = {cmd = "echo -n 'Starting cleanning environment..'; find ./ \\( -wholename '*report_coverage' -o -name '*.pyc' -o -name '*~' -o -name '*.log' -o -name '*.log.*' -o -name '.cache' -o -name '.coverage' \\) -delete ; echo ' ok' ",  help = "Shallow clean into environment (.pyc, .cache, .egg, .log, et all)" }
+pre_clean-all = {cmd='poetry run task clean', help=''}
+clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_cache' -o -name '*cache__' -o -name dist -o -name build -o -name .tox -o -name site -o -name coverage_report \\) -exec rm -rf {} 2> /dev/null \\; ; echo ' Deep cleaning finished!' ",  help = "Deep cleanning into environment (dist, build, htmlcov, .tox, *_cache, et all)" }
+pre_docs-build={help='Pre docs-build', cmd="poetry run task gcl"}
+docs-build = {help="Generate documentation", cmd="poetry run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
+docs-serve = {help="Run server documentation", cmd="poetry run mkdocs serve"}
+gsumary = {help="Generate a sumary with dojos", cmd="poetry run sumary -f {sumary_file} -r ", use_vars=true}
+post_gsumary={cmd='git commit -m "docs: Atualização do sumário" {sumary_file}', use_vars=true}
+lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
+pre_lint="task lint_blue && task lint_isort && task lint_flake8 && task lint_pydocstyle && task lint_mypy && task lint_pylint"
+lint={help='Checking all linters configurated', cmd=''}
+lint_black={help='Checking with black', cmd='echo --black--; poetry run black --check --diff {path}', use_vars=true}
+lint_blue={help='Checking with blue', cmd='echo --blue--; poetry run blue --check --diff {path}', use_vars=true}
+lint_flake8={help='Checking with flake8', cmd='echo --flake8--; poetry run flake8 --config pyproject.toml {path}', use_vars=true}
+lint_isort={help='Checking with isort', cmd='echo --isort--; poetry run isort --profile black --check --atomic --py all -m 3 {path}', use_vars=true}
+lint_mypy={help='Checking with mypy', cmd='echo --mypy--; poetry run mypy --check {path}', use_vars=true}
+lint_pydocstyle={help='Checking with pydocstyle', cmd='echo --pydocstyle--; poetry run pydocstyle {path}', use_vars=true}
+lint_pylint={help='Checking with pylint', cmd='echo --pylint--; poetry run pylint {path}', use_vars=true}
+lint_ruff={help='', cmd='echo --ruff--; poetry run ruff check --preview {path}', use_vars=true}
+pre_patch={help='Run linters tools', cmd="poetry run task lint"}
+patch={cmd='v=$(poetry version patch) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='Generate a patch Sematic Version'}
+post_patch={help='Run securety tools', cmd="poetry run task bandit && poetry run task safety"}
+premajor={cmd='v=$(poetry version premajor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version premajor'}
+preminor={cmd='v=$(poetry version preminor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version preminor'}
+#pre_prerelease='poetry run task gsumary'
+prerelease={cmd='v=$(poetry version prerelease) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version prerelease'}
+safety={help='Check safety of packages into project.', cmd='poetry run safety check'}
+pre_sec={help='Securance validations', cmd='poetry run task bandit && poetry run task safety'}
+sec={help="Checking environment's safety", cmd=''}
+pre_changelog='poetry run pytest -m fast'
+pre_tests={help='', cmd='task clean-all'}
+tests={help='run all tests', cmd='poetry run pytest -m "not webtest"'}
+pre_test-all={help='', cmd='task lint'}
+test-all={help='Test all cases', cmd='task tests'}
+changelog = {help='Update changelog file', cmd = "poetry run gcl {CHANGELOGFILE} -u {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
+gcl = {help='Update changelog file', cmd='poetry run task changelog'}
+#xpto = { cmd = "echo {path} {CHANGELOGFILE} {URLCOMPARE}", use_vars = true }
+setup = { help = 'Configure environment develop', cmd='git config core.hooksPath .git-hooks/'}

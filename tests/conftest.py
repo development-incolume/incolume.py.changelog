@@ -1,5 +1,4 @@
 """Configurate tests."""
-# -*- coding: utf-8 -*-
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 
@@ -12,13 +11,13 @@ def semver_regex() -> str:
     return r'^\d+(\.\d+){2}((-\w+\.\d+)|(\w+\d+))?$'
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture()
 def changelog_stamps():
     """Return labels Keep a Changelog."""
-    return "Added Changed Deprecated Removed Fixed Security".upper().strip()
+    return 'Added Changed Deprecated Removed Fixed Security'.upper().strip()
 
 
-@pytest.fixture(scope="function")
+@pytest.fixture()
 def return_git_tag():
     """Return fake `git tag -n`."""
     return """1.0.0 Added: Fake record; other fake; Fixed: Fake fixed
