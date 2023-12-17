@@ -1,8 +1,9 @@
 """Principal module."""
 import logging
 import re
+from collections.abc import Collection
 from pathlib import Path
-from typing import Any, Collection
+from typing import Any
 
 import toml
 
@@ -27,7 +28,7 @@ def key_versions_2_sort(
     :return: list sorted
     """
     qdig = qdig or 5
-    if not isinstance(x, (tuple, list)):
+    if not isinstance(x, tuple | list):
         msg = "'x' must be tuple or list."
         raise TypeError(msg)
 
