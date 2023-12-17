@@ -34,32 +34,22 @@ _Projeto desenvolvido e administrado incolume.com.br_
 [![Downloads](https://pepy.tech/badge/incolume-py-changelog/week)](https://pepy.tech/project/incolume-py-changelog)
 ---
 
-Este pacote disponibiliza diversas funcionalidades para utilização em rotinas com Python.
-
-Dentre elas:
-
-* geração de números de CPF não verificados;
-
-* geração de lista para namespace para pacotes Python;
-
-* obtenção rápida para conteúdo de arquivos;
-
-* sequências de vários tipos;
-
-* Nome único para gravação de arquivos sem sobrescrita;
-
+Este gera o Changelog a partir dos registros encontrados em `git tag -n`.
 
 ## Instalar o pacote
 
+### Instalação com pip
 ```shell
-pip install incolumepy.utils
+pip install incolume.py.changelog
 ```
+### Instalação com pipenv
 ```shell
-pipenv install incolumepy.utils
+pipenv install incolume.py.changelog
 ```
 
+### Instalação com poetry
 ```shell
-poetry add incolumepy.utils
+poetry add incolume.py.changelog
 ```
 
 ```shell
@@ -67,15 +57,17 @@ poetry add git+https://gitlab.com/development-incolume/incolumepy.utils.git#main
 ```
 
 ## Atualizar o pacote
+### Atualização com pip
 ```shell
-
-pip install -U incolumepy.utils
+pip install -U incolume.py.changelog
 ```
+### Atualização com pipenv
 ```shell
-pipenv update incolumepy.utils
+pipenv update incolume.py.changelog
 ```
+### Atualização com poetry
 ```shell
-poetry update incolumepy.utils
+poetry update incolume.py.changelog
 ```
 
 ```shell
@@ -83,13 +75,11 @@ poetry update git+https://gitlab.com/development-incolume/incolumepy.utils.git#m
 ```
 
 ## Gerar pacote a partir dos fontes para instalação
-```shell
-python setup.py bdist_egg bdist_wheel
-```
+
 ```shell
 poetry build
 ```
 
-## Exemplos
-Exemplos disponíveis em [docs/EXAMPLES]('docs/EXAMPLES.rst')
+## Documentação detalhada
+Exemplos da API disponíveis em [docs/api]('docs/api/index.md')
 
