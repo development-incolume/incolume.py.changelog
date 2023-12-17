@@ -144,7 +144,7 @@ def changelog_body(
 ) -> list[str]:
     """Body of changelog file."""
     content_formated.extend(Changelog.iter_logs(content[:-1]))
-    content_formated.extend(Changelog.iter_logs(content[-1:], False))
+    content_formated.extend(Changelog.iter_logs(content[-1:], linked=False))
     return content_formated
 
 
@@ -197,7 +197,7 @@ def update_changelog(
     changelog_file: Any = None,
     reverse: bool = True,
     **kwargs,
-):
+) -> bool:
     """Update Changelog.md file.
 
     :param urlcompare: url compare from repository of project.
@@ -242,10 +242,10 @@ class Changelog:
     """Changelog class."""
 
     def __init__(
-        self,
-        *,
+        self: Changelog,
         file_output: Path | str = '',
         url_compare: str = '',
+        *,
         reverse: bool = True,
         **kwargs,
     ):
@@ -274,7 +274,7 @@ class Changelog:
 
     @staticmethod
     def iter_logs(
-        content: list[tuple[str, dict[str, Any]]], linked: bool = True,
+        content: list[tuple[str, dict[str, Any]]], *, linked: bool = True,
     ) -> list[str]:
         """Iterador de registros git."""
         result = []
@@ -282,7 +282,8 @@ class Changelog:
             logging.debug(entrada)
             if linked:
                 result.append(
-                    f"\n\n## [{entrada['key']}]\t &#8212; \t{entrada['date']}:",
+                    f"\n\n## [{entrada['key']}]\t &#8212; "
+                    f"\t{entrada['date']}:",
                 )
             else:
                 result.append(
@@ -297,7 +298,7 @@ class Changelog:
                     result.append(f'\n  - {frase};')
         return result
 
-    def header(self) -> list[str]:
+    def header(self: Changelog) -> list[str]:
         """Header of changelog file."""
         return [
             '# CHANGELOG\n\n\n',
