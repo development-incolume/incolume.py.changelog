@@ -1,4 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
-message='Boa! Continue trabalhando com dedicação!'
-echo "\033[1;32m $message\033[0m\n";
+RED="\033[0;91m"
+YELLOW="\033[0;93m"
+GREEN="\033[0;92m"
+DEFAULT="\033[0m"
+
+echo -e "$GREEN"
+echo "Boa! Continue trabalhando com dedicação."
+echo -e "$DEFAULT"
