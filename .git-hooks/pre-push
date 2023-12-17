@@ -70,7 +70,7 @@ do
     esac
 done
 
-protected_branch='refactor#92'
+protected_branch='dev'
 
 if read local_ref local_sha remote_ref remote_sha; then
     if [[ "$remote_ref" == *"$protected_branch"* ]]; then

@@ -2,7 +2,7 @@
 import logging
 import re
 from pathlib import Path
-from typing import Any, Collection, List
+from typing import Any, Collection
 
 import toml
 
@@ -28,7 +28,8 @@ def key_versions_2_sort(
     """
     qdig = qdig or 5
     if not isinstance(x, (tuple, list)):
-        raise TypeError("'x' must be tuple or list.")
+        msg = "'x' must be tuple or list."
+        raise TypeError(msg)
 
     classifies = {
         'post': 9 * 10**qdig,
@@ -93,7 +94,7 @@ def logger(str_format='', datefmt='', level=0, filelog=None):
     return logging.getLogger()
 
 
-def namespace(package_name: str) -> List[str]:
+def namespace(package_name: str) -> list[str]:
     """Return the namespace.
 
     Example:
@@ -116,7 +117,7 @@ def namespace(package_name: str) -> List[str]:
     ['incolumepy']
     """
     logging.debug('package_name=%s', package_name)
-    result: List[Any] = []
+    result: list[Any] = []
     temp = ''
     try:
         bits = package_name.split('.')

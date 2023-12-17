@@ -26,6 +26,7 @@ class TestCase:
         ],
     )
     def test_msg_classify_type(self, entrance: str) -> None:
+        """Test it."""
         with (mock.patch('subprocess.getoutput', autospec=True) as m):
             m.return_value = '2023-12-15'
             assert isinstance(pkg.msg_classify(entrance), dict)
@@ -130,7 +131,6 @@ class TestCase:
                     'msg': '1.0.1 deprecated: Fake record; '
                            'Removed: other fake; ab; cd; ef;gh; ij; kl; '
                            'mn; op; Fixed: Fake fixed',
-                    # "lang": "pt-BR",
                 },
                 '2018-10-19',
                 {
