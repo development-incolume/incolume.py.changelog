@@ -52,5 +52,6 @@ nav:
             - Semver: user_guide/semver.md
             - Zen Python: user_guide/zenpy.md
     - About:
-      - License: about/LICENSE.md
-      - 'Release Notes': about/CHANGELOG.md
+        - Contributors: about/CONTRIBUTORS.md
+        - License: about/LICENSE.md
+        - 'Release Notes': about/CHANGELOG.md
