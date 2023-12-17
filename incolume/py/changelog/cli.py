@@ -7,7 +7,7 @@ import click
 from incolume.py.changelog.changelog import update_changelog
 
 if TYPE_CHECKING:
-    from pathlib import Path
+    from pathlib import Path  # pragma: no cover
 
 
 @click.command()

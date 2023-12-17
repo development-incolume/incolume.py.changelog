@@ -34,7 +34,19 @@ def test_gretting(
     assert result.output == expected
 
 
-def test_changelog(cli_runner: CliRunner, file_temp: Path) -> None:
+@pytest.mark.parametrize(
+    'entrance expected'.split(),
+    [
+        ({}, True),
+    ],
+)
+def test_changelog(
+    cli_runner: CliRunner,
+    *,
+    file_temp: Path,
+    entrance: dict,
+    expected: bool,
+) -> None:
     """Test cli changelog."""
-    entrance = {'args': [file_temp]}
-    assert cli_runner.invoke(cli.changelog, **entrance)
+    entrance.update({'args': [file_temp.as_posix()]})
+    assert bool(cli_runner.invoke(cli.changelog, **entrance)) == expected
