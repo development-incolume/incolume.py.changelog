@@ -1,4 +1,4 @@
-"""Command Line Interface (CLI) module."""
+"""CLI - Command Line Interface module."""
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 @click.command()
 @click.argument('nome', envvar='USERNAME', type=click.STRING)
 def greeting(nome: str) -> None:
-    """Retorna o cumprimento para o nome passado.
+    """Retorna a saudação para o nome passado.
 
     Args:
       nome: Nome de usuário
@@ -24,34 +24,43 @@ def greeting(nome: str) -> None:
     Raises:
       None
 
-    **Examples:**
-
+    Examples:
         >>> greeting Yoda
         Oi Yoda!
-    
+
         >>> greeting
         Oi <usuário logado>
-    
+
     """
     click.echo(f'Oi {nome.title()}!')
 
 
 @click.command()
-@click.argument('file_changelog', type=click.STRING, default='CHANGELOG.md')
+@click.argument(
+    'file_changelog',
+    type=click.STRING,
+    default='CHANGELOG.md',
+)
 @click.option(
     '--url',
     '-u',
-    default='https://github.com/development-incolume/incolume.py.changelog/-/compare',
+    default='https://github.com/development-incolume/'
+            'incolume.py.changelog/-/compare',
     help='Url compare from repository of project.',
 )
 @click.option(
-    '--reverse', '-r', default=True, help='Reverse order of records.',
+    '--reverse',
+    '-r',
+    default=True,
+    help='Reverse order of records.',
 )
-def changelog(file_changelog: str | Path, url: str = '', reverse: bool = True):
+def changelog(
+    file_changelog: str | Path, url: str = '', reverse: bool = True,
+) -> bool:
     """Operacionaliza uma interface CLI para módulo incolume.py.changelog.
 
     Args:
-        changelog_file(Path|str):  changelog full filename.
+        file_changelog:  changelog full filename.
         url: url compare from repository of project.
         reverse: Reverse order of records.
 

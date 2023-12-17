@@ -25,8 +25,8 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     :param lang:
     :param msg: str
     :return: dict
-    
-    Raises: 
+
+    Raises:
         ValueError: Invalid format string
     """
     logging.debug(lang)
@@ -250,9 +250,9 @@ class Changelog:
         **kwargs,
     ):
         """Initialize from Changelog class.
-        
+
         :param: file_output: Path
-        
+
         """
         self.file_output = file_output or Path('CHANGELOG.md')
         self.url_compare = url_compare
