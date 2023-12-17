@@ -25,6 +25,9 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     :param lang:
     :param msg: str
     :return: dict
+
+    Raises:
+        ValueError: Invalid format string
     """
     logging.debug(lang)
     suport_lang: dict[Any, Any] = {
@@ -54,9 +57,9 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         )
 
     key, msg = msg.split(maxsplit=1)
-    date = subprocess.getoutput(
-        'git show -s --format=%%cs %s^{commit}' % key,  # pylint: disable=C0209
-    )
+    cmd = 'git show -s --format=%%cs %s^{commit}' % key
+    logging.debug(cmd)
+    date = subprocess.getoutput(cmd)
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
     selected_lang = suport_lang.get(lang, suport_lang['all'])
     regex: str = rf"({'|'.join(selected_lang.keys())})\s?:"
@@ -246,7 +249,11 @@ class Changelog:
         reverse: bool = True,
         **kwargs,
     ):
-        """Initialize from Changelog class."""
+        """Initialize from Changelog class.
+
+        :param: file_output: Path
+
+        """
         self.file_output = file_output or Path('CHANGELOG.md')
         self.url_compare = url_compare
         self.reverse = reverse

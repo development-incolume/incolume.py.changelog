@@ -26,7 +26,9 @@ class TestCase:
         ],
     )
     def test_msg_classify_type(self, entrance: str) -> None:
-        assert isinstance(pkg.msg_classify(entrance), dict)
+        with (mock.patch('subprocess.getoutput', autospec=True) as m):
+            m.return_value = '2023-12-15'
+            assert isinstance(pkg.msg_classify(entrance), dict)
 
     @pytest.mark.parametrize(
         'entrance',
