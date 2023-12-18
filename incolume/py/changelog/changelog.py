@@ -28,7 +28,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         kwargs: Anyone of the positional items.
 
     Returns:
-        dict:
+        A dictionary with the version, date and a message.
 
     Raises:
         ValueError: If lang selected don't have support.
@@ -99,13 +99,12 @@ def changelog_messages(
     """Changelog messages sort and classify.
 
     Args:
-        text: str
-        start: (int, str, None)
-        end: (int, str, None)
-        kwargs: Anyone of the positional items.
+        end: End of Message
+        start: Start of Message
+        text: Changelog's message
 
     Returns:
-        list: return a list with a changelog menssage.
+        return a list with a changelog menssage.
 
     Raises:
         None
@@ -132,12 +131,12 @@ def changelog_header(
     r"""Header of changelog file.
 
     Args:
-        url_keepachangelog: str
-        url_semver: str
-        url_convetional_commit: str
+        url_convetional_commit: Url of convetional commit.
+        url_keepachangelog: Url of keep a changelog.
+        url_semver: Url of semantic version.
 
     Returns:
-        list: Return a list with a header of changelog file.
+        Return a list with a header of changelog file.
 
     Raises:
         None
@@ -208,12 +207,11 @@ def changelog_body(
     """Body of changelog file.
 
     Args:
-        content: List[Tuple[str, Dict[str, Any]]]
-        content_formated: list
-        kwargs: Anyone of the positional items.
+        content: Content of changelog.
+        content_formated: Content formated of changelog.
 
     Returns:
-        list: Return a list with a content of changelog's body.
+        Return a list with a content of changelog's body.
 
     Raises:
         None
@@ -232,13 +230,12 @@ def changelog_footer(
     """Footer of changelog file.
 
     Args:
-        content: List[Tuple[str, Dict[str, Any]]]
-        content_formated: list
-        urlcompare: str
-        kwargs: Anyone of the positional items.
+        content: Content of changelog's footer 
+        content_formated: Content formated of changelog's footer
+        urlcompare: Url to compare.
 
     Returns:
-        list: Return a list with a footer of changelog file.
+        Return a list with a footer of changelog file.
 
     Raises:
         None
@@ -267,13 +264,12 @@ def changelog_write(
     """Write CHANGELOG.md file formatted.
 
     Args:
-        content: List[Tuple[str, Dict[str, Any]]]
-        changelog_file: str, pathlib
-        kwargs: Anyone of the positional items.
+        changelog_file: Path of changelog file.
+        content: Content to write the changelog
 
     Returns:
-        bool: True if success.
-
+        True if success.
+        
     Raises:
         None
     """
@@ -298,13 +294,12 @@ def update_changelog(
     """Update Changelog.md file.
 
     Args:
-        urlcompare: str
-        reverse: bool
-        changelog_file:  changelog full filename.
-        kwargs: Anyone of the positional items.
-
+        changelog_file: changelog full filename.
+        reverse: reverse to the last update be the first.
+        urlcompare(str): Url to compare. 
+        
     Returns:
-        bool: True if success
+        True if success
 
     Raises:
         None
@@ -357,14 +352,16 @@ class Changelog:
         """Initialize from Changelog class.
 
         Args:
-            file_output: str, Path
-            url_compare: str
-            reverse: bool
-            url_principal: str
-            url_keepachangelog: str
-            url_semver: str
-            url_convetional_commit: str
-            kwargs: Anyone of the positional items.
+            file_output: The output file of changelog.
+            reverse: reverse to the last update be the first.
+            url_compare: Url to compare. 
+            url_convetional_commit(str): Url of convetional commit.
+            url_keepachangelog(str): Url of keep a changelog.
+            url_principal(str): Url principal do projeto.
+            url_semver(str): Url of semantic version.
+            
+        Returns:
+            None
         """
         self.file_output = file_output or Path('CHANGELOG.md')
         self.url_compare = url_compare
@@ -393,11 +390,11 @@ class Changelog:
         """Iterador de registros git.
 
         Args:
-            content: List[Tuple[str, Dict[str, Any]]]
-            linked: bool
+            content: Content register in git.
+            linked: If has link.
 
         Return:
-            list
+            A list with the version, date and a message.
 
         Raises:
             None
