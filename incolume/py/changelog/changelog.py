@@ -13,7 +13,7 @@ from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s;%(levelname)-8s;%(name)s;'
-    '%(module)s;%(funcName)s;%(message)s',
+           '%(module)s;%(funcName)s;%(message)s',
 )
 
 CHANGELOG_FILE = Path(__file__).parents[2] / 'CHANGELOG.md'
@@ -86,7 +86,11 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
 
 
 def changelog_messages(
-    *, text: str, start: Any = None, end: Any = None, **kwargs,
+    *,
+    text: str,
+    start: int | None = None,
+    end: int | None = None,
+    **kwargs: str,
 ) -> list[tuple[str, dict[str, Any]]]:
     """Changelog messages sort and classify.
 
@@ -109,7 +113,6 @@ def changelog_messages(
         logging.debug('msg=%s', msg)
         record = msg_classify(msg=msg, lang=lang)
         logging.debug('record=%s', record)
-        # records.setdefault(record['key']).update(**record)
         records.append((record['key'], record))
     logging.debug('type return %s=%s', inspect.stack()[0][3], type(records))
     logging.debug('return %s=%s', inspect.stack()[0][3], records)
@@ -135,7 +138,7 @@ def changelog_header(
     Raises:
         None
 
-    **Examples:**
+    Examples:
 
         >>> changelog_header()
         ['# CHANGELOG\n\n\n',
@@ -197,7 +200,7 @@ def changelog_header(
 def changelog_body(
     content: list[tuple[str, dict[str, Any]]],
     content_formated: list[str],
-    **kwargs,
+    **kwargs: str,
 ) -> list[str]:
     """
     Body of changelog file.
@@ -212,6 +215,7 @@ def changelog_body(
     Raises:
         None
     """
+    logging.debug(kwargs)
     content_formated.extend(Changelog.iter_logs(content[:-1]))
     content_formated.extend(Changelog.iter_logs(content[-1:], linked=False))
     return content_formated
@@ -220,7 +224,7 @@ def changelog_body(
 def changelog_footer(
     content: list[tuple[str, dict[str, Any]]],
     content_formated: list[str],
-    **kwargs,
+    **kwargs: str,
 ) -> list[str]:
     """
     Footer of changelog file.
@@ -253,7 +257,9 @@ def changelog_footer(
 
 
 def changelog_write(
-    *, content: list[tuple[str, dict[str, Any]]], **kwargs,
+    *,
+    content: list[tuple[str, dict[str, Any]]],
+    **kwargs: str,
 ) -> bool:
     """Write CHANGELOG.md file formatted.
 
@@ -280,10 +286,10 @@ def changelog_write(
 
 
 def update_changelog(
+    changelog_file: str = '',
     *,
-    changelog_file: Any = None,
     reverse: bool = True,
-    **kwargs,
+    **kwargs: str,
 ) -> bool:
     """Update Changelog.md file.
 
@@ -298,7 +304,7 @@ def update_changelog(
     Raises:
         None
 
-    **Examples:**
+    Examples:
 
         >>> update_changelog()
         True
@@ -342,7 +348,7 @@ class Changelog:
         url_compare: str = '',
         *,
         reverse: bool = True,
-        **kwargs,
+        **kwargs: str,
     ):
         """
         Initialize from Changelog class.
@@ -376,7 +382,9 @@ class Changelog:
 
     @staticmethod
     def iter_logs(
-        content: list[tuple[str, dict[str, Any]]], linked: bool = True
+        content: list[tuple[str, dict[str, Any]]], 
+        *,
+        linked: bool = True,
     ) -> list[str]:
         """
         Iterador de registros git.
@@ -418,7 +426,7 @@ class Changelog:
         Header of changelog file.
 
         Returns:
-            list: Return a list with a header of changelog file.
+            Return a list with a header of changelog file.
 
         Raises:
             None
@@ -438,7 +446,7 @@ class Changelog:
             ]
 
 
-def run():
+def run() -> None:
     """Examples ran.
 
     Returns:
