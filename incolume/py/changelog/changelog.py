@@ -109,7 +109,6 @@ def changelog_messages(
         logging.debug('msg=%s', msg)
         record = msg_classify(msg=msg, lang=lang)
         logging.debug('record=%s', record)
-        # records.setdefault(record['key']).update(**record)
         records.append((record['key'], record))
     logging.debug('type return %s=%s', inspect.stack()[0][3], type(records))
     logging.debug('return %s=%s', inspect.stack()[0][3], records)
