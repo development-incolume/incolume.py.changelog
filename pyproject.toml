@@ -67,6 +67,7 @@ pytest-cov = "^4.1.0"
 ruff = "^0.1.7"
 taskipy = "^1.12.2"
 tox = "^4.11.4"
+types-toml = "^0.10.8.7"
 
 
 
