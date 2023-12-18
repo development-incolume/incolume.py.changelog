@@ -45,15 +45,15 @@ def key_versions_2_sort(
     try:
         # pegar major, minor e patch
         values = get_major_minor_patch_build.search(x[0])
-        major = values.group(1)  # type: ignore
-        minor = values.group(2)  # type: ignore
-        patch = values.group(3)  # type: ignore
-        build = values.group(6)  # type: ignore
+        major = values.group(1)
+        minor = values.group(2)
+        patch = values.group(3)
+        build = values.group(6)
         # pegar build, se não tiver colocar uma alta 99999
         build = build or '9' * qdig
-        logging.debug('values.group(5): %s', values.group(5))  # type: ignore
+        logging.debug('values.group(5): %s', values.group(5))
         plus = classifies.get(
-            re.sub(r'[-.]', '', str(values.group(5)).lower()),  # type: ignore
+            re.sub(r'[-.]', '', str(values.group(5)).lower()),
             0,
         )
         logging.debug('plus: %s', plus)
