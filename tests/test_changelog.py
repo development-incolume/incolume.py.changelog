@@ -1,7 +1,7 @@
 """Test module for changelog."""
 from pathlib import Path
 from tempfile import gettempdir
-
+import sys
 import pytest
 from unittest import mock
 from incolume.py.changelog import changelog as pkg
@@ -16,13 +16,41 @@ class TestCase:
         'entrance',
         [
             pytest.param(
-                '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix'),
+                '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.'
+                    )
+                ]
+            ),
             pytest.param(
-                '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed'),
+                '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.'
+                    )
+                ]
+            ),
             pytest.param(
-                '2.2.1 Security: Fake record; other fake record; Fake fixed'),
+                '2.2.1 Security: Fake record; other fake record; Fake fixed',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.'
+                    )
+                ]
+            ),
             pytest.param(
-                '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix'),
+                '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.'
+                    )
+                ]
+            ),
         ],
     )
     def test_msg_classify_type(self, entrance: str) -> None:
@@ -35,13 +63,41 @@ class TestCase:
         'entrance',
         [
             pytest.param(
-                '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix'),
+                '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.'
+                    )
+                ]
+            ),
             pytest.param(
-                '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed'),
+                '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.'
+                    )
+                ]
+            ),
             pytest.param(
-                '2.2.1 Security: Fake record; other fake record; Fake fixed'),
+                '2.2.1 Security: Fake record; other fake record; Fake fixed',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.'
+                    )
+                ]
+            ),
             pytest.param(
-                '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix'),
+                '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.'
+                    )
+                ]
+            ),
         ],
     )
     def test_msg_classify_value(self, entrance: str) -> None:

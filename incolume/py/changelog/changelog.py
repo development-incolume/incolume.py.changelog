@@ -33,7 +33,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         ValueError: If lang selected don't have support.
     """
     logging.debug(lang)
-    suport_lang: dict[Any, Any] = {
+    suport_lang: dict[str, Any] = {
         'en-US': {
             'Added': 'Added',
             'Changed': 'Changed',
@@ -60,18 +60,26 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         )
 
     key, msg = msg.split(maxsplit=1)
-    cmd = 'git show -s --format=%%cs %s^{commit}' % key
-    logging.debug(cmd)
-    date = subprocess.getoutput(cmd)
+    # cmd = re.escape("git show -s --format=%%cs '%s^{commit}'" % key)
+    # print(cmd)
+    # logging.debug(cmd)
+    # date = subprocess.getoutput(cmd)
+    result = subprocess.run(
+        ['git', 'show', '-s', '--format=%cs', '%s^{commit}' % key],
+          shell=True, capture_output=True, text=True
+    )
+    date = result.stdout
+    logging.debug(date)
+
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
     selected_lang = suport_lang.get(lang, suport_lang['all'])
     regex: str = rf"({'|'.join(selected_lang.keys())})\s?:"
-
+    
     txt = re.sub(
-        regex,
-        r'§§\1§:',
-        msg,
-        flags=re.I,
+      regex,
+      r'§§\1§:',
+      msg,
+      flags=re.I,
     )
     logging.debug('txt=%s', txt)
     dct: dict[str, Any] = {}
@@ -452,20 +460,21 @@ def run() -> None:
     Returns:
         None
     """
-    msg = subprocess.getoutput('git tag -n').splitlines()[-14]
-    logging.debug(msg)
-    logging.debug('msg_classify=%s', msg_classify(msg=msg))
+    # msg = subprocess.getoutput('git tag -n').splitlines()[-14]
+    # logging.debug(msg)
+    # logging.debug('msg_classify=%s', msg_classify(msg=msg))
 
-    msg = subprocess.getoutput('git tag -n')
-    result = changelog_messages(text=msg)
+    # msg = subprocess.getoutput('git tag -n')
+    # result = changelog_messages(text=msg)
 
-    logging.debug('result=%s', result)
-    logging.debug('type(result)=%s', type(result))
-    result = sorted(result, reverse=True, key=key_versions_2_sort)
-    logging.debug('result = %s; result type = %s', result, type(result))
+    # logging.debug('result=%s', result)
+    # logging.debug('type(result)=%s', type(result))
+    # result = sorted(result, reverse=True, key=key_versions_2_sort)
+    # logging.debug('result = %s; result type = %s', result, type(result))
 
-    changelog_write(content=result)
-    update_changelog()
+    # changelog_write(content=result)
+    # update_changelog()
+    print(msg_classify('0.1.0           added: Projeto emancipado de https://gitlab.com/development-incolume/incolumepy.utils'))
 
 
 if __name__ == '__main__':  # pragma: no cover
