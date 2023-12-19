@@ -32,6 +32,14 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
 
     Raises:
         ValueError: If lang selected don't have support.
+
+    Examples:
+
+        >>> msg_classify('Adicionado: Nova funcionalidade.', 'pt-BR')
+        {key: 0.1.0, date: 2023-12-18, messages: Added: Nova funcionalidade.}
+
+        >>> msg_classify('Corregido: corrección de error.', 'es-AR')
+        ValueError: es-AR not suported! Use en-US, pt-BR
     """
     logging.debug(lang)
     suport_lang: dict[str, Any] = {
@@ -272,6 +280,11 @@ def changelog_write(
         
     Raises:
         None
+
+    Examples:
+
+        >>> changelog_write(['Added: funcionalidade nova.'])
+        True
     """
     changelog_file = Path(kwargs.get('changelog_file') or CHANGELOG_FILE)
     logging.debug('changelog_file=%s', changelog_file)
@@ -428,7 +441,42 @@ class Changelog:
 
         Raises:
             None
-        """
+
+        Examples:
+
+            >>> changelog_header()
+            ['# CHANGELOG\n\n\n',
+            'All notable changes to this project',
+            ' will be documented in this file.\n\n',
+            'The format is based on ',
+            '[Keep a Changelog](https://keepachangelog.com/en/1.0.0/), ',
+            'this project adheres to'
+            '[Semantic Versioning](https://semver.org/spec/v2.0.0.html) '
+            'and [Conventional Commit]'
+            '(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n',
+            'This file was automatically generated for',
+            ' [incolume.py.changelog](https://gitlab.com/development-incolume/'
+            'incolumepy.utils/-/tree/0.2.0a2)',
+            '\n\n---\n']
+
+            >>> changelog_header(
+                url_keepachangelog='https://keepachangelog.com/en/2.0.0/',
+                url_semver=https://semver.org/spec/v1.0.0.html,
+                )
+            ["# CHANGELOG\n\n\n",
+            "All notable changes to this project",
+            " will be documented in this file.\n\n",
+            "The format is based on ",
+            "[Keep a Changelog](https://keepachangelog.com/en/2.0.0/),",
+            "this project adheres to "
+            "[Semantic Versioning](https://semver.org/spec/v1.0.0.html)"
+            "and [Conventional Commit]"
+            "(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n",
+            "This file was automatically generated for",
+            "[incolume.py.changelog](https://gitlab.com/development-incolume/"
+            "incolumepy.utils/-/tree/0.2.0a0)",
+            "\n\n---\n"]
+            """
         return [
             '# CHANGELOG\n\n\n',
             'All notable changes to this project',
