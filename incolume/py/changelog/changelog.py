@@ -64,13 +64,12 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     ref = key + r'^^{commit}'
     cmd = ['git', 'show', '-s', '--format=%cs', ref]
     logging.debug(cmd)
-    result = subprocess.run(
+    result = subprocess.Popen(
         cmd,
-        shell=True,
-        capture_output=True,
-        text=True, check=False,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
     )
-    date = result.stdout.strip()
+    date, _ = result.communicate()
     logging.debug(date)
 
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
