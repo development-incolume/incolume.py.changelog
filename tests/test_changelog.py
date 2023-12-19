@@ -22,41 +22,41 @@ class TestCase:
                     #     sys.platform.casefold().startswith('win'),
                     #     reason='Do not for Windows.'
                     # )
-                ]
+                ],
             ),
             pytest.param(
                 '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed',
                 marks=[
                     pytest.mark.skipif(
                         sys.platform.casefold().startswith('win'),
-                        reason='Do not for Windows.'
-                    )
-                ]
+                        reason='Do not for Windows.',
+                    ),
+                ],
             ),
             pytest.param(
                 '2.2.1 Security: Fake record; other fake record; Fake fixed',
                 marks=[
                     pytest.mark.skipif(
                         sys.platform.casefold().startswith('win'),
-                        reason='Do not for Windows.'
-                    )
-                ]
+                        reason='Do not for Windows.',
+                    ),
+                ],
             ),
             pytest.param(
                 '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix',
                 marks=[
                     pytest.mark.skipif(
                         sys.platform.casefold().startswith('win'),
-                        reason='Do not for Windows.'
-                    )
-                ]
+                        reason='Do not for Windows.',
+                    ),
+                ],
             ),
         ],
     )
     def test_msg_classify_type(self, entrance: str) -> None:
         """Test it."""
         with mock.patch('subprocess.run', autospec=True) as m:
-            m.return_value = '2023-12-15'.encode('utf-8')
+            m.return_value = b'2023-12-15'
             assert isinstance(pkg.msg_classify(entrance), dict)
 
     @pytest.mark.parametrize(
@@ -67,36 +67,36 @@ class TestCase:
                 marks=[
                     pytest.mark.skipif(
                         sys.platform.casefold().startswith('win'),
-                        reason='Do not for Windows.'
-                    )
-                ]
+                        reason='Do not for Windows.',
+                    ),
+                ],
             ),
             pytest.param(
                 '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed',
                 marks=[
                     pytest.mark.skipif(
                         sys.platform.casefold().startswith('win'),
-                        reason='Do not for Windows.'
-                    )
-                ]
+                        reason='Do not for Windows.',
+                    ),
+                ],
             ),
             pytest.param(
                 '2.2.1 Security: Fake record; other fake record; Fake fixed',
                 marks=[
                     pytest.mark.skipif(
                         sys.platform.casefold().startswith('win'),
-                        reason='Do not for Windows.'
-                    )
-                ]
+                        reason='Do not for Windows.',
+                    ),
+                ],
             ),
             pytest.param(
                 '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix',
                 marks=[
                     pytest.mark.skipif(
                         sys.platform.casefold().startswith('win'),
-                        reason='Do not for Windows.'
-                    )
-                ]
+                        reason='Do not for Windows.',
+                    ),
+                ],
             ),
         ],
     )

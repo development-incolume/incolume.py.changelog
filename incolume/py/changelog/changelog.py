@@ -27,7 +27,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         msg: Message of command.
 
     Returns:
-        dict: 
+        dict:
 
     Raises:
         ValueError: If lang selected don't have support.
@@ -64,24 +64,24 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     # print(cmd)
     # logging.debug(cmd)
     # date = subprocess.getoutput(cmd)
-    ref = key + r"^^{commit}"
+    ref = key + r'^^{commit}'
     cmd = ['git', 'show', '-s', '--format=%cs', ref]
     print(cmd)
     logging.debug(cmd)
     result = subprocess.run(
         cmd,
-        shell=True, 
-        capture_output=True, 
+        shell=True,
+        capture_output=True,
         text=True,
     )
-    logging.error(result.stderr)
+    # logging.error(result.stderr)
     date = result.stdout.strip()
     logging.debug(date)
 
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
     selected_lang = suport_lang.get(lang, suport_lang['all'])
     regex: str = rf"({'|'.join(selected_lang.keys())})\s?:"
-    
+
     txt = re.sub(
       regex,
       r'§§\1§:',
@@ -135,12 +135,11 @@ def changelog_messages(
 
 
 def changelog_header(
-    url_keepachangelog: str = "",
-    url_semver: str = "",
-    url_convetional_commit: str = "",
+    url_keepachangelog: str = '',
+    url_semver: str = '',
+    url_convetional_commit: str = '',
 ) -> list[str]:
-    r"""
-    Header of changelog file.
+    r"""Header of changelog file.
 
     Args:
         url_keepachangelog: str
@@ -154,7 +153,6 @@ def changelog_header(
         None
 
     Examples:
-
         >>> changelog_header()
         ['# CHANGELOG\n\n\n',
         'All notable changes to this project',
@@ -217,8 +215,7 @@ def changelog_body(
     content_formated: list[str],
     **kwargs: str,
 ) -> list[str]:
-    """
-    Body of changelog file.
+    """Body of changelog file.
 
     Args:
         content: List[Tuple[str, Dict[str, Any]]]
@@ -241,8 +238,7 @@ def changelog_footer(
     content_formated: list[str],
     **kwargs: str,
 ) -> list[str]:
-    """
-    Footer of changelog file.
+    """Footer of changelog file.
 
     Args:
         content: List[Tuple[str, Dict[str, Any]]]
@@ -284,7 +280,7 @@ def changelog_write(
 
     Returns:
         bool: True if success.
-        
+
     Raises:
         None
     """
@@ -312,7 +308,7 @@ def update_changelog(
         urlcompare: str
         reverse: bool
         changelog_file:  changelog full filename.
-        
+
     Returns:
         bool: True if success
 
@@ -320,7 +316,6 @@ def update_changelog(
         None
 
     Examples:
-
         >>> update_changelog()
         True
         >>> update_changelog(changelog_file='/tmp/CHANGELOG.md')
@@ -365,9 +360,8 @@ class Changelog:
         reverse: bool = True,
         **kwargs: str,
     ):
-        """
-        Initialize from Changelog class.
-        
+        """Initialize from Changelog class.
+
         Args:
             file_output: str, Path
             url_compare: str
@@ -377,7 +371,7 @@ class Changelog:
             url_semver: str
             url_convetional_commit: str
         """
-        self.file_output = file_output or Path("CHANGELOG.md")
+        self.file_output = file_output or Path('CHANGELOG.md')
         self.url_compare = url_compare
         self.reverse = reverse
         self.url_principal = kwargs.get(
@@ -397,12 +391,11 @@ class Changelog:
 
     @staticmethod
     def iter_logs(
-        content: list[tuple[str, dict[str, Any]]], 
+        content: list[tuple[str, dict[str, Any]]],
         *,
         linked: bool = True,
     ) -> list[str]:
-        """
-        Iterador de registros git.
+        """Iterador de registros git.
 
         Args:
             content: List[Tuple[str, Dict[str, Any]]]
@@ -437,8 +430,7 @@ class Changelog:
 
 
     def header(self) -> list[str]:
-        """
-        Header of changelog file.
+        """Header of changelog file.
 
         Returns:
             Return a list with a header of changelog file.
@@ -447,17 +439,17 @@ class Changelog:
             None
         """
         return [
-            "# CHANGELOG\n\n\n",
-            "All notable changes to this project",
-            " will be documented in this file.\n\n",
-            "The format is based on ",
-            f"[Keep a Changelog]({self.url_keepachangelog}), ",
-            "this project adheres to "
-            f"[Semantic Versioning]({self.url_semver}) "
-            f"and [Conventional Commit]({self.url_convetional_commit}).\n\n",
-            "This file was automatically generated for",
-            f" [{__title__}]({self.url_principal}/-/tree/{__version__})",
-            "\n\n---\n",
+            '# CHANGELOG\n\n\n',
+            'All notable changes to this project',
+            ' will be documented in this file.\n\n',
+            'The format is based on ',
+            f'[Keep a Changelog]({self.url_keepachangelog}), ',
+            'this project adheres to '
+            f'[Semantic Versioning]({self.url_semver}) '
+            f'and [Conventional Commit]({self.url_convetional_commit}).\n\n',
+            'This file was automatically generated for',
+            f' [{__title__}]({self.url_principal}/-/tree/{__version__})',
+            '\n\n---\n',
             ]
 
 
