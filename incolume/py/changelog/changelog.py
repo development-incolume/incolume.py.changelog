@@ -25,6 +25,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     Args:
         lang: Language of command.
         msg: Message of command.
+        kwargs: Anyone of the positional items.
 
     Returns:
         dict:
@@ -60,22 +61,10 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         )
 
     key, msg = msg.split(maxsplit=1)
-    # cmd = re.escape("git show -s --format=%%cs '%s^{commit}'" % key)
-    # print(cmd)
-    # logging.debug(cmd)
-    # date = subprocess.getoutput(cmd)
     ref = key + r'^^{commit}'
     cmd = ['git', 'show', '-s', '--format=%cs', ref]
-    print(cmd)
     logging.debug(cmd)
-    result = subprocess.run(
-        cmd,
-        shell=True,
-        capture_output=True,
-        text=True,
-    )
-    # logging.error(result.stderr)
-    date = result.stdout.strip()
+    date = subprocess.check_output(cmd)  # noqa: S603
     logging.debug(date)
 
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
@@ -113,6 +102,7 @@ def changelog_messages(
         text: str
         start: (int, str, None)
         end: (int, str, None)
+        kwargs: Anyone of the positional items.
 
     Returns:
         list: return a list with a changelog menssage.
@@ -220,6 +210,7 @@ def changelog_body(
     Args:
         content: List[Tuple[str, Dict[str, Any]]]
         content_formated: list
+        kwargs: Anyone of the positional items.
 
     Returns:
         list: Return a list with a content of changelog's body.
@@ -244,6 +235,7 @@ def changelog_footer(
         content: List[Tuple[str, Dict[str, Any]]]
         content_formated: list
         urlcompare: str
+        kwargs: Anyone of the positional items.
 
     Returns:
         list: Return a list with a footer of changelog file.
@@ -277,6 +269,7 @@ def changelog_write(
     Args:
         content: List[Tuple[str, Dict[str, Any]]]
         changelog_file: str, pathlib
+        kwargs: Anyone of the positional items.
 
     Returns:
         bool: True if success.
@@ -308,6 +301,7 @@ def update_changelog(
         urlcompare: str
         reverse: bool
         changelog_file:  changelog full filename.
+        kwargs: Anyone of the positional items.
 
     Returns:
         bool: True if success
@@ -370,6 +364,7 @@ class Changelog:
             url_keepachangelog: str
             url_semver: str
             url_convetional_commit: str
+            kwargs: Anyone of the positional items.
         """
         self.file_output = file_output or Path('CHANGELOG.md')
         self.url_compare = url_compare
@@ -429,7 +424,7 @@ class Changelog:
         return result
 
 
-    def header(self) -> list[str]:
+    def header(self: Changelog) -> list[str]:
         """Header of changelog file.
 
         Returns:
@@ -459,21 +454,21 @@ def run() -> None:
     Returns:
         None
     """
-    # msg = subprocess.getoutput('git tag -n').splitlines()[-14]
-    # logging.debug(msg)
-    # logging.debug('msg_classify=%s', msg_classify(msg=msg))
+    msg = subprocess.getoutput('git tag -n').splitlines()[-14]
+    logging.debug(msg)
+    logging.debug('msg_classify=%s', msg_classify(msg=msg))
 
-    # msg = subprocess.getoutput('git tag -n')
-    # result = changelog_messages(text=msg)
+    msg = subprocess.getoutput('git tag -n')
+    result = changelog_messages(text=msg)
 
-    # logging.debug('result=%s', result)
-    # logging.debug('type(result)=%s', type(result))
-    # result = sorted(result, reverse=True, key=key_versions_2_sort)
-    # logging.debug('result = %s; result type = %s', result, type(result))
+    logging.debug('result=%s', result)
+    logging.debug('type(result)=%s', type(result))
+    result = sorted(result, reverse=True, key=key_versions_2_sort)
+    logging.debug('result = %s; result type = %s', result, type(result))
 
-    # changelog_write(content=result)
-    # update_changelog()
-    print(msg_classify('0.1.0           added: Projeto emancipado de https://gitlab.com/development-incolume/incolumepy.utils'))
+    changelog_write(content=result)
+    update_changelog()
+    logging.info(msg_classify('0.1.0           added: Projeto emancipado de https://gitlab.com/development-incolume/incolumepy.utils'))
 
 
 if __name__ == '__main__':  # pragma: no cover
