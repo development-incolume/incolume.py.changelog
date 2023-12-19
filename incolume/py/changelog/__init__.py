@@ -1,11 +1,17 @@
 """Principal module."""
+from __future__ import annotations
+
 import logging
 import re
-from collections.abc import Collection
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import toml
+
+if TYPE_CHECKING:
+    from collections.abc import Collection
+
+
 
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
