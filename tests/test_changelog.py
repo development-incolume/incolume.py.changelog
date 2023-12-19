@@ -43,7 +43,7 @@ class TestCase:
     )
     def test_msg_classify_type(self, entrance: str) -> None:
         """Test it."""
-        with mock.patch('subprocess.run', autospec=True) as m:
+        with mock.patch('subprocess.check_output', autospec=True) as m:
             m.return_value = '2023-12-15'
             assert isinstance(pkg.msg_classify(entrance), dict)
 
@@ -74,10 +74,12 @@ class TestCase:
     )
     def test_msg_classify_value(self, entrance: str) -> None:
         """Test it."""
-        result = pkg.msg_classify(entrance)
-        assert 'key' in result
-        assert 'date' in result
-        assert 'messages' in result
+        with mock.patch('subprocess.check_output', autospec=True) as m:
+            m.return_value = '2023-12-15'
+            result = pkg.msg_classify(entrance)
+            assert 'key' in result
+            assert 'date' in result
+            assert 'messages' in result
 
     @pytest.mark.parametrize(
         'entrance date expected'.split(),
@@ -241,7 +243,7 @@ class TestCase:
     def test_msg_classify_result(
           self, entrance: dict, date: str, expected: dict) -> None:
         """Test it."""
-        with mock.patch('subprocess.run', autospec=True) as m:
+        with mock.patch('subprocess.check_output', autospec=True) as m:
             m.return_value = date
             result = pkg.msg_classify(**entrance)
             assert expected == result
@@ -419,7 +421,7 @@ class TestCase:
     def test_changelog_messages(
           self, entrance: dict, dates: list, expected: list) -> None:
         """Test it."""
-        with mock.patch('subprocess.run', autospec=True) as m:
+        with mock.patch('subprocess.check_output', autospec=True) as m:
             m.side_effect = dates
             assert pkg.changelog_messages(**entrance) == expected
 
@@ -443,16 +445,17 @@ class TestCase:
     def test_changelog_write(
           self, entrance: dict, file_temp: Path, return_git_tag: str) -> None:
         """Test changelog_write."""
-        result = pkg.changelog_messages(text=return_git_tag)
-        entrance.update({'content': result})
-        if 'changelog_file' not in entrance:
-            entrance.update({'changelog_file': file_temp})
+        with mock.patch('subprocess.check_output', return_value='2023-12-19'):
+            result = pkg.changelog_messages(text=return_git_tag)
+            entrance.update({'content': result})
+            if 'changelog_file' not in entrance:
+                entrance.update({'changelog_file': file_temp})
 
-        mocked = mock.Mock(spec=pkg.changelog_write)
-        result = mocked(**entrance)
-        esperado = mock.call(**entrance)
-        assert esperado == mocked.call_args  # cobertura QA
-        assert result  # Resultado
+            mocked = mock.Mock(spec=pkg.changelog_write)
+            result = mocked(**entrance)
+            esperado = mock.call(**entrance)
+            assert esperado == mocked.call_args  # cobertura QA
+            assert result  # Resultado
 
     @pytest.mark.parametrize(
         'entrance',
@@ -471,7 +474,8 @@ class TestCase:
         entrance.update({'content': return_git_tag})
         if 'changelog_file' not in entrance:
             entrance.update({'changelog_file': file_temp})
-        assert pkg.update_changelog(**entrance)
+        with mock.patch('subprocess.check_output', return_value='2023-12-19'):
+            assert pkg.update_changelog(**entrance)
 
 
 class TestClassChangelog:

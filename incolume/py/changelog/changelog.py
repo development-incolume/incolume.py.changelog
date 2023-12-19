@@ -61,7 +61,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         )
 
     key, msg = msg.split(maxsplit=1)
-    ref = key + r'^^{commit}'
+    ref = key + r'^{commit}'
     cmd = ['git', 'show', '-s', '--format=%cs', ref]
     logging.debug(cmd)
     date = subprocess.check_output(cmd)  # noqa: S603
