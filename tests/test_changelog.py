@@ -1,7 +1,7 @@
 """Test module for changelog."""
 from pathlib import Path
 from tempfile import gettempdir
-
+import sys
 import pytest
 from unittest import mock
 from incolume.py.changelog import changelog as pkg
@@ -16,32 +16,88 @@ class TestCase:
         'entrance',
         [
             pytest.param(
-                '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix'),
+                '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix',
+                marks=[
+                    # pytest.mark.skipif(
+                    #     sys.platform.casefold().startswith('win'),
+                    #     reason='Do not for Windows.'
+                    # )
+                ],
+            ),
             pytest.param(
-                '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed'),
+                '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.',
+                    ),
+                ],
+            ),
             pytest.param(
-                '2.2.1 Security: Fake record; other fake record; Fake fixed'),
+                '2.2.1 Security: Fake record; other fake record; Fake fixed',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.',
+                    ),
+                ],
+            ),
             pytest.param(
-                '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix'),
+                '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.',
+                    ),
+                ],
+            ),
         ],
     )
     def test_msg_classify_type(self, entrance: str) -> None:
         """Test it."""
-        with mock.patch('subprocess.getoutput', autospec=True) as m:
-            m.return_value = '2023-12-15'
+        with mock.patch('subprocess.run', autospec=True) as m:
+            m.return_value = b'2023-12-15'
             assert isinstance(pkg.msg_classify(entrance), dict)
 
     @pytest.mark.parametrize(
         'entrance',
         [
             pytest.param(
-                '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix'),
+                '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.',
+                    ),
+                ],
+            ),
             pytest.param(
-                '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed'),
+                '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.',
+                    ),
+                ],
+            ),
             pytest.param(
-                '2.2.1 Security: Fake record; other fake record; Fake fixed'),
+                '2.2.1 Security: Fake record; other fake record; Fake fixed',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.',
+                    ),
+                ],
+            ),
             pytest.param(
-                '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix'),
+                '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix',
+                marks=[
+                    pytest.mark.skipif(
+                        sys.platform.casefold().startswith('win'),
+                        reason='Do not for Windows.',
+                    ),
+                ],
+            ),
         ],
     )
     def test_msg_classify_value(self, entrance: str) -> None:
@@ -213,7 +269,7 @@ class TestCase:
     def test_msg_classify_result(
           self, entrance: dict, date: str, expected: dict) -> None:
         """Test it."""
-        with mock.patch('subprocess.getoutput', autospec=True) as m:
+        with mock.patch('subprocess.run', autospec=True) as m:
             m.return_value = date
             result = pkg.msg_classify(**entrance)
             assert expected == result
@@ -391,7 +447,7 @@ class TestCase:
     def test_changelog_messages(
           self, entrance: dict, dates: list, expected: list) -> None:
         """Test it."""
-        with mock.patch('subprocess.getoutput', autospec=True) as m:
+        with mock.patch('subprocess.run', autospec=True) as m:
             m.side_effect = dates
             assert pkg.changelog_messages(**entrance) == expected
 
