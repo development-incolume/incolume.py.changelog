@@ -44,7 +44,7 @@ class TestCase:
     def test_msg_classify_type(self, entrance: str) -> None:
         """Test it."""
         with mock.patch('subprocess.run', autospec=True) as m:
-            m.return_value = b'2023-12-15'
+            m.return_value = '2023-12-15'
             assert isinstance(pkg.msg_classify(entrance), dict)
 
     @pytest.mark.parametrize(
