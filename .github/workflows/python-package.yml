@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["38", "39", "310", "311"]
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
 
     steps:
     - uses: actions/checkout@v3
@@ -30,7 +30,7 @@ jobs:
         poetry install
     - name: Lint with ruff
       run: |
-        poetry run ruff check --target-version ${{ matrix.python-version }}
+        poetry run ruff check
 
     - name: Test with pytest
       run: |
