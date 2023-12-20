@@ -37,9 +37,9 @@ exclude = [
 
 [tool.poetry.urls]
 'Documentation' = 'https://brito.blog.incolume.com.br/search/label/development-incolume'
-'Source' = 'https://gitlab.com/development-incolume/incolumepy.utils'
-'Git' = 'https://gitlab.com/development-incolume/incolumepy.utils.git'
-'Tracker' = 'https://gitlab.com/development-incolume/incolumepy.utils/issues'
+'Source' = 'https://github.com/development-incolume/incolume.py.changelog'
+'Git' = 'https://github.com/development-incolume/incolume.py.changelog.git'
+'Tracker' = 'https://github.com/development-incolume/incolume.py.changelog/issues'
 'Oficial' = 'https://pypi.org/project/incolumepy.utils/'
 
 [tool.poetry.scripts]
