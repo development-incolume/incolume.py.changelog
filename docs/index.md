@@ -17,6 +17,10 @@
 [![Linter: pylint](https://img.shields.io/badge/%20Linter-pylint-%231674b1?style=flat&labelColor=4444444)](https://pylint.pycqa.org/en/latest/)
 [![Linter: flake8](https://img.shields.io/badge/%20Linter-flake8-%231674b1?style=flat&labelColor=4444444)](https://flake8.pycqa.org/en/latest/)
 
+[![security: bandit](https://img.shields.io/badge/%20Security-bandit-%23ff0000?style=flat&labelColor=4444444)](https://bandit.readthedocs.io/en/latest/)
+[![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-%23ff0000?style=flat&labelColor=4444444)](https://pypi.org/project/pip-audit/)
+[![security: safety](https://img.shields.io/badge/%20Security-safety-%23ff0000?style=flat&labelColor=4444444)](https://pypi.org/project/safety/)
+
 * [Documentação](#)
 * [Licença](#)
 * [Padrões aplicados](#)
