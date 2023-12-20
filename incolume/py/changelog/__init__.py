@@ -4,14 +4,9 @@ from __future__ import annotations
 import logging
 import re
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Union
+from typing import Any, Container
 
 import toml
-
-if TYPE_CHECKING:
-    from collections.abc import Collection
-
-
 
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
@@ -24,7 +19,7 @@ __title__ = 'incolume.py.changelog'
 
 
 def key_versions_2_sort(
-    x: Collection[str], qdig: int = 0, regex: str = '',
+    x: Container[str], qdig: int = 0, regex: str = '',
 ) -> str:
     """Sort by SemVer notation.
 
@@ -34,8 +29,8 @@ def key_versions_2_sort(
     :return: list sorted
     """
     qdig = qdig or 5
-    if not isinstance(x, (tuple, list)):
-        msg = "'x' must be tuple or list."
+    if not isinstance(x, Container):
+        msg = f"'{x}' must be tuple or list."
         raise TypeError(msg)
 
     classifies = {
