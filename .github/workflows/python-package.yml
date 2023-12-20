@@ -17,6 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.8", "3.9", "3.10", "3.11"]
+        ruff-env: ["py38", "py39", "py310", "py311"]
 
     steps:
     - uses: actions/checkout@v3
@@ -30,7 +31,7 @@ jobs:
         poetry install
     - name: Lint with ruff
       run: |
-        poetry run ruff check --target-version ${{ matrix.python-version }}
+        poetry run ruff check --target-version ${{ matrix.ruff-env }}
 
     - name: Test with pytest
       run: |
