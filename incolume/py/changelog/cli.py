@@ -1,7 +1,7 @@
 """CLI - Command Line Interface module."""
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Union
 
 import click
 from incolume.py.changelog.changelog import update_changelog
@@ -55,7 +55,7 @@ def greeting(nome: str) -> None:
     help='Reverse order of records.',
 )
 def changelog(
-    file_changelog: str | Path, url: str = '', *, reverse: bool = True,
+    file_changelog: Union[str, Path], url: str = '', *, reverse: bool = True,
 ) -> bool:
     """Operacionaliza uma interface CLI para módulo incolume.py.changelog.
 
