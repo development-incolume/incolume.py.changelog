@@ -414,7 +414,7 @@ subprocess = [
 # required-version = "0.1.6"
 
 # Assume Python Version
-target-version = "py310"
+target-version = "py38"
 
 # Decrease the maximum line length to 79 character.
 line-length = 79
