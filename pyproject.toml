@@ -43,11 +43,10 @@ exclude = [
 'Oficial' = 'https://pypi.org/project/incolumepy.utils/'
 
 [tool.poetry.scripts]
-incolumepy-utils = 'incolumepy.utils.main:run'
-changelog = 'incolumepy.utils.cli:changelog'
-gcl = 'incolumepy.utils.cli:changelog'
-gencl = 'incolumepy.utils.cli:changelog'
-gchangelog = 'incolumepy.utils.cli:changelog'
+changelog = 'incolume.py.changelog.cli:changelog'
+gcl = 'incolume.py.changelog.cli:changelog'
+gencl = 'incolume.py.changelog.cli:changelog'
+gchangelog = 'incolume.py.changelog.cli:changelog'
 
 [tool.poetry.dependencies]
 python = "^3.8.1"
