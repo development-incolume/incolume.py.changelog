@@ -1,5 +1,6 @@
 # Incolume Python Changelog
 
+[![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/python-package.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/python-package.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 [![Metodology: PEP8](https://img.shields.io/badge/%20Metodology-PEP8-%23aabbcc?style=flat&labelColor=4444444)](https://peps.python.org/pep-0008/)
