@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 import re
 from pathlib import Path
-from typing import Any, Container
+from typing import Container
 
 import toml
 
@@ -30,7 +30,7 @@ def key_versions_2_sort(
     """
     qdig = qdig or 5
     if not isinstance(x, Container):
-        msg = f"'{x}' must be tuple or list."
+        msg = f"'x={x}', must be tuple, set or list."
         raise TypeError(msg)
 
     classifies = {
