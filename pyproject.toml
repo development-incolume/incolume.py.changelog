@@ -245,7 +245,8 @@ disable = [
 ]
 
 [tool.mypy]
-mypy_path = "incolumepy"
+mypy_path = "incolume"
+namespace_packages = false
 check_untyped_defs = true
 disallow_any_generics = true
 ignore_missing_imports = true
