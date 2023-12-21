@@ -1,6 +1,7 @@
 """Test package."""
 
 from collections import OrderedDict
+from pathlib import Path
 
 import pytest
 
@@ -217,3 +218,9 @@ def test_apply_key_versions_2_sort(
     result = sorted(
         entrance.items(), key=pkg.key_versions_2_sort, reverse=reverse)
     assert result == expected
+
+
+def test_logger(file_temp: Path) -> None:
+    """Logger."""
+    logg = pkg.logger(filelog=file_temp)
+    assert isinstance(logg, pkg.logging.Logger)
