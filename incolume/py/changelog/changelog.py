@@ -5,6 +5,7 @@ import inspect
 import logging
 import re
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -73,8 +74,13 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
 
     key, msg = msg.split(maxsplit=1)
     cmd = ' '.join(
-        ['git', 'show', '-s', r'--format=%cs', key + r'^{commit}']
+        ['git', 'show', '-s', r'--format=%cs', key + r'^{commit} --']
     )
+    if sys.platform.casefold().startswith('win'):
+        cmd = ' '.join(
+            ['git', 'show', '-s', r'--format=%cs', key + r'^^{commit} --']
+        )
+        
     logging.debug(cmd)
     date = subprocess.getoutput(cmd).strip()  # noqa: S603
     logging.debug(date)
