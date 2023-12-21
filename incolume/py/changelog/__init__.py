@@ -35,7 +35,8 @@ def key_versions_2_sort(
         TypeError: if parameter x not be a tuple or list.
 
     Examples:
-
+        >>> key_version_2_sort(('1.1.1rc0', 'aaa'))
+        '00010501.080000'
     """
     qdig = qdig or 5
     if not isinstance(x, Container):
@@ -78,11 +79,11 @@ def logger(str_format='', datefmt='', level=0, filelog=None):
     """Logger function for log.
 
     Args:
-        str_format: format of string to 
-        datefmt:
+        str_format: format of string to log
+        datefmt: format date to log
         level: can be (logging.DEBUG, logging.INFO, logging.WARNING,
        logging.ERROR, logging.CRITICAL)
-        filelog:
+        filelog: log's file .py
 
     Returns:
         None
