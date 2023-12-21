@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 import re
 from pathlib import Path
-from typing import Any, Container
+from typing import Container
 
 import toml
 
@@ -30,7 +30,7 @@ def key_versions_2_sort(
     """
     qdig = qdig or 5
     if not isinstance(x, Container):
-        msg = f"'{x}' must be tuple or list."
+        msg = f"'x={x}', must be tuple, set or list."
         raise TypeError(msg)
 
     classifies = {
@@ -94,45 +94,3 @@ def logger(str_format='', datefmt='', level=0, filelog=None):
     logging.getLogger('').addHandler(console)
 
     return logging.getLogger()
-
-
-def namespace(package_name: str) -> list[str]:
-    """Return the namespace.
-
-    Example:
-    package_name='incolumepy.package.module'
-    ['incolumepy','incolumepy.package'].
-
-    :param package_name: str
-    :return: list
-
-    >>> namespace('incolumepy.package.subpackage.module')
-    ['incolumepy', 'incolumepy.package', 'incolumepy.package.subpackage']
-
-    >>> namespace('incolumepy.package.module')
-    ['incolumepy', 'incolumepy.package']
-
-    >>> namespace('incolumepy.package')
-    ['incolumepy']
-
-    >>> namespace('incolumepy')
-    ['incolumepy']
-    """
-    logging.debug('package_name=%s', package_name)
-    result: list[Any] = []
-    temp = ''
-    try:
-        bits = package_name.split('.')
-    except AttributeError:
-        return result
-
-    if len(bits) <= 1:
-        logging.debug('bits=%s', bits)
-        return bits
-
-    for bit in bits[:-1]:
-        temp = f'{temp}.{bit}' if temp else bit
-        logging.debug('temp=%s', temp)
-        result.append(temp)
-    logging.debug('result=%s', result)
-    return result

@@ -1,15 +1,11 @@
 """Test module for cli."""
-from click.testing import CliRunner
-from incolume.py.changelog import cli
-import pytest
 import os
 from pathlib import Path
 
+import pytest
+from click.testing import CliRunner
 
-@pytest.fixture()
-def cli_runner() -> CliRunner:
-    """Fixture to CliRunner."""
-    return CliRunner()
+from incolume.py.changelog import cli
 
 
 @pytest.mark.parametrize(

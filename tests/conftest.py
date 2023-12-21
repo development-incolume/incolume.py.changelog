@@ -3,6 +3,7 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 import pytest
+from click.testing import CliRunner
 
 
 @pytest.fixture(scope='session')
@@ -30,3 +31,9 @@ def return_git_tag():
 def file_temp():
     """Generate aleatory filename into tempdir for tests."""
     return Path(NamedTemporaryFile(delete=False).name)
+
+
+@pytest.fixture()
+def cli_runner() -> CliRunner:
+    """Fixture to CliRunner."""
+    return CliRunner()
