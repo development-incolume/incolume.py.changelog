@@ -40,7 +40,7 @@ def key_versions_2_sort(
     """
     qdig = qdig or 5
     if not isinstance(x, Container):
-        msg = f"'x={x}', must be tuple, set or list."
+        msg = f"'x={x}', must be tuple, set or list."  # type: ignore [unreachable]
         raise TypeError(msg)
 
     classifies = {
