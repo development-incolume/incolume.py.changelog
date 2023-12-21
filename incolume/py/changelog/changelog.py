@@ -25,7 +25,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     Args:
         lang: Language of command.
         msg: Message of command.
-        kwargs: Anyone of the positional items.
+        **kwargs: Anyone of the positional items.
 
     Returns:
         A dictionary with the version, date and a message.
@@ -110,6 +110,7 @@ def changelog_messages(
         end: End of Message
         start: Start of Message
         text: Changelog's message
+        **kwargs: Anyone of the positional items.
 
     Returns:
         return a list with a changelog menssage.
@@ -217,6 +218,7 @@ def changelog_body(
     Args:
         content: Content of changelog.
         content_formated: Content formated of changelog.
+        **kwargs: Anyone of the positional items.
 
     Returns:
         Return a list with a content of changelog's body.
@@ -241,6 +243,7 @@ def changelog_footer(
         content: Content of changelog's footer 
         content_formated: Content formated of changelog's footer
         urlcompare: Url to compare.
+        **kwargs: Anyone of the positional items.
 
     Returns:
         Return a list with a footer of changelog file.
@@ -274,6 +277,7 @@ def changelog_write(
     Args:
         changelog_file: Path of changelog file.
         content: Content to write the changelog
+        **kwargs: Anyone of the positional items.
 
     Returns:
         True if success.
@@ -310,7 +314,8 @@ def update_changelog(
         changelog_file: changelog full filename.
         reverse: reverse to the last update be the first.
         urlcompare(str): Url to compare. 
-        
+        **kwargs: Anyone of the positional items.
+
     Returns:
         True if success
 
@@ -372,6 +377,7 @@ class Changelog:
             url_keepachangelog(str): Url of keep a changelog.
             url_principal(str): Url principal do projeto.
             url_semver(str): Url of semantic version.
+            **kwargs: Anyone of the positional items.
             
         Returns:
             None
