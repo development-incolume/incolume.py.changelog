@@ -36,8 +36,4 @@ def file_temp():
 @pytest.fixture()
 def cli_runner() -> CliRunner:
     """Fixture to CliRunner."""
-    try:
-        obj = CliRunner()
-        yield obj
-    finally:
-        del obj
+    return CliRunner()
