@@ -37,43 +37,43 @@ __author__ = '@britodfbr'  # pragma: no cover
         pytest.param(
             None, {'x': ('0.5.1-beta9', 'aaa')}, '00000501.000009'),
         pytest.param(
-        None, {'x': ('0.5.1-rc.9', 'aaa')}, '00000501.080009'),
+            None, {'x': ('0.5.1-rc.9', 'aaa')}, '00000501.080009'),
         pytest.param(
-        None, {'x': ('0.5.1-rc.1', 'aaa')}, '00000501.080001'),
+            None, {'x': ('0.5.1-rc.1', 'aaa')}, '00000501.080001'),
         pytest.param(
-        None, {'x': ('0.5.1-rc1', 'aaa')}, '00000501.080001'),
+            None, {'x': ('0.5.1-rc1', 'aaa')}, '00000501.080001'),
         pytest.param(
-        None, {'x': ('0.5.1rc1', 'aaa')}, '00000501.080001'),
+            None, {'x': ('0.5.1rc1', 'aaa')}, '00000501.080001'),
         pytest.param(
-        None, {'x': ('0.5.1-alpha.1', 'aaa')}, '00000501.020001'),
+            None, {'x': ('0.5.1-alpha.1', 'aaa')}, '00000501.020001'),
         pytest.param(
-        None, {'x': ('0.5.1-alpha.2', 'aaa')}, '00000501.020002'),
+            None, {'x': ('0.5.1-alpha.2', 'aaa')}, '00000501.020002'),
         pytest.param(
-        None, {'x': ('0.5.1-alpha.3', 'aaa')}, '00000501.020003'),
+            None, {'x': ('0.5.1-alpha.3', 'aaa')}, '00000501.020003'),
         pytest.param(
-        None, {'x': ('0.5.1-alpha.4', 'aaa')}, '00000501.020004'),
+            None, {'x': ('0.5.1-alpha.4', 'aaa')}, '00000501.020004'),
         pytest.param(
-        None, {'x': ('0.5.1-alpha.0', 'aaa')}, '00000501.020000'),
+            None, {'x': ('0.5.1-alpha.0', 'aaa')}, '00000501.020000'),
         pytest.param(
-        None, {'x': ('0.5.1-post.0', 'aaa')}, '00000501.900000'),
+            None, {'x': ('0.5.1-post.0', 'aaa')}, '00000501.900000'),
         pytest.param(
-        None, {'x': ('1.5.1-post0', 'aaa')}, '00010501.900000'),
+            None, {'x': ('1.5.1-post0', 'aaa')}, '00010501.900000'),
         pytest.param(
-        None, {'x': ('1.5', 'aaa')}, '1.5'),
+            None, {'x': ('1.5', 'aaa')}, '1.5'),
         pytest.param(
-        None, {'x': ('1.5.1-rc.0', 'aaa')}, '00010501.080000'),
+            None, {'x': ('1.5.1-rc.0', 'aaa')}, '00010501.080000'),
         pytest.param(
-        None, {'x': ('1.5.1-rc0', 'aaa')}, '00010501.080000'),
+            None, {'x': ('1.5.1-rc0', 'aaa')}, '00010501.080000'),
         pytest.param(
-        None, {'x': ('1.5.1rc0', 'aaa')}, '00010501.080000'),
+            None, {'x': ('1.5.1rc0', 'aaa')}, '00010501.080000'),
         pytest.param(
-        None, {'x': ('1.5.1-a.0', 'aaa')}, '00010501.020000'),
+            None, {'x': ('1.5.1-a.0', 'aaa')}, '00010501.020000'),
         pytest.param(
-        None, {'x': ('1.5.1-a0', 'aaa')}, '00010501.020000'),
+            None, {'x': ('1.5.1-a0', 'aaa')}, '00010501.020000'),
         pytest.param(
-        None, {'x': ('1.5.1a0', 'aaa')}, '00010501.020000'),
+            None, {'x': ('1.5.1a0', 'aaa')}, '00010501.020000'),
         pytest.param(
-        None, {'x': ('1.5.1', 'aaa')}, '00010501.099999'),
+            None, {'x': ('1.5.1', 'aaa')}, '00010501.099999'),
         pytest.param(
             {
                 'expected_exception': TypeError,
@@ -85,7 +85,8 @@ __author__ = '@britodfbr'  # pragma: no cover
     ],
 )
 def test_key_versions_2_sort(*,
-    xcpt: dict, entrance: dict, expected: str) -> None:
+                             xcpt: dict, entrance: dict,
+                             expected: str) -> None:
     """Test for key_versions_2_sort."""
     try:
         assert pkg.key_versions_2_sort(**entrance) == expected
@@ -207,8 +208,11 @@ def test_key_versions_2_sort(*,
         ),
     ],
 )
-def test_apply_key_versions_2_sort(*,
-    entrance: dict, reverse: bool, expected: list) -> None:
+def test_apply_key_versions_2_sort(
+    *,
+    entrance: dict, reverse: bool,
+    expected: list,
+) -> None:
     """Sort with this function."""
     result = sorted(
         entrance.items(), key=pkg.key_versions_2_sort, reverse=reverse)

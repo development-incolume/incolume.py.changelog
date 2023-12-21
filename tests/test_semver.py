@@ -3,6 +3,7 @@
 import re
 
 import pytest
+
 from incolume.py.changelog import __version__
 
 

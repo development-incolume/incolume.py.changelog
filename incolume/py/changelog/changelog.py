@@ -72,10 +72,10 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     regex: str = rf"({'|'.join(selected_lang.keys())})\s?:"
 
     txt = re.sub(
-      regex,
-      r'§§\1§:',
-      msg,
-      flags=re.I,
+        regex,
+        r'§§\1§:',
+        msg,
+        flags=re.I,
     )
     logging.debug('txt=%s', txt)
     dct: dict[str, Any] = {}
@@ -423,7 +423,6 @@ class Changelog:
                     result.append(f'\n  - {frase};')
         return result
 
-
     def header(self: Changelog) -> list[str]:
         """Header of changelog file.
 
@@ -445,7 +444,7 @@ class Changelog:
             'This file was automatically generated for',
             f' [{__title__}]({self.url_principal}/-/tree/{__version__})',
             '\n\n---\n',
-            ]
+        ]
 
 
 def run() -> None:
@@ -468,7 +467,10 @@ def run() -> None:
 
     changelog_write(content=result)
     update_changelog()
-    logging.info(msg_classify('0.1.0           added: Projeto emancipado de https://gitlab.com/development-incolume/incolumepy.utils'))
+    logging.info(msg_classify(
+        '0.1.0           added: Projeto emancipado de '
+        'https://gitlab.com/development-incolume/incolumepy.utils'),
+    )
 
 
 if __name__ == '__main__':  # pragma: no cover

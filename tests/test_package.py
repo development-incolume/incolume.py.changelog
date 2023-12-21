@@ -3,12 +3,8 @@
 from pathlib import Path
 
 import pytest
-from incolume.py.changelog import (
-    __version__,
-    confproject,
-    toml,
-    versionfile,
-)
+
+from incolume.py.changelog import __version__, confproject, toml, versionfile
 
 __author__ = '@britodfbr'  # pragma: no cover
 
