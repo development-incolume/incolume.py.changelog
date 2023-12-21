@@ -34,9 +34,8 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         ValueError: If lang selected don't have support.
 
     Examples:
-
-        >>> msg_classify('Adicionado: Nova funcionalidade.', 'pt-BR')
-        {key: 0.1.0, date: 2023-12-18, messages: Added: Nova funcionalidade.}
+        >>> msg_classify('1.0.0 Adicionado: Nova funcionalidade.', 'pt-BR')
+        {'key': '0.1.0', 'date': '2023-12-18', 'messages': {'Added': ['Nova funcionalidade.']}
 
         >>> msg_classify('Corregido: corrección de error.', 'es-AR')
         ValueError: es-AR not suported! Use en-US, pt-BR
@@ -117,6 +116,47 @@ def changelog_messages(
 
     Raises:
         None
+
+    Examples:
+        changelog_messages(
+            '1.0.0 Security: a;b;c;'
+            'Removed: 1;2;3; Changed: a;b;c;d;e;'
+            'Fixed: http://example.com; http://httpbin.com;'
+            'Deprecated: 1;2;3;a;s;b; Added: a1;a2;a3.',
+            '1.1.0 Removed: 1;2' 
+            'Added: g;u'
+            )
+    [
+        (
+            '1.0.0',
+            {
+                'key': '1.0.0',
+                'date': '2023-12-21',
+                'messages': {
+                    'Added': ['a1', 'a2', 'a3.'],
+                    'Changed': ['a', 'b', 'c', 'd', 'e'],
+                    'Deprecated': ['1', '2', '3', 'a', 's', 'b'],
+                    'Fixed': [
+                        'http://example.com',
+                        'http://httpbin.com',
+                    ],
+                    'Removed': ['1', '2', '3'],
+                    'Security': ['a', 'b', 'c'],
+                },
+            },
+        ),
+        (
+            '1.1.0',
+            {
+                'key': '1.1.0',
+                'date': '2023-12-21',
+                'messages': {
+                    'Added': ['g', 'u'],
+                    'Removed: ['1', '2'],
+                }
+            }
+        )
+    ]
     """
     logging.debug('parameters: (%s %s %s %s)', text, start, end, kwargs)
     lang = kwargs.get('lang', '')
@@ -240,7 +280,7 @@ def changelog_footer(
     """Footer of changelog file.
 
     Args:
-        content: Content of changelog's footer 
+        content: Content of changelog's footer
         content_formated: Content formated of changelog's footer
         urlcompare: Url to compare.
         **kwargs: Anyone of the positional items.
@@ -281,12 +321,11 @@ def changelog_write(
 
     Returns:
         True if success.
-        
+
     Raises:
         None
 
     Examples:
-
         >>> changelog_write(['Added: funcionalidade nova.'])
         True
     """
@@ -313,7 +352,7 @@ def update_changelog(
     Args:
         changelog_file: changelog full filename.
         reverse: reverse to the last update be the first.
-        urlcompare(str): Url to compare. 
+        urlcompare(str): Url to compare.
         **kwargs: Anyone of the positional items.
 
     Returns:
@@ -372,13 +411,13 @@ class Changelog:
         Args:
             file_output: The output file of changelog.
             reverse: reverse to the last update be the first.
-            url_compare: Url to compare. 
+            url_compare: Url to compare.
             url_convetional_commit(str): Url of convetional commit.
             url_keepachangelog(str): Url of keep a changelog.
             url_principal(str): Url principal do projeto.
             url_semver(str): Url of semantic version.
             **kwargs: Anyone of the positional items.
-            
+
         Returns:
             None
         """
@@ -406,7 +445,7 @@ class Changelog:
         *,
         linked: bool = True,
     ) -> list[str]:
-        """Iterador de registros git.
+        r"""Iterador de registros git.
 
         Args:
             content: Content register in git.
@@ -417,6 +456,29 @@ class Changelog:
 
         Raises:
             None
+
+        Examples:
+        iter_logs([
+                    (
+                        '1.0.0a5',
+                        {
+                            'date': '2023-12-21',
+                            'key': '1.0.0a5',
+                            'messages': {
+                                'Added': ['New function', 'One more new function.'],
+                                'Fixed': ['A bug of connection.'],
+                                },
+                        },
+                    ),
+                ], False)
+        [
+            '\n\n## 1.0.0a5\t &#8212; \t2023-12-21:',
+            '\n### Added',
+            '\n  - New function;',
+            '\n  - One more new function;',
+            '\n### Fixed',
+            '\n  - A bug of connection.",;',
+        ],
         """
         result = []
         for _, entrada in content:
@@ -440,7 +502,7 @@ class Changelog:
         return result
 
     def header(self: Changelog) -> list[str]:
-        """Header of changelog file.
+        r"""Header of changelog file.
 
         Returns:
             Return a list with a header of changelog file.
@@ -449,40 +511,39 @@ class Changelog:
             None
 
         Examples:
+        >>> changelog_header()
+        ['# CHANGELOG\n\n\n',
+        'All notable changes to this project',
+        ' will be documented in this file.\n\n',
+        'The format is based on ',
+        '[Keep a Changelog](https://keepachangelog.com/en/1.0.0/), ',
+        'this project adheres to'
+        '[Semantic Versioning](https://semver.org/spec/v2.0.0.html) '
+        'and [Conventional Commit]'
+        '(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n',
+        'This file was automatically generated for',
+        ' [incolume.py.changelog](https://gitlab.com/development-incolume/'
+        'incolumepy.utils/-/tree/0.2.0a2)',
+        '\n\n---\n']
 
-            >>> changelog_header()
-            ['# CHANGELOG\n\n\n',
-            'All notable changes to this project',
-            ' will be documented in this file.\n\n',
-            'The format is based on ',
-            '[Keep a Changelog](https://keepachangelog.com/en/1.0.0/), ',
-            'this project adheres to'
-            '[Semantic Versioning](https://semver.org/spec/v2.0.0.html) '
-            'and [Conventional Commit]'
-            '(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n',
-            'This file was automatically generated for',
-            ' [incolume.py.changelog](https://gitlab.com/development-incolume/'
-            'incolumepy.utils/-/tree/0.2.0a2)',
-            '\n\n---\n']
-
-            >>> changelog_header(
-                url_keepachangelog='https://keepachangelog.com/en/2.0.0/',
-                url_semver=https://semver.org/spec/v1.0.0.html,
+        >>> changelog_header(
+            url_keepachangelog='https://keepachangelog.com/en/2.0.0/',
+            url_semver=https://semver.org/spec/v1.0.0.html,
                 )
-            ["# CHANGELOG\n\n\n",
-            "All notable changes to this project",
-            " will be documented in this file.\n\n",
-            "The format is based on ",
-            "[Keep a Changelog](https://keepachangelog.com/en/2.0.0/),",
-            "this project adheres to "
-            "[Semantic Versioning](https://semver.org/spec/v1.0.0.html)"
-            "and [Conventional Commit]"
-            "(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n",
-            "This file was automatically generated for",
-            "[incolume.py.changelog](https://gitlab.com/development-incolume/"
-            "incolumepy.utils/-/tree/0.2.0a0)",
-            "\n\n---\n"]
-            """
+        ["# CHANGELOG\n\n\n",
+        "All notable changes to this project",
+        " will be documented in this file.\n\n",
+        "The format is based on ",
+        "[Keep a Changelog](https://keepachangelog.com/en/2.0.0/),",
+        "this project adheres to "
+        "[Semantic Versioning](https://semver.org/spec/v1.0.0.html)"
+        "and [Conventional Commit]"
+        "(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n",
+        "This file was automatically generated for",
+        "[incolume.py.changelog](https://gitlab.com/development-incolume/"
+        "incolumepy.utils/-/tree/0.2.0a0)",
+        "\n\n---\n"]
+        """
         return [
             '# CHANGELOG\n\n\n',
             'All notable changes to this project',
