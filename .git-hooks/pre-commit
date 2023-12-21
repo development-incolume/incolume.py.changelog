@@ -1,31 +1,29 @@
 #!/bin/bash
 
+RED="\033[0;91m"
+YELLOW="\033[0;93m"
+GREEN="\033[0;92m"
+DEFAULT="\033[0m"
+
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
-REGEX="^((bug|bugfix|enhancement|feature|fix|refactor)#([0-9]+)|(enhancement/epoch#[0-9]{10,})|dev|tags)$"
+REGEX="^(dev|(enhancement|feature|feat|bug|bugfix|fix|refactor)/epoch#([0-9]+)|([0-9]+\-[a-z0-9_\-]+))$"
 
 if ! [[ $BRANCH =~ $REGEX ]]; then
-  message="Your commit was rejected due to branching name"
-  message+="\nPlease don't commit directly to $BRANCH, "
-  message+="or rename your branch with '(feature|bug|bugfix|fix)#id-issue' syntax"
-  echo -e "\033[1;31mERROR: $message\033[0m";
+  echo -e "${RED}"
+  echo "Your commit was rejected due to branching name incompatible with rules."
+  echo ""
+  echo "Please rename your branch with syntax rules"
+  echo ""
+  echo "syntaxes:"
+  echo "   1: <(enhancement|feature|feat|bug|bugfix|fix)>/epoch#<timestamp>"
+  echo "     Ex:  enhancement/epoch#1234567890"
+  echo ""
+  echo "   2: <id-issue>-slug-title-issue"
+  echo "     Ex: 3-configurar-githooks"
+  echo -e "${DEFAULT}"
   exit 1
 fi
 
-REPO_DIR=$(git rev-parse --show-toplevel)
-
-message="[Policy] Checking code in $REPO_DIR with black..."
-# echo with color: https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
-echo -e "\033[1;34mInfo: $message\033[0m"
-
-poetry run black --check $REPO_DIR && poetry run isort --check $REPO_DIR
-
-if [ $? -eq 1 ]; then
-    message="[Policy] Black|Isort check failed, "
-    message+="please use black|isort to format your code."
-    echo -e "\033[1;31mERROR: $message\033[0m";
-    exit 1
-else
-    message="[Policy] Passed black|isort checking."
-    echo -e "\033[1;32mOK: $message\033[0m"
-    exit 0
-fi
+echo -e "${GREEN}"
+echo "Branching name rules. [OK]"
+echo -e "${DEFAULT}"

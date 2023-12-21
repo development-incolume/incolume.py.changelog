@@ -1,43 +1,77 @@
-"""Command Line Interface module."""
+"""CLI - Command Line Interface module."""
+from __future__ import annotations
 
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 import click
+from incolume.py.changelog.changelog import update_changelog
 
-from incolumepy.utils.changelog import update_changelog
+if TYPE_CHECKING:
+    from pathlib import Path  # pragma: no cover
 
 
 @click.command()
-@click.argument("nome", envvar="USER", type=click.STRING)
-def greeting(nome):
-    """Retorna o cumprimento para o nome passado.
+@click.argument('nome', envvar='USERNAME', type=click.STRING)
+def greeting(nome: str) -> None:
+    """Retorna a saudação para o nome passado.
 
-    :param nome: str
-    :return: None
+    Args:
+      nome: Nome de usuário
+
+    Returns:
+      Não há retorno. Uma saudação é exibida na tela.
+
+    Raises:
+      None
+
+    Examples:
+        >>> greeting Yoda
+        Oi Yoda!
+
+        >>> greeting
+        Oi <usuário logado>
+
     """
-    click.echo(f"Oi {nome}!")
+    click.echo(f'Oi {nome.title()}!')
 
 
 @click.command()
-# @click.argument('stream', type=click.STRING)
-@click.argument("file_changelog", type=click.STRING, default="CHANGELOG.md")
-@click.option(
-    "--url",
-    "-u",
-    default="https://gitlab.com/development-incolume/"
-    "incolumepy.utils/-/compare",
-    help="Url compare from repository of project.",
+@click.argument(
+    'file_changelog',
+    type=click.STRING,
+    default='CHANGELOG.md',
 )
 @click.option(
-    "--reverse", "-r", default=True, help="Reverse order of records."
+    '--url',
+    '-u',
+    default='https://github.com/development-incolume/'
+            'incolume.py.changelog/-/compare',
+    help='Url compare from repository of project.',
 )
-def changelog(file_changelog: str | Path, url: str = "", reverse: bool = True):
-    """Operacionaliza uma interface CLI para módulo incolumepy.utils.changelog.
+@click.option(
+    '--reverse',
+    '-r',
+    default=True,
+    help='Reverse order of records.',
+)
+def changelog(
+    file_changelog: str | Path,
+    url: str = '',
+    *,
+    reverse: bool = True,
+) -> bool:
+    """Operacionaliza uma interface CLI para módulo incolume.py.changelog.
 
-    :param changelog_file:  changelog full filename.
-    :param url: url compare from repository of project.
-    :param reverse: bool.
-    :return: bool. True if success
+    Args:
+        file_changelog:  changelog full filename.
+        url: url compare from repository of project.
+        reverse: Reverse order of records.
+
+    Returns:
+        True if success
+
+    Raises:
+        ValueError: When there is not git tag records.
 
     """
     return update_changelog(
