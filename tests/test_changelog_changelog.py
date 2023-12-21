@@ -1,11 +1,12 @@
 """Test module for changelog."""
+import sys
 from pathlib import Path
 from tempfile import gettempdir
-import pytest
 from unittest import mock
-from incolume.py.changelog import changelog as pkg
-import sys
 
+import pytest
+
+from incolume.py.changelog import changelog as pkg
 
 __author__ = '@britodfbr'  # pragma: no cover
 
