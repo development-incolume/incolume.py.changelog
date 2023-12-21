@@ -269,6 +269,18 @@ def changelog_body(
 
     Raises:
         None
+
+    Examples:
+        >>> changelog_body(
+                            [
+                                (
+                                    '1.0.1',
+                                    {Added: 'New function'}
+                                )
+                            ],
+                            ['1.0.1', 'Added', 'New Function']
+                            )
+        ['[1.0.1]', 'Added', 'New Function']
     """
     logging.debug(kwargs)
     content_formated.extend(Changelog.iter_logs(content[:-1]))
@@ -281,7 +293,7 @@ def changelog_footer(
     content_formated: list[str],
     **kwargs: str,
 ) -> list[str]:
-    """Footer of changelog file.
+    r"""Footer of changelog file.
 
     Args:
         content: Content of changelog's footer
@@ -294,6 +306,18 @@ def changelog_footer(
 
     Raises:
         None
+
+    Examples:
+        >>> changelog_footer(
+                                [
+                                    (
+                                        '1.0.1',
+                                        {Added: 'New function'}
+                                    )
+                                ],
+                                ['1.0.1', 'Added', 'New Function']
+                            )
+        ['1.0.1', 'Added', 'New Function', '\n---\n\n', '[1.0.1]: https://gitlab.com/development-incolume/incolumepy.utils/-/compare/1.0.0...1.0.1']
     """
     urlcompare = (
         kwargs.get('urlcompare')
