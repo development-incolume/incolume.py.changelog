@@ -234,15 +234,15 @@ def changelog_header(
     )
     url_semver = kwargs.get(
         'url_semver',
-        'https://semver.org/spec/v2.0.0.html'
+        'https://semver.org/spec/v2.0.0.html',
     )
     url_convetional_commit = kwargs.get(
         'url_convetional_commit',
-        'https://www.conventionalcommits.org/pt-br/v1.0.0/'
+        'https://www.conventionalcommits.org/pt-br/v1.0.0/',
     )
     url_project = kwargs.get(
         'url_project',
-        'https://github.com/development-incolume/incolume.py.changelog'
+        'https://github.com/development-incolume/incolume.py.changelog',
     )
     return [
         '# CHANGELOG\n\n\n',
