@@ -2,7 +2,7 @@
 
 from collections import OrderedDict
 from pathlib import Path
-
+from typing import List, Dict
 import pytest
 
 from incolume.py import changelog as pkg
@@ -212,7 +212,7 @@ def test_key_versions_2_sort(*,
 def test_apply_key_versions_2_sort(
     *,
     entrance: dict, reverse: bool,
-    expected: list,
+    expected: List,
 ) -> None:
     """Sort with this function."""
     result = sorted(

@@ -19,7 +19,7 @@ from incolume.py.changelog import cli
 def test_gretting(
     cli_runner: CliRunner,
     envvar: str,
-    entrance: dict,
+    entrance: Dict,
     expected: str,
 ) -> None:
     """Test cli gretting."""
