@@ -177,16 +177,16 @@ def changelog_messages(
 
 
 def changelog_header(
-    url_keepachangelog: str = '',
-    url_semver: str = '',
-    url_convetional_commit: str = '',
+    **kwargs: str,
 ) -> list[str]:
     r"""Header of changelog file.
 
     Args:
-        url_convetional_commit: Url of convetional commit.
-        url_keepachangelog: Url of keep a changelog.
-        url_semver: Url of semantic version.
+        url_keepachangelog (str): url for keep changelog.
+        url_semver (str): url for semantic version.
+        url_convetional_commit (str): url for convetional commit.
+        url_project (str): url principal for project.
+        kwargs: Anyone of the others items.
 
     Returns:
         Return a list with a header of changelog file.
@@ -228,13 +228,21 @@ def changelog_header(
         "incolumepy.utils/-/tree/0.2.0a0)",
         "\n\n---\n"]
     """
-    url_keepachangelog = (
-        url_keepachangelog or 'https://keepachangelog.com/en/1.0.0/'
+    url_keepachangelog = kwargs.get(
+        'url_keepachangelog',
+        'https://keepachangelog.com/en/1.0.0/',
     )
-    url_semver = url_semver or 'https://semver.org/spec/v2.0.0.html'
-    url_convetional_commit = (
-        url_convetional_commit
-        or 'https://www.conventionalcommits.org/pt-br/v1.0.0/'
+    url_semver = kwargs.get(
+        'url_semver',
+        'https://semver.org/spec/v2.0.0.html'
+    )
+    url_convetional_commit = kwargs.get(
+        'url_convetional_commit',
+        'https://www.conventionalcommits.org/pt-br/v1.0.0/'
+    )
+    url_project = kwargs.get(
+        'url_project',
+        'https://github.com/development-incolume/incolume.py.changelog'
     )
     return [
         '# CHANGELOG\n\n\n',
@@ -246,8 +254,7 @@ def changelog_header(
         f'[Semantic Versioning]({url_semver}) '
         f'and [Conventional Commit]({url_convetional_commit}).\n\n',
         'This file was automatically generated for',
-        f' [{__title__}](https://gitlab.com/development-incolume/'
-        f'incolumepy.utils/-/tree/{__version__})',
+        f' [{__title__}]({url_project}/-/tree/{__version__})',
         '\n\n---\n',
     ]
 
