@@ -35,7 +35,11 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
 
     Examples:
         >>> msg_classify('1.0.0 Adicionado: Nova funcionalidade.', 'pt-BR')
-        {'key': '0.1.0', 'date': '2023-12-18', 'messages': {'Added': ['Nova funcionalidade.']}
+        {
+            'key': '0.1.0',
+            'date': '2023-12-18',
+            'messages': {'Added': ['Nova funcionalidade.']
+        }
 
         >>> msg_classify('Corregido: corrección de error.', 'es-AR')
         ValueError: es-AR not suported! Use en-US, pt-BR
@@ -118,12 +122,12 @@ def changelog_messages(
         None
 
     Examples:
-        changelog_messages(
+        >>> changelog_messages(
             '1.0.0 Security: a;b;c;'
             'Removed: 1;2;3; Changed: a;b;c;d;e;'
             'Fixed: http://example.com; http://httpbin.com;'
             'Deprecated: 1;2;3;a;s;b; Added: a1;a2;a3.',
-            '1.1.0 Removed: 1;2' 
+            '1.1.0 Removed: 1;2'
             'Added: g;u'
             )
     [
@@ -458,19 +462,22 @@ class Changelog:
             None
 
         Examples:
-        iter_logs([
-                    (
-                        '1.0.0a5',
-                        {
-                            'date': '2023-12-21',
-                            'key': '1.0.0a5',
-                            'messages': {
-                                'Added': ['New function', 'One more new function.'],
-                                'Fixed': ['A bug of connection.'],
-                                },
-                        },
-                    ),
-                ], False)
+        >>> iter_logs([
+                        (
+                            '1.0.0a5',
+                            {
+                                'date': '2023-12-21',
+                                'key': '1.0.0a5',
+                                'messages': {
+                                    'Added': [
+                                        'New function',
+                                        'One more new function.'
+                                        ],
+                                    'Fixed': ['A bug of connection.'],
+                                    },
+                            },
+                        ),
+                    ], False)
         [
             '\n\n## 1.0.0a5\t &#8212; \t2023-12-21:',
             '\n### Added',
