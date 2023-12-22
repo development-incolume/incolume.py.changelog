@@ -19,6 +19,17 @@ logging.basicConfig(
 
 CHANGELOG_FILE = Path(__file__).parents[2] / 'CHANGELOG.md'
 
+def get_os_command(key: str) -> str:
+    """Generate command to git tag according OS."""
+    cmd = rf'git show -s --format=%cs {key}'
+    if sys.platform.casefold().startswith('win'):
+         cmd += r'^^{commit} --'
+    else:
+        cmd += r'^{commit} --'
+        
+    logging.debug(cmd)
+    return cmd
+
 
 def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
     """Classify and sort one record for messages git tag -n.
@@ -73,15 +84,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         )
 
     key, msg = msg.split(maxsplit=1)
-    cmd = ' '.join(
-        ['git', 'show', '-s', r'--format=%cs', key + r'^{commit} --'],
-    )
-    if sys.platform.casefold().startswith('win'):
-        cmd = ' '.join(
-            ['git', 'show', '-s', r'--format=%cs', key + r'^^{commit} --'],
-        )
-
-    logging.debug(cmd)
+    cmd = get_os_command(key)
     date = subprocess.getoutput(cmd).strip()
     logging.debug(date)
 
