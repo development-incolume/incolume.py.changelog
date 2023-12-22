@@ -1,5 +1,4 @@
 """Test module for changelog."""
-import sys
 from pathlib import Path
 from tempfile import gettempdir
 from unittest import mock
@@ -17,17 +16,46 @@ class TestCase:
     @pytest.mark.parametrize(
         'platform entrance expected'.split(),
         [
-            # pytest.param('', '', ''), 
-            pytest.param('linux', '1.0.0', r'git show -s --format=%cs 1.0.0^{commit} --'), 
-            pytest.param('macos', '1.0.0', r'git show -s --format=%cs 1.0.0^{commit} --'), 
-            pytest.param('Windows', '1.0.0', r'git show -s --format=%cs 1.0.0^^{commit} --'), 
-            pytest.param('win32', '1.0.0', r'git show -s --format=%cs 1.0.0^^{commit} --'), 
-            pytest.param('win64', '1.0.0', r'git show -s --format=%cs 1.0.0^^{commit} --'), 
-            pytest.param('WinNT', '1.0.0', r'git show -s --format=%cs 1.0.0^^{commit} --'), 
-            pytest.param('android', '1.0.0', r'git show -s --format=%cs 1.0.0^{commit} --'), 
-        ]
+            pytest.param(
+                'linux',
+                '1.0.0',
+                r'git show -s --format=%cs 1.0.0^{commit} --',
+            ),
+            pytest.param(
+                'macos',
+                '1.0.0',
+                r'git show -s --format=%cs 1.0.0^{commit} --',
+            ),
+            pytest.param(
+                'Windows',
+                '1.0.0',
+                r'git show -s --format=%cs 1.0.0^^{commit} --',
+            ),
+            pytest.param(
+                'win32',
+                '1.0.0',
+                r'git show -s --format=%cs 1.0.0^^{commit} --',
+            ),
+            pytest.param(
+                'win64',
+                '1.0.0',
+                r'git show -s --format=%cs 1.0.0^^{commit} --',
+            ),
+            pytest.param(
+                'WinNT',
+                '1.0.0',
+                r'git show -s --format=%cs 1.0.0^^{commit} --',
+            ),
+            pytest.param(
+                'android',
+                '1.0.0',
+                r'git show -s --format=%cs 1.0.0^{commit} --',
+            ),
+        ],
     )
-    def test_get_os_command(self, platform: str, entrance: str, expected: str) -> None:
+    def test_get_os_command(
+        self, platform: str, entrance: str, expected: str,
+    ) -> None:
         """Test get_os_command."""
         with mock.patch('sys.platform', platform):
             assert pkg.get_os_command(entrance) == expected
@@ -259,7 +287,8 @@ class TestCase:
     def test_msg_classify_result(
           self, entrance: dict, date: str, expected: dict) -> None:
         """Test it."""
-        with mock.patch('time.strftime') as t, mock.patch('subprocess.getoutput', autospec=True) as m:
+        with mock.patch('time.strftime') as t, \
+            mock.patch('subprocess.getoutput', autospec=True) as m:
             t.return_value = date
             m.return_value = date
             result = pkg.msg_classify(**entrance)
@@ -438,7 +467,8 @@ class TestCase:
     def test_changelog_messages(
           self, entrance: dict, dates: list, expected: list) -> None:
         """Test it."""
-        with mock.patch('time.strftime', return_value='2023-12-21'), mock.patch('subprocess.getoutput', autospec=True) as m:
+        with mock.patch('time.strftime', return_value='2023-12-21'), \
+            mock.patch('subprocess.getoutput', autospec=True) as m:
             m.side_effect = dates
             assert pkg.changelog_messages(**entrance) == expected
 
@@ -462,7 +492,8 @@ class TestCase:
     def test_changelog_write(
           self, entrance: dict, file_temp: Path, return_git_tag: str) -> None:
         """Test changelog_write."""
-        with mock.patch('time.strftime', return_value='2023-12-21'), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
+        with mock.patch('time.strftime', return_value='2023-12-21'), \
+            mock.patch('subprocess.getoutput', return_value='2023-12-21'):
             result = pkg.changelog_messages(text=return_git_tag)
             entrance.update({'content': result})
             if 'changelog_file' not in entrance:
@@ -491,7 +522,8 @@ class TestCase:
         entrance.update({'content': return_git_tag})
         if 'changelog_file' not in entrance:
             entrance.update({'changelog_file': file_temp})
-        with mock.patch('time.strftime', return_value='2023-12-21'), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
+        with mock.patch('time.strftime', return_value='2023-12-21'), \
+            mock.patch('subprocess.getoutput', return_value='2023-12-21'):
             assert pkg.update_changelog(**entrance)
 
 

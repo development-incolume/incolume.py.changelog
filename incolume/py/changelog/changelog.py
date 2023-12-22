@@ -23,10 +23,10 @@ def get_os_command(key: str) -> str:
     """Generate command to git tag according OS."""
     cmd = rf'git show -s --format=%cs {key}'
     if sys.platform.casefold().startswith('win'):
-         cmd += r'^^{commit} --'
+        cmd += r'^^{commit} --'
     else:
         cmd += r'^{commit} --'
-        
+
     logging.debug(cmd)
     return cmd
 
