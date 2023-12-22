@@ -11,10 +11,6 @@ from incolume.py.changelog import changelog as pkg
 __author__ = '@britodfbr'  # pragma: no cover
 
 
-@pytest.mark.skipif(
-    condition=sys.platform.casefold().startswith('win'),
-    reason='Do not run on Windows.',
-)
 class TestCase:
     """Class test case."""
     @pytest.mark.parametrize(
@@ -44,7 +40,7 @@ class TestCase:
     )
     def test_msg_classify_type(self, entrance: str) -> None:
         """Test it."""
-        with mock.patch('subprocess.getoutput', autospec=True) as m:
+        with mock.patch('time.strftime', autospec=False) as m:
             m.return_value = '2023-12-02T00:01:00000000001-0300'
             assert isinstance(pkg.msg_classify(entrance), dict)
 
@@ -75,8 +71,8 @@ class TestCase:
     )
     def test_msg_classify_value(self, entrance: str) -> None:
         """Test it."""
-        with mock.patch('subprocess.getoutput', autospec=True) as m:
-            m.return_value = '2023-12-02'
+        with mock.patch('time.strftime', autospec=False) as m:
+            m.return_value = '2023-12-02T00:01:00000000001-0300'
             result = pkg.msg_classify(entrance)
             assert 'key' in result
             assert 'date' in result
@@ -244,7 +240,8 @@ class TestCase:
     def test_msg_classify_result(
           self, entrance: dict, date: str, expected: dict) -> None:
         """Test it."""
-        with mock.patch('subprocess.getoutput', autospec=True) as m:
+        with mock.patch('time.strftime') as t, mock.patch('subprocess.getoutput', autospec=True) as m:
+            t.return_value = date
             m.return_value = date
             result = pkg.msg_classify(**entrance)
             assert expected == result
@@ -422,7 +419,7 @@ class TestCase:
     def test_changelog_messages(
           self, entrance: dict, dates: list, expected: list) -> None:
         """Test it."""
-        with mock.patch('subprocess.getoutput', autospec=True) as m:
+        with mock.patch('time.strftime', return_value='2023-12-21'), mock.patch('subprocess.getoutput', autospec=True) as m:
             m.side_effect = dates
             assert pkg.changelog_messages(**entrance) == expected
 
@@ -446,7 +443,7 @@ class TestCase:
     def test_changelog_write(
           self, entrance: dict, file_temp: Path, return_git_tag: str) -> None:
         """Test changelog_write."""
-        with mock.patch('subprocess.getoutput', return_value='2023-12-19'):
+        with mock.patch('time.strftime', return_value='2023-12-21'), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
             result = pkg.changelog_messages(text=return_git_tag)
             entrance.update({'content': result})
             if 'changelog_file' not in entrance:
@@ -475,7 +472,7 @@ class TestCase:
         entrance.update({'content': return_git_tag})
         if 'changelog_file' not in entrance:
             entrance.update({'changelog_file': file_temp})
-        with mock.patch('subprocess.getoutput', return_value='2023-12-19'):
+        with mock.patch('time.strftime', return_value='2023-12-21'), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
             assert pkg.update_changelog(**entrance)
 
 
