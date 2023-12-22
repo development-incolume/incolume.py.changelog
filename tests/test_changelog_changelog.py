@@ -13,6 +13,25 @@ __author__ = '@britodfbr'  # pragma: no cover
 
 class TestCase:
     """Class test case."""
+
+    @pytest.mark.parametrize(
+        'platform entrance expected'.split(),
+        [
+            # pytest.param('', '', ''), 
+            pytest.param('linux', '1.0.0', r'git show -s --format=%cs 1.0.0^{commit} --'), 
+            pytest.param('macos', '1.0.0', r'git show -s --format=%cs 1.0.0^{commit} --'), 
+            pytest.param('Windows', '1.0.0', r'git show -s --format=%cs 1.0.0^^{commit} --'), 
+            pytest.param('win32', '1.0.0', r'git show -s --format=%cs 1.0.0^^{commit} --'), 
+            pytest.param('win64', '1.0.0', r'git show -s --format=%cs 1.0.0^^{commit} --'), 
+            pytest.param('WinNT', '1.0.0', r'git show -s --format=%cs 1.0.0^^{commit} --'), 
+            pytest.param('android', '1.0.0', r'git show -s --format=%cs 1.0.0^{commit} --'), 
+        ]
+    )
+    def test_get_os_command(self, platform: str, entrance: str, expected: str) -> None:
+        """Test get_os_command."""
+        with mock.patch('sys.platform', platform):
+            assert pkg.get_os_command(entrance) == expected
+
     @pytest.mark.parametrize(
         'entrance',
         [
