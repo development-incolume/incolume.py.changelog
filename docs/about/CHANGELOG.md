@@ -5,10 +5,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.2.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.3.0a1)
 
 ---
 
+
+## [Unreleased]	 &#8212; 	2023-12-22:
+### Changed
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
+  - Uniformizado testes multiplataforma para (Linux e Windows);
+  - Cobertura parcial para estilo mypy;
 
 ## [0.2.0]	 &#8212; 	2023-12-21:
 ### Added
@@ -44,3 +53,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 [0.2.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.1.0...0.2.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/0.2.0...Unreleased
