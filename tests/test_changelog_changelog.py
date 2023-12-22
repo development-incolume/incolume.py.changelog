@@ -286,7 +286,7 @@ class TestCase:
         ],
     )
     def test_msg_classify_result(
-          self, entrance: Dict, date: str, expected: Dict) -> None:
+          self, entrance: Dict[str, str], date: str, expected: Dict[str, str]) -> None:
         """Test it."""
         with mock.patch('time.strftime') as t, \
             mock.patch('subprocess.getoutput', autospec=True) as m:
@@ -557,7 +557,7 @@ class TestCase:
         ],
     )
     def test_changelog_messages(
-          self, entrance: Dict, dates: List, expected: List) -> None:
+          self, entrance: Dict[str, str], dates: List[str], expected: List[str]) -> None:
         """Test it."""
         with mock.patch('time.strftime', return_value='2023-12-21'), \
             mock.patch('subprocess.getoutput', autospec=True) as m:
@@ -609,7 +609,7 @@ class TestCase:
         ],
     )
     def test_update_changelog(
-          self, entrance: Dict, file_temp: Path, return_git_tag: Dict) -> None:
+          self, entrance: Dict, file_temp: Path, return_git_tag: Dict[str, str]) -> None:
         """Test it."""
         entrance.update({'content': return_git_tag})
         if 'changelog_file' not in entrance:
@@ -628,7 +628,7 @@ class TestClassChangelog:
             {'reverse': False},
         ],
     )
-    def test_init(self, entrance: Dict) -> None:
+    def test_init(self, entrance: Dict[str, Union[str, bool]]) -> None:
         """Test for init class."""
         o = pkg.Changelog(**entrance)
         assert isinstance(o, pkg.Changelog)
@@ -741,6 +741,6 @@ class TestClassChangelog:
             ),
         ],
     )
-    def test_iter_logs(self, entrance: Dict[str, Union[bool, list]], expected: List[str]) -> None:
+    def test_iter_logs(self, entrance: Dict[str, Union[bool, List[str]]], expected: List[str]) -> None:
         """Test for iter_logs."""
         assert pkg.Changelog.iter_logs(**entrance) == expected

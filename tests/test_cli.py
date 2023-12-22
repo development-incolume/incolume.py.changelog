@@ -1,7 +1,7 @@
 """Test module for cli."""
 import os
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Union, Tuple
 import pytest
 from click.testing import CliRunner
 
@@ -40,7 +40,7 @@ def test_changelog(
     cli_runner: CliRunner,
     *,
     file_temp: Path,
-    entrance: dict,
+    entrance: Dict,
     expected: bool,
 ) -> None:
     """Test cli changelog."""
