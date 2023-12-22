@@ -74,15 +74,15 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
 
     key, msg = msg.split(maxsplit=1)
     cmd = ' '.join(
-        ['git', 'show', '-s', r'--format=%cs', key + r'^{commit} --']
+        ['git', 'show', '-s', r'--format=%cs', key + r'^{commit} --'],
     )
     if sys.platform.casefold().startswith('win'):
         cmd = ' '.join(
-            ['git', 'show', '-s', r'--format=%cs', key + r'^^{commit} --']
+            ['git', 'show', '-s', r'--format=%cs', key + r'^^{commit} --'],
         )
-        
+
     logging.debug(cmd)
-    date = subprocess.getoutput(cmd).strip()  # noqa: S603
+    date = subprocess.getoutput(cmd).strip()
     logging.debug(date)
 
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
@@ -323,15 +323,20 @@ def changelog_footer(
 
     Examples:
         >>> changelog_footer(
-                                [
-                                    (
-                                        '1.0.1',
-                                        {Added: 'New function'}
-                                    )
-                                ],
-                                ['1.0.1', 'Added', 'New Function']
-                            )
-        ['1.0.1', 'Added', 'New Function', '\n---\n\n', '[1.0.1]: https://gitlab.com/development-incolume/incolumepy.utils/-/compare/1.0.0...1.0.1']
+                [
+                    (
+                        '1.0.1',
+                        {Added: 'New function'}
+                    )
+                ],
+                ['1.0.1', 'Added', 'New Function']
+            )
+        [
+            '1.0.1', 'Added', 'New Function',
+            '\n---\n\n',
+            '[1.0.1]: https://gitlab.com/development-incolume/
+            incolumepy.utils/-/compare/1.0.0...1.0.1'
+        ]
     """
     urlcompare = (
         kwargs.get('urlcompare')
