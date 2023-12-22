@@ -5,6 +5,7 @@ import inspect
 import logging
 import re
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -17,6 +18,17 @@ logging.basicConfig(
 )
 
 CHANGELOG_FILE = Path(__file__).parents[2] / 'CHANGELOG.md'
+
+def get_os_command(key: str) -> str:
+    """Generate command to git tag according OS."""
+    cmd = rf'git show -s --format=%cs {key}'
+    if sys.platform.casefold().startswith('win'):
+        cmd += r'^^{commit} --'
+    else:
+        cmd += r'^{commit} --'
+
+    logging.debug(cmd)
+    return cmd
 
 
 def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
@@ -72,10 +84,8 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         )
 
     key, msg = msg.split(maxsplit=1)
-    ref = key + r'^{commit}'
-    cmd = ['git', 'show', '-s', '--format=%cs', ref]
-    logging.debug(cmd)
-    date = subprocess.check_output(cmd)  # noqa: S603
+    cmd = get_os_command(key)
+    date = subprocess.getoutput(cmd).strip()
     logging.debug(date)
 
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
@@ -177,16 +187,16 @@ def changelog_messages(
 
 
 def changelog_header(
-    url_keepachangelog: str = '',
-    url_semver: str = '',
-    url_convetional_commit: str = '',
+    **kwargs: str,
 ) -> list[str]:
     r"""Header of changelog file.
 
     Args:
-        url_convetional_commit: Url of convetional commit.
-        url_keepachangelog: Url of keep a changelog.
-        url_semver: Url of semantic version.
+        url_keepachangelog (str): url for keep changelog.
+        url_semver (str): url for semantic version.
+        url_convetional_commit (str): url for convetional commit.
+        url_project (str): url principal for project.
+        kwargs: Anyone of the others items.
 
     Returns:
         Return a list with a header of changelog file.
@@ -228,13 +238,21 @@ def changelog_header(
         "incolumepy.utils/-/tree/0.2.0a0)",
         "\n\n---\n"]
     """
-    url_keepachangelog = (
-        url_keepachangelog or 'https://keepachangelog.com/en/1.0.0/'
+    url_keepachangelog = kwargs.get(
+        'url_keepachangelog',
+        'https://keepachangelog.com/en/1.0.0/',
     )
-    url_semver = url_semver or 'https://semver.org/spec/v2.0.0.html'
-    url_convetional_commit = (
-        url_convetional_commit
-        or 'https://www.conventionalcommits.org/pt-br/v1.0.0/'
+    url_semver = kwargs.get(
+        'url_semver',
+        'https://semver.org/spec/v2.0.0.html',
+    )
+    url_convetional_commit = kwargs.get(
+        'url_convetional_commit',
+        'https://www.conventionalcommits.org/pt-br/v1.0.0/',
+    )
+    url_project = kwargs.get(
+        'url_project',
+        'https://github.com/development-incolume/incolume.py.changelog',
     )
     return [
         '# CHANGELOG\n\n\n',
@@ -246,8 +264,7 @@ def changelog_header(
         f'[Semantic Versioning]({url_semver}) '
         f'and [Conventional Commit]({url_convetional_commit}).\n\n',
         'This file was automatically generated for',
-        f' [{__title__}](https://gitlab.com/development-incolume/'
-        f'incolumepy.utils/-/tree/{__version__})',
+        f' [{__title__}]({url_project}/-/tree/{__version__})',
         '\n\n---\n',
     ]
 
@@ -309,15 +326,20 @@ def changelog_footer(
 
     Examples:
         >>> changelog_footer(
-                                [
-                                    (
-                                        '1.0.1',
-                                        {Added: 'New function'}
-                                    )
-                                ],
-                                ['1.0.1', 'Added', 'New Function']
-                            )
-        ['1.0.1', 'Added', 'New Function', '\n---\n\n', '[1.0.1]: https://gitlab.com/development-incolume/incolumepy.utils/-/compare/1.0.0...1.0.1']
+                [
+                    (
+                        '1.0.1',
+                        {Added: 'New function'}
+                    )
+                ],
+                ['1.0.1', 'Added', 'New Function']
+            )
+        [
+            '1.0.1', 'Added', 'New Function',
+            '\n---\n\n',
+            '[1.0.1]: https://gitlab.com/development-incolume/
+            incolumepy.utils/-/compare/1.0.0...1.0.1'
+        ]
     """
     urlcompare = (
         kwargs.get('urlcompare')
