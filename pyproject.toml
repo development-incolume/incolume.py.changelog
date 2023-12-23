@@ -2,8 +2,15 @@
 name = "incolume.py.changelog"
 version = "0.3.0a6"
 description = "Generate CHANGELOG.md"
+license = "Unlicense"
 keywords = ['python', 'utils', 'incolume']
-authors = ["britodfbr <contato@incolume.com.br>"]
+authors = [
+  "britodfbr <contato@incolume.com.br>",
+]
+maintainers = [
+  "britodfbr <contato@incolume.com.br>",
+]
+readme = "README.md"
 packages = [
   {include = "incolume", from=""},
 ]
