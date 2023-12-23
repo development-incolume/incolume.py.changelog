@@ -28,20 +28,23 @@ jobs:
           poetry install --without security,doc
 
 #      - name: Check isort
+#        continue-on-error: true
 #        run: |
 #          poetry run isort incolume/ tests/
 
-#      - name: Check blue code style
-#        run: |
-#          poetry run blue check incolume/ tests/
+      - name: Check blue code style
+        continue-on-error: true
+        run: |
+          poetry run blue check incolume/ tests/
 
       - name: Lint with ruff
         run: |
           poetry run ruff check
 
-#      - name: Check with mypy
-#        run: |
-#          poetry run mypy .
+      - name: Check with mypy
+        continue-on-error: true
+        run: |
+          poetry run mypy .
 
   test:
     runs-on: ${{ matrix.os }}
