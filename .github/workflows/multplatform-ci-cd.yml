@@ -27,9 +27,9 @@ jobs:
           python -m pip install --upgrade poetry pip
           poetry install --without security,doc
 
-      - name: Check isort
-        run: |
-          poetry run isort incolume/ tests/
+#      - name: Check isort
+#        run: |
+#          poetry run isort incolume/ tests/
 
 #      - name: Check blue code style
 #        run: |
