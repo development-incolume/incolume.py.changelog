@@ -19,13 +19,15 @@ logging.basicConfig(
 
 CHANGELOG_FILE = Path(__file__).parents[2] / 'CHANGELOG.md'
 
+
 def get_os_command(key: str) -> str:
     """Generate command to git tag according OS."""
+    cmd_supply = {
+        'win': r'^^{commit} --',
+    }
     cmd = rf'git show -s --format=%cs {key}'
-    if sys.platform.casefold().startswith('win'):
-        cmd += r'^^{commit} --'
-    else:
-        cmd += r'^{commit} --'
+    os_id = sys.platform.casefold()[:3]
+    cmd += cmd_supply.get(os_id, r'^{commit} --')
 
     logging.debug(cmd)
     return cmd
