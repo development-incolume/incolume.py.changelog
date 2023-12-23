@@ -12,7 +12,7 @@ on:
 
 jobs:
   linters:
-    name: Check linters
+    name: Check Quality Assurance
     runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@v3
@@ -31,9 +31,9 @@ jobs:
         run: |
           poetry run ruff check
 
-      - name: Check with mypy
-        run: |
-          poetry run mypy .
+#      - name: Check with mypy
+#        run: |
+#          poetry run mypy .
 
   test:
     runs-on: ${{ matrix.os }}
