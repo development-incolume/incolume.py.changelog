@@ -16,6 +16,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Definido checagem lint via ruff para CI/CD;
   - Incluído guia para markdown no menu da documentação;
   - Incluído validação CI/CD para QA (Quality Assurance);
+  - Acrescentado suporte a Python 3.12;
 ### Changed
   - Atingido cobertura de 100% no módulo changelog.cli;
   - Atingido cobertura de 100% no módulo changelog.changelog;
