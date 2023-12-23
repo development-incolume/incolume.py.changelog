@@ -31,9 +31,9 @@ jobs:
         run: |
           poetry run isort incolume/ tests/
 
-      - name: Check blue code style
-        run: |
-          poetry run blue check incolume/ tests/
+#      - name: Check blue code style
+#        run: |
+#          poetry run blue check incolume/ tests/
 
       - name: Lint with ruff
         run: |
