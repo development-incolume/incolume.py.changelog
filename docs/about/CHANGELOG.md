@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.3.0rc2)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.3.0rc3)
 
 ---
 
@@ -17,6 +17,60 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Incluído guia para markdown no menu da documentação;
   - Incluído validação CI/CD para QA (Quality Assurance);
   - Acrescentado suporte a Python 3.12;
+  - Acrescentado fluxo para publicação em TestPyPi;
+  - Acrescentado fluxo para publicação em Pypi;
+### Changed
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
+  - Uniformizado testes multiplataforma para (Linux e Windows);
+  - Cobertura parcial para estilo mypy;
+
+## [0.3.0rc3]	 &#8212; 	2023-12-24:
+### Added
+  - Acrescentado validação CI/CD multiplataforma ao projeto;
+  - Definido checagem lint via ruff para CI/CD;
+  - Incluído guia para markdown no menu da documentação;
+  - Incluído validação CI/CD para QA (Quality Assurance);
+  - Acrescentado suporte a Python 3.12;
+  - Acrescentado fluxo para publicação em TestPyPi;
+  - Acrescentado fluxo para publicação em Pypi;
+  - Acrescentado fluxo CI/CD para geração de documentação;
+  - Acrescentado documentação web online;
+### Changed
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
+  - Uniformizado testes multiplataforma para (Linux e Windows);
+  - Cobertura parcial para estilo mypy;
+
+## [0.3.0rc2]	 &#8212; 	2023-12-23:
+### Added
+  - Acrescentado validação CI/CD multiplataforma ao projeto;
+  - Definido checagem lint via ruff para CI/CD;
+  - Incluído guia para markdown no menu da documentação;
+  - Incluído validação CI/CD para QA (Quality Assurance);
+  - Acrescentado suporte a Python 3.12;
+  - Acrescentado fluxo para publicação em TestPyPi;
+  - Acrescentado fluxo para publicação em Pypi;
+### Changed
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
+  - Uniformizado testes multiplataforma para (Linux e Windows);
+  - Cobertura parcial para estilo mypy;
+
+## [0.3.0rc1]	 &#8212; 	2023-12-23:
+### Added
+  - Acrescentado validação CI/CD multiplataforma ao projeto;
+  - Definido checagem lint via ruff para CI/CD;
+  - Incluído guia para markdown no menu da documentação;
+  - Incluído validação CI/CD para QA (Quality Assurance);
+  - Acrescentado suporte a Python 3.12;
+  - Acrescentado fluxo para publicação em TestPyPi;
 ### Changed
   - Atingido cobertura de 100% no módulo changelog.cli;
   - Atingido cobertura de 100% no módulo changelog.changelog;
@@ -75,4 +129,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 [0.2.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.1.0...0.2.0
 [0.3.0rc0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.2.0...0.3.0rc0
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc0...Unreleased
+[0.3.0rc1]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc0...0.3.0rc1
+[0.3.0rc2]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc1...0.3.0rc2
+[0.3.0rc3]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc2...0.3.0rc3
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc3...Unreleased
