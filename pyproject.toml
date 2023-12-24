@@ -43,7 +43,7 @@ exclude = [
 ]
 
 [tool.poetry.urls]
-'Documentation' = '#'
+'Documentation' = 'https://development-incolume.github.io/incolume.py.changelog/'
 'Source' = 'https://github.com/development-incolume/incolume.py.changelog/releases'
 'Git' = 'https://github.com/development-incolume/incolume.py.changelog.git'
 'Tracker' = 'https://github.com/development-incolume/incolume.py.changelog/issues'
