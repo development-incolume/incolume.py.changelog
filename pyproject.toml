@@ -43,11 +43,11 @@ exclude = [
 ]
 
 [tool.poetry.urls]
-'Documentation' = 'https://brito.blog.incolume.com.br/search/label/development-incolume'
-'Source' = 'https://github.com/development-incolume/incolume.py.changelog'
+'Documentation' = '#'
+'Source' = 'https://github.com/development-incolume/incolume.py.changelog/releases'
 'Git' = 'https://github.com/development-incolume/incolume.py.changelog.git'
 'Tracker' = 'https://github.com/development-incolume/incolume.py.changelog/issues'
-'Oficial' = 'https://pypi.org/project/incolumepy.utils/'
+'Oficial' = 'https://pypi.org/project/incolume.py.changelog/'
 
 [tool.poetry.scripts]
 changelog = 'incolume.py.changelog.cli:changelog'

@@ -71,7 +71,7 @@ jobs:
 
   coverage:
     name: Coverage
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
     needs: [test]
     steps:
     - name: Upload coverage reports to Codecov
@@ -110,7 +110,7 @@ jobs:
 
   tagged-release:
     name: "Tagged Release"
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
     needs: [build]
     steps:
       - uses: actions/download-artifact@v3
