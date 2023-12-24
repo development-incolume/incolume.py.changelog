@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.3.0rc3"
+version = "0.3.0"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 keywords = ['python', 'utils', 'incolume']
@@ -10,7 +10,10 @@ authors = [
 maintainers = [
   "britodfbr <contato@incolume.com.br>",
 ]
-readme = "README.md"
+readme = [
+  "README.md",
+  "docs/index.md",
+]
 packages = [
   {include = "incolume", from=""},
 ]
