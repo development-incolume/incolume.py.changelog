@@ -109,6 +109,7 @@ jobs:
           path: dist/
 
       - uses: "marvinpinto/action-automatic-releases@latest"
+        continue-on-error: true
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: true
