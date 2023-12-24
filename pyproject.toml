@@ -12,7 +12,7 @@ maintainers = [
 ]
 readme = [
   "README.md",
-  "docs/incex.md",
+  "docs/index.md",
 ]
 packages = [
   {include = "incolume", from=""},
