@@ -10,7 +10,10 @@ authors = [
 maintainers = [
   "britodfbr <contato@incolume.com.br>",
 ]
-readme = "README.md"
+readme = [
+  "README.md",
+  "docs/incex.md",
+]
 packages = [
   {include = "incolume", from=""},
 ]
