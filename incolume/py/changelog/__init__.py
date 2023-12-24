@@ -23,10 +23,20 @@ def key_versions_2_sort(
 ) -> str:
     """Sort by SemVer notation.
 
-    :param regex: regex to version format.
-    :param qdig: Quantity digits to sort.
-    :param x: x[key, value] -> 'git tag -ln' output
-    :return: list sorted
+    Args:
+        regex: regex to version format.
+        qdig: Quantity digits to sort.
+        x: x[key, value] -> 'git tag -ln' output.
+
+    Returns:
+        Return a list sorted.
+
+    Raises:
+        TypeError: if parameter x not be a tuple or list.
+
+    Examples:
+        >>> key_version_2_sort(('1.1.1rc0', 'aaa'))
+        '00010501.080000'
     """
     qdig = qdig or 5
     if not isinstance(x, Container):
@@ -68,11 +78,16 @@ def key_versions_2_sort(
 def logger(str_format='', datefmt='', level=0, filelog=None):
     """Logger function for log.
 
-    :str_format:
-    :datefmt:
-    :level: can be (logging.DEBUG, logging.INFO, logging.WARNING,
+    Args:
+        str_format: format of string to log
+        datefmt: format date to log
+        level: can be (logging.DEBUG, logging.INFO, logging.WARNING,
        logging.ERROR, logging.CRITICAL)
-    :filelog:
+        filelog: log's file .py
+
+    Returns:
+        None
+
     """
     str_format = (
         str_format

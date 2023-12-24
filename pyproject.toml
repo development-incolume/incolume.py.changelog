@@ -1,9 +1,16 @@
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.2.0"
+version = "0.3.0rc3"
 description = "Generate CHANGELOG.md"
+license = "Unlicense"
 keywords = ['python', 'utils', 'incolume']
-authors = ["britodfbr <contato@incolume.com.br>"]
+authors = [
+  "britodfbr <contato@incolume.com.br>",
+]
+maintainers = [
+  "britodfbr <contato@incolume.com.br>",
+]
+readme = "README.md"
 packages = [
   {include = "incolume", from=""},
 ]
@@ -36,11 +43,11 @@ exclude = [
 ]
 
 [tool.poetry.urls]
-'Documentation' = 'https://brito.blog.incolume.com.br/search/label/development-incolume'
-'Source' = 'https://github.com/development-incolume/incolume.py.changelog'
+'Documentation' = 'https://development-incolume.github.io/incolume.py.changelog/'
+'Source' = 'https://github.com/development-incolume/incolume.py.changelog/releases'
 'Git' = 'https://github.com/development-incolume/incolume.py.changelog.git'
 'Tracker' = 'https://github.com/development-incolume/incolume.py.changelog/issues'
-'Oficial' = 'https://pypi.org/project/incolumepy.utils/'
+'Oficial' = 'https://pypi.org/project/incolume.py.changelog/'
 
 [tool.poetry.scripts]
 changelog = 'incolume.py.changelog.cli:changelog'
