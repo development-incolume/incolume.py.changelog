@@ -14,6 +14,7 @@ from incolume.py.changelog import cli
         pytest.param('', {'args': 'Yoda'}, 'Oi Yoda!\n'),
         pytest.param('Yoda', {'args': ''}, 'Oi Yoda!\n'),
         pytest.param('Visitante', {'args': 'obiwan'}, 'Oi Obiwan!\n'),
+        pytest.param('Yoda', {}, 'Oi Yoda!\n'),
     ],
 )
 def test_gretting(
