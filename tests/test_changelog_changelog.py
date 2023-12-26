@@ -462,6 +462,97 @@ class TestCase:
                 ],
                 marks=(),
             ),
+            pytest.param(
+                {
+                    'text': """
+                    1.0.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    1.3.0 Fixed: Fake record; other fake; Changed: Fake fixed",
+                    1.5.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    2.2.0 Security: Fake record; other record; Fake fixed",
+                    """,
+                    'start': 3,
+                },
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                [('2.2.0', {'key': '2.2.0', 'date': '2018-10-19', 'messages': {'Security': ['Fake record', ' other record', ' Fake fixed",']}})],
+            ),
+            pytest.param(
+                {
+                    'text': """
+                    1.0.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    1.3.0 Fixed: Fake record; other fake; Changed: Fake fixed",
+                    1.5.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    2.2.0 Security: Fake record; other record; Fake fixed",
+                    """,
+                    'end': 1,
+                },
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                [('1.0.0', {'key': '1.0.0', 'date': '2018-10-19', 'messages': {'Added': ['Fake record', ' other fake'], 'Fixed': ['Fake fixed",']}})],
+            ),
+            pytest.param(
+                {
+                    'text': """
+                    1.0.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    1.3.0 Fixed: Fake record; other fake; Changed: Fake fixed",
+                    1.5.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    2.2.0 Security: Fake record; other record; Fake fixed",
+                    """,
+                    'start': 1,
+                    'end': 2,
+                },
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                [('1.3.0', {'key': '1.3.0', 'date': '2018-10-19', 'messages': {'Changed': ['Fake fixed",'], 'Fixed': ['Fake record', ' other fake']}})],
+            ),
+            pytest.param(
+                {
+                    'text': """
+                    1.0.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    1.3.0 Fixed: Fake record; other fake; Changed: Fake fixed",
+                    1.5.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    2.2.0 Security: Fake record; other record; Fake fixed",
+                    """,
+                    'start': 2,
+                    'end': 3,
+                },
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                [('1.5.0', {'key': '1.5.0', 'date': '2018-10-19', 'messages': {'Added': ['Fake record', ' other fake'], 'Fixed': ['Fake fixed",']}})],
+            ),
+            pytest.param(
+                {
+                    'text': """
+                    1.0.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    1.3.0 Fixed: Fake record; other fake; Changed: Fake fixed",
+                    1.5.0 Added: Fake record; other fake; Fixed: Fake fixed",
+                    2.2.0 Security: Fake record; other record; Fake fixed",
+                    """,
+                    'start': 1,
+                    'end': 3,
+                },
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                [
+                    (
+                        '1.3.0', 
+                        {
+                            'key': '1.3.0', 
+                            'date': '2018-10-19', 
+                            'messages': {
+                                'Changed': ['Fake fixed",'], 
+                                'Fixed': ['Fake record', ' other fake']
+                            }
+                        }
+                    ), 
+                    (
+                        '1.5.0', 
+                        {
+                            'key': '1.5.0', 
+                            'date': '2022-01-21', 
+                            'messages': {
+                                'Added': ['Fake record', ' other fake'], 
+                                'Fixed': ['Fake fixed",']
+                            }
+                        }
+                    ),
+                ],
+            ),
         ],
     )
     def test_changelog_messages(
