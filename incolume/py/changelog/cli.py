@@ -1,13 +1,11 @@
 """CLI - Command Line Interface module."""
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any
+from typing import Any
 
 import click
-from incolume.py.changelog.changelog import update_changelog
 
-if TYPE_CHECKING:
-    from pathlib import Path  # pragma: no cover
+from incolume.py.changelog.changelog import update_changelog
 
 
 @click.command()
@@ -55,7 +53,7 @@ def greeting(nome: str) -> None:
     help='Reverse order of records.',
 )
 def changelog(
-    file_changelog: str | Path,
+    file_changelog: str,
     url: str = '',
     *,
     reverse: bool = True,
