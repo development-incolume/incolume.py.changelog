@@ -37,7 +37,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Acrescentado fluxo para publicação em TestPyPi;
   - Acrescentado fluxo para publicação em Pypi;
   - Acrescentado fluxo CI/CD para geração de documentação;
-  - Acrescentado documentação web online;
+  - Acrescentado documentação web online (https://development-incolume.github.io/incolume.py.changelog/);
 ### Changed
   - Atingido cobertura de 100% no módulo changelog.cli;
   - Atingido cobertura de 100% no módulo changelog.changelog;
