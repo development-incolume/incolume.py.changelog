@@ -27,10 +27,10 @@ jobs:
           python -m pip install --upgrade poetry pip
           poetry install --without security,doc
 
-#      - name: Check isort
-#        continue-on-error: true
-#        run: |
-#          poetry run isort incolume/ tests/
+      - name: Check isort
+        continue-on-error: true
+        run: |
+          poetry run isort check incolume/ tests/
 
       - name: Check blue code style
         continue-on-error: true
