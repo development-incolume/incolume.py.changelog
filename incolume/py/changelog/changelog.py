@@ -176,8 +176,10 @@ def changelog_messages(
     """
     logging.debug('parameters: (%s %s %s %s)', text, start, end, kwargs)
     lang: str = kwargs.get('lang', '')
-    start: int = int(start)
-    end: int = int(end)
+    if not start is None:
+        start = int(start)
+    if not end is None:
+        end = int(end)
 
     records = []
     for msg in text.strip().splitlines()[start:end]:

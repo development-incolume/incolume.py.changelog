@@ -2,7 +2,7 @@
 
 from collections import OrderedDict
 from pathlib import Path
-from typing import List, Dict, Tuple, Union
+from typing import List, Dict, Tuple, Union, Any
 import pytest
 
 from incolume.py import changelog as pkg
@@ -78,16 +78,19 @@ __author__ = '@britodfbr'  # pragma: no cover
         pytest.param(
             {
                 'expected_exception': TypeError,
-                'match': 'must be tuple, set or list.',
+                'match': 'must be tuple or list.',
             },
             {'x': 1},
             '00010501.099999',
         ),
     ],
 )
-def test_key_versions_2_sort(*,
-                             xcpt: Dict, entrance: Dict[str, str],
-                             expected: str) -> None:
+def test_key_versions_2_sort(
+    *,
+    xcpt: Any,
+    entrance: Dict[str, str],
+    expected: str,
+) -> None:
     """Test for key_versions_2_sort."""
     try:
         assert pkg.key_versions_2_sort(**entrance) == expected

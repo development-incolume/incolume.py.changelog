@@ -2,7 +2,7 @@
 from pathlib import Path
 from tempfile import gettempdir
 from unittest import mock
-from typing import Dict, List, Union
+from typing import Dict, List, Union, Tuple
 
 import pytest
 
@@ -582,7 +582,7 @@ class TestCase:
         ],
     )
     def test_changelog_write(
-          self, entrance: Dict, file_temp: Path, return_git_tag: str) -> None:
+          self, entrance: Dict[str, Union[str, Path]], file_temp: Path, return_git_tag: str) -> None:
         """Test changelog_write."""
         with mock.patch('time.strftime', return_value='2023-12-21'), \
             mock.patch('subprocess.getoutput', return_value='2023-12-21'):
@@ -609,7 +609,7 @@ class TestCase:
         ],
     )
     def test_update_changelog(
-          self, entrance: Dict, file_temp: Path, return_git_tag: Dict[str, str]) -> None:
+          self, entrance: Dict[str, Union[str, Path]], file_temp: Path, return_git_tag: str) -> None:
         """Test it."""
         entrance.update({'content': return_git_tag})
         if 'changelog_file' not in entrance:

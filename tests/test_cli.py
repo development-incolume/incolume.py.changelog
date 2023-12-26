@@ -1,7 +1,7 @@
 """Test module for cli."""
 import os
 from pathlib import Path
-from typing import Dict, List, Union, Tuple
+from typing import Dict, List, Union, Tuple, Optional, Mapping, Any
 import pytest
 from click.testing import CliRunner
 
@@ -20,7 +20,7 @@ from incolume.py.changelog import cli
 def test_gretting(
     cli_runner: CliRunner,
     envvar: str,
-    entrance: Dict,
+    entrance: Any,
     expected: str,
 ) -> None:
     """Test cli gretting."""
@@ -41,7 +41,7 @@ def test_changelog(
     cli_runner: CliRunner,
     *,
     file_temp: Path,
-    entrance: Dict,
+    entrance: Dict[str, Any],
     expected: bool,
 ) -> None:
     """Test cli changelog."""
