@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.4.0a0"
+version = "0.4.0a1"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 keywords = ['python', 'utils', 'incolume']
