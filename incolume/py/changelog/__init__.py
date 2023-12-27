@@ -78,7 +78,7 @@ def key_versions_2_sort(
         )
         logging.debug('plus: %s', plus)
         build = int(build) + plus
-        result = f'{major:0>4}{minor:0>2}{patch:0>2}.{build:0>6}'
+        result = f'{major:0>4}{minor:0>4}{patch:0>4}.{build:0>6}'
     except AttributeError:
         result = str(x[0])
     return result
