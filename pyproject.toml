@@ -57,6 +57,7 @@ changelog = 'incolume.py.changelog.cli:changelog'
 gcl = 'incolume.py.changelog.cli:changelog'
 gencl = 'incolume.py.changelog.cli:changelog'
 gchangelog = 'incolume.py.changelog.cli:changelog'
+greeting = 'incolume.py.changelog.cli:greeting'
 
 [tool.poetry.dependencies]
 python = "^3.8.1"
