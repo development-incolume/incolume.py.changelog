@@ -4,6 +4,7 @@
 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog)
 [![codecov](https://app.codecov.io/gh/development-incolume/incolume.py.changelog/branch/main/graph/badge.svg?token=QFULL7R8HX)](https://app.codecov.io/gh/development-incolume/incolume.py.changelog)
++[![PyPI version](https://badge.fury.io/py/incolume.py.changelog.svg)](https://badge.fury.io/py/incolume.py.changelog)
 
 [![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/python-package.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/python-package.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
