@@ -57,7 +57,8 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
 
 ## Melhores práticas de parágrafo
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A menos que o </font></font><a href="/basic-syntax/#paragraphs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">parágrafo esteja em uma lista</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, não recue os parágrafos com espaços ou tabulações.</font></font></p>
+A menos que o [parágrafo esteja em uma lista](#adicionando-elementos-em-listas), não recue os parágrafos com espaços ou tabulações.
+
 
 <div class="alert alert-info">
   <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> --> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Observação:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> se você precisar recuar parágrafos na saída, consulte a seção sobre como </font></font><a href="/hacks/#indent-tab"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">recuar (tabulação)&lt; uma eu=3&gt;.
@@ -93,7 +94,8 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
 
 ## Quebras de linha
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para criar uma quebra de linha ou uma nova linha (</font></font><code class="language-plaintext highlighter-rouge">&lt;br&gt;</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">), termine uma linha com dois ou mais espaços e digite return.</font></font></p>
+Para criar uma quebra de linha ou uma nova linha (`<br>`), termine uma linha com dois ou mais espaços e digite return.
+
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -124,13 +126,14 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   </tbody>
 </table>
 
-<h3 id="line-break-best-practices"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Práticas recomendadas para quebra de linha</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#line-break-best-practices" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### Práticas recomendadas para quebra de linha
+#TODO #line-break-best-practices
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Você pode usar dois ou mais espaços (comumente chamados de “espaço em branco à direita”) para quebras de linha em quase todos os aplicativos Markdown, mas isso é controverso. É difícil ver espaços em branco no final de um editor, e muitas pessoas acidentalmente ou intencionalmente colocam dois espaços após cada frase. Por esse motivo, você pode querer usar algo diferente de espaços em branco à direita para quebras de linha. Se seu aplicativo Markdown </font></font><a href="/basic-syntax/#html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">suportar HTML</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">, você poderá usar a tag HTML </font></font><code class="language-plaintext highlighter-rouge">&lt;br&gt;</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.</font></font></p>
+Você pode usar dois ou mais espaços (comumente chamados de “espaços em branco finais”) para quebras de linha em quase todos os aplicativos Markdown, mas isso é controverso. É difícil ver espaços em branco no final de um editor, e muitas pessoas acidentalmente ou intencionalmente colocam dois espaços após cada frase. Por esse motivo, você pode querer usar algo diferente de espaços em branco à direita para quebras de linha. Se o seu aplicativo [Markdown suportar HTML](/basic-syntax/#html), você poderá usar a `<br>` tag HTML.
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para compatibilidade, use o espaço em branco final ou a tag HTML </font></font><code class="language-plaintext highlighter-rouge">&lt;br&gt;</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> no final da linha.</font></font></p>
+Para compatibilidade, use o espaço em branco final ou a `<br>` tag HTML no final da linha.
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Existem duas outras opções que não recomendo usar. CommonMark e algumas outras linguagens de marcação leves permitem digitar uma barra invertida (</font></font><code class="language-plaintext highlighter-rouge">\</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">) no final da linha, mas nem todos os aplicativos Markdown suportam isso, portanto não é uma ótima opção de compatibilidade perspectiva. E pelo menos algumas linguagens de marcação leves não exigem nada no final da linha — basta digitar return e elas criarão uma quebra de linha.</font></font></p>
+Existem duas outras opções que não recomendo usar. CommonMark e algumas outras linguagens de marcação leves permitem digitar uma barra invertida `( \ )` no final da linha, mas nem todos os aplicativos Markdown suportam isso, portanto, não é uma ótima opção do ponto de vista de compatibilidade. E pelo menos algumas linguagens de marcação leves não exigem nada no final da linha - basta digitar return e elas criarão uma quebra de linha.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -166,11 +169,11 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
 
 ## Ênfase
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Você pode adicionar ênfase colocando o texto em negrito ou itálico.</font></font></p>
+Você pode adicionar ênfase colocando o texto em negrito ou itálico.
 
-<h3 id="bold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Audacioso</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#bold" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### Audacioso
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para texto em negrito, adicione dois asteriscos ou sublinhados antes e depois de uma palavra ou frase. Para colocar o meio de uma palavra em negrito para dar ênfase, adicione dois asteriscos sem espaços ao redor das letras.</font></font></p>
+Para texto em negrito, adicione dois asteriscos ou sublinhados antes e depois de uma palavra ou frase. Para colocar o meio de uma palavra em negrito para dar ênfase, adicione dois asteriscos sem espaços ao redor das letras.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -198,9 +201,9 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   </tbody>
 </table>
 
-<h4 id="bold-best-practices"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Melhores práticas ousadas</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#bold-best-practices" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+#### Melhores práticas ousadas
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Os aplicativos Markdown não concordam sobre como lidar com sublinhados no meio de uma palavra. Para compatibilidade, use asteriscos em negrito no meio de uma palavra para dar ênfase.</font></font></p>
+Os aplicativos Markdown não concordam sobre como lidar com sublinhados no meio de uma palavra. Para compatibilidade, use asteriscos em negrito no meio de uma palavra para dar ênfase.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -225,9 +228,9 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   </tbody>
 </table>
 
-<h3 id="italic"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">itálico</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#italic" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### itálico
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para colocar o texto em itálico, adicione um asterisco ou sublinhado antes e depois de uma palavra ou frase. Para colocar o meio de uma palavra em itálico para dar ênfase, adicione um asterisco sem espaços ao redor das letras.</font></font></p>
+Para colocar o texto em itálico, adicione um asterisco ou sublinhado antes e depois de uma palavra ou frase. Para colocar o meio de uma palavra em itálico para dar ênfase, adicione um asterisco sem espaços ao redor das letras.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -256,9 +259,10 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   </tbody>
 </table>
 
-<h4 id="italic-best-practices"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Melhores práticas em itálico</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#italic-best-practices" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+#### Melhores práticas em itálico
+#TODO #italic-best-practices
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Os aplicativos Markdown não concordam sobre como lidar com sublinhados no meio de uma palavra. Para compatibilidade, use asteriscos para colocar em itálico o meio de uma palavra para dar ênfase.</font></font></p>
+Os aplicativos Markdown não concordam sobre como lidar com sublinhados no meio de uma palavra. Para compatibilidade, use asteriscos para colocar em itálico o meio de uma palavra para dar ênfase.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -283,9 +287,10 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   </tbody>
 </table>
 
-<h3 id="bold-and-italic"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Negrito e Itálico</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#bold-and-italic" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### Negrito e Itálico
+#TODO #bold-and-italic
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para enfatizar o texto com negrito e itálico ao mesmo tempo, adicione três asteriscos ou sublinhados antes e depois de uma palavra ou frase. Para colocar negrito e itálico no meio de uma palavra para dar ênfase, adicione três asteriscos sem espaços ao redor das letras.</font></font></p>
+Para enfatizar o texto com negrito e itálico ao mesmo tempo, adicione três asteriscos ou sublinhados antes e depois de uma palavra ou frase. Para colocar negrito e itálico no meio de uma palavra para dar ênfase, adicione três asteriscos sem espaços ao redor das letras.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -328,9 +333,10 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   <svg class="svg-inline--fa fa-info-circle fa-w-16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path></svg><!-- <i class="fas fa-info-circle"></i> --> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Observação:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> a ordem das tags </font></font><code>em</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> e </font></font><code>strong</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> pode ser invertida dependendo do processador Markdown que você usa. 39;está usando.
 </font></font></div>
 
-<h4 id="bold-and-italic-best-practices"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Práticas recomendadas para negrito e itálico</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#bold-and-italic-best-practices" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+#### Práticas recomendadas para negrito e itálico
+#TODO #bold-and-italic-best-practices
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Os aplicativos Markdown não concordam sobre como lidar com sublinhados no meio de uma palavra. Para compatibilidade, use asteriscos para negrito e itálico no meio de uma palavra para dar ênfase.</font></font></p>
+Os aplicativos Markdown não concordam sobre como lidar com sublinhados no meio de uma palavra. Para compatibilidade, use asteriscos para negrito e itálico no meio de uma palavra para dar ênfase.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -357,27 +363,29 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
 
 ## Citações em bloco
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para criar uma citação em bloco, adicione um </font></font><code class="language-plaintext highlighter-rouge">&gt;</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> antes de um parágrafo.</font></font></p>
+Para criar uma citação em bloco, adicione um > antes de um parágrafo.
+
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; Dorothy followed her through many of the beautiful rooms in her castle.
 </code></pre></div></div>
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A saída renderizada fica assim:</font></font></p>
+A saída renderizada fica assim:
 
 <blockquote>
   <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dorothy a seguiu por muitos dos belos quartos de seu castelo.</font></font></p>
 </blockquote>
 
-<h3 id="blockquotes-with-multiple-paragraphs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Citações em bloco com vários parágrafos</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#blockquotes-with-multiple-paragraphs" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### Citações em bloco com vários parágrafos
+#TODO #blockquotes-with-multiple-paragraphs
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Aspas em bloco podem conter vários parágrafos. Adicione um </font></font><code class="language-plaintext highlighter-rouge">&gt;</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> nas linhas em branco entre os parágrafos.</font></font></p>
+Aspas em bloco podem conter vários parágrafos. Adicione um > nas linhas em branco entre os parágrafos.
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; Dorothy followed her through many of the beautiful rooms in her castle.<font></font>
 &gt;<font></font>
 &gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.<font></font>
 </code></pre></div></div>
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A saída renderizada fica assim:</font></font></p>
+A saída renderizada fica assim:
 
 <blockquote>
   <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dorothy a seguiu por muitos dos belos quartos de seu castelo.</font></font></p>
@@ -385,16 +393,17 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A Bruxa ordenou-lhe que limpasse as panelas e as chaleiras, varresse o chão e mantivesse o fogo alimentado com lenha.</font></font></p>
 </blockquote>
 
-<h3 id="nested-blockquotes"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Citações aninhadas</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#nested-blockquotes" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### Citações aninhadas
+#TODO #nested-blockquotes
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Aspas em bloco podem ser aninhadas. Adicione um </font></font><code class="language-plaintext highlighter-rouge">&gt;&gt;</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> antes do parágrafo que você deseja aninhar.</font></font></p>
+Aspas em bloco podem ser aninhadas. Adicione um >> antes do parágrafo que você deseja aninhar.
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; Dorothy followed her through many of the beautiful rooms in her castle.<font></font>
 &gt;<font></font>
 &gt;&gt; The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.<font></font>
 </code></pre></div></div>
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A saída renderizada fica assim:</font></font></p>
+A saída renderizada fica assim:
 
 <blockquote>
   <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dorothy a seguiu por muitos dos belos quartos de seu castelo.</font></font></p>
@@ -404,9 +413,10 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   </blockquote>
 </blockquote>
 
-<h3 id="blockquotes-with-other-elements"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Blockquotes com outros elementos</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#blockquotes-with-other-elements" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### Blockquotes com outros elementos
+#TODO #blockquotes-with-other-elements
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Blockquotes podem conter outros elementos formatados em Markdown. Nem todos os elementos podem ser usados ​​– você precisará experimentar para ver quais funcionam.</font></font></p>
+Blockquotes podem conter outros elementos formatados em Markdown. Nem todos os elementos podem ser usados ​​​​— você precisará experimentar para ver quais funcionam.
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; #### The quarterly results look great!<font></font>
 &gt;<font></font>
@@ -416,7 +426,7 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
 &gt;  *Everything* is going according to **plan**.<font></font>
 </code></pre></div></div>
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A saída renderizada fica assim:</font></font></p>
+A saída renderizada fica assim:
 
 <blockquote>
   <h4 class="no-anchor" id="the-quarterly-results-look-great"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Os resultados trimestrais parecem ótimos!</font></font></h4>
@@ -429,9 +439,10 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   <p><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tudo</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> está indo de acordo com o </font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">planejado</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">.</font></font></p>
 </blockquote>
 
-<h3 id="blockquotes-best-practices"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Práticas recomendadas para citações em bloco</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#blockquotes-best-practices" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### Práticas recomendadas para citações em bloco
+#TODO #blockquotes-best-practices
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para compatibilidade, coloque linhas em branco antes e depois das aspas.</font></font></p>
+Para compatibilidade, coloque linhas em branco antes e depois das aspas.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -464,11 +475,12 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
 
 ## Listas
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Você pode organizar itens em listas ordenadas e não ordenadas.</font></font></p>
+Você pode organizar itens em listas ordenadas e não ordenadas.
 
-<h3 id="ordered-lists"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Listas ordenadas</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#ordered-lists" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### Listas ordenadas
+#TODO #ordered-lists
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para criar uma lista ordenada, adicione itens de linha com números seguidos de pontos. Os números não precisam estar em ordem numérica, mas a lista deve começar com o número um.</font></font></p>
+Para criar uma lista ordenada, adicione itens de linha com números seguidos de pontos. Os números não precisam estar em ordem numérica, mas a lista deve começar com o número um.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -606,9 +618,10 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   </tbody>
 </table>
 
-<h4 id="ordered-list-best-practices"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Melhores práticas de lista ordenada</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#ordered-list-best-practices" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+#### Melhores práticas de lista ordenada
+#TODO #ordered-list-best-practices
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CommonMark e algumas outras linguagens de marcação leves permitem usar parênteses (</font></font><code class="language-plaintext highlighter-rouge">)</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">) como delimitador (por exemplo, </font></font><code class="language-plaintext highlighter-rouge">1) First item</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">), mas nem todo Markdown os aplicativos suportam isso, portanto não é uma ótima opção do ponto de vista de compatibilidade. Para fins de compatibilidade, use apenas pontos.</font></font></p>
+CommonMark e algumas outras linguagens de marcação leves permitem usar parênteses ( )) como delimitador (por exemplo, 1) _First item_), mas nem todo Markdown os aplicativos suportam isso, portanto não é uma ótima opção do ponto de vista de compatibilidade. Para fins de compatibilidade, use apenas pontos.
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -635,9 +648,12 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   </tbody>
 </table>
 
-<h3 id="unordered-lists"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Listas não ordenadas</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#unordered-lists" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
 
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para criar uma lista não ordenada, adicione travessões (</font></font><code class="language-plaintext highlighter-rouge">-</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">), asteriscos (</font></font><code class="language-plaintext highlighter-rouge">*</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">) ou sinais de mais (</font></font><code class="language-plaintext highlighter-rouge">+</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">) na frente dos itens de linha. Recue um ou mais itens para criar uma lista aninhada.</font></font></p>
+### Listas não ordenadas
+#TODO #unordered-lists
+
+Para criar uma lista não ordenada, adicione travessões ( - ), asteriscos ( * ) ou sinais de adição
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> </font></font><code class="language-plaintext highlighter-rouge">-</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;" (</font></font><code class="language-plaintext highlighter-rouge">*</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">) ou sinais de mais (</font></font><code class="language-plaintext highlighter-rouge">+</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">) na frente dos itens de linha. Recue um ou mais itens para criar uma lista aninhada.</font></font></p>
 
 <table class="table table-bordered">
   <thead class="thead-light">
@@ -846,7 +862,9 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   </tbody>
 </table>
 
-<h3 id="adding-elements-in-lists"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Adicionando Elementos em Listas</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#adding-elements-in-lists" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
+### Adicionando Elementos em Listas
+
+<h3 id="adding-elements-in-lists"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"></font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#adding-elements-in-lists" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h3>
 
 <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Para adicionar outro elemento a uma lista preservando a continuidade da lista, recue o elemento com quatro espaços ou uma tabulação, conforme mostrado nos exemplos a seguir.</font></font></p>
 
@@ -854,7 +872,9 @@ Para criar parágrafos, use uma linha em branco para separar uma ou mais linhas 
   <svg class="svg-inline--fa fa-lightbulb fa-w-11" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lightbulb" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg=""><path fill="currentColor" d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z"></path></svg><!-- <i class="fas fa-lightbulb"></i> --> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dica:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> se as coisas não aparecerem como você espera, verifique se você recuou os elementos da lista com quatro espaços ou uma tabulação.
 </font></font></div>
 
-<h4 id="paragraphs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parágrafos</font></font><a class="anchorjs-link " aria-label="Âncora" data-anchorjs-icon="" href="#paragraphs" style="font: 1em / 1 anchorjs-icons; padding-left: 0.375em;"></a></h4>
+#### Parágrafos
+
+
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* This is the first list item.<font></font>
 * Here's the second list item.<font></font>
@@ -1762,3 +1782,7 @@ eat: it was a [hobbit-hole][1], and that means comfort.<font></font>
 | :large_blue_circle: `:large_blue_circle:`                             | :large_blue_diamond: `:large_blue_diamond:`                   | :large_orange_diamond: `:large_orange_diamond:`           |
 | :small_blue_diamond: `:small_blue_diamond:`                           | :small_orange_diamond: `:small_orange_diamond:`               | :small_red_triangle: `:small_red_triangle:`               |
 | :small_red_triangle_down: `:small_red_triangle_down:`                 | :shipit: `:shipit:`                                           |
+
+## Referências
+
+- https://www.markdownguide.org/basic-syntax/
