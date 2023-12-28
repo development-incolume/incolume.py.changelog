@@ -1,10 +1,7 @@
 """CLI - Command Line Interface module."""
 from __future__ import annotations
 
-from typing import Any
-
 import click
-
 from incolume.py.changelog.changelog import update_changelog
 
 
@@ -57,7 +54,7 @@ def changelog(
     url: str = '',
     *,
     reverse: bool = True,
-) -> Any:
+) -> None:
     """Operacionaliza uma interface CLI para módulo incolume.py.changelog.
 
     Args:
