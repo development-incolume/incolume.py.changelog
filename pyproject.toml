@@ -432,8 +432,11 @@ target-version = "py38"
 # Decrease the maximum line length to 79 character.
 line-length = 79
 
+namespace-packages = ["incolume/py/changelog"]
+
 # Allow imports relative to directories
 src = ["incolume/", "tests/"]
+
 select = [
   "A",    #flake8-builtins
   "AIR",    #Airflow
@@ -495,12 +498,14 @@ select = [
 ]
 
 # Never enforce `E501` (line length violations).
-ignore = ["INP001", "CPY001"]
+ignore = ["INP001", "CPY001", "FA100", "UP006", "UP007"]
 
 # Avoid trying to fix flake8-bugbear (`B`) violations.
 unfixable = ["B"]
 
-namespace-packages = ["incolume/py"]
+# Enable fix for flake8-bugbear (`B`), on top of any rules specified by `fixable`.
+extend-fixable = ["B"]
+
 fix = false
 force-exclude = true
 task-tags = ["TODO", "FIXME"]
@@ -539,6 +544,7 @@ indent-style = "space"
   "I001",
   "PLR6301",
   "S101",
+  "ANN401", 
 ]
 "**/test_*.py" = [
   "ANN001",
@@ -547,6 +553,7 @@ indent-style = "space"
   "I001",
   "PLR6301",
   "S101",
+  "ANN401",  # suppress 
 ]
 
 [tool.ruff.mccabe]
