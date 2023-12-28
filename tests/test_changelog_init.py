@@ -2,7 +2,6 @@
 
 from collections import OrderedDict
 from pathlib import Path
-from typing import List, Dict, Tuple, Union, Any
 import pytest
 
 from incolume.py import changelog as pkg
@@ -87,8 +86,8 @@ __author__ = '@britodfbr'  # pragma: no cover
 )
 def test_key_versions_2_sort(
     *,
-    xcpt: Any,
-    entrance: Dict[str, str],
+    xcpt: dict,
+    entrance: dict,
     expected: str,
 ) -> None:
     """Test for key_versions_2_sort."""
@@ -214,8 +213,8 @@ def test_key_versions_2_sort(
 )
 def test_apply_key_versions_2_sort(
     *,
-    entrance: Dict[str, str], reverse: bool,
-    expected: List[Tuple[str, str]],
+    entrance: dict, reverse: bool,
+    expected: list,
 ) -> None:
     """Sort with this function."""
     result = sorted(

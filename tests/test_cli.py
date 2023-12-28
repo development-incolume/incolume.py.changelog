@@ -1,11 +1,14 @@
 """Test module for cli."""
-import os
-from pathlib import Path
-from typing import Dict, List, Union, Tuple, Optional, Mapping, Any
-import pytest
-from click.testing import CliRunner
+from __future__ import annotations
 
+import os
+from typing import Any, TYPE_CHECKING
+import pytest
 from incolume.py.changelog import cli
+
+if TYPE_CHECKING:
+    from click.testing import CliRunner
+    from pathlib import Path
 
 
 @pytest.mark.parametrize(
@@ -20,7 +23,7 @@ from incolume.py.changelog import cli
 def test_gretting(
     cli_runner: CliRunner,
     envvar: str,
-    entrance: Any,
+    entrance: dict,
     expected: str,
 ) -> None:
     """Test cli gretting."""
@@ -41,7 +44,7 @@ def test_changelog(
     cli_runner: CliRunner,
     *,
     file_temp: Path,
-    entrance: Dict[str, Any],
+    entrance: dict[str, Any],
     expected: bool,
 ) -> None:
     """Test cli changelog."""
