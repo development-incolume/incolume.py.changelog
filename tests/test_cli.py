@@ -1,5 +1,4 @@
 """Test module for cli."""
-
 import os
 from typing import Any, Dict
 import pytest
