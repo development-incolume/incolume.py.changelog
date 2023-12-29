@@ -2,7 +2,7 @@
 
 from collections import OrderedDict
 from pathlib import Path
-from typing import List, Dict, Tuple, Union, Any
+from typing import List, Dict, Tuple, Any
 import pytest
 
 from incolume.py import changelog as pkg

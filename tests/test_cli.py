@@ -1,11 +1,14 @@
 """Test module for cli."""
-import os
-from pathlib import Path
-from typing import Dict, List, Union, Tuple, Optional, Mapping, Any
-import pytest
-from click.testing import CliRunner
+from __future__ import annotations
 
+import os
+from typing import Any, Dict, TYPE_CHECKING
+import pytest
 from incolume.py.changelog import cli
+
+if TYPE_CHECKING:
+    from click.testing import CliRunner
+    from pathlib import Path
 
 
 @pytest.mark.parametrize(

@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 import re
 from pathlib import Path
-from typing import Container, List, Union, Tuple
+from typing import Container, List, Tuple, Union
 
 import toml
 
@@ -20,7 +20,7 @@ __title__ = 'incolume.py.changelog'
 
 def key_versions_2_sort(
     x: Union[List[str], Tuple[str]],
-    qdig: int = 0, 
+    qdig: int = 0,
     regex: str = '',
 ) -> str:
     """Sort by SemVer notation.
@@ -66,14 +66,14 @@ def key_versions_2_sort(
         build = build or '9' * qdig
         logging.debug(
             'values.group(5): %s',
-             values.group(5)  # type: ignore [union-attr]
-        )  
+             values.group(5),  # type: ignore [union-attr]
+        )
         plus = classifies.get(
             re.sub(
                 r'[-.]',
                 '',
-                str(values.group(5)).lower()  # type: ignore [union-attr]
-            ), 
+                str(values.group(5)).lower(),  # type: ignore [union-attr]
+            ),
             0,
         )
         logging.debug('plus: %s', plus)
