@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 import re
 from pathlib import Path
-from typing import Container
+from typing import Container, List, Tuple, Union
 
 import toml
 
@@ -19,7 +19,7 @@ __title__ = 'incolume.py.changelog'
 
 
 def key_versions_2_sort(
-    x: list[str] | tuple[str],
+    x: Union[List[str], Tuple[str]],
     qdig: int = 0,
     regex: str = '',
 ) -> str:

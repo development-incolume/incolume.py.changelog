@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any, TYPE_CHECKING
+from typing import Any, Dict, TYPE_CHECKING
 import pytest
 from incolume.py.changelog import cli
 
@@ -23,7 +23,7 @@ if TYPE_CHECKING:
 def test_gretting(
     cli_runner: CliRunner,
     envvar: str,
-    entrance: dict,
+    entrance: Any,
     expected: str,
 ) -> None:
     """Test cli gretting."""
@@ -44,7 +44,7 @@ def test_changelog(
     cli_runner: CliRunner,
     *,
     file_temp: Path,
-    entrance: dict[str, Any],
+    entrance: Dict[str, Any],
     expected: bool,
 ) -> None:
     """Test cli changelog."""
