@@ -1,6 +1,5 @@
 """CLI - Command Line Interface module."""
 
-
 import click
 from incolume.py.changelog.changelog import update_changelog
 
@@ -69,8 +68,6 @@ def changelog(
         ValueError: When there is not git tag records.
 
     """
-    update_changelog(
-        changelog_file=file_changelog,
-        urlcompare=url,
-        reverse=reverse,
-    )
+    result = update_changelog(
+        changelog_file=file_changelog, urlcompare=url, reverse=reverse)
+    click.echo(f'{result}')
