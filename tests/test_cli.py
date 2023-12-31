@@ -1,6 +1,7 @@
 """Test module for cli."""
 import os
 from pathlib import Path
+from typing import Any, Dict
 
 import pytest
 from click.testing import CliRunner
@@ -14,12 +15,13 @@ from incolume.py.changelog import cli
         pytest.param('', {'args': 'Yoda'}, 'Oi Yoda!\n'),
         pytest.param('Yoda', {'args': ''}, 'Oi Yoda!\n'),
         pytest.param('Visitante', {'args': 'obiwan'}, 'Oi Obiwan!\n'),
+        pytest.param('Yoda', {}, 'Oi Yoda!\n'),
     ],
 )
 def test_gretting(
     cli_runner: CliRunner,
     envvar: str,
-    entrance: dict,
+    entrance: Any,
     expected: str,
 ) -> None:
     """Test cli gretting."""
@@ -40,9 +42,10 @@ def test_changelog(
     cli_runner: CliRunner,
     *,
     file_temp: Path,
-    entrance: dict,
+    entrance: Dict[str, Any],
     expected: bool,
 ) -> None:
     """Test cli changelog."""
     entrance.update({'args': [file_temp.as_posix()]})
-    assert bool(cli_runner.invoke(cli.changelog, **entrance)) == expected
+    result = cli_runner.invoke(cli.changelog, **entrance)
+    assert bool(result.output) == expected
