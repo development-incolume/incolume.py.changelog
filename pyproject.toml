@@ -498,7 +498,14 @@ select = [
 ]
 
 # Never enforce `E501` (line length violations).
-ignore = ["INP001", "CPY001", "FA100", "UP006", "UP007"]
+ignore = [
+  "INP001",
+  "CPY001",
+  "FA100",  # Conflit with mypy
+  "UP006",  # Conflit with mypy
+  "UP007",  # Conflit with mypy
+  "I001",   # conflit with isort
+]
 
 # Avoid trying to fix flake8-bugbear (`B`) violations.
 unfixable = ["B"]
@@ -544,7 +551,7 @@ indent-style = "space"
   "I001",
   "PLR6301",
   "S101",
-  "ANN401", 
+  "ANN401",  # suppress due conflit with mypy
 ]
 "**/test_*.py" = [
   "ANN001",
@@ -553,7 +560,7 @@ indent-style = "space"
   "I001",
   "PLR6301",
   "S101",
-  "ANN401",  # suppress 
+  "ANN401",  # suppress due conflit with mypy
 ]
 
 [tool.ruff.mccabe]
