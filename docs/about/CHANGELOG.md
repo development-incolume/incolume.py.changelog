@@ -5,12 +5,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.4.0a5)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.4.0)
 
 ---
 
 
 ## [Unreleased]	 &#8212; 	2023-12-31:
+### Changed
+  - Atualizado verificação de tipo estático `mypy` para compatibilidade de versão a partir do Python 3.8;
+  - Atualizado logo do projeto;
+### Fixed
+  - Ajuste de conflitos entre ruff e mypy;
+  - Recuperado cobertura de 100% no módulo changelog.cli;
+
+## [0.4.0]	 &#8212; 	2023-12-31:
 ### Changed
   - Atualizado verificação de tipo estático `mypy` para compatibilidade de versão a partir do Python 3.8;
   - Atualizado logo do projeto;
@@ -163,4 +171,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.3.0rc3]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc2...0.3.0rc3
 [0.3.0rc4]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc3...0.3.0rc4
 [0.3.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc4...0.3.0
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0...Unreleased
+[0.4.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0...0.4.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/0.4.0...Unreleased
