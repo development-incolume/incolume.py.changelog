@@ -3,6 +3,7 @@
 from collections import OrderedDict
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
+
 import pytest
 
 from incolume.py import changelog as pkg
