@@ -11,12 +11,10 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 
 ## [Unreleased]	 &#8212; 	2023-12-31:
-### Changed
-  - Atualizado verificação de tipo estático `mypy` para compatibilidade de versão a partir do Python 3.8;
-  - Atualizado logo do projeto;
 ### Fixed
-  - Ajuste de conflitos entre ruff e mypy;
-  - Recuperado cobertura de 100% no módulo changelog.cli;
+  - Sanado conflito entre ferramentas de validação de tipo;
+  - Sanado conflito entre ferramentas de ordenação de pacotes;
+  - Sando conflito entre ferramentas lint;
 
 ## [0.4.0]	 &#8212; 	2023-12-31:
 ### Changed
