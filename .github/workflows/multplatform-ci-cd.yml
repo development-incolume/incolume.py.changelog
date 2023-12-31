@@ -44,7 +44,7 @@ jobs:
       - name: Check with mypy
         continue-on-error: true
         run: |
-          poetry run mypy .
+          poetry run mypy incolume/ tests/
 
   test:
     runs-on: ${{ matrix.os }}
@@ -64,10 +64,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install -U poetry pip
-        poetry install --with dev
+        poetry install
 
     - name: Test with pytest and generate coverage report
-      run: poetry run pytest
+      run: |
+        poetry run pytest -vv
 
   coverage:
     name: Coverage
@@ -153,6 +154,7 @@ jobs:
           path: dist/
 
       - name: Publish to testpypi
+        continue-on-error: true
         run: |
           poetry publish -r testpypi
 
@@ -182,6 +184,7 @@ jobs:
           path: dist/
 
       - name: Publish to pypi
+        continue-on-error: true
         run: |
           poetry publish
 
