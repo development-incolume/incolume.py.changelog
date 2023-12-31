@@ -44,7 +44,7 @@ jobs:
       - name: Check with mypy
         continue-on-error: true
         run: |
-          poetry run mypy .
+          poetry run mypy incolume/ tests/
 
   test:
     runs-on: ${{ matrix.os }}
