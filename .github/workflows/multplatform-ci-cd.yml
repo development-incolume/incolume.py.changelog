@@ -2,13 +2,9 @@ name: Multiplataform GWA CI/CD    # Success run
 
 on:
   pull_request:
-    branches: 
+    branches:
       - main
   push:
-    branches-ignore:
-      - wip
-      - WIP
-      - dev
     branches:
       - main
     tags:
