@@ -1,8 +1,8 @@
 """Test module for changelog."""
 from pathlib import Path
 from tempfile import gettempdir
-from unittest import mock
 from typing import Dict, List, Union
+from unittest import mock
 
 import pytest
 

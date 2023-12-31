@@ -2,9 +2,11 @@
 import os
 from pathlib import Path
 from typing import Any, Dict
+
 import pytest
-from incolume.py.changelog import cli
 from click.testing import CliRunner
+
+from incolume.py.changelog import cli
 
 
 @pytest.mark.parametrize(
