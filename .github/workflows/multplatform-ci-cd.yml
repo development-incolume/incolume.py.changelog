@@ -154,6 +154,7 @@ jobs:
           path: dist/
 
       - name: Publish to testpypi
+        continue-on-error: true
         run: |
           poetry publish -r testpypi
 
@@ -183,6 +184,7 @@ jobs:
           path: dist/
 
       - name: Publish to pypi
+        continue-on-error: true
         run: |
           poetry publish
 
