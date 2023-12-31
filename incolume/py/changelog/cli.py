@@ -1,13 +1,8 @@
 """CLI - Command Line Interface module."""
-from __future__ import annotations
-
-from typing import TYPE_CHECKING
 
 import click
-from incolume.py.changelog.changelog import update_changelog
 
-if TYPE_CHECKING:
-    from pathlib import Path  # pragma: no cover
+from incolume.py.changelog.changelog import update_changelog
 
 
 @click.command()
@@ -55,11 +50,11 @@ def greeting(nome: str) -> None:
     help='Reverse order of records.',
 )
 def changelog(
-    file_changelog: str | Path,
+    file_changelog: str,
     url: str = '',
     *,
     reverse: bool = True,
-) -> bool:
+) -> None:
     """Operacionaliza uma interface CLI para módulo incolume.py.changelog.
 
     Args:
@@ -74,8 +69,6 @@ def changelog(
         ValueError: When there is not git tag records.
 
     """
-    return update_changelog(
-        changelog_file=file_changelog,
-        urlcompare=url,
-        reverse=reverse,
-    )
+    result = update_changelog(
+        changelog_file=file_changelog, urlcompare=url, reverse=reverse)
+    click.echo(f'{result}')

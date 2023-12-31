@@ -115,8 +115,8 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
 def changelog_messages(
     *,
     text: str,
-    start: int | None = None,
-    end: int | None = None,
+    start: str | int | None = None,
+    end: str | int | None = None,
     **kwargs: str,
 ) -> list[tuple[str, dict[str, Any]]]:
     """Changelog messages sort and classify.
@@ -175,7 +175,11 @@ def changelog_messages(
     ]
     """
     logging.debug('parameters: (%s %s %s %s)', text, start, end, kwargs)
-    lang = kwargs.get('lang', '')
+    lang: str = kwargs.get('lang', '')
+    if start is not None:
+        start = int(start)
+    if end is not None:
+        end = int(end)
 
     records = []
     for msg in text.strip().splitlines()[start:end]:

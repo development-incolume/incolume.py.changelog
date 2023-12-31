@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 import re
 from pathlib import Path
-from typing import Container
+from typing import Container, List, Tuple, Union
 
 import toml
 
@@ -19,7 +19,9 @@ __title__ = 'incolume.py.changelog'
 
 
 def key_versions_2_sort(
-    x: Container[str], qdig: int = 0, regex: str = '',
+    x: Union[List[str], Tuple[str]],
+    qdig: int = 0,
+    regex: str = '',
 ) -> str:
     """Sort by SemVer notation.
 
@@ -40,7 +42,7 @@ def key_versions_2_sort(
     """
     qdig = qdig or 5
     if not isinstance(x, Container):
-        msg = f"'x={x}', must be tuple, set or list."
+        msg = f"'x={x}', must be tuple or list."  # type: ignore [unreachable]
         raise TypeError(msg)
 
     classifies = {
@@ -56,20 +58,27 @@ def key_versions_2_sort(
     try:
         # pegar major, minor e patch
         values = get_major_minor_patch_build.search(x[0])
-        major = values.group(1)
-        minor = values.group(2)
-        patch = values.group(3)
-        build = values.group(6)
+        major = values.group(1)  # type: ignore [union-attr]
+        minor = values.group(2)  # type: ignore [union-attr]
+        patch = values.group(3)  # type: ignore [union-attr]
+        build = values.group(6)  # type: ignore [union-attr]
         # pegar build, se não tiver colocar uma alta 99999
         build = build or '9' * qdig
-        logging.debug('values.group(5): %s', values.group(5))
+        logging.debug(
+            'values.group(5): %s',
+             values.group(5),  # type: ignore [union-attr]
+        )
         plus = classifies.get(
-            re.sub(r'[-.]', '', str(values.group(5)).lower()),
+            re.sub(
+                r'[-.]',
+                '',
+                str(values.group(5)).lower(),  # type: ignore [union-attr]
+            ),
             0,
         )
         logging.debug('plus: %s', plus)
         build = int(build) + plus
-        result = f'{major:0>4}{minor:0>2}{patch:0>2}.{build:0>6}'
+        result = f'{major:0>4}{minor:0>4}{patch:0>4}.{build:0>6}'
     except AttributeError:
         result = str(x[0])
     return result

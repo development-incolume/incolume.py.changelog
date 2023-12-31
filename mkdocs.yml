@@ -6,7 +6,7 @@ edit_uri: tree/dev/docs
 theme:
   name: material
   language: pt-BR
-  logo: asserts/img/jedi_logo.png
+  logo: asserts/img/cl_logo.png
   favicon: asserts/img/jedi_logo.png
 
 markdown_extensions:
