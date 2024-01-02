@@ -5,12 +5,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.4.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.5.0)
 
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-12-31:
+## [0.5.0]	 &#8212; 	2024-01-01:
+### Fixed
+  - Correção em ações de fluxo CI/CD;
+  - Sanado conflito entre ferramentas de validação de tipo;
+  - Sanado conflito entre ferramentas de ordenação de pacotes;
+  - Sando conflito entre ferramentas lint;
+
+## [0.5.0rc0]	 &#8212; 	2023-12-31:
 ### Fixed
   - Sanado conflito entre ferramentas de validação de tipo;
   - Sanado conflito entre ferramentas de ordenação de pacotes;
@@ -170,4 +177,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.3.0rc4]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc3...0.3.0rc4
 [0.3.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc4...0.3.0
 [0.4.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0...0.4.0
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/0.4.0...Unreleased
+[0.5.0rc0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.4.0...0.5.0rc0
+[0.5.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.5.0rc0...0.5.0
