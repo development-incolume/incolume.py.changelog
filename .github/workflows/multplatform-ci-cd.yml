@@ -10,6 +10,13 @@ on:
     tags:
       - "*.*.*"
 
+  workflow_dispatch:
+    branches:
+      - dev
+      - main
+    tags:
+      - "*.*.*"
+
 jobs:
   linters:
     name: Check Quality Assurance
