@@ -5,12 +5,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.6.0rc0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.6.0)
 
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-12-31:
+## [0.6.0]	 &#8212; 	2024-01-02:
 ### Fixed
   - Correção na excução de testes unitários em CI/CD;
 
@@ -188,4 +188,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.5.0rc0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.4.0...0.5.0rc0
 [0.5.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.5.0rc0...0.5.0
 [0.6.0rc0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.5.0...0.6.0rc0
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.0rc0...Unreleased
+[0.6.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.0rc0...0.6.0
