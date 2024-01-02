@@ -36,9 +36,9 @@ def test_gretting(
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [
-        ({}, 'True'),
-        # ({'url': 'http://example.org/xpto'}, True),
-        # ({'url': 'http://example.org/xpto', 'reverse': False}, True),
+        pytest.param({'args': ''}, True, marks=()),
+        pytest.param({'args': ['-u', 'http://example.org/xpto']}, True, marks=()),
+        pytest.param({'args': ['--url', 'http://example.org/xpto', 'reverse', 'false']}, True, marks=()),
     ],
 )
 def test_changelog(
@@ -49,10 +49,21 @@ def test_changelog(
     expected: bool,
 ) -> None:
     """Test cli changelog."""
-    entrance.update({'args': [file_temp.as_posix()]})
-    with mock.patch('time.strftime') as t, \
-        mock.patch('subprocess.getoutput', autospec=True) as m:
-        t.return_value = '2024-01-01T00:01:00.000000001-0300'
-        m.return_value = '2024-01-01T00:01:00.000000001-0300'
+    entrance.update({'args': [file_temp.as_posix(), *entrance.get('args')]})
+    with mock.patch(
+        f'incolume.py.changelog.changelog.changelog_messages', autospec=True) as m:
+        m.return_value = [
+            (
+                '1.1.0',
+                {
+                    'key': '1.1.0',
+                    'date': '2023-12-21',
+                    'messages': {
+                        'Added': ['g', 'u'],
+                        'Removed': ['1', '2'],
+                   },
+                },
+            ),
+        ]
         result = cli_runner.invoke(cli.changelog, **entrance)
-        assert result.output.strip() == expected
+        assert bool(result.output.strip()) == expected
