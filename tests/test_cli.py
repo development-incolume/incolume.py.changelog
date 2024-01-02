@@ -1,7 +1,7 @@
 """Test module for cli."""
 import os
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, List
 from unittest import mock
 
 import pytest
@@ -36,22 +36,32 @@ def test_gretting(
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [
-        pytest.param({'args': ''}, True, marks=()),
-        pytest.param({'args': ['-u', 'http://example.org/xpto']}, True, marks=()),
-        pytest.param({'args': ['--url', 'http://example.org/xpto', 'reverse', 'false']}, True, marks=()),
+        pytest.param([], True, marks=()),
+        pytest.param(
+            ['-u', 'http://example.org/xpto'], True, marks=()),
+        pytest.param(
+            [
+                '--url', 'http://example.org/xpto',
+                'reverse', 'false',
+            ],
+            True, marks=(),
+        ),
     ],
 )
 def test_changelog(
     cli_runner: CliRunner,
     *,
     file_temp: Path,
-    entrance: Dict[str, Any],
+    entrance: List[str],
     expected: bool,
 ) -> None:
     """Test cli changelog."""
-    entrance.update({'args': [file_temp.as_posix(), *entrance.get('args')]})
+    params = [file_temp.as_posix(), *entrance]
+
     with mock.patch(
-        f'incolume.py.changelog.changelog.changelog_messages', autospec=True) as m:
+        'incolume.py.changelog.changelog.changelog_messages',
+          autospec=True,
+    ) as m:
         m.return_value = [
             (
                 '1.1.0',
@@ -65,5 +75,5 @@ def test_changelog(
                 },
             ),
         ]
-        result = cli_runner.invoke(cli.changelog, **entrance)
+        result = cli_runner.invoke(cli.changelog, params)
         assert bool(result.output.strip()) == expected
