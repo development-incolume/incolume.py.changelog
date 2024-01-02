@@ -128,7 +128,7 @@ def changelog_messages(
         **kwargs: Anyone of the positional items.
 
     Returns:
-        return a list with a changelog menssage.
+        return a list of tuples with a changelog menssage per line.
 
     Raises:
         None
