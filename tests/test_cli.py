@@ -2,6 +2,7 @@
 import os
 from pathlib import Path
 from typing import Any, Dict
+from unittest import mock
 
 import pytest
 from click.testing import CliRunner
@@ -35,7 +36,9 @@ def test_gretting(
 @pytest.mark.parametrize(
     'entrance expected'.split(),
     [
-        ({}, True),
+        ({}, 'True'),
+        # ({'url': 'http://example.org/xpto'}, True),
+        # ({'url': 'http://example.org/xpto', 'reverse': False}, True),
     ],
 )
 def test_changelog(
@@ -47,5 +50,9 @@ def test_changelog(
 ) -> None:
     """Test cli changelog."""
     entrance.update({'args': [file_temp.as_posix()]})
-    result = cli_runner.invoke(cli.changelog, **entrance)
-    assert bool(result.output) == expected
+    with mock.patch('time.strftime') as t, \
+        mock.patch('subprocess.getoutput', autospec=True) as m:
+        t.return_value = '2024-01-01T00:01:00.000000001-0300'
+        m.return_value = '2024-01-01T00:01:00.000000001-0300'
+        result = cli_runner.invoke(cli.changelog, **entrance)
+        assert result.output.strip() == expected
