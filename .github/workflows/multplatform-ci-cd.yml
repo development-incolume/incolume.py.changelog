@@ -90,6 +90,7 @@ jobs:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+        name: codecov-ci-cd
         # directory: ./coverage_report/
         files: ./coverage_report/cov.xml # optional
         flags: unittests # optional
