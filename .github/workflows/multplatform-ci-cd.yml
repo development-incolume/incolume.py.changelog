@@ -91,7 +91,7 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         name: codecov-ci-cd
-        # directory: ./coverage_report/
+        directory: ./incolume/py/changelog
         files: ./coverage_report/cov.xml # optional
         flags: unittests # optional
         fail_ci_if_error: true # optional (default = false)
