@@ -93,7 +93,7 @@ jobs:
         name: codecov-ci-cd
         directory: ./incolume/py/changelog
         files: ./coverage_report/cov.xml # optional
-        flags: unittests # optional
+        # flags: unittests # optional
         fail_ci_if_error: true # optional (default = false)
         verbose: true # optional (default = false)
 
