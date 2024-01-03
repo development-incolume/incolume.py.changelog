@@ -240,8 +240,8 @@ def changelog_header(
         "and [Conventional Commit]"
         "(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n",
         "This file was automatically generated for",
-        "[incolume.py.changelog](https://gitlab.com/development-incolume/"
-        "incolumepy.utils/-/tree/0.2.0a0)",
+        "[incolume.py.changelog](https://github.com/development-"
+        "incolume/incolume.py.changelog/-/tree/0.2.0a0)",
         "\n\n---\n"]
     """
     url_keepachangelog = kwargs.get(
@@ -343,13 +343,13 @@ def changelog_footer(
         [
             '1.0.1', 'Added', 'New Function',
             '\n---\n\n',
-            '[1.0.1]: https://gitlab.com/development-incolume/
-            incolumepy.utils/-/compare/1.0.0...1.0.1'
+            '[1.0.1]: https://github.com/development-incolume/'
+            'incolume.py.changelog/-/compare/1.0.0...1.0.1'
         ]
     """
     urlcompare = (
         kwargs.get('urlcompare')
-        or 'https://gitlab.com/development-incolume/incolumepy.utils/-/compare'
+        or 'https://github.com/development-incolume/incolume.py.changelog/-/compare'
     )
     logging.debug('urlcompare=%s', urlcompare)
     content_formated.append('\n---\n\n')
@@ -423,14 +423,15 @@ def update_changelog(
         >>> update_changelog(changelog_file='/tmp/CHANGELOG.md')
         True
         >>> update_changelog(changelog_file=Path('CHANGELOG.md'),
-        urlcompare="https://gitlab.com/development-incolume
-        /incolumepy.utils/-/compare")
+        urlcompare="https://github.com/development-incolume/"
+        "incolume.py.changelog/-/compare")
         True
     """
     logging.debug('argumentos=%s,%s,%s', changelog_file, reverse, kwargs)
     urlcompare: str = (
         kwargs.get('urlcompare')
-        or 'https://gitlab.com/development-incolume/incolumepy.utils/-/compare'
+        or 'https://github.com/development-incolume'
+        '/incolume.py.changelog/-/compare'
     )
     content: str = kwargs.get('content', subprocess.getoutput('git tag -n'))
     logging.info('registros encontrados ..')
@@ -581,8 +582,8 @@ class Changelog:
         'and [Conventional Commit]'
         '(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n',
         'This file was automatically generated for',
-        ' [incolume.py.changelog](https://gitlab.com/development-incolume/'
-        'incolumepy.utils/-/tree/0.2.0a2)',
+        ' [incolume.py.changelog](https://github.com/development-incolume/'
+        'incolume.py.changelog/-/tree/0.2.0a2)',
         '\n\n---\n']
 
         >>> changelog_header(
@@ -599,8 +600,8 @@ class Changelog:
         "and [Conventional Commit]"
         "(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n",
         "This file was automatically generated for",
-        "[incolume.py.changelog](https://gitlab.com/development-incolume/"
-        "incolumepy.utils/-/tree/0.2.0a0)",
+        "[incolume.py.changelog](https://github.com/development-incolume/'
+        'incolume.py.changelog/-/tree/0.2.0a0)",
         "\n\n---\n"]
         """
         return [
