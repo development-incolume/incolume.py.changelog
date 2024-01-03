@@ -86,7 +86,8 @@ jobs:
 
     - name: Generate coverage report
       run: |
-        pip install pytest pytest-cov
+        pip install -U pip poetry
+        poetry install --with dev
         pytest --cov=./ --cov-report=xml
     
     - name: Upload coverage reports to Codecov
