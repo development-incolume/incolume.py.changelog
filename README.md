@@ -8,8 +8,8 @@ _Projeto desenvolvido e administrado incolume.com.br_
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/tests-gwa-ci-cd.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/tests-gwa-ci-cd.yml)
 ![PyPI - Status](https://img.shields.io/pypi/status/incolume.py.changelog)
-[![GitHub Actions (Tests)](https://github.com/development-incolume/incolume.py.changelog/workflows/Tests/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/)
-[![codecov](https://codecov.io/gh/incolumepy/incolumepy.makefilelicense/branch/main/graph/badge.svg?token=QFULL7R8HX)](https://codecov.io/gh/incolumepy/incolumepy.makefilelicense)
+[![codecov](https://codecov.io/gh/development-incolume/incolume.py.changelog/graph/badge.svg?token=ZFL3QCTMOB)](https://codecov.io/gh/development-incolume/incolume.py.changelog)
+
 ![PyPI](https://img.shields.io/pypi/v/incolume.py.changelog)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/incolumepy/incolumepy.makefilelicense?logo=tag)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/incolume.py.changelog)
