@@ -41,7 +41,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         msg: Message of command.
         **kwargs: Anyone of the positional items.
 
-    Returns:
+    Return:
         A dictionary with the version, date and a message.
 
     Raises:
@@ -49,11 +49,8 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
 
     Examples:
         >>> msg_classify('1.0.0 Adicionado: Nova funcionalidade.', 'pt-BR')
-        {
-            'key': '0.1.0',
-            'date': '2023-12-18',
-            'messages': {'Added': ['Nova funcionalidade.']
-        }
+        {'key': '0.1.0', 'date': '2023-12-18',
+        'messages': {'Added': ['Nova funcionalidade.']}
 
         >>> msg_classify('Corregido: corrección de error.', 'es-AR')
         ValueError: es-AR not suported! Use en-US, pt-BR
@@ -127,53 +124,32 @@ def changelog_messages(
         text: Changelog's message
         **kwargs: Anyone of the positional items.
 
-    Returns:
+    Return:
         return a list of tuples with a changelog menssage per line.
 
     Raises:
         None
 
     Examples:
-        >>> changelog_messages(
-            '1.0.0 Security: a;b;c;'
-            'Removed: 1;2;3; Changed: a;b;c;d;e;'
-            'Fixed: http://example.com; http://httpbin.com;'
-            'Deprecated: 1;2;3;a;s;b; Added: a1;a2;a3.',
-            '1.1.0 Removed: 1;2'
-            'Added: g;u'
-            )
-    [
-        (
-            '1.0.0',
-            {
-                'key': '1.0.0',
-                'date': '2023-12-21',
-                'messages': {
-                    'Added': ['a1', 'a2', 'a3.'],
-                    'Changed': ['a', 'b', 'c', 'd', 'e'],
-                    'Deprecated': ['1', '2', '3', 'a', 's', 'b'],
-                    'Fixed': [
-                        'http://example.com',
-                        'http://httpbin.com',
-                    ],
-                    'Removed': ['1', '2', '3'],
-                    'Security': ['a', 'b', 'c'],
-                },
-            },
-        ),
-        (
-            '1.1.0',
-            {
-                'key': '1.1.0',
-                'date': '2023-12-21',
-                'messages': {
-                    'Added': ['g', 'u'],
-                    'Removed: ['1', '2'],
-                }
-            }
-        )
-    ]
-    """
+        >>> changelog_messages('1.0.0 Security: a;b;c;'
+        'Removed: 1;2;3; Changed: a;b;c;d;e;'
+        'Fixed: http://example.com; http://httpbin.com;'
+        'Deprecated: 1;2;3;a;s;b; Added: a1;a2;a3.',
+        '1.1.0 Removed: 1;2'
+        'Added: g;u')
+        [('1.0.0',{'key': '1.0.0', 'date': '2023-12-21',
+        'messages': {
+        'Added': ['a1', 'a2', 'a3.'],
+        'Changed': ['a', 'b', 'c', 'd', 'e'],
+        'Deprecated': ['1', '2', '3', 'a', 's', 'b'],
+        'Fixed': ['http://example.com', 'http://httpbin.com',],
+        'Removed': ['1', '2', '3'],
+        'Security': ['a', 'b', 'c'],},},),
+        ('1.1.0',{'key': '1.1.0', 'date': '2023-12-21',
+        'messages': {
+        'Added': ['g', 'u'],
+        'Removed: ['1', '2'],},},)]
+        """
     logging.debug('parameters: (%s %s %s %s)', text, start, end, kwargs)
     lang: str = kwargs.get('lang', '')
     if start is not None:
@@ -204,7 +180,7 @@ def changelog_header(
         url_project (str): url principal for project.
         kwargs: Anyone of the others items.
 
-    Returns:
+    Return:
         Return a list with a header of changelog file.
 
     Raises:
@@ -228,8 +204,7 @@ def changelog_header(
 
         >>> changelog_header(
             url_keepachangelog='https://keepachangelog.com/en/2.0.0/',
-            url_semver=https://semver.org/spec/v1.0.0.html,
-            )
+            url_semver=https://semver.org/spec/v1.0.0.html)
         ["# CHANGELOG\n\n\n",
         "All notable changes to this project",
         " will be documented in this file.\n\n",
@@ -287,22 +262,15 @@ def changelog_body(
         content_formated: Content formated of changelog.
         **kwargs: Anyone of the positional items.
 
-    Returns:
+    Return:
         Return a list with a content of changelog's body.
 
     Raises:
         None
 
     Examples:
-        >>> changelog_body(
-                            [
-                                (
-                                    '1.0.1',
-                                    {Added: 'New function'}
-                                )
-                            ],
-                            ['1.0.1', 'Added', 'New Function']
-                            )
+        >>> changelog_body([('1.0.1', {Added: 'New function'})],
+        ['1.0.1', 'Added', 'New Function'])
         ['[1.0.1]', 'Added', 'New Function']
     """
     logging.debug(kwargs)
@@ -324,28 +292,19 @@ def changelog_footer(
         urlcompare: Url to compare.
         **kwargs: Anyone of the positional items.
 
-    Returns:
+    Return:
         Return a list with a footer of changelog file.
-
+    
     Raises:
         None
 
     Examples:
-        >>> changelog_footer(
-                [
-                    (
-                        '1.0.1',
-                        {Added: 'New function'}
-                    )
-                ],
-                ['1.0.1', 'Added', 'New Function']
-            )
-        [
-            '1.0.1', 'Added', 'New Function',
-            '\n---\n\n',
-            '[1.0.1]: https://github.com/development-incolume/'
-            'incolume.py.changelog/-/compare/1.0.0...1.0.1'
-        ]
+        >>> changelog_footer([('1.0.1',{Added: 'New function'})],
+        ['1.0.1', 'Added', 'New Function'])
+        ['1.0.1', 'Added', 'New Function',
+        '\n---\n\n',
+        '[1.0.1]: https://github.com/development-incolume/'
+        'incolume.py.changelog/-/compare/1.0.0...1.0.1']
     """
     urlcompare = (
         kwargs.get('urlcompare')
@@ -375,7 +334,7 @@ def changelog_write(
         content: Content to write the changelog
         **kwargs: Anyone of the positional items.
 
-    Returns:
+    Return:
         True if success.
 
     Raises:
@@ -411,7 +370,7 @@ def update_changelog(
         urlcompare(str): Url to compare.
         **kwargs: Anyone of the positional items.
 
-    Returns:
+    Return:
         True if success
 
     Raises:
@@ -475,7 +434,7 @@ class Changelog:
             url_semver(str): Url of semantic version.
             **kwargs: Anyone of the positional items.
 
-        Returns:
+        Return:
             None
         """
         self.file_output = file_output or Path('CHANGELOG.md')
@@ -515,31 +474,17 @@ class Changelog:
             None
 
         Examples:
-        >>> iter_logs([
-                        (
-                            '1.0.0a5',
-                            {
-                                'date': '2023-12-21',
-                                'key': '1.0.0a5',
-                                'messages': {
-                                    'Added': [
-                                        'New function',
-                                        'One more new function.'
-                                        ],
-                                    'Fixed': ['A bug of connection.'],
-                                    },
-                            },
-                        ),
-                    ], False)
-        [
-            '\n\n## 1.0.0a5\t &#8212; \t2023-12-21:',
+            >>> iter_logs(
+            [('1.0.0a5', {'date': '2023-12-21', 'key': '1.0.0a5',
+            'messages': {'Added': ['New function', 'One more new function.'],
+            'Fixed': ['A bug of connection.'],},},),], False)
+            ['\n\n## 1.0.0a5\t &#8212; \t2023-12-21:',
             '\n### Added',
             '\n  - New function;',
             '\n  - One more new function;',
             '\n### Fixed',
-            '\n  - A bug of connection.",;',
-        ],
-        """
+            '\n  - A bug of connection.",;',],
+            """
         result = []
         for _, entrada in content:
             logging.debug(entrada)
@@ -564,45 +509,44 @@ class Changelog:
     def header(self: Changelog) -> list[str]:
         r"""Header of changelog file.
 
-        Returns:
+        Return:
             Return a list with a header of changelog file.
 
         Raises:
             None
 
         Examples:
-        >>> changelog_header()
-        ['# CHANGELOG\n\n\n',
-        'All notable changes to this project',
-        ' will be documented in this file.\n\n',
-        'The format is based on ',
-        '[Keep a Changelog](https://keepachangelog.com/en/1.0.0/), ',
-        'this project adheres to'
-        '[Semantic Versioning](https://semver.org/spec/v2.0.0.html) '
-        'and [Conventional Commit]'
-        '(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n',
-        'This file was automatically generated for',
-        ' [incolume.py.changelog](https://github.com/development-incolume/'
-        'incolume.py.changelog/-/tree/0.2.0a2)',
-        '\n\n---\n']
+            >>> changelog_header()
+            ['# CHANGELOG\n\n\n',
+            'All notable changes to this project',
+            ' will be documented in this file.\n\n',
+            'The format is based on ',
+            '[Keep a Changelog](https://keepachangelog.com/en/1.0.0/), ',
+            'this project adheres to'
+            '[Semantic Versioning](https://semver.org/spec/v2.0.0.html) '
+            'and [Conventional Commit]'
+            '(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n',
+            'This file was automatically generated for',
+            ' [incolume.py.changelog](https://github.com/development-incolume/'
+            'incolume.py.changelog/-/tree/0.2.0a2)',
+            '\n\n---\n']
 
-        >>> changelog_header(
+            >>> changelog_header(
             url_keepachangelog='https://keepachangelog.com/en/2.0.0/',
-            url_semver=https://semver.org/spec/v1.0.0.html,
-                )
-        ["# CHANGELOG\n\n\n",
-        "All notable changes to this project",
-        " will be documented in this file.\n\n",
-        "The format is based on ",
-        "[Keep a Changelog](https://keepachangelog.com/en/2.0.0/),",
-        "this project adheres to "
-        "[Semantic Versioning](https://semver.org/spec/v1.0.0.html)"
-        "and [Conventional Commit]"
-        "(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n",
-        "This file was automatically generated for",
-        "[incolume.py.changelog](https://github.com/development-incolume/'
-        'incolume.py.changelog/-/tree/0.2.0a0)",
-        "\n\n---\n"]
+            url_semver=https://semver.org/spec/v1.0.0.html)
+            ["# CHANGELOG\n\n\n",
+            "All notable changes to this project",
+            " will be documented in this file.\n\n",
+            "The format is based on ",
+            "[Keep a Changelog](https://keepachangelog.com/en/2.0.0/),",
+            "this project adheres to "
+            "[Semantic Versioning](https://semver.org/spec/v1.0.0.html)"
+            "and [Conventional Commit]"
+            "(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n",
+            "This file was automatically generated for",
+            "[incolume.py.changelog](https://github.com/development-incolume/'
+            'incolume.py.changelog/-/tree/0.2.0a0)",
+            "\n\n---\n"]
         """
         return [
             '# CHANGELOG\n\n\n',
@@ -622,7 +566,7 @@ class Changelog:
 def run() -> None:
     """Examples ran.
 
-    Returns:
+    Return:
         None
     """
     msg = subprocess.getoutput('git tag -n').splitlines()[-14]
