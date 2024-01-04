@@ -78,7 +78,6 @@ ruff = "^0.1.7"
 taskipy = "^1.12.2"
 tox = "^4.11.4"
 types-toml = "^0.10.8.7"
-flake8-future-annotations = "^1.1.0"
 
 [tool.poetry.group.cli.dependencies]
 
@@ -164,9 +163,12 @@ extend-exclude = '''
 # in the root of the project.
 ^/pyproject.toml  # exclude a file named pyproject.toml in the root of the project (in addition to the defaults)
 \.tox
+\.venv
+\.git
 \.eggs
 build
 dist
+docs
 exemplos
 relatorios
 docs
