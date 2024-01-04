@@ -82,10 +82,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test]
     steps:
+    - uses: actions/checkout@master
+
+    - name: Generate coverage report
+      run: |
+        pip install -U pip poetry
+        poetry install --with dev
+        poetry run pytest --cov=./ --cov-report=xml
+    
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      with:
+        fail_ci_if_error: true # optional (default = false)
+        verbose: true # optional (default = false)
+
 
   build:
     name: Build package release
