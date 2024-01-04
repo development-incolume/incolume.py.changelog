@@ -149,7 +149,7 @@ def changelog_messages(
         'messages': {
         'Added': ['g', 'u'],
         'Removed: ['1', '2'],},},)]
-        """
+    """
     logging.debug('parameters: (%s %s %s %s)', text, start, end, kwargs)
     lang: str = kwargs.get('lang', '')
     if start is not None:
@@ -294,7 +294,7 @@ def changelog_footer(
 
     Return:
         Return a list with a footer of changelog file.
-    
+
     Raises:
         None
 
@@ -484,7 +484,7 @@ class Changelog:
             '\n  - One more new function;',
             '\n### Fixed',
             '\n  - A bug of connection.",;',],
-            """
+        """
         result = []
         for _, entrada in content:
             logging.debug(entrada)
