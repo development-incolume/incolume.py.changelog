@@ -13,7 +13,7 @@ def greeting(nome: str) -> None:
     Args:
       nome: Nome de usuário
 
-    Returns:
+    Return:
       Não há retorno. Uma saudação é exibida na tela.
 
     Raises:
@@ -62,7 +62,7 @@ def changelog(
         url: url compare from repository of project.
         reverse: Reverse order of records.
 
-    Returns:
+    Return:
         True if success
 
     Raises:

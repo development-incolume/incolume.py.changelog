@@ -30,7 +30,7 @@ def key_versions_2_sort(
         qdig: Quantity digits to sort.
         x: x[key, value] -> 'git tag -ln' output.
 
-    Returns:
+    Return:
         Return a list sorted.
 
     Raises:
@@ -94,7 +94,7 @@ def logger(str_format='', datefmt='', level=0, filelog=None):
        logging.ERROR, logging.CRITICAL)
         filelog: log's file .py
 
-    Returns:
+    Return:
         None
 
     """
