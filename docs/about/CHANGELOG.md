@@ -5,16 +5,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.6.2)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.7.0)
 
 ---
 
 
-## [Unreleased]	 &#8212; 	2023-12-31:
-### Fixed
-  - Correção na excução de testes unitários em CI/CD;
+## [0.7.0]	 &#8212; 	2024-01-05:
+### Added
+  - Formatador de código redefindo com `ruff`;
+  - Adicionado badges de `wheel` e `stable`;
+### Changed
+  - Renomeado workflow CI/CD `python-package.yml -> unit-tests.yml`;
+  - Atualização da documentação com exemplos de utilização da API;
+  - Reativação dos scripts de automação `taskipy`;
+  - Reativação dos scripts de automação `makefile`;
+  - Reativação dos scripts de automação `tox`;
+  - Informações referente ao projeto atualizadas na página de documentação;
+### Removed
+  - Removido pacote `blue`;
+  - Desativado formatador `blue` em CI/CD;
 
-## [0.6.2]	 &#8212; 	2024-01-02:
+## [0.6.2]	 &#8212; 	2024-01-04:
 ### Added
   - Ativação da configuração `Codecov.io`.;
 ### Fixed
@@ -206,4 +217,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.6.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.0rc0...0.6.0
 [0.6.1]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.0...0.6.1
 [0.6.2]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.1...0.6.2
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.2...Unreleased
+[0.7.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.2...0.7.0
