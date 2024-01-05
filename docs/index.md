@@ -8,6 +8,8 @@
 
 [![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/incolume.py.changelog)
+![PyPI - Status](https://img.shields.io/pypi/status/incolume.py.changelog)
 
 [![Metodology: PEP8](https://img.shields.io/badge/%20Metodology-PEP8-%23aabbcc?style=flat&labelColor=4444444)](https://peps.python.org/pep-0008/)
 [![Metodology: PEP20](https://img.shields.io/badge/%20Metodology-PEP20-%23aabbcc?style=flat&labelColor=4444444)](https://peps.python.org/pep-0020/)
@@ -27,6 +29,33 @@
 [![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-red?style=flat&labelColor=4444444)](https://pypi.org/project/pip-audit/)
 [![security: safety](https://img.shields.io/badge/%20Security-safety-red?style=flat&labelColor=4444444)](https://pypi.org/project/safety/)
 
-* [Documentação](#)
-* [Licença](#)
-* [Padrões aplicados](#)
+## Objetivos
+
+Esta API automatiza a criação de um arquivo changelog utilizando os resgistros do git, para gerenciar melhor seus projetos, seguindo a metodologia do Keep a Changelog.
+
+## Descrição
+
+O funcionamento é através da captura dos registros do comando `git tag -n`,
+obtendo assim data, etiquetas e modificações, gerando então um arquivo de
+gerenciamento de mudanças relevantes para cada versão.
+
+No pacote há ferramentas para Quality Assurance (QA) como ruff, mypy, pylint,
+isort, pydocstyle; além de ferramentas de segurança como bandit, pipaudit e safety.
+
+
+## Exemplos e Uso
+Disponível em [docs/api](api/index.md).
+
+
+## Registro de Mudanças
+Disponível em [docs/about/CHANGELOG.md](about/CHANGELOG.md).
+
+
+## Contribuidores
+Disponível em [docs/about/CONTRIBUTORS.md](about/CONTRIBUTORS.md).
+
+
+## Tecnologias aplicadas
+Deseja aprender mais sobre alguns dos requisitos
+não funcionais utilizados no projeto?
+Consulte a sessão [Padrões Aplicados em Guia de Contribuíção](user_guide/development.md).
