@@ -10,9 +10,12 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2024-01-04:
+## [Unreleased]	 &#8212; 	2024-01-05:
 ### Changed
-  - Exemplos de utilização do programa na documentação.;
+  - Atualização da documentação com exemplos de utilização da API;
+  - Reativação dos scripts de automação `taskipy`;
+  - Reativação dos scripts de automação `makefile`;
+  - Reativação dos scripts de automação `tox`;
 
 ## [0.6.2]	 &#8212; 	2024-01-04:
 ### Added
