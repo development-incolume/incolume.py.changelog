@@ -29,6 +29,33 @@
 [![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-red?style=flat&labelColor=4444444)](https://pypi.org/project/pip-audit/)
 [![security: safety](https://img.shields.io/badge/%20Security-safety-red?style=flat&labelColor=4444444)](https://pypi.org/project/safety/)
 
-* [Documentação](#)
-* [Licença](#)
-* [Padrões aplicados](#)
+## Objetivos
+
+Esta API automatiza a criação de um arquivo changelog utilizando os resgistros do git, para gerenciar melhor seus projetos, seguindo a metodologia do Keep a Changelog.
+
+## Descrição
+
+O funcionamento é através da captura dos registros do comando `git tag -n`,
+obtendo assim data, etiquetas e modificações, gerando então um arquivo de
+gerenciamento de mudanças relevantes para cada versão.
+
+No pacote há ferramentas para Quality Assurance (QA) como ruff, mypy, pylint,
+isort, pydocstyle; além de ferramentas de segurança como bandit, pipaudit e safety.
+
+
+## Exemplos e Uso
+Disponível em [docs/api](api/index.md).
+
+
+## Registro de Mudanças
+Disponível em [docs/about/CHANGELOG.md](about/CHANGELOG.md).
+
+
+## Contribuidores
+Disponível em [docs/about/CONTRIBUTORS.md](about/CONTRIBUTORS.md).
+
+
+## Tecnologias aplicadas
+Deseja aprender mais sobre alguns dos requisitos
+não funcionais utilizados no projeto?
+Consulte a sessão [Padrões Aplicados em Guia de Contribuíção](user_guide/development.md).
