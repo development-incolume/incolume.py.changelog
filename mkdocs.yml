@@ -43,6 +43,7 @@ watch:
   - incolume
 
 plugins:
+  - search
   - mkdocstrings:
       handlers:
         python:
