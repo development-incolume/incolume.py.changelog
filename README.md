@@ -15,7 +15,6 @@ _Projeto desenvolvido e administrado incolume.com.br_
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/incolume.py.changelog)
 ![PyPI - Implementation](https://img.shields.io/pypi/implementation/incolumepy.makefilelicense)
 ![PyPI - License](https://img.shields.io/pypi/l/incolume.py.changelog)
-!["Code style: blue"](https://img.shields.io/badge/code%20style-blue-black)
 !["Code style: ruff"](https://img.shields.io/badge/code%20style-ruff-black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=4444444)](https://pycqa.github.io/isort/)
 [![Docstring style: pydocstyle](https://img.shields.io/badge/%20Docstring%20Style-PyDocStyle-%231674b1?style=flat&labelColor=444444)](http://www.pydocstyle.org/en/stable/)
