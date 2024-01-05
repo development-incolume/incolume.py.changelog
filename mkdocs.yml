@@ -66,6 +66,9 @@ plugins:
         - locale: fr
           name: Français
           build: false
+        - locale: it
+          name: Italiano
+          build: false
         - locale: pt
           name: Português
           build: true
