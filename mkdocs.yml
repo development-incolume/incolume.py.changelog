@@ -54,22 +54,22 @@ plugins:
       reconfigure_material: true
       reconfigure_search: true
       languages:
+        - locale: de
+          name: Deutsch
+          build: false
+        - locale: en
+          name: English
+          build: true
+        - locale: es
+          name: Español
+          build: false
+        - locale: fr
+          name: Français
+          build: false
         - locale: pt
           name: Português
           build: true
           default: true
-        - locale: en
-          name: English
-          build: true
-        - locale: fr
-          name: Français
-          build: false
-        - locale: es
-          name: Español
-          build: false
-        - locale: de
-          name: Deutsch
-          build: false
 
 extra:
   commands:
