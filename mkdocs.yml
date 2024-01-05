@@ -8,6 +8,8 @@ theme:
   language: pt-BR
   logo: asserts/img/cl_logo.png
   favicon: asserts/img/jedi_logo.png
+  palette:
+    primary: blue grey
 
 markdown_extensions:
   - attr_list
