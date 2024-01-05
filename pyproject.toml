@@ -307,21 +307,23 @@ isolated_build = True
 envlist =
     clean
     black
+    blue
     isort
     pydocstyle
     mypy
     pylint
-    py37
     py38
     py39
     py310
     py311
+    py312
 
 ;[tox:.package]
 ;basepython = python3
 
 [testenv]
 whitelist_externals = poetry
+allowlist_externals = poetry
 skip_install = true
 commands =
     poetry env use {envpython}
@@ -350,19 +352,22 @@ deps =
     mypy
     types-toml
     types-Deprecated
-commands = poetry run mypy incolumepy/
+commands = poetry run mypy incolume/
 
 [testenv:pydocstyle]
-commands = poetry run pydocstyle incolumepy/ tests/
+commands = poetry run pydocstyle incolume/ tests/
 
 [testenv:isort]
 commands = poetry run isort --check --atomic --py all incolume/ tests/
 
 [testenv:pylint]
-commands = poetry run pylint incolumepy/ tests/
+commands = poetry run pylint incolume/ tests/
 
 [testenv:black]
-commands = poetry run black --check incolumepy/ tests/
+commands = poetry run black --check incolume/ tests/
+
+[testenv:blue]
+commands = poetry run blue --check incolume/ tests/
 
 [testenv:safety]
 commands = poetry run safety check
