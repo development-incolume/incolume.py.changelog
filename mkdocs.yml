@@ -48,6 +48,13 @@ plugins:
       handlers:
         python:
           paths: [incolume]
+  - i18n:
+      default_language: pt
+      languages:
+        en: English
+        es: Español
+        fr: Français
+        pt: Português
 
 extra:
   commands:
