@@ -6,7 +6,7 @@ _Projeto desenvolvido e administrado incolume.com.br_
 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolumepy.makefilelicense)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/tests-gwa-ci-cd.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/tests-gwa-ci-cd.yml)
+[![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml)
 ![PyPI - Status](https://img.shields.io/pypi/status/incolume.py.changelog)
 [![codecov](https://codecov.io/gh/development-incolume/incolume.py.changelog/graph/badge.svg?token=ZFL3QCTMOB)](https://codecov.io/gh/development-incolume/incolume.py.changelog)
 
