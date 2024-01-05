@@ -39,11 +39,6 @@ jobs:
         run: |
           poetry run isort check incolume/ tests/
 
-      - name: Check blue code style
-        continue-on-error: true
-        run: |
-          poetry run blue check incolume/ tests/
-
       - name: Lint with ruff
         run: |
           poetry run ruff check

@@ -1,4 +1,5 @@
 """Test module for cli."""
+
 import os
 from pathlib import Path
 from typing import Any, List
@@ -37,14 +38,16 @@ def test_gretting(
     'entrance expected'.split(),
     [
         pytest.param([], True, marks=()),
-        pytest.param(
-            ['-u', 'http://example.org/xpto'], True, marks=()),
+        pytest.param(['-u', 'http://example.org/xpto'], True, marks=()),
         pytest.param(
             [
-                '--url', 'http://example.org/xpto',
-                'reverse', 'false',
+                '--url',
+                'http://example.org/xpto',
+                'reverse',
+                'false',
             ],
-            True, marks=(),
+            True,
+            marks=(),
         ),
     ],
 )
@@ -60,7 +63,7 @@ def test_changelog(
 
     with mock.patch(
         'incolume.py.changelog.changelog.changelog_messages',
-          autospec=True,
+        autospec=True,
     ) as m:
         m.return_value = [
             (
@@ -71,7 +74,7 @@ def test_changelog(
                     'messages': {
                         'Added': ['g', 'u'],
                         'Removed': ['1', '2'],
-                   },
+                    },
                 },
             ),
         ]

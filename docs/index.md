@@ -15,7 +15,6 @@
 [![Metodology: keep-a-changelog](https://img.shields.io/badge/%20Metodology-keepachangelog-%23aabbcc?style=flat&labelColor=4444444)](https://keepachangelog.com/pt-BR/1.0.0/)
 [![Metodology: conventionalcommits](https://img.shields.io/badge/%20Metodology-conventionalcommits-%23aabbcc?style=flat&labelColor=4444444)](https://www.conventionalcommits.org/pt-br/v1.0.0/#specification)
 
-[!["style: blue"](https://img.shields.io/badge/code%20style-blue-black)](https://blue.readthedocs.io/)
 [!["style: ruff"](https://img.shields.io/badge/code%20style-ruff-black)](https://github.com/astral-sh/ruff)
 [![Style: isort](https://img.shields.io/badge/%20Format%20Style-isort-black?style=flat&labelColor=4444444)](https://pycqa.github.io/isort/)
 [![style: pydocstyle](https://img.shields.io/badge/%20Format%20Style-pydocstyle-black?style=flat&labelColor=444444)](http://www.pydocstyle.org/en/stable/)

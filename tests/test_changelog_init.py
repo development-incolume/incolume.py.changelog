@@ -20,16 +20,24 @@ __author__ = '@britodfbr'  # pragma: no cover
             '000000050011.099999',
         ),
         pytest.param(
-            None, {'x': ('0.5.11-dev0', 'aaa')}, '000000050011.000000',
+            None,
+            {'x': ('0.5.11-dev0', 'aaa')},
+            '000000050011.000000',
         ),
         pytest.param(
-            None, {'x': ('0.5.1-dev9', 'aaa')}, '000000050001.000009',
+            None,
+            {'x': ('0.5.1-dev9', 'aaa')},
+            '000000050001.000009',
         ),
         pytest.param(
-            None, {'x': ('0.5.1-dev19', 'aaa')}, '000000050001.000019',
+            None,
+            {'x': ('0.5.1-dev19', 'aaa')},
+            '000000050001.000019',
         ),
         pytest.param(
-            None, {'x': ('0.5.1-dev99', 'aaa')}, '000000050001.000099',
+            None,
+            {'x': ('0.5.1-dev99', 'aaa')},
+            '000000050001.000099',
         ),
         pytest.param(
             None,
@@ -37,45 +45,69 @@ __author__ = '@britodfbr'  # pragma: no cover
             '000000050001.020009',
         ),
         pytest.param(
-            None, {'x': ('0.5.1-beta9', 'aaa')}, '000000050001.000009'),
+            None,
+            {'x': ('0.5.1-beta9', 'aaa')},
+            '000000050001.000009',
+        ),
         pytest.param(
-            None, {'x': ('0.5.1-rc.9', 'aaa')}, '000000050001.080009'),
+            None,
+            {'x': ('0.5.1-rc.9', 'aaa')},
+            '000000050001.080009',
+        ),
         pytest.param(
-            None, {'x': ('0.5.1-rc.1', 'aaa')}, '000000050001.080001'),
+            None,
+            {'x': ('0.5.1-rc.1', 'aaa')},
+            '000000050001.080001',
+        ),
+        pytest.param(None, {'x': ('0.5.1-rc1', 'aaa')}, '000000050001.080001'),
+        pytest.param(None, {'x': ('0.5.1rc1', 'aaa')}, '000000050001.080001'),
         pytest.param(
-            None, {'x': ('0.5.1-rc1', 'aaa')}, '000000050001.080001'),
+            None,
+            {'x': ('0.5.1-alpha.1', 'aaa')},
+            '000000050001.020001',
+        ),
         pytest.param(
-            None, {'x': ('0.5.1rc1', 'aaa')}, '000000050001.080001'),
+            None,
+            {'x': ('0.5.1-alpha.2', 'aaa')},
+            '000000050001.020002',
+        ),
         pytest.param(
-            None, {'x': ('0.5.1-alpha.1', 'aaa')}, '000000050001.020001'),
+            None,
+            {'x': ('0.5.1-alpha.3', 'aaa')},
+            '000000050001.020003',
+        ),
         pytest.param(
-            None, {'x': ('0.5.1-alpha.2', 'aaa')}, '000000050001.020002'),
+            None,
+            {'x': ('0.5.1-alpha.4', 'aaa')},
+            '000000050001.020004',
+        ),
         pytest.param(
-            None, {'x': ('0.5.1-alpha.3', 'aaa')}, '000000050001.020003'),
+            None,
+            {'x': ('0.5.1-alpha.0', 'aaa')},
+            '000000050001.020000',
+        ),
         pytest.param(
-            None, {'x': ('0.5.1-alpha.4', 'aaa')}, '000000050001.020004'),
+            None,
+            {'x': ('0.5.1-post.0', 'aaa')},
+            '000000050001.900000',
+        ),
         pytest.param(
-            None, {'x': ('0.5.1-alpha.0', 'aaa')}, '000000050001.020000'),
+            None,
+            {'x': ('1.5.1-post0', 'aaa')},
+            '000100050001.900000',
+        ),
+        pytest.param(None, {'x': ('1.5', 'aaa')}, '1.5'),
         pytest.param(
-            None, {'x': ('0.5.1-post.0', 'aaa')}, '000000050001.900000'),
-        pytest.param(
-            None, {'x': ('1.5.1-post0', 'aaa')}, '000100050001.900000'),
-        pytest.param(
-            None, {'x': ('1.5', 'aaa')}, '1.5'),
-        pytest.param(
-            None, {'x': ('1.5.1-rc.0', 'aaa')}, '000100050001.080000'),
-        pytest.param(
-            None, {'x': ('1.5.1-rc0', 'aaa')}, '000100050001.080000'),
-        pytest.param(
-            None, {'x': ('1.5.1rc0', 'aaa')}, '000100050001.080000'),
-        pytest.param(
-            None, {'x': ('1.5.1-a.0', 'aaa')}, '000100050001.020000'),
-        pytest.param(
-            None, {'x': ('1.5.1-a0', 'aaa')}, '000100050001.020000'),
-        pytest.param(
-            None, {'x': ('1.5.1a0', 'aaa')}, '000100050001.020000'),
-        pytest.param(
-            None, {'x': ('1.5.1', 'aaa')}, '000100050001.099999'),
+            None,
+            {'x': ('1.5.1-rc.0', 'aaa')},
+            '000100050001.080000',
+        ),
+        pytest.param(None, {'x': ('1.5.1-rc0', 'aaa')}, '000100050001.080000'),
+        pytest.param(None, {'x': ('1.5.1rc0', 'aaa')}, '000100050001.080000'),
+        pytest.param(None, {'x': ('1.5.1-a.0', 'aaa')}, '000100050001.020000'),
+        pytest.param(None, {'x': ('1.5.1-a0', 'aaa')}, '000100050001.020000'),
+        pytest.param(None, {'x': ('1.5.1a0', 'aaa')}, '000100050001.020000'),
+        pytest.param(None, {'x': ('1.5.1', 'aaa')}, '000100050001.099999'),
         pytest.param(
             {
                 'expected_exception': TypeError,
@@ -215,12 +247,16 @@ def test_key_versions_2_sort(
 )
 def test_apply_key_versions_2_sort(
     *,
-    entrance: Dict[str, str], reverse: bool,
+    entrance: Dict[str, str],
+    reverse: bool,
     expected: List[Tuple[str, str]],
 ) -> None:
     """Sort with this function."""
     result = sorted(
-        entrance.items(), key=pkg.key_versions_2_sort, reverse=reverse)
+        entrance.items(),
+        key=pkg.key_versions_2_sort,
+        reverse=reverse,
+    )
     assert result == expected
 
 

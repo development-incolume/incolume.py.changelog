@@ -1,4 +1,5 @@
 """Changelog Module."""
+
 from __future__ import annotations
 
 import inspect
@@ -14,7 +15,7 @@ from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s;%(levelname)-8s;%(name)s;'
-           '%(module)s;%(funcName)s;%(message)s',
+    '%(module)s;%(funcName)s;%(message)s',
 )
 
 CHANGELOG_FILE = Path(__file__).parents[2] / 'CHANGELOG.md'
@@ -309,7 +310,7 @@ def changelog_footer(
     urlcompare = (
         kwargs.get('urlcompare')
         or 'https://github.com/development-incolume/'
-           'incolume.py.changelog/-/compare'
+        'incolume.py.changelog/-/compare'
     )
     logging.debug('urlcompare=%s', urlcompare)
     content_formated.append('\n---\n\n')
@@ -446,10 +447,12 @@ class Changelog:
             'https://gitlab.com/development-incolume/incolume.py.changelog',
         )
         self.url_keepachangelog = kwargs.get(
-            'url_keepachangelog', 'https://keepachangelog.com/en/1.0.0/',
+            'url_keepachangelog',
+            'https://keepachangelog.com/en/1.0.0/',
         )
         self.url_semver = kwargs.get(
-            'url_semver', 'https://semver.org/spec/v2.0.0.html',
+            'url_semver',
+            'https://semver.org/spec/v2.0.0.html',
         )
         self.url_convetional_commit = kwargs.get(
             'url_convetional_commit',
@@ -584,9 +587,11 @@ def run() -> None:
 
     changelog_write(content=result)
     update_changelog()
-    logging.info(msg_classify(
-        '0.1.0           added: Projeto emancipado de '
-        'https://gitlab.com/development-incolume/incolumepy.utils'),
+    logging.info(
+        msg_classify(
+            '0.1.0           added: Projeto emancipado de '
+            'https://gitlab.com/development-incolume/incolumepy.utils',
+        ),
     )
 
 
