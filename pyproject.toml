@@ -310,7 +310,6 @@ envlist =
     isort
     pydocstyle
     mypy
-    pylama
     pylint
     py37
     py38
@@ -327,12 +326,7 @@ skip_install = true
 commands =
     poetry env use {envpython}
     poetry install -vv --no-root
-    poetry run pytest --pylama {posargs} tests/ -m \"not(slow or webtest)\"
-
-[testenv:clean]
-deps = coverage
-commands =
-  poetry run coverage erase
+    poetry run pytest
 
 [testenv:linters]
 commands =
@@ -362,11 +356,7 @@ commands = poetry run mypy incolumepy/
 commands = poetry run pydocstyle incolumepy/ tests/
 
 [testenv:isort]
-commands = poetry run isort --check --atomic --py all incolumepy/ tests/
-
-[testenv:pylama]
-deps = pylama
-commands = poetry run pylama incolumepy/ tests/
+commands = poetry run isort --check --atomic --py all incolume/ tests/
 
 [testenv:pylint]
 commands = poetry run pylint incolumepy/ tests/
