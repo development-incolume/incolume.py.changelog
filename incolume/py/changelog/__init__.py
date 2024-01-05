@@ -1,4 +1,5 @@
 """Principal module."""
+
 from __future__ import annotations
 
 import logging
@@ -66,7 +67,7 @@ def key_versions_2_sort(
         build = build or '9' * qdig
         logging.debug(
             'values.group(5): %s',
-             values.group(5),  # type: ignore [union-attr]
+            values.group(5),  # type: ignore [union-attr]
         )
         plus = classifies.get(
             re.sub(
@@ -109,7 +110,10 @@ def logger(str_format='', datefmt='', level=0, filelog=None):
     filelog = filelog or Path(__file__).with_suffix('.py')
 
     logging.basicConfig(
-        filename=filelog, level=level, format=str_format, datefmt=datefmt,
+        filename=filelog,
+        level=level,
+        format=str_format,
+        datefmt=datefmt,
     )
 
     console = logging.StreamHandler()
