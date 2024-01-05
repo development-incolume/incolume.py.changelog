@@ -3,11 +3,13 @@
 
 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog)
-[![codecov](https://app.codecov.io/gh/development-incolume/incolume.py.changelog/branch/main/graph/badge.svg?token=QFULL7R8HX)](https://app.codecov.io/gh/development-incolume/incolume.py.changelog)
-+[![PyPI version](https://badge.fury.io/py/incolume.py.changelog.svg)](https://badge.fury.io/py/incolume.py.changelog)
+[![codecov](https://codecov.io/gh/development-incolume/incolume.py.changelog/graph/badge.svg?token=ZFL3QCTMOB)](https://codecov.io/gh/development-incolume/incolume.py.changelog)
+[![PyPI version](https://badge.fury.io/py/incolume.py.changelog.svg)](https://badge.fury.io/py/incolume.py.changelog)
 
-[![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/python-package.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/python-package.yml)
+[![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/incolume.py.changelog)
+![PyPI - Status](https://img.shields.io/pypi/status/incolume.py.changelog)
 
 [![Metodology: PEP8](https://img.shields.io/badge/%20Metodology-PEP8-%23aabbcc?style=flat&labelColor=4444444)](https://peps.python.org/pep-0008/)
 [![Metodology: PEP20](https://img.shields.io/badge/%20Metodology-PEP20-%23aabbcc?style=flat&labelColor=4444444)](https://peps.python.org/pep-0020/)
@@ -15,7 +17,6 @@
 [![Metodology: keep-a-changelog](https://img.shields.io/badge/%20Metodology-keepachangelog-%23aabbcc?style=flat&labelColor=4444444)](https://keepachangelog.com/pt-BR/1.0.0/)
 [![Metodology: conventionalcommits](https://img.shields.io/badge/%20Metodology-conventionalcommits-%23aabbcc?style=flat&labelColor=4444444)](https://www.conventionalcommits.org/pt-br/v1.0.0/#specification)
 
-[!["style: blue"](https://img.shields.io/badge/code%20style-blue-black)](https://blue.readthedocs.io/)
 [!["style: ruff"](https://img.shields.io/badge/code%20style-ruff-black)](https://github.com/astral-sh/ruff)
 [![Style: isort](https://img.shields.io/badge/%20Format%20Style-isort-black?style=flat&labelColor=4444444)](https://pycqa.github.io/isort/)
 [![style: pydocstyle](https://img.shields.io/badge/%20Format%20Style-pydocstyle-black?style=flat&labelColor=444444)](http://www.pydocstyle.org/en/stable/)
@@ -28,6 +29,33 @@
 [![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-red?style=flat&labelColor=4444444)](https://pypi.org/project/pip-audit/)
 [![security: safety](https://img.shields.io/badge/%20Security-safety-red?style=flat&labelColor=4444444)](https://pypi.org/project/safety/)
 
-* [Documentação](#)
-* [Licença](#)
-* [Padrões aplicados](#)
+## Objetivos
+
+Esta API automatiza a criação de um arquivo changelog utilizando os resgistros do git, para gerenciar melhor seus projetos, seguindo a metodologia do Keep a Changelog.
+
+## Descrição
+
+O funcionamento é através da captura dos registros do comando `git tag -n`,
+obtendo assim data, etiquetas e modificações, gerando então um arquivo de
+gerenciamento de mudanças relevantes para cada versão.
+
+No pacote há ferramentas para Quality Assurance (QA) como ruff, mypy, pylint,
+isort, pydocstyle; além de ferramentas de segurança como bandit, pipaudit e safety.
+
+
+## Exemplos e Uso
+Disponível em [docs/api](api/index.md).
+
+
+## Registro de Mudanças
+Disponível em [docs/about/CHANGELOG.md](about/CHANGELOG.md).
+
+
+## Contribuidores
+Disponível em [docs/about/CONTRIBUTORS.md](about/CONTRIBUTORS.md).
+
+
+## Tecnologias aplicadas
+Deseja aprender mais sobre alguns dos requisitos
+não funcionais utilizados no projeto?
+Consulte a sessão [Padrões Aplicados em Guia de Contribuíção](user_guide/development.md).

@@ -1,4 +1,5 @@
 """Test module for changelog."""
+
 from pathlib import Path
 from tempfile import gettempdir
 from typing import Dict, List, Union
@@ -55,7 +56,10 @@ class TestCase:
         ],
     )
     def test_get_os_command(
-        self, platform: str, entrance: str, expected: str,
+        self,
+        platform: str,
+        entrance: str,
+        expected: str,
     ) -> None:
         """Test get_os_command."""
         with mock.patch('sys.platform', platform):
@@ -66,23 +70,19 @@ class TestCase:
         [
             pytest.param(
                 '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix',
-                marks=[
-                ],
+                marks=[],
             ),
             pytest.param(
                 '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed',
-                marks=[
-                ],
+                marks=[],
             ),
             pytest.param(
                 '2.2.1 Security: Fake record; other fake record; Fake fixed',
-                marks=[
-                ],
+                marks=[],
             ),
             pytest.param(
                 '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix',
-                marks=[
-                ],
+                marks=[],
             ),
         ],
     )
@@ -97,23 +97,19 @@ class TestCase:
         [
             pytest.param(
                 '1.0.0 Added: Fake record; other fakrecord; Fixed: Fake fix',
-                marks=[
-                ],
+                marks=[],
             ),
             pytest.param(
                 '1.3.0 Fixed: Fake record; otherrecord; Changed: Fake fixed',
-                marks=[
-                ],
+                marks=[],
             ),
             pytest.param(
                 '2.2.1 Security: Fake record; other fake record; Fake fixed',
-                marks=[
-                ],
+                marks=[],
             ),
             pytest.param(
                 '1.0.5 Added: Fakerecord; other fake record; Fixed: Fake fix',
-                marks=[
-                ],
+                marks=[],
             ),
         ],
     )
@@ -132,7 +128,7 @@ class TestCase:
             pytest.param(
                 {
                     'msg': '1.0.0 Added: Fake record; other '
-                           'fakrecord; Fixed: Fake fixed',
+                    'fakrecord; Fixed: Fake fixed',
                 },
                 '2018-10-19',
                 {
@@ -148,7 +144,7 @@ class TestCase:
             pytest.param(
                 {
                     'msg': '1.5.0 Added: Fake record; '
-                           'other fake record; Fixed: Fake fixed',
+                    'other fake record; Fixed: Fake fixed',
                     'lang': 'en-US',
                 },
                 '2022-01-22',
@@ -165,7 +161,7 @@ class TestCase:
             pytest.param(
                 {
                     'msg': '2.0.0 Segurança: Aderência a '
-                           'https://keepachangelog.com/pt-BR/1.0.0/',
+                    'https://keepachangelog.com/pt-BR/1.0.0/',
                     'lang': 'pt-BR',
                 },
                 '2022-02-16',
@@ -184,7 +180,7 @@ class TestCase:
             pytest.param(
                 {
                     'msg': '2.4.1 Obsoleto: Fakerecord; '
-                           'other fkrecord; Fak fixd',
+                    'other fkrecord; Fak fixd',
                     'lang': 'pt-BR',
                 },
                 '2022-03-08',
@@ -204,8 +200,8 @@ class TestCase:
             pytest.param(
                 {
                     'msg': '1.0.1 deprecated: Fake record; '
-                           'Removed: other fake; ab; cd; ef;gh; ij; kl; '
-                           'mn; op; Fixed: Fake fixed',
+                    'Removed: other fake; ab; cd; ef;gh; ij; kl; '
+                    'mn; op; Fixed: Fake fixed',
                 },
                 '2018-10-19',
                 {
@@ -232,21 +228,21 @@ class TestCase:
             pytest.param(
                 {
                     'msg': '2.8.0      Adicionado: Unreleased/'
-                           'Não publicado para o número de versão e adicionar '
-                           'uma nova seção Unreleased/Não publicado no topo; '
-                           'Tradução para labels ptBR -> enUS; '
-                           'Implementado nova função iter_logs(); Fixed: '
-                           'Formatação visual para CHANGELOG.md retirado link'
-                           ' quebrado para 1ª release; Changed: Fatorado '
-                           'código para changelog_body(); Security: em caso de'
-                           ' vulnerabilidades.;Adicionado: para novos '
-                           'recursos.; Modificado: para alterações em '
-                           'recursos existentes.; '
-                           'Obsoleto: para recursos que serão '
-                           'removidos nas próximas versões.;Removido :para '
-                           'recursos removidos nesta versão.; Corrigido :para '
-                           'qualquer correção de bug.; Segurança :em caso de '
-                           'vulnerabilidades.;',
+                    'Não publicado para o número de versão e adicionar '
+                    'uma nova seção Unreleased/Não publicado no topo; '
+                    'Tradução para labels ptBR -> enUS; '
+                    'Implementado nova função iter_logs(); Fixed: '
+                    'Formatação visual para CHANGELOG.md retirado link'
+                    ' quebrado para 1ª release; Changed: Fatorado '
+                    'código para changelog_body(); Security: em caso de'
+                    ' vulnerabilidades.;Adicionado: para novos '
+                    'recursos.; Modificado: para alterações em '
+                    'recursos existentes.; '
+                    'Obsoleto: para recursos que serão '
+                    'removidos nas próximas versões.;Removido :para '
+                    'recursos removidos nesta versão.; Corrigido :para '
+                    'qualquer correção de bug.; Segurança :em caso de '
+                    'vulnerabilidades.;',
                 },
                 '2023-07-22',
                 {
@@ -292,8 +288,10 @@ class TestCase:
         expected: Dict[str, str],
     ) -> None:
         """Test it."""
-        with mock.patch('time.strftime') as t, \
-            mock.patch('subprocess.getoutput', autospec=True) as m:
+        with mock.patch('time.strftime') as t, mock.patch(
+            'subprocess.getoutput',
+            autospec=True,
+        ) as m:
             t.return_value = date
             m.return_value = date
             result = pkg.msg_classify(**entrance)
@@ -305,22 +303,22 @@ class TestCase:
             pytest.param(
                 {
                     'text': '1.0.1 Obsoleto: Fake record; Removed: other fake;'
-                            ' ab; cd; ef;gh; ij; kl; mn;op; Fixed: Fake fixed,'
-                            'Unreleased    Added: Unreleased/Não publicado '
-                            'para o número de versão e adicionar uma nova '
-                            'seção Unreleased/Não publicado no topo; Tradução '
-                            'para labels ptBR -> enUS; Implementado nova '
-                            'função iter_logs(); Fixed: Formatação visual '
-                            'para CHANGELOG.md retirado link quebrado para 1ª '
-                            'release; Changed: Fatorado código para '
-                            'changelog_body(); Security: em caso de '
-                            'vulnerabilidades.;Adicionado: para novos '
-                            'recursos.; Modificado: para alterações em '
-                            'recursos existentes.; Obsoleto: para recursos que'
-                            ' serão removidos nas próximas versões.;Removido'
-                            ' :para recursos removidos nesta versão.; '
-                            'Corrigido :para qualquer correção de bug.; '
-                            'Segurança :em caso de vulnerabilidades.;',
+                    ' ab; cd; ef;gh; ij; kl; mn;op; Fixed: Fake fixed,'
+                    'Unreleased    Added: Unreleased/Não publicado '
+                    'para o número de versão e adicionar uma nova '
+                    'seção Unreleased/Não publicado no topo; Tradução '
+                    'para labels ptBR -> enUS; Implementado nova '
+                    'função iter_logs(); Fixed: Formatação visual '
+                    'para CHANGELOG.md retirado link quebrado para 1ª '
+                    'release; Changed: Fatorado código para '
+                    'changelog_body(); Security: em caso de '
+                    'vulnerabilidades.;Adicionado: para novos '
+                    'recursos.; Modificado: para alterações em '
+                    'recursos existentes.; Obsoleto: para recursos que'
+                    ' serão removidos nas próximas versões.;Removido'
+                    ' :para recursos removidos nesta versão.; '
+                    'Corrigido :para qualquer correção de bug.; '
+                    'Segurança :em caso de vulnerabilidades.;',
                     'lang': None,
                 },
                 ['2018-10-19'],
@@ -385,7 +383,7 @@ class TestCase:
                     2.2.0 Security: Fake record; other record; Fake fixed",
                     """,
                 },
-                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16'],
                 [
                     (
                         '1.0.0',
@@ -440,9 +438,9 @@ class TestCase:
             pytest.param(
                 {
                     'text': '1.0.0 Security: a;b;c; '
-                            'Removed: 1;2;3; Changed: a;b;c;d;e; '
-                            'Fixed: http://example.com; http://httpbin.com;'
-                            'Deprecated: 1;2;3;a;s;b; Added: a1;a2;a3.',
+                    'Removed: 1;2;3; Changed: a;b;c;d;e; '
+                    'Fixed: http://example.com; http://httpbin.com;'
+                    'Deprecated: 1;2;3;a;s;b; Added: a1;a2;a3.',
                 },
                 ['2018-10-19'],
                 [
@@ -477,7 +475,7 @@ class TestCase:
                     """,
                     'start': 3,
                 },
-                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16'],
                 [
                     (
                         '2.2.0',
@@ -505,7 +503,7 @@ class TestCase:
                     """,
                     'end': 1,
                 },
-                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16'],
                 [
                     (
                         '1.0.0',
@@ -531,12 +529,13 @@ class TestCase:
                     'start': 1,
                     'end': 2,
                 },
-                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16'],
                 [
                     (
                         '1.3.0',
                         {
-                            'key': '1.3.0', 'date': '2018-10-19',
+                            'key': '1.3.0',
+                            'date': '2018-10-19',
                             'messages': {
                                 'Changed': ['Fake fixed",'],
                                 'Fixed': ['Fake record', ' other fake'],
@@ -556,7 +555,7 @@ class TestCase:
                     'start': 2,
                     'end': 3,
                 },
-                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16'],
                 [
                     (
                         '1.5.0',
@@ -582,7 +581,7 @@ class TestCase:
                     'start': 1,
                     'end': 3,
                 },
-                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16' ],
+                ['2018-10-19', '2022-01-21', '2022-01-22', '2022-02-16'],
                 [
                     (
                         '1.3.0',
@@ -617,8 +616,10 @@ class TestCase:
         expected: List[str],
     ) -> None:
         """Test it."""
-        with mock.patch('time.strftime', return_value='2023-12-21'), \
-            mock.patch('subprocess.getoutput', autospec=True) as m:
+        with mock.patch(
+            'time.strftime',
+            return_value='2023-12-21',
+        ), mock.patch('subprocess.getoutput', autospec=True) as m:
             m.side_effect = dates
             assert pkg.changelog_messages(**entrance) == expected
 
@@ -646,8 +647,10 @@ class TestCase:
         return_git_tag: str,
     ) -> None:
         """Test changelog_write."""
-        with mock.patch('time.strftime', return_value='2023-12-21'), \
-            mock.patch('subprocess.getoutput', return_value='2023-12-21'):
+        with mock.patch(
+            'time.strftime',
+            return_value='2023-12-21',
+        ), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
             result = pkg.changelog_messages(text=return_git_tag)
             entrance.update({'content': result})
             if 'changelog_file' not in entrance:
@@ -680,13 +683,16 @@ class TestCase:
         entrance.update({'content': return_git_tag})
         if 'changelog_file' not in entrance:
             entrance.update({'changelog_file': file_temp})
-        with mock.patch('time.strftime', return_value='2023-12-21'), \
-            mock.patch('subprocess.getoutput', return_value='2023-12-21'):
+        with mock.patch(
+            'time.strftime',
+            return_value='2023-12-21',
+        ), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
             assert pkg.update_changelog(**entrance)
 
 
 class TestClassChangelog:
     """Test class."""
+
     @pytest.mark.parametrize(
         'entrance',
         [
@@ -750,7 +756,7 @@ class TestClassChangelog:
         self,
         entrance: Dict[str, bool],
         expected: List[str],
-        ) -> None:
+    ) -> None:
         """Test for header file."""
         o = pkg.Changelog(**entrance)
         assert o.header() == expected

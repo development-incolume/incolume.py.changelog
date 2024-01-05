@@ -32,61 +32,9 @@ clean-all: clean   ## Deep cleanning into environment (dist, build, htmlcov, .to
 	@#poetry env list|awk '{print $$1}'|while read a; do poetry env remove $${a} 2> /dev/null && echo "$${a} removed."|| echo "$${a} not removed."; done
 	@echo "Deep cleaning finished!"
 
-.PHONY: check-black
-check-black: ## black checking
-	@echo "Black checking .."
-	@poetry run black --check $(DIRECTORIES)
-
-.PHONY: check-flake8
-check-flake8: ## flake8 checking
-	@echo "flake8 checking .."
-	@poetry run flake8 --config pyproject.toml $(DIRECTORIES)
-
-.PHONY: check-pylama
-check-pylama: ## pylama checking
-	@echo "pylama checking .."
-	@poetry run pylama $(DIRECTORIES)
-
-.PHONY: check-isort
-check-isort:  ## check isort
-	@echo "isort checking .."
-	@poetry run isort --check --atomic --py all $(DIRECTORIES)
-
-.PHONY: check-mypy
-check-mypy: ## mypy checking
-	@echo "mypy checking .."
-	@poetry run mypy $(DIRECTORIES)
-
-.PHONY: check-pylint
-check-pylint: ## pylint checking
-	@echo "pylint checking .."
-	@poetry run pylint $(DIRECTORIES)
-
-.PHONY: check-pydocstyle
-check-pydocstyle: ## docstring checking
-	@echo "pydocstyle checking .."
-	@poetry run pydocstyle $(DIRECTORIES)
-
-.PHONY: changelog
-changelog:   ## Update changelog file
-	@poetry run python -c "from incolumepy.utils.changelog import update_changelog; \
-	update_changelog(changelog_file='CHANGELOG.md')"
-	@echo 'Atualização de CHANGELOG realizada com sucesso.'
-
 .PHONY: help
 help:  ## Show this instructions
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
-
-
-.PHONY: publish-testing
-publish-testing: ## Publish on test.pypi.org
-	@poetry publish -r testpypi --build
-
-
-.PHONY: retrocompatibility
-retrocompatibility: ## Run tox and check retrompatibility betwen python versions
-	@poetry run tox -e py36,py37,py38,py39,py310,py311
-
 
 .PHOMY: setup
 setup: ## setup environment python with poetry end install all dependences

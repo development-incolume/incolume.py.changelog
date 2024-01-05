@@ -13,7 +13,7 @@ def greeting(nome: str) -> None:
     Args:
       nome: Nome de usuário
 
-    Returns:
+    Return:
       Não há retorno. Uma saudação é exibida na tela.
 
     Raises:
@@ -40,7 +40,7 @@ def greeting(nome: str) -> None:
     '--url',
     '-u',
     default='https://github.com/development-incolume/'
-            'incolume.py.changelog/-/compare',
+    'incolume.py.changelog/-/compare',
     help='Url compare from repository of project.',
 )
 @click.option(
@@ -62,7 +62,7 @@ def changelog(
         url: url compare from repository of project.
         reverse: Reverse order of records.
 
-    Returns:
+    Return:
         True if success
 
     Raises:
@@ -70,5 +70,8 @@ def changelog(
 
     """
     result = update_changelog(
-        changelog_file=file_changelog, urlcompare=url, reverse=reverse)
+        changelog_file=file_changelog,
+        urlcompare=url,
+        reverse=reverse,
+    )
     click.echo(f'{result}')
