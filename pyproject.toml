@@ -599,7 +599,7 @@ parametrize-names-type = "list"
 parametrize-values-row-type = "tuple"
 
 [tool.taskipy.settings]
-use_vars = true
+#use_vars = true   # set use_vars automaticly
 
 [tool.taskipy.variables]
 path = "incolume/ tests/"
