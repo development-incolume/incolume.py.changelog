@@ -308,7 +308,8 @@ def changelog_footer(
     """
     urlcompare = (
         kwargs.get('urlcompare')
-        or 'https://github.com/development-incolume/incolume.py.changelog/-/compare'
+        or 'https://github.com/development-incolume/'
+           'incolume.py.changelog/-/compare'
     )
     logging.debug('urlcompare=%s', urlcompare)
     content_formated.append('\n---\n\n')

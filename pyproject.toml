@@ -307,32 +307,28 @@ isolated_build = True
 envlist =
     clean
     black
+    blue
     isort
     pydocstyle
     mypy
-    pylama
     pylint
-    py37
     py38
     py39
     py310
     py311
+    py312
 
 ;[tox:.package]
 ;basepython = python3
 
 [testenv]
 whitelist_externals = poetry
+allowlist_externals = poetry
 skip_install = true
 commands =
     poetry env use {envpython}
     poetry install -vv --no-root
-    poetry run pytest --pylama {posargs} tests/ -m \"not(slow or webtest)\"
-
-[testenv:clean]
-deps = coverage
-commands =
-  poetry run coverage erase
+    poetry run pytest
 
 [testenv:linters]
 commands =
@@ -356,23 +352,22 @@ deps =
     mypy
     types-toml
     types-Deprecated
-commands = poetry run mypy incolumepy/
+commands = poetry run mypy incolume/
 
 [testenv:pydocstyle]
-commands = poetry run pydocstyle incolumepy/ tests/
+commands = poetry run pydocstyle incolume/ tests/
 
 [testenv:isort]
-commands = poetry run isort --check --atomic --py all incolumepy/ tests/
-
-[testenv:pylama]
-deps = pylama
-commands = poetry run pylama incolumepy/ tests/
+commands = poetry run isort --check --atomic --py all incolume/ tests/
 
 [testenv:pylint]
-commands = poetry run pylint incolumepy/ tests/
+commands = poetry run pylint incolume/ tests/
 
 [testenv:black]
-commands = poetry run black --check incolumepy/ tests/
+commands = poetry run black --check incolume/ tests/
+
+[testenv:blue]
+commands = poetry run blue --check incolume/ tests/
 
 [testenv:safety]
 commands = poetry run safety check
@@ -599,7 +594,7 @@ parametrize-names-type = "list"
 parametrize-values-row-type = "tuple"
 
 [tool.taskipy.settings]
-use_vars = true
+#use_vars = true   # set use_vars automaticly
 
 [tool.taskipy.variables]
 path = "incolume/ tests/"
