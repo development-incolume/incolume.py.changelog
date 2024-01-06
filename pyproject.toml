@@ -640,7 +640,7 @@ prerelease={cmd='v=$(poetry version prerelease) && poetry run task tests && git 
 safety={help='Check safety of packages into project.', cmd='poetry run safety check'}
 pre_sec={help='Securance validations', cmd='poetry run task bandit && poetry run task safety'}
 sec={help="Checking environment's safety", cmd=''}
-pre_changelog='poetry run pytest -m fast'
+pre_changelog='poetry run pytest'
 pre_tests={help='', cmd='task clean-all'}
 tests={help='run all tests', cmd='poetry run pytest -m "not webtest"'}
 pre_test-all={help='', cmd='task lint'}
