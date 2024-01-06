@@ -313,7 +313,7 @@ def changelog_footer(
         'incolume.py.changelog/-/compare'
     )
     logging.debug('urlcompare=%s', urlcompare)
-    content_formated.append('\n---\n\n')
+    content_formated.append('\n\n---\n\n')
     y: dict[str, Any] = {}
     for _, x in content[::-1]:
         if y:

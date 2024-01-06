@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.7.0"
+version = "0.8.0"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 keywords = ['python', 'utils', 'incolume']
@@ -86,6 +86,7 @@ mkdocs = "^1.5.3"
 mkdocstrings = "^0.24.0"
 mkdocstrings-python = "^1.7.5"
 mkdocs-material = "^9.5.2"
+mkdocs-static-i18n = "^1.2.0"
 
 
 [tool.poetry.group.security.dependencies]
@@ -634,17 +635,15 @@ patch={cmd='v=$(poetry version patch) && poetry run task tests && git ci -m "$v"
 post_patch={help='Run securety tools', cmd="poetry run task bandit && poetry run task safety"}
 premajor={cmd='v=$(poetry version premajor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version premajor'}
 preminor={cmd='v=$(poetry version preminor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version preminor'}
-#pre_prerelease='poetry run task gsumary'
 prerelease={cmd='v=$(poetry version prerelease) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version prerelease'}
 safety={help='Check safety of packages into project.', cmd='poetry run safety check'}
 pre_sec={help='Securance validations', cmd='poetry run task bandit && poetry run task safety'}
 sec={help="Checking environment's safety", cmd=''}
-pre_changelog='poetry run pytest -m fast'
+pre_changelog='poetry run pytest'
 pre_tests={help='', cmd='task clean-all'}
 tests={help='run all tests', cmd='poetry run pytest -m "not webtest"'}
 pre_test-all={help='', cmd='task lint'}
 test-all={help='Test all cases', cmd='task tests'}
 changelog = {help='Update changelog file', cmd = "poetry run gcl {CHANGELOGFILE} -u {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
 gcl = {help='Update changelog file', cmd='poetry run task changelog'}
-#xpto = { cmd = "echo {path} {CHANGELOGFILE} {URLCOMPARE}", use_vars = true }
 setup = { help = 'Configure environment develop', cmd='git config core.hooksPath .git-hooks/'}

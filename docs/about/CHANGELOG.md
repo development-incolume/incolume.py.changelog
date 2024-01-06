@@ -5,10 +5,27 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.7.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.8.0)
 
 ---
 
+
+## [0.8.0]	 &#8212; 	2024-01-06:
+### Added
+  - Acrescentado campo de busca na documentação da API;
+  - Acrescentado modo noturno na página oficial de documentação da API;
+  - Acrescentado suporte a multiplos idiomas para documentação;
+  - Acrescentado tradução do código de contuda em italiano;
+  - Acrescentado tradução do código de contuda em francês;
+  - Acrescentado tradução do código de contuda em espanhol;
+  - Acrescentado tradução do código de contuda em alemão;
+  - Acrescentado tradução do código de contuda em inglês;
+  - Acrescentado tradução do contributors.md em inglês;
+  - Acrescentado tradução do zenpy.md em inglês;
+### Deprecated
+  - Será substituído em breve o pacote `isort`;
+### Fixed
+  - Redefinido renderização de rodapé do arquivo CHANGELOG.md;
 
 ## [0.7.0]	 &#8212; 	2024-01-05:
 ### Added
@@ -201,6 +218,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ## 0.1.0	 &#8212; 	2023-12-12:
 ### Added
   - Projeto emancipado de https://gitlab.com/development-incolume/incolumepy.utils;
+
 ---
 
 [0.2.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.1.0...0.2.0
@@ -218,3 +236,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.6.1]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.0...0.6.1
 [0.6.2]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.1...0.6.2
 [0.7.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.2...0.7.0
+[0.8.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.7.0...0.8.0
