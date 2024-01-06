@@ -201,6 +201,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ## 0.1.0	 &#8212; 	2023-12-12:
 ### Added
   - Projeto emancipado de https://gitlab.com/development-incolume/incolumepy.utils;
+
 ---
 
 [0.2.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.1.0...0.2.0
