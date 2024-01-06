@@ -86,6 +86,7 @@ mkdocs = "^1.5.3"
 mkdocstrings = "^0.24.0"
 mkdocstrings-python = "^1.7.5"
 mkdocs-material = "^9.5.2"
+mkdocs-static-i18n = "^1.2.0"
 
 
 [tool.poetry.group.security.dependencies]

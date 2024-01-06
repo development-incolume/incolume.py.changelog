@@ -8,6 +8,18 @@ theme:
   language: pt-BR
   logo: asserts/img/cl_logo.png
   favicon: asserts/img/jedi_logo.png
+  palette:
+    # Palette toggle for light mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
 
 markdown_extensions:
   - attr_list
@@ -31,10 +43,76 @@ watch:
   - incolume
 
 plugins:
+  - search
   - mkdocstrings:
       handlers:
         python:
           paths: [incolume]
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: de
+          name: Deutsch
+          build: false
+          nav_translations:
+            Código de Conduta: Conduct's Code
+            Contribuidores: Contributors
+            Guia do Usuário: User Guide
+            Licença: License
+            Metodologias: Metodologies
+            Notas de lançamento: Release Notes
+            Sobre: About
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            Código de Conduta: Conduct's Code
+            Contribuidores: Contributors
+            Guia do Usuário: User Guide
+            Licença: License
+            Metodologias: Metodologies
+            Notas de lançamento: Release Notes
+            Sobre: About
+        - locale: es
+          name: Español
+          build: false
+          nav_translations:
+            Código de Conduta: Conduct's Code
+            Contribuidores: Contributors
+            Guia do Usuário: User Guide
+            Licença: License
+            Metodologias: Metodologies
+            Notas de lançamento: Release Notes
+            Sobre: About
+        - locale: fr
+          name: Français
+          build: false
+          nav_translations:
+            Código de Conduta: Conduct's Code
+            Contribuidores: Contributors
+            Guia do Usuário: User Guide
+            Licença: License
+            Metodologias: Metodologies
+            Notas de lançamento: Release Notes
+            Sobre: About
+        - locale: it
+          name: Italiano
+          build: false
+          nav_translations:
+            Código de Conduta: Conduct's Code
+            Contribuidores: Contributors
+            Guia do Usuário: User Guide
+            Licença: License
+            Metodologias: Metodologies
+            Notas de lançamento: Release Notes
+            Sobre: About
+        - locale: pt
+          name: Português
+          build: true
+          default: true
 
 extra:
   commands:
@@ -43,16 +121,16 @@ extra:
 nav:
     - Home: index.md
     - API: api/index.md
-    - 'User Guide':
+    - 'Guia do Usuário':
         - Código de Conduta: user_guide/code_of_conduct.md
-        - Medotologias:
+        - Metodologias:
             - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
             - Keep a CHANGELOG: user_guide/keep-a-changelog.md
             - MarkDown: user_guide/markdown.md
             - Mkdocs: user_guide/writing-your-docs.md
             - Semver: user_guide/semver.md
             - Zen Python: user_guide/zenpy.md
-    - About:
-        - Contributors: about/CONTRIBUTORS.md
-        - License: about/LICENSE.md
-        - 'Release Notes': about/CHANGELOG.md
+    - Sobre:
+        - Contribuidores: about/CONTRIBUTORS.md
+        - Licença: about/LICENSE.md
+        - 'Notas de lançamento': about/CHANGELOG.md
