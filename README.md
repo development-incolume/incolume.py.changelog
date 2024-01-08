@@ -1,36 +1,35 @@
-# Python Incolume Utils
+# Incolume Python Changelog
 
 --------
 
 _Projeto desenvolvido e administrado incolume.com.br_
 
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolumepy.makefilelicense)
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
-[![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml)
-![PyPI - Status](https://img.shields.io/pypi/status/incolume.py.changelog)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog)
 [![codecov](https://codecov.io/gh/development-incolume/incolume.py.changelog/graph/badge.svg?token=ZFL3QCTMOB)](https://codecov.io/gh/development-incolume/incolume.py.changelog)
+[![PyPI version](https://badge.fury.io/py/incolume.py.changelog.svg)](https://badge.fury.io/py/incolume.py.changelog)
 
-![PyPI](https://img.shields.io/pypi/v/incolume.py.changelog)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/incolumepy/incolumepy.makefilelicense?logo=tag)
+[![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 ![PyPI - Wheel](https://img.shields.io/pypi/wheel/incolume.py.changelog)
-![PyPI - Implementation](https://img.shields.io/pypi/implementation/incolumepy.makefilelicense)
-![PyPI - License](https://img.shields.io/pypi/l/incolume.py.changelog)
-!["Code style: ruff"](https://img.shields.io/badge/code%20style-ruff-black)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=4444444)](https://pycqa.github.io/isort/)
-[![Docstring style: pydocstyle](https://img.shields.io/badge/%20Docstring%20Style-PyDocStyle-%231674b1?style=flat&labelColor=444444)](http://www.pydocstyle.org/en/stable/)
-[![Linter: mypy](https://img.shields.io/badge/%20Linter-Mypy-%231674b1?style=flat&labelColor=4444444)](https://mypy.readthedocs.io/en/stable/)
-[![Linter: pylint](https://img.shields.io/badge/%20Linter-pylint-%231674b1?style=flat&labelColor=4444444)](https://pylint.pycqa.org/en/latest/)
-[![Linter: flake8](https://img.shields.io/badge/%20Linter-flake8-%231674b1?style=flat&labelColor=4444444)](https://flake8.pycqa.org/en/latest/)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/incolumepy/incolumepy.makefilelicense)
-![GitHub repo size](https://img.shields.io/github/repo-size/incolumepy/incolumepy.makefilelicense)
-![GitHub issues](https://img.shields.io/github/issues/incolumepy/incolumepy.makefilelicense)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/incolumepy/incolumepy.makefilelicense)
-![GitHub closed issues by-label](https://img.shields.io/github/issues-closed/incolumepy/incolumepy.makefilelicense/enhancement)
-![GitHub issues by-label](https://img.shields.io/github/issues/incolumepy/incolume.py.changelog/bug)
-![GitHub issues by-label](https://img.shields.io/github/issues/incolumepy/incolume.py.changelog/enhancement)
-[![Downloads](https://pepy.tech/badge/incolume-py-changelog)](https://pepy.tech/project/incolume-py-changelog)
-[![Downloads](https://pepy.tech/badge/incolume-py-changelog/month)](https://pepy.tech/project/incolume-py-changelog)
-[![Downloads](https://pepy.tech/badge/incolume-py-changelog/week)](https://pepy.tech/project/incolume-py-changelog)
+![PyPI - Status](https://img.shields.io/pypi/status/incolume.py.changelog)
+
+[![Metodology: PEP8](https://img.shields.io/badge/%20Metodology-PEP8-%23aabbcc?style=flat&labelColor=4444444)](https://peps.python.org/pep-0008/)
+[![Metodology: PEP20](https://img.shields.io/badge/%20Metodology-PEP20-%23aabbcc?style=flat&labelColor=4444444)](https://peps.python.org/pep-0020/)
+[![Metodology: SemVer](https://img.shields.io/badge/%20Metodology-SemVer-%23aabbcc?style=flat&labelColor=4444444)](https://semver.org/lang/pt-BR)
+[![Metodology: keep-a-changelog](https://img.shields.io/badge/%20Metodology-keepachangelog-%23aabbcc?style=flat&labelColor=4444444)](https://keepachangelog.com/pt-BR/1.0.0/)
+[![Metodology: conventionalcommits](https://img.shields.io/badge/%20Metodology-conventionalcommits-%23aabbcc?style=flat&labelColor=4444444)](https://www.conventionalcommits.org/pt-br/v1.0.0/#specification)
+
+[!["style: ruff"](https://img.shields.io/badge/code%20style-ruff-black)](https://github.com/astral-sh/ruff)
+[![Style: isort](https://img.shields.io/badge/%20Format%20Style-isort-black?style=flat&labelColor=4444444)](https://pycqa.github.io/isort/)
+[![style: pydocstyle](https://img.shields.io/badge/%20Format%20Style-pydocstyle-black?style=flat&labelColor=444444)](http://www.pydocstyle.org/en/stable/)
+
+[![Linter: mypy](https://img.shields.io/badge/%20Linter-Mypy-blue?style=flat&labelColor=4444444)](https://mypy.readthedocs.io/en/stable/)
+[![Linter: pylint](https://img.shields.io/badge/%20Linter-pylint-blue?style=flat&labelColor=4444444)](https://pylint.pycqa.org/en/latest/)
+[![Linter: flake8](https://img.shields.io/badge/%20Linter-flake8-blue?style=flat&labelColor=4444444)](https://flake8.pycqa.org/en/latest/)
+
+[![security: bandit](https://img.shields.io/badge/%20Security-bandit-red?style=flat&labelColor=4444444)](https://bandit.readthedocs.io/en/latest/)
+[![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-red?style=flat&labelColor=4444444)](https://pypi.org/project/pip-audit/)
+[![security: safety](https://img.shields.io/badge/%20Security-safety-red?style=flat&labelColor=4444444)](https://pypi.org/project/safety/)
 ---
 
 Este gera o Changelog a partir dos registros encontrados em `git tag -n`.
@@ -52,7 +51,7 @@ poetry add incolume.py.changelog
 ```
 
 ```shell
-poetry add git+https://gitlab.com/development-incolume/incolumepy.utils.git#main
+poetry add git+https://github.com/development-incolume/incolume.py.changelog#main
 ```
 
 ## Atualizar o pacote
@@ -70,7 +69,7 @@ poetry update incolume.py.changelog
 ```
 
 ```shell
-poetry update git+https://gitlab.com/development-incolume/incolumepy.utils.git#main
+poetry update git+https://github.com/development-incolume/incolume.py.changelog#main
 ```
 
 ## Gerar pacote a partir dos fontes para instalação
@@ -79,6 +78,18 @@ poetry update git+https://gitlab.com/development-incolume/incolumepy.utils.git#m
 poetry build
 ```
 
-## Documentação detalhada
-Exemplos da API disponíveis em [docs/api]('docs/api/index.md')
+## Exemplos e Uso
+Exemplos e outras curiosidades sobre este projeto podem
+ser visualizadas em [docs/api](docs/api/index.md).
 
+
+## Registro de Mudanças ##
+Disponível em [docs/about/CHANGELOG.md](docs/about/CHANGELOG.md).
+
+
+## Contribuidores ##
+Disponível em [docs/about/CONTRIBUTORS.md](docs/about/CONTRIBUTORS.md).
+
+
+## Tecnologias adotadas
+Disponível em [docs/user_guide/development.md](docs/user_guide/development.md).
