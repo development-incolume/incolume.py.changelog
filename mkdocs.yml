@@ -55,7 +55,7 @@ plugins:
       reconfigure_search: true
       languages:
         - locale: de
-          build: false
+          build: true
           name: Deutsch
           nav_translations:
             Código de Conduta: Verhaltenskodex
@@ -77,16 +77,16 @@ plugins:
             Notas de lançamento: Release Notes
             Sobre: About
         - locale: es
+          build: true
           name: Español
-          build: false
           nav_translations:
-            Código de Conduta: Conduct's Code
-            Contribuidores: Contributors
-            Guia do Usuário: User Guide
-            Licença: License
-            Metodologias: Metodologies
-            Notas de lançamento: Release Notes
-            Sobre: About
+            Código de Conduta: Código de Conducta
+            Contribuidores: Contribuyentes
+            Guia do Usuário: Guía de usuario
+            Licença: Licencia
+            Metodologias: Metodologías
+            Notas de lançamento: Notas de lanzamiento
+            Sobre: Acerca de
         - locale: fr
           build: true
           name: Français
