@@ -99,19 +99,19 @@ plugins:
             Notas de lançamento: Release Notes
             Sobre: About
         - locale: it
-          name: Italiano
-          build: false
-          nav_translations:
-            Código de Conduta: Conduct's Code
-            Contribuidores: Contributors
-            Guia do Usuário: User Guide
-            Licença: License
-            Metodologias: Metodologies
-            Notas de lançamento: Release Notes
-            Sobre: About
-        - locale: pt
-          name: Português
           build: true
+          name: Italiano
+          nav_translations:
+            Código de Conduta: Codice di comportamento
+            Contribuidores: Contributori
+            Guia do Usuário: Guida dell'utente
+            Licença: Licenza
+            Metodologias: Metodologie
+            Notas de lançamento: Note di rilascio
+            Sobre: Di
+        - locale: pt
+          build: true
+          name: Português
           default: true
 
 extra:
