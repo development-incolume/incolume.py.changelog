@@ -29,6 +29,10 @@
 [![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-red?style=flat&labelColor=4444444)](https://pypi.org/project/pip-audit/)
 [![security: safety](https://img.shields.io/badge/%20Security-safety-red?style=flat&labelColor=4444444)](https://pypi.org/project/safety/)
 
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog)](https://pepy.tech/project/incolume-py-changelog)
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog/month)](https://pepy.tech/project/incolume-py-changelog)
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog/week)](https://pepy.tech/project/incolume-py-changelog)
+---
 ## Objetivos
 
 Esta API automatiza a criação de um arquivo changelog utilizando os resgistros do git, para gerenciar melhor seus projetos, seguindo a metodologia do Keep a Changelog.
