@@ -88,16 +88,16 @@ plugins:
             Notas de lançamento: Release Notes
             Sobre: About
         - locale: fr
+          build: true
           name: Français
-          build: false
           nav_translations:
-            Código de Conduta: Conduct's Code
-            Contribuidores: Contributors
-            Guia do Usuário: User Guide
-            Licença: License
-            Metodologias: Metodologies
-            Notas de lançamento: Release Notes
-            Sobre: About
+            Código de Conduta: Code de conduite
+            Contribuidores: Contributeurs
+            Guia do Usuário: Guide de l'utilisateur
+            Licença: Licence
+            Metodologias: Méthodologies
+            Notas de lançamento: Notes de version
+            Sobre: À propos
         - locale: it
           build: true
           name: Italiano
