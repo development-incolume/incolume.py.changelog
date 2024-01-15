@@ -55,19 +55,19 @@ plugins:
       reconfigure_search: true
       languages:
         - locale: de
-          name: Deutsch
           build: false
+          name: Deutsch
           nav_translations:
-            Código de Conduta: Conduct's Code
-            Contribuidores: Contributors
-            Guia do Usuário: User Guide
-            Licença: License
-            Metodologias: Metodologies
-            Notas de lançamento: Release Notes
-            Sobre: About
+            Código de Conduta: Verhaltenskodex
+            Contribuidores: Mitwirkende
+            Guia do Usuário: Benutzerhandbuch
+            Licença: Lizenz
+            Metodologias: Methoden
+            Notas de lançamento: Versionshinweise
+            Sobre: Um
         - locale: en
-          name: English
           build: true
+          name: English
           nav_translations:
             Código de Conduta: Conduct's Code
             Contribuidores: Contributors
