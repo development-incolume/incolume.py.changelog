@@ -5,10 +5,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.8.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.9.0a5)
 
 ---
 
+
+## [Unreleased]	 &#8212; 	2024-01-16:
+### Added
+  - Acrescentado traduções para `código de conduta` (DE, EN, ES, PT, FR, IT);
+  - Acrescentado traduções para  `semver.md` (DE, EN, ES, PT, FR, IT);
+### Changed
+  - Exemplos de utilização do programa na documentação.;
 
 ## [0.8.0]	 &#8212; 	2024-01-06:
 ### Added
@@ -237,3 +244,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.6.2]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.1...0.6.2
 [0.7.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.2...0.7.0
 [0.8.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.7.0...0.8.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/0.8.0...Unreleased

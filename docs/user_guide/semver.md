@@ -1,6 +1,5 @@
-
 # Versionamento Semântico (SemVer)
-Este especifícação pode ser acompanhada na integra em seu endereço oficcial em https://semver.org/lang/pt-BR/.
+Esta especifícação pode ser acompanhada na integra em seu endereço oficial em https://semver.org/lang/pt-BR/.
 
 ## Especificação
 As palavras-chaves “DEVE”, “NÃO DEVE”, “OBRIGATÓRIO”, “DEVERÁ”, “NÃO DEVERÁ”, “PODEM”, “NÃO PODEM”, “RECOMENDADO”, “PODE” e “OPCIONAL” no presente documento devem ser interpretados como descrito na [RFC 2119](http://tools.ietf.org/html/rfc2119).

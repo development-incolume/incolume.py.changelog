@@ -55,19 +55,19 @@ plugins:
       reconfigure_search: true
       languages:
         - locale: de
-          name: Deutsch
-          build: false
-          nav_translations:
-            Código de Conduta: Conduct's Code
-            Contribuidores: Contributors
-            Guia do Usuário: User Guide
-            Licença: License
-            Metodologias: Metodologies
-            Notas de lançamento: Release Notes
-            Sobre: About
-        - locale: en
-          name: English
           build: true
+          name: Deutsch
+          nav_translations:
+            Código de Conduta: Verhaltenskodex
+            Contribuidores: Mitwirkende
+            Guia do Usuário: Benutzerhandbuch
+            Licença: Lizenz
+            Metodologias: Methoden
+            Notas de lançamento: Versionshinweise
+            Sobre: Um
+        - locale: en
+          build: true
+          name: English
           nav_translations:
             Código de Conduta: Conduct's Code
             Contribuidores: Contributors
@@ -77,41 +77,41 @@ plugins:
             Notas de lançamento: Release Notes
             Sobre: About
         - locale: es
-          name: Español
-          build: false
-          nav_translations:
-            Código de Conduta: Conduct's Code
-            Contribuidores: Contributors
-            Guia do Usuário: User Guide
-            Licença: License
-            Metodologias: Metodologies
-            Notas de lançamento: Release Notes
-            Sobre: About
-        - locale: fr
-          name: Français
-          build: false
-          nav_translations:
-            Código de Conduta: Conduct's Code
-            Contribuidores: Contributors
-            Guia do Usuário: User Guide
-            Licença: License
-            Metodologias: Metodologies
-            Notas de lançamento: Release Notes
-            Sobre: About
-        - locale: it
-          name: Italiano
-          build: false
-          nav_translations:
-            Código de Conduta: Conduct's Code
-            Contribuidores: Contributors
-            Guia do Usuário: User Guide
-            Licença: License
-            Metodologias: Metodologies
-            Notas de lançamento: Release Notes
-            Sobre: About
-        - locale: pt
-          name: Português
           build: true
+          name: Español
+          nav_translations:
+            Código de Conduta: Código de Conducta
+            Contribuidores: Contribuyentes
+            Guia do Usuário: Guía de usuario
+            Licença: Licencia
+            Metodologias: Metodologías
+            Notas de lançamento: Notas de lanzamiento
+            Sobre: Acerca de
+        - locale: fr
+          build: true
+          name: Français
+          nav_translations:
+            Código de Conduta: Code de conduite
+            Contribuidores: Contributeurs
+            Guia do Usuário: Guide de l'utilisateur
+            Licença: Licence
+            Metodologias: Méthodologies
+            Notas de lançamento: Notes de version
+            Sobre: À propos
+        - locale: it
+          build: true
+          name: Italiano
+          nav_translations:
+            Código de Conduta: Codice di comportamento
+            Contribuidores: Contributori
+            Guia do Usuário: Guida dell'utente
+            Licença: Licenza
+            Metodologias: Metodologie
+            Notas de lançamento: Note di rilascio
+            Sobre: Di
+        - locale: pt
+          build: true
+          name: Português
           default: true
 
 extra:
