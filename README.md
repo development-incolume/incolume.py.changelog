@@ -33,6 +33,10 @@ _Projeto desenvolvido e administrado incolume.com.br_
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/development-incolume/incolume.py.changelog)
 ![GitHub repo size](https://img.shields.io/github/repo-size/development-incolume/incolume.py.changelog)
+
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog)](https://pepy.tech/project/incolume-py-changelog)
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog/month)](https://pepy.tech/project/incolume-py-changelog)
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog/week)](https://pepy.tech/project/incolume-py-changelog)
 ---
 
 Este gera o Changelog a partir dos registros encontrados em `git tag -n`.
