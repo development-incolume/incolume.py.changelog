@@ -37,6 +37,12 @@ _Projeto desenvolvido e administrado incolume.com.br_
 [![Downloads](https://pepy.tech/badge/incolume-py-changelog)](https://pepy.tech/project/incolume-py-changelog)
 [![Downloads](https://pepy.tech/badge/incolume-py-changelog/month)](https://pepy.tech/project/incolume-py-changelog)
 [![Downloads](https://pepy.tech/badge/incolume-py-changelog/week)](https://pepy.tech/project/incolume-py-changelog)
+
+![GitHub issues](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog)
+![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/enhancement)
+![GitHub closed issues by-label](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog/enhancement)
+![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/bug)
 ---
 
 Este gera o Changelog a partir dos registros encontrados em `git tag -n`.
