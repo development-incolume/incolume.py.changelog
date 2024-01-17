@@ -30,6 +30,21 @@ _Projeto desenvolvido e administrado incolume.com.br_
 [![security: bandit](https://img.shields.io/badge/%20Security-bandit-red?style=flat&labelColor=4444444)](https://bandit.readthedocs.io/en/latest/)
 [![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-red?style=flat&labelColor=4444444)](https://pypi.org/project/pip-audit/)
 [![security: safety](https://img.shields.io/badge/%20Security-safety-red?style=flat&labelColor=4444444)](https://pypi.org/project/safety/)
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/development-incolume/incolume.py.changelog)
+![GitHub repo size](https://img.shields.io/github/repo-size/development-incolume/incolume.py.changelog)
+
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog)](https://pepy.tech/project/incolume-py-changelog)
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog/month)](https://pepy.tech/project/incolume-py-changelog)
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog/week)](https://pepy.tech/project/incolume-py-changelog)
+
+![GitHub issues](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog)
+![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/enhancement)
+![GitHub closed issues by-label](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog/enhancement)
+![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/bug)
+
+![PyPI - License](https://img.shields.io/pypi/l/incolume.py.changelog)
 ---
 
 Este gera o Changelog a partir dos registros encontrados em `git tag -n`.
