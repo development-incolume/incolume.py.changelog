@@ -43,6 +43,8 @@ _Projeto desenvolvido e administrado incolume.com.br_
 ![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/enhancement)
 ![GitHub closed issues by-label](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog/enhancement)
 ![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/bug)
+
+![PyPI - License](https://img.shields.io/pypi/l/incolume.py.changelog)
 ---
 
 Este gera o Changelog a partir dos registros encontrados em `git tag -n`.
