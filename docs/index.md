@@ -41,6 +41,8 @@
 ![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/enhancement)
 ![GitHub closed issues by-label](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog/enhancement)
 ![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/bug)
+
+![PyPI - License](https://img.shields.io/pypi/l/incolume.py.changelog)
 ---
 ## Objetivos
 
