@@ -2,9 +2,9 @@
 
 
 
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog)
-[![codecov](https://codecov.io/gh/development-incolume/incolume.py.changelog/graph/badge.svg?token=ZFL3QCTMOB)](https://codecov.io/gh/development-incolume/incolume.py.changelog)
-[![PyPI version](https://badge.fury.io/py/incolume.py.changelog.svg)](https://badge.fury.io/py/incolume.py.changelog)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF)
+[![Codecov](https://img.shields.io/codecov/c/github/development-incolume/incolume.py.changelog?color=00FFFF&label=codecov&logo=codecov)]((https://codecov.io/gh/development-incolume/incolume.py.changelog))
+![PyPI - Version](https://img.shields.io/pypi/v/incolume.py.changelog?color=00FFFF&label=pypi+package)
 
 [![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
@@ -21,28 +21,28 @@
 [![Style: isort](https://img.shields.io/badge/%20Format%20Style-isort-black?style=flat&labelColor=4444444)](https://pycqa.github.io/isort/)
 [![style: pydocstyle](https://img.shields.io/badge/%20Format%20Style-pydocstyle-black?style=flat&labelColor=444444)](http://www.pydocstyle.org/en/stable/)
 
-[![Linter: mypy](https://img.shields.io/badge/%20Linter-Mypy-blue?style=flat&labelColor=4444444)](https://mypy.readthedocs.io/en/stable/)
-[![Linter: pylint](https://img.shields.io/badge/%20Linter-pylint-blue?style=flat&labelColor=4444444)](https://pylint.pycqa.org/en/latest/)
-[![Linter: flake8](https://img.shields.io/badge/%20Linter-flake8-blue?style=flat&labelColor=4444444)](https://flake8.pycqa.org/en/latest/)
+[![Linter: mypy](https://img.shields.io/badge/%20Linter-Mypy-blue?color=000000)](https://mypy.readthedocs.io/en/stable/)
+[![Linter: pylint](https://img.shields.io/badge/%20Linter-pylint-blue?color=000000)](https://pylint.pycqa.org/en/latest/)
+[![Linter: flake8](https://img.shields.io/badge/%20Linter-flake8-blue?color=000000)](https://flake8.pycqa.org/en/latest/)
 
-[![security: bandit](https://img.shields.io/badge/%20Security-bandit-red?style=flat&labelColor=4444444)](https://bandit.readthedocs.io/en/latest/)
-[![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-red?style=flat&labelColor=4444444)](https://pypi.org/project/pip-audit/)
-[![security: safety](https://img.shields.io/badge/%20Security-safety-red?style=flat&labelColor=4444444)](https://pypi.org/project/safety/)
+[![security: bandit](https://img.shields.io/badge/%20Security-bandit-red?color=6633cc)](https://bandit.readthedocs.io/en/latest/)
+[![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-red?color=6633cc)](https://pypi.org/project/pip-audit/)
+[![security: safety](https://img.shields.io/badge/%20Security-safety-red?color=6633cc)](https://pypi.org/project/safety/)
 
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/development-incolume/incolume.py.changelog)
-![GitHub repo size](https://img.shields.io/github/repo-size/development-incolume/incolume.py.changelog)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/development-incolume/incolume.py.changelog?color=d5f56c)
+![GitHub repo size](https://img.shields.io/github/repo-size/development-incolume/incolume.py.changelog?color=d5f56c)
 
-[![Downloads](https://pepy.tech/badge/incolume-py-changelog)](https://pepy.tech/project/incolume-py-changelog)
+[![Downloads](https://pepy.tech/badge/incolume-py-changelog?color=black)](https://pepy.tech/project/incolume-py-changelog)
 [![Downloads](https://pepy.tech/badge/incolume-py-changelog/month)](https://pepy.tech/project/incolume-py-changelog)
 [![Downloads](https://pepy.tech/badge/incolume-py-changelog/week)](https://pepy.tech/project/incolume-py-changelog)
 
-![GitHub issues](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog)
-![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog)
-![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/enhancement)
-![GitHub closed issues by-label](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog/enhancement)
-![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/bug)
+![GitHub issues](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog?color=1383eb)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog?color=1383eb)
+![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/enhancement?color=1383eb)
+![GitHub closed issues by-label](https://img.shields.io/github/issues-closed-raw/development-incolume/incolume.py.changelog/enhancement?color=1383eb)
+![GitHub issues by-label](https://img.shields.io/github/issues-raw/development-incolume/incolume.py.changelog/bug?color=1383eb)
 
-![PyPI - License](https://img.shields.io/pypi/l/incolume.py.changelog)
+![PyPI - License](https://img.shields.io/pypi/l/incolume.py.changelog?color=75545d)
 ---
 ## Objetivos
 
