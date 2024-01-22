@@ -32,6 +32,15 @@ def get_os_command(key: str) -> str:
 
     Raises:
         None
+
+    Examples:
+        In Windows:
+        >>> get_os_command('1.0.0')
+        'git show -s --format=%cs 1.0.0^^{commit} --'
+
+        In Linux:
+        >>> get_os_command('1.0.0')
+        'git show -s --format=%cs 1.0.0^{commit} --'
     """
     cmd_supply = {
         'win': r'^^{commit} --',
