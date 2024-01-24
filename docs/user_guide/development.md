@@ -145,8 +145,13 @@ pylint incolumepy tests
 
 ### ruff
 O `ruff` é um linter Python extremamente rápido, codificado em Python.
+**Corretor linter (Ruff check fix)**
+
+`ruff` oferece suporte a correções automáticas para uma variedade de erros de lint. Por exemplo, Ruff pode remover importações não utilizadas, reformatar docstrings, reescrever anotações de tipo para usar a sintaxe Python mais recente e muito mais.
+
+Para habilitar correções, passe o `--fix` sinalizador para ruff check:
 ```shell
-poetry run ruff check --preview incolume/ tests/
+ruff check . --fix
 ```
 
 ### safety
