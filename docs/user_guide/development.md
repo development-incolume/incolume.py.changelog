@@ -145,6 +145,15 @@ pylint incolumepy tests
 
 ### ruff
 O `ruff` é um linter Python extremamente rápido, codificado em Python.
+
+**Autoformatador (Ruff format)**
+
+`ruff format` é o ponto de entrada principal para o formatador. Ele aceita uma lista de arquivos ou diretórios e formata todos os arquivos Python descobertos:
+```shell
+ruff format .
+ruff format incolume/ tests/
+``` 
+
 **Verificador linter (Ruff check)**
 
 `ruff check` é o ponto de entrada principal para o linter Ruff. Ele aceita uma lista de arquivos ou diretórios e lint todos os arquivos Python descobertos, corrigindo opcionalmente quaisquer erros corrigíveis:
