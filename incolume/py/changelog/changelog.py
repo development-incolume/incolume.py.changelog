@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, Final
 
 from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 
@@ -18,7 +18,7 @@ logging.basicConfig(
     '%(module)s;%(funcName)s;%(message)s',
 )
 
-CHANGELOG_FILE = Path(__file__).parents[2] / 'CHANGELOG.md'
+CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
 
 
 def get_os_command(key: str) -> str:
@@ -458,8 +458,10 @@ class Changelog:
         Return:
             None
         """
-        self.file_output = file_output or Path('CHANGELOG.md')
-        self.url_compare = url_compare
+        self.file_output = (
+            file_output or kwargs.get('file_output') or Path('CHANGELOG.md')
+        )
+        self.url_compare = url_compare or kwargs.get('url_compare')
         self.reverse = reverse
         self.url_principal = kwargs.get(
             'url_pricipal',
@@ -529,7 +531,7 @@ class Changelog:
                     result.append(f'\n  - {frase};')
         return result
 
-    def header(self: Changelog) -> list[str]:
+    def _header(self: Changelog) -> list[str]:
         r"""Header of changelog file.
 
         Return:
@@ -584,6 +586,50 @@ class Changelog:
             f' [{__title__}]({self.url_principal}/-/tree/{__version__})',
             '\n\n---\n',
         ]
+
+    def _footer(
+        self,
+        content: list[tuple[str, dict[str, Any]]],
+        content_formated: list[str],
+        **kwargs: str,
+    ) -> list[str]:
+        r"""Footer of changelog file.
+
+        Args:
+            content: Content of changelog's footer
+            content_formated: Content formated of changelog's footer
+            urlcompare: Url to compare.
+            **kwargs: Anyone of the positional items.
+
+        Return:
+            Return a list with a footer of changelog file.
+
+        Raises:
+            None
+
+        Examples:
+            >>> changelog_footer([('1.0.1',{Added: 'New function'})],
+            ['1.0.1', 'Added', 'New Function'])
+            ['1.0.1', 'Added', 'New Function',
+            '\n---\n\n',
+            '[1.0.1]: https://github.com/development-incolume/'
+            'incolume.py.changelog/-/compare/1.0.0...1.0.1']
+        """
+        urlcompare = (
+            kwargs.get('urlcompare')
+            or 'https://github.com/development-incolume/'
+            'incolume.py.changelog/-/compare'
+        )
+        logging.debug('urlcompare=%s', urlcompare)
+        content_formated.append('\n\n---\n\n')
+        y: dict[str, Any] = {}
+        for _, x in content[::-1]:
+            if y:
+                content_formated.append(
+                    f'[{x["key"]}]: {urlcompare}/{y["key"]}...{x["key"]}\n',
+                )
+            y = x
+        return content_formated
 
 
 def run() -> None:
