@@ -9,7 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Final
-
+import git
 from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 
 logging.basicConfig(
@@ -631,6 +631,10 @@ class Changelog:
             y = x
         return content_formated
 
+    def __call__(self, *args: Any, **kwds: Any) -> Any:
+        repo = git.Repo()
+        return self
+    
 
 def run() -> None:
     """Examples ran.
