@@ -39,14 +39,24 @@ jobs:
         run: |
           poetry run isort check incolume/ tests/
 
-      - name: Lint with ruff
-        run: |
-          poetry run ruff check
-
       - name: Check with mypy
         continue-on-error: true
         run: |
           poetry run mypy incolume/ tests/
+
+      - name: Format with ruff 
+        run: ¦
+          poetry run ruff format 
+
+      - name: Lint with ruff
+        run: ¦
+          poetry run ruff check --fix
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Code formated with ruff'
+
 
   test:
     runs-on: ${{ matrix.os }}

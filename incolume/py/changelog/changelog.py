@@ -22,7 +22,26 @@ CHANGELOG_FILE = Path(__file__).parents[2] / 'CHANGELOG.md'
 
 
 def get_os_command(key: str) -> str:
-    """Generate command to git tag according OS."""
+    """Generate command to git tag according OS.
+
+    Args:
+        key: Tag with semantic version.
+
+    Return:
+        A string with the command referring to the OS.
+
+    Raises:
+        None
+
+    Examples:
+        In Windows:
+        >>> get_os_command('1.0.0')
+        'git show -s --format=%cs 1.0.0^^{commit} --'
+
+        In Linux:
+        >>> get_os_command('1.0.0')
+        'git show -s --format=%cs 1.0.0^{commit} --'
+    """
     cmd_supply = {
         'win': r'^^{commit} --',
     }
