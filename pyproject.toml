@@ -63,6 +63,7 @@ greeting = 'incolume.py.changelog.cli:greeting'
 python = "^3.8.1"
 toml = {extras = ["tomli"], version = "^0.10.2"}
 click = "^8.1.5"
+gitpython = "^3.1.43"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.1.0"
