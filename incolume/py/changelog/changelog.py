@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Any, Final
+from typing import Any, Final, Self
 import git
 from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 
@@ -588,7 +588,7 @@ class Changelog:
         ]
 
     def _footer(
-        self,
+        self: Self,
         content: list[tuple[str, dict[str, Any]]],
         content_formated: list[str],
         **kwargs: str,
@@ -631,10 +631,12 @@ class Changelog:
             y = x
         return content_formated
 
-    def __call__(self, *args: Any, **kwds: Any) -> Any:
-        repo = git.Repo()
+    def __call__(self: Self, *args: Any, **kwds: Any) -> Self:
+        """Call class."""
+        logging.debug('args: %s; kwargs: %s', args, kwds)
+        repo = git.Repo()  # noqa: F841
         return self
-    
+
 
 def run() -> None:
     """Examples ran.
