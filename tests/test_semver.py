@@ -47,6 +47,9 @@ class TestSemVer:
             ('1.1.1a0', True),
             ('1.1.1rc0', True),
             ('1.1.1rc1111', True),
+            ('1.1.1rc1+111', True),
+            ('1.1.1rc1+1724689625', True),
+            ('1.1.1+1724689626', True),
         ],
     )
     def test_semantic_version(
