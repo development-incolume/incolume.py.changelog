@@ -759,7 +759,7 @@ class TestClassChangelog:
     ) -> None:
         """Test for header file."""
         o = pkg.Changelog(**entrance)
-        assert o.header() == expected
+        assert o._header() == expected  # noqa: SLF001
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
