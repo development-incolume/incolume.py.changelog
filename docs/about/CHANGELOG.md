@@ -5,10 +5,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.11.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.11.1)
 
 ---
 
+
+## [0.11.5]	 &#8212; 	2024-08-27:
+### Fixed
+  - Alteração na configuração para sanar erro de execução exclusivo em CI/CD;
+
+## [0.11.4]	 &#8212; 	2024-08-27:
+### Changed
+  - Atualização da ferramenta `ruff` e respectiva configuração;
+### Fixed
+  - Atualziação de conflitos no ambiente para CI/CD;
+
+## [0.11.3]	 &#8212; 	2024-08-27:
+### Fixed
+  - Atualziação do ambiente para CI/CD;
+
+## [0.11.2]	 &#8212; 	2024-08-27:
+### Fixed
+  - Dependências para ambiente de CI/CD atualizadas;
+
+## [0.11.1]	 &#8212; 	2024-08-27:
+### Fixed
+  - Conflito de validação entre `isort` e `ruff`;
 
 ## [0.11.0]	 &#8212; 	2024-08-27:
 ### Changed
@@ -274,3 +296,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.9.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.9.0rc0...0.9.0
 [0.10.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.9.0...0.10.0
 [0.11.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.10.0...0.11.0
+[0.11.1]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.0...0.11.1
+[0.11.2]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.1...0.11.2
+[0.11.3]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.2...0.11.3
+[0.11.4]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.3...0.11.4
+[0.11.5]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.4...0.11.5
