@@ -1,14 +1,17 @@
 """Test module for cli."""
 
+from __future__ import annotations
 import os
-from pathlib import Path
-from typing import Any, List
+from typing import Any, TYPE_CHECKING
 from unittest import mock
 
 import pytest
-from click.testing import CliRunner
 
 from incolume.py.changelog import cli
+
+if TYPE_CHECKING:
+    from click.testing import CliRunner
+    from pathlib import Path
 
 
 @pytest.mark.parametrize(
@@ -55,7 +58,7 @@ def test_changelog(
     cli_runner: CliRunner,
     *,
     file_temp: Path,
-    entrance: List[str],
+    entrance: list[str],
     expected: bool,
 ) -> None:
     """Test cli changelog."""
