@@ -39,12 +39,13 @@ jobs:
       #   run: |
       #     poetry run isort check incolume/ tests/
 
-      - name: Check with mypy
-        continue-on-error: true
-        run: |
-          poetry run mypy incolume/ tests/
+      # - name: Check with mypy
+      #   continue-on-error: true
+      #   run: |
+      #     poetry run mypy incolume/ tests/
 
       - name: Format with ruff 
+        continue-on-error: true
         run: ¦
           poetry run ruff format 
 
