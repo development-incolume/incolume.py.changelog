@@ -1,8 +1,9 @@
 """Test module for changelog."""
 
+from __future__ import annotations
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Dict, List, Union
+from typing import Union
 from unittest import mock
 
 import pytest
@@ -283,15 +284,18 @@ class TestCase:
     )
     def test_msg_classify_result(
         self,
-        entrance: Dict[str, str],
+        entrance: dict[str, str],
         date: str,
-        expected: Dict[str, str],
+        expected: dict[str, str],
     ) -> None:
         """Test it."""
-        with mock.patch('time.strftime') as t, mock.patch(
-            'subprocess.getoutput',
-            autospec=True,
-        ) as m:
+        with (
+            mock.patch('time.strftime') as t,
+            mock.patch(
+                'subprocess.getoutput',
+                autospec=True,
+            ) as m,
+        ):
             t.return_value = date
             m.return_value = date
             result = pkg.msg_classify(**entrance)
@@ -611,15 +615,18 @@ class TestCase:
     )
     def test_changelog_messages(
         self,
-        entrance: Dict[str, str],
-        dates: List[str],
-        expected: List[str],
+        entrance: dict[str, str],
+        dates: list[str],
+        expected: list[str],
     ) -> None:
         """Test it."""
-        with mock.patch(
-            'time.strftime',
-            return_value='2023-12-21',
-        ), mock.patch('subprocess.getoutput', autospec=True) as m:
+        with (
+            mock.patch(
+                'time.strftime',
+                return_value='2023-12-21',
+            ),
+            mock.patch('subprocess.getoutput', autospec=True) as m,
+        ):
             m.side_effect = dates
             assert pkg.changelog_messages(**entrance) == expected
 
@@ -642,15 +649,18 @@ class TestCase:
     )
     def test_changelog_write(
         self,
-        entrance: Dict[str, Union[str, Path]],
+        entrance: dict[str, Union[str, Path]],
         file_temp: Path,
         return_git_tag: str,
     ) -> None:
         """Test changelog_write."""
-        with mock.patch(
-            'time.strftime',
-            return_value='2023-12-21',
-        ), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
+        with (
+            mock.patch(
+                'time.strftime',
+                return_value='2023-12-21',
+            ),
+            mock.patch('subprocess.getoutput', return_value='2023-12-21'),
+        ):
             result = pkg.changelog_messages(text=return_git_tag)
             entrance.update({'content': result})
             if 'changelog_file' not in entrance:
@@ -675,7 +685,7 @@ class TestCase:
     )
     def test_update_changelog(
         self,
-        entrance: Dict[str, Union[str, Path]],
+        entrance: dict[str, Union[str, Path]],
         file_temp: Path,
         return_git_tag: str,
     ) -> None:
@@ -683,10 +693,13 @@ class TestCase:
         entrance.update({'content': return_git_tag})
         if 'changelog_file' not in entrance:
             entrance.update({'changelog_file': file_temp})
-        with mock.patch(
-            'time.strftime',
-            return_value='2023-12-21',
-        ), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
+        with (
+            mock.patch(
+                'time.strftime',
+                return_value='2023-12-21',
+            ),
+            mock.patch('subprocess.getoutput', return_value='2023-12-21'),
+        ):
             assert pkg.update_changelog(**entrance)
 
 
@@ -700,7 +713,7 @@ class TestClassChangelog:
             {'reverse': False},
         ],
     )
-    def test_init(self, entrance: Dict[str, Union[str, bool]]) -> None:
+    def test_init(self, entrance: dict[str, Union[str, bool]]) -> None:
         """Test for init class."""
         o = pkg.Changelog(**entrance)
         assert isinstance(o, pkg.Changelog)
@@ -754,8 +767,8 @@ class TestClassChangelog:
     )
     def test_header(
         self,
-        entrance: Dict[str, bool],
-        expected: List[str],
+        entrance: dict[str, bool],
+        expected: list[str],
     ) -> None:
         """Test for header file."""
         o = pkg.Changelog(**entrance)
@@ -819,8 +832,8 @@ class TestClassChangelog:
     )
     def test_iter_logs(
         self,
-        entrance: Dict[str, Union[bool, List[str]]],
-        expected: List[str],
+        entrance: dict[str, Union[bool, list[str]]],
+        expected: list[str],
     ) -> None:
         """Test for iter_logs."""
         assert pkg.Changelog.iter_logs(**entrance) == expected

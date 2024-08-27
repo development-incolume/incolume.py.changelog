@@ -1,12 +1,16 @@
 """Test package."""
 
+from __future__ import annotations
 from collections import OrderedDict
-from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, TYPE_CHECKING
 
 import pytest
 
 from incolume.py import changelog as pkg
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
 
 __author__ = '@britodfbr'  # pragma: no cover
 
@@ -121,7 +125,7 @@ __author__ = '@britodfbr'  # pragma: no cover
 def test_key_versions_2_sort(
     *,
     xcpt: Any,
-    entrance: Dict[str, str],
+    entrance: dict[str, str],
     expected: str,
 ) -> None:
     """Test for key_versions_2_sort."""
@@ -247,9 +251,9 @@ def test_key_versions_2_sort(
 )
 def test_apply_key_versions_2_sort(
     *,
-    entrance: Dict[str, str],
+    entrance: dict[str, str],
     reverse: bool,
-    expected: List[Tuple[str, str]],
+    expected: list[tuple[str, str]],
 ) -> None:
     """Sort with this function."""
     result = sorted(

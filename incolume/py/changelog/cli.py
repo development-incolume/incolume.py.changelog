@@ -1,7 +1,6 @@
 """CLI - Command Line Interface module."""
 
 import click
-
 from incolume.py.changelog.changelog import update_changelog
 
 

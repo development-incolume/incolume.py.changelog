@@ -9,7 +9,7 @@ from incolume.py.changelog import __version__, confproject, toml, versionfile
 __author__ = '@britodfbr'  # pragma: no cover
 
 
-@pytest.mark.fast()
+@pytest.mark.fast
 class TestCase:
     """Test case class."""
 
