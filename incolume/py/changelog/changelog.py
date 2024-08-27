@@ -9,9 +9,11 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Final
+
 import git
 from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 
+# ruff: noqa: S605 S607
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s;%(levelname)-8s;%(name)s;'
@@ -115,7 +117,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         regex,
         r'§§\1§:',
         msg,
-        flags=re.I,
+        flags=re.IGNORECASE,
     )
     logging.debug('txt=%s', txt)
     dct: dict[str, Any] = {}
