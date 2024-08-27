@@ -46,7 +46,8 @@ def greeting(nome: str) -> None:
 @click.option(
     '--reverse',
     '-r',
-    default=True,
+    default=False,
+    is_flag=True,
     help='Reverse order of records.',
 )
 def changelog(
