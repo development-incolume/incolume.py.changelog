@@ -3,10 +3,10 @@ name: Multiplataform GWA CI/CD    # Success run
 on:
   pull_request:
     branches:
-      - noone
+      - inanis
   push:
     branches:
-      - noone
+      - inanis
     tags:
       - "*.*.*"
 
@@ -34,10 +34,10 @@ jobs:
           python -m pip install --upgrade poetry pip
           poetry install --without security,doc
 
-      - name: Check isort
-        continue-on-error: true
-        run: |
-          poetry run isort check incolume/ tests/
+      # - name: Check isort
+      #   continue-on-error: true
+      #   run: |
+      #     poetry run isort check incolume/ tests/
 
       - name: Check with mypy
         continue-on-error: true
