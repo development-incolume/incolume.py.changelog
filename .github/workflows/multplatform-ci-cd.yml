@@ -33,6 +33,7 @@ jobs:
         run: |
           python -m pip install --upgrade poetry pip ruff
           poetry install --without security,doc
+          poetry add ruff
 
       # - name: Check isort
       #   continue-on-error: true
