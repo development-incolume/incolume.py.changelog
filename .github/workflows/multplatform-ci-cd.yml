@@ -33,6 +33,7 @@ jobs:
         run: |
           python -m pip install --upgrade poetry pip
           poetry install --without security,doc
+          poetry add ruff
 
       # - name: Check isort
       #   continue-on-error: true
@@ -45,11 +46,12 @@ jobs:
       #     poetry run mypy incolume/ tests/
 
       - name: Format with ruff 
-        continue-on-error: true
+        # continue-on-error: true
         run: ¦
           poetry run ruff format 
 
       - name: Lint with ruff
+        # continue-on-error: true
         run: ¦
           poetry run ruff check --fix
 
