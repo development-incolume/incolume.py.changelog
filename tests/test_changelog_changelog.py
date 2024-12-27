@@ -617,13 +617,10 @@ class TestCase:
         expected: list[str],
     ) -> None:
         """Test it."""
-        with (
-            mock.patch(
-                'time.strftime',
-                return_value='2023-12-21',
-            ),
-            mock.patch('subprocess.getoutput', autospec=True) as m,
-        ):
+        with mock.patch(
+            'time.strftime',
+            return_value='2023-12-21',
+        ), mock.patch('subprocess.getoutput', autospec=True) as m:
             m.side_effect = dates
             assert pkg.changelog_messages(**entrance) == expected
 
@@ -651,13 +648,10 @@ class TestCase:
         return_git_tag: str,
     ) -> None:
         """Test changelog_write."""
-        with (
-            mock.patch(
-                'time.strftime',
-                return_value='2023-12-21',
-            ),
-            mock.patch('subprocess.getoutput', return_value='2023-12-21'),
-        ):
+        with mock.patch(
+            'time.strftime',
+            return_value='2023-12-21',
+        ), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
             result = pkg.changelog_messages(text=return_git_tag)
             entrance.update({'content': result})
             if 'changelog_file' not in entrance:
@@ -690,13 +684,10 @@ class TestCase:
         entrance.update({'content': return_git_tag})
         if 'changelog_file' not in entrance:
             entrance.update({'changelog_file': file_temp})
-        with (
-            mock.patch(
-                'time.strftime',
-                return_value='2023-12-21',
-            ),
-            mock.patch('subprocess.getoutput', return_value='2023-12-21'),
-        ):
+        with mock.patch(
+            'time.strftime',
+            return_value='2023-12-21',
+        ), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
             assert pkg.update_changelog(**entrance)
 
 
