@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.12.1"
+version = "0.12.2"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 keywords = ['python', 'utils', 'incolume']
@@ -74,7 +74,7 @@ pydocstyle = "^6.3.0"
 pylint = "^3.0.3"
 pytest = "^7.4.3"
 pytest-cov = "^4.1.0"
-ruff = "^0.6.2"
+ruff = "^0.8"
 taskipy = "^1.12.2"
 tox = "^4.11.4"
 types-toml = "^0.10.8.7"
