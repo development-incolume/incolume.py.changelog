@@ -289,13 +289,10 @@ class TestCase:
         expected: dict[str, str],
     ) -> None:
         """Test it."""
-        with (
-            mock.patch('time.strftime') as t,
-            mock.patch(
-                'subprocess.getoutput',
-                autospec=True,
-            ) as m,
-        ):
+        with mock.patch('time.strftime') as t, mock.patch(
+            'subprocess.getoutput',
+            autospec=True,
+        ) as m:
             t.return_value = date
             m.return_value = date
             result = pkg.msg_classify(**entrance)

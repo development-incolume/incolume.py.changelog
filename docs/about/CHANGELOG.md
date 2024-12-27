@@ -5,10 +5,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.11.1)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.12.0)
 
 ---
 
+
+## [0.12.0]	 &#8212; 	2024-12-27:
+### Changed
+  - Parâmetro `-r/--reverse` transformado em flag;
+  - Removido a necessidade de informar valor em parametro `reverse`;
+### Fixed
+  - Correção em testes para CI/CD;
+  - Trabalhado encode para sistemas Windows;
 
 ## [0.11.5]	 &#8212; 	2024-08-27:
 ### Fixed
@@ -276,28 +284,29 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ---
 
-[0.2.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.1.0...0.2.0
-[0.3.0rc0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.2.0...0.3.0rc0
-[0.3.0rc1]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc0...0.3.0rc1
-[0.3.0rc2]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc1...0.3.0rc2
-[0.3.0rc3]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc2...0.3.0rc3
-[0.3.0rc4]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc3...0.3.0rc4
-[0.3.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0rc4...0.3.0
-[0.4.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.3.0...0.4.0
-[0.5.0rc0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.4.0...0.5.0rc0
-[0.5.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.5.0rc0...0.5.0
-[0.6.0rc0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.5.0...0.6.0rc0
-[0.6.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.0rc0...0.6.0
-[0.6.1]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.0...0.6.1
-[0.6.2]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.1...0.6.2
-[0.7.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.6.2...0.7.0
-[0.8.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.7.0...0.8.0
-[0.9.0rc0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.8.0...0.9.0rc0
-[0.9.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.9.0rc0...0.9.0
-[0.10.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.9.0...0.10.0
-[0.11.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.10.0...0.11.0
-[0.11.1]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.0...0.11.1
-[0.11.2]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.1...0.11.2
-[0.11.3]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.2...0.11.3
-[0.11.4]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.3...0.11.4
-[0.11.5]: https://github.com/development-incolume/incolume.py.changelog/compare/0.11.4...0.11.5
+[0.2.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.1.0...0.2.0
+[0.3.0rc0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.2.0...0.3.0rc0
+[0.3.0rc1]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.3.0rc0...0.3.0rc1
+[0.3.0rc2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.3.0rc1...0.3.0rc2
+[0.3.0rc3]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.3.0rc2...0.3.0rc3
+[0.3.0rc4]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.3.0rc3...0.3.0rc4
+[0.3.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.3.0rc4...0.3.0
+[0.4.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.3.0...0.4.0
+[0.5.0rc0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.4.0...0.5.0rc0
+[0.5.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.5.0rc0...0.5.0
+[0.6.0rc0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.5.0...0.6.0rc0
+[0.6.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.6.0rc0...0.6.0
+[0.6.1]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.6.0...0.6.1
+[0.6.2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.6.1...0.6.2
+[0.7.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.6.2...0.7.0
+[0.8.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.7.0...0.8.0
+[0.9.0rc0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.8.0...0.9.0rc0
+[0.9.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.9.0rc0...0.9.0
+[0.10.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.9.0...0.10.0
+[0.11.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.10.0...0.11.0
+[0.11.1]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.11.0...0.11.1
+[0.11.2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.11.1...0.11.2
+[0.11.3]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.11.2...0.11.3
+[0.11.4]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.11.3...0.11.4
+[0.11.5]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.11.4...0.11.5
+[0.12.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.11.5...0.12.0
