@@ -423,8 +423,8 @@ def update_changelog(
         content=sorted(
             changelog_messages(
                 text=content,
-                start=kwargs.get('start', None),
-                end=kwargs.get('end', None),
+                start=kwargs.get('start'),
+                end=kwargs.get('end'),
             ),
             reverse=reverse,
             key=key_versions_2_sort,
