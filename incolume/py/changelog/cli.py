@@ -1,7 +1,6 @@
 """CLI - Command Line Interface module."""
 
 import click
-
 from incolume.py.changelog.changelog import update_changelog
 
 
@@ -46,7 +45,8 @@ def greeting(nome: str) -> None:
 @click.option(
     '--reverse',
     '-r',
-    default=True,
+    default=False,
+    is_flag=True,
     help='Reverse order of records.',
 )
 def changelog(

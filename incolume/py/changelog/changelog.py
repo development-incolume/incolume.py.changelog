@@ -8,21 +8,42 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, Final
 
+import git
 from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 
+# ruff: noqa: S605 S607
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s;%(levelname)-8s;%(name)s;'
     '%(module)s;%(funcName)s;%(message)s',
 )
 
-CHANGELOG_FILE = Path(__file__).parents[2] / 'CHANGELOG.md'
+CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
 
 
 def get_os_command(key: str) -> str:
-    """Generate command to git tag according OS."""
+    """Generate command to git tag according OS.
+
+    Args:
+        key: Tag with semantic version.
+
+    Return:
+        A string with the command referring to the OS.
+
+    Raises:
+        None
+
+    Examples:
+        In Windows:
+        >>> get_os_command('1.0.0')
+        'git show -s --format=%cs 1.0.0^^{commit} --'
+
+        In Linux:
+        >>> get_os_command('1.0.0')
+        'git show -s --format=%cs 1.0.0^{commit} --'
+    """
     cmd_supply = {
         'win': r'^^{commit} --',
     }
@@ -96,7 +117,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         regex,
         r'§§\1§:',
         msg,
-        flags=re.I,
+        flags=re.IGNORECASE,
     )
     logging.debug('txt=%s', txt)
     dct: dict[str, Any] = {}
@@ -402,8 +423,8 @@ def update_changelog(
         content=sorted(
             changelog_messages(
                 text=content,
-                start=kwargs.get('start', None),
-                end=kwargs.get('end', None),
+                start=kwargs.get('start'),
+                end=kwargs.get('end'),
             ),
             reverse=reverse,
             key=key_versions_2_sort,
@@ -439,8 +460,10 @@ class Changelog:
         Return:
             None
         """
-        self.file_output = file_output or Path('CHANGELOG.md')
-        self.url_compare = url_compare
+        self.file_output = (
+            file_output or kwargs.get('file_output') or Path('CHANGELOG.md')
+        )
+        self.url_compare = url_compare or kwargs.get('url_compare')
         self.reverse = reverse
         self.url_principal = kwargs.get(
             'url_pricipal',
@@ -510,7 +533,7 @@ class Changelog:
                     result.append(f'\n  - {frase};')
         return result
 
-    def header(self: Changelog) -> list[str]:
+    def _header(self: Changelog) -> list[str]:
         r"""Header of changelog file.
 
         Return:
@@ -565,6 +588,56 @@ class Changelog:
             f' [{__title__}]({self.url_principal}/-/tree/{__version__})',
             '\n\n---\n',
         ]
+
+    def _footer(
+        self: Changelog,
+        content: list[tuple[str, dict[str, Any]]],
+        content_formated: list[str],
+        **kwargs: str,
+    ) -> list[str]:
+        r"""Footer of changelog file.
+
+        Args:
+            content: Content of changelog's footer
+            content_formated: Content formated of changelog's footer
+            urlcompare: Url to compare.
+            **kwargs: Anyone of the positional items.
+
+        Return:
+            Return a list with a footer of changelog file.
+
+        Raises:
+            None
+
+        Examples:
+            >>> changelog_footer([('1.0.1',{Added: 'New function'})],
+            ['1.0.1', 'Added', 'New Function'])
+            ['1.0.1', 'Added', 'New Function',
+            '\n---\n\n',
+            '[1.0.1]: https://github.com/development-incolume/'
+            'incolume.py.changelog/-/compare/1.0.0...1.0.1']
+        """
+        urlcompare = (
+            kwargs.get('urlcompare')
+            or 'https://github.com/development-incolume/'
+            'incolume.py.changelog/-/compare'
+        )
+        logging.debug('urlcompare=%s', urlcompare)
+        content_formated.append('\n\n---\n\n')
+        y: dict[str, Any] = {}
+        for _, x in content[::-1]:
+            if y:
+                content_formated.append(
+                    f'[{x["key"]}]: {urlcompare}/{y["key"]}...{x["key"]}\n',
+                )
+            y = x
+        return content_formated
+
+    def __call__(self: Changelog, *args: Any, **kwds: Any) -> Changelog:
+        """Call class."""
+        logging.debug('args: %s; kwargs: %s', args, kwds)
+        repo = git.Repo()  # noqa: F841
+        return self
 
 
 def run() -> None:

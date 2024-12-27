@@ -1,8 +1,9 @@
 """Test module for changelog."""
 
+from __future__ import annotations
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Dict, List, Union
+from typing import Union
 from unittest import mock
 
 import pytest
@@ -283,9 +284,9 @@ class TestCase:
     )
     def test_msg_classify_result(
         self,
-        entrance: Dict[str, str],
+        entrance: dict[str, str],
         date: str,
-        expected: Dict[str, str],
+        expected: dict[str, str],
     ) -> None:
         """Test it."""
         with mock.patch('time.strftime') as t, mock.patch(
@@ -611,9 +612,9 @@ class TestCase:
     )
     def test_changelog_messages(
         self,
-        entrance: Dict[str, str],
-        dates: List[str],
-        expected: List[str],
+        entrance: dict[str, str],
+        dates: list[str],
+        expected: list[str],
     ) -> None:
         """Test it."""
         with mock.patch(
@@ -642,7 +643,7 @@ class TestCase:
     )
     def test_changelog_write(
         self,
-        entrance: Dict[str, Union[str, Path]],
+        entrance: dict[str, Union[str, Path]],
         file_temp: Path,
         return_git_tag: str,
     ) -> None:
@@ -675,7 +676,7 @@ class TestCase:
     )
     def test_update_changelog(
         self,
-        entrance: Dict[str, Union[str, Path]],
+        entrance: dict[str, Union[str, Path]],
         file_temp: Path,
         return_git_tag: str,
     ) -> None:
@@ -700,7 +701,7 @@ class TestClassChangelog:
             {'reverse': False},
         ],
     )
-    def test_init(self, entrance: Dict[str, Union[str, bool]]) -> None:
+    def test_init(self, entrance: dict[str, Union[str, bool]]) -> None:
         """Test for init class."""
         o = pkg.Changelog(**entrance)
         assert isinstance(o, pkg.Changelog)
@@ -754,12 +755,12 @@ class TestClassChangelog:
     )
     def test_header(
         self,
-        entrance: Dict[str, bool],
-        expected: List[str],
+        entrance: dict[str, bool],
+        expected: list[str],
     ) -> None:
         """Test for header file."""
         o = pkg.Changelog(**entrance)
-        assert o.header() == expected
+        assert o._header() == expected  # noqa: SLF001
 
     @pytest.mark.parametrize(
         'entrance expected'.split(),
@@ -819,8 +820,8 @@ class TestClassChangelog:
     )
     def test_iter_logs(
         self,
-        entrance: Dict[str, Union[bool, List[str]]],
-        expected: List[str],
+        entrance: dict[str, Union[bool, list[str]]],
+        expected: list[str],
     ) -> None:
         """Test for iter_logs."""
         assert pkg.Changelog.iter_logs(**entrance) == expected

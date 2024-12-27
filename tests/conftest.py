@@ -13,13 +13,13 @@ def semver_regex() -> str:
     return r'^\d+(\.\d+){2}((-\w+\.\d+)|(\w+\d+))?$'
 
 
-@pytest.fixture()
+@pytest.fixture
 def changelog_stamps():
     """Return labels Keep a Changelog."""
     return 'Added Changed Deprecated Removed Fixed Security'.upper().strip()
 
 
-@pytest.fixture()
+@pytest.fixture
 def return_git_tag():
     """Return fake `git tag -n`."""
     return """1.0.0 Added: Fake record; other fake; Fixed: Fake fixed
@@ -28,13 +28,13 @@ def return_git_tag():
     2.2.0 Security: Fake record; other record; Fake fixed"""
 
 
-@pytest.fixture()
+@pytest.fixture
 def file_temp():
     """Generate aleatory filename into tempdir for tests."""
-    return Path(NamedTemporaryFile(delete=False).name)
+    return Path(NamedTemporaryFile(delete=False).name)  # noqa: SIM115
 
 
-@pytest.fixture()
+@pytest.fixture
 def cli_runner() -> CliRunner:
     """Fixture to CliRunner."""
     return CliRunner()
