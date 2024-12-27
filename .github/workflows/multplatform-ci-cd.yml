@@ -48,12 +48,12 @@ jobs:
       - name: Format with ruff 
         # continue-on-error: true
         run: ¦
-          poetry run ruff format 
+          poetry run ruff format incolume/ tests/
 
       - name: Lint with ruff
         # continue-on-error: true
         run: ¦
-          poetry run ruff check --fix
+          poetry run ruff check --fix incolume/ tests/
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
