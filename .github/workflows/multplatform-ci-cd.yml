@@ -1,19 +1,18 @@
 name: Multiplataform GWA CI/CD    # Success run
 
 on:
+  workflow_dispatch:
+   inputs:
+     environment:
+       description: 'The environment to deploy to (e.g. production, staging)'
+       required: true
+       default: 'tags'
   pull_request:
     branches:
       - inanis
   push:
     branches:
       - inanis
-    tags:
-      - "*.*.*"
-
-  workflow_dispatch:
-    branches:
-      - dev
-      - main
     tags:
       - "*.*.*"
 
