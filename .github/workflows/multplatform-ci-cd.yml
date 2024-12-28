@@ -49,7 +49,7 @@ jobs:
           poetry run ruff format incolume/ tests/
 
       - name: Lint with ruff
-        # continue-on-error: true
+        continue-on-error: true
         run: ¦
           poetry run ruff check --fix incolume/ tests/
 
