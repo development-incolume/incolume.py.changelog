@@ -30,7 +30,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade poetry pip ruff
+          python -m pip install --upgrade poetry pip uv ruff
           poetry install --without security,doc
 
       # - name: Check isort
