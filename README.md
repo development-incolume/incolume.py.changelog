@@ -2,7 +2,7 @@
 
 --------
 
-_Projeto desenvolvido e administrado incolume.com.br_
+_Projeto desenvolvido e administrado por incolume.com.br_
 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF)
 [![Codecov](https://img.shields.io/codecov/c/github/development-incolume/incolume.py.changelog?color=00FFFF&label=codecov&logo=codecov)]((https://codecov.io/gh/development-incolume/incolume.py.changelog))
@@ -64,11 +64,17 @@ pipenv install incolume.py.changelog
 
 ### Instalação com poetry
 ```shell
-poetry add incolume.py.changelog
+poetry add -G dev incolume.py.changelog
 ```
 
 ```shell
-poetry add git+https://github.com/development-incolume/incolume.py.changelog#main
+poetry add -G dev git+https://github.com/development-incolume/incolume.py.changelog#main
+```
+
+### Instalação com uv
+```shell
+uv venv -p 3.8
+uv pip add --dev incolume.py.changelog==0.13.1
 ```
 
 ## Atualizar o pacote
@@ -82,11 +88,17 @@ pipenv update incolume.py.changelog
 ```
 ### Atualização com poetry
 ```shell
-poetry update incolume.py.changelog
+poetry update -G dev incolume.py.changelog
 ```
 
 ```shell
-poetry update git+https://github.com/development-incolume/incolume.py.changelog#main
+poetry update -G dev git+https://github.com/development-incolume/incolume.py.changelog#main
+```
+
+### Atualização com uv
+```shell
+uv venv -p 3.8
+uv pip add --dev incolume.py.changelog==0.13.1
 ```
 
 ## Gerar pacote a partir dos fontes para instalação
