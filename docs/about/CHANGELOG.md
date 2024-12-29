@@ -5,10 +5,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.13.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.13.1a3)
 
 ---
 
+
+## [Unreleased]	 &#8212; 	2024-12-29:
+### Fixed
+  - Desativado temporariamente ci/cd para formatação e lint com ruff;
 
 ## [0.13.0]	 &#8212; 	2024-12-28:
 ### Fixed
@@ -332,3 +336,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.12.2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.12.1...0.12.2
 [0.12.3]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.12.2...0.12.3
 [0.13.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.12.3...0.13.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.13.0...Unreleased
