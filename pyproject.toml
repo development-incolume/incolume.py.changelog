@@ -3,6 +3,9 @@ name = "incolume.py.changelog"
 version = "0.13.1"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
+documentation = "https://python-poetry.org/docs/"
+repository = "https://github.com/python-poetry/poetry"
+homepage = "https://python-poetry.org/"
 keywords = ['python', 'utils', 'incolume']
 authors = [
   "britodfbr <contato@incolume.com.br>",
@@ -31,6 +34,8 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   'Topic :: Software Development :: Libraries :: Python Modules',
   'Topic :: Utilities',
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules"
 ]
 include = [
   'README.md',
