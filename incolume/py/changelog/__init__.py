@@ -12,9 +12,13 @@ import toml
 
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
-versionfile.write_text(
-    toml.load(confproject)['tool']['poetry']['version'] + '\n',
-)
+
+try:  # noqa: SIM105
+    versionfile.write_text(
+        toml.load(confproject)['tool']['poetry']['version'] + '\n',
+    )
+except FileNotFoundError:
+    pass
 
 __version__ = versionfile.read_text().strip()
 __title__ = 'incolume.py.changelog'

@@ -4,6 +4,12 @@
 name: Unit Tests
 
 on:
+  workflow_dispatch:
+   inputs:
+     environment:
+       description: 'The environment to deploy to (e.g. production, staging)'
+       required: true
+       default: 'dev'
   push:
     branches: [ "dev" ]
   pull_request:
