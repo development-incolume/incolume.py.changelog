@@ -9,7 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Final
-
+from urllib.parse import urljoin
 import git
 from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 
@@ -329,7 +329,7 @@ def changelog_footer(
         'incolume.py.changelog/-/compare/1.0.0...1.0.1']
     """
     urlcompare = (
-        kwargs.get('urlcompare')
+        kwargs.get('urlcompare').strip('/')
         or 'https://github.com/development-incolume/'
         'incolume.py.changelog/-/compare'
     )
