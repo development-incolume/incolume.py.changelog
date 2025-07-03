@@ -10,6 +10,11 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [Unreleased]	 &#8212; 	2025-07-03:
+### Fixed
+  - Correção no timestamp para evitar conflito no Windows;
+  - Strip de URL para url-compare;
+
 ## [0.14.0]	 &#8212; 	2025-01-15:
 ### Fixed
   - Desativado temporariamente ci/cd para formatação com ruff;
@@ -346,3 +351,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.13.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.12.3...0.13.0
 [0.13.1]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.13.0...0.13.1
 [0.14.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.13.1...0.14.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.14.0...Unreleased
