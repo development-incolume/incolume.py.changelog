@@ -12,9 +12,17 @@ from icecream import ic
 from pathlib import Path
 from shutil import rmtree
 from dataclasses import dataclass
+from dotenv import load_dotenv
+from os import  getenv
 
 
 __author__ = '@britodfbr'  # pragma: no cover
+
+load_dotenv()
+
+ic.disable()
+if getenv('DEBUG') or getenv('DEBUG_MODE') or getenv('INCOLUME_DEBUG_MODE'):
+    ic.enable()
 
 
 @dataclass
