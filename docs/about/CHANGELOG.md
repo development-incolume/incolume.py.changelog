@@ -5,10 +5,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.14.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.15.0)
 
 ---
 
+
+## [0.15.0]	 &#8212; 	2025-08-14:
+### Added
+  - Adicionado definições para compatibilidade plena com gerenciador `uv`;
+  - Ativado a ferramenta `ruff` como validador e formatador de código para o projeto;
+  - Ativado configuração de script para ambiente atualizado do pyproject.toml;
+  - Controle de exibição verbosa no terminal por variaveis de ambiente;
+### Changed
+  - Atualização do modelo para pyproject.toml;
+  - Ampliado cobertura para módulo principal;
+  - Atualização de performance em ci/cd para funcionar com `uv` + `ruff`;
+### Deprecated
+  - Flake8;
+  - Isort;
+  - Pylint;
+### Fixed
+  - Correção no timestamp para evitar conflito no Windows;
+  - Strip de URL para url-compare;
+  - Suspenso temporariamente testes de docstring em conflito;
 
 ## [0.14.0]	 &#8212; 	2025-01-15:
 ### Fixed
@@ -346,3 +365,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.13.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.12.3...0.13.0
 [0.13.1]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.13.0...0.13.1
 [0.14.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.13.1...0.14.0
+[0.15.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.14.0...0.15.0
