@@ -1,3 +1,11 @@
+#[build-system]
+#requires = ["poetry-core>=1.0.0"]
+#build-backend = "poetry.core.masonry.api"
+
+[build-system]
+requires = ["uv_build>=0.8.9,<0.9.0"]
+build-backend = "uv_build"
+
 [project]
 name = "incolume.py.changelog"
 version = "0.15.0a1"
@@ -40,13 +48,12 @@ dependencies = [
 'Tracker' = 'https://github.com/development-incolume/incolume.py.changelog/issues'
 'Oficial' = 'https://pypi.org/project/incolume.py.changelog/'
 
-#[build-system]
-#requires = ["poetry-core>=1.0.0"]
-#build-backend = "poetry.core.masonry.api"
-
-[build-system]
-requires = ["uv_build>=0.8.9,<0.9.0"]
-build-backend = "uv_build"
+[project.scripts]
+changelog = 'incolume.py.changelog.cli:changelog'
+gcl = 'incolume.py.changelog.cli:changelog'
+gencl = 'incolume.py.changelog.cli:changelog'
+gchangelog = 'incolume.py.changelog.cli:changelog'
+greeting = 'incolume.py.changelog.cli:greeting'
 
 [tool.uv]
 
