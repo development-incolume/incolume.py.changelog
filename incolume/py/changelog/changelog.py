@@ -9,7 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Any, Final
-from urllib.parse import urljoin
+
 import git
 from incolume.py.changelog import __title__, __version__, key_versions_2_sort
 
@@ -111,7 +111,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
 
     logging.debug('key=%s; date=%s; msg=%s', key, date, msg)
     selected_lang = suport_lang.get(lang, suport_lang['all'])
-    regex: str = rf"({'|'.join(selected_lang.keys())})\s?:"
+    regex: str = rf'({"|".join(selected_lang.keys())})\s?:'
 
     txt = re.sub(
         regex,
@@ -517,12 +517,12 @@ class Changelog:
             logging.debug(entrada)
             if linked:
                 result.append(
-                    f"\n\n## [{entrada['key']}]\t &#8212; "
-                    f"\t{entrada['date']}:",
+                    f'\n\n## [{entrada["key"]}]\t &#8212; '
+                    f'\t{entrada["date"]}:',
                 )
             else:
                 result.append(
-                    f"\n\n## {entrada['key']}\t &#8212; \t{entrada['date']}:",
+                    f'\n\n## {entrada["key"]}\t &#8212; \t{entrada["date"]}:',
                 )
 
             for label, msgs in entrada['messages'].items():

@@ -13,13 +13,20 @@ import toml
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
 
-try:  # noqa: SIM105
-    versionfile.write_text(
-        toml.load(confproject)['tool']['poetry']['version'] + '\n',
-    )
-except FileNotFoundError:
-    pass
 
+def update_version(file_in: Path, file_out: Path | None = None) -> bool:
+    """Update version into file."""
+    file_out = file_out or versionfile
+    try:
+        file_out.write_text(
+            toml.load(file_in)['tool']['poetry']['version'] + '\n',
+        )
+    except FileNotFoundError:
+        return False
+    return True
+
+
+update_version(confproject)
 __version__ = versionfile.read_text().strip()
 __title__ = 'incolume.py.changelog'
 
