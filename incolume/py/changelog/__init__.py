@@ -69,8 +69,8 @@ def key_versions_2_sort(
         TypeError: if parameter x not be a tuple or list.
 
     Examples:
-        >>> key_version_2_sort(('1.1.1rc0', 'aaa'))
-        '00010501.080000'
+        >>> key_versions_2_sort(('1.1.1rc0', 'aaa'))
+        '000100010001.080000'
     """
     qdig = qdig or 5
     if not isinstance(x, Container):

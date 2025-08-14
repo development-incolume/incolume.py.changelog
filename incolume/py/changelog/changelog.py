@@ -37,11 +37,11 @@ def get_os_command(key: str) -> str:
 
     Examples:
         In Windows:
-        >>> get_os_command('1.0.0')
+        >> get_os_command('1.0.0')
         'git show -s --format=%cs 1.0.0^^{commit} --'
 
         In Linux:
-        >>> get_os_command('1.0.0')
+        >> get_os_command('1.0.0')
         'git show -s --format=%cs 1.0.0^{commit} --'
     """
     cmd_supply = {
@@ -291,10 +291,9 @@ def changelog_body(
         None
 
     Examples:
-        >>> changelog_body([('1.0.1', {Added: 'New function'})],
-        ['1.0.1', 'Added', 'New Function'])
+        >>> changelog_body([('1.0.1', {'Added': 'New function'}), ('1.0.2', {'Added': 'New other function'})], content_formated=[])
         ['[1.0.1]', 'Added', 'New Function']
-    """
+    """  # noqa: E501
     logging.debug(kwargs)
     content_formated.extend(Changelog.iter_logs(content[:-1]))
     content_formated.extend(Changelog.iter_logs(content[-1:], linked=False))
@@ -321,18 +320,15 @@ def changelog_footer(
         None
 
     Examples:
-        >>> changelog_footer([('1.0.1',{Added: 'New function'})],
-        ['1.0.1', 'Added', 'New Function'])
-        ['1.0.1', 'Added', 'New Function',
-        '\n---\n\n',
-        '[1.0.1]: https://github.com/development-incolume/'
-        'incolume.py.changelog/-/compare/1.0.0...1.0.1']
-    """
+        >>> changelog_footer([('1.0.2',{'key': '1.0.2', 'messages': {'Added': ['New function']}}), ('1.0.1', {'key': '1.0.1', 'messages':{'Added': ['Other New Function']}})], [])
+        ['\n\n---\n\n', '[1.0.2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/1.0.1...1.0.2\n']
+    """  # noqa: E501
     urlcompare = (
-        kwargs.get('urlcompare').strip('/')
+        kwargs.get('urlcompare')
         or 'https://github.com/development-incolume/'
         'incolume.py.changelog/-/compare'
     )
+    urlcompare.rstrip('/')
     logging.debug('urlcompare=%s', urlcompare)
     content_formated.append('\n\n---\n\n')
     y: dict[str, Any] = {}
@@ -501,17 +497,9 @@ class Changelog:
             None
 
         Examples:
-            >>> iter_logs(
-            [('1.0.0a5', {'date': '2023-12-21', 'key': '1.0.0a5',
-            'messages': {'Added': ['New function', 'One more new function.'],
-            'Fixed': ['A bug of connection.'],},},),], False)
-            ['\n\n## 1.0.0a5\t &#8212; \t2023-12-21:',
-            '\n### Added',
-            '\n  - New function;',
-            '\n  - One more new function;',
-            '\n### Fixed',
-            '\n  - A bug of connection.",;',],
-        """
+            >>> Changelog.iter_logs(content=[('1.0.0a5', {'date': '2023-12-21', 'key': '1.0.0a5', 'messages': {'Added': ['New function', 'One more new function.'], 'Fixed': ['A bug of connection.']}})], linked=False)
+            ['\n\n## 1.0.0a5\t &#8212; \t2023-12-21:', '\n### Added', '\n  - New function;', '\n  - One more new function.;', '\n### Fixed', '\n  - A bug of connection.;']
+        """  # noqa: E501
         result = []
         for _, entrada in content:
             logging.debug(entrada)
@@ -543,38 +531,12 @@ class Changelog:
             None
 
         Examples:
-            >>> changelog_header()
-            ['# CHANGELOG\n\n\n',
-            'All notable changes to this project',
-            ' will be documented in this file.\n\n',
-            'The format is based on ',
-            '[Keep a Changelog](https://keepachangelog.com/en/1.0.0/), ',
-            'this project adheres to'
-            '[Semantic Versioning](https://semver.org/spec/v2.0.0.html) '
-            'and [Conventional Commit]'
-            '(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n',
-            'This file was automatically generated for',
-            ' [incolume.py.changelog](https://github.com/development-incolume/'
-            'incolume.py.changelog/-/tree/0.2.0a2)',
-            '\n\n---\n']
+            >>> Changelog()._header()
+            ['# CHANGELOG\n\n\n', 'All notable changes to this project', ' will be documented in this file.\n\n', 'The format is based on ', '[Keep a Changelog](https://keepachangelog.com/en/1.0.0/), ', 'this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n', 'This file was automatically generated for', ' [incolume.py.changelog](https://gitlab.com/development-incolume/incolume.py.changelog/-/tree/0.15.0a1)', '\n\n---\n']
 
-            >>> changelog_header(
-            url_keepachangelog='https://keepachangelog.com/en/2.0.0/',
-            url_semver=https://semver.org/spec/v1.0.0.html)
-            ["# CHANGELOG\n\n\n",
-            "All notable changes to this project",
-            " will be documented in this file.\n\n",
-            "The format is based on ",
-            "[Keep a Changelog](https://keepachangelog.com/en/2.0.0/),",
-            "this project adheres to "
-            "[Semantic Versioning](https://semver.org/spec/v1.0.0.html)"
-            "and [Conventional Commit]"
-            "(https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n",
-            "This file was automatically generated for",
-            "[incolume.py.changelog](https://github.com/development-incolume/'
-            'incolume.py.changelog/-/tree/0.2.0a0)",
-            "\n\n---\n"]
-        """
+            >>> Changelog(url_keepachangelog='https://keepachangelog.com/en/2.0.0/', url_semver='https://semver.org/spec/v1.0.0.html')._header()
+            ['# CHANGELOG\n\n\n', 'All notable changes to this project', ' will be documented in this file.\n\n', 'The format is based on ', '[Keep a Changelog](https://keepachangelog.com/en/2.0.0/), ', 'this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n', 'This file was automatically generated for', ' [incolume.py.changelog](https://gitlab.com/development-incolume/incolume.py.changelog/-/tree/0.15.0a1)', '\n\n---\n']
+        """  # noqa: E501
         return [
             '# CHANGELOG\n\n\n',
             'All notable changes to this project',
@@ -610,8 +572,7 @@ class Changelog:
             None
 
         Examples:
-            >>> changelog_footer([('1.0.1',{Added: 'New function'})],
-            ['1.0.1', 'Added', 'New Function'])
+            >>> Changelog._footer([('1.0.1',{Added: 'New function'})], ['1.0.1', 'Added', 'New Function'])
             ['1.0.1', 'Added', 'New Function',
             '\n---\n\n',
             '[1.0.1]: https://github.com/development-incolume/'
@@ -636,7 +597,7 @@ class Changelog:
     def __call__(self: Changelog, *args: Any, **kwds: Any) -> Changelog:
         """Call class."""
         logging.debug('args: %s; kwargs: %s', args, kwds)
-        repo = git.Repo()  # noqa: F841
+        self.repo = git.Repo()
         return self
 
 
