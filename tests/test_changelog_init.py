@@ -68,9 +68,8 @@ class TestChangelogInit:
             pytest.param(
                 Entrance(confproject1, versionfile),
                 True,
-                marks=[pytest.mark.skip],
+                marks=[],
             ),
-            pytest.param('', '', marks=[pytest.mark.skip]),
         ],
     )
     def test_update_version(

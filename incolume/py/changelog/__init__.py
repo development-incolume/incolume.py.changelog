@@ -21,6 +21,10 @@ def update_version(file_in: Path, file_out: Path | None = None) -> bool:
         file_out.write_text(
             toml.load(file_in)['tool']['poetry']['version'] + '\n',
         )
+    except KeyError:
+        file_out.write_text(
+            toml.load(file_in)['project']['version'] + '\n',
+        )
     except FileNotFoundError:
         return False
     return True
