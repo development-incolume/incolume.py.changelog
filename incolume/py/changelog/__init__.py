@@ -19,11 +19,11 @@ def update_version(file_in: Path, file_out: Path | None = None) -> bool:
     file_out = file_out or versionfile
     try:
         file_out.write_text(
-            toml.load(file_in)['tool']['poetry']['version'] + '\n',
+            toml.load(file_in)['project']['version'] + '\n',
         )
     except KeyError:
         file_out.write_text(
-            toml.load(file_in)['project']['version'] + '\n',
+            toml.load(file_in)['tool']['poetry']['version'] + '\n',
         )
     except FileNotFoundError:
         return False

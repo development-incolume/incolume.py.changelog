@@ -1,6 +1,6 @@
 [project]
 name = "incolume.py.changelog"
-version = "0.15.0a0"
+version = "0.15.0a1"
 description = "Generate CHANGELOG.md"
 authors = [
   {name="britodfbr", email =  "contato@incolume.com.br"}
