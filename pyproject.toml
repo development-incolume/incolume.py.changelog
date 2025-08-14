@@ -1,3 +1,49 @@
+[project]
+name = "incolume.py.changelog"
+version = "0.15.0a0"
+description = "Generate CHANGELOG.md"
+authors = [
+  {name="britodfbr", email =  "contato@incolume.com.br"}
+]
+maintainers = [
+  {name="britodfbr", email =  "contato@incolume.com.br"}
+]
+#readme = ["README.md","docs/index.md"]
+requires-python=">=3.8.1,<4"
+classifiers = [
+  'Development Status :: 5 - Production/Stable',
+  'Operating System :: OS Independent',
+  'Natural Language :: Portuguese (Brazilian)',
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Build Tools",
+  'Topic :: Software Development :: Libraries :: Python Modules',
+  'Topic :: Utilities',
+]
+dependencies = [
+]
+
+[project.urls]
+'Documentation' = 'https://development-incolume.github.io/incolume.py.changelog/'
+'Source' = 'https://github.com/development-incolume/incolume.py.changelog/releases'
+'Git' = 'https://github.com/development-incolume/incolume.py.changelog.git'
+'Tracker' = 'https://github.com/development-incolume/incolume.py.changelog/issues'
+'Oficial' = 'https://pypi.org/project/incolume.py.changelog/'
+
+#[build-system]
+#requires = ["poetry-core>=1.0.0"]
+#build-backend = "poetry.core.masonry.api"
+
+[build-system]
+requires = ["uv_build>=0.8.9,<0.9.0"]
+build-backend = "uv_build"
+
 [tool.poetry]
 name = "incolume.py.changelog"
 version = "0.15.0a0"
@@ -100,10 +146,6 @@ mkdocs-static-i18n = "^1.2.0"
 bandit = "^1.7.6"
 pip-audit = "^2.6.1"
 safety = "^2.3.4"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 log_format = '%(asctime)s; %(levelname)-8s; %(name)s; %(module)s; %(funcName)s; %(message)s'
