@@ -17,7 +17,7 @@ class TestCase:
     """Class test case."""
 
     @pytest.mark.parametrize(
-        'platform entrance expected'.split(),
+        ['platform', 'entrance', 'expected'],
         [
             pytest.param(
                 'linux',
@@ -124,7 +124,7 @@ class TestCase:
             assert 'messages' in result
 
     @pytest.mark.parametrize(
-        'entrance date expected'.split(),
+        ['entrance', 'date', 'expected'],
         [
             pytest.param(
                 {
@@ -299,7 +299,7 @@ class TestCase:
             assert expected == result
 
     @pytest.mark.parametrize(
-        'entrance dates expected'.split(),
+        ['entrance', 'dates', 'expected'],
         [
             pytest.param(
                 {
@@ -451,9 +451,9 @@ class TestCase:
                             'key': '1.0.0',
                             'date': '2018-10-19',
                             'messages': {
-                                'Added': 'a1 a2 a3.'.split(),
-                                'Changed': 'a;b;c;d;e'.split(';'),
-                                'Deprecated': '1;2;3;a;s;b'.split(';'),
+                                'Added': ['a1', 'a2', 'a3.'],
+                                'Changed': ['a', 'b', 'c', 'd', 'e'],
+                                'Deprecated': ['1', '2', '3', 'a', 's', 'b'],
                                 'Fixed': [
                                     'http://example.com',
                                     ' http://httpbin.com',
@@ -707,7 +707,7 @@ class TestClassChangelog:
         assert isinstance(o, pkg.Changelog)
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 {},
@@ -763,7 +763,7 @@ class TestClassChangelog:
         assert o._header() == expected  # noqa: SLF001
 
     @pytest.mark.parametrize(
-        'entrance expected'.split(),
+        ['entrance', 'expected'],
         [
             (
                 {

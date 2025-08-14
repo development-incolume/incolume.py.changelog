@@ -15,7 +15,7 @@ if TYPE_CHECKING:
 
 
 @pytest.mark.parametrize(
-    'envvar entrance expected'.split(),
+    ['envvar', 'entrance', 'expected'],
     [
         pytest.param('', {'args': 'Yoda'}, 'Oi Yoda!\n'),
         pytest.param('Yoda', {'args': ''}, 'Oi Yoda!\n'),
@@ -38,7 +38,7 @@ def test_gretting(
 
 
 @pytest.mark.parametrize(
-    'entrance expected'.split(),
+    ['entrance', 'expected'],
     [
         pytest.param([], True, marks=()),
         pytest.param(['-u', 'http://example.org/xpto'], True, marks=()),

@@ -38,8 +38,8 @@ class TestCase:
     @pytest.mark.parametrize(
         'entrance',
         [
-            confproject,
-            versionfile,
+            pytest.param(confproject, marks=[]),
+            pytest.param(versionfile, marks=[]),
         ],
     )
     def test_same_version(self, entrance: Path) -> None:
