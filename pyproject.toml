@@ -9,7 +9,7 @@ maintainers = [
   {name="britodfbr", email =  "contato@incolume.com.br"}
 ]
 #readme = ["README.md","docs/index.md"]
-requires-python=">=3.8.1,<4"
+requires-python=">=3.8.2,<4"
 classifiers = [
   'Development Status :: 5 - Production/Stable',
   'Operating System :: OS Independent',
@@ -121,7 +121,7 @@ gchangelog = 'incolume.py.changelog.cli:changelog'
 greeting = 'incolume.py.changelog.cli:greeting'
 
 [tool.poetry.dependencies]
-python = ">=3.8.1,<4.0.0"
+python = ">=3.8.2,<4.0.0"
 toml = {extras = ["tomli"], version = "^0.10.2"}
 click = "^8.1.5"
 gitpython = "^3.1.43"
