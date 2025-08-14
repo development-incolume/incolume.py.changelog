@@ -47,8 +47,7 @@ class TestChangelogInit:
         logging.info(
             ic(f'finishing class {cls.__name__} execution'),
         )
-        rmtree(cls.confproject0, ignore_errors=True)
-        rmtree(cls.confproject1, ignore_errors=True)
+        rmtree(cls.confproject0.parent, ignore_errors=True)
 
     def setup_method(self, method):
         """Setup method."""
@@ -59,6 +58,8 @@ class TestChangelogInit:
     def teardown_method(self, method):
         """Teardown method."""
         logging.info(ic(f'finishing execution ({method}) of {stack()[0][3]}'))
+        rmtree(self.confproject0, ignore_errors=True)
+        rmtree(self.confproject1, ignore_errors=True)
 
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
