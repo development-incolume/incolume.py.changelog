@@ -20,26 +20,27 @@ def update_version(file_in: Path, file_out: Path | None = None) -> bool:
     """Update version into file."""
     file_out = file_out or versionfile
     ic(file_out)
-    version_project, version_poetry, version = '', '', ''
+    version_project, version_poetry, version, min_version = '', '', '', ''
     try:
-        data = toml.loads(file_in.read_text(encoding='iso8859-1'))
+        data = toml.load(file_in)
     except (FileExistsError, FileNotFoundError, UnicodeDecodeError):
         return False
 
     with contextlib.suppress(KeyError):
         version_poetry = data['tool']['poetry']['version']
 
-    with contextlib.suppress(KeyError):
-        version_project = data.get('project').get('version')
+        version_project = data['project']['version']
 
-    version = max(version_poetry, version_project)
-    data['tool']['poetry']['version'] = version
-    data['project']['version'] = version
+        version = max(version_poetry, version_project)
+        min_version = min(version_poetry, version_project)
+        data['tool']['poetry']['version'] = version
+        data['project']['version'] = version
 
     file_out.write_text(version + '\n')
 
-    with confproject.open('w') as f:
-        toml.dump(data, f)
+    confproject.write_text(
+        confproject.read_text().replace(min_version, version),
+    )
 
     return True
 
