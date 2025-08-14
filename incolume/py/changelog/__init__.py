@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import contextlib
 import logging
 import re
 from collections.abc import Container
@@ -9,6 +10,7 @@ from pathlib import Path
 from typing import Union
 
 import toml
+from icecream import ic
 
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
@@ -17,20 +19,33 @@ versionfile = Path(__file__).parent / 'version.txt'
 def update_version(file_in: Path, file_out: Path | None = None) -> bool:
     """Update version into file."""
     file_out = file_out or versionfile
+    ic(file_out)
+    version_project, version_poetry, version, min_version = '', '', '', ''
     try:
-        file_out.write_text(
-            toml.load(file_in)['project']['version'] + '\n',
-        )
-    except KeyError:
-        file_out.write_text(
-            toml.load(file_in)['tool']['poetry']['version'] + '\n',
-        )
-    except FileNotFoundError:
+        data = toml.load(file_in)
+    except (FileExistsError, FileNotFoundError, UnicodeDecodeError):
         return False
+
+    with contextlib.suppress(KeyError):
+        version_poetry = data['tool']['poetry']['version']
+
+        version_project = data['project']['version']
+
+        version = max(version_poetry, version_project)
+        min_version = min(version_poetry, version_project)
+        data['tool']['poetry']['version'] = version
+        data['project']['version'] = version
+
+    file_out.write_text(version + '\n')
+
+    confproject.write_text(
+        confproject.read_text().replace(min_version, version),
+    )
+
     return True
 
 
-update_version(confproject)
+update_version(file_in=confproject)
 __version__ = versionfile.read_text().strip()
 __title__ = 'incolume.py.changelog'
 
@@ -54,8 +69,8 @@ def key_versions_2_sort(
         TypeError: if parameter x not be a tuple or list.
 
     Examples:
-        >>> key_version_2_sort(('1.1.1rc0', 'aaa'))
-        '00010501.080000'
+        >>> key_versions_2_sort(('1.1.1rc0', 'aaa'))
+        '000100010001.080000'
     """
     qdig = qdig or 5
     if not isinstance(x, Container):
