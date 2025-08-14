@@ -44,6 +44,12 @@ dependencies = [
 requires = ["uv_build>=0.8.9,<0.9.0"]
 build-backend = "uv_build"
 
+[tool.uv]
+
+[tool.uv.build-backend]
+module-root = ""
+module-name = "incolume.py.changelog"
+
 [tool.poetry]
 name = "incolume.py.changelog"
 version = "0.15.0a0"
