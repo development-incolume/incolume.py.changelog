@@ -38,12 +38,15 @@ jobs:
 
     - name: Lint with ruff
       run: |
+        source .venv/bin/activate
         ruff check --fix
 
     - name: Format code with ruff
       run: |
+        source .venv/bin/activate
         ruff format
 
     - name: Test with pytest
       run: |
+        source .venv/bin/activate
         pytest
