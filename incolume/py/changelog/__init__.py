@@ -22,7 +22,7 @@ def update_version(file_in: Path, file_out: Path | None = None) -> bool:
     ic(file_out)
     version_project, version_poetry, version = '', '', ''
     try:
-        data = toml.loads(file_in.read_text())
+        data = toml.loads(file_in.read_text(encoding='iso8859-1'))
     except (FileExistsError, FileNotFoundError, UnicodeDecodeError):
         return False
 
@@ -38,8 +38,8 @@ def update_version(file_in: Path, file_out: Path | None = None) -> bool:
 
     file_out.write_text(version + '\n')
 
-    # with confproject.open('w') as f:
-    # toml.dump(data, f)
+    with confproject.open('w') as f:
+        toml.dump(data, f)
 
     return True
 
