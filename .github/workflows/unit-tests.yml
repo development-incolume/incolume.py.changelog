@@ -33,13 +33,17 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip poetry
-        poetry install
+        python -m pip install --upgrade pip uv
+        uv sync -p ${{ matrix.python-version }}
 
     - name: Lint with ruff
       run: |
-        poetry run ruff check
+        ruff check --fix
+
+    - name: Format code with ruff
+      run: |
+        ruff format
 
     - name: Test with pytest
       run: |
-        poetry run pytest
+        pytest
