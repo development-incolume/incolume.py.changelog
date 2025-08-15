@@ -546,11 +546,8 @@ class Changelog:
             None
 
         Examples:
-            >> Changelog._footer([('1.0.1',{Added: 'New function'})], ['1.0.1', 'Added', 'New Function'])
-            ['1.0.1', 'Added', 'New Function',
-            '\n---\n\n',
-            '[1.0.1]: https://github.com/development-incolume/'
-            'incolume.py.changelog/-/compare/1.0.0...1.0.1']
+            >>> Changelog()._footer([('1.0.2',{'key': '1.0.2', 'messages': {'Added': ['New function']}}), ('1.0.1', {'key': '1.0.1', 'messages':{'Added': ['Other New Function']}})], [])
+            ['\n\n---\n\n', '[1.0.2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/1.0.1...1.0.2\n']
         """  # noqa: E501
         urlcompare = (
             kwargs.get('urlcompare')
