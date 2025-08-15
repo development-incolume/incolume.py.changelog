@@ -103,7 +103,7 @@ jobs:
 
     - name: Test with pytest and generate coverage report
       run: |
-        source .venv/Script/activate
+        source .venv\Scripts\activate
         pytest -vv
 
   coverage:
