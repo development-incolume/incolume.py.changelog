@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Any, Final, TypeVar
+from typing import Any, Final
 
 import git
 from incolume.py.changelog import __title__, __version__, key_versions_2_sort
@@ -21,7 +21,6 @@ logging.basicConfig(
 )
 
 CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
-T = TypeVar('T')
 
 
 def get_os_command(key: str) -> str:
@@ -566,13 +565,9 @@ class Changelog:
             y = x
         return content_formated
 
-    def __call__(
-        self: Changelog,
-        *args: tuple[T, ...],
-        **kwargs: dict[str, T],
-    ) -> Changelog:
+    def __call__(self: Changelog, *args: Any, **kwds: Any) -> Changelog:
         """Call class."""
-        logging.debug('args: %s; kwargs: %s', args, kwargs)
+        logging.debug('args: %s; kwargs: %s', args, kwds)
         self.repo = git.Repo()
         return self
 
