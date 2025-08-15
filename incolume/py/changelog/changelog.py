@@ -430,6 +430,7 @@ class Changelog:
         Return:
             None
         """
+        self.repo = ''
         self.file_output = (
             file_output or kwargs.get('file_output') or Path('CHANGELOG.md')
         )
@@ -565,9 +566,28 @@ class Changelog:
             y = x
         return content_formated
 
-    def __call__(self: Changelog, *args: Any, **kwds: Any) -> Changelog:
-        """Call class."""
-        logging.debug('args: %s; kwargs: %s', args, kwds)
+    def __call__(
+        self: Changelog,
+        *args: Any,
+        **kwargs: Any,
+    ) -> Changelog:  # pragma: no cover
+        """Call class.
+
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+
+        Return:
+            Return a instance of Changelog class.
+
+        Raises:
+            None
+
+        Examples:
+            >>> Changelog().repo
+            ''
+        """
+        logging.debug('args: %s; kwargs: %s', args, kwargs)
         self.repo = git.Repo()
         return self
 
