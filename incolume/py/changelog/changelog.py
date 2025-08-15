@@ -430,6 +430,7 @@ class Changelog:
         Return:
             None
         """
+        self.repo = ''
         self.file_output = (
             file_output or kwargs.get('file_output') or Path('CHANGELOG.md')
         )
@@ -546,11 +547,8 @@ class Changelog:
             None
 
         Examples:
-            >> Changelog._footer([('1.0.1',{Added: 'New function'})], ['1.0.1', 'Added', 'New Function'])
-            ['1.0.1', 'Added', 'New Function',
-            '\n---\n\n',
-            '[1.0.1]: https://github.com/development-incolume/'
-            'incolume.py.changelog/-/compare/1.0.0...1.0.1']
+            >>> Changelog()._footer([('1.0.2',{'key': '1.0.2', 'messages': {'Added': ['New function']}}), ('1.0.1', {'key': '1.0.1', 'messages':{'Added': ['Other New Function']}})], [])
+            ['\n\n---\n\n', '[1.0.2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/1.0.1...1.0.2\n']
         """  # noqa: E501
         urlcompare = (
             kwargs.get('urlcompare')
@@ -568,9 +566,28 @@ class Changelog:
             y = x
         return content_formated
 
-    def __call__(self: Changelog, *args: Any, **kwds: Any) -> Changelog:
-        """Call class."""
-        logging.debug('args: %s; kwargs: %s', args, kwds)
+    def __call__(
+        self: Changelog,
+        *args: Any,
+        **kwargs: Any,
+    ) -> Changelog:  # pragma: no cover
+        """Call class.
+
+        Args:
+            *args: Variable length argument list.
+            **kwargs: Arbitrary keyword arguments.
+
+        Return:
+            Return a instance of Changelog class.
+
+        Raises:
+            None
+
+        Examples:
+            >>> Changelog().repo
+            ''
+        """
+        logging.debug('args: %s; kwargs: %s', args, kwargs)
         self.repo = git.Repo()
         return self
 
