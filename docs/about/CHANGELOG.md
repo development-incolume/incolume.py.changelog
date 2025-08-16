@@ -10,20 +10,14 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2025-08-15:
-### Deprecated
-  - Black;
-  - Blue;
-  - Pylint;
-  - Isort;
-  - Pydocstyle;
-  - Flake8;
-  - Poetry;
+## [Unreleased]	 &#8212; 	2025-08-16:
+### Removed
+  - Compatibilidade com Python 3.8.x;
+  - Compatibilidade com Python 3.9.x;
 ### Changed
-  - Gerenciador `uv` definido como gerenciador principal;
-  - `ruff` definido como verificador e formatador principal;
-### Fixed
-  - Ampliação da cobertura para 100% do código atual;
+  - Gerenciador `uv` introduzido em ci/cd para gerar documentação;
+  - Gerenciador `uv` introduzido na execução do comando `tox`;
+  - Configurado compatibilidade cruzada de dependências entre `uv`e `poetry`;
 
 ## [0.16.0]	 &#8212; 	2025-08-16:
 ### Deprecated
