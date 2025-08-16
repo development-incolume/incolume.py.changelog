@@ -398,14 +398,14 @@ minversion = 3.1.0
 isolated_build = True
 envlist =
     clean
-    black
-    blue
-    isort
-    pydocstyle
+#    black
+#    blue
+#    isort
+#    pydocstyle
     mypy
-    pylint
-    py38
-    py39
+#    pylint
+#    py38
+#    py39
     py310
     py311
     py312
@@ -423,7 +423,7 @@ allowlist_externals = uv
 skip_install = true
 commands =
     uv sync -p {envpython}
-    uv run pytest
+    uv run pytest incolume/ tests/
 
 [testenv:linters]
 commands =
