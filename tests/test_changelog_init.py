@@ -86,7 +86,7 @@ class TestChangelogInit:
         *,
         entrance: Entrance,
         expected: bool,
-    ) -> NoReturn:
+    ) -> None:
         """Unittest."""
         assert (
             pkg.update_version(entrance.fileconfig, entrance.fileversion)

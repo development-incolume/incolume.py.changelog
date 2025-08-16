@@ -430,7 +430,7 @@ class Changelog:
         Return:
             None
         """
-        self.repo = ''
+        self.repo: git.Repo | None = None
         self.file_output = (
             file_output or kwargs.get('file_output') or Path('CHANGELOG.md')
         )
@@ -585,7 +585,7 @@ class Changelog:
 
         Examples:
             >>> Changelog().repo
-            ''
+
         """
         logging.debug('args: %s; kwargs: %s', args, kwargs)
         self.repo = git.Repo()
