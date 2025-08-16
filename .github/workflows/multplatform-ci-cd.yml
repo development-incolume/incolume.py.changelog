@@ -99,20 +99,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -U uv pip
-          uv sync
       - name: Test with pytest
         run: |
-          uv run pytest --cov --junitxml=junit.xml
-      # Copy and paste the codecov/test-results-action here
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-      - name: Upload test results to Codecov
-        if: ${{ !cancelled() }}
-        uses: codecov/test-results-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          uv run codecovcli do-upload --report-type test_results --file report.junit.xml
+          uv run codecovcli upload-process
+
 
   build:
     name: Build package release
