@@ -8,7 +8,7 @@ build-backend = "uv_build"
 
 [project]
 name = "incolume.py.changelog"
-version = "0.16.0"
+version = "0.17.0a1"
 description = "Generate CHANGELOG.md"
 authors = [
   {name="britodfbr", email =  "contato@incolume.com.br"}
