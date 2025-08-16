@@ -180,7 +180,7 @@ jobs:
       - name: Publish to testpypi
         continue-on-error: true
         run: |
-          uv publish --index https://test.pypi.org/legacy/ --token ${{ secrets.TEST_PYPI_TOKEN }}
+          uv publish --index testpypi --token ${{ secrets.TEST_PYPI_TOKEN }}
 
   publish-pypi:
     name: Publish PyPI
