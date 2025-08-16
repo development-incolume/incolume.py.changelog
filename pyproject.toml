@@ -8,7 +8,7 @@ build-backend = "uv_build"
 
 [project]
 name = "incolume.py.changelog"
-version = "0.15.0"
+version = "0.16.0"
 description = "Generate CHANGELOG.md"
 authors = [
   {name="britodfbr", email =  "contato@incolume.com.br"}
@@ -43,6 +43,7 @@ dependencies = [
 ]
 
 [project.urls]
+'codecov' = 'https://codecov.io/gh/development-incolume/incolume.py.changelog'
 'Documentation' = 'https://development-incolume.github.io/incolume.py.changelog/'
 'Source' = 'https://github.com/development-incolume/incolume.py.changelog/releases'
 'Git' = 'https://github.com/development-incolume/incolume.py.changelog.git'
@@ -62,9 +63,15 @@ greeting = 'incolume.py.changelog.cli:greeting'
 module-root = ""
 module-name = "incolume.py.changelog"
 
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true
+
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.15.0"
+version = "0.16.0"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 documentation = "https://development-incolume.github.io/incolume.py.changelog/"

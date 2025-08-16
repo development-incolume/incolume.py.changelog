@@ -5,10 +5,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.15.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.16.0)
 
 ---
 
+
+## [0.16.0]	 &#8212; 	2025-08-16:
+### Deprecated
+  - Python 3.8;
+  - Python 3.9;
+  - Black;
+  - Pylint;
+  - Isort;
+  - Pydocstyle;
+  - Flake8;
+  - Poetry;
+### Changed
+  - Gerenciador `uv` definido como gerenciador principal;
+  - `ruff` definido como verificador e formatador principal;
+### Fixed
+  - Ampliação da cobertura para 100% do código atual;
 
 ## [0.15.0]	 &#8212; 	2025-08-14:
 ### Added
@@ -366,3 +382,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.13.1]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.13.0...0.13.1
 [0.14.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.13.1...0.14.0
 [0.15.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.14.0...0.15.0
+[0.16.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.15.0...0.16.0
