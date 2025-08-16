@@ -33,24 +33,17 @@ jobs:
           python -m pip install -U pip uv ruff
           uv sync
 
-      # - name: Check isort
-      #   continue-on-error: true
-      #   run: |
-      #     poetry run isort check incolume/ tests/
-
       - name: Check with mypy
-        continue-on-error: true
-        run: |
-          uv run mypy incolume/ tests/
+        continue-on-error: false
+        run: uv run mypy incolume/ tests/
 
       - name: Format with ruff
-        continue-on-error: true
-        run: ¦
-          uv run ruff format incolume/ tests/
+        continue-on-error: false
+        run: uv run ruff format incolume/ tests/
 
       - name: Lint with ruff
-        continue-on-error: true
-        run: ¦
+        continue-on-error: false
+        run: |
           uv run ruff check --fix incolume/ tests/
 
       - name: Commit changes
@@ -92,6 +85,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
+          token: ${{ secrets.CODECOV_TOKEN }}
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
