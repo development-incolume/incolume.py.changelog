@@ -43,6 +43,7 @@ dependencies = [
 ]
 
 [project.urls]
+'codecov' = 'https://codecov.io/gh/development-incolume/incolume.py.changelog'
 'Documentation' = 'https://development-incolume.github.io/incolume.py.changelog/'
 'Source' = 'https://github.com/development-incolume/incolume.py.changelog/releases'
 'Git' = 'https://github.com/development-incolume/incolume.py.changelog.git'
