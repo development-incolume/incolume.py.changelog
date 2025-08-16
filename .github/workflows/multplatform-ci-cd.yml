@@ -40,17 +40,15 @@ jobs:
 
       - name: Check with mypy
         continue-on-error: true
-        run: |
-          uv run mypy incolume/ tests/
+        run: uv run mypy incolume/ tests/
 
       - name: Format with ruff
         continue-on-error: true
-        run: ¦
-          uv run ruff format incolume/ tests/
+        run: uv run ruff format incolume/ tests/
 
       - name: Lint with ruff
         continue-on-error: true
-        run: ¦
+        run: |
           uv run ruff check --fix incolume/ tests/
 
       - name: Commit changes
