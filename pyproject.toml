@@ -84,7 +84,7 @@ explicit = true
 
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.16.0"
+version = "0.17.0a1"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 documentation = "https://development-incolume.github.io/incolume.py.changelog/"
@@ -153,6 +153,8 @@ python = ">=3.10,<4.0.0"
 toml = {extras = ["tomli"], version = "^0.10.2"}
 click = "^8.1.5"
 gitpython = "^3.1.43"
+icecream = "^2.1.6"
+python-dotenv = "^1.1.1"
 
 [tool.poetry.group.dev.dependencies]
 flake8 = "^6.1.0"
@@ -407,6 +409,8 @@ envlist =
     py310
     py311
     py312
+    py313
+    py314
 
 ;[tox:.package]
 ;basepython = python3
