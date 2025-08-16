@@ -416,13 +416,12 @@ envlist =
 ;basepython = python3
 
 [testenv]
-whitelist_externals = poetry
-allowlist_externals = poetry
+whitelist_externals = uv
+allowlist_externals = uv
 skip_install = true
 commands =
-    poetry env use {envpython}
-    poetry install -vv --no-root
-    poetry run pytest
+    uv sync -p {envpython}
+    uv run pytest
 
 [testenv:linters]
 commands =
@@ -435,33 +434,34 @@ commands =
   {[testenv:pylint]commands}
 
 [testenv:stats]
-commands = poetry run pytest -xv --cov-report html:coverage_report/html --cov-report xml:coverage_report/cov.xml
+commands = uv run pytest -xv --cov-report html:coverage_report/html --cov-report xml:coverage_report/cov.xml
 
 ;[testenv:flake8]
 ;deps = flake8
-;commands = poetry run flake8 --config pyproject.toml incolumepy/ tests/
+;commands = uv run flake8 --config pyproject.toml incolume/ tests/
 
 [testenv:mypy]
 deps =
     mypy
     types-toml
     types-Deprecated
-commands = poetry run mypy incolume/
+commands = uv run mypy incolume/ tests/
+
 
 [testenv:pydocstyle]
-commands = poetry run pydocstyle incolume/ tests/
+commands = uv run pydocstyle incolume/ tests/
 
 [testenv:isort]
-commands = poetry run isort --check --atomic --py all incolume/ tests/
+commands = uv run isort --check --atomic --py all incolume/ tests/
 
 [testenv:pylint]
-commands = poetry run pylint incolume/ tests/
+commands = uv run pylint incolume/ tests/
 
 [testenv:black]
-commands = poetry run black --check incolume/ tests/
+commands = uv run black --check incolume/ tests/
 
 [testenv:blue]
-commands = poetry run blue --check incolume/ tests/
+commands = uv run blue --check incolume/ tests/
 
 [testenv:safety]
 commands = poetry run safety check
