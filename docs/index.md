@@ -18,12 +18,7 @@
 [![Metodology: conventionalcommits](https://img.shields.io/badge/%20Metodology-conventionalcommits-%23aabbcc?style=flat&labelColor=4444444)](https://www.conventionalcommits.org/pt-br/v1.0.0/#specification)
 
 [!["style: ruff"](https://img.shields.io/badge/code%20style-ruff-black)](https://github.com/astral-sh/ruff)
-[![Style: isort](https://img.shields.io/badge/%20Format%20Style-isort-black?style=flat&labelColor=4444444)](https://pycqa.github.io/isort/)
-[![style: pydocstyle](https://img.shields.io/badge/%20Format%20Style-pydocstyle-black?style=flat&labelColor=444444)](http://www.pydocstyle.org/en/stable/)
-
 [![Linter: mypy](https://img.shields.io/badge/%20Linter-Mypy-blue?color=000000)](https://mypy.readthedocs.io/en/stable/)
-[![Linter: pylint](https://img.shields.io/badge/%20Linter-pylint-blue?color=000000)](https://pylint.pycqa.org/en/latest/)
-[![Linter: flake8](https://img.shields.io/badge/%20Linter-flake8-blue?color=000000)](https://flake8.pycqa.org/en/latest/)
 
 [![security: bandit](https://img.shields.io/badge/%20Security-bandit-red?color=6633cc)](https://bandit.readthedocs.io/en/latest/)
 [![security: pipaudit](https://img.shields.io/badge/%20Security-pipaudit-red?color=6633cc)](https://pypi.org/project/pip-audit/)
