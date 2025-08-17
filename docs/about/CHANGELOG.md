@@ -5,10 +5,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.16.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.17.0)
 
 ---
 
+
+## [0.17.0]	 &#8212; 	2025-08-16:
+### Removed
+  - Compatibilidade com Python 3.8.x;
+  - Compatibilidade com Python 3.9.x;
+  - Removido pacote `black`;
+  - Removido pacote `pylint`;
+  - Removido pacote `isort`;
+  - Removido pacote `pydocstyle`;
+  - Removido pacote `flake8`;
+### Changed
+  - Validação CI/CD obrigatória para `mypy`, `lint` e `format code`;
+  - Gerenciador `uv` introduzido em ci/cd para gerar documentação;
+  - Gerenciador `uv` introduzido na execução do comando `tox`;
+  - Configurado compatibilidade cruzada de dependências entre `uv`e `poetry`;
 
 ## [0.16.0]	 &#8212; 	2025-08-16:
 ### Deprecated
@@ -383,3 +398,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.14.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.13.1...0.14.0
 [0.15.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.14.0...0.15.0
 [0.16.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.15.0...0.16.0
+[0.17.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.16.0...0.17.0

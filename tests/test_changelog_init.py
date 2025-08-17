@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 from collections import OrderedDict
-from typing import Any, ClassVar, NoReturn
+from typing import Any, ClassVar
 from inspect import stack
 import logging
 import pytest
@@ -13,7 +13,7 @@ from pathlib import Path
 from shutil import rmtree
 from dataclasses import dataclass
 from dotenv import load_dotenv
-from os import  getenv
+from os import getenv
 
 
 __author__ = '@britodfbr'  # pragma: no cover
