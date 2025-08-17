@@ -731,7 +731,7 @@ wheels = [
 
 [[package]]
 name = "incolume-py-changelog"
-version = "0.17.0a7"
+version = "0.17.0"
 source = { editable = "." }
 dependencies = [
     { name = "click" },
