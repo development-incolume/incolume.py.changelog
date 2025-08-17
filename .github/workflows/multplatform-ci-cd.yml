@@ -200,6 +200,6 @@ jobs:
       - name: Publish to pypi
         continue-on-error: true
         run: |
-          uv publish --index https://pypi.org/legacy/ --token ${{ secrets.PYPI_TOKEN }}
+          uv publish --token ${{ secrets.PYPI_TOKEN }}
 
 
