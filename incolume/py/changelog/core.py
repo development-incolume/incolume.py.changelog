@@ -163,3 +163,11 @@ def logger(str_format='', datefmt='', level=0, filelog=None):
     logging.getLogger('').addHandler(console)
 
     return logging.getLogger()
+
+if __name__ == '__main__':
+    ic(key_versions_2_sort(('1.1.1rc90',)))
+    ic(key_versions_2_sort(('1.0.1a90',)))
+    ic(max(
+        ['1.0.1a90','1.1.0rc90', '1.1.1rc9', '1.1.1rc8', '1.1.1rc7'],
+        key=key_versions_2_sort,
+    ))
