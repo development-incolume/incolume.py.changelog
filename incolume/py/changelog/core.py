@@ -37,6 +37,8 @@ def key_versions_2_sort(
     Examples:
         >>> key_versions_2_sort(('1.1.1rc0', 'aaa'))
         '000100010001.080000'
+        >>> key_versions_2_sort(('1.1.1post1',))
+        '000100010001.900001'
     """
     qdig = qdig or 5
     if not isinstance(x, Container):
@@ -119,8 +121,6 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
 update_version(pyproject_fl=confproject)
 __version__ = versionfile.read_text().strip()
 __title__ = 'incolume.py.changelog'
-
-
 
 
 def logger(str_format='', datefmt='', level=0, filelog=None):

@@ -183,8 +183,8 @@ class TestChangelogInit:
             ),
             pytest.param(
                 None,
-                {'x': ('1.5.1-post0', 'aaa')},
-                '000100050001.900000',
+                {'x': ('1.5.1-post5', 'aaa')},
+                '000100050001.900005',
             ),
             pytest.param(None, {'x': ('1.5', 'aaa')}, '1.5'),
             pytest.param(
@@ -214,10 +214,11 @@ class TestChangelogInit:
             ),
             pytest.param(
                 None,
-                {'x': ('1.5.1a0', 'aaa')},
+                {'x': ('1.5.1a0', '')},
                 '000100050001.020000',
             ),
             pytest.param(None, {'x': ('1.5.1', 'aaa')}, '000100050001.099999'),
+            pytest.param(None, {'x': ('1.5.1rc999',)}, '000100050001.080999'),
             pytest.param(
                 {
                     'expected_exception': TypeError,
