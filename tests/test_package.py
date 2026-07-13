@@ -4,7 +4,12 @@ from pathlib import Path
 
 import pytest
 
-from incolume.py.changelog import __version__, confproject, toml, versionfile
+from incolume.py.changelog.core import (
+    __version__,
+    confproject,
+    toml,
+    versionfile,
+)
 
 __author__ = '@britodfbr'  # pragma: no cover
 
@@ -45,7 +50,9 @@ class TestCase:
     def test_same_version(self, entrance: Path) -> None:
         """Test same version."""
         try:
-            version = toml.load(entrance)['tool']['poetry']['version']
+            version = toml.load(entrance.open(encoding='utf-8'))['tool'][
+                'poetry'
+            ]['version']
         except ValueError:
             version = entrance.read_text().strip()
         assert version == __version__
