@@ -108,14 +108,14 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
         current_version = max(
             version_poetry,
             version_project,
-            key=key_versions_2_sort,
+            key=lambda value: key_versions_2_sort((value,)),
         )
         ic(f'{current_version=}, {version_poetry=}, {version_project=}')
 
         data['tool']['poetry']['version'] = current_version
         data['project']['version'] = current_version
 
-    version_fl.write_text(current_version + '\n')
+    version_fl.write_text(f'{current_version}\n', encoding='utf-8')
     toml.dump(data, pyproject_fl.open('w', encoding='utf-8'))
 
     return True
@@ -171,6 +171,6 @@ if __name__ == '__main__':
     ic(
         max(
             ['1.0.1a90', '1.1.0rc90', '1.1.1rc9', '1.1.1rc8', '1.1.1rc7'],
-            key=key_versions_2_sort,
+            key=lambda value: key_versions_2_sort((value,)),
         ),
     )
