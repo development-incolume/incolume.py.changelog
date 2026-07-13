@@ -868,7 +868,7 @@ dependencies = [
     { name = "gitpython" },
     { name = "icecream" },
     { name = "python-dotenv", extra = ["cli"] },
-    { name = "toml" },
+    { name = "tomlkit" },
 ]
 
 [package.dev-dependencies]
@@ -898,7 +898,7 @@ requires-dist = [
     { name = "gitpython", specifier = ">=3.1.43" },
     { name = "icecream", specifier = ">=2.1.5" },
     { name = "python-dotenv", extras = ["cli"], specifier = ">=1.0.1" },
-    { name = "toml", extras = ["tomli"], specifier = ">=0.10.2" },
+    { name = "tomlkit", specifier = ">=0.13.3" },
 ]
 
 [package.metadata.requires-dev]
