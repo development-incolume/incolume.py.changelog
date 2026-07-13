@@ -7,7 +7,7 @@ from inspect import stack
 import logging
 import pytest
 from tempfile import gettempdir
-from incolume.py import changelog as pkg
+from incolume.py.changelog import core as pkg
 from icecream import ic
 from pathlib import Path
 from shutil import rmtree

@@ -16,48 +16,6 @@ confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
 
 
-def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
-    """Update version into file."""
-    pyproject_fl = pyproject_fl or confproject
-    version_fl = version_fl or versionfile
-    ic(version_fl)
-
-    version_project, version_poetry, current_version, data = (
-        '',
-        '',
-        '',
-        '',
-    )
-
-    try:
-        data = toml.load(pyproject_fl.open('rb'))
-    except (FileExistsError, FileNotFoundError, UnicodeDecodeError):
-        return False
-
-    with contextlib.suppress(KeyError):
-        version_project = data['project']['version']
-        version_poetry = data['tool']['poetry']['version']
-
-        current_version = max(version_poetry, version_project)
-        ic(f'{current_version=}, {version_poetry=}, {version_project=}')
-
-        data['tool']['poetry']['version'] = current_version
-        data['project']['version'] = current_version
-
-    version_fl.write_text(current_version + '\n')
-
-    # confproject.write_text(
-    #     confproject.read_text().replace(min_version, current_version),
-    # )
-
-    return True
-
-
-update_version(pyproject_fl=confproject)
-__version__ = versionfile.read_text().strip()
-__title__ = 'incolume.py.changelog'
-
-
 def key_versions_2_sort(
     x: Union[list[str], tuple[str]],
     qdig: int = 0,
@@ -122,6 +80,47 @@ def key_versions_2_sort(
     except AttributeError:
         result = str(x[0])
     return result
+
+
+def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
+    """Update version into file."""
+    pyproject_fl = pyproject_fl or confproject
+    version_fl = version_fl or versionfile
+    ic(version_fl)
+
+    version_project, version_poetry, current_version, data = (
+        '',
+        '',
+        '',
+        '',
+    )
+
+    try:
+        data = toml.load(pyproject_fl.open(encoding='utf-8'))
+    except (FileExistsError, FileNotFoundError, UnicodeDecodeError):
+        return False
+
+    with contextlib.suppress(KeyError):
+        version_project = data['project']['version']
+        version_poetry = data['tool']['poetry']['version']
+
+        current_version = max(version_poetry, version_project,key=key_versions_2_sort)
+        ic(f'{current_version=}, {version_poetry=}, {version_project=}')
+
+        data['tool']['poetry']['version'] = current_version
+        data['project']['version'] = current_version
+
+    version_fl.write_text(current_version + '\n')
+    toml.dump(data, pyproject_fl.open('w', encoding='utf-8'))
+
+    return True
+
+
+update_version(pyproject_fl=confproject)
+__version__ = versionfile.read_text().strip()
+__title__ = 'incolume.py.changelog'
+
+
 
 
 def logger(str_format='', datefmt='', level=0, filelog=None):

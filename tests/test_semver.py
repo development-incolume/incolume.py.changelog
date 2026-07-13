@@ -4,7 +4,7 @@ import re
 
 import pytest
 
-from incolume.py.changelog import __version__
+from incolume.py.changelog.core import __version__
 
 
 @pytest.mark.fast
