@@ -9,43 +9,51 @@ from collections.abc import Container
 from pathlib import Path
 from typing import Union
 
-import toml
+import tomlkit as toml
 from icecream import ic
 
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
 
 
-def update_version(file_in: Path, file_out: Path | None = None) -> bool:
+def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
     """Update version into file."""
-    file_out = file_out or versionfile
-    ic(file_out)
-    version_project, version_poetry, version, min_version = '', '', '', ''
+    pyproject_fl = pyproject_fl or confproject
+    version_fl = version_fl or versionfile
+    ic(version_fl)
+
+    version_project, version_poetry, current_version, data = (
+        '',
+        '',
+        '',
+        '',
+    )
+
     try:
-        data = toml.load(file_in)
+        data = toml.load(pyproject_fl.open('rb'))
     except (FileExistsError, FileNotFoundError, UnicodeDecodeError):
         return False
 
     with contextlib.suppress(KeyError):
+        version_project = data['project']['version']
         version_poetry = data['tool']['poetry']['version']
 
-        version_project = data['project']['version']
+        current_version = max(version_poetry, version_project)
+        ic(f'{current_version=}, {version_poetry=}, {version_project=}')
 
-        version = max(version_poetry, version_project)
-        min_version = min(version_poetry, version_project)
-        data['tool']['poetry']['version'] = version
-        data['project']['version'] = version
+        data['tool']['poetry']['version'] = current_version
+        data['project']['version'] = current_version
 
-    file_out.write_text(version + '\n')
+    version_fl.write_text(current_version + '\n')
 
-    confproject.write_text(
-        confproject.read_text().replace(min_version, version),
-    )
+    # confproject.write_text(
+    #     confproject.read_text().replace(min_version, current_version),
+    # )
 
     return True
 
 
-update_version(file_in=confproject)
+update_version(pyproject_fl=confproject)
 __version__ = versionfile.read_text().strip()
 __title__ = 'incolume.py.changelog'
 
