@@ -7,7 +7,6 @@ import logging
 import re
 from collections.abc import Container
 from pathlib import Path
-from typing import Union
 
 import tomlkit as toml
 from icecream import ic
@@ -17,7 +16,7 @@ versionfile = Path(__file__).parent / 'version.txt'
 
 
 def key_versions_2_sort(
-    x: Union[list[str], tuple[str]],
+    x: Container[str],
     qdig: int = 0,
     regex: str = '',
 ) -> str:
@@ -106,7 +105,11 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
         version_project = data['project']['version']
         version_poetry = data['tool']['poetry']['version']
 
-        current_version = max(version_poetry, version_project,key=key_versions_2_sort)
+        current_version = max(
+            version_poetry,
+            version_project,
+            key=key_versions_2_sort,
+        )
         ic(f'{current_version=}, {version_poetry=}, {version_project=}')
 
         data['tool']['poetry']['version'] = current_version
