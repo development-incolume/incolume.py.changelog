@@ -65,6 +65,9 @@ plugins:
             Metodologias: Methoden
             Notas de lançamento: Versionshinweise
             Sobre: Um
+            Conventional Commit: Herkömmliche Verpflichtung
+            Keep a CHANGELOG: Führen Sie ein Änderungsprotokoll
+
         - locale: en
           build: true
           name: English

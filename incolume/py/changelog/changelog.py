@@ -11,7 +11,11 @@ from pathlib import Path
 from typing import Any, Final
 
 import git
-from incolume.py.changelog import __title__, __version__, key_versions_2_sort
+from incolume.py.changelog.core import (
+    __title__,
+    __version__,
+    key_versions_2_sort,
+)
 
 # ruff: noqa: S605 S607
 logging.basicConfig(
