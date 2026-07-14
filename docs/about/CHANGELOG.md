@@ -5,17 +5,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.18.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.19.0a1)
 
 ---
 
 
-## [Unreleased]	 &#8212; 	2025-08-31:
-### Added
-  - Tradução do arquivo COVENTIONAL_COMMITS.md em alemão, espanhol, francês, inglês, italiano e português;
-  - Tradução do arquivo writing-your-docs.md em alemão, espanhol, francês, inglês, italiano e português;
-  - Tradução do arquivo zenpy.md em alemão, espanhol, francês, inglês, italiano e português;
-  - Tradução do arquivo keep-a-changelog.md em alemão, espanhol, francês, inglês, italiano e português;
+## [Unreleased]	 &#8212; 	2026-07-14:
+### Changed
+  - Correções lint CI/CD;
+  - Geração de path/arquivo de CHANGELOG.md automáticos;
+  - Melhoria de performance na execução de rotinas do pacote `core`;
 
 ## [0.18.0]	 &#8212; 	2026-07-13:
 ### Added
