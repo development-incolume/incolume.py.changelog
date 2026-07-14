@@ -10,6 +10,13 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [Unreleased]	 &#8212; 	2025-08-31:
+### Added
+  - Tradução do arquivo COVENTIONAL_COMMITS.md em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo writing-your-docs.md em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo zenpy.md em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo keep-a-changelog.md em alemão, espanhol, francês, inglês, italiano e português;
+
 ## [0.18.0]	 &#8212; 	2026-07-13:
 ### Added
   - Tradução do arquivo COVENTIONAL_COMMITS.md em alemão, espanhol, francês, inglês, italiano e português;
@@ -413,3 +420,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.16.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.15.0...0.16.0
 [0.17.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.16.0...0.17.0
 [0.18.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.17.0...0.18.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.18.0...Unreleased
