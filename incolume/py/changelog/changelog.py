@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any, Final
 
 import git
-from incolume.py.changelog.core import (
+from incolume.py.changelog import (
     __title__,
     __version__,
     key_versions_2_sort,
@@ -342,7 +342,9 @@ def changelog_write(
         True
     """
     changelog_file = Path(kwargs.get('changelog_file') or CHANGELOG_FILE)
+    changelog_file.parent.mkdir(parents=True, exist_ok=True)
     logging.debug('changelog_file=%s', changelog_file)
+
 
     content_formated = changelog_header()
     content_formated = changelog_body(content, content_formated, **kwargs)
@@ -350,7 +352,7 @@ def changelog_write(
 
     with changelog_file.open('w') as f:
         f.writelines(content_formated)
-        return True
+    return True
 
 
 def update_changelog(
