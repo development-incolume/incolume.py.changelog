@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any, Final
 
 import git
-from incolume.py.changelog.core import (
+from incolume.py.changelog import (
     __title__,
     __version__,
     key_versions_2_sort,
