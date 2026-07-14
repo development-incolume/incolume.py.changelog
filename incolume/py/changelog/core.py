@@ -16,7 +16,7 @@ versionfile = Path(__file__).parent / 'version.txt'
 
 
 def key_versions_2_sort(
-    x: Container[str],
+    x: tuple[str, ...] | list[str],
     qdig: int = 0,
     regex: str = '',
 ) -> str:
@@ -89,13 +89,12 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
     version_fl = version_fl or versionfile
     ic(version_fl)
 
-    version_project, version_poetry, current_version, data = (
-        '',
+    version_project, version_poetry, current_version = (
         '',
         '',
         '',
     )
-
+    data: toml.TOMLDocument | None = None
     try:
         data = toml.load(pyproject_fl.open(encoding='utf-8'))
     except (FileExistsError, FileNotFoundError, UnicodeDecodeError):
