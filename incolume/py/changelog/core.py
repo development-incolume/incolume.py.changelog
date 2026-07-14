@@ -121,11 +121,6 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
     return True
 
 
-update_version(pyproject_fl=confproject)
-__version__ = versionfile.read_text().strip()
-__title__ = 'incolume.py.changelog'
-
-
 def logger(str_format='', datefmt='', level=0, filelog=None):
     """Logger function for log.
 
@@ -164,6 +159,9 @@ def logger(str_format='', datefmt='', level=0, filelog=None):
 
     return logging.getLogger()
 
+
+__version__ = versionfile.read_text().strip()
+__title__ = 'incolume.py.changelog'
 
 if __name__ == '__main__':
     ic(key_versions_2_sort(('1.1.1rc90',)))
