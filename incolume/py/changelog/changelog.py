@@ -345,7 +345,6 @@ def changelog_write(
     changelog_file.parent.mkdir(parents=True, exist_ok=True)
     logging.debug('changelog_file=%s', changelog_file)
 
-
     content_formated = changelog_header()
     content_formated = changelog_body(content, content_formated, **kwargs)
     content_formated = changelog_footer(content, content_formated, **kwargs)
