@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "incolume.py.changelog"
-version = "0.19.0rc0"
+version = "0.19.0a3"
 description = "Generate CHANGELOG.md"
 authors = [
   {name="britodfbr", email =  "contato@incolume.com.br"}
@@ -87,7 +87,7 @@ explicit = true
 
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.19.0rc0"
+version = "0.19.0a3"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 documentation = "https://development-incolume.github.io/incolume.py.changelog/"
@@ -157,10 +157,8 @@ mypy-extensions = "^1.0.0"
 # pydocstyle = "^6.3.0"
 # pylint = "^3.0.3"
 pytest-cov = "^5.0.0"
-ruff = "^0.8"
 taskipy = "^1.12.2"
 tox = "^4.11.4"
-poetry = "^1.8.3"
 uv = "^0.8.11"
 codecov-cli = "^11.1.0"
 click = "^8.1.5"
@@ -173,7 +171,6 @@ python-dotenv = "^1.1.1"
 
 [tool.poetry.group.doc.dependencies]
 mkdocs = "^1.5.3"
-mkdocstrings = "^0.24.0"
 mkdocstrings-python = "^1.7.5"
 mkdocs-material = "^9.5.2"
 mkdocs-static-i18n = "^1.2.0"
