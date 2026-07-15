@@ -99,8 +99,6 @@ jobs:
           uv run pytest --cov --junitxml=report.junit.xml -o junit_family=legacy
           uv run codecovcli do-upload --report-type test_results --file report.junit.xml
           uv run codecovcli upload-process
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
 
 
   build:
