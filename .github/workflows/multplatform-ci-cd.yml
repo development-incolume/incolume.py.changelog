@@ -77,7 +77,7 @@ jobs:
         uv run pytest -vv
 
   coverage:
-    name: Coverage
+    name: Coverage by codecov
     runs-on: ubuntu-latest
     needs: [test]
     steps:
@@ -96,6 +96,7 @@ jobs:
           uv sync --all-packages --all-groups --all-extras
       - name: Upload coverage to Codecov
         run: |
+          uv run pytest --cov --junitxml=report.junit.xml -o junit_family=legacy
           uv run codecovcli do-upload --report-type test_results --file report.junit.xml
           uv run codecovcli upload-process
 
