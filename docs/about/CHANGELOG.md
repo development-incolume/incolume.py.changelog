@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.19.0a6)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.19.0a7)
 
 ---
 
@@ -17,6 +17,11 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Melhoria de performance na execução de rotinas do pacote `core`;
   - Atualização dos pacotes de dependência;
   - Retificado parametros para compatibilidade com `mypy`;
+  - Atualizado configuração para `codecov-cli`;
+
+## [0.19.0rc4]	 &#8212; 	2026-07-15:
+### Changed
+  - Atualizado configuração para `codecov-cli`;
 
 ## [0.19.0rc3]	 &#8212; 	2026-07-15:
 ### Changed
@@ -443,4 +448,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.19.0rc1]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc0...0.19.0rc1
 [0.19.0rc2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc1...0.19.0rc2
 [0.19.0rc3]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc2...0.19.0rc3
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc3...Unreleased
+[0.19.0rc4]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc3...0.19.0rc4
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc4...Unreleased
