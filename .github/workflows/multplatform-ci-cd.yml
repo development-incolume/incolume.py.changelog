@@ -93,7 +93,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -U uv pip
-      - name: Test with pytest
+          uv sync --all-packages --all-groups --all-extras
+      - name: Upload coverage to Codecov
         run: |
           uv run codecovcli do-upload --report-type test_results --file report.junit.xml
           uv run codecovcli upload-process
