@@ -94,13 +94,10 @@ jobs:
         run: |
           python -m pip install -U uv pip
           uv sync --all-packages --all-groups --all-extras
-      - name: Upload coverage to Codecov
-        run: |
-          uv run pytest --cov --junitxml=report.junit.xml -o junit_family=legacy
-          uv run codecovcli do-upload --report-type test_results --file report.junit.xml
-          uv run codecovcli upload-process
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload coverage reports to Codecov with GitHub Action
+        uses: codecov/codecov-action@v5
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
 
   build:
