@@ -140,33 +140,30 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
     """
     # load values for create logger
     pos: int = 1
-    str_format = (
-        args[0]
-        if args
-        else kwargs.get('str_format')
-        or '%(asctime)s;%(levelname)-8s;%(name)s;'
+
+    str_format: str = (
+        '%(asctime)s;%(levelname)-8s;%(name)s;'
         '%(module)s;%(funcName)s;%(message)s'
     )
-    datefmt = (
-        args[pos]
-        if len(args) > pos
-        else kwargs.get('datefmt') or '%Y/%m/%d %H:%M:%S %z'
-    )
-    level = (
-        args[(pos := pos + 1)]
-        if len(args) > pos
-        else kwargs.get('level') or logging.DEBUG
-    )
-    name = (
-        args[(pos := pos + 1)]
-        if len(args) > pos
-        else kwargs.get('name') or __name__
-    )
-    filelog = (
-        args[(pos := pos + 1)]
-        if len(args) > pos
-        else kwargs.get('filelog') or Path(__file__).with_suffix('.log')
-    )
+    datefmt: str = '%Y/%m/%d %H:%M:%S %z'
+    level: int = logging.DEBUG
+    name: str = __name__
+    filelog: Path = Path(__file__).with_suffix('.log')
+
+    with contextlib.suppress(IndexError, KeyError):
+        str_format = args[0] if args else kwargs.get('str_format')
+        datefmt = args[pos] if len(args) > pos else kwargs.get('datefmt')
+        level = (
+            args[(pos := pos + 1)] if len(args) > pos else kwargs.get('level')
+        )
+        name = (
+            args[(pos := pos + 1)] if len(args) > pos else kwargs.get('name')
+        )
+        filelog = (
+            args[(pos := pos + 1)]
+            if len(args) > pos
+            else kwargs.get('filelog')
+        )
 
     logging.basicConfig(
         filename=filelog,
