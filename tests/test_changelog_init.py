@@ -371,7 +371,58 @@ class TestChangelogInit:
         )
         assert result == expected
 
-    def test_logger(self, file_temp: Path) -> None:
+    @pytest.mark.parametrize(
+        'entrance',
+        [
+            pytest.param(
+                (
+                    '%(message)s',
+                    '%Y/%m/%dT%H:%M:%S(%z)',
+                ),
+                marks=[],
+            ),
+            pytest.param(
+                {
+                    'filelog': Path(
+                        gettempdir(),
+                        stack()[0][3],
+                        'logfile.log',
+                    ),
+                    'level': pkg.logging.FATAL,
+                },
+                marks=[],
+            ),
+            pytest.param(
+                (
+                    '%(message)s',
+                    '%Y/%m/%dT%H:%M:%S(%z)',
+                    pkg.logging.WARNING,
+                    'testing_logger_1',
+                    Path(gettempdir(), stack()[0][3], 'logfile.log'),
+                ),
+                marks=[],
+            ),
+            pytest.param(
+                {
+                    'str_format': '%(message)s',
+                    'date_format': '%Y/%m/%dT%H:%M:%S(%z)',
+                    'level': pkg.logging.CRITICAL,
+                    'name': 'testing_logger_2',
+                    'filename': Path(
+                        gettempdir(),
+                        stack()[0][3],
+                        'logfile.log',
+                    ),
+                },
+                marks=[],
+            ),
+        ],
+    )
+    def test_logger(self, entrance: dict[str, any]) -> None:
         """Logger."""
-        logg = pkg.logger(filelog=file_temp)
+        if isinstance(entrance, dict):
+            logg = pkg.logger(**entrance)
+        if isinstance(entrance, tuple):
+            logg = pkg.logger(*entrance)
+        print(logg.level, logg.name, logg.getEffectiveLevel())
         assert isinstance(logg, pkg.logging.Logger)
