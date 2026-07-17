@@ -125,7 +125,7 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
 
     Args:
         args: str = positional arguments,
-        kwarg: str = keyword arguments,
+        kwargs: str = keyword arguments,
         The positional/keyword arguments are:
         - str_format: str = format of string to log,
         - datefmt: str = format date to log,
@@ -179,9 +179,10 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
     console = logging.StreamHandler()
     formatter = logging.Formatter(str_format)
     console.setFormatter(formatter)
-    logging.getLogger(name=name).addHandler(console)
+    logger_obj = logging.getLogger(name=name)
+    logger_obj.addHandler(console)
 
-    return logging.getLogger(name=name)
+    return logger_obj
 
 
 __version__ = versionfile.read_text().strip()
