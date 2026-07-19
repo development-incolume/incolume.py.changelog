@@ -120,29 +120,50 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
     return True
 
 
-def logger(str_format='', datefmt='', level=0, filelog=None):
+def logger(*args: str, **kwargs: str) -> logging.Logger:
     """Logger function for log.
 
     Args:
-        str_format: format of string to log
-        datefmt: format date to log
-        level: can be (logging.DEBUG, logging.INFO, logging.WARNING,
-       logging.ERROR, logging.CRITICAL)
-        filelog: log's file .py
+        args: str = positional arguments,
+        kwargs: str = keyword arguments,
+        The positional/keyword arguments are:
+        - str_format: str = format of string to log,
+        - datefmt: str = format date to log,
+        - level: int = can be (logging.DEBUG, logging.INFO, logging.WARNING,
+       logging.ERROR, logging.CRITICAL),
+        - name: str = name of logger,
+        - filelog: Path = log's file .py
 
     Return:
-        None
+        Return a logging.Logger object.
 
     """
-    str_format = (
-        str_format
-        or '%(asctime)s;%(levelname)-8s;%(name)s;'
+    # load values for create logger
+    pos: int = 1
+
+    str_format: str = (
+        '%(asctime)s;%(levelname)-8s;%(name)s;'
         '%(module)s;%(funcName)s;%(message)s'
     )
-    datefmt = datefmt or '%Y/%m/%d %H:%M:%S %z'
-    # create logger
-    level = level or logging.DEBUG
-    filelog = filelog or Path(__file__).with_suffix('.py')
+    datefmt: str = '%Y/%m/%d %H:%M:%S %z'
+    level: int = logging.DEBUG
+    name: str = __name__
+    filelog: Path = Path(__file__).with_suffix('.log')
+
+    with contextlib.suppress(IndexError, KeyError):
+        str_format = args[0] if args else kwargs.get('str_format')
+        datefmt = args[pos] if len(args) > pos else kwargs.get('datefmt')
+        level = (
+            args[(pos := pos + 1)] if len(args) > pos else kwargs.get('level')
+        )
+        name = (
+            args[(pos := pos + 1)] if len(args) > pos else kwargs.get('name')
+        )
+        filelog = (
+            args[(pos := pos + 1)]
+            if len(args) > pos
+            else kwargs.get('filelog')
+        )
 
     logging.basicConfig(
         filename=filelog,
@@ -151,12 +172,14 @@ def logger(str_format='', datefmt='', level=0, filelog=None):
         datefmt=datefmt,
     )
 
+    # create logger
     console = logging.StreamHandler()
     formatter = logging.Formatter(str_format)
     console.setFormatter(formatter)
-    logging.getLogger('').addHandler(console)
+    logger_obj = logging.getLogger(name=name)
+    logger_obj.addHandler(console)
 
-    return logging.getLogger()
+    return logger_obj
 
 
 __version__ = versionfile.read_text().strip()
