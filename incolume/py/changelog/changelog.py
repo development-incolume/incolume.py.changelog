@@ -8,7 +8,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Any, Final
+from typing import Any, Final, Mapping
 
 import git
 from incolume.py.changelog import (
@@ -81,7 +81,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         ValueError: es-AR not suported! Use en-US, pt-BR
     """  # noqa: E501
     logging.debug(lang)
-    suport_lang: dict[str, Any] = {
+    suport_lang: dict[str, Mapping[str, str]] = {
         'en-US': {
             'Added': 'Added',
             'Changed': 'Changed',
@@ -103,9 +103,12 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         {'all': {k: v for d in suport_lang.values() for k, v in d.items()}},
     )
     if lang not in suport_lang:
-        logging.error(
-            ValueError(f'{lang} not suported! Use {suport_lang.keys()}'),
+        logging.info(
+            ValueError(
+                f'Language {lang} not suported! Use {suport_lang.keys()}',
+            ),
         )
+        lang = 'all'
 
     key, msg = msg.split(maxsplit=1)
     cmd = get_os_command(key)
