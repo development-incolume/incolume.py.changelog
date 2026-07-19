@@ -424,5 +424,5 @@ class TestChangelogInit:
             logg = pkg.logger(**entrance)
         if isinstance(entrance, tuple):
             logg = pkg.logger(*entrance)
-        print(logg.level, logg.name, logg.getEffectiveLevel())
+        ic(logg.level, logg.name, logg.getEffectiveLevel())
         assert isinstance(logg, pkg.logging.Logger)
