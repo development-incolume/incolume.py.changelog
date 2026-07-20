@@ -133,6 +133,7 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
        logging.ERROR, logging.CRITICAL),
         - name: str = name of logger,
         - filelog: Path = log's file .py
+        - filemode: str = mode to open log's file, can be 'a' or 'w'.
 
     Return:
         Return a logging.Logger object.
@@ -146,46 +147,48 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
         '%(module)s;%(funcName)s;%(message)s'
     )
     default_datefmt: str = '%Y/%m/%d %H:%M:%S %z'
-    default_level: int = logging.DEBUG
+    default_level: int = logging.INFO
     default_name: str = __name__
     default_filelog: Path = Path(__file__).with_suffix('.log')
     filelog: Path = default_filelog
 
-    with contextlib.suppress(IndexError, KeyError):
-        str_format = (
-            args[0] if args else kwargs.get('str_format') or default_str_format
-        )
-    with contextlib.suppress(IndexError, KeyError):
-        datefmt = (
-            args[pos]
-            if len(args) > pos
-            else kwargs.get('datefmt') or default_datefmt
-        )
-    with contextlib.suppress(IndexError, KeyError):
-        level = (
-            args[(pos := pos + 1)]
-            if len(args) > pos
-            else kwargs.get('level') or default_level
-        )
-    with contextlib.suppress(IndexError, KeyError):
-        name = (
-            args[(pos := pos + 1)]
-            if len(args) > pos
-            else kwargs.get('name') or default_name
-        )
-    with contextlib.suppress(IndexError, KeyError):
-        filelog = (
-            args[(pos := pos + 1)]
-            if len(args) > pos
-            else kwargs.get('filelog') or default_filelog
-        )
+    try:
+        str_format = args[0]
+    except IndexError:
+        str_format = kwargs.get('str_format') or default_str_format
 
-    # logging.basicConfig(
-    #     filename=filelog,
-    #     level=level,
-    #     format=str_format,
-    #     datefmt=datefmt,
-    # )
+    try:
+        datefmt = args[pos]
+    except IndexError:
+        datefmt = kwargs.get('datefmt') or default_datefmt
+
+    try:
+        level = args[(pos := pos + 1)]
+    except IndexError:
+        level = int(kwargs.get('level') or default_level)
+
+    try:
+        name = args[(pos := pos + 1)]
+    except IndexError:
+        name = kwargs.get('name') or default_name
+
+    try:
+        filelog = args[(pos := pos + 1)]
+    except IndexError:
+        filelog = kwargs.get('filelog') or default_filelog
+
+    try:
+        filemode = args[(pos := pos + 1)]
+    except IndexError:
+        filemode = kwargs.get('filemode') or 'a'
+
+    logging.basicConfig(
+        filename=filelog,
+        level=level,
+        format=str_format,
+        datefmt=datefmt,
+        filemode=filemode,
+    )
 
     # create logger
     console = logging.StreamHandler()
@@ -193,10 +196,6 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
     console.setFormatter(formatter)
     logger_obj = logging.getLogger(name=name)
     logger_obj.addHandler(console)
-    logger_obj.setLevel(level)
-    logger_obj.addHandler(
-        logging.FileHandler(filelog, mode='a', encoding='utf-8'),
-    )
 
     return logger_obj
 
