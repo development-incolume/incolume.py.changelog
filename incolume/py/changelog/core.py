@@ -141,36 +141,51 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
     # load values for create logger
     pos: int = 1
 
-    str_format: str = (
+    default_str_format: str = (
         '%(asctime)s;%(levelname)-8s;%(name)s;'
         '%(module)s;%(funcName)s;%(message)s'
     )
-    datefmt: str = '%Y/%m/%d %H:%M:%S %z'
-    level: int = logging.DEBUG
-    name: str = __name__
-    filelog: Path = Path(__file__).with_suffix('.log')
+    default_datefmt: str = '%Y/%m/%d %H:%M:%S %z'
+    default_level: int = logging.DEBUG
+    default_name: str = __name__
+    default_filelog: Path = Path(__file__).with_suffix('.log')
+    filelog: Path = default_filelog
 
     with contextlib.suppress(IndexError, KeyError):
-        str_format = args[0] if args else kwargs.get('str_format')
-        datefmt = args[pos] if len(args) > pos else kwargs.get('datefmt')
+        str_format = (
+            args[0] if args else kwargs.get('str_format') or default_str_format
+        )
+    with contextlib.suppress(IndexError, KeyError):
+        datefmt = (
+            args[pos]
+            if len(args) > pos
+            else kwargs.get('datefmt') or default_datefmt
+        )
+    with contextlib.suppress(IndexError, KeyError):
         level = (
-            args[(pos := pos + 1)] if len(args) > pos else kwargs.get('level')
+            args[(pos := pos + 1)]
+            if len(args) > pos
+            else kwargs.get('level') or default_level
         )
+    with contextlib.suppress(IndexError, KeyError):
         name = (
-            args[(pos := pos + 1)] if len(args) > pos else kwargs.get('name')
+            args[(pos := pos + 1)]
+            if len(args) > pos
+            else kwargs.get('name') or default_name
         )
+    with contextlib.suppress(IndexError, KeyError):
         filelog = (
             args[(pos := pos + 1)]
             if len(args) > pos
-            else kwargs.get('filelog')
+            else kwargs.get('filelog') or default_filelog
         )
 
-    logging.basicConfig(
-        filename=filelog,
-        level=level,
-        format=str_format,
-        datefmt=datefmt,
-    )
+    # logging.basicConfig(
+    #     filename=filelog,
+    #     level=level,
+    #     format=str_format,
+    #     datefmt=datefmt,
+    # )
 
     # create logger
     console = logging.StreamHandler()
@@ -178,6 +193,10 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
     console.setFormatter(formatter)
     logger_obj = logging.getLogger(name=name)
     logger_obj.addHandler(console)
+    logger_obj.setLevel(level)
+    logger_obj.addHandler(
+        logging.FileHandler(filelog, mode='a', encoding='utf-8'),
+    )
 
     return logger_obj
 
