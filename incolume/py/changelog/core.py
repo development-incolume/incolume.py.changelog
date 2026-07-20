@@ -7,7 +7,7 @@ import logging
 import re
 from collections.abc import Container
 from pathlib import Path
-from typing import NoReturn
+from typing import Any, NoReturn
 
 import tomlkit as toml
 from icecream import ic
