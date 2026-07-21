@@ -399,6 +399,7 @@ class TestChangelogInit:
                     pkg.logging.WARNING,
                     'testing_logger_1',
                     Path(gettempdir(), stack()[0][3], 'logfile.log'),
+                    'w',
                 ),
                 marks=[],
             ),
@@ -413,6 +414,13 @@ class TestChangelogInit:
                         stack()[0][3],
                         'logfile.log',
                     ),
+                    'filemode': 'w',
+                },
+                marks=[],
+            ),
+            pytest.param(
+                {
+                    'filemode': 'r+',
                 },
                 marks=[],
             ),

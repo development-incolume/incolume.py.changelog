@@ -142,25 +142,33 @@ def logger(
         Return a logging.Logger object.
 
     """
-    # setting default values for logger variables
-    pos: int = -1
-    variables: dict[str, str | int | Path] = {
+    # logger variables
+    pos: int = 0
+    str_format: str = ''
+    datefmt: str = ''
+    level: int = logging.INFO
+    name: str = ''
+    filelog: Path = Path(__file__).with_suffix('.log')
+    filemode: str = 'a'
 
-    'str_format': (
-        '%(asctime)s;%(levelname)-8s;%(name)s;'
-        '%(module)s;%(funcName)s;%(message)s'
-    ),
-    'datefmt': '%Y/%m/%d %H:%M:%S %z',
-    'level': logging.INFO,
-    'name': __name__,
-    'filelog': Path(__file__).with_suffix('.log'),
+    # setting default values for logger variables
+    variables: dict[str, str | int | Path] = {
+        'str_format': (
+            '%(asctime)s;%(levelname)-8s;%(name)s;'
+            '%(module)s;%(funcName)s;%(message)s'
+        ),
+        'datefmt': '%Y/%m/%d %H:%M:%S %z',
+        'level': logging.INFO,
+        'name': __name__,
+        'filelog': Path(__file__).with_suffix('.log'),
+        'filemode': 'a',
     }
 
     # load values for create logger
-    if len(args) > (pos:= pos + 1):
+    if len(args) > pos:
         for key, value in variables.items():
             try:
-                 variables[key] = args[pos]
+                variables[key] = args[pos]
             except IndexError:
                 variables[key] = kwargs.get(key) or value
             pos += 1
