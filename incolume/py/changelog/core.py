@@ -15,6 +15,19 @@ from icecream import ic
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
 
+# setting default values for logger variables
+logger_variables: dict[str, str | int | Path] = {
+    'str_format': (
+        '%(asctime)s;%(levelname)-8s;%(name)s;'
+        '%(module)s;%(funcName)s;%(message)s'
+    ),
+    'datefmt': '%Y/%m/%d %H:%M:%S %z',
+    'level': logging.INFO,
+    'name': __name__,
+    'filelog': Path(__file__).with_suffix('.log'),
+    'filemode': 'a',
+}
+
 
 def modify_global_runtime(
     var_name: str,
@@ -160,26 +173,13 @@ def logger(
     filelog: Path = Path(__file__).with_suffix('.log')
     filemode: str = 'a'
 
-    # setting default values for logger variables
-    variables: dict[str, str | int | Path] = {
-        'str_format': (
-            '%(asctime)s;%(levelname)-8s;%(name)s;'
-            '%(module)s;%(funcName)s;%(message)s'
-        ),
-        'datefmt': '%Y/%m/%d %H:%M:%S %z',
-        'level': logging.INFO,
-        'name': __name__,
-        'filelog': Path(__file__).with_suffix('.log'),
-        'filemode': 'a',
-    }
-
     # load values for create logger
     if len(args) > pos:
-        for key, value in variables.items():
+        for key, value in logger_variables.items():
             try:
-                globals()[variables[key]] = args[pos]
+                globals()[logger_variables[key]] = args[pos]
             except IndexError:
-                globals()[variables[key]] = kwargs.get(key) or value
+                globals()[logger_variables[key]] = kwargs.get(key) or value
             pos += 1
 
     logging.basicConfig(
