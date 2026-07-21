@@ -72,6 +72,21 @@ class TestChangelogInit:
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         [
+            pytest.param('test_var', 'new_value', marks=[pytest.mark.skip]),
+            pytest.param('test_var', 123, marks=[]),
+            pytest.param('test_var', 123.456, marks=[]),
+            pytest.param('test_var', True, marks=[]),
+        ],
+    )
+    def test_modify_global_runtime(self, entrance: str, expected: Any) -> None:
+        """Test for modify_global_runtime."""
+        test_var: str = ''
+        pkg.modify_global_runtime(entrance, expected)
+        assert globals()[entrance] == expected
+
+    @pytest.mark.parametrize(
+        ['entrance', 'expected'],
+        [
             pytest.param(Entrance(nonefile, versionfile), False, marks=[]),
             pytest.param(Entrance(confproject0, versionfile), True, marks=[]),
             pytest.param(
@@ -432,5 +447,5 @@ class TestChangelogInit:
             logg = pkg.logger(**entrance)
         if isinstance(entrance, tuple):
             logg = pkg.logger(*entrance)
-        ic(logg.level, logg.name, logg.getEffectiveLevel())
+        print(logg.level, logg.name, logg.getEffectiveLevel())
         assert isinstance(logg, pkg.logging.Logger)

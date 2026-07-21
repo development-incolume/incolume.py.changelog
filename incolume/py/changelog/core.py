@@ -7,12 +7,21 @@ import logging
 import re
 from collections.abc import Container
 from pathlib import Path
+from typing import NoReturn
 
 import tomlkit as toml
 from icecream import ic
 
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
+
+
+def modify_global_runtime(
+    var_name: str,
+    new_value: str | float | None,
+) -> NoReturn:
+    """Access the global scope dictionary directly."""
+    globals()[var_name] = new_value
 
 
 def key_versions_2_sort(
@@ -122,7 +131,7 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
 
 def logger(
     *args: tuple[str, ...],
-    **kwargs: dict[str, str | int],
+    **kwargs: dict[str, str | int] | str | int | Path,
 ) -> logging.Logger:
     """Logger function for log.
 
@@ -168,9 +177,9 @@ def logger(
     if len(args) > pos:
         for key, value in variables.items():
             try:
-                variables[key] = args[pos]
+                globals()[variables[key]] = args[pos]
             except IndexError:
-                variables[key] = kwargs.get(key) or value
+                globals()[variables[key]] = kwargs.get(key) or value
             pos += 1
 
     logging.basicConfig(
@@ -187,7 +196,9 @@ def logger(
     console.setFormatter(formatter)
     logger_obj = logging.getLogger(name=name)
     logger_obj.addHandler(console)
-
+    print(
+        f'>>> {logger_obj.level=}, {logger_obj.name=}, {logger_obj.getEffectiveLevel()=}',
+    )
     return logger_obj
 
 
