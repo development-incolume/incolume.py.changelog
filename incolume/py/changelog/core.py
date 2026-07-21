@@ -120,7 +120,10 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
     return True
 
 
-def logger(*args: str, **kwargs: str) -> logging.Logger:
+def logger(
+    *args: tuple[str, ...],
+    **kwargs: dict[str, str | int],
+) -> logging.Logger:
     """Logger function for log.
 
     Args:
@@ -139,48 +142,28 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
         Return a logging.Logger object.
 
     """
-    # load values for create logger
-    pos: int = 1
+    # setting default values for logger variables
+    pos: int = -1
+    variables: dict[str, str | int | Path] = {
 
-    default_str_format: str = (
+    'str_format': (
         '%(asctime)s;%(levelname)-8s;%(name)s;'
         '%(module)s;%(funcName)s;%(message)s'
-    )
-    default_datefmt: str = '%Y/%m/%d %H:%M:%S %z'
-    default_level: int = logging.INFO
-    default_name: str = __name__
-    default_filelog: Path = Path(__file__).with_suffix('.log')
-    filelog: Path = default_filelog
+    ),
+    'datefmt': '%Y/%m/%d %H:%M:%S %z',
+    'level': logging.INFO,
+    'name': __name__,
+    'filelog': Path(__file__).with_suffix('.log'),
+    }
 
-    try:
-        str_format = args[0]
-    except IndexError:
-        str_format = kwargs.get('str_format') or default_str_format
-
-    try:
-        datefmt = args[pos]
-    except IndexError:
-        datefmt = kwargs.get('datefmt') or default_datefmt
-
-    try:
-        level = args[(pos := pos + 1)]
-    except IndexError:
-        level = int(kwargs.get('level') or default_level)
-
-    try:
-        name = args[(pos := pos + 1)]
-    except IndexError:
-        name = kwargs.get('name') or default_name
-
-    try:
-        filelog = args[(pos := pos + 1)]
-    except IndexError:
-        filelog = kwargs.get('filelog') or default_filelog
-
-    try:
-        filemode = args[(pos := pos + 1)]
-    except IndexError:
-        filemode = kwargs.get('filemode') or 'a'
+    # load values for create logger
+    if len(args) > (pos:= pos + 1):
+        for key, value in variables.items():
+            try:
+                 variables[key] = args[pos]
+            except IndexError:
+                variables[key] = kwargs.get(key) or value
+            pos += 1
 
     logging.basicConfig(
         filename=filelog,
