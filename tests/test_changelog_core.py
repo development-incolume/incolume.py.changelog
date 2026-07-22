@@ -440,11 +440,11 @@ class TestChangelogInit:
             ),
         ],
     )
-    def test_logger(self, entrance: dict[str, any]) -> None:
+    def test_logger(self, entrance: dict[str, any]) -> None:  # type: ignore[valid-type]
         """Logger."""
         if isinstance(entrance, dict):
             logg = pkg.logger(**entrance)
-        if isinstance(entrance, tuple):
-            logg = pkg.logger(*entrance)
-        print(logg.level, logg.name, logg.getEffectiveLevel())
+        if isinstance(entrance, tuple):  # type: ignore[unreachable]
+            logg = pkg.logger(*entrance)  # type: ignore[unreachable]
+        ic(logg.level, logg.name, logg.getEffectiveLevel())
         assert isinstance(logg, pkg.logging.Logger)
