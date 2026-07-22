@@ -71,6 +71,12 @@ dev = [
     "tox>=4.11.4",
     "types-toml>=0.10.8.7",
 ]
+doc = [
+    "mkdocs>=1.5.3",
+    "mkdocs-material>=9.5.2",
+    "mkdocs-static-i18n>=1.2.0",
+    "mkdocstrings-python>=1.7.5",
+]
 
 [tool.uv]
 
@@ -158,14 +164,6 @@ icecream = "^2.1.6"
 python-dotenv = "^1.1.1"
 
 [tool.poetry.group.cli.dependencies]
-
-
-[tool.poetry.group.doc.dependencies]
-mkdocs = "^1.5.3"
-mkdocstrings-python = "^1.7.5"
-mkdocs-material = "^9.5.2"
-mkdocs-static-i18n = "^1.2.0"
-
 
 [tool.poetry.group.security.dependencies]
 bandit = "^1.7.6"
