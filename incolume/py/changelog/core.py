@@ -7,12 +7,34 @@ import logging
 import re
 from collections.abc import Container
 from pathlib import Path
+from typing import NoReturn
 
 import tomlkit as toml
 from icecream import ic
 
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
+
+# setting default values for logger variables
+logger_variables: dict[str, str | int | Path] = {
+    'str_format': (
+        '%(asctime)s;%(levelname)-8s;%(name)s;'
+        '%(module)s;%(funcName)s;%(message)s'
+    ),
+    'datefmt': '%Y/%m/%d %H:%M:%S %z',
+    'level': logging.INFO,
+    'name': __name__,
+    'filelog': Path(__file__).with_suffix('.log'),
+    'filemode': 'a',
+}
+
+
+def modify_logger_runtime(
+    var_name: str,
+    new_value: str | float | None,
+) -> NoReturn:
+    """Access the global scope dictionary directly."""
+    logger_variables[var_name] = new_value
 
 
 def key_versions_2_sort(
@@ -120,7 +142,10 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
     return True
 
 
-def logger(*args: str, **kwargs: str) -> logging.Logger:
+def logger(
+    *args: tuple[str, ...],
+    **kwargs: dict[str, str | int] | str | int | Path,
+) -> logging.Logger:
     """Logger function for log.
 
     Args:
@@ -139,48 +164,23 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
         Return a logging.Logger object.
 
     """
+    # logger variables
+    pos: int = 0
+    str_format: str = ''
+    datefmt: str = ''
+    level: int = logging.INFO
+    name: str = ''
+    filelog: Path = Path(__file__).with_suffix('.log')
+    filemode: str = 'a'
+
     # load values for create logger
-    pos: int = 1
-
-    default_str_format: str = (
-        '%(asctime)s;%(levelname)-8s;%(name)s;'
-        '%(module)s;%(funcName)s;%(message)s'
-    )
-    default_datefmt: str = '%Y/%m/%d %H:%M:%S %z'
-    default_level: int = logging.INFO
-    default_name: str = __name__
-    default_filelog: Path = Path(__file__).with_suffix('.log')
-    filelog: Path = default_filelog
-
-    try:
-        str_format = args[0]
-    except IndexError:
-        str_format = kwargs.get('str_format') or default_str_format
-
-    try:
-        datefmt = args[pos]
-    except IndexError:
-        datefmt = kwargs.get('datefmt') or default_datefmt
-
-    try:
-        level = args[(pos := pos + 1)]
-    except IndexError:
-        level = int(kwargs.get('level') or default_level)
-
-    try:
-        name = args[(pos := pos + 1)]
-    except IndexError:
-        name = kwargs.get('name') or default_name
-
-    try:
-        filelog = args[(pos := pos + 1)]
-    except IndexError:
-        filelog = kwargs.get('filelog') or default_filelog
-
-    try:
-        filemode = args[(pos := pos + 1)]
-    except IndexError:
-        filemode = kwargs.get('filemode') or 'a'
+    if len(args) > pos:
+        for key, value in logger_variables.items():
+            try:
+                logger_variables[key] = args[pos]
+            except IndexError:
+                logger_variables[key] = kwargs.get(key) or value
+            pos += 1
 
     logging.basicConfig(
         filename=filelog,
@@ -196,7 +196,9 @@ def logger(*args: str, **kwargs: str) -> logging.Logger:
     console.setFormatter(formatter)
     logger_obj = logging.getLogger(name=name)
     logger_obj.addHandler(console)
-
+    print(
+        f'>>> {logger_obj.level=}, {logger_obj.name=}, {logger_obj.getEffectiveLevel()=}',
+    )
     return logger_obj
 
 

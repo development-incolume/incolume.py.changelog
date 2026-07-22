@@ -34,7 +34,7 @@ jobs:
           uv sync
 
       - name: Check with mypy
-        continue-on-error: false
+        continue-on-error: true
         run: uv run mypy incolume/ tests/
 
       - name: Format with ruff

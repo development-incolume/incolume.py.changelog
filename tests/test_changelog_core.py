@@ -72,6 +72,20 @@ class TestChangelogInit:
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         [
+            pytest.param('test_var', 'new_value', marks=[]),
+            pytest.param('test_var', 123, marks=[]),
+            pytest.param('test_var', 123.456, marks=[]),
+            pytest.param('test_var', True, marks=[]),
+        ],
+    )
+    def test_modify_logger_runtime(self, entrance: str, expected: Any) -> None:
+        """Test for modify_logger_runtime."""
+        pkg.modify_logger_runtime(entrance, expected)
+        assert pkg.logger_variables[entrance] == expected
+
+    @pytest.mark.parametrize(
+        ['entrance', 'expected'],
+        [
             pytest.param(Entrance(nonefile, versionfile), False, marks=[]),
             pytest.param(Entrance(confproject0, versionfile), True, marks=[]),
             pytest.param(
@@ -399,6 +413,7 @@ class TestChangelogInit:
                     pkg.logging.WARNING,
                     'testing_logger_1',
                     Path(gettempdir(), stack()[0][3], 'logfile.log'),
+                    'w',
                 ),
                 marks=[],
             ),
@@ -413,6 +428,13 @@ class TestChangelogInit:
                         stack()[0][3],
                         'logfile.log',
                     ),
+                    'filemode': 'w',
+                },
+                marks=[],
+            ),
+            pytest.param(
+                {
+                    'filemode': 'r+',
                 },
                 marks=[],
             ),
@@ -424,5 +446,5 @@ class TestChangelogInit:
             logg = pkg.logger(**entrance)
         if isinstance(entrance, tuple):
             logg = pkg.logger(*entrance)
-        ic(logg.level, logg.name, logg.getEffectiveLevel())
+        print(logg.level, logg.name, logg.getEffectiveLevel())
         assert isinstance(logg, pkg.logging.Logger)
