@@ -539,16 +539,9 @@ docs-build = {help="Generate documentation", cmd="uv run mkdocs gh-deploy --conf
 docs-serve = {help="Run server documentation", cmd="uv run mkdocs serve"}
 # gsumary = {help="Generate a sumary with dojos", cmd="uv run sumary -f {sumary_file} -r ", use_vars=true}
 # post_gsumary={cmd='git commit -m "docs: Atualização do sumário" {sumary_file}', use_vars=true}
-# lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
 pre_lint="task lint_ruff"
 lint={help='Checking all linters configurated', cmd=''}
-# lint_black={help='Checking with black', cmd='echo --black--; poetry run black --check --diff {path}', use_vars=true}
-# lint_blue={help='Checking with blue', cmd='echo --blue--; poetry run blue --check --diff {path}', use_vars=true}
-# lint_flake8={help='Checking with flake8', cmd='echo --flake8--; poetry run flake8 --config pyproject.toml {path}', use_vars=true}
-# lint_isort={help='Checking with isort', cmd='echo --isort--; poetry run isort --profile black --check --atomic --py all -m 3 {path}', use_vars=true}
 # lint_mypy={help='Checking with mypy', cmd='echo --mypy--; poetry run mypy --check {path}', use_vars=true}
-# lint_pydocstyle={help='Checking with pydocstyle', cmd='echo --pydocstyle--; poetry run pydocstyle {path}', use_vars=true}
-# lint_pylint={help='Checking with pylint', cmd='echo --pylint--; poetry run pylint {path}', use_vars=true}
 lint_ruff={help='', cmd='echo --ruff--; uv run ruff check --preview {path}', use_vars=true}
 safety={help='Check safety of packages into project.', cmd='uv run safety check'}
 pre_sec={help='Securance validations', cmd='uv run task bandit && uv run task safety'}
