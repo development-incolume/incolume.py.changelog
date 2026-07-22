@@ -72,17 +72,16 @@ class TestChangelogInit:
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         [
-            pytest.param('test_var', 'new_value', marks=[pytest.mark.skip]),
+            pytest.param('test_var', 'new_value', marks=[]),
             pytest.param('test_var', 123, marks=[]),
             pytest.param('test_var', 123.456, marks=[]),
             pytest.param('test_var', True, marks=[]),
         ],
     )
-    def test_modify_global_runtime(self, entrance: str, expected: Any) -> None:
-        """Test for modify_global_runtime."""
-        test_var: str = ''
-        pkg.modify_global_runtime(entrance, expected)
-        assert globals()[entrance] == expected
+    def test_modify_logger_runtime(self, entrance: str, expected: Any) -> None:
+        """Test for modify_logger_runtime."""
+        pkg.modify_logger_runtime(entrance, expected)
+        assert pkg.logger_variables[entrance] == expected
 
     @pytest.mark.parametrize(
         ['entrance', 'expected'],

@@ -29,12 +29,12 @@ logger_variables: dict[str, str | int | Path] = {
 }
 
 
-def modify_global_runtime(
+def modify_logger_runtime(
     var_name: str,
     new_value: str | float | None,
 ) -> NoReturn:
     """Access the global scope dictionary directly."""
-    globals()[var_name] = new_value
+    logger_variables[var_name] = new_value
 
 
 def key_versions_2_sort(
@@ -177,9 +177,9 @@ def logger(
     if len(args) > pos:
         for key, value in logger_variables.items():
             try:
-                globals()[logger_variables[key]] = args[pos]
+                logger_variables[key] = args[pos]
             except IndexError:
-                globals()[logger_variables[key]] = kwargs.get(key) or value
+                logger_variables[key] = kwargs.get(key) or value
             pos += 1
 
     logging.basicConfig(
