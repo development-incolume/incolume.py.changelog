@@ -275,13 +275,6 @@ skip = [".gitignore", ".dockerignore"]
 skip_glob = ["example/*"]
 use_parentheses = true
 
-
-[pycodestyle]
-ignore = ['E203']
-
-#max_line_length = 120
-
-
 [tool.tox]
 legacy_tox_ini = """
 [tox]
