@@ -189,30 +189,6 @@ max-line-length = 79
 #max-line-length = 120
 max-complexity = 5
 
-[tool.pylama]
-format = "pylint"
-skip = "*/.tox/*,*/.env/*"
-linters = "pylint,mccabe"
-ignore = "F0401,C0111,E731"
-
-#[[tools.pylama.files]]
-#path = "incolumepy/utils/files.py"
-#ignore = "C901"
-#skip = 1
-
-[tool.pylama.linter.pyflakes]
-builtins = "_"
-
-[tool.pylama.linter.pycodestyle]
-max_line_length = 79
-
-[tool.pylama.linter.pylint]
-max_line_length = 79
-disable = "R"
-
-[tool.pylama.linter.mccabe]
-max-complexity=5
-
 [tool.pylint.master]
 init-hook = 'import sys; sys.path.append(".")'    # força carregamento do PYTHONPATH no pylint. Necessário no Windows.
 
