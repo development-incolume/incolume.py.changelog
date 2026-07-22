@@ -145,13 +145,6 @@ exclude = [
   "tests/",
 ]
 
-[tool.poetry.urls]
-'Documentation' = 'https://development-incolume.github.io/incolume.py.changelog/'
-'Source' = 'https://github.com/development-incolume/incolume.py.changelog/releases'
-'Git' = 'https://github.com/development-incolume/incolume.py.changelog.git'
-'Tracker' = 'https://github.com/development-incolume/incolume.py.changelog/issues'
-'Oficial' = 'https://pypi.org/project/incolume.py.changelog/'
-
 [tool.poetry.group.dev.dependencies]
 # flake8 = "^6.1.0"
 # isort = "^5.13.1"
