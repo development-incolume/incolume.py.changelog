@@ -180,11 +180,6 @@ markers = [
   "fasttest: marks tests as fasttest (deselect with '-m \"not fasttest\"')",
 ]
 
-[PEP8]
-# Detalhes em https://pep8.org/
-# define para todos os linters compatíveis
-max-line-length = 79
-
 [tool.mypy]
 python_version = "3.10"
 mypy_path = "incolume"
