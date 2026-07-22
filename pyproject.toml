@@ -185,28 +185,6 @@ markers = [
 # define para todos os linters compatíveis
 max-line-length = 79
 
-[tool.black]
-line-length = 79
-#target-version = ['py38']
-# include = '\.pyi?$'
-extend-exclude = '''
-# A regex preceded with ^/ will apply only to files and directories
-# in the root of the project.
-^/pyproject.toml  # exclude a file named pyproject.toml in the root of the project (in addition to the defaults)
-\.tox
-\.venv
-\.git
-\.eggs
-build
-dist
-docs
-exemplos
-relatorios
-docs
-data
-.pytest_cache
-'''
-
 [flake8]
 #max-line-length = 120
 max-complexity = 5
