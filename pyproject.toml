@@ -185,10 +185,6 @@ markers = [
 # define para todos os linters compatíveis
 max-line-length = 79
 
-[flake8]
-#max-line-length = 120
-max-complexity = 5
-
 [tool.pylint.master]
 init-hook = 'import sys; sys.path.append(".")'    # força carregamento do PYTHONPATH no pylint. Necessário no Windows.
 
