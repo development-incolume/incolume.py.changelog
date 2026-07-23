@@ -10,12 +10,17 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2025-08-31:
-### Added
-  - Tradução do arquivo COVENTIONAL_COMMITS.md em alemão, espanhol, francês, inglês, italiano e português;
-  - Tradução do arquivo writing-your-docs.md em alemão, espanhol, francês, inglês, italiano e português;
-  - Tradução do arquivo zenpy.md em alemão, espanhol, francês, inglês, italiano e português;
-  - Tradução do arquivo keep-a-changelog.md em alemão, espanhol, francês, inglês, italiano e português;
+## [Unreleased]	 &#8212; 	2026-07-23:
+### Changed
+  - Correções lint CI/CD;
+  - Geração de path/arquivo de CHANGELOG.md automáticos;
+  - Melhoria de performance na execução de rotinas do pacote `core`;
+  - Atualização dos pacotes de dependência;
+  - Retificado parametros para compatibilidade com `mypy`;
+  - Atualizado configuração para `codecov-cli`;
+  - `codecov-cli` substituído por `codecov action`;
+### Removed
+  - Pacote `codecov-cli`;
 
 ## [0.19.0rc4]	 &#8212; 	2026-07-15:
 ### Changed
