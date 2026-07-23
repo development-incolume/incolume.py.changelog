@@ -195,8 +195,9 @@ def logger(
     console.setFormatter(formatter)
     logger_obj = logging.getLogger(name=name)
     logger_obj.addHandler(console)
-    print(
-        f'>>> {logger_obj.level=}, {logger_obj.name=}, {logger_obj.getEffectiveLevel()=}',
+    ic(
+        f'>>> {logger_obj.level=}, {logger_obj.name=},'
+        f' {logger_obj.getEffectiveLevel()=}',
     )
     return logger_obj
 
