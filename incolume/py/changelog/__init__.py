@@ -11,9 +11,6 @@ from incolume.py.changelog.core import (
     versionfile,
 )
 
-update_version(pyproject_fl=confproject)
-
-
 __all__ = [
     '__title__',
     '__version__',
@@ -24,3 +21,5 @@ __all__ = [
     'update_version',
     'versionfile',
 ]
+
+update_version(pyproject_fl=confproject)

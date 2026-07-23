@@ -5,16 +5,38 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.19.0rc0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.19.0)
 
 ---
 
 
-## [Unreleased]	 &#8212; 	2026-07-14:
+## [0.19.0]	 &#8212; 	2026-07-23:
 ### Changed
   - Correções lint CI/CD;
   - Geração de path/arquivo de CHANGELOG.md automáticos;
   - Melhoria de performance na execução de rotinas do pacote `core`;
+  - Atualização dos pacotes de dependência;
+  - Retificado parametros para compatibilidade com `mypy`;
+  - Atualizado configuração para `codecov-cli`;
+  - `codecov-cli` substituído por `codecov action`;
+### Removed
+  - Pacote `codecov-cli`;
+
+## [0.19.0rc4]	 &#8212; 	2026-07-15:
+### Changed
+  - Atualizado configuração para `codecov-cli`;
+
+## [0.19.0rc3]	 &#8212; 	2026-07-15:
+### Changed
+  - Retificado parametros para compatibilidade com `mypy`;
+
+## [0.19.0rc2]	 &#8212; 	2026-07-15:
+### Changed
+  - Retificado parametros para compatibilidade com `mypy`;
+
+## [0.19.0rc1]	 &#8212; 	2026-07-14:
+### Changed
+  - Atualização dos pacotes de dependência;
 
 ## [0.19.0rc0]	 &#8212; 	2026-07-14:
 ### Changed
@@ -426,4 +448,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.17.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.16.0...0.17.0
 [0.18.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.17.0...0.18.0
 [0.19.0rc0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.18.0...0.19.0rc0
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc0...Unreleased
+[0.19.0rc1]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc0...0.19.0rc1
+[0.19.0rc2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc1...0.19.0rc2
+[0.19.0rc3]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc2...0.19.0rc3
+[0.19.0rc4]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc3...0.19.0rc4
+[0.19.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc4...0.19.0
