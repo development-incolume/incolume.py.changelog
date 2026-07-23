@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "incolume.py.changelog"
-version = "0.19.0rc4"
+version = "0.19.0"
 description = "Generate CHANGELOG.md"
 authors = [
   {name="britodfbr", email =  "contato@incolume.com.br"}
@@ -55,7 +55,6 @@ greeting = 'incolume.py.changelog.cli:greeting'
 [dependency-groups]
 dev = [
     "bandit>=1.7.6",
-    "codecov-cli>=11.1.0",
     "mkdocs>=1.6.1",
     "mkdocs-material>=9.6.16",
     "mkdocs-static-i18n>=1.3.0",
@@ -72,6 +71,17 @@ dev = [
     "tox>=4.11.4",
     "types-toml>=0.10.8.7",
 ]
+doc = [
+    "mkdocs>=1.5.3",
+    "mkdocs-material>=9.5.2",
+    "mkdocs-static-i18n>=1.2.0",
+    "mkdocstrings-python>=1.7.5",
+]
+security = [
+    "bandit>=1.7.6",
+    "pip-audit>=2.6.1",
+    "safety>=2.3.4",
+]
 
 [tool.uv]
 
@@ -87,7 +97,7 @@ explicit = true
 
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.19.0rc4"
+version = "0.19.0"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 documentation = "https://development-incolume.github.io/incolume.py.changelog/"
@@ -135,20 +145,6 @@ exclude = [
   "tests/",
 ]
 
-[tool.poetry.urls]
-'Documentation' = 'https://development-incolume.github.io/incolume.py.changelog/'
-'Source' = 'https://github.com/development-incolume/incolume.py.changelog/releases'
-'Git' = 'https://github.com/development-incolume/incolume.py.changelog.git'
-'Tracker' = 'https://github.com/development-incolume/incolume.py.changelog/issues'
-'Oficial' = 'https://pypi.org/project/incolume.py.changelog/'
-
-[tool.poetry.scripts]
-changelog = 'incolume.py.changelog.cli:changelog'
-gcl = 'incolume.py.changelog.cli:changelog'
-gencl = 'incolume.py.changelog.cli:changelog'
-gchangelog = 'incolume.py.changelog.cli:changelog'
-greeting = 'incolume.py.changelog.cli:greeting'
-
 [tool.poetry.group.dev.dependencies]
 # flake8 = "^6.1.0"
 # isort = "^5.13.1"
@@ -160,26 +156,12 @@ pytest-cov = "^5.0.0"
 taskipy = "^1.12.2"
 tox = "^4.11.4"
 uv = "^0.8.11"
-codecov-cli = "^11.1.0"
 click = "^8.1.5"
 gitpython = "^3.1.43"
 icecream = "^2.1.6"
 python-dotenv = "^1.1.1"
 
 [tool.poetry.group.cli.dependencies]
-
-
-[tool.poetry.group.doc.dependencies]
-mkdocs = "^1.5.3"
-mkdocstrings-python = "^1.7.5"
-mkdocs-material = "^9.5.2"
-mkdocs-static-i18n = "^1.2.0"
-
-
-[tool.poetry.group.security.dependencies]
-bandit = "^1.7.6"
-pip-audit = "^2.6.1"
-safety = "^2.3.4"
 
 [tool.pytest.ini_options]
 log_format = '%(asctime)s; %(levelname)-8s; %(name)s; %(module)s; %(funcName)s; %(message)s'
@@ -196,116 +178,6 @@ markers = [
   "slow: marks tests as slow (deselect with '-m \"not slow\"')",
   "webtest: marks tests as webtest (deselect with '-m \"not webtest\"')",
   "fasttest: marks tests as fasttest (deselect with '-m \"not fasttest\"')",
-]
-
-[PEP8]
-# Detalhes em https://pep8.org/
-# define para todos os linters compatíveis
-max-line-length = 79
-
-[tool.black]
-line-length = 79
-#target-version = ['py38']
-# include = '\.pyi?$'
-extend-exclude = '''
-# A regex preceded with ^/ will apply only to files and directories
-# in the root of the project.
-^/pyproject.toml  # exclude a file named pyproject.toml in the root of the project (in addition to the defaults)
-\.tox
-\.venv
-\.git
-\.eggs
-build
-dist
-docs
-exemplos
-relatorios
-docs
-data
-.pytest_cache
-'''
-
-[flake8]
-#max-line-length = 120
-max-complexity = 5
-
-[tool.pylama]
-format = "pylint"
-skip = "*/.tox/*,*/.env/*"
-linters = "pylint,mccabe"
-ignore = "F0401,C0111,E731"
-
-#[[tools.pylama.files]]
-#path = "incolumepy/utils/files.py"
-#ignore = "C901"
-#skip = 1
-
-[tool.pylama.linter.pyflakes]
-builtins = "_"
-
-[tool.pylama.linter.pycodestyle]
-max_line_length = 79
-
-[tool.pylama.linter.pylint]
-max_line_length = 79
-disable = "R"
-
-[tool.pylama.linter.mccabe]
-max-complexity=5
-
-[tool.pylint.master]
-init-hook = 'import sys; sys.path.append(".")'    # força carregamento do PYTHONPATH no pylint. Necessário no Windows.
-
-[tool.pylint.format]
-# Maximum number of characters on a single line.
-max-line-length = 79
-# Format style used to check logging format string. `old` means using %
-# formatting, `new` is for `{}` formatting,and `fstr` is for f-strings.
-logging-format-style = 'old'
-
-[tool.pylint.basic]
-# Allow shorter and longer variable names than the default.
-argument-rgx = "[a-z_][a-z0-9_]*$"
-attr-rgx = "[a-z_][a-z0-9_]*$"
-variable-rgx = "[a-z_][a-z0-9_]*$"
-
-# Ensure that orjson is analysed as a C extension by pylint.
-extension-pkg-whitelist = "orjson"
-
-[tool.pylint.messages_control]
-disable = [
-    # Disable too many and too few checks.
-    "too-many-ancestors",
-    "too-many-arguments",
-    "too-many-boolean-expressions",
-    "too-many-branches",
-    "too-many-function-args",
-    "too-many-instance-attributes",
-    "too-many-lines",
-    "too-many-locals",
-    "too-many-nested-blocks",
-    "too-many-public-methods",
-    "too-many-return-statements",
-    "too-many-statements",
-    "too-few-public-methods",
-
-    # Similar lines in files (often the case in tests).
-    "duplicate-code",
-
-    # Many functions (e.g. callbacks) will naturally have unused arguments.
-    "unused-argument",
-
-    # Disable checking that method could be a function in classes (often used for organisation).
-    "no-self-use",
-
-    # Disable failure for TODO items in the codebase (code will always have TODOs).
-    "fixme",
-
-    # Disable docstrings checks as we don't require excessive documentation.
-    "missing-docstring",
-
-    "no-member",
-    "unspecified-encoding",
 ]
 
 [tool.mypy]
@@ -327,28 +199,6 @@ no_implicit_reexport = true
 #[[tool.mypy.overrides]]
 #disable_error_code = "attr-defined"
 #disallow_untyped_defs = true
-
-
-[tool.isort]
-profile = "black"
-ensure_newline_before_comments = true
-extend_skip = [".md", ".json"]
-extend_skip_glob = ["my_*_module.py"]
-force_grid_wrap = 0
-include_trailing_comma = true
-known_first_party = "poetry"
-line_length = 79
-multi_line_output = 3
-skip = [".gitignore", ".dockerignore"]
-skip_glob = ["example/*"]
-use_parentheses = true
-
-
-[pycodestyle]
-ignore = ['E203']
-
-#max_line_length = 120
-
 
 [tool.tox]
 legacy_tox_ini = """
@@ -689,23 +539,10 @@ docs-build = {help="Generate documentation", cmd="uv run mkdocs gh-deploy --conf
 docs-serve = {help="Run server documentation", cmd="uv run mkdocs serve"}
 # gsumary = {help="Generate a sumary with dojos", cmd="uv run sumary -f {sumary_file} -r ", use_vars=true}
 # post_gsumary={cmd='git commit -m "docs: Atualização do sumário" {sumary_file}', use_vars=true}
-# lint-all = {help="Run all linters", cmd="poetry run task clean-all; poetry run task pre_lint && poetry run task lint_mypy && poetry run task lint_ruff"}
 pre_lint="task lint_ruff"
 lint={help='Checking all linters configurated', cmd=''}
-# lint_black={help='Checking with black', cmd='echo --black--; poetry run black --check --diff {path}', use_vars=true}
-# lint_blue={help='Checking with blue', cmd='echo --blue--; poetry run blue --check --diff {path}', use_vars=true}
-# lint_flake8={help='Checking with flake8', cmd='echo --flake8--; poetry run flake8 --config pyproject.toml {path}', use_vars=true}
-# lint_isort={help='Checking with isort', cmd='echo --isort--; poetry run isort --profile black --check --atomic --py all -m 3 {path}', use_vars=true}
 # lint_mypy={help='Checking with mypy', cmd='echo --mypy--; poetry run mypy --check {path}', use_vars=true}
-# lint_pydocstyle={help='Checking with pydocstyle', cmd='echo --pydocstyle--; poetry run pydocstyle {path}', use_vars=true}
-# lint_pylint={help='Checking with pylint', cmd='echo --pylint--; poetry run pylint {path}', use_vars=true}
 lint_ruff={help='', cmd='echo --ruff--; uv run ruff check --preview {path}', use_vars=true}
-# pre_patch={help='Run linters tools', cmd="poetry run task lint"}
-# patch={cmd='v=$(poetry version patch) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='Generate a patch Sematic Version'}
-# post_patch={help='Run securety tools', cmd="poetry run task bandit && poetry run task safety"}
-# premajor={cmd='v=$(poetry version premajor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version premajor'}
-# preminor={cmd='v=$(poetry version preminor) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version preminor'}
-# prerelease={cmd='v=$(poetry version prerelease) && poetry run task tests && git ci -m "$v" pyproject.toml $(find incolume* -name version.txt)', help='poetry version prerelease'}
 safety={help='Check safety of packages into project.', cmd='uv run safety check'}
 pre_sec={help='Securance validations', cmd='uv run task bandit && uv run task safety'}
 sec={help="Checking environment's safety", cmd=''}

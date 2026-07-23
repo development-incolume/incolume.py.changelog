@@ -72,6 +72,20 @@ class TestChangelogInit:
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
         [
+            pytest.param('test_var', 'new_value', marks=[]),
+            pytest.param('test_var', 123, marks=[]),
+            pytest.param('test_var', 123.456, marks=[]),
+            pytest.param('test_var', True, marks=[]),
+        ],
+    )
+    def test_modify_logger_runtime(self, entrance: str, expected: Any) -> None:
+        """Test for modify_logger_runtime."""
+        pkg.modify_logger_runtime(entrance, expected)
+        assert pkg.logger_variables[entrance] == expected
+
+    @pytest.mark.parametrize(
+        ['entrance', 'expected'],
+        [
             pytest.param(Entrance(nonefile, versionfile), False, marks=[]),
             pytest.param(Entrance(confproject0, versionfile), True, marks=[]),
             pytest.param(
@@ -371,7 +385,66 @@ class TestChangelogInit:
         )
         assert result == expected
 
-    def test_logger(self, file_temp: Path) -> None:
+    @pytest.mark.parametrize(
+        'entrance',
+        [
+            pytest.param(
+                (
+                    '%(message)s',
+                    '%Y/%m/%dT%H:%M:%S(%z)',
+                ),
+                marks=[],
+            ),
+            pytest.param(
+                {
+                    'filelog': Path(
+                        gettempdir(),
+                        stack()[0][3],
+                        'logfile.log',
+                    ),
+                    'level': pkg.logging.FATAL,
+                },
+                marks=[],
+            ),
+            pytest.param(
+                (
+                    '%(message)s',
+                    '%Y/%m/%dT%H:%M:%S(%z)',
+                    pkg.logging.WARNING,
+                    'testing_logger_1',
+                    Path(gettempdir(), stack()[0][3], 'logfile.log'),
+                    'w',
+                ),
+                marks=[],
+            ),
+            pytest.param(
+                {
+                    'str_format': '%(message)s',
+                    'date_format': '%Y/%m/%dT%H:%M:%S(%z)',
+                    'level': pkg.logging.CRITICAL,
+                    'name': 'testing_logger_2',
+                    'filename': Path(
+                        gettempdir(),
+                        stack()[0][3],
+                        'logfile.log',
+                    ),
+                    'filemode': 'w',
+                },
+                marks=[],
+            ),
+            pytest.param(
+                {
+                    'filemode': 'r+',
+                },
+                marks=[],
+            ),
+        ],
+    )
+    def test_logger(self, entrance: dict[str, any]) -> None:  # type: ignore[valid-type]
         """Logger."""
-        logg = pkg.logger(filelog=file_temp)
+        if isinstance(entrance, dict):
+            logg = pkg.logger(**entrance)
+        if isinstance(entrance, tuple):  # type: ignore[unreachable]
+            logg = pkg.logger(*entrance)  # type: ignore[unreachable]
+        ic(logg.level, logg.name, logg.getEffectiveLevel())
         assert isinstance(logg, pkg.logging.Logger)

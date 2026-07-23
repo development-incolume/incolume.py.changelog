@@ -14,6 +14,27 @@ from icecream import ic
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
 
+# setting default values for logger variables
+logger_variables: dict[str, str | int | Path] = {
+    'str_format': (
+        '%(asctime)s;%(levelname)-8s;%(name)s;'
+        '%(module)s;%(funcName)s;%(message)s'
+    ),
+    'datefmt': '%Y/%m/%d %H:%M:%S %z',
+    'level': logging.INFO,
+    'name': __name__,
+    'filelog': Path(__file__).with_suffix('.log'),
+    'filemode': 'a',
+}
+
+
+def modify_logger_runtime(
+    var_name: str,
+    new_value: str | int | Path,
+) -> None:
+    """Access the global scope dictionary directly."""
+    logger_variables[var_name] = new_value
+
 
 def key_versions_2_sort(
     x: tuple[str, ...] | list[str],
@@ -120,43 +141,65 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
     return True
 
 
-def logger(str_format='', datefmt='', level=0, filelog=None):
+def logger(
+    *args: str | int | Path,
+    **kwargs: str | int | Path,
+) -> logging.Logger:
     """Logger function for log.
 
     Args:
-        str_format: format of string to log
-        datefmt: format date to log
-        level: can be (logging.DEBUG, logging.INFO, logging.WARNING,
-       logging.ERROR, logging.CRITICAL)
-        filelog: log's file .py
+        args: str = positional arguments,
+        kwargs: str = keyword arguments,
+        The positional/keyword arguments are:
+        - str_format: str = format of string to log,
+        - datefmt: str = format date to log,
+        - level: int = can be (logging.DEBUG, logging.INFO, logging.WARNING,
+       logging.ERROR, logging.CRITICAL),
+        - name: str = name of logger,
+        - filelog: Path = log's file .py
+        - filemode: str = mode to open log's file, can be 'a' or 'w'.
 
     Return:
-        None
+        Return a logging.Logger object.
 
     """
-    str_format = (
-        str_format
-        or '%(asctime)s;%(levelname)-8s;%(name)s;'
-        '%(module)s;%(funcName)s;%(message)s'
-    )
-    datefmt = datefmt or '%Y/%m/%d %H:%M:%S %z'
-    # create logger
-    level = level or logging.DEBUG
-    filelog = filelog or Path(__file__).with_suffix('.py')
+    # logger variables
+    pos: int = 0
+    str_format: str = ''
+    datefmt: str = ''
+    level: int = logging.INFO
+    name: str = ''
+    filelog: Path = Path(__file__).with_suffix('.log')
+    filemode: str = 'a'
+
+    # load values for create logger
+    if len(args) > pos:
+        for key, value in logger_variables.items():
+            try:
+                logger_variables[key] = args[pos]
+            except IndexError:
+                logger_variables[key] = kwargs.get(key) or value
+            pos += 1
 
     logging.basicConfig(
         filename=filelog,
         level=level,
         format=str_format,
         datefmt=datefmt,
+        filemode=filemode,
     )
 
+    # create logger
     console = logging.StreamHandler()
     formatter = logging.Formatter(str_format)
     console.setFormatter(formatter)
-    logging.getLogger('').addHandler(console)
-
-    return logging.getLogger()
+    logger_obj = logging.getLogger(name=name)
+    logger_obj.addHandler(console)
+    ic(
+        f'>>> {logger_obj.level=}, {logger_obj.name=},'
+        f' {logger_obj.getEffectiveLevel()=}',
+    )
+    return logger_obj
 
 
 __version__ = versionfile.read_text().strip()
