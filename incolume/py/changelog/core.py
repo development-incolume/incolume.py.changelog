@@ -7,7 +7,6 @@ import logging
 import re
 from collections.abc import Container
 from pathlib import Path
-from typing import NoReturn
 
 import tomlkit as toml
 from icecream import ic
@@ -31,8 +30,8 @@ logger_variables: dict[str, str | int | Path] = {
 
 def modify_logger_runtime(
     var_name: str,
-    new_value: str | float | None,
-) -> NoReturn:
+    new_value: str | int | Path,
+) -> None:
     """Access the global scope dictionary directly."""
     logger_variables[var_name] = new_value
 
@@ -143,8 +142,8 @@ def update_version(pyproject_fl: Path, version_fl: Path | None = None) -> bool:
 
 
 def logger(
-    *args: tuple[str, ...],
-    **kwargs: dict[str, str | int] | str | int | Path,
+    *args: str | int | Path,
+    **kwargs: str | int | Path,
 ) -> logging.Logger:
     """Logger function for log.
 
@@ -196,8 +195,9 @@ def logger(
     console.setFormatter(formatter)
     logger_obj = logging.getLogger(name=name)
     logger_obj.addHandler(console)
-    print(
-        f'>>> {logger_obj.level=}, {logger_obj.name=}, {logger_obj.getEffectiveLevel()=}',
+    ic(
+        f'>>> {logger_obj.level=}, {logger_obj.name=},'
+        f' {logger_obj.getEffectiveLevel()=}',
     )
     return logger_obj
 
