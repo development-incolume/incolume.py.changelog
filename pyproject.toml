@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "incolume.py.changelog"
-version = "0.19.0a16"
+version = "0.19.0"
 description = "Generate CHANGELOG.md"
 authors = [
   {name="britodfbr", email =  "contato@incolume.com.br"}
@@ -97,7 +97,7 @@ explicit = true
 
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "0.19.0a16"
+version = "0.19.0"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 documentation = "https://development-incolume.github.io/incolume.py.changelog/"
