@@ -19,6 +19,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Retificado parametros para compatibilidade com `mypy`;
   - Atualizado configuração para `codecov-cli`;
   - `codecov-cli` substituído por `codecov action`;
+### Deprecated
+  - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
 ### Removed
   - Pacote `codecov-cli`;
 
