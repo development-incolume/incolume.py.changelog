@@ -7,7 +7,7 @@ commands = [["pytest"]]
 
 [env.type]
 description = "run type check on code base"
-deps = ["ruff==0.15.7"]
+deps = ["ruff>=0.15.7"]
 commands = [["ruff", "check", "--fix", "incolume", "tests"]]
 
 
@@ -18,8 +18,8 @@ isolated_build = true
 env_list = [
   "clean",
   "mypy",
-  "py314"
-  "py313"
+  "py314",
+  "py313",
   "py312",
   "py311",
   "py310",
