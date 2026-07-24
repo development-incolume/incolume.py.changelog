@@ -74,8 +74,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [0.16.0]	 &#8212; 	2025-08-16:
 ### Deprecated
-  - Python 3.8;
-  - Python 3.9;
+  - Será Descontinuado suporte a Python 3.8 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.9 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
   - Black;
   - Pylint;
   - Isort;
