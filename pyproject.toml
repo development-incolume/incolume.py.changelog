@@ -537,8 +537,6 @@ clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_c
 pre_docs-build={help='Pre docs-build', cmd="uv run task gcl"}
 docs-build = {help="Generate documentation", cmd="uv run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
 docs-serve = {help="Run server documentation", cmd="uv run mkdocs serve"}
-# gsumary = {help="Generate a sumary with dojos", cmd="uv run sumary -f {sumary_file} -r ", use_vars=true}
-# post_gsumary={cmd='git commit -m "docs: Atualização do sumário" {sumary_file}', use_vars=true}
 pre_lint="task lint_ruff"
 lint={help='Checking all linters configurated', cmd=''}
 # lint_mypy={help='Checking with mypy', cmd='echo --mypy--; poetry run mypy --check {path}', use_vars=true}
