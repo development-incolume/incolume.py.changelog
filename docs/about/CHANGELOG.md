@@ -10,6 +10,11 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
+## [Unreleased]	 &#8212; 	2026-07-23:
+### Deprecated
+  - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.11 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+
 ## [0.19.0]	 &#8212; 	2026-07-23:
 ### Changed
   - Correções lint CI/CD;
@@ -19,6 +24,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Retificado parametros para compatibilidade com `mypy`;
   - Atualizado configuração para `codecov-cli`;
   - `codecov-cli` substituído por `codecov action`;
+### Deprecated
+  - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
 ### Removed
   - Pacote `codecov-cli`;
 
@@ -59,8 +66,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [0.17.0]	 &#8212; 	2025-08-16:
 ### Removed
-  - Compatibilidade com Python 3.8.x;
-  - Compatibilidade com Python 3.9.x;
+  - Descontinuado compatibilidade e suporte a Python 3.8 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Descontinuado compatibilidade e suporte a Python 3.9 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
   - Removido pacote `black`;
   - Removido pacote `pylint`;
   - Removido pacote `isort`;
@@ -74,8 +81,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [0.16.0]	 &#8212; 	2025-08-16:
 ### Deprecated
-  - Python 3.8;
-  - Python 3.9;
+  - Será Descontinuado suporte a Python 3.8 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.9 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
   - Black;
   - Pylint;
   - Isort;
@@ -453,3 +460,4 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.19.0rc3]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc2...0.19.0rc3
 [0.19.0rc4]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc3...0.19.0rc4
 [0.19.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc4...0.19.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0...Unreleased
