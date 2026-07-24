@@ -1,5 +1,5 @@
-requires = ["tox>=4.19.0", "tox-uv>=1"]
-env_list = ["clean","3.14", "3.13", "3.12", "3.11", "3.10", "3.9"]
+requires = ["tox>=4.19"]
+env_list = ["3.10", "3.14", "3.13", "3.12", "type"]
 
 [env_run_base]
 description = "Run test under {base_python}"
@@ -7,51 +7,5 @@ commands = [["pytest"]]
 
 [env.type]
 description = "run type check on code base"
-deps = ["ruff>=0.15.7"]
-commands = [["ruff", "check", "--fix", "incolume", "tests"]]
-
-
-[tox]
-minversion = "4.19.0"
-isolated_build = true
-
-env_list = [
-  "clean",
-  "mypy",
-  "py314",
-  "py313",
-  "py312",
-  "py311",
-  "py310",
-  "py39",
-]
-
-[testenv]
-whitelist_externals = "uv"
-skip_install = true
-commands = [
-  "uv sync --python {envpython}",
-  "uvx pytest --pylama {posargs} tests/ -m \"not(slow or webtest)\""
-]
-
-[testenv:clean]
-deps = coverage
-commands =
-  uvx coverage erase
-
-[testenv:linters]
-commands =
-  {[testenv:mypy]commands}
-
-[testenv:stats]
-commands = uvx pytest -xv --doctest-modules --strict-markers --cov=incolume --cov-report term-missing --cov-report html:coverage_report/html --cov-report xml:coverage_report/cov.xml
-
-[testenv:mypy]
-deps =
-    mypy
-    types-toml
-    types-Deprecated
-commands = uvx mypy incolumepy/
-
-[testenv:safety]
-commands = uvx safety check
+deps = ["mypy==1.18.2", "types-cachetools>=5.5.0.20240820", "types-chardet>=5.0.4.6"]
+commands = [["mypy", "src{/}tox"], ["mypy", "tests"]]
