@@ -164,93 +164,9 @@ gitpython = "^3.1.43"
 icecream = "^2.1.6"
 python-dotenv = "^1.1.1"
 
+
 [tool.poetry.group.cli.dependencies]
 
-
-[tool.tox]
-legacy_tox_ini = """
-[tox]
-minversion = 3.1.0
-isolated_build = True
-envlist =
-    clean
-#    black
-#    blue
-#    isort
-#    pydocstyle
-    mypy
-#    pylint
-#    py38
-#    py39
-    py310
-    py311
-    py312
-    py313
-    py314
-    ruff_check
-    ruff_format
-
-;[tox:.package]
-;basepython = python3
-
-[testenv]
-whitelist_externals = uv
-allowlist_externals = uv
-skip_install = true
-commands =
-    uv sync -p {envpython}
-    uv run pytest incolume/ tests/
-
-[testenv:linters]
-commands =
-  {[testenv:ruff_format]commands}
-  {[testenv:ruff_check]commands}
-  {[testenv:black]commands}
-  {[testenv:isort]commands}
-;  {[testenv:flake8]commands}
-  {[testenv:pydocstyle]commands}
-  {[testenv:mypy]commands}
-  {[testenv:pylama]commands}
-  {[testenv:pylint]commands}
-
-[testenv:stats]
-commands = uv run pytest -xv --cov-report html:coverage_report/html --cov-report xml:coverage_report/cov.xml
-
-;[testenv:flake8]
-;deps = flake8
-;commands = uv run flake8 --config pyproject.toml incolume/ tests/
-
-[testenv:mypy]
-deps =
-    mypy
-    types-toml
-    types-Deprecated
-commands = uv run mypy incolume/ tests/
-
-[testenv:ruff_check]
-commands = uv run ruff check incolume/ tests/
-
-[testenv:ruff_format]
-commands = uv run ruff format incolume/ tests/
-
-[testenv:pydocstyle]
-commands = uv run pydocstyle incolume/ tests/
-
-[testenv:isort]
-commands = uv run isort --check --atomic --py all incolume/ tests/
-
-[testenv:pylint]
-commands = uv run pylint incolume/ tests/
-
-[testenv:black]
-commands = uv run black --check incolume/ tests/
-
-[testenv:blue]
-commands = uv run blue --check incolume/ tests/
-
-[testenv:safety]
-commands = uv run safety check
-"""
 
 [tool.bandit]
 exclude_dirs = ["tests", "examples", "coverage_report"]
