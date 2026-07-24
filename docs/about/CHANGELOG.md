@@ -59,8 +59,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [0.17.0]	 &#8212; 	2025-08-16:
 ### Removed
-  - Compatibilidade com Python 3.8.x;
-  - Compatibilidade com Python 3.9.x;
+  - Descontinuado compatibilidade e suporte a Python 3.8 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Descontinuado compatibilidade e suporte a Python 3.9 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
   - Removido pacote `black`;
   - Removido pacote `pylint`;
   - Removido pacote `isort`;
