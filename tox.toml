@@ -10,6 +10,7 @@ deps = [
     "pytest-cov"
 ]
 commands = [
+    ["uv", "sync", "-p", "{base_python}"],
     ["uv", "run", "pytest", "{posargs:tests}", "incolume/", "tests/"]
 ]
 
@@ -17,14 +18,12 @@ commands = [
 [env.lint]
 description = "Run static analysis"
 skip_install = true
-deps = [
-    "ruff"
-]
+# deps = ["ruff"]
 commands = [
     ["ruff", "check", "incolume/", "tests/"]
 ]
 
 [env.typing]
 description = "run type check on code base"
-deps = ["mypy==1.18.2", "types-cachetools>=5.5.0.20240820", "types-chardet>=5.0.4.6"]
+# deps = ["mypy==1.18.2", "types-cachetools>=5.5.0.20240820", "types-chardet>=5.0.4.6"]
 commands = [["mypy", "incolume/", "tests/"]]
