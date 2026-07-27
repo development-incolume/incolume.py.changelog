@@ -43,7 +43,7 @@ class TestChangelogInit:
 
     @classmethod
     def setup_class(cls) -> None:
-        """Setup class."""
+        """Set up class."""
         logging.info(ic(f'starting class {cls.__name__} execution'))
         cls.confproject0.parent.mkdir(exist_ok=True, parents=True)
         cls.confproject1.parent.mkdir(exist_ok=True, parents=True)
@@ -51,20 +51,20 @@ class TestChangelogInit:
 
     @classmethod
     def teardown_class(cls) -> None:
-        """Teardown class."""
+        """Tear down class."""
         logging.info(
             ic(f'finishing class {cls.__name__} execution'),
         )
         rmtree(cls.confproject0.parent, ignore_errors=True)
 
     def setup_method(self, method) -> None:
-        """Setup method."""
+        """Set up method."""
         logging.info(ic(f'starting execution ({method}) of {stack()[0][3]}'))
         self.confproject0.write_text('[tool.poetry]\nversion = "0.1.0"')
         self.confproject1.write_text('[project]\nversion = "0.1.0"')
 
     def teardown_method(self, method) -> None:
-        """Teardown method."""
+        """Tear down method."""
         logging.info(ic(f'finishing execution ({method}) of {stack()[0][3]}'))
         rmtree(self.confproject0, ignore_errors=True)
         rmtree(self.confproject1, ignore_errors=True)
