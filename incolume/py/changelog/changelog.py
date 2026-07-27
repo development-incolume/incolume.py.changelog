@@ -581,7 +581,8 @@ class Changelog:
             (
                 'this project adheres to '
                 f'[Semantic Versioning]({self.url_semver}) '
-                f'and [Conventional Commit]({self.url_convetional_commit}).\n\n'
+                'and [Conventional Commit]('
+                f'{self.url_convetional_commit}).\n\n'
             ),
             'This file was automatically generated for',
             f' [{__title__}]({self.url_principal}/-/tree/{__version__})',

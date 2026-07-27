@@ -253,7 +253,8 @@ class TestCase:
                     'messages': {
                         'Added': [
                             (
-                                'Unreleased/Não publicado para o número de versão '
+                                'Unreleased/Não publicado para o '
+                                'número de versão '
                                 'e adicionar uma nova seção Unreleased/Não '
                                 'publicado no topo'
                             ),
@@ -342,7 +343,8 @@ class TestCase:
                             'messages': {
                                 'Added': [
                                     (
-                                        'Unreleased/Não publicado para o número '
+                                        'Unreleased/Não publicado '
+                                        'para o número '
                                         'de versão e adicionar uma nova seção '
                                         'Unreleased/Não publicado no topo'
                                     ),
@@ -359,7 +361,8 @@ class TestCase:
                                     'Fake fixed,Unreleased',
                                     (
                                         'Formatação visual para CHANGELOG.md '
-                                        'retirado link quebrado para 1ª release'
+                                        'retirado link quebrado '
+                                        'para 1ª release'
                                     ),
                                 ],
                                 'Deprecated': [
