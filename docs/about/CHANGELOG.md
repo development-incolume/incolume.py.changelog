@@ -10,7 +10,9 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2026-07-23:
+## [Unreleased]	 &#8212; 	2026-07-27:
+### Added
+  - Adicionado suporte a Python 3.14 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
 ### Changed
   - Emancipado configuração para pytest;
 ### Deprecated
