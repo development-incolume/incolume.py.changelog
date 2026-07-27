@@ -584,7 +584,7 @@ class Changelog:
             '\n\n---\n',
         ]
 
-    def _footer(
+    def _footer(  # ruff:ignore[no-self-use]
         self: Changelog,
         content: list[tuple[str, dict[str, Any]]],
         content_formated: list[str],
