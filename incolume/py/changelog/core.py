@@ -79,30 +79,29 @@ def key_versions_2_sort(
     try:
         # pegar major, minor e patch
         values = get_major_minor_patch_build.search(x[0])
+        major = values.group(1)  # type: ignore [union-attr]
+        minor = values.group(2)  # type: ignore [union-attr]
+        patch = values.group(3)  # type: ignore [union-attr]
+        build = values.group(6)  # type: ignore [union-attr]
+        # pegar build, se não tiver colocar uma alta 99999
+        build = build or '9' * qdig
+        logging.debug(
+            'values.group(5): %s',
+            values.group(5),  # type: ignore [union-attr]
+        )
+        plus = classifies.get(
+            re.sub(
+                r'[-.]',
+                '',
+                str(values.group(5)).lower(),  # type: ignore [union-attr]
+            ),
+            0,
+        )
+        logging.debug('plus: %s', plus)
+        build = int(build) + plus
+        result = f'{major:0>4}{minor:0>4}{patch:0>4}.{build:0>6}'
     except AttributeError:
         result = str(x[0])
-    major = values.group(1)  # type: ignore [union-attr]
-    minor = values.group(2)  # type: ignore [union-attr]
-    patch = values.group(3)  # type: ignore [union-attr]
-    build = values.group(6)  # type: ignore [union-attr]
-    # pegar build, se não tiver colocar uma alta 99999
-    build = build or '9' * qdig
-    logging.debug(
-        'values.group(5): %s',
-        values.group(5),  # type: ignore [union-attr]
-    )
-    plus = classifies.get(
-        re.sub(
-            r'[-.]',
-            '',
-            str(values.group(5)).lower(),  # type: ignore [union-attr]
-        ),
-        0,
-    )
-    logging.debug('plus: %s', plus)
-    build = int(build) + plus
-    result = f'{major:0>4}{minor:0>4}{patch:0>4}.{build:0>6}'
-    logging.debug('result: %s', result)
     return result
 
 
