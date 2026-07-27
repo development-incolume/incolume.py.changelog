@@ -251,9 +251,11 @@ def changelog_header(
         ' will be documented in this file.\n\n',
         'The format is based on ',
         f'[Keep a Changelog]({url_keepachangelog}), ',
-        'this project adheres to '
-        f'[Semantic Versioning]({url_semver}) '
-        f'and [Conventional Commit]({url_convetional_commit}).\n\n',
+        (
+            'this project adheres to '
+            f'[Semantic Versioning]({url_semver}) '
+            f'and [Conventional Commit]({url_convetional_commit}).\n\n'
+        ),
         'This file was automatically generated for',
         f' [{__title__}]({url_project}/-/tree/{__version__})',
         '\n\n---\n',
@@ -576,9 +578,11 @@ class Changelog:
             ' will be documented in this file.\n\n',
             'The format is based on ',
             f'[Keep a Changelog]({self.url_keepachangelog}), ',
-            'this project adheres to '
-            f'[Semantic Versioning]({self.url_semver}) '
-            f'and [Conventional Commit]({self.url_convetional_commit}).\n\n',
+            (
+                'this project adheres to '
+                f'[Semantic Versioning]({self.url_semver}) '
+                f'and [Conventional Commit]({self.url_convetional_commit}).\n\n'
+            ),
             'This file was automatically generated for',
             f' [{__title__}]({self.url_principal}/-/tree/{__version__})',
             '\n\n---\n',

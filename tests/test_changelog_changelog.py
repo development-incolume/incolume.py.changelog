@@ -170,8 +170,10 @@ class TestCase:
                     'date': '2022-02-16',
                     'messages': {
                         'Security': [
-                            'Aderência a '
-                            'https://keepachangelog.com/pt-BR/1.0.0/',
+                            (
+                                'Aderência a '
+                                'https://keepachangelog.com/pt-BR/1.0.0/'
+                            ),
                         ],
                     },
                 },
@@ -250,9 +252,11 @@ class TestCase:
                     'date': '2023-07-22',
                     'messages': {
                         'Added': [
-                            'Unreleased/Não publicado para o número de versão '
-                            'e adicionar uma nova seção Unreleased/Não '
-                            'publicado no topo',
+                            (
+                                'Unreleased/Não publicado para o número de versão '
+                                'e adicionar uma nova seção Unreleased/Não '
+                                'publicado no topo'
+                            ),
                             ' Tradução para labels ptBR -> enUS',
                             ' Implementado nova função iter_logs()',
                             'para novos recursos.',
@@ -263,12 +267,16 @@ class TestCase:
                         ],
                         'Fixed': [
                             'para qualquer correção de bug.',
-                            'Formatação visual para CHANGELOG.md retirado '
-                            'link quebrado para 1ª release',
+                            (
+                                'Formatação visual para CHANGELOG.md retirado '
+                                'link quebrado para 1ª release'
+                            ),
                         ],
                         'Deprecated': [
-                            'para recursos que serão removidos '
-                            'nas próximas versões.',
+                            (
+                                'para recursos que serão removidos '
+                                'nas próximas versões.'
+                            ),
                         ],
                         'Removed': ['para recursos removidos nesta versão.'],
                         'Security': [
@@ -333,9 +341,11 @@ class TestCase:
                             'date': '2018-10-19',
                             'messages': {
                                 'Added': [
-                                    'Unreleased/Não publicado para o número '
-                                    'de versão e adicionar uma nova seção '
-                                    'Unreleased/Não publicado no topo',
+                                    (
+                                        'Unreleased/Não publicado para o número '
+                                        'de versão e adicionar uma nova seção '
+                                        'Unreleased/Não publicado no topo'
+                                    ),
                                     ' Tradução para labels ptBR -> enUS',
                                     ' Implementado nova função iter_logs()',
                                     'para novos recursos.',
@@ -347,13 +357,17 @@ class TestCase:
                                 'Fixed': [
                                     'para qualquer correção de bug.',
                                     'Fake fixed,Unreleased',
-                                    'Formatação visual para CHANGELOG.md '
-                                    'retirado link quebrado para 1ª release',
+                                    (
+                                        'Formatação visual para CHANGELOG.md '
+                                        'retirado link quebrado para 1ª release'
+                                    ),
                                 ],
                                 'Deprecated': [
                                     'Fake record',
-                                    'para recursos que serão removidos '
-                                    'nas próximas versões.',
+                                    (
+                                        'para recursos que serão removidos '
+                                        'nas próximas versões.'
+                                    ),
                                 ],
                                 'Removed': [
                                     'other fake',
@@ -727,17 +741,23 @@ class TestClassChangelog:
                     'All notable changes to this project',
                     ' will be documented in this file.\n\n',
                     'The format is based on ',
-                    '[Keep a Changelog]'
-                    '(https://keepachangelog.com/en/1.0.0/), ',
-                    'this project adheres to [Semantic Versioning]'
-                    '(https://semver.org/spec/v2.0.0.html) and '
-                    '[Conventional Commit]'
-                    '(https://www.conventionalcommits.org/'
-                    'pt-br/v1.0.0/).\n\n',
+                    (
+                        '[Keep a Changelog]'
+                        '(https://keepachangelog.com/en/1.0.0/), '
+                    ),
+                    (
+                        'this project adheres to [Semantic Versioning]'
+                        '(https://semver.org/spec/v2.0.0.html) and '
+                        '[Conventional Commit]'
+                        '(https://www.conventionalcommits.org/'
+                        'pt-br/v1.0.0/).\n\n'
+                    ),
                     'This file was automatically generated for',
-                    ' [incolume.py.changelog]'
-                    '(https://gitlab.com/development-incolume/'
-                    f'incolume.py.changelog/-/tree/{pkg.__version__})',
+                    (
+                        ' [incolume.py.changelog]'
+                        '(https://gitlab.com/development-incolume/'
+                        f'incolume.py.changelog/-/tree/{pkg.__version__})'
+                    ),
                     '\n\n---\n',
                 ],
             ),
@@ -748,17 +768,23 @@ class TestClassChangelog:
                     'All notable changes to this project',
                     ' will be documented in this file.\n\n',
                     'The format is based on ',
-                    '[Keep a Changelog]'
-                    '(https://keepachangelog.com/en/1.0.0/), ',
-                    'this project adheres to [Semantic Versioning]'
-                    '(https://semver.org/spec/v2.0.0.html) and '
-                    '[Conventional Commit]'
-                    '(https://www.conventionalcommits.org/'
-                    'pt-br/v1.0.0/).\n\n',
+                    (
+                        '[Keep a Changelog]'
+                        '(https://keepachangelog.com/en/1.0.0/), '
+                    ),
+                    (
+                        'this project adheres to [Semantic Versioning]'
+                        '(https://semver.org/spec/v2.0.0.html) and '
+                        '[Conventional Commit]'
+                        '(https://www.conventionalcommits.org/'
+                        'pt-br/v1.0.0/).\n\n'
+                    ),
                     'This file was automatically generated for',
-                    ' [incolume.py.changelog]'
-                    '(https://gitlab.com/development-incolume/'
-                    f'incolume.py.changelog/-/tree/{pkg.__version__})',
+                    (
+                        ' [incolume.py.changelog]'
+                        '(https://gitlab.com/development-incolume/'
+                        f'incolume.py.changelog/-/tree/{pkg.__version__})'
+                    ),
                     '\n\n---\n',
                 ],
             ),
