@@ -380,7 +380,7 @@ def changelog_write(
     content_formated = changelog_body(content, content_formated, **kwargs)
     content_formated = changelog_footer(content, content_formated, **kwargs)
 
-    with changelog_file.open('w') as f:
+    with changelog_file.open('w', encoding='utf-8') as f:
         f.writelines(content_formated)
     return True
 
