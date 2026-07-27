@@ -254,7 +254,7 @@ class TestChangelogInit:
         try:
             assert pkg.key_versions_2_sort(**entrance) == expected
         except TypeError:
-            with pytest.raises(**xcpt):  # noqa: PT010
+            with pytest.raises(**xcpt):
                 assert pkg.key_versions_2_sort(**entrance) == expected
 
     @pytest.mark.parametrize(
