@@ -7,10 +7,12 @@ import logging
 import re
 import subprocess
 import sys
+from collections.abc import Mapping
 from pathlib import Path
-from typing import Any, Final, Mapping
+from typing import Any, Final
 
 import git
+
 from incolume.py.changelog import (
     __title__,
     __version__,
@@ -47,6 +49,7 @@ def get_os_command(key: str) -> str:
         In Linux:
         >> get_os_command('1.0.0')
         'git show -s --format=%cs 1.0.0^{commit} --'
+
     """
     cmd_supply = {
         'win': r'^^{commit} --',
@@ -79,6 +82,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
 
         >> msg_classify('Corregido: corrección de error.', 'es-AR')
         ValueError: es-AR not suported! Use en-US, pt-BR
+
     """  # noqa: E501
     logging.debug(lang)
     suport_lang: dict[str, Mapping[str, str]] = {
@@ -177,6 +181,7 @@ def changelog_messages(
         'messages': {
         'Added': ['g', 'u'],
         'Removed: ['1', '2'],},},)]
+
     """
     logging.debug('parameters: (%s %s %s %s)', text, start, end, kwargs)
     lang: str = kwargs.get('lang', '')
@@ -274,6 +279,7 @@ def changelog_body(
     Examples:
         >> changelog_body([('1.0.1', {'Added': 'New function'}), ('1.0.2', {'Added': 'New other function'})], content_formated=[])
         ['[1.0.1]', 'Added', 'New Function']
+
     """  # noqa: E501
     logging.debug(kwargs)
     content_formated.extend(Changelog.iter_logs(content[:-1]))
@@ -301,9 +307,28 @@ def changelog_footer(
         None
 
     Examples:
-        >>> changelog_footer([('1.0.2',{'key': '1.0.2', 'messages': {'Added': ['New function']}}), ('1.0.1', {'key': '1.0.1', 'messages':{'Added': ['Other New Function']}})], [])
+        >>> changelog_footer(
+        ...     [
+        ...         (
+        ...             '1.0.2',
+        ...             {
+        ...                 'key': '1.0.2',
+        ...                 'messages': {'Added': ['New function']},
+        ...             },
+        ...         ),
+        ...         (
+        ...             '1.0.1',
+        ...             {
+        ...                 'key': '1.0.1',
+        ...                 'messages': {'Added': ['Other New Function']},
+        ...             },
+        ...         ),
+        ...     ],
+        ...     [],
+        ... )
         ['\n\n---\n\n', '[1.0.2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/1.0.1...1.0.2\n']
-    """  # noqa: E501
+
+    """
     urlcompare = (
         kwargs.get('urlcompare')
         or 'https://github.com/development-incolume/'
@@ -343,6 +368,7 @@ def changelog_write(
     Examples:
         >> changelog_write(['Added: funcionalidade nova.'])
         True
+
     """
     changelog_file = Path(kwargs.get('changelog_file') or CHANGELOG_FILE)
     changelog_file.parent.mkdir(parents=True, exist_ok=True)
@@ -386,6 +412,7 @@ def update_changelog(
         urlcompare="https://github.com/development-incolume/"
         "incolume.py.changelog/-/compare")
         True
+
     """
     logging.debug('argumentos=%s,%s,%s', changelog_file, reverse, kwargs)
     urlcompare: str = (
@@ -437,6 +464,7 @@ class Changelog:
 
         Return:
             None
+
         """
         self.repo: git.Repo | None = None
         self.file_output = (
@@ -480,8 +508,27 @@ class Changelog:
             None
 
         Examples:
-            >>> Changelog.iter_logs(content=[('1.0.0a5', {'date': '2023-12-21', 'key': '1.0.0a5', 'messages': {'Added': ['New function', 'One more new function.'], 'Fixed': ['A bug of connection.']}})], linked=False)
+            >>> Changelog.iter_logs(
+            ...     content=[
+            ...         (
+            ...             '1.0.0a5',
+            ...             {
+            ...                 'date': '2023-12-21',
+            ...                 'key': '1.0.0a5',
+            ...                 'messages': {
+            ...                     'Added': [
+            ...                         'New function',
+            ...                         'One more new function.',
+            ...                     ],
+            ...                     'Fixed': ['A bug of connection.'],
+            ...                 },
+            ...             },
+            ...         )
+            ...     ],
+            ...     linked=False,
+            ... )
             ['\n\n## 1.0.0a5\t &#8212; \t2023-12-21:', '\n### Added', '\n  - New function;', '\n  - One more new function.;', '\n### Fixed', '\n  - A bug of connection.;']
+
         """  # noqa: E501
         result = []
         for _, entrada in content:
@@ -519,6 +566,7 @@ class Changelog:
 
             >> Changelog(url_keepachangelog='https://keepachangelog.com/en/2.0.0/', url_semver='https://semver.org/spec/v1.0.0.html')._header()
             ['# CHANGELOG\n\n\n', 'All notable changes to this project', ' will be documented in this file.\n\n', 'The format is based on ', '[Keep a Changelog](https://keepachangelog.com/en/2.0.0/), ', 'this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n', 'This file was automatically generated for', ' [incolume.py.changelog](https://gitlab.com/development-incolume/incolume.py.changelog/-/tree/0.15.0a1)', '\n\n---\n']
+
         """  # noqa: E501
         return [
             '# CHANGELOG\n\n\n',
@@ -555,9 +603,28 @@ class Changelog:
             None
 
         Examples:
-            >>> Changelog()._footer([('1.0.2',{'key': '1.0.2', 'messages': {'Added': ['New function']}}), ('1.0.1', {'key': '1.0.1', 'messages':{'Added': ['Other New Function']}})], [])
+            >>> Changelog()._footer(
+            ...     [
+            ...         (
+            ...             '1.0.2',
+            ...             {
+            ...                 'key': '1.0.2',
+            ...                 'messages': {'Added': ['New function']},
+            ...             },
+            ...         ),
+            ...         (
+            ...             '1.0.1',
+            ...             {
+            ...                 'key': '1.0.1',
+            ...                 'messages': {'Added': ['Other New Function']},
+            ...             },
+            ...         ),
+            ...     ],
+            ...     [],
+            ... )
             ['\n\n---\n\n', '[1.0.2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/1.0.1...1.0.2\n']
-        """  # noqa: E501
+
+        """
         urlcompare = (
             kwargs.get('urlcompare')
             or 'https://github.com/development-incolume/'
@@ -605,6 +672,7 @@ def run() -> None:
 
     Return:
         None
+
     """
     msg = subprocess.getoutput('git tag -n').splitlines()[-14]
     logging.debug(msg)

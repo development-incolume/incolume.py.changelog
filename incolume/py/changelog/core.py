@@ -59,6 +59,7 @@ def key_versions_2_sort(
         '000100010001.080000'
         >>> key_versions_2_sort(('1.1.1post1',))
         '000100010001.900001'
+
     """
     qdig = qdig or 5
     if not isinstance(x, Container):
