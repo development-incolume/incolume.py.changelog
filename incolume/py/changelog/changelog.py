@@ -451,7 +451,7 @@ class Changelog:
         *,
         reverse: bool = True,
         **kwargs: str,
-    ):
+    ) -> None:
         """Initialize from Changelog class.
 
         Args:
@@ -645,8 +645,8 @@ class Changelog:
 
     def __call__(
         self: Changelog,
-        *args: Any,
-        **kwargs: Any,
+        *args: str,
+        **kwargs: str,
     ) -> Changelog:  # pragma: no cover
         """Call class.
 

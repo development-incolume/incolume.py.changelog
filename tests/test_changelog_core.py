@@ -42,7 +42,7 @@ class TestChangelogInit:
     versionfile: ClassVar = Path(gettempdir(), stack()[0][3], 'version.txt')
 
     @classmethod
-    def setup_class(cls):
+    def setup_class(cls) -> None:
         """Setup class."""
         logging.info(ic(f'starting class {cls.__name__} execution'))
         cls.confproject0.parent.mkdir(exist_ok=True, parents=True)
@@ -50,20 +50,20 @@ class TestChangelogInit:
         cls.versionfile.parent.mkdir(exist_ok=True, parents=True)
 
     @classmethod
-    def teardown_class(cls):
+    def teardown_class(cls) -> None:
         """Teardown class."""
         logging.info(
             ic(f'finishing class {cls.__name__} execution'),
         )
         rmtree(cls.confproject0.parent, ignore_errors=True)
 
-    def setup_method(self, method):
+    def setup_method(self, method) -> None:
         """Setup method."""
         logging.info(ic(f'starting execution ({method}) of {stack()[0][3]}'))
         self.confproject0.write_text('[tool.poetry]\nversion = "0.1.0"')
         self.confproject1.write_text('[project]\nversion = "0.1.0"')
 
-    def teardown_method(self, method):
+    def teardown_method(self, method) -> None:
         """Teardown method."""
         logging.info(ic(f'finishing execution ({method}) of {stack()[0][3]}'))
         rmtree(self.confproject0, ignore_errors=True)
