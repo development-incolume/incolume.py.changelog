@@ -22,4 +22,4 @@ __all__ = [
     'versionfile',
 ]
 
-update_version(pyproject_fl=confproject)
+update_version(pyproject_fl=confproject)  # noqa: RUF067
