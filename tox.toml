@@ -4,9 +4,10 @@ env_list = ["3.14", "3.13", "3.12", "3.11", "3.10", "typing"]
 # Core configuration for all test environments (fallback defaults)
 [env_run_base]
 description = "Run test under {base_python}"
-allowlist_externals = ["mypy"]
+allowlist_externals = ["mypy", "uv"]
 deps = [
-    "uv",
+    "pytest>=8.0",
+    "pytest-cov"
 ]
 commands = [
     ["uv", "run", "pytest", "{posargs:tests}", "incolume/", "tests/"]
@@ -20,10 +21,10 @@ deps = [
     "ruff"
 ]
 commands = [
-    ["uv", "run", "ruff", "check", "incolume/", "tests/"]
+    ["ruff", "check", "incolume/", "tests/"]
 ]
 
 [env.typing]
 description = "run type check on code base"
 deps = ["mypy==1.18.2", "types-cachetools>=5.5.0.20240820", "types-chardet>=5.0.4.6"]
-commands = [["uv", "run", "mypy", "incolume/", "tests/"]]
+commands = [["mypy", "incolume/", "tests/"]]
