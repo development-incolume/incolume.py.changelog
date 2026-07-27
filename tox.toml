@@ -4,13 +4,16 @@ env_list = ["3.14", "3.13", "3.12", "3.11", "3.10", "typing"]
 # Core configuration for all test environments (fallback defaults)
 [env_run_base]
 description = "Run test under {base_python}"
-allowlist_externals = ["mypy", "uv"]
+allowlist_externals = ["mypy"]
 deps = [
     "pytest>=8.0",
-    "pytest-cov"
+    "pytest-cov",
+    "pytest-env",
+    "pytest-mock",
+    "pytest-timeout",
 ]
 commands = [
-    ["uv", "run", "pytest", "{posargs:tests}", "incolume/", "tests/"]
+    ["pytest", "{posargs:tests}", "incolume/", "tests/"]
 ]
 
 # Custom environment specific to linting
