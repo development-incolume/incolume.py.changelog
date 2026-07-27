@@ -7,9 +7,8 @@ import logging
 import re
 import subprocess
 import sys
-from collections.abc import Mapping
 from pathlib import Path
-from typing import Any, Final
+from typing import TYPE_CHECKING, Any, Final
 
 import git
 
@@ -18,6 +17,9 @@ from incolume.py.changelog import (
     __version__,
     key_versions_2_sort,
 )
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 # ruff: noqa: S605 S607
 logging.basicConfig(
