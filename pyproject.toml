@@ -36,6 +36,7 @@ dependencies = [
     "icecream>=2.1.5",
     "python-dotenv[cli]>=1.0.1",
     "tomlkit>=0.13.3",
+    "unidecode>=1.4.0",
 ]
 
 [project.urls]
