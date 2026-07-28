@@ -5,11 +5,10 @@ from __future__ import annotations
 import inspect
 import logging
 import re
-import subprocess
+import subprocess  # ruff:ignore[suspicious-subprocess-import]
 import sys
-from collections.abc import Mapping
 from pathlib import Path
-from typing import Any, Final
+from typing import TYPE_CHECKING, Any, Final
 
 import git
 
@@ -18,6 +17,9 @@ from incolume.py.changelog import (
     __version__,
     key_versions_2_sort,
 )
+
+if TYPE_CHECKING:
+    from collections.abc import Mapping
 
 # ruff: noqa: S605 S607
 logging.basicConfig(
@@ -249,9 +251,11 @@ def changelog_header(
         ' will be documented in this file.\n\n',
         'The format is based on ',
         f'[Keep a Changelog]({url_keepachangelog}), ',
-        'this project adheres to '
-        f'[Semantic Versioning]({url_semver}) '
-        f'and [Conventional Commit]({url_convetional_commit}).\n\n',
+        (
+            'this project adheres to '
+            f'[Semantic Versioning]({url_semver}) '
+            f'and [Conventional Commit]({url_convetional_commit}).\n\n'
+        ),
         'This file was automatically generated for',
         f' [{__title__}]({url_project}/-/tree/{__version__})',
         '\n\n---\n',
@@ -378,7 +382,7 @@ def changelog_write(
     content_formated = changelog_body(content, content_formated, **kwargs)
     content_formated = changelog_footer(content, content_formated, **kwargs)
 
-    with changelog_file.open('w') as f:
+    with changelog_file.open('w', encoding='utf-8') as f:
         f.writelines(content_formated)
     return True
 
@@ -449,7 +453,7 @@ class Changelog:
         *,
         reverse: bool = True,
         **kwargs: str,
-    ):
+    ) -> None:
         """Initialize from Changelog class.
 
         Args:
@@ -574,15 +578,18 @@ class Changelog:
             ' will be documented in this file.\n\n',
             'The format is based on ',
             f'[Keep a Changelog]({self.url_keepachangelog}), ',
-            'this project adheres to '
-            f'[Semantic Versioning]({self.url_semver}) '
-            f'and [Conventional Commit]({self.url_convetional_commit}).\n\n',
+            (
+                'this project adheres to '
+                f'[Semantic Versioning]({self.url_semver}) '
+                'and [Conventional Commit]('
+                f'{self.url_convetional_commit}).\n\n'
+            ),
             'This file was automatically generated for',
             f' [{__title__}]({self.url_principal}/-/tree/{__version__})',
             '\n\n---\n',
         ]
 
-    def _footer(
+    def _footer(  # ruff:ignore[no-self-use]
         self: Changelog,
         content: list[tuple[str, dict[str, Any]]],
         content_formated: list[str],
@@ -643,8 +650,8 @@ class Changelog:
 
     def __call__(
         self: Changelog,
-        *args: Any,
-        **kwargs: Any,
+        *args: str,
+        **kwargs: str,
     ) -> Changelog:  # pragma: no cover
         """Call class.
 
