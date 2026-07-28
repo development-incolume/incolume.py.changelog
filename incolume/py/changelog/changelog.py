@@ -385,8 +385,8 @@ def changelog_write(
 
     [print(x, chardet.detect(x.encode('utf-8'))) for x in content_formated]
 
-    with changelog_file.open('wb') as f:
-        f.writelines(text.encode('utf-8') for text in content_formated)
+    with changelog_file.open('w', encoding='utf-8') as f:
+        f.writelines(text.encode('utf-8', errors='replace').decode('utf-8') for text in content_formated)
     return True
 
 
