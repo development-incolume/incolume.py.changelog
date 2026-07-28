@@ -10,32 +10,37 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2026-07-27:
+## [Unreleased]	 &#8212; 	2026-07-28:
 ### Added
   - Adicionado suporte a Python 3.14 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
 ### Changed
-  - Emancipado configuraÃ§Ã£o para pytest;
+  - Ajuste QA (Quality Assurance) totalizado para `mypy` e com formatação `ruff`;
+  - Emancipado configuração para `pytest`;
+  - Emancipado configuração para `mypy`;
+  - Emancipado configuração para `tox`;
+  - Emancipado configuração para `coverage`;
+  - Emancipado configuração para `ruff`;
 ### Deprecated
-  - SerÃ¡ Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
-  - SerÃ¡ Descontinuado suporte a Python 3.11 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.11 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
 
 ## [0.19.0]	 &#8212; 	2026-07-23:
 ### Changed
-  - CorreÃ§Ãµes lint CI/CD;
-  - GeraÃ§Ã£o de path/arquivo de CHANGELOG.md automÃ¡ticos;
-  - Melhoria de performance na execuÃ§Ã£o de rotinas do pacote `core`;
-  - AtualizaÃ§Ã£o dos pacotes de dependÃªncia;
+  - Correções lint CI/CD;
+  - Geração de path/arquivo de CHANGELOG.md automáticos;
+  - Melhoria de performance na execução de rotinas do pacote `core`;
+  - Atualização dos pacotes de dependência;
   - Retificado parametros para compatibilidade com `mypy`;
-  - Atualizado configuraÃ§Ã£o para `codecov-cli`;
-  - `codecov-cli` substituÃ­do por `codecov action`;
+  - Atualizado configuração para `codecov-cli`;
+  - `codecov-cli` substituído por `codecov action`;
 ### Deprecated
-  - SerÃ¡ Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
 ### Removed
   - Pacote `codecov-cli`;
 
 ## [0.19.0rc4]	 &#8212; 	2026-07-15:
 ### Changed
-  - Atualizado configuraÃ§Ã£o para `codecov-cli`;
+  - Atualizado configuração para `codecov-cli`;
 
 ## [0.19.0rc3]	 &#8212; 	2026-07-15:
 ### Changed
@@ -47,24 +52,24 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [0.19.0rc1]	 &#8212; 	2026-07-14:
 ### Changed
-  - AtualizaÃ§Ã£o dos pacotes de dependÃªncia;
+  - Atualização dos pacotes de dependência;
 
 ## [0.19.0rc0]	 &#8212; 	2026-07-14:
 ### Changed
-  - CorreÃ§Ãµes lint CI/CD;
-  - GeraÃ§Ã£o de path/arquivo de CHANGELOG.md automÃ¡ticos;
-  - Melhoria de performance na execuÃ§Ã£o de rotinas do pacote `core`;
+  - Correções lint CI/CD;
+  - Geração de path/arquivo de CHANGELOG.md automáticos;
+  - Melhoria de performance na execução de rotinas do pacote `core`;
 
 ## [0.18.0]	 &#8212; 	2026-07-13:
 ### Added
-  - TraduÃ§Ã£o do arquivo COVENTIONAL_COMMITS.md em alemÃ£o, espanhol, francÃªs, inglÃªs, italiano e portuguÃªs;
-  - TraduÃ§Ã£o do arquivo writing-your-docs.md em alemÃ£o, espanhol, francÃªs, inglÃªs, italiano e portuguÃªs;
-  - TraduÃ§Ã£o do arquivo zenpy.md em alemÃ£o, espanhol, francÃªs, inglÃªs, italiano e portuguÃªs;
-  - TraduÃ§Ã£o do arquivo keep-a-changelog.md em alemÃ£o, espanhol, francÃªs, inglÃªs, italiano e portuguÃªs;
+  - Tradução do arquivo COVENTIONAL_COMMITS.md em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo writing-your-docs.md em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo zenpy.md em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo keep-a-changelog.md em alemão, espanhol, francês, inglês, italiano e português;
   - Adicionado pacote `tomlkit`;
 ### Changed
-  - AtualizaÃ§Ã£o de versÃ£o simultÃ¢nea em `pyproject.toml` e `version.txt` com aplicativos `uv` e `poetry`;
-  - Funcionalidades do pacote centralizado no mÃ³dulo `core`;
+  - Atualização de versão simultânea em `pyproject.toml` e `version.txt` com aplicativos `uv` e `poetry`;
+  - Funcionalidades do pacote centralizado no módulo `core`;
 ### Removed
   - Removido pacote `toml`;
 
@@ -78,15 +83,15 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Removido pacote `pydocstyle`;
   - Removido pacote `flake8`;
 ### Changed
-  - ValidaÃ§Ã£o CI/CD obrigatÃ³ria para `mypy`, `lint` e `format code`;
-  - Gerenciador `uv` introduzido em ci/cd para gerar documentaÃ§Ã£o;
-  - Gerenciador `uv` introduzido na execuÃ§Ã£o do comando `tox`;
-  - Configurado compatibilidade cruzada de dependÃªncias entre `uv`e `poetry`;
+  - Validação CI/CD obrigatória para `mypy`, `lint` e `format code`;
+  - Gerenciador `uv` introduzido em ci/cd para gerar documentação;
+  - Gerenciador `uv` introduzido na execução do comando `tox`;
+  - Configurado compatibilidade cruzada de dependências entre `uv`e `poetry`;
 
 ## [0.16.0]	 &#8212; 	2025-08-16:
 ### Deprecated
-  - SerÃ¡ Descontinuado suporte a Python 3.8 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
-  - SerÃ¡ Descontinuado suporte a Python 3.9 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.8 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.9 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
   - Black;
   - Pylint;
   - Isort;
@@ -97,52 +102,52 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Gerenciador `uv` definido como gerenciador principal;
   - `ruff` definido como verificador e formatador principal;
 ### Fixed
-  - AmpliaÃ§Ã£o da cobertura para 100% do cÃ³digo atual;
+  - Ampliação da cobertura para 100% do código atual;
 
 ## [0.15.0]	 &#8212; 	2025-08-14:
 ### Added
-  - Adicionado definiÃ§Ãµes para compatibilidade plena com gerenciador `uv`;
-  - Ativado a ferramenta `ruff` como validador e formatador de cÃ³digo para o projeto;
-  - Ativado configuraÃ§Ã£o de script para ambiente atualizado do pyproject.toml;
-  - Controle de exibiÃ§Ã£o verbosa no terminal por variaveis de ambiente;
+  - Adicionado definições para compatibilidade plena com gerenciador `uv`;
+  - Ativado a ferramenta `ruff` como validador e formatador de código para o projeto;
+  - Ativado configuração de script para ambiente atualizado do pyproject.toml;
+  - Controle de exibição verbosa no terminal por variaveis de ambiente;
 ### Changed
-  - AtualizaÃ§Ã£o do modelo para pyproject.toml;
-  - Ampliado cobertura para mÃ³dulo principal;
-  - AtualizaÃ§Ã£o de performance em ci/cd para funcionar com `uv` + `ruff`;
+  - Atualização do modelo para pyproject.toml;
+  - Ampliado cobertura para módulo principal;
+  - Atualização de performance em ci/cd para funcionar com `uv` + `ruff`;
 ### Deprecated
   - Flake8;
   - Isort;
   - Pylint;
 ### Fixed
-  - CorreÃ§Ã£o no timestamp para evitar conflito no Windows;
+  - Correção no timestamp para evitar conflito no Windows;
   - Strip de URL para url-compare;
   - Suspenso temporariamente testes de docstring em conflito;
 
 ## [0.14.0]	 &#8212; 	2025-01-15:
 ### Fixed
-  - Desativado temporariamente ci/cd para formataÃ§Ã£o com ruff;
+  - Desativado temporariamente ci/cd para formatação com ruff;
   - Desativado temporariamente ci/cd para lint com ruff;
-  - Tratamento de exceÃ§Ã£o FileNotFoundError ao carregar versionamento do pacote;
+  - Tratamento de exceção FileNotFoundError ao carregar versionamento do pacote;
 
 ## [0.13.1]	 &#8212; 	2024-12-29:
 ### Changed
-  - Atualizado documentaÃ§Ã£o;
+  - Atualizado documentação;
 ### Fixed
-  - Desativado temporariamente ci/cd para formataÃ§Ã£o e lint com ruff;
+  - Desativado temporariamente ci/cd para formatação e lint com ruff;
 
 ## [0.13.0]	 &#8212; 	2024-12-28:
 ### Fixed
   - Ajuste no script CI/CD;
-  - Refinamento de testes unitÃ¡rios para CI/CD;
+  - Refinamento de testes unitários para CI/CD;
   - Ajuste no git workflow;
 
 ## [0.12.3]	 &#8212; 	2024-12-27:
 ### Fixed
-  - Recuperado arquivo de restriÃ§Ãµes para `poetry`;
+  - Recuperado arquivo de restrições para `poetry`;
 
 ## [0.12.2]	 &#8212; 	2024-12-27:
 ### Fixed
-  - Ajuste nas restriÃ§Ãµes de dependÃªncias;
+  - Ajuste nas restrições de dependências;
 
 ## [0.12.1]	 &#8212; 	2024-12-27:
 ### Fixed
@@ -150,39 +155,39 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [0.12.0]	 &#8212; 	2024-12-27:
 ### Changed
-  - ParÃ¢metro `-r/--reverse` transformado em flag;
+  - Parâmetro `-r/--reverse` transformado em flag;
   - Removido a necessidade de informar valor em parametro `reverse`;
 ### Fixed
-  - CorreÃ§Ã£o em testes para CI/CD;
+  - Correção em testes para CI/CD;
   - Trabalhado encode para sistemas Windows;
 
 ## [0.11.5]	 &#8212; 	2024-08-27:
 ### Fixed
-  - AlteraÃ§Ã£o na configuraÃ§Ã£o para sanar erro de execuÃ§Ã£o exclusivo em CI/CD;
+  - Alteração na configuração para sanar erro de execução exclusivo em CI/CD;
 
 ## [0.11.4]	 &#8212; 	2024-08-27:
 ### Changed
-  - AtualizaÃ§Ã£o da ferramenta `ruff` e respectiva configuraÃ§Ã£o;
+  - Atualização da ferramenta `ruff` e respectiva configuração;
 ### Fixed
-  - AtualziaÃ§Ã£o de conflitos no ambiente para CI/CD;
+  - Atualziação de conflitos no ambiente para CI/CD;
 
 ## [0.11.3]	 &#8212; 	2024-08-27:
 ### Fixed
-  - AtualziaÃ§Ã£o do ambiente para CI/CD;
+  - Atualziação do ambiente para CI/CD;
 
 ## [0.11.2]	 &#8212; 	2024-08-27:
 ### Fixed
-  - DependÃªncias para ambiente de CI/CD atualizadas;
+  - Dependências para ambiente de CI/CD atualizadas;
 
 ## [0.11.1]	 &#8212; 	2024-08-27:
 ### Fixed
-  - Conflito de validaÃ§Ã£o entre `isort` e `ruff`;
+  - Conflito de validação entre `isort` e `ruff`;
 
 ## [0.11.0]	 &#8212; 	2024-08-27:
 ### Changed
-  - ParÃ¢metro `-r/--reverse` transformado em flag, e removido a necessidade de informar valor;
+  - Parâmetro `-r/--reverse` transformado em flag, e removido a necessidade de informar valor;
 ### Fixed
-  - CorreÃ§Ã£o em testes para CI/CD;
+  - Correção em testes para CI/CD;
 
 ## [0.10.0]	 &#8212; 	2024-08-26:
 ### Added
@@ -190,65 +195,65 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Pacote `ruff` adicionado como formatador e validador de estilos;
 ### Changed
   - Ambiente virtual local, para melhor funcionamento em Windows;
-  - Melhoria de performance de metodos da geraÃ§Ã£o de `CHANGELOG.md`;
-  - FormataÃ§Ã£o e validaÃ§Ã£o de cÃ³digo ruff aplicados;
+  - Melhoria de performance de metodos da geração de `CHANGELOG.md`;
+  - Formatação e validação de código ruff aplicados;
 
 ## [0.9.0]	 &#8212; 	2024-05-14:
 ### Added
-  - Acrescentado traduÃ§Ãµes para `cÃ³digo de conduta` (DE, EN, ES, PT, FR, IT);
-  - Acrescentado traduÃ§Ãµes para  `semver.md` (DE, EN, ES, PT, FR, IT);
+  - Acrescentado traduções para `código de conduta` (DE, EN, ES, PT, FR, IT);
+  - Acrescentado traduções para  `semver.md` (DE, EN, ES, PT, FR, IT);
 ### Changed
-  - Atualizado badges da pÃ¡gina inicial da documentaÃ§Ã£o;
+  - Atualizado badges da página inicial da documentação;
   - Atualizado badges do README;
-  - AtualizaÃ§Ã£o da estrutura do README do projeto;
-  - Atualizado exemplos de utilizaÃ§Ã£o de mÃ©todos para API.;
-  - Exemplos de utilizaÃ§Ã£o do programa na documentaÃ§Ã£o;
+  - Atualização da estrutura do README do projeto;
+  - Atualizado exemplos de utilização de métodos para API.;
+  - Exemplos de utilização do programa na documentação;
 
 ## [0.9.0rc0]	 &#8212; 	2024-01-16:
 ### Added
-  - Acrescentado traduÃ§Ãµes para `cÃ³digo de conduta` (DE, EN, ES, PT, FR, IT);
-  - Acrescentado traduÃ§Ãµes para  `semver.md` (DE, EN, ES, PT, FR, IT);
+  - Acrescentado traduções para `código de conduta` (DE, EN, ES, PT, FR, IT);
+  - Acrescentado traduções para  `semver.md` (DE, EN, ES, PT, FR, IT);
 ### Changed
-  - Exemplos de utilizaÃ§Ã£o do programa na documentaÃ§Ã£o.;
+  - Exemplos de utilização do programa na documentação.;
 
 ## [0.8.0]	 &#8212; 	2024-01-06:
 ### Added
-  - Acrescentado campo de busca na documentaÃ§Ã£o da API;
-  - Acrescentado modo noturno na pÃ¡gina oficial de documentaÃ§Ã£o da API;
-  - Acrescentado suporte a multiplos idiomas para documentaÃ§Ã£o;
-  - Acrescentado traduÃ§Ã£o do cÃ³digo de contuda em italiano;
-  - Acrescentado traduÃ§Ã£o do cÃ³digo de contuda em francÃªs;
-  - Acrescentado traduÃ§Ã£o do cÃ³digo de contuda em espanhol;
-  - Acrescentado traduÃ§Ã£o do cÃ³digo de contuda em alemÃ£o;
-  - Acrescentado traduÃ§Ã£o do cÃ³digo de contuda em inglÃªs;
-  - Acrescentado traduÃ§Ã£o do contributors.md em inglÃªs;
-  - Acrescentado traduÃ§Ã£o do zenpy.md em inglÃªs;
+  - Acrescentado campo de busca na documentação da API;
+  - Acrescentado modo noturno na página oficial de documentação da API;
+  - Acrescentado suporte a multiplos idiomas para documentação;
+  - Acrescentado tradução do código de contuda em italiano;
+  - Acrescentado tradução do código de contuda em francês;
+  - Acrescentado tradução do código de contuda em espanhol;
+  - Acrescentado tradução do código de contuda em alemão;
+  - Acrescentado tradução do código de contuda em inglês;
+  - Acrescentado tradução do contributors.md em inglês;
+  - Acrescentado tradução do zenpy.md em inglês;
 ### Deprecated
-  - SerÃ¡ substituÃ­do em breve o pacote `isort`;
+  - Será substituído em breve o pacote `isort`;
 ### Fixed
-  - Redefinido renderizaÃ§Ã£o de rodapÃ© do arquivo CHANGELOG.md;
+  - Redefinido renderização de rodapé do arquivo CHANGELOG.md;
 
 ## [0.7.0]	 &#8212; 	2024-01-05:
 ### Added
-  - Formatador de cÃ³digo redefindo com `ruff`;
+  - Formatador de código redefindo com `ruff`;
   - Adicionado badges de `wheel` e `stable`;
 ### Changed
   - Renomeado workflow CI/CD `python-package.yml -> unit-tests.yml`;
-  - AtualizaÃ§Ã£o da documentaÃ§Ã£o com exemplos de utilizaÃ§Ã£o da API;
-  - ReativaÃ§Ã£o dos scripts de automaÃ§Ã£o `taskipy`;
-  - ReativaÃ§Ã£o dos scripts de automaÃ§Ã£o `makefile`;
-  - ReativaÃ§Ã£o dos scripts de automaÃ§Ã£o `tox`;
-  - InformaÃ§Ãµes referente ao projeto atualizadas na pÃ¡gina de documentaÃ§Ã£o;
+  - Atualização da documentação com exemplos de utilização da API;
+  - Reativação dos scripts de automação `taskipy`;
+  - Reativação dos scripts de automação `makefile`;
+  - Reativação dos scripts de automação `tox`;
+  - Informações referente ao projeto atualizadas na página de documentação;
 ### Removed
   - Removido pacote `blue`;
   - Desativado formatador `blue` em CI/CD;
 
 ## [0.6.2]	 &#8212; 	2024-01-04:
 ### Added
-  - AtivaÃ§Ã£o da configuraÃ§Ã£o `Codecov.io`.;
+  - Ativação da configuração `Codecov.io`.;
 ### Fixed
-  - CorreÃ§Ã£o na excuÃ§Ã£o de testes unitÃ¡rios em CI/CD;
-  - CorreÃ§Ã£o de geraÃ§Ã£o de relatÃ³rio de cobertura no container CI/CD.;
+  - Correção na excução de testes unitários em CI/CD;
+  - Correção de geração de relatório de cobertura no container CI/CD.;
 
 ## [0.6.1]	 &#8212; 	2024-01-02:
 ### Fixed
@@ -256,158 +261,158 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [0.6.0]	 &#8212; 	2024-01-02:
 ### Fixed
-  - CorreÃ§Ã£o na excuÃ§Ã£o de testes unitÃ¡rios em CI/CD;
+  - Correção na excução de testes unitários em CI/CD;
 
 ## [0.6.0rc0]	 &#8212; 	2024-01-02:
 ### Fixed
-  - CorreÃ§Ã£o na excuÃ§Ã£o de testes unitÃ¡rios em CI/CD;
+  - Correção na excução de testes unitários em CI/CD;
 
 ## [0.5.0]	 &#8212; 	2024-01-01:
 ### Fixed
-  - CorreÃ§Ã£o em aÃ§Ãµes de fluxo CI/CD;
-  - Sanado conflito entre ferramentas de validaÃ§Ã£o de tipo;
-  - Sanado conflito entre ferramentas de ordenaÃ§Ã£o de pacotes;
+  - Correção em ações de fluxo CI/CD;
+  - Sanado conflito entre ferramentas de validação de tipo;
+  - Sanado conflito entre ferramentas de ordenação de pacotes;
   - Sanado conflito entre ferramentas lint;
 
 ## [0.5.0rc0]	 &#8212; 	2023-12-31:
 ### Fixed
-  - Sanado conflito entre ferramentas de validaÃ§Ã£o de tipo;
-  - Sanado conflito entre ferramentas de ordenaÃ§Ã£o de pacotes;
+  - Sanado conflito entre ferramentas de validação de tipo;
+  - Sanado conflito entre ferramentas de ordenação de pacotes;
   - Sanado conflito entre ferramentas lint;
 
 ## [0.4.0]	 &#8212; 	2023-12-31:
 ### Changed
-  - Atualizado verificaÃ§Ã£o de tipo estÃ¡tico `mypy` para compatibilidade de versÃ£o a partir do Python 3.8;
+  - Atualizado verificação de tipo estático `mypy` para compatibilidade de versão a partir do Python 3.8;
   - Atualizado logo do projeto;
 ### Fixed
   - Ajuste de conflitos entre ruff e mypy;
-  - Recuperado cobertura de 100% no mÃ³dulo changelog.cli;
+  - Recuperado cobertura de 100% no módulo changelog.cli;
 
 ## [0.3.0]	 &#8212; 	2023-12-24:
 ### Added
-  - Acrescentado validaÃ§Ã£o CI/CD multiplataforma ao projeto;
+  - Acrescentado validação CI/CD multiplataforma ao projeto;
   - Definido checagem lint via ruff para CI/CD;
-  - IncluÃ­do guia para markdown no menu da documentaÃ§Ã£o;
-  - IncluÃ­do validaÃ§Ã£o CI/CD para QA (Quality Assurance);
+  - Incluído guia para markdown no menu da documentação;
+  - Incluído validação CI/CD para QA (Quality Assurance);
   - Acrescentado suporte a Python 3.12;
-  - Acrescentado fluxo para publicaÃ§Ã£o em TestPyPi;
-  - Acrescentado fluxo para publicaÃ§Ã£o em Pypi;
-  - Acrescentado fluxo CI/CD para geraÃ§Ã£o de documentaÃ§Ã£o;
-  - Acrescentado documentaÃ§Ã£o web online (https://development-incolume.github.io/incolume.py.changelog/);
+  - Acrescentado fluxo para publicação em TestPyPi;
+  - Acrescentado fluxo para publicação em Pypi;
+  - Acrescentado fluxo CI/CD para geração de documentação;
+  - Acrescentado documentação web online (https://development-incolume.github.io/incolume.py.changelog/);
 ### Changed
-  - Atingido cobertura de 100% no mÃ³dulo changelog.cli;
-  - Atingido cobertura de 100% no mÃ³dulo changelog.changelog;
-  - Atingido cobertura de 100% no mÃ³dulo changelog;
-  - Acrescentado exemplos dos mÃ©todos da API;
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
   - Uniformizado testes multiplataforma para (Linux e Windows);
   - Cobertura parcial para estilo mypy;
 
 ## [0.3.0rc4]	 &#8212; 	2023-12-24:
 ### Added
-  - Acrescentado validaÃ§Ã£o CI/CD multiplataforma ao projeto;
+  - Acrescentado validação CI/CD multiplataforma ao projeto;
   - Definido checagem lint via ruff para CI/CD;
-  - IncluÃ­do guia para markdown no menu da documentaÃ§Ã£o;
-  - IncluÃ­do validaÃ§Ã£o CI/CD para QA (Quality Assurance);
+  - Incluído guia para markdown no menu da documentação;
+  - Incluído validação CI/CD para QA (Quality Assurance);
   - Acrescentado suporte a Python 3.12;
-  - Acrescentado fluxo para publicaÃ§Ã£o em TestPyPi;
-  - Acrescentado fluxo para publicaÃ§Ã£o em Pypi;
-  - Acrescentado fluxo CI/CD para geraÃ§Ã£o de documentaÃ§Ã£o;
-  - Acrescentado documentaÃ§Ã£o web online;
+  - Acrescentado fluxo para publicação em TestPyPi;
+  - Acrescentado fluxo para publicação em Pypi;
+  - Acrescentado fluxo CI/CD para geração de documentação;
+  - Acrescentado documentação web online;
 ### Changed
-  - Atingido cobertura de 100% no mÃ³dulo changelog.cli;
-  - Atingido cobertura de 100% no mÃ³dulo changelog.changelog;
-  - Atingido cobertura de 100% no mÃ³dulo changelog;
-  - Acrescentado exemplos dos mÃ©todos da API;
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
   - Uniformizado testes multiplataforma para (Linux e Windows);
   - Cobertura parcial para estilo mypy;
 
 ## [0.3.0rc3]	 &#8212; 	2023-12-24:
 ### Added
-  - Acrescentado validaÃ§Ã£o CI/CD multiplataforma ao projeto;
+  - Acrescentado validação CI/CD multiplataforma ao projeto;
   - Definido checagem lint via ruff para CI/CD;
-  - IncluÃ­do guia para markdown no menu da documentaÃ§Ã£o;
-  - IncluÃ­do validaÃ§Ã£o CI/CD para QA (Quality Assurance);
+  - Incluído guia para markdown no menu da documentação;
+  - Incluído validação CI/CD para QA (Quality Assurance);
   - Acrescentado suporte a Python 3.12;
-  - Acrescentado fluxo para publicaÃ§Ã£o em TestPyPi;
-  - Acrescentado fluxo para publicaÃ§Ã£o em Pypi;
-  - Acrescentado fluxo CI/CD para geraÃ§Ã£o de documentaÃ§Ã£o;
-  - Acrescentado documentaÃ§Ã£o web online;
+  - Acrescentado fluxo para publicação em TestPyPi;
+  - Acrescentado fluxo para publicação em Pypi;
+  - Acrescentado fluxo CI/CD para geração de documentação;
+  - Acrescentado documentação web online;
 ### Changed
-  - Atingido cobertura de 100% no mÃ³dulo changelog.cli;
-  - Atingido cobertura de 100% no mÃ³dulo changelog.changelog;
-  - Atingido cobertura de 100% no mÃ³dulo changelog;
-  - Acrescentado exemplos dos mÃ©todos da API;
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
   - Uniformizado testes multiplataforma para (Linux e Windows);
   - Cobertura parcial para estilo mypy;
 
 ## [0.3.0rc2]	 &#8212; 	2023-12-23:
 ### Added
-  - Acrescentado validaÃ§Ã£o CI/CD multiplataforma ao projeto;
+  - Acrescentado validação CI/CD multiplataforma ao projeto;
   - Definido checagem lint via ruff para CI/CD;
-  - IncluÃ­do guia para markdown no menu da documentaÃ§Ã£o;
-  - IncluÃ­do validaÃ§Ã£o CI/CD para QA (Quality Assurance);
+  - Incluído guia para markdown no menu da documentação;
+  - Incluído validação CI/CD para QA (Quality Assurance);
   - Acrescentado suporte a Python 3.12;
-  - Acrescentado fluxo para publicaÃ§Ã£o em TestPyPi;
-  - Acrescentado fluxo para publicaÃ§Ã£o em Pypi;
+  - Acrescentado fluxo para publicação em TestPyPi;
+  - Acrescentado fluxo para publicação em Pypi;
 ### Changed
-  - Atingido cobertura de 100% no mÃ³dulo changelog.cli;
-  - Atingido cobertura de 100% no mÃ³dulo changelog.changelog;
-  - Atingido cobertura de 100% no mÃ³dulo changelog;
-  - Acrescentado exemplos dos mÃ©todos da API;
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
   - Uniformizado testes multiplataforma para (Linux e Windows);
   - Cobertura parcial para estilo mypy;
 
 ## [0.3.0rc1]	 &#8212; 	2023-12-23:
 ### Added
-  - Acrescentado validaÃ§Ã£o CI/CD multiplataforma ao projeto;
+  - Acrescentado validação CI/CD multiplataforma ao projeto;
   - Definido checagem lint via ruff para CI/CD;
-  - IncluÃ­do guia para markdown no menu da documentaÃ§Ã£o;
-  - IncluÃ­do validaÃ§Ã£o CI/CD para QA (Quality Assurance);
+  - Incluído guia para markdown no menu da documentação;
+  - Incluído validação CI/CD para QA (Quality Assurance);
   - Acrescentado suporte a Python 3.12;
-  - Acrescentado fluxo para publicaÃ§Ã£o em TestPyPi;
+  - Acrescentado fluxo para publicação em TestPyPi;
 ### Changed
-  - Atingido cobertura de 100% no mÃ³dulo changelog.cli;
-  - Atingido cobertura de 100% no mÃ³dulo changelog.changelog;
-  - Atingido cobertura de 100% no mÃ³dulo changelog;
-  - Acrescentado exemplos dos mÃ©todos da API;
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
   - Uniformizado testes multiplataforma para (Linux e Windows);
   - Cobertura parcial para estilo mypy;
 
 ## [0.3.0rc0]	 &#8212; 	2023-12-23:
 ### Added
-  - Acrescentado validaÃ§Ã£o CI/CD multiplataforma ao projeto;
+  - Acrescentado validação CI/CD multiplataforma ao projeto;
   - Definido checagem lint via ruff para CI/CD;
-  - IncluÃ­do guia para markdown no menu da documentaÃ§Ã£o;
-  - IncluÃ­do validaÃ§Ã£o CI/CD para QA (Quality Assurance);
+  - Incluído guia para markdown no menu da documentação;
+  - Incluído validação CI/CD para QA (Quality Assurance);
   - Acrescentado suporte a Python 3.12;
 ### Changed
-  - Atingido cobertura de 100% no mÃ³dulo changelog.cli;
-  - Atingido cobertura de 100% no mÃ³dulo changelog.changelog;
-  - Atingido cobertura de 100% no mÃ³dulo changelog;
-  - Acrescentado exemplos dos mÃ©todos da API;
+  - Atingido cobertura de 100% no módulo changelog.cli;
+  - Atingido cobertura de 100% no módulo changelog.changelog;
+  - Atingido cobertura de 100% no módulo changelog;
+  - Acrescentado exemplos dos métodos da API;
   - Uniformizado testes multiplataforma para (Linux e Windows);
   - Cobertura parcial para estilo mypy;
 
 ## [0.2.0]	 &#8212; 	2023-12-21:
 ### Added
-  - Pacotes de documentaÃ§Ã£o;
-  - Pacotes de seguranÃ§a de software;
+  - Pacotes de documentação;
+  - Pacotes de segurança de software;
   - Pacotes de desenvolvimento;
   - Pacote types-toml;
   - Ferramentas de QA;
-  - DocumentaÃ§Ã£o padrÃ£o(Google Style);
-  - DocumentaÃ§Ã£o de API;
-  - Badges para documentaÃ§Ã£o;
+  - Documentação padrão(Google Style);
+  - Documentação de API;
+  - Badges para documentação;
   - Estilo PEP8;
-  - 100% de cobertura no mÃ³dulo cli;
+  - 100% de cobertura no módulo cli;
   - Compatibilidade com Python 3.8;
-  - ValidaÃ§Ã£o com ruff para todas as versÃµes de Python configuradas;
+  - Validação com ruff para todas as versões de Python configuradas;
   - CI/CD funcional para multiplataforma;
 ### Changed
   - README atualizado;
   - Menu atualizado;
   - Caracteres para Slugfy no nome do brach;
-  - RealocaÃ§Ã£o de Changelog para diretÃ³rio docs;
+  - Realocação de Changelog para diretório docs;
   - URLs do projeto atualizada;
   - Comandos de terminal via script atualizados;
   - Retorno do fixture;
