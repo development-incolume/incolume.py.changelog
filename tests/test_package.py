@@ -54,5 +54,5 @@ class TestCase:
                 'poetry'
             ]['version']
         except ValueError:
-            version = entrance.read_text().strip()
+            version = entrance.read_text(encoding='utf-8').strip()
         assert version == __version__

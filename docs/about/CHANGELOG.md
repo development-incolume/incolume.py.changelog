@@ -5,10 +5,38 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.19.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.20.0)
 
 ---
 
+
+## [Unreleased]	 &#8212; 	2026-07-28:
+### Added
+  - Adicionado suporte a Python 3.14 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+### Changed
+  - Ajuste QA (Quality Assurance) totalizado para `mypy` e com formatação `ruff`;
+  - Emancipado configuração para `pytest`;
+  - Emancipado configuração para `mypy`;
+  - Emancipado configuração para `tox`;
+  - Emancipado configuração para `coverage`;
+  - Emancipado configuração para `ruff`;
+### Deprecated
+  - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.11 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+
+## [0.20.0]	 &#8212; 	2026-07-28:
+### Added
+  - Adicionado suporte a Python 3.14 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+### Changed
+  - Ajuste QA (Quality Assurance) totalizado para `mypy` e com formatação `ruff`;
+  - Emancipado configuração para `pytest`;
+  - Emancipado configuração para `mypy`;
+  - Emancipado configuração para `tox`;
+  - Emancipado configuração para `coverage`;
+  - Emancipado configuração para `ruff`;
+### Deprecated
+  - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.11 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
 
 ## [0.19.0]	 &#8212; 	2026-07-23:
 ### Changed
@@ -19,6 +47,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Retificado parametros para compatibilidade com `mypy`;
   - Atualizado configuração para `codecov-cli`;
   - `codecov-cli` substituído por `codecov action`;
+### Deprecated
+  - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
 ### Removed
   - Pacote `codecov-cli`;
 
@@ -59,8 +89,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [0.17.0]	 &#8212; 	2025-08-16:
 ### Removed
-  - Compatibilidade com Python 3.8.x;
-  - Compatibilidade com Python 3.9.x;
+  - Descontinuado compatibilidade e suporte a Python 3.8 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Descontinuado compatibilidade e suporte a Python 3.9 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
   - Removido pacote `black`;
   - Removido pacote `pylint`;
   - Removido pacote `isort`;
@@ -74,8 +104,8 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [0.16.0]	 &#8212; 	2025-08-16:
 ### Deprecated
-  - Python 3.8;
-  - Python 3.9;
+  - Será Descontinuado suporte a Python 3.8 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.9 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
   - Black;
   - Pylint;
   - Isort;
@@ -453,3 +483,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [0.19.0rc3]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc2...0.19.0rc3
 [0.19.0rc4]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc3...0.19.0rc4
 [0.19.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0rc4...0.19.0
+[0.20.0]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.19.0...0.20.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/-/compare/0.20.0...Unreleased

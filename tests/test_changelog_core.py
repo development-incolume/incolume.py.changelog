@@ -42,29 +42,29 @@ class TestChangelogInit:
     versionfile: ClassVar = Path(gettempdir(), stack()[0][3], 'version.txt')
 
     @classmethod
-    def setup_class(cls):
-        """Setup class."""
+    def setup_class(cls) -> None:
+        """Set up class."""
         logging.info(ic(f'starting class {cls.__name__} execution'))
         cls.confproject0.parent.mkdir(exist_ok=True, parents=True)
         cls.confproject1.parent.mkdir(exist_ok=True, parents=True)
         cls.versionfile.parent.mkdir(exist_ok=True, parents=True)
 
     @classmethod
-    def teardown_class(cls):
-        """Teardown class."""
+    def teardown_class(cls) -> None:
+        """Tear down class."""
         logging.info(
             ic(f'finishing class {cls.__name__} execution'),
         )
         rmtree(cls.confproject0.parent, ignore_errors=True)
 
-    def setup_method(self, method):
-        """Setup method."""
+    def setup_method(self, method) -> None:
+        """Set up method."""
         logging.info(ic(f'starting execution ({method}) of {stack()[0][3]}'))
         self.confproject0.write_text('[tool.poetry]\nversion = "0.1.0"')
         self.confproject1.write_text('[project]\nversion = "0.1.0"')
 
-    def teardown_method(self, method):
-        """Teardown method."""
+    def teardown_method(self, method) -> None:
+        """Tear down method."""
         logging.info(ic(f'finishing execution ({method}) of {stack()[0][3]}'))
         rmtree(self.confproject0, ignore_errors=True)
         rmtree(self.confproject1, ignore_errors=True)
@@ -254,7 +254,7 @@ class TestChangelogInit:
         try:
             assert pkg.key_versions_2_sort(**entrance) == expected
         except TypeError:
-            with pytest.raises(**xcpt):  # noqa: PT010
+            with pytest.raises(**xcpt):
                 assert pkg.key_versions_2_sort(**entrance) == expected
 
     @pytest.mark.parametrize(
