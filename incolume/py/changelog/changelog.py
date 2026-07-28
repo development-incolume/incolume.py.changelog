@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Final
 
+import chardet
 import git
 
 from incolume.py.changelog import (
@@ -382,8 +383,10 @@ def changelog_write(
     content_formated = changelog_body(content, content_formated, **kwargs)
     content_formated = changelog_footer(content, content_formated, **kwargs)
 
-    with changelog_file.open('w', encoding='utf-8') as f:
-        f.writelines(content_formated)
+    [print(x, chardet.detect(x.encode('utf-8'))) for x in content_formated]
+
+    with changelog_file.open('wb') as f:
+        f.writelines(text.encode('utf-8') for text in content_formated)
     return True
 
 
