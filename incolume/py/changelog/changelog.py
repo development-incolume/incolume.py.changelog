@@ -10,9 +10,7 @@ import sys
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Final
 
-import chardet
 import git
-from unidecode import unidecode
 
 from incolume.py.changelog import (
     __title__,
@@ -384,7 +382,12 @@ def changelog_write(
     content_formated = changelog_body(content, content_formated, **kwargs)
     content_formated = changelog_footer(content, content_formated, **kwargs)
 
-    content_formated = [texto.encode('iso-8859-1' if sys.platform.startswith('win') else 'utf-8').decode('utf-8') for texto in content_formated]
+    content_formated = [
+        texto.encode(
+            'iso-8859-1' if sys.platform.startswith('win') else 'utf-8'
+        ).decode('utf-8')
+        for texto in content_formated
+    ]
 
     with changelog_file.open('w', encoding='utf-8') as f:
         f.writelines(content_formated)
