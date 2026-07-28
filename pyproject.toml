@@ -30,11 +30,13 @@ classifiers = [
   'Topic :: Utilities',
 ]
 dependencies = [
+    "chardet>=7.4.3",
     "click>=8.1.5",
     "gitpython>=3.1.43",
     "icecream>=2.1.5",
     "python-dotenv[cli]>=1.0.1",
     "tomlkit>=0.13.3",
+    "unidecode>=1.4.0",
 ]
 
 [project.urls]
@@ -80,6 +82,9 @@ doc = [
     "mkdocs-material>=9.5.2",
     "mkdocs-static-i18n>=1.2.0",
     "mkdocstrings-python>=1.7.5",
+]
+jupyter = [
+    "notebook>=7.6.1",
 ]
 security = [
     "bandit>=1.7.6",
