@@ -384,11 +384,10 @@ def changelog_write(
     content_formated = changelog_body(content, content_formated, **kwargs)
     content_formated = changelog_footer(content, content_formated, **kwargs)
 
-    [print(x, chardet.detect(x.encode('utf-8'))) for x in content_formated]
-    [print(x, unidecode(x)) for x in content_formated]
+    content_formated = [unidecode(texto.encode('utf-8').decode('utf-8')) for texto in content_formated]
 
     with changelog_file.open('w', encoding='utf-8') as f:
-        f.writelines(unidecode(text) for text in content_formated)
+        f.writelines(content_formated)
     return True
 
 
