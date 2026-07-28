@@ -382,9 +382,7 @@ def changelog_write(
     content_formated = changelog_body(content, content_formated, **kwargs)
     content_formated = changelog_footer(content, content_formated, **kwargs)
 
-    content_formated = [x.encode(encoding='utf-8') for x in content_formated]
-
-    with changelog_file.open('wb') as f:
+    with changelog_file.open('w', encoding='utf-8') as f:
         f.writelines(content_formated)
     return True
 
