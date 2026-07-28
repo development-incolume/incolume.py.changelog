@@ -386,7 +386,7 @@ def changelog_write(
 
     # content_formated = [texto.encode('utf-8') for texto in content_formated]
 
-    with changelog_file.open('wb') as f:
+    with changelog_file.open('w', encoding='iso-8859-1') as f:
         f.writelines(content_formated)
     return True
 
