@@ -77,7 +77,7 @@ def key_versions_2_sort(
     get_major_minor_patch_build = re.compile(regex)
     logging.debug(get_major_minor_patch_build)
 
-    def _format_from_match(match: re.Match | None, qdig: int) -> str:
+    def _format_from_match(match: re.Match[str] | None, qdig: int) -> str:
         if match is None:
             raise AttributeError
         # pegar major, minor e patch
