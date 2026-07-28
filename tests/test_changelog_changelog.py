@@ -3,7 +3,6 @@
 from __future__ import annotations
 from pathlib import Path
 from tempfile import gettempdir
-from typing import Union
 from unittest import mock
 
 import pytest
@@ -171,8 +170,10 @@ class TestCase:
                     'date': '2022-02-16',
                     'messages': {
                         'Security': [
-                            'Aderência a '
-                            'https://keepachangelog.com/pt-BR/1.0.0/',
+                            (
+                                'Aderência a '
+                                'https://keepachangelog.com/pt-BR/1.0.0/'
+                            ),
                         ],
                     },
                 },
@@ -251,9 +252,12 @@ class TestCase:
                     'date': '2023-07-22',
                     'messages': {
                         'Added': [
-                            'Unreleased/Não publicado para o número de versão '
-                            'e adicionar uma nova seção Unreleased/Não '
-                            'publicado no topo',
+                            (
+                                'Unreleased/Não publicado para o '
+                                'número de versão '
+                                'e adicionar uma nova seção Unreleased/Não '
+                                'publicado no topo'
+                            ),
                             ' Tradução para labels ptBR -> enUS',
                             ' Implementado nova função iter_logs()',
                             'para novos recursos.',
@@ -264,12 +268,16 @@ class TestCase:
                         ],
                         'Fixed': [
                             'para qualquer correção de bug.',
-                            'Formatação visual para CHANGELOG.md retirado '
-                            'link quebrado para 1ª release',
+                            (
+                                'Formatação visual para CHANGELOG.md retirado '
+                                'link quebrado para 1ª release'
+                            ),
                         ],
                         'Deprecated': [
-                            'para recursos que serão removidos '
-                            'nas próximas versões.',
+                            (
+                                'para recursos que serão removidos '
+                                'nas próximas versões.'
+                            ),
                         ],
                         'Removed': ['para recursos removidos nesta versão.'],
                         'Security': [
@@ -289,10 +297,13 @@ class TestCase:
         expected: dict[str, str],
     ) -> None:
         """Test it."""
-        with mock.patch('time.strftime') as t, mock.patch(
-            'subprocess.getoutput',
-            autospec=True,
-        ) as m:
+        with (
+            mock.patch('time.strftime') as t,
+            mock.patch(
+                'subprocess.getoutput',
+                autospec=True,
+            ) as m,
+        ):
             t.return_value = date
             m.return_value = date
             result = pkg.msg_classify(**entrance)
@@ -331,9 +342,12 @@ class TestCase:
                             'date': '2018-10-19',
                             'messages': {
                                 'Added': [
-                                    'Unreleased/Não publicado para o número '
-                                    'de versão e adicionar uma nova seção '
-                                    'Unreleased/Não publicado no topo',
+                                    (
+                                        'Unreleased/Não publicado '
+                                        'para o número '
+                                        'de versão e adicionar uma nova seção '
+                                        'Unreleased/Não publicado no topo'
+                                    ),
                                     ' Tradução para labels ptBR -> enUS',
                                     ' Implementado nova função iter_logs()',
                                     'para novos recursos.',
@@ -345,13 +359,18 @@ class TestCase:
                                 'Fixed': [
                                     'para qualquer correção de bug.',
                                     'Fake fixed,Unreleased',
-                                    'Formatação visual para CHANGELOG.md '
-                                    'retirado link quebrado para 1ª release',
+                                    (
+                                        'Formatação visual para CHANGELOG.md '
+                                        'retirado link quebrado '
+                                        'para 1ª release'
+                                    ),
                                 ],
                                 'Deprecated': [
                                     'Fake record',
-                                    'para recursos que serão removidos '
-                                    'nas próximas versões.',
+                                    (
+                                        'para recursos que serão removidos '
+                                        'nas próximas versões.'
+                                    ),
                                 ],
                                 'Removed': [
                                     'other fake',
@@ -617,10 +636,13 @@ class TestCase:
         expected: list[str],
     ) -> None:
         """Test it."""
-        with mock.patch(
-            'time.strftime',
-            return_value='2023-12-21',
-        ), mock.patch('subprocess.getoutput', autospec=True) as m:
+        with (
+            mock.patch(
+                'time.strftime',
+                return_value='2023-12-21',
+            ),
+            mock.patch('subprocess.getoutput', autospec=True) as m,
+        ):
             m.side_effect = dates
             assert pkg.changelog_messages(**entrance) == expected
 
@@ -643,15 +665,18 @@ class TestCase:
     )
     def test_changelog_write(
         self,
-        entrance: dict[str, Union[str, Path]],
+        entrance: dict[str, str | Path],
         file_temp: Path,
         return_git_tag: str,
     ) -> None:
         """Test changelog_write."""
-        with mock.patch(
-            'time.strftime',
-            return_value='2023-12-21',
-        ), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
+        with (
+            mock.patch(
+                'time.strftime',
+                return_value='2023-12-21',
+            ),
+            mock.patch('subprocess.getoutput', return_value='2023-12-21'),
+        ):
             result = pkg.changelog_messages(text=return_git_tag)
             entrance.update({'content': result})
             if 'changelog_file' not in entrance:
@@ -676,7 +701,7 @@ class TestCase:
     )
     def test_update_changelog(
         self,
-        entrance: dict[str, Union[str, Path]],
+        entrance: dict[str, str | Path],
         file_temp: Path,
         return_git_tag: str,
     ) -> None:
@@ -684,10 +709,13 @@ class TestCase:
         entrance.update({'content': return_git_tag})
         if 'changelog_file' not in entrance:
             entrance.update({'changelog_file': file_temp})
-        with mock.patch(
-            'time.strftime',
-            return_value='2023-12-21',
-        ), mock.patch('subprocess.getoutput', return_value='2023-12-21'):
+        with (
+            mock.patch(
+                'time.strftime',
+                return_value='2023-12-21',
+            ),
+            mock.patch('subprocess.getoutput', return_value='2023-12-21'),
+        ):
             assert pkg.update_changelog(**entrance)
 
 
@@ -701,7 +729,7 @@ class TestClassChangelog:
             {'reverse': False},
         ],
     )
-    def test_init(self, entrance: dict[str, Union[str, bool]]) -> None:
+    def test_init(self, entrance: dict[str, str | bool]) -> None:
         """Test for init class."""
         o = pkg.Changelog(**entrance)
         assert isinstance(o, pkg.Changelog)
@@ -716,17 +744,23 @@ class TestClassChangelog:
                     'All notable changes to this project',
                     ' will be documented in this file.\n\n',
                     'The format is based on ',
-                    '[Keep a Changelog]'
-                    '(https://keepachangelog.com/en/1.0.0/), ',
-                    'this project adheres to [Semantic Versioning]'
-                    '(https://semver.org/spec/v2.0.0.html) and '
-                    '[Conventional Commit]'
-                    '(https://www.conventionalcommits.org/'
-                    'pt-br/v1.0.0/).\n\n',
+                    (
+                        '[Keep a Changelog]'
+                        '(https://keepachangelog.com/en/1.0.0/), '
+                    ),
+                    (
+                        'this project adheres to [Semantic Versioning]'
+                        '(https://semver.org/spec/v2.0.0.html) and '
+                        '[Conventional Commit]'
+                        '(https://www.conventionalcommits.org/'
+                        'pt-br/v1.0.0/).\n\n'
+                    ),
                     'This file was automatically generated for',
-                    ' [incolume.py.changelog]'
-                    '(https://gitlab.com/development-incolume/'
-                    f'incolume.py.changelog/-/tree/{pkg.__version__})',
+                    (
+                        ' [incolume.py.changelog]'
+                        '(https://gitlab.com/development-incolume/'
+                        f'incolume.py.changelog/-/tree/{pkg.__version__})'
+                    ),
                     '\n\n---\n',
                 ],
             ),
@@ -737,17 +771,23 @@ class TestClassChangelog:
                     'All notable changes to this project',
                     ' will be documented in this file.\n\n',
                     'The format is based on ',
-                    '[Keep a Changelog]'
-                    '(https://keepachangelog.com/en/1.0.0/), ',
-                    'this project adheres to [Semantic Versioning]'
-                    '(https://semver.org/spec/v2.0.0.html) and '
-                    '[Conventional Commit]'
-                    '(https://www.conventionalcommits.org/'
-                    'pt-br/v1.0.0/).\n\n',
+                    (
+                        '[Keep a Changelog]'
+                        '(https://keepachangelog.com/en/1.0.0/), '
+                    ),
+                    (
+                        'this project adheres to [Semantic Versioning]'
+                        '(https://semver.org/spec/v2.0.0.html) and '
+                        '[Conventional Commit]'
+                        '(https://www.conventionalcommits.org/'
+                        'pt-br/v1.0.0/).\n\n'
+                    ),
                     'This file was automatically generated for',
-                    ' [incolume.py.changelog]'
-                    '(https://gitlab.com/development-incolume/'
-                    f'incolume.py.changelog/-/tree/{pkg.__version__})',
+                    (
+                        ' [incolume.py.changelog]'
+                        '(https://gitlab.com/development-incolume/'
+                        f'incolume.py.changelog/-/tree/{pkg.__version__})'
+                    ),
                     '\n\n---\n',
                 ],
             ),
@@ -820,7 +860,7 @@ class TestClassChangelog:
     )
     def test_iter_logs(
         self,
-        entrance: dict[str, Union[bool, list[str]]],
+        entrance: dict[str, bool | list[str]],
         expected: list[str],
     ) -> None:
         """Test for iter_logs."""

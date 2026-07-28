@@ -14,13 +14,13 @@ def semver_regex() -> str:
 
 
 @pytest.fixture
-def changelog_stamps():
+def changelog_stamps() -> str:
     """Return labels Keep a Changelog."""
     return 'Added Changed Deprecated Removed Fixed Security'.upper().strip()
 
 
 @pytest.fixture
-def return_git_tag():
+def return_git_tag() -> str:
     """Return fake `git tag -n`."""
     return """1.0.0 Added: Fake record; other fake; Fixed: Fake fixed
     1.3.0 Fixed: Fake record; other fake; Changed: Fake fixed
@@ -29,7 +29,7 @@ def return_git_tag():
 
 
 @pytest.fixture
-def file_temp():
+def file_temp() -> Path:
     """Generate aleatory filename into tempdir for tests."""
     filename = NamedTemporaryFile(delete=False).name  # noqa: SIM115
     return Path(filename)
