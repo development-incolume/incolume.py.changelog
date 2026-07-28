@@ -81,6 +81,9 @@ doc = [
     "mkdocs-static-i18n>=1.2.0",
     "mkdocstrings-python>=1.7.5",
 ]
+jupyter = [
+    "notebook>=7.6.1",
+]
 security = [
     "bandit>=1.7.6",
     "pip-audit>=2.6.1",
