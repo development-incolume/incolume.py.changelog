@@ -21,7 +21,7 @@ from incolume.py.changelog import (
 if TYPE_CHECKING:
     from collections.abc import Mapping
 
-# ruff: noqa: S605 S607
+# ruff: file-ignore[start-process-with-a-shell, start-process-with-partial-path]
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s;%(levelname)-8s;%(name)s;'
@@ -85,7 +85,7 @@ def msg_classify(msg: str, lang: str = '') -> dict[str, Any]:
         >> msg_classify('Corregido: corrección de error.', 'es-AR')
         ValueError: es-AR not suported! Use en-US, pt-BR
 
-    """  # noqa: E501
+    """  # ruff: ignore[line-too-long]
     logging.debug(lang)
     suport_lang: dict[str, Mapping[str, str]] = {
         'en-US': {
@@ -228,7 +228,7 @@ def changelog_header(
         >> changelog_header(url_keepachangelog='https://keepachangelog.com/en/2.0.0/', url_semver='https://semver.org/spec/v1.0.0.html')
         ['# CHANGELOG\n\n\n', 'All notable changes to this project', ' will be documented in this file.\n\n', 'The format is based on ', '[Keep a Changelog](https://keepachangelog.com/en/2.0.0/), ', 'this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n', 'This file was automatically generated for', ' [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/-/tree/0.15.0a1)', '\n\n---\n']
 
-    """  # noqa: E501
+    """  # ruff: ignore[line-too-long]
     url_keepachangelog = kwargs.get(
         'url_keepachangelog',
         'https://keepachangelog.com/en/1.0.0/',
@@ -284,7 +284,7 @@ def changelog_body(
         >> changelog_body([('1.0.1', {'Added': 'New function'}), ('1.0.2', {'Added': 'New other function'})], content_formated=[])
         ['[1.0.1]', 'Added', 'New Function']
 
-    """  # noqa: E501
+    """  # ruff: ignore[line-too-long]
     logging.debug(kwargs)
     content_formated.extend(Changelog.iter_logs(content[:-1]))
     content_formated.extend(Changelog.iter_logs(content[-1:], linked=False))
