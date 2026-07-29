@@ -925,6 +925,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Qualidade de Código">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validacao-lint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validação lint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autocorrecao-lint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Autocorreção lint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatacao-pep8-via-ruff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formatação PEP8 via ruff
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1405,6 +1444,15 @@ também denominadas linters.</p>
 - ruff
 </code></pre>
 <p>Entretanto todos concentrados na ferramenta <code>ruff</code>, para ganho de performance e simplicidade na configuração.</p>
+<h3 id="validacao-lint">Validação lint<a class="headerlink" href="#validacao-lint" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>ruff<span class="w"> </span>check
+</code></pre></div>
+<h3 id="autocorrecao-lint">Autocorreção lint<a class="headerlink" href="#autocorrecao-lint" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>ruff<span class="w"> </span>check<span class="w"> </span>--fix
+</code></pre></div>
+<h3 id="formatacao-pep8-via-ruff">Formatação PEP8 via ruff<a class="headerlink" href="#formatacao-pep8-via-ruff" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>ruff<span class="w"> </span>format
+</code></pre></div>
 <h2 id="seguranca-e-garantia-de-qualidade">Segurança e Garantia de Qualidade<a class="headerlink" href="#seguranca-e-garantia-de-qualidade" title="Permanent link">#</a></h2>
 <p>Neste projeto há preocupação com a garantia de qualidade (Quality Assurance) e também com a segurança do código implementado, os pacotes
 <code>bandit</code>, <code>pip-audit</code> e <code>safety</code> são utilizados para monitoramento de segurança das dependências.</p>
@@ -1472,8 +1520,8 @@ de uma forma ou de outra.
     <div class="highlight"><pre><span></span><code>pylint<span class="w"> </span>incolumepy<span class="w"> </span>tests
 </code></pre></div></p>
 <h3 id="ruff">ruff<a class="headerlink" href="#ruff" title="Permanent link">#</a></h3>
-<p>O <code>ruff</code> é um linter Python extremamente rápido, codificado em rust.</p>
-<p>Ruff  pode ser usado para substituir Flake8 (mais dezenas de plugins), Black, Blue, isort, pydocstyle, pyupgrade, autoflake, e mais, tudo isso enquanto executa dezenas ou centenas de vezes mais rápido do que qualquer ferramenta individual.</p>
+<p>O <code>ruff</code> é um linter e formatador Python extremamente rápido, codificado em rust.</p>
+<p>Ruff neste projeto substitui: o Flake8, Black, Blue, isort, pydocstyle, pyupgrade, autoflake e mais, tudo isso enquanto executa dezenas ou centenas de vezes mais rápido do que qualquer ferramenta individual.</p>
 <pre><code>**Autoformatador (Ruff format)**
 
 `ruff format` é o ponto de entrada principal para o formatador. Ele aceita uma lista de arquivos ou diretórios e formata todos os arquivos Python descobertos:
@@ -1506,7 +1554,9 @@ Por padrão, ele usa o banco de dados de vulnerabilidades Python aberto
     <div class="highlight"><pre><span></span><code>safety<span class="w"> </span>check
 </code></pre></div></p>
 <h3 id="uv">uv<a class="headerlink" href="#uv" title="Permanent link">#</a></h3>
-<p>O <code>uv</code> gerencia dependências e ambientes de projetos, com suporte para lockfiles, workspaces e muito mais semelhante ao <code>poetry</code>, também oferece suporte à construção e publicação de projetos, mesmo que eles não sejam gerenciados com o UV.</p>
+<p>O <code>uv</code> é um gerenciador de ambientes python desenvolvido na linguagem rust.
+O <code>uv</code> gerencia dependências e ambientes de projetos, com suporte para lockfiles, workspaces e muito mais semelhante ao <code>poetry</code>, também oferece suporte à construção e publicação de projetos, mesmo que eles não sejam gerenciados com o UV.
+Neste projeto substitui o:  pyenv (gerenciador de versões Python), bumpversion (gerenciador de versão), twine (gerador de pacote) e mais alguns.</p>
 <h3 id="poetry">poetry<a class="headerlink" href="#poetry" title="Permanent link">#</a></h3>
 <p>O <code>poetry</code> é uma ferramenta para gestão de dependências e pacotes Python. Ele permite que seja declarado as bibliotecas das quais o projeto depende e as gerenciará (instalará/atualizará) de forma facilitada. O Poetry oferece um arquivo de bloqueio para garantir instalações repetíveis e pode construir seu projeto para distribuição.</p>
 <h3 id="pip">pip<a class="headerlink" href="#pip" title="Permanent link">#</a></h3>

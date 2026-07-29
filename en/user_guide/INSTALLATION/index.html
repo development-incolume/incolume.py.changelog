@@ -894,25 +894,48 @@
 <p>To install it using poetry:</p>
 <p>More detail can be see in <a href="https://brito.blog.incolume.com.br/2022/01/python-poetry-gerenciando-dependencias.html">Python Poetry: Gerenciando dependências de projeto</a></p>
 <p>Last package version from pypi.org:
-<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>incolume.py.model-2023-07-05
+<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>-G<span class="w"> </span>dev<span class="w"> </span>incolume.py.changelog
 </code></pre></div>
 Download package wheel:
-<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>incolume.py.model-2023-07-05-1.0.0-py3-none-any.whl
+<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>-G<span class="w"> </span>dev<span class="w"> </span>incolume.py.changelog-1.0.0-py3-none-any.whl
 </code></pre></div>
 Download package tar.gz:
-<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>incolume.py.model-2023-07-05-1.0.0.tar.gz
+<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>-G<span class="w"> </span>dev<span class="w"> </span>incolume.py.changelog-1.0.0.tar.gz
 </code></pre></div>
 Last package version from git repo:
-<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>git+https://gitlab.com/development-incolume/incolume.py.model-2023-07-05.git@master
+<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>-G<span class="w"> </span>dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git@main
 </code></pre></div>
 Specific version from git repo:
-<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>git+https://gitlab.com/development-incolume/incolume.py.model-2023-07-05.git@<span class="s2">&quot;1.0.0&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>-G<span class="w"> </span>dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git@<span class="s2">&quot;1.0.0&quot;</span>
 </code></pre></div>
 Specific branch from git repo:
-<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>git+https://gitlab.com/development-incolume/incolume.py.model-2023-07-05.git@<span class="s2">&quot;enhacement/epoch#16800000&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>poetry<span class="w"> </span>add<span class="w"> </span>-G<span class="w"> </span>dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git@<span class="s2">&quot;enhacement-123456789&quot;</span>
 </code></pre></div></p>
-<p>To install incolumepy.lex, using pip:</p>
-<div class="highlight"><pre><span></span><code><span class="w">  </span>pip<span class="w"> </span>install<span class="w"> </span>incolume.py.model-2023-07-05
+<p>To install package using uv:</p>
+<p>Last package version from pypi.org:
+<div class="highlight"><pre><span></span><code><span class="w">  </span>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>incolume.py.changelog
+</code></pre></div></p>
+<p>Download package wheel:
+<div class="highlight"><pre><span></span><code><span class="w">  </span>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>incolume.py.changelog-1.0.0-py3-none-any.whl
+</code></pre></div></p>
+<p>Download package tar.gz:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>incolume.py.changelog-1.0.0.tar.gz
+</code></pre></div>
+<p>Specific release or tag from git repo:
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git<span class="w"> </span>--tag<span class="w"> </span><span class="m">1</span>.0.0
+uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git<span class="w"> </span>--tag<span class="w"> </span>Unreleased
+uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git<span class="w"> </span>--tag<span class="w"> </span><span class="m">0</span>.19.0rc4
+</code></pre></div></p>
+<p>Specific branch from git repo:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git<span class="w"> </span>--branch<span class="w"> </span>main
+uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git<span class="w"> </span>--branch<span class="w"> </span>tags
+uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git<span class="w"> </span>--branch<span class="w"> </span>dev
+</code></pre></div>
+<p>Specific revision from git repo:
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>add<span class="w"> </span>--dev<span class="w"> </span>git+https://github.com/development-incolume/incolume.py.changelog.git<span class="w"> </span>--rev<span class="w"> </span>f8bb0dc6792391f30cdabcac1fa5731160a3c27c<span class="w">   </span>
+</code></pre></div></p>
+<p>To install package using pip:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>pip<span class="w"> </span>install<span class="w"> </span>incolume.py.changelog
 </code></pre></div>
 <h2 id="detalhes-da-api">Detalhes da API<a class="headerlink" href="#detalhes-da-api" title="Permanent link">#</a></h2>
 <p>Disponível em <a href="../../api/">docs/api</a></p>
