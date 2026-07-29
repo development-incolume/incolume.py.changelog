@@ -93,6 +93,7 @@ security = [
 ]
 
 [tool.uv]
+allow-insecure-host = ["https://github.com", "https://gitlab.com"]
 
 [tool.uv.build-backend]
 module-root = ""

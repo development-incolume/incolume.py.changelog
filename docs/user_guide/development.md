@@ -68,6 +68,24 @@ Há uso das seguintes:
 
 Entretanto todos concentrados na ferramenta `ruff`, para ganho de performance e simplicidade na configuração.
 
+### Validação lint
+
+```bash
+ruff check
+```
+
+### Autocorreção lint
+
+```bash
+ruff check --fix
+```
+
+### Formatação PEP8 via ruff
+
+```bash
+ruff format
+```
+
 ## Segurança e Garantia de Qualidade
 
 Neste projeto há preocupação com a garantia de qualidade (Quality Assurance) e também com a segurança do código implementado, os pacotes
@@ -168,9 +186,9 @@ de uma forma ou de outra.
 
 ### ruff
 
-O `ruff` é um linter Python extremamente rápido, codificado em rust.
+O `ruff` é um linter e formatador Python extremamente rápido, codificado em rust.
 
-Ruff  pode ser usado para substituir Flake8 (mais dezenas de plugins), Black, Blue, isort, pydocstyle, pyupgrade, autoflake, e mais, tudo isso enquanto executa dezenas ou centenas de vezes mais rápido do que qualquer ferramenta individual.
+Ruff neste projeto substitui: o Flake8, Black, Blue, isort, pydocstyle, pyupgrade, autoflake e mais, tudo isso enquanto executa dezenas ou centenas de vezes mais rápido do que qualquer ferramenta individual.
 
     **Autoformatador (Ruff format)**
 
@@ -208,7 +226,9 @@ Por padrão, ele usa o banco de dados de vulnerabilidades Python aberto
 
 ### uv
 
+O `uv` é um gerenciador de ambientes python desenvolvido na linguagem rust.
 O `uv` gerencia dependências e ambientes de projetos, com suporte para lockfiles, workspaces e muito mais semelhante ao `poetry`, também oferece suporte à construção e publicação de projetos, mesmo que eles não sejam gerenciados com o UV.
+Neste projeto substitui o:  pyenv (gerenciador de versões Python), bumpversion (gerenciador de versão), twine (gerador de pacote) e mais alguns.
 
 ### poetry
 
