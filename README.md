@@ -94,7 +94,7 @@ poetry update -G dev git+https://github.com/development-incolume/incolume.py.cha
 ### Atualização com uv
 ```shell
 uv venv -p 3.10
-uv pip add --dev incolume.py.changelog==0.14.0
+uv pip add --dev incolume.py.changelog==1.0.0
 ```
 
 ## Gerar pacote a partir dos fontes para instalação
