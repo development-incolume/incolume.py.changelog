@@ -94,6 +94,8 @@ security = [
     "pip-audit>=2.6.1",
     "safety>=2.3.4",
 ]
+all = ["incolume-py-githooks[jupyter,security]"]
+
 
 [tool.uv]
 allow-insecure-host = ["https://github.com", "https://gitlab.com"]
