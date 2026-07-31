@@ -94,11 +94,6 @@ security = [
     "pip-audit>=2.6.1",
     "safety>=2.3.4",
 ]
-all = [
-  # "incolume-py-githooks[jupyter,security]",
-  "incolume-py-githooks[jupyter]",
-  "incolume-py-githooks[security]",
-  ]
 
 
 [tool.uv]
