@@ -87,7 +87,7 @@ doc = [
 
 [project.optional-dependencies]
 jupyter =[
-"notebook>=7.6.1; python_version < '4.0.0'",
+"notebook>=7.6.1",
 ]
 security = [
     "bandit>=1.7.6",
