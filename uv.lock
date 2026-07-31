@@ -1231,7 +1231,7 @@ wheels = [
 
 [[package]]
 name = "incolume-py-changelog"
-version = "1.0.0"
+version = "1.1.0a1"
 source = { editable = "." }
 dependencies = [
     { name = "chardet" },
@@ -1290,7 +1290,7 @@ requires-dist = [
     { name = "click", specifier = ">=8.1.5" },
     { name = "gitpython", specifier = ">=3.1.43" },
     { name = "icecream", specifier = ">=2.1.5" },
-    { name = "notebook", marker = "python_full_version < '4' and extra == 'jupyter'", specifier = ">=7.6.1" },
+    { name = "notebook", marker = "extra == 'jupyter'", specifier = ">=7.6.1" },
     { name = "pip-audit", marker = "extra == 'security'", specifier = ">=2.6.1" },
     { name = "python-dotenv", extras = ["cli"], specifier = ">=1.0.1" },
     { name = "safety", marker = "extra == 'security'", specifier = ">=2.3.4" },
