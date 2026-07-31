@@ -1243,6 +1243,16 @@ dependencies = [
     { name = "unidecode" },
 ]
 
+[package.optional-dependencies]
+jupyter = [
+    { name = "notebook" },
+]
+security = [
+    { name = "bandit" },
+    { name = "pip-audit" },
+    { name = "safety" },
+]
+
 [package.dev-dependencies]
 dev = [
     { name = "bandit" },
@@ -1272,25 +1282,22 @@ doc = [
     { name = "mkdocs-static-i18n" },
     { name = "mkdocstrings-python" },
 ]
-jupyter = [
-    { name = "notebook" },
-]
-security = [
-    { name = "bandit" },
-    { name = "pip-audit" },
-    { name = "safety" },
-]
 
 [package.metadata]
 requires-dist = [
+    { name = "bandit", marker = "extra == 'security'", specifier = ">=1.7.6" },
     { name = "chardet", specifier = ">=7.4.3" },
     { name = "click", specifier = ">=8.1.5" },
     { name = "gitpython", specifier = ">=3.1.43" },
     { name = "icecream", specifier = ">=2.1.5" },
+    { name = "notebook", marker = "python_full_version < '4' and extra == 'jupyter'", specifier = ">=7.6.1" },
+    { name = "pip-audit", marker = "extra == 'security'", specifier = ">=2.6.1" },
     { name = "python-dotenv", extras = ["cli"], specifier = ">=1.0.1" },
+    { name = "safety", marker = "extra == 'security'", specifier = ">=2.3.4" },
     { name = "tomlkit", specifier = ">=0.13.3" },
     { name = "unidecode", specifier = ">=1.4.0" },
 ]
+provides-extras = ["jupyter", "security"]
 
 [package.metadata.requires-dev]
 dev = [
@@ -1320,12 +1327,6 @@ doc = [
     { name = "mkdocs-material", specifier = ">=9.5.2" },
     { name = "mkdocs-static-i18n", specifier = ">=1.2.0" },
     { name = "mkdocstrings-python", specifier = ">=1.7.5" },
-]
-jupyter = [{ name = "notebook", specifier = ">=7.6.1" }]
-security = [
-    { name = "bandit", specifier = ">=1.7.6" },
-    { name = "pip-audit", specifier = ">=2.6.1" },
-    { name = "safety", specifier = ">=2.3.4" },
 ]
 
 [[package]]
