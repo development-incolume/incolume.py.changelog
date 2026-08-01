@@ -1222,7 +1222,7 @@ name = "importlib-metadata"
 version = "9.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "zipp", marker = "python_full_version < '3.15'" },
+    { name = "zipp", marker = "python_full_version < '3.12'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/a9/01/15bb152d77b21318514a96f43af312635eb2500c96b55398d020c93d86ea/importlib_metadata-9.0.0.tar.gz", hash = "sha256:a4f57ab599e6a2e3016d7595cfd72eb4661a5106e787a95bcc90c7105b831efc", size = 56405, upload-time = "2026-03-20T06:42:56.999Z" }
 wheels = [
@@ -1255,17 +1255,14 @@ security = [
 
 [package.dev-dependencies]
 dev = [
-    { name = "bandit" },
     { name = "mypy" },
     { name = "mypy-extensions" },
-    { name = "pip-audit" },
     { name = "poetry" },
     { name = "pytest-cov" },
     { name = "pytest-env" },
     { name = "pytest-mock" },
     { name = "pytest-timeout" },
     { name = "ruff" },
-    { name = "safety" },
     { name = "taskipy" },
     { name = "tox" },
     { name = "tox-uv" },
@@ -1297,17 +1294,14 @@ provides-extras = ["jupyter", "security"]
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "bandit", specifier = ">=1.7.6" },
     { name = "mypy", specifier = ">=1.14.1" },
     { name = "mypy-extensions", specifier = ">=1.1.0" },
-    { name = "pip-audit", specifier = ">=2.6.1" },
     { name = "poetry", specifier = ">=2.1.4" },
     { name = "pytest-cov", specifier = ">=5.0.0" },
     { name = "pytest-env", specifier = ">=1.7.0" },
     { name = "pytest-mock", specifier = ">=3.15.1" },
     { name = "pytest-timeout", specifier = ">=2.4.0" },
     { name = "ruff", specifier = ">=0.12.8" },
-    { name = "safety", specifier = ">=2.3.4" },
     { name = "taskipy", specifier = "~=1.12.2" },
     { name = "tox", specifier = ">=4.11.4" },
     { name = "tox-uv", specifier = ">=1.36.0" },
