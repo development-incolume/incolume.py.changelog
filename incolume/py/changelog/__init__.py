@@ -22,4 +22,4 @@ __all__ = [
     'versionfile',
 ]
 
-update_version(pyproject_fl=confproject)  # noqa: RUF067
+update_version(pyproject_fl=confproject)  # ruff: ignore[non-empty-init-module]

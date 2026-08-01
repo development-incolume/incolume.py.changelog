@@ -540,7 +540,7 @@ class Changelog:
             ... )
             ['\n\n## 1.0.0a5\t &#8212; \t2023-12-21:', '\n### Added', '\n  - New function;', '\n  - One more new function.;', '\n### Fixed', '\n  - A bug of connection.;']
 
-        """  # noqa: E501
+        """  # ruff: ignore[line-too-long]
         result = []
         for _, entrada in content:
             logging.debug(entrada)
@@ -578,7 +578,7 @@ class Changelog:
             >> Changelog(url_keepachangelog='https://keepachangelog.com/en/2.0.0/', url_semver='https://semver.org/spec/v1.0.0.html')._header()
             ['# CHANGELOG\n\n\n', 'All notable changes to this project', ' will be documented in this file.\n\n', 'The format is based on ', '[Keep a Changelog](https://keepachangelog.com/en/2.0.0/), ', 'this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n', 'This file was automatically generated for', ' [incolume.py.changelog](https://gitlab.com/development-incolume/incolume.py.changelog/-/tree/0.15.0a1)', '\n\n---\n']
 
-        """  # noqa: E501
+        """  # ruff: ignore[line-too-long]
         return [
             '# CHANGELOG\n\n\n',
             'All notable changes to this project',
