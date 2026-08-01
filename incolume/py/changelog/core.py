@@ -87,12 +87,11 @@ def key_versions_2_sort(
         build = match.group(6)  # type: ignore [union-attr]
         # pegar build, se não tiver colocar uma alta 99999
         build = build or '9' * qdig
-        logging.debug('values.group(5): %s', match.group(5))  # type: ignore [union-attr]
         plus = classifies.get(
             re.sub(r'[-.]', '', str(match.group(5)).lower()),  # type: ignore [union-attr]
             0,
         )
-        logging.debug('plus: %s', plus)
+        logging.debug('match.group(5): %s', plus)
         build = int(build) + plus
         return f'{major:0>4}{minor:0>4}{patch:0>4}.{build:0>6}'
 
