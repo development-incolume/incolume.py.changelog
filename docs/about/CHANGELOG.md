@@ -10,12 +10,14 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ---
 
 
-## [Unreleased]	 &#8212; 	2026-07-31:
+## [Unreleased]	 &#8212; 	2026-08-01:
 ### Deprecated
   - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
   - Será Descontinuado suporte a Python 3.11 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
 ### Added
   - Tradução do arquivo LICENSE.md em alemão, espanhol, francês, inglês, italiano e português;
+### Security
+  - ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF);
 
 ## [1.0.0]	 &#8212; 	2026-07-29:
 ### Added
