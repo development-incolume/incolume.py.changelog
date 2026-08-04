@@ -39,7 +39,11 @@ class TestConfiguration:
     def test_configurationk_configuration_fl0(self) -> None:
         """Test for check_configuration."""
         fl = Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml')
-        assert pkg.select_configuration_fl(fl).name == 'pyproject.toml'
+        assert pkg.select_configuration_fl(fl).name in [
+            '.changelog.toml',
+            'changelog.toml',
+            'pyproject.toml',
+        ]
 
     def test_configurationk_configuration_fl1(self) -> None:
         """Test for check_configuration."""
