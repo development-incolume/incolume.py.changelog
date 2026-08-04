@@ -53,18 +53,19 @@ class TestConfiguration:
         assert pkg.select_configuration_fl(fl) == fl
 
     @pytest.mark.parametrize(
-        ['entrance', 'configuration'],
+        ['entrance', 'configuration', 'expected'],
         [
             pytest.param(
                 Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml'),
                 {'settings': {
-                'file': str(),
-                'reverse': bool(),
+                'file': Path(gettempdir(), stack()[0][3], 'nonexistent_file.md').as_posix(),
+                'reverse': True,
                 'url_compare': str(),
                 'url_keepachangelog': str(),
                 'url_semver': str(),
                 'url_convetional_commit': str(),
             }},
+            {},
                 marks=[],
             ),
             pytest.param(
@@ -76,7 +77,9 @@ class TestConfiguration:
                 'url_keepachangelog': str(),
                 'url_semver': str(),
                 'url_convetional_commit': str(),
-            }}, marks=[]),
+            }},
+            {},
+              marks=[]),
             pytest.param(
                 Path(gettempdir(), stack()[0][3], '.changelog.toml'),
                 {'settings': {
@@ -86,7 +89,9 @@ class TestConfiguration:
                 'url_keepachangelog': str(),
                 'url_semver': str(),
                 'url_convetional_commit': str(),
-            }}, marks=[]),
+            }}, 
+            {},
+            marks=[]),
             pytest.param(
                 Path(gettempdir(), stack()[0][3], 'pyproject.toml'),
                 {'tools': {'changelog': {'settings': {
@@ -96,14 +101,16 @@ class TestConfiguration:
                 'url_keepachangelog': str(),
                 'url_semver': str(),
                 'url_convetional_commit': str(),
-            }}}}, marks=[]),
+            }}}}, 
+            {},
+            marks=[]),
         ],
     )
-    def test_is_valid_configuration(self, entrance, configuration) -> None:
+    def test_is_valid_configuration(self, entrance, configuration, expected) -> None:
         """Test for is_valid_configuration."""
         entrance.parent.mkdir(parents=True, exist_ok=True)
         pkg.toml.dump(configuration, entrance.open('w', encoding='utf-8'))
-        assert isinstance(pkg.is_valid_configuration(entrance), dict)
+        assert pkg.is_valid_configuration(entrance) == expected
 
 
 class TestChangelogInit:
