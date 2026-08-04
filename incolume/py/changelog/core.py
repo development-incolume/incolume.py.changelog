@@ -13,6 +13,10 @@ from icecream import ic
 
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
+confchangelog = [
+    confproject.with_name('changelog.toml'),
+    confproject.with_name('.changelog.toml'),
+]
 
 # setting default values for logger variables
 logger_variables: dict[str, str | int | Path] = {
