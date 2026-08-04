@@ -39,7 +39,7 @@ def select_configuration_fl(conf_changelog_fl: Path | None = None) -> Path:
     for file in files:
         if file.exists():
             return file
-    msg = f'Any Configuration file found: {[file.name for file in files]}'
+    msg = f'Any Configuration file found: {", ".join([file.name for file in files])}'
     raise FileNotFoundError(msg)
 
 
