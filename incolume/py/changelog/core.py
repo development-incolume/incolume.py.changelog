@@ -16,6 +16,7 @@ versionfile = Path(__file__).parent / 'version.txt'
 confchangelog = [
     confproject.with_name('changelog.toml'),
     confproject.with_name('.changelog.toml'),
+    confproject,
 ]
 
 # setting default values for logger variables
@@ -31,16 +32,37 @@ logger_variables: dict[str, str | int | Path] = {
     'filemode': 'a',
 }
 
-
-def check_configuration(conf_changelog_fl: Path|None = None) -> None:
+def select_configuration_fl(conf_changelog_fl: Path | None = None) -> Path:
     """Check if the configuration file exists."""
     files = [conf_changelog_fl, *confchangelog]
     for file in files:
         if file.exists():
             conf_changelog_fl = file
             break
-    msg = f'Any Configuration file found: {[file.name for file in files]}'
-    raise FileNotFoundError(msg)
+        else:
+            msg = f'Any Configuration file found: {[file.name for file in files]}'
+            raise FileNotFoundError(msg)
+    return conf_changelog_fl
+
+
+
+def check_configuration(conf_changelog_fl: Path | None = None) -> None:
+    """Check if the configuration file exists."""
+    conf_changelog_fl = select_configuration_fl(conf_changelog_fl)
+
+    config = toml.load(conf_changelog_fl.open(encoding='utf-8'))
+
+    match config:
+        case {
+            "user": {"player_x": {"color": str()}, "player_o": {"color": str()}},
+            "constant": {"board_size": int()},
+            "server": {"url": str()},
+        }:
+            pass
+        case _:
+            raise ValueError(f"invalid configuration: {config}")
+
+
 
 
 def modify_logger_runtime(
