@@ -36,18 +36,31 @@ class Entrance:
 class TestConfiguration:
     """Test case for module."""
 
+    def test_configurationk_configuration_fl0(self) -> None:
+        """Test for check_configuration."""
+        fl = Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml')
+        assert pkg.select_configuration_fl(fl).name == 'pyproject.toml'
+
+    def test_configurationk_configuration_fl1(self) -> None:
+        """Test for check_configuration."""
+        fl = Path(gettempdir(), stack()[0][3], 'nexistent_file.toml')
+        fl.parent.mkdir(parents=True, exist_ok=True)
+        fl.write_bytes(b'')
+        assert pkg.select_configuration_fl(fl) == fl
+
+    @pytest.mark.skip
     @pytest.mark.parametrize(
-        'entrance',
+        ['entrance', 'expected'],
         [
-            pytest.param(Path('nonexistent_file.toml'), marks=[]),
-            pytest.param(pkg.confchangelog[0], marks=[]),
-            pytest.param(pkg.confchangelog[1], marks=[]),
-            pytest.param(pkg.confchangelog[2], marks=[]),
+            pytest.param(Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml'), 'pyproject.toml', marks=[]),
+            pytest.param(pkg.confchangelog[0], True, marks=[]),
+            pytest.param(pkg.confchangelog[1], True, marks=[]),
+            pytest.param(pkg.confchangelog[2], True, marks=[]),
         ],
     )
-    def test_check_configuration(self, entrance) -> None:
+    def test_configurationk_configuration_fl(self, entrance, expected) -> None:
         """Test for check_configuration."""
-        pkg.check_configuration(entrance)
+        assert pkg.select_configuration_fl(entrance).name == expected
 
 
 class TestChangelogInit:

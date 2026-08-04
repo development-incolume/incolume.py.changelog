@@ -32,17 +32,15 @@ logger_variables: dict[str, str | int | Path] = {
     'filemode': 'a',
 }
 
+
 def select_configuration_fl(conf_changelog_fl: Path | None = None) -> Path:
     """Check if the configuration file exists."""
     files = [conf_changelog_fl, *confchangelog]
     for file in files:
         if file.exists():
-            conf_changelog_fl = file
-            break
-        else:
-            msg = f'Any Configuration file found: {[file.name for file in files]}'
-            raise FileNotFoundError(msg)
-    return conf_changelog_fl
+            return file
+    msg = f'Any Configuration file found: {[file.name for file in files]}'
+    raise FileNotFoundError(msg)
 
 
 
