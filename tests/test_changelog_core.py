@@ -33,6 +33,23 @@ class Entrance:
     fileversion: Path
 
 
+class TestConfiguration:
+    """Test case for module."""
+
+    @pytest.mark.parametrize(
+        'entrance',
+        [
+            pytest.param(Path('nonexistent_file.toml'), marks=[]),
+            pytest.param(pkg.confchangelog[0], marks=[]),
+            pytest.param(pkg.confchangelog[1], marks=[]),
+            pytest.param(pkg.confchangelog[2], marks=[]),
+        ],
+    )
+    def test_check_configuration(self, entrance) -> None:
+        """Test for check_configuration."""
+        pkg.check_configuration(entrance)
+
+
 class TestChangelogInit:
     """Test case for module."""
 

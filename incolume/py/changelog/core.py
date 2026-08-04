@@ -32,6 +32,17 @@ logger_variables: dict[str, str | int | Path] = {
 }
 
 
+def check_configuration(conf_changelog_fl: Path|None = None) -> None:
+    """Check if the configuration file exists."""
+    files = [conf_changelog_fl, *confchangelog]
+    for file in files:
+        if file.exists():
+            conf_changelog_fl = file
+            break
+    msg = f'Any Configuration file found: {[file.name for file in files]}'
+    raise FileNotFoundError(msg)
+
+
 def modify_logger_runtime(
     var_name: str,
     new_value: str | int | Path,
