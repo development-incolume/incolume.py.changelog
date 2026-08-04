@@ -5,7 +5,7 @@ from __future__ import annotations
 import contextlib
 import logging
 import re
-from collections.abc import Container
+from collections.abc import Container, Mapping
 from pathlib import Path
 
 import tomlkit as toml
@@ -43,24 +43,43 @@ def select_configuration_fl(conf_changelog_fl: Path | None = None) -> Path:
     raise FileNotFoundError(msg)
 
 
-
-def check_configuration(conf_changelog_fl: Path | None = None) -> None:
+def is_valid_configuration(conf_changelog_fl: Path | None = None) -> bool:
     """Check if the configuration file exists."""
     conf_changelog_fl = select_configuration_fl(conf_changelog_fl)
 
-    config = toml.load(conf_changelog_fl.open(encoding='utf-8'))
-
-    match config:
+    loaded: toml.TOMLDocument = toml.load(conf_changelog_fl.open('rb'))
+    config: Mapping = {}
+    match loaded:
         case {
-            "user": {"player_x": {"color": str()}, "player_o": {"color": str()}},
-            "constant": {"board_size": int()},
-            "server": {"url": str()},
+            'settings': {
+                'file': str(),
+                'reverse': bool(),
+                'url_compare': str(),
+                'url_keepachangelog': str(),
+                'url_semver': str(),
+                'url_convetional_commit': str(),
+            }
         }:
-            pass
+            config = loaded['settings']
+        case {
+            'tool': {
+                'changelog': {
+                    'settings': {
+                        'file': str(),
+                        'reverse': bool(),
+                        'url_compare': str(),
+                        'url_keepachangelog': str(),
+                        'url_semver': str(),
+                        'url_convetional_commit': str(),
+                    }
+                }
+            }
+        }:
+            config = loaded['tool']['changelog']['settings']
         case _:
-            raise ValueError(f"invalid configuration: {config}")
-
-
+            msg = f'Invalid configuration: {loaded}'
+            raise ValueError(msg)
+    return config
 
 
 def modify_logger_runtime(

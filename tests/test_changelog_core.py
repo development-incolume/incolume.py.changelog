@@ -39,11 +39,11 @@ class TestConfiguration:
     def test_configurationk_configuration_fl0(self) -> None:
         """Test for check_configuration."""
         fl = Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml')
-        assert pkg.select_configuration_fl(fl).name in [
+        assert pkg.select_configuration_fl(fl).name in {
             '.changelog.toml',
             'changelog.toml',
             'pyproject.toml',
-        ]
+        }
 
     def test_configurationk_configuration_fl1(self) -> None:
         """Test for check_configuration."""
@@ -52,19 +52,58 @@ class TestConfiguration:
         fl.write_bytes(b'')
         assert pkg.select_configuration_fl(fl) == fl
 
-    @pytest.mark.skip
     @pytest.mark.parametrize(
-        ['entrance', 'expected'],
+        ['entrance', 'configuration'],
         [
-            pytest.param(Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml'), 'pyproject.toml', marks=[]),
-            pytest.param(pkg.confchangelog[0], True, marks=[]),
-            pytest.param(pkg.confchangelog[1], True, marks=[]),
-            pytest.param(pkg.confchangelog[2], True, marks=[]),
+            pytest.param(
+                Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml'),
+                {'settings': {
+                'file': str(),
+                'reverse': bool(),
+                'url_compare': str(),
+                'url_keepachangelog': str(),
+                'url_semver': str(),
+                'url_convetional_commit': str(),
+            }},
+                marks=[],
+            ),
+            pytest.param(
+                Path(gettempdir(), stack()[0][3], 'changelog.toml'),
+                {'settings': {
+                'file': str(),
+                'reverse': bool(),
+                'url_compare': str(),
+                'url_keepachangelog': str(),
+                'url_semver': str(),
+                'url_convetional_commit': str(),
+            }}, marks=[]),
+            pytest.param(
+                Path(gettempdir(), stack()[0][3], '.changelog.toml'),
+                {'settings': {
+                'file': str(),
+                'reverse': bool(),
+                'url_compare': str(),
+                'url_keepachangelog': str(),
+                'url_semver': str(),
+                'url_convetional_commit': str(),
+            }}, marks=[]),
+            pytest.param(
+                Path(gettempdir(), stack()[0][3], 'pyproject.toml'),
+                {'tools': {'changelog': {'settings': {
+                'file': str(),
+                'reverse': bool(),
+                'url_compare': str(),
+                'url_keepachangelog': str(),
+                'url_semver': str(),
+                'url_convetional_commit': str(),
+            }}}}, marks=[]),
         ],
     )
-    def test_configurationk_configuration_fl(self, entrance, expected) -> None:
-        """Test for check_configuration."""
-        assert pkg.select_configuration_fl(entrance).name == expected
+    def test_is_valid_configuration(self, entrance, configuration) -> None:
+        """Test for is_valid_configuration."""
+        entrance.parent.mkdir(parents=True, exist_ok=True)
+        pkg.toml.dump(configuration, entrance.open('w', encoding='utf-8'))
+        assert isinstance(pkg.is_valid_configuration(entrance), dict)
 
 
 class TestChangelogInit:
