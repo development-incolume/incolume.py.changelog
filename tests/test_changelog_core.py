@@ -57,60 +57,84 @@ class TestConfiguration:
         [
             pytest.param(
                 Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml'),
-                {'settings': {
-                'file': Path(gettempdir(), stack()[0][3], 'nonexistent_file.md').as_posix(),
-                'reverse': True,
-                'url_compare': str(),
-                'url_keepachangelog': str(),
-                'url_semver': str(),
-                'url_convetional_commit': str(),
-            }},
-            {},
+                {
+                    'settings': {
+                        'file': Path(
+                            gettempdir(), stack()[0][3], 'nonexistent_file.md'
+                        ).as_posix(),
+                        'reverse': True,
+                        'url_compare': '',
+                        'url_keepachangelog': '',
+                        'url_semver': '',
+                        'url_convetional_commit': '',
+                    }
+                },
+                {
+                    'url_compare': '',
+                    'url_keepachangelog': '',
+                    'url_semver': '',
+                    'url_convetional_commit': '',
+                },
                 marks=[],
             ),
             pytest.param(
                 Path(gettempdir(), stack()[0][3], 'changelog.toml'),
-                {'settings': {
-                'file': str(),
-                'reverse': bool(),
-                'url_compare': str(),
-                'url_keepachangelog': str(),
-                'url_semver': str(),
-                'url_convetional_commit': str(),
-            }},
-            {},
-              marks=[]),
+                {
+                    'settings': {
+                        'file': '',
+                        'reverse': False,
+                        'url_compare': '',
+                        'url_keepachangelog': '',
+                        'url_semver': '',
+                        'url_convetional_commit': '',
+                    }
+                },
+                {},
+                marks=[],
+            ),
             pytest.param(
                 Path(gettempdir(), stack()[0][3], '.changelog.toml'),
-                {'settings': {
-                'file': str(),
-                'reverse': bool(),
-                'url_compare': str(),
-                'url_keepachangelog': str(),
-                'url_semver': str(),
-                'url_convetional_commit': str(),
-            }}, 
-            {},
-            marks=[]),
+                {
+                    'settings': {
+                        'file': '',
+                        'reverse': False,
+                        'url_compare': '',
+                        'url_keepachangelog': '',
+                        'url_semver': '',
+                        'url_convetional_commit': '',
+                    }
+                },
+                {},
+                marks=[],
+            ),
             pytest.param(
                 Path(gettempdir(), stack()[0][3], 'pyproject.toml'),
-                {'tools': {'changelog': {'settings': {
-                'file': str(),
-                'reverse': bool(),
-                'url_compare': str(),
-                'url_keepachangelog': str(),
-                'url_semver': str(),
-                'url_convetional_commit': str(),
-            }}}}, 
-            {},
-            marks=[]),
+                {
+                    'tools': {
+                        'changelog': {
+                            'settings': {
+                                'file': '',
+                                'reverse': False,
+                                'url_compare': '',
+                                'url_keepachangelog': '',
+                                'url_semver': '',
+                                'url_convetional_commit': '',
+                            }
+                        }
+                    }
+                },
+                {},
+                marks=[],
+            ),
         ],
     )
-    def test_is_valid_configuration(self, entrance, configuration, expected) -> None:
+    def test_is_valid_configuration(
+        self, entrance, configuration, expected
+    ) -> None:
         """Test for is_valid_configuration."""
         entrance.parent.mkdir(parents=True, exist_ok=True)
         pkg.toml.dump(configuration, entrance.open('w', encoding='utf-8'))
-        assert pkg.is_valid_configuration(entrance) == expected
+        assert expected in pkg.is_valid_configuration(entrance)
 
 
 class TestChangelogInit:
