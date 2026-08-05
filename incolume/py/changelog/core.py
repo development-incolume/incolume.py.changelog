@@ -5,7 +5,7 @@ from __future__ import annotations
 import contextlib
 import logging
 import re
-from collections.abc import Container
+from collections.abc import Container, Mapping
 from pathlib import Path
 
 import tomlkit as toml
@@ -13,6 +13,11 @@ from icecream import ic
 
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
+confchangelog = [
+    confproject.with_name('changelog.toml'),
+    confproject.with_name('.changelog.toml'),
+    confproject,
+]
 
 # setting default values for logger variables
 logger_variables: dict[str, str | int | Path] = {
@@ -26,6 +31,62 @@ logger_variables: dict[str, str | int | Path] = {
     'filelog': Path(__file__).with_suffix('.log'),
     'filemode': 'a',
 }
+
+
+def select_configuration_fl(
+    conf_changelog_fl: Path | None = None, files: list[Path] | None = None
+) -> Path:
+    """Check if the configuration file exists."""
+    files = (
+        [conf_changelog_fl, *files]  # type: ignore [list-item]
+        if isinstance(files, list)
+        else [conf_changelog_fl, *confchangelog]  # type: ignore [list-item]
+    )
+    for file in [f for f in files if f]:
+        if file.exists():
+            return file
+    msg = (
+        'Any Configuration file found: '
+        f'{", ".join([file.name for file in files])}'
+    )
+    raise FileNotFoundError(msg)
+
+
+def load_config(conf_changelog_fl: Path) -> Mapping[str, str | bool]:
+    """Check if the configuration file exists."""
+    loaded: toml.TOMLDocument = toml.load(conf_changelog_fl.open('rb'))
+    config: Mapping[str, str | bool] = {}
+    match loaded:
+        case {
+            'settings': {
+                'file': str(),
+                'reverse': bool(),
+                'url_compare': str(),
+                'url_keepachangelog': str(),
+                'url_semver': str(),
+                'url_convetional_commit': str(),
+            }
+        }:
+            config = loaded['settings']
+        case {
+            'tool': {
+                'changelog': {
+                    'settings': {
+                        'file': str(),
+                        'reverse': bool(),
+                        'url_compare': str(),
+                        'url_keepachangelog': str(),
+                        'url_semver': str(),
+                        'url_convetional_commit': str(),
+                    }
+                }
+            }
+        }:
+            config = loaded['tool']['changelog']['settings']
+        case _:
+            msg = f'Invalid configuration: {conf_changelog_fl.as_posix()}'
+            raise ValueError(msg)
+    return config
 
 
 def modify_logger_runtime(
@@ -87,12 +148,11 @@ def key_versions_2_sort(
         build = match.group(6)  # type: ignore [union-attr]
         # pegar build, se não tiver colocar uma alta 99999
         build = build or '9' * qdig
-        logging.debug('values.group(5): %s', match.group(5))  # type: ignore [union-attr]
         plus = classifies.get(
             re.sub(r'[-.]', '', str(match.group(5)).lower()),  # type: ignore [union-attr]
             0,
         )
-        logging.debug('plus: %s', plus)
+        logging.debug('match.group(5): %s', plus)
         build = int(build) + plus
         return f'{major:0>4}{minor:0>4}{patch:0>4}.{build:0>6}'
 

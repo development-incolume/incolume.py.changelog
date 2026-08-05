@@ -800,7 +800,7 @@ class TestClassChangelog:
     ) -> None:
         """Test for header file."""
         o = pkg.Changelog(**entrance)
-        assert o._header() == expected  # noqa: SLF001
+        assert o._header() == expected  # ruff: ignore[private-member-access]
 
     @pytest.mark.parametrize(
         ['entrance', 'expected'],
