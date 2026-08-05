@@ -42,7 +42,7 @@ def select_configuration_fl(
         if isinstance(files, list)
         else [conf_changelog_fl, *confchangelog]  # type: ignore [list-item]
     )
-    for file in files:
+    for file in [f for f in files if f]:
         if file.exists():
             return file
     msg = (
