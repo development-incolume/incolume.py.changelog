@@ -79,10 +79,16 @@ def changelog(
         ValueError: When there is not git tag records.
 
     """
-    ic(config)  # type: ignore [reportPrivateUsage]
+    params = {**config}
+    params.pop('file', None)
+    params.pop('reverse', None)
+    params.pop('url_compare', None)
+    ic(params)  # type: ignore [reportPrivateUsage]
+
     result = update_changelog(
         changelog_file=file_changelog,
         urlcompare=url,
         reverse=reverse,
+        **params,
     )
     click.echo(f'{result}')

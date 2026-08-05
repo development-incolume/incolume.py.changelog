@@ -374,11 +374,11 @@ def changelog_write(
         True
 
     """
-    changelog_file = Path(kwargs.get('changelog_file') or CHANGELOG_FILE)
+    changelog_file = Path(kwargs.pop('changelog_file', '') or CHANGELOG_FILE)
     changelog_file.parent.mkdir(parents=True, exist_ok=True)
     logging.debug('changelog_file=%s', changelog_file)
 
-    content_formated = changelog_header()
+    content_formated = changelog_header(**kwargs)
     content_formated = changelog_body(content, content_formated, **kwargs)
     content_formated = changelog_footer(content, content_formated, **kwargs)
 
@@ -427,11 +427,11 @@ def update_changelog(
     """
     logging.debug('argumentos=%s,%s,%s', changelog_file, reverse, kwargs)
     urlcompare: str = (
-        kwargs.get('urlcompare')
+        kwargs.pop('urlcompare', '')
         or 'https://github.com/development-incolume'
         '/incolume.py.changelog/-/compare'
     )
-    content: str = kwargs.get('content', subprocess.getoutput('git tag -n'))
+    content: str = kwargs.pop('content', subprocess.getoutput('git tag -n'))
     logging.info('registros encontrados ..')
     logging.debug('content=%s', content)
 
@@ -447,6 +447,7 @@ def update_changelog(
         ),
         urlcompare=urlcompare,
         changelog_file=changelog_file,
+        **kwargs,
     )
 
 
