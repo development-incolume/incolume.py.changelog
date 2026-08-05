@@ -38,9 +38,9 @@ def select_configuration_fl(
 ) -> Path:
     """Check if the configuration file exists."""
     files = (
-        [conf_changelog_fl, *files]
+        [conf_changelog_fl, *files]  # type: ignore [list-item]
         if isinstance(files, list)
-        else [conf_changelog_fl, *confchangelog]
+        else [conf_changelog_fl, *confchangelog]  # type: ignore [list-item]
     )
     for file in files:
         if file.exists():
@@ -52,10 +52,10 @@ def select_configuration_fl(
     raise FileNotFoundError(msg)
 
 
-def load_config(conf_changelog_fl: Path | None = None) -> Mapping:
+def load_config(conf_changelog_fl: Path) -> Mapping[str, str | bool]:
     """Check if the configuration file exists."""
     loaded: toml.TOMLDocument = toml.load(conf_changelog_fl.open('rb'))
-    config: Mapping = {}
+    config: Mapping[str, str | bool] = {}
     match loaded:
         case {
             'settings': {
