@@ -374,11 +374,11 @@ def changelog_write(
         True
 
     """
-    changelog_file = Path(kwargs.get('changelog_file') or CHANGELOG_FILE)
+    changelog_file = Path(kwargs.pop('changelog_file', '') or CHANGELOG_FILE)
     changelog_file.parent.mkdir(parents=True, exist_ok=True)
     logging.debug('changelog_file=%s', changelog_file)
 
-    content_formated = changelog_header()
+    content_formated = changelog_header(**kwargs)
     content_formated = changelog_body(content, content_formated, **kwargs)
     content_formated = changelog_footer(content, content_formated, **kwargs)
 
@@ -427,11 +427,11 @@ def update_changelog(
     """
     logging.debug('argumentos=%s,%s,%s', changelog_file, reverse, kwargs)
     urlcompare: str = (
-        kwargs.get('urlcompare')
+        kwargs.pop('urlcompare', '')
         or 'https://github.com/development-incolume'
         '/incolume.py.changelog/-/compare'
     )
-    content: str = kwargs.get('content', subprocess.getoutput('git tag -n'))
+    content: str = kwargs.pop('content', subprocess.getoutput('git tag -n'))
     logging.info('registros encontrados ..')
     logging.debug('content=%s', content)
 
@@ -447,6 +447,7 @@ def update_changelog(
         ),
         urlcompare=urlcompare,
         changelog_file=changelog_file,
+        **kwargs,
     )
 
 
@@ -540,7 +541,7 @@ class Changelog:
             ... )
             ['\n\n## 1.0.0a5\t &#8212; \t2023-12-21:', '\n### Added', '\n  - New function;', '\n  - One more new function.;', '\n### Fixed', '\n  - A bug of connection.;']
 
-        """  # noqa: E501
+        """  # ruff: ignore[line-too-long]
         result = []
         for _, entrada in content:
             logging.debug(entrada)
@@ -578,7 +579,7 @@ class Changelog:
             >> Changelog(url_keepachangelog='https://keepachangelog.com/en/2.0.0/', url_semver='https://semver.org/spec/v1.0.0.html')._header()
             ['# CHANGELOG\n\n\n', 'All notable changes to this project', ' will be documented in this file.\n\n', 'The format is based on ', '[Keep a Changelog](https://keepachangelog.com/en/2.0.0/), ', 'this project adheres to [Semantic Versioning](https://semver.org/spec/v1.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0/).\n\n', 'This file was automatically generated for', ' [incolume.py.changelog](https://gitlab.com/development-incolume/incolume.py.changelog/-/tree/0.15.0a1)', '\n\n---\n']
 
-        """  # noqa: E501
+        """  # ruff: ignore[line-too-long]
         return [
             '# CHANGELOG\n\n\n',
             'All notable changes to this project',

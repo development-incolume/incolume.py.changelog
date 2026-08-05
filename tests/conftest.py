@@ -31,8 +31,8 @@ def return_git_tag() -> str:
 @pytest.fixture
 def file_temp() -> Path:
     """Generate aleatory filename into tempdir for tests."""
-    filename = NamedTemporaryFile(delete=False).name  # noqa: SIM115
-    return Path(filename)
+    with NamedTemporaryFile(delete=False) as file:
+        return Path(file.name)
 
 
 @pytest.fixture
