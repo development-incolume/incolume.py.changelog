@@ -36,7 +36,16 @@ class Entrance:
 class TestConfiguration:
     """Test case for module."""
 
-    def test_configurationk_configuration_fl0(self) -> None:
+    def test_configuration_fl0(self) -> None:
+        """Test for check_configuration."""
+        fl = Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml')
+        with pytest.raises(
+            FileNotFoundError,
+            match=r'Any Configuration file found: nonexistent_file.toml',
+        ):
+            pkg.select_configuration_fl(fl, [])
+
+    def test_configuration_fl1(self) -> None:
         """Test for check_configuration."""
         fl = Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml')
         assert pkg.select_configuration_fl(fl).name in {
@@ -45,9 +54,9 @@ class TestConfiguration:
             'pyproject.toml',
         }
 
-    def test_configurationk_configuration_fl1(self) -> None:
+    def test__configuration_fl2(self) -> None:
         """Test for check_configuration."""
-        fl = Path(gettempdir(), stack()[0][3], 'nexistent_file.toml')
+        fl = Path(gettempdir(), stack()[0][3], 'existent_file.toml')
         fl.parent.mkdir(parents=True, exist_ok=True)
         fl.write_bytes(b'')
         assert pkg.select_configuration_fl(fl) == fl
@@ -81,7 +90,9 @@ class TestConfiguration:
                 Path(gettempdir(), stack()[0][3], 'changelog.toml'),
                 {
                     'settings': {
-                        'file': '',
+                        'file': Path(
+                            gettempdir(), stack()[0][3], 'changelog.md'
+                        ).as_posix(),
                         'reverse': False,
                         'url_compare': '',
                         'url_keepachangelog': '',
@@ -96,7 +107,9 @@ class TestConfiguration:
                 Path(gettempdir(), stack()[0][3], '.changelog.toml'),
                 {
                     'settings': {
-                        'file': '',
+                        'file': Path(
+                            gettempdir(), stack()[0][3], '.changelog.md'
+                        ).as_posix(),
                         'reverse': False,
                         'url_compare': '',
                         'url_keepachangelog': '',
@@ -110,10 +123,35 @@ class TestConfiguration:
             pytest.param(
                 Path(gettempdir(), stack()[0][3], 'pyproject.toml'),
                 {
-                    'tools': {
+                    'tool': {
                         'changelog': {
                             'settings': {
-                                'file': '',
+                                'file': Path(
+                                    gettempdir(), stack()[0][3], 'pyproject.md'
+                                ).as_posix(),
+                                'reverse': False,
+                                'url_compare': '',
+                                'url_keepachangelog': '',
+                                'url_semver': '',
+                                'url_convetional_commit': '',
+                            }
+                        }
+                    }
+                },
+                {},
+                marks=[],
+            ),
+            pytest.param(
+                Path(gettempdir(), stack()[0][3], 'another_file.toml'),
+                {
+                    'tool': {
+                        'changelog': {
+                            'setter': {
+                                'file': Path(
+                                    gettempdir(),
+                                    stack()[0][3],
+                                    'another_file.md',
+                                ).as_posix(),
                                 'reverse': False,
                                 'url_compare': '',
                                 'url_keepachangelog': '',
@@ -128,13 +166,18 @@ class TestConfiguration:
             ),
         ],
     )
-    def test_is_valid_configuration(
-        self, entrance, configuration, expected
-    ) -> None:
-        """Test for is_valid_configuration."""
+    def test_load_config(self, entrance, configuration, expected) -> None:
+        """Test for load_config."""
         entrance.parent.mkdir(parents=True, exist_ok=True)
         pkg.toml.dump(configuration, entrance.open('w', encoding='utf-8'))
-        assert expected in pkg.is_valid_configuration(entrance)
+        try:
+            assert set(expected).issubset(set(pkg.load_config(entrance)))
+        except ValueError:
+            with pytest.raises(
+                ValueError,
+                match=r'Invalid configuration: .*',
+            ):
+                pkg.load_config(entrance)
 
 
 class TestChangelogInit:

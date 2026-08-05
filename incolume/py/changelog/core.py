@@ -33,20 +33,27 @@ logger_variables: dict[str, str | int | Path] = {
 }
 
 
-def select_configuration_fl(conf_changelog_fl: Path | None = None) -> Path:
+def select_configuration_fl(
+    conf_changelog_fl: Path | None = None, files: list[Path] | None = None
+) -> Path:
     """Check if the configuration file exists."""
-    files = [conf_changelog_fl, *confchangelog]
+    files = (
+        [conf_changelog_fl, *files]
+        if isinstance(files, list)
+        else [conf_changelog_fl, *confchangelog]
+    )
     for file in files:
         if file.exists():
             return file
-    msg = f'Any Configuration file found: {", ".join([file.name for file in files])}'
+    msg = (
+        'Any Configuration file found: '
+        f'{", ".join([file.name for file in files])}'
+    )
     raise FileNotFoundError(msg)
 
 
-def is_valid_configuration(conf_changelog_fl: Path | None = None) -> bool:
+def load_config(conf_changelog_fl: Path | None = None) -> Mapping:
     """Check if the configuration file exists."""
-    conf_changelog_fl = select_configuration_fl(conf_changelog_fl)
-
     loaded: toml.TOMLDocument = toml.load(conf_changelog_fl.open('rb'))
     config: Mapping = {}
     match loaded:
@@ -77,7 +84,7 @@ def is_valid_configuration(conf_changelog_fl: Path | None = None) -> bool:
         }:
             config = loaded['tool']['changelog']['settings']
         case _:
-            msg = f'Invalid configuration: {loaded}'
+            msg = f'Invalid configuration: {conf_changelog_fl.as_posix()}'
             raise ValueError(msg)
     return config
 
