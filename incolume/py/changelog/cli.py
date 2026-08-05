@@ -1,8 +1,15 @@
 """CLI - Command Line Interface module."""
 
 import click
+from icecream import ic
 
 from incolume.py.changelog.changelog import update_changelog
+from incolume.py.changelog.core import load_config, select_configuration_fl
+
+try:
+    config: dict[str, str | bool] = load_config(select_configuration_fl())
+except ValueError:  # pragma: no cover
+    config = {}
 
 
 @click.command()
@@ -34,19 +41,21 @@ def greeting(nome: str) -> None:
 @click.argument(
     'file_changelog',
     type=click.STRING,
-    default='CHANGELOG.md',
+    default=config.get('file', 'CHANGELOG.md'),
 )
 @click.option(
     '--url',
     '-u',
-    default='https://github.com/development-incolume/'
-    'incolume.py.changelog/-/compare',
+    default=config.get(
+        'url_compare',
+        'https://github.com/development-incolume/incolume.py.changelog/-/compare',
+    ),
     help='Url compare from repository of project.',
 )
 @click.option(
     '--reverse',
     '-r',
-    default=False,
+    default=config.get('reverse', False),
     is_flag=True,
     help='Reverse order of records.',
 )
@@ -70,9 +79,16 @@ def changelog(
         ValueError: When there is not git tag records.
 
     """
+    params = {**config}
+    params.pop('file', None)
+    params.pop('reverse', None)
+    params.pop('url_compare', None)
+    ic(params)  # type: ignore [reportPrivateUsage]
+
     result = update_changelog(
         changelog_file=file_changelog,
         urlcompare=url,
         reverse=reverse,
+        **params,
     )
     click.echo(f'{result}')
