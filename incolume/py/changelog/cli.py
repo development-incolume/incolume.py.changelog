@@ -4,6 +4,7 @@ import click
 from icecream import ic
 
 from incolume.py.changelog.changelog import (
+    URL_COMPARE,
     generate_changelog_config_model,
     update_changelog,
 )
@@ -53,7 +54,7 @@ def greeting(nome: str) -> None:
     '-u',
     default=config.pop(
         'url_compare',
-        'https://github.com/development-incolume/incolume.py.changelog/-/compare',
+        URL_COMPARE,
     ),
     help='Url compare from repository of project.',
 )

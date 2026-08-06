@@ -31,14 +31,20 @@ logging.basicConfig(
 )
 
 CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
+
+URL_COMPARE: Final[str] = 'https://github.com/development-incolume/incolume.py.changelog/compare'
+URL_CONVETIONAL_COMMIT: Final[str] = 'https://www.conventionalcommits.org/pt-br/v1.0.0'
+URL_KEEPACHANGELOG: Final[str] = 'https://keepachangelog.com/en/1.0.0'
+URL_SEMVER: Final[str] = 'https://semver.org/spec/v2.0.0.html'
+
 changelog_conf_fl: Final[Mapping[str, dict[str, object]]] = {
     'settings': {
         'file': 'CHANGELOG.md',
         'reverse': True,
-        'url_compare': 'https://github.com/development-incolume/incolume.py.changelog/-/compare',
-        'url_convetional_commit': 'https://www.conventionalcommits.org/pt-br/v1.0.0',
-        'url_keepachangelog': 'https://keepachangelog.com/en/1.0.0',
-        'url_semver': 'https://semver.org/spec/v2.0.0.html',
+        'url_compare': URL_COMPARE,
+        'url_convetional_commit': URL_CONVETIONAL_COMMIT,
+        'url_keepachangelog': URL_KEEPACHANGELOG,
+        'url_semver': URL_SEMVER,
     }
 }
 
