@@ -283,7 +283,7 @@ def changelog_header(
             f'and [Conventional Commit]({url_convetional_commit}).\n\n'
         ),
         'This file was automatically generated for',
-        f' [{__title__}]({url_project}/-/tree/{__version__})',
+        f' [{__title__}]({url_project}/tree/{__version__})',
         '\n\n---\n',
     ]
 
