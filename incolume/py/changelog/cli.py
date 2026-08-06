@@ -3,13 +3,19 @@
 import click
 from icecream import ic
 
-from incolume.py.changelog.changelog import update_changelog
+from incolume.py.changelog.changelog import (
+    URL_COMPARE,
+    generate_changelog_config_model,
+    update_changelog,
+)
 from incolume.py.changelog.core import load_config, select_configuration_fl
 
 try:
     config: dict[str, str | bool] = load_config(select_configuration_fl())
 except ValueError:  # pragma: no cover
     config = {}
+
+ic(config)  # type: ignore [reportPrivateUsage]
 
 
 @click.command()
@@ -41,29 +47,36 @@ def greeting(nome: str) -> None:
 @click.argument(
     'file_changelog',
     type=click.STRING,
-    default=config.get('file', 'CHANGELOG.md'),
+    default=config.pop('file', 'CHANGELOG.md'),
 )
 @click.option(
     '--url',
     '-u',
-    default=config.get(
+    default=config.pop(
         'url_compare',
-        'https://github.com/development-incolume/incolume.py.changelog/-/compare',
+        URL_COMPARE,
     ),
     help='Url compare from repository of project.',
 )
 @click.option(
     '--reverse',
     '-r',
-    default=config.get('reverse', False),
+    default=config.pop('reverse', False),
     is_flag=True,
     help='Reverse order of records.',
+)
+@click.option(
+    '--generate-config',
+    '-g',
+    is_flag=True,
+    help='Generate configure file for changelog.',
 )
 def changelog(
     file_changelog: str,
     url: str = '',
     *,
     reverse: bool = True,
+    generate_config: bool = False,
 ) -> None:
     """Operacionaliza uma interface CLI para módulo incolume.py.changelog.
 
@@ -71,6 +84,7 @@ def changelog(
         file_changelog:  changelog full filename.
         url: url compare from repository of project.
         reverse: Reverse order of records.
+        generate_config: Generate configuration file for changelog.
 
     Return:
         True if success
@@ -79,17 +93,16 @@ def changelog(
         ValueError: When there is not git tag records.
 
     """
-    ic(config)  # type: ignore [reportPrivateUsage]
-    params = {**config}
-    params.pop('file', None)
-    params.pop('reverse', None)
-    params.pop('url_compare', None)
-    ic(params)  # type: ignore [reportPrivateUsage]
+    if generate_config:
+        click.secho('Generating configuration file for changelog...', fg='green')
+        generate_changelog_config_model(**config)
+        click.secho('Done!', fg='green')
+        return
 
     result = update_changelog(
         changelog_file=file_changelog,
         urlcompare=url,
         reverse=reverse,
-        **params,
+        **config,
     )
-    click.echo(f'{result}')
+    click.secho(f'{result}', fg='green')

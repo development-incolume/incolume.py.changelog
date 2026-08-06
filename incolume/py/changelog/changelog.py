@@ -11,6 +11,8 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, Final
 
 import git
+import tomlkit as toml
+from icecream import ic
 
 from incolume.py.changelog import (
     __title__,
@@ -29,16 +31,36 @@ logging.basicConfig(
 )
 
 CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
+
+URL_COMPARE: Final[str] = 'https://github.com/development-incolume/incolume.py.changelog/compare'
+URL_CONVETIONAL_COMMIT: Final[str] = 'https://www.conventionalcommits.org/pt-br/v1.0.0'
+URL_KEEPACHANGELOG: Final[str] = 'https://keepachangelog.com/en/1.0.0'
+URL_SEMVER: Final[str] = 'https://semver.org/spec/v2.0.0.html'
+
 changelog_conf_fl: Final[Mapping[str, dict[str, object]]] = {
     'settings': {
-        'file': 'docs/about/CHANGELOG.md',
+        'file': 'CHANGELOG.md',
         'reverse': True,
-        'url_compare': 'https://github.com/development-incolume/incolume.py.changelog/-/compare',
-        'url_convetional_commit': 'https://www.conventionalcommits.org/pt-br/v1.0.0',
-        'url_keepachangelog': 'https://keepachangelog.com/en/1.0.0',
-        'url_semver': 'https://semver.org/spec/v2.0.0.html',
+        'url_compare': URL_COMPARE,
+        'url_convetional_commit': URL_CONVETIONAL_COMMIT,
+        'url_keepachangelog': URL_KEEPACHANGELOG,
+        'url_semver': URL_SEMVER,
     }
 }
+
+
+def generate_changelog_config_model(**kwargs: str) -> None:
+    """Generate a model of changelog configuration file."""
+    conf_file = Path('changelog.toml.sample')
+    if conf_file.exists():
+        logging.warning(
+            'Configuration file already exists: %s', conf_file.name,
+        )
+        return
+    ic(kwargs)  # type: ignore [reportPrivateUsage]
+    changelog_conf_fl['settings'].update(**kwargs)
+    with conf_file.open('w', encoding='utf-8') as f:
+        toml.dump(changelog_conf_fl, f)
 
 
 def get_os_command(key: str) -> str:
@@ -267,7 +289,7 @@ def changelog_header(
             f'and [Conventional Commit]({url_convetional_commit}).\n\n'
         ),
         'This file was automatically generated for',
-        f' [{__title__}]({url_project}/-/tree/{__version__})',
+        f' [{__title__}]({url_project}/tree/{__version__})',
         '\n\n---\n',
     ]
 
