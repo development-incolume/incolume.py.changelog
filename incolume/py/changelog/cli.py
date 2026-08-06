@@ -3,7 +3,10 @@
 import click
 from icecream import ic
 
-from incolume.py.changelog.changelog import update_changelog
+from incolume.py.changelog.changelog import (
+    generate_changelog_config_model,
+    update_changelog,
+)
 from incolume.py.changelog.core import load_config, select_configuration_fl
 
 try:
@@ -61,11 +64,18 @@ def greeting(nome: str) -> None:
     is_flag=True,
     help='Reverse order of records.',
 )
+@click.option(
+    '--generate-config',
+    '-g',
+    is_flag=True,
+    help='Generate configure file for changelog.',
+)
 def changelog(
     file_changelog: str,
     url: str = '',
     *,
     reverse: bool = True,
+    generate_config: bool = False,
 ) -> None:
     """Operacionaliza uma interface CLI para módulo incolume.py.changelog.
 
@@ -73,6 +83,7 @@ def changelog(
         file_changelog:  changelog full filename.
         url: url compare from repository of project.
         reverse: Reverse order of records.
+        generate_config: Generate configuration file for changelog.
 
     Return:
         True if success
@@ -81,10 +92,16 @@ def changelog(
         ValueError: When there is not git tag records.
 
     """
+    if generate_config:
+        click.secho('Generating configuration file for changelog...', fg='green')
+        generate_changelog_config_model(**config)
+        click.secho('Done!', fg='green')
+        return
+
     result = update_changelog(
         changelog_file=file_changelog,
         urlcompare=url,
         reverse=reverse,
         **config,
     )
-    click.echo(f'{result}')
+    click.secho(f'{result}', fg='green')

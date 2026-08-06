@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, Final
 
 import git
+import tomlkit as toml
 
 from incolume.py.changelog import (
     __title__,
@@ -39,6 +40,20 @@ changelog_conf_fl: Final[Mapping[str, dict[str, object]]] = {
         'url_semver': 'https://semver.org/spec/v2.0.0.html',
     }
 }
+
+
+def generate_changelog_config_model(**kwargs: str) -> None:
+    """Generate a model of changelog configuration file."""
+    conf_file = Path('changelog.toml.sample')
+    if conf_file.exists():
+        logging.warning(
+            'Configuration file already exists: %s', conf_file.name,
+        )
+        return
+
+    changelog_conf_fl.update({f'settings.{k}': v for k, v in kwargs.items()})
+    with conf_file.open('w', encoding='utf-8') as f:
+        toml.dump(changelog_conf_fl, f)
 
 
 def get_os_command(key: str) -> str:
