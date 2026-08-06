@@ -29,6 +29,16 @@ logging.basicConfig(
 )
 
 CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
+changelog_conf_fl: Final[Mapping[str, str | bool]] = {
+    'settings': {
+        'file': 'docs/about/CHANGELOG.md',
+        'reverse': True,
+        'url_compare': 'https://github.com/development-incolume/incolume.py.changelog/-/compare',
+        'url_convetional_commit': 'https://www.conventionalcommits.org/pt-br/v1.0.0',
+        'url_keepachangelog': 'https://keepachangelog.com/en/1.0.0',
+        'url_semver': 'https://semver.org/spec/v2.0.0.html',
+    }
+}
 
 
 def get_os_command(key: str) -> str:
