@@ -12,6 +12,7 @@ from typing import TYPE_CHECKING, Any, Final
 
 import git
 import tomlkit as toml
+from icecream import ic
 
 from incolume.py.changelog import (
     __title__,
@@ -32,7 +33,7 @@ logging.basicConfig(
 CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
 changelog_conf_fl: Final[Mapping[str, dict[str, object]]] = {
     'settings': {
-        'file': 'docs/about/CHANGELOG.md',
+        'file': 'CHANGELOG.md',
         'reverse': True,
         'url_compare': 'https://github.com/development-incolume/incolume.py.changelog/-/compare',
         'url_convetional_commit': 'https://www.conventionalcommits.org/pt-br/v1.0.0',
@@ -50,8 +51,8 @@ def generate_changelog_config_model(**kwargs: str) -> None:
             'Configuration file already exists: %s', conf_file.name,
         )
         return
-
-    changelog_conf_fl.update({f'settings.{k}': v for k, v in kwargs.items()})
+    ic(kwargs)  # type: ignore [reportPrivateUsage]
+    changelog_conf_fl['settings'].update(**kwargs)
     with conf_file.open('w', encoding='utf-8') as f:
         toml.dump(changelog_conf_fl, f)
 
