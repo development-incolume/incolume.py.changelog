@@ -4,7 +4,8 @@ from __future__ import annotations
 from pathlib import Path
 from tempfile import gettempdir
 from unittest import mock
-
+from icecream import ic
+from inspect import stack
 import pytest
 
 from incolume.py.changelog import changelog as pkg
@@ -17,13 +18,11 @@ class TestCase:
 
     def test_generate_changelog_config_model(self) -> None:
         """Test generate_changelog_config_model."""
-        with mock.patch('builtins.open', mock.mock_open()) as m:
-            pkg.generate_changelog_config_model()
-            m.assert_called_once_with(
-                Path(__file__).parent.parent.parent / 'changelog.toml.sample',
-                'w',
-                encoding='utf-8',
-            )
+        fout = Path(gettempdir(), stack()[0][3]) / 'changelog.toml.sample'
+        fout.parent.mkdir(parents=True, exist_ok=True)
+        ic(fout)
+        pkg.generate_changelog_config_model(conf_file=fout.as_posix())
+        assert fout.exists()
 
     @pytest.mark.parametrize(
         ['platform', 'entrance', 'expected'],

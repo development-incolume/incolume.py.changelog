@@ -55,7 +55,7 @@ changelog_conf_fl: Final[Mapping[str, dict[str, object]]] = {
 
 def generate_changelog_config_model(**kwargs: str) -> None:
     """Generate a model of changelog configuration file."""
-    conf_file = Path('changelog.toml.sample')
+    conf_file = Path(kwargs.pop('conf_file', 'changelog.toml.sample'))
     if conf_file.exists():
         logging.warning(
             'Configuration file already exists: %s',
@@ -64,6 +64,7 @@ def generate_changelog_config_model(**kwargs: str) -> None:
         return
     ic(kwargs)  # type: ignore [reportPrivateUsage]
     changelog_conf_fl['settings'].update(**kwargs)
+    ic(changelog_conf_fl)  # type: ignore [reportPrivateUsage]
     with conf_file.open('w', encoding='utf-8') as f:
         toml.dump(changelog_conf_fl, f)
 
