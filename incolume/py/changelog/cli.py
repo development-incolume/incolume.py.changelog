@@ -79,6 +79,7 @@ def changelog(
         ValueError: When there is not git tag records.
 
     """
+    ic(config)  # type: ignore [reportPrivateUsage]
     params = {**config}
     params.pop('file', None)
     params.pop('reverse', None)

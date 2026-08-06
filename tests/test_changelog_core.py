@@ -72,10 +72,10 @@ class TestConfiguration:
                             gettempdir(), stack()[0][3], 'nonexistent_file.md'
                         ).as_posix(),
                         'reverse': True,
-                        'url_compare': '',
-                        'url_keepachangelog': '',
-                        'url_semver': '',
-                        'url_convetional_commit': '',
+                        'url_compare': 'https://xpto.com/incolume.py.changelog/-/compare',
+                        'url_convetional_commit': 'https://www.conventionalcommits.org/pt-br/9.0.0',
+                        'url_keepachangelog': 'https://keepachangelog.com/en/9.0.0',
+                        'url_semver': 'https://semver.org/spec/9.0.0.html',
                     }
                 },
                 {
