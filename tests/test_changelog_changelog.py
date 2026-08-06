@@ -15,6 +15,16 @@ __author__ = '@britodfbr'  # pragma: no cover
 class TestCase:
     """Class test case."""
 
+    def test_generate_changelog_config_model(self) -> None:
+        """Test generate_changelog_config_model."""
+        with mock.patch('builtins.open', mock.mock_open()) as m:
+            pkg.generate_changelog_config_model()
+            m.assert_called_once_with(
+                Path(__file__).parent.parent.parent / 'changelog.toml',
+                'w',
+                encoding='utf-8',
+            )
+
     @pytest.mark.parametrize(
         ['platform', 'entrance', 'expected'],
         [

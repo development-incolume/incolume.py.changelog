@@ -32,8 +32,12 @@ logging.basicConfig(
 
 CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
 
-URL_COMPARE: Final[str] = 'https://github.com/development-incolume/incolume.py.changelog/compare'
-URL_CONVETIONAL_COMMIT: Final[str] = 'https://www.conventionalcommits.org/pt-br/v1.0.0'
+URL_COMPARE: Final[str] = (
+    'https://github.com/development-incolume/incolume.py.changelog/compare'
+)
+URL_CONVETIONAL_COMMIT: Final[str] = (
+    'https://www.conventionalcommits.org/pt-br/v1.0.0'
+)
 URL_KEEPACHANGELOG: Final[str] = 'https://keepachangelog.com/en/1.0.0'
 URL_SEMVER: Final[str] = 'https://semver.org/spec/v2.0.0.html'
 
@@ -54,7 +58,8 @@ def generate_changelog_config_model(**kwargs: str) -> None:
     conf_file = Path('changelog.toml.sample')
     if conf_file.exists():
         logging.warning(
-            'Configuration file already exists: %s', conf_file.name,
+            'Configuration file already exists: %s',
+            conf_file.name,
         )
         return
     ic(kwargs)  # type: ignore [reportPrivateUsage]

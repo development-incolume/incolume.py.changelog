@@ -94,7 +94,9 @@ def changelog(
 
     """
     if generate_config:
-        click.secho('Generating configuration file for changelog...', fg='green')
+        click.secho(
+            'Generating configuration file for changelog...', fg='green'
+        )
         generate_changelog_config_model(**config)
         click.secho('Done!', fg='green')
         return
