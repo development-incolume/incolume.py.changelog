@@ -11,6 +11,8 @@ try:
 except ValueError:  # pragma: no cover
     config = {}
 
+ic(config)  # type: ignore [reportPrivateUsage]
+
 
 @click.command()
 @click.argument('nome', envvar='USERNAME', type=click.STRING)
@@ -41,12 +43,12 @@ def greeting(nome: str) -> None:
 @click.argument(
     'file_changelog',
     type=click.STRING,
-    default=config.get('file', 'CHANGELOG.md'),
+    default=config.pop('file', 'CHANGELOG.md'),
 )
 @click.option(
     '--url',
     '-u',
-    default=config.get(
+    default=config.pop(
         'url_compare',
         'https://github.com/development-incolume/incolume.py.changelog/-/compare',
     ),
@@ -55,7 +57,7 @@ def greeting(nome: str) -> None:
 @click.option(
     '--reverse',
     '-r',
-    default=config.get('reverse', False),
+    default=config.pop('reverse', False),
     is_flag=True,
     help='Reverse order of records.',
 )
@@ -79,17 +81,10 @@ def changelog(
         ValueError: When there is not git tag records.
 
     """
-    ic(config)  # type: ignore [reportPrivateUsage]
-    params = {**config}
-    params.pop('file', None)
-    params.pop('reverse', None)
-    params.pop('url_compare', None)
-    ic(params)  # type: ignore [reportPrivateUsage]
-
     result = update_changelog(
         changelog_file=file_changelog,
         urlcompare=url,
         reverse=reverse,
-        **params,
+        **config,
     )
     click.echo(f'{result}')
