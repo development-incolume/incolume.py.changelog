@@ -20,7 +20,7 @@ class TestCase:
         with mock.patch('builtins.open', mock.mock_open()) as m:
             pkg.generate_changelog_config_model()
             m.assert_called_once_with(
-                Path(__file__).parent.parent.parent / 'changelog.toml',
+                Path(__file__).parent.parent.parent / 'changelog.toml.sample',
                 'w',
                 encoding='utf-8',
             )
