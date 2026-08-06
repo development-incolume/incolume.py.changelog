@@ -29,7 +29,7 @@ logging.basicConfig(
 )
 
 CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
-changelog_conf_fl: Final[Mapping[str, str | bool]] = {
+changelog_conf_fl: Final[Mapping[str, dict[str, object]]] = {
     'settings': {
         'file': 'docs/about/CHANGELOG.md',
         'reverse': True,
