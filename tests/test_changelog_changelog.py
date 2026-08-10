@@ -13,16 +13,35 @@ from incolume.py.changelog import changelog as pkg
 __author__ = '@britodfbr'  # pragma: no cover
 
 
-class TestCase:
+class TestChangeLog:
     """Class test case."""
 
-    def test_generate_changelog_config_model(self) -> None:
+    @pytest.mark.parametrize(
+        'entrance',
+        [
+            pytest.param(
+                {
+                    'conf_file': Path(gettempdir(), stack()[0][3])
+                    / 'changelog.toml.sample'
+                },
+                marks=(),
+            ),
+            pytest.param(
+                {},
+                marks=(),
+            ),
+            pytest.param(
+                {'conf_file': Path(gettempdir()) / 'changelog.toml'},
+                marks=(),
+            ),
+        ],
+    )
+    def test_generate_changelog_config_model(self, entrance) -> None:
         """Test generate_changelog_config_model."""
-        fout = Path(gettempdir(), stack()[0][3]) / 'changelog.toml.sample'
-        fout.parent.mkdir(parents=True, exist_ok=True)
+        fout = entrance.get('conf_file')
         ic(fout)
-        pkg.generate_changelog_config_model(conf_file=fout.as_posix())
-        assert fout.exists()
+        result = pkg.generate_changelog_config_model(conf_file=fout)
+        assert result.exists()
 
     @pytest.mark.parametrize(
         ['platform', 'entrance', 'expected'],
