@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 from pathlib import Path
+import shutil
 from tempfile import gettempdir
 from unittest import mock
 from icecream import ic
@@ -16,6 +17,7 @@ if TYPE_CHECKING:
 
 __author__ = '@britodfbr'  # pragma: no cover
 
+
 @pytest.fixture(autouse=True)
 def setup_environment() -> Generator[None, None, None]:
     """Run before every test in the module/class."""
@@ -26,6 +28,13 @@ def setup_environment() -> Generator[None, None, None]:
 
 class TestChangeLog:
     """Class test case."""
+
+    @pytest.fixture(autouse=True, scope='class')
+    def setup_class_environment(self) -> Generator[None, None, None]:
+        """Run before every test in the module/class."""
+        ic('Setting up test environment for class')
+        yield
+        ic('Cleaning up test environment')
 
     @pytest.mark.parametrize(
         'entrance',
