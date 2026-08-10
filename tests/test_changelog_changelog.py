@@ -1,12 +1,12 @@
 """Test module for changelog."""
 
 from __future__ import annotations
+from inspect import stack
 from pathlib import Path
 import shutil
 from tempfile import gettempdir
 from unittest import mock
 from icecream import ic
-from inspect import stack
 import pytest
 
 from incolume.py.changelog import changelog as pkg
@@ -69,23 +69,29 @@ class TestChangeLog:
         'entrance',
         [
             pytest.param(
+                {'conf_file': fl1},
+                marks=(),
+            ),
+            pytest.param(
                 {
-                    'conf_file': Path(gettempdir(), stack()[0][3])
-                    / 'changelog.toml.sample'
+                    'conf_file': fl1,
+                    'url_compare': 'https://example.com/incolume.py.changelog/compare',
                 },
                 marks=(),
             ),
             pytest.param(
-                {'conf_file': Path(gettempdir()) / 'changelog.toml'},
+                {'conf_file': fl2},
                 marks=(),
             ),
         ],
     )
     def test_generate_changelog_config_model(self, entrance) -> None:
         """Test generate_changelog_config_model."""
-        fout = entrance.get('conf_file')
+        fout = entrance.pop('conf_file')
         ic(fout)
-        result = pkg.generate_changelog_config_model(conf_file=fout)
+        result = pkg.generate_changelog_config_model(
+            conf_file=fout, **entrance
+        )
         assert result.exists()
 
     @pytest.mark.parametrize(
