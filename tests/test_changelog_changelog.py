@@ -9,8 +9,19 @@ from inspect import stack
 import pytest
 
 from incolume.py.changelog import changelog as pkg
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Generator
 
 __author__ = '@britodfbr'  # pragma: no cover
+
+@pytest.fixture(autouse=True)
+def setup_environment() -> Generator[None, None, None]:
+    """Run before every test in the module/class."""
+    ic('Setting up test environment')
+    yield
+    ic('Cleaning up test environment')
 
 
 class TestChangeLog:
