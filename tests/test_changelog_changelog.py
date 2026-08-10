@@ -56,6 +56,15 @@ class TestChangeLog:
         ic(f'finished class {cls.__name__} execution')
         shutil.rmtree(cls.PATH)
 
+    def teardown(self) -> None:
+        """Teardown method.
+
+        Teardown do método. Remove todos os arquivos
+         gerados ao final.
+        """
+        ic(f'finished test {self.__class__.__name__} execution')
+        self.PATH.rmdir()
+
     @pytest.mark.parametrize(
         'entrance',
         [
