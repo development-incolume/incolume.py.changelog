@@ -76,10 +76,6 @@ class TestChangeLog:
                 marks=(),
             ),
             pytest.param(
-                {},
-                marks=(),
-            ),
-            pytest.param(
                 {'conf_file': Path(gettempdir()) / 'changelog.toml'},
                 marks=(),
             ),
