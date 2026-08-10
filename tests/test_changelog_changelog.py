@@ -46,6 +46,16 @@ class TestChangeLog:
         ic('Setting up class resources')
         cls.PATH.mkdir(parents=True, exist_ok=True)
 
+    @classmethod
+    def teardown_class(cls) -> None:
+        """Teardown class.
+
+        Teardown da classe. Remove todos os arquivos
+         e diretórios gerados ao final.
+        """
+        ic(f'finished class {cls.__name__} execution')
+        shutil.rmtree(cls.PATH)
+
     @pytest.mark.parametrize(
         'entrance',
         [
