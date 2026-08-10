@@ -29,12 +29,22 @@ def setup_environment() -> Generator[None, None, None]:
 class TestChangeLog:
     """Class test case."""
 
+    PATH: Path = Path(gettempdir(), stack()[0][3])
+    fl1: Path = PATH / 'changelog.toml.sample'
+    fl2: Path = PATH / 'changelog.toml'
+
     @pytest.fixture(autouse=True, scope='class')
     def setup_class_environment(self) -> Generator[None, None, None]:
         """Run before every test in the module/class."""
         ic('Setting up test environment for class')
         yield
         ic('Cleaning up test environment')
+
+    @classmethod
+    def setup_class(cls) -> None:
+        """Run once before all tests in this class."""
+        ic('Setting up class resources')
+        cls.PATH.mkdir(parents=True, exist_ok=True)
 
     @pytest.mark.parametrize(
         'entrance',
