@@ -77,8 +77,8 @@ To install package using pip:
 
 ## Detalhes da API ##
 
-Disponível em [docs/api](../api/index.md)
+Disponível em [docs/api](https://development-incolume.github.io/incolume.py.changelog/user_guide/api/index.md)
 
 
 ## Detalhes para desenvolvimento ##
-Disponível em [docs/user_guide/development.md](development.md)
+Disponível em [https://development-incolume.github.io/incolume.py.changelog/user_guide/user_guide/development.md](development.md)

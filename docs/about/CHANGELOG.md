@@ -19,6 +19,10 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Security
   - ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF);
 
+## [1.2.1]	 &#8212; 	2026-08-11:
+### Changed
+  - Formatação QA;
+
 ## [1.2.0]	 &#8212; 	2026-08-06:
 ### Deprecated
   - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
@@ -504,4 +508,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.0.0]: https://github.com/development-incolume/incolume.py.changelog/compare/0.20.0...1.0.0
 [1.1.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.0.0...1.1.0
 [1.2.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.1.0...1.2.0
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.2.0...Unreleased
+[1.2.1]: https://github.com/development-incolume/incolume.py.changelog/compare/1.2.0...1.2.1
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.2.1...Unreleased
