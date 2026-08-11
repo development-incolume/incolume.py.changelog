@@ -1,19 +1,98 @@
 """Test module for changelog."""
 
 from __future__ import annotations
+from inspect import stack
 from pathlib import Path
+import shutil
 from tempfile import gettempdir
 from unittest import mock
-
+from icecream import ic
 import pytest
 
 from incolume.py.changelog import changelog as pkg
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from collections.abc import Generator
 
 __author__ = '@britodfbr'  # pragma: no cover
 
 
-class TestCase:
+@pytest.fixture(autouse=True)
+def setup_environment() -> Generator[None, None, None]:
+    """Run before every test in the module/class."""
+    ic('Setting up test environment')
+    yield
+    ic('Cleaning up test environment')
+
+
+class TestChangeLog:
     """Class test case."""
+
+    PATH: Path = Path(gettempdir(), stack()[0][3])
+    fl1: Path = PATH / 'changelog.toml.sample'
+    fl2: Path = PATH / 'changelog.toml'
+
+    @pytest.fixture(autouse=True, scope='class')
+    def setup_class_environment(self) -> Generator[None, None, None]:
+        """Run before every test in the module/class."""
+        ic('Setting up test environment for class')
+        yield
+        ic('Cleaning up test environment')
+
+    @classmethod
+    def setup_class(cls) -> None:
+        """Run once before all tests in this class."""
+        ic('Setting up class resources')
+        cls.PATH.mkdir(parents=True, exist_ok=True)
+
+    @classmethod
+    def teardown_class(cls) -> None:
+        """Teardown class.
+
+        Teardown da classe. Remove todos os arquivos
+         e diretórios gerados ao final.
+        """
+        ic(f'finished class {cls.__name__} execution')
+        shutil.rmtree(cls.PATH)
+
+    def teardown(self) -> None:
+        """Teardown method.
+
+        Teardown do método. Remove todos os arquivos
+         gerados ao final.
+        """
+        ic(f'finished test {self.__class__.__name__} execution')
+        self.PATH.rmdir()
+
+    @pytest.mark.parametrize(
+        'entrance',
+        [
+            pytest.param(
+                {'conf_file': fl1},
+                marks=(),
+            ),
+            pytest.param(
+                {
+                    'conf_file': fl1,
+                    'url_compare': 'https://example.com/incolume.py.changelog/compare',
+                },
+                marks=(),
+            ),
+            pytest.param(
+                {'conf_file': fl2},
+                marks=(),
+            ),
+        ],
+    )
+    def test_generate_changelog_config_model(self, entrance) -> None:
+        """Test generate_changelog_config_model."""
+        fout = entrance.pop('conf_file')
+        ic(fout)
+        result = pkg.generate_changelog_config_model(
+            conf_file=fout, **entrance
+        )
+        assert result.exists()
 
     @pytest.mark.parametrize(
         ['platform', 'entrance', 'expected'],

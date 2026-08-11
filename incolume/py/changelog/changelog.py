@@ -11,6 +11,8 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, Final
 
 import git
+import tomlkit as toml
+from icecream import ic
 
 from incolume.py.changelog import (
     __title__,
@@ -29,6 +31,44 @@ logging.basicConfig(
 )
 
 CHANGELOG_FILE: Final[Path] = Path(__file__).parents[2] / 'CHANGELOG.md'
+
+URL_COMPARE: Final[str] = (
+    'https://github.com/development-incolume/incolume.py.changelog/compare'
+)
+URL_CONVETIONAL_COMMIT: Final[str] = (
+    'https://www.conventionalcommits.org/pt-br/v1.0.0'
+)
+URL_KEEPACHANGELOG: Final[str] = 'https://keepachangelog.com/en/1.0.0'
+URL_SEMVER: Final[str] = 'https://semver.org/spec/v2.0.0.html'
+
+changelog_conf_fl: Final[Mapping[str, dict[str, object]]] = {
+    'settings': {
+        'file': 'CHANGELOG.md',
+        'reverse': True,
+        'url_compare': URL_COMPARE,
+        'url_convetional_commit': URL_CONVETIONAL_COMMIT,
+        'url_keepachangelog': URL_KEEPACHANGELOG,
+        'url_semver': URL_SEMVER,
+    }
+}
+
+
+def generate_changelog_config_model(**kwargs: str | Path) -> Path:
+    """Generate a model of changelog configuration file."""
+    fl = kwargs.pop('conf_file', None) or 'changelog.toml.sample'
+    conf_file = Path(fl)
+    if conf_file.exists():
+        logging.warning(
+            'Configuration file already exists: %s',
+            conf_file,
+        )
+        return conf_file
+    ic(kwargs)  # type: ignore [reportPrivateUsage]
+    changelog_conf_fl['settings'].update(**kwargs)
+    ic(changelog_conf_fl)  # type: ignore [reportPrivateUsage]
+    with conf_file.open('w', encoding='utf-8') as f:
+        toml.dump(changelog_conf_fl, f)
+    return conf_file
 
 
 def get_os_command(key: str) -> str:
@@ -257,7 +297,7 @@ def changelog_header(
             f'and [Conventional Commit]({url_convetional_commit}).\n\n'
         ),
         'This file was automatically generated for',
-        f' [{__title__}]({url_project}/-/tree/{__version__})',
+        f' [{__title__}]({url_project}/tree/{__version__})',
         '\n\n---\n',
     ]
 
