@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "incolume.py.changelog"
-version = "1.3.0a3"
+version = "1.3.0a4"
 description = "Generate CHANGELOG.md"
 authors = [
   {name="britodfbr", email =  "contato@incolume.com.br"}
@@ -109,7 +109,7 @@ incolume-py-githooks = { git = "https://github.com/development-incolume/incolume
 
 [tool.poetry]
 name = "incolume.py.changelog"
-version = "1.3.0a3"
+version = "1.3.0a4"
 description = "Generate CHANGELOG.md"
 license = "Unlicense"
 documentation = "https://development-incolume.github.io/incolume.py.changelog/"
