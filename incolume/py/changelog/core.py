@@ -57,31 +57,83 @@ def load_config(conf_changelog_fl: Path) -> Mapping[str, str | bool]:
     loaded: toml.TOMLDocument = toml.load(conf_changelog_fl.open('rb'))
     config: Mapping[str, str | bool] = {}
     match loaded:
-        case {
-            'settings': {
-                'file': str(),
-                'reverse': bool(),
-                'url_compare': str(),
-                'url_keepachangelog': str(),
-                'url_semver': str(),
-                'url_convetional_commit': str(),
+        case (
+            {
+                'settings': {'file': str()},
             }
-        }:
+            | {
+                'settings': {'reverse': bool()},
+            }
+            | {
+                'settings': {'url_compare': str()},
+            }
+            | {
+                'settings': {'url_keepachangelog': str()},
+            }
+            | {
+                'settings': {'url_semver': str()},
+            }
+            | {
+                'settings': {'url_convetional_commit': str()},
+            }
+        ):
             config = loaded['settings']
-        case {
-            'tool': {
-                'changelog': {
-                    'settings': {
-                        'file': str(),
-                        'reverse': bool(),
-                        'url_compare': str(),
-                        'url_keepachangelog': str(),
-                        'url_semver': str(),
-                        'url_convetional_commit': str(),
+        case (
+            {
+                'tool': {
+                    'changelog': {
+                        'settings': {
+                            'file': str(),
+                        }
                     }
                 }
             }
-        }:
+            | {
+                'tool': {
+                    'changelog': {
+                        'settings': {
+                            'reverse': bool(),
+                        }
+                    }
+                }
+            }
+            | {
+                'tool': {
+                    'changelog': {
+                        'settings': {
+                            'url_compare': str(),
+                        }
+                    }
+                }
+            }
+            | {
+                'tool': {
+                    'changelog': {
+                        'settings': {
+                            'url_keepachangelog': str(),
+                        }
+                    }
+                }
+            }
+            | {
+                'tool': {
+                    'changelog': {
+                        'settings': {
+                            'url_semver': str(),
+                        }
+                    }
+                }
+            }
+            | {
+                'tool': {
+                    'changelog': {
+                        'settings': {
+                            'url_convetional_commit': str(),
+                        }
+                    }
+                }
+            }
+        ):
             config = loaded['tool']['changelog']['settings']
         case _:
             msg = f'Invalid configuration: {conf_changelog_fl.as_posix()}'
