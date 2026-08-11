@@ -26,4 +26,4 @@ Le commit contient les éléments structurels suivants, pour communiquer l'inten
     **perf** : amélioration des performances ;
     **ci** : Intégration continue ;
     **build** : changements qui affectent le système de construction ou les dépendances externes ;
-    **revert** : rétablissement d'un test précédent 
+    **revert** : rétablissement d'un test précédent

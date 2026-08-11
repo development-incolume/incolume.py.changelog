@@ -33,4 +33,3 @@ III. Precedence for two pre-release versions with the same major, minor, and pat
 >- A larger set of pre-release fields has a higher precedence than a smaller set, if all of the preceding identifiers are equal.
 
     Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
-
