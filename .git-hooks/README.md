@@ -1,0 +1,1 @@
+# Git Hooks scripts directory

@@ -62,7 +62,7 @@ A menos que o [parágrafo esteja em uma lista](#adicionando-elementos-em-listas)
 >  ℹ **Nota:** Se você precisar recuar parágrafos na saída, consulte a seção sobre como recuar (tabulação).
 
 |          ✅&nbsp; Faça isso                                | ❌&nbsp; Não faça isso                                          |
-| ---------------------------------------------------------- | ---------------------------------------------------------------- | 
+| ---------------------------------------------------------- | ---------------------------------------------------------------- |
 | Não coloque tabulações ou espaços antes dos parágrafos.    | Isso pode resultar em problemas inesperados de formatação.       |
 | Mantenha as linhas alinhadas à esquerda assim.             | Não adicione tabulações ou espaços antes dos parágrafos.         |
 
@@ -86,10 +86,10 @@ Existem duas outras opções que não recomendo usar. CommonMark e algumas outra
 
 | ✅&nbsp; Faça isso                       | ❌&nbsp; Não faça isso                         |
 | ---------------------------------------- | ----------------------------------------------- |
-| First line with two spaces after.        | Primeira linha com uma barra invertida depois.\ | 
+| First line with two spaces after.        | Primeira linha com uma barra invertida depois.\ |
 | And the next line.                       |E a próxima linha.                               |                  |
 | First line with the HTML tag after.<br>  | Primeira linha sem nada depois.                 |
-|And the next line.                        |E a próxima linha.                               |                               
+|And the next line.                        |E a próxima linha.                               |
 
 ## Ênfase
 
@@ -100,7 +100,7 @@ Você pode adicionar ênfase colocando o texto em negrito ou itálico.
 Para texto em negrito, adicione dois asteriscos ou sublinhados antes e depois de uma palavra ou frase. Para colocar o meio de uma palavra em negrito para dar ênfase, adicione dois asteriscos sem espaços ao redor das letras.
 
 | Remarcação                     | HTML                                        | Saída renderizada               |
-| ------------------------------ | ------------------------------------------- | --------------------------------| 
+| ------------------------------ | ------------------------------------------- | --------------------------------|
 | Eu amo `**texto em negrito**`. | Eu adoro <strong>texto em negrito</strong>. | Eu adoro **texto em negrito** . |
 | Eu amo `__texto em negrito__`. | Eu adoro <strong>texto em negrito</strong>. | Eu adoro __texto em negrito__ . |
 | O amor `**é**` negrito         | O amor<strong>é</strong>negrito             | O amor **é** negrito            |
@@ -234,9 +234,9 @@ Para compatibilidade, coloque linhas em branco antes e depois das aspas.
 
 | ✅&nbsp; Faça isso                        | ❌&nbsp; Não faça isso                             |
 | ------------------------------------------ | -------------------------------------------------- |
-| Tente colocar uma linha em branco antes... | Sem linhas em branco, isso pode não parecer certo.\ 
-|                                            | > Esta é uma citação em bloco\                      
-| > Esta é uma citação em bloco              | Não faça isso!\                                    
+| Tente colocar uma linha em branco antes... | Sem linhas em branco, isso pode não parecer certo.\
+|                                            | > Esta é uma citação em bloco\
+| > Esta é uma citação em bloco              | Não faça isso!\
 |                                            |                                                    |
 | ...e depois de uma citação em bloco.       |                                                    |
 
@@ -295,7 +295,7 @@ Os aplicativos Markdown não concordam sobre como lidar com diferentes delimitad
 | ✅&nbsp; Faça isso                                                       | ❌&nbsp; Não faça isso |
 | ------------------------------------------------------------------------ | ----------------------- |
 | - Primeiro item<br>- Segundo item<br>- Terceiro item<br>- Quarto item    | + Primeiro item<br>* Segundo item<br>- Terceiro item<br>+ Quarto item|
-      
+
 
 ### Adicionando Elementos em Listas
 #TODO #adding-elements-in-lists
@@ -327,7 +327,7 @@ A saída renderizada fica assim:
 
     * Este é o primeiro item da lista.
     * Aqui está o segundo item da lista.
-    
+
         > Uma citação em bloco ficaria ótima abaixo do segundo item da lista.
 
     * E aqui está o terceiro item da lista
@@ -362,7 +362,7 @@ A saída renderizada fica assim:
         <html>
           <head>
             <title>Test</title>
-          </head>  
+          </head>
 
 3. Atualize o título para corresponder ao nome do seu site.
 
@@ -637,7 +637,7 @@ Você pode usar uma barra invertida para escapar dos seguintes caracteres.
 | ----------- | ------------------------------------------------------------------------------ |
 |\            |barra invertida                                                                 |
 |`            |backtick (veja também [escapando de backticks no código](#escapando-de-crases)) |
-|*            |asterisco                                                                       | 
+|*            |asterisco                                                                       |
 |_            |sublinhado                                                                      |
 |{}           |chaves                                                                          |
 |[]           |colchetes                                                                       |

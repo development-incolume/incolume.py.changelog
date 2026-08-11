@@ -65,7 +65,7 @@ uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.g
 
 Specific revision from git repo:
 ```shell
-uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --rev f8bb0dc6792391f30cdabcac1fa5731160a3c27c   
+uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --rev f8bb0dc6792391f30cdabcac1fa5731160a3c27c
 ```
 
 

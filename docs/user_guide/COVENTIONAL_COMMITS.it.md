@@ -26,4 +26,4 @@ Il commit contiene i seguenti elementi strutturali, per comunicare l'intento ai 
     + **perf**: miglioramenti delle prestazioni;
     + **ci**: Integrazione continua;
     + **build**: modifiche che riguardano il sistema di compilazione o le dipendenze esterne;
-    + **revert**: ripristina una precedente modifica 
+    + **revert**: ripristina una precedente modifica
