@@ -56,6 +56,7 @@ greeting = 'incolume.py.changelog.cli:greeting'
 
 [dependency-groups]
 dev = [
+  "incolume-py-githooks",
   "mypy>=1.14.1",
   "mypy-extensions>=1.1.0",
   "poetry>=2.1.4",
@@ -102,6 +103,9 @@ name = "testpypi"
 url = "https://test.pypi.org/simple/"
 publish-url = "https://test.pypi.org/legacy/"
 explicit = true
+
+[tool.uv.sources]
+incolume-py-githooks = { git = "https://github.com/development-incolume/incolume.py.githooks", rev = "main" }
 
 [tool.poetry]
 name = "incolume.py.changelog"
