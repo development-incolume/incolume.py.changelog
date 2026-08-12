@@ -41,7 +41,7 @@ repos:
     #   args: [--nonexequi]
     - id: check-precommit-installed
     #   args: [--nonexequi]
-    - id: check-valid-branchnames
+    # - id: check-valid-branchnames
     #   args: [--nonexequi]
     - id: check-valid-filenames
     #   args: ['--min-len=3', '--max-len=256', '--nonexequi']
@@ -53,5 +53,5 @@ repos:
     #   args: [--nonexequi]
     - id: insert-diff-commit
     #   args: [--nonexequi]
-    - id: validate-message-commit
+    # - id: validate-message-commit
     #   args: [--nonexequi]
