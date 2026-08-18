@@ -33,7 +33,7 @@ class Entrance:
     fileversion: Path
 
 
-class TestConfiguration:
+class TestFindProjectRoot:
     """Test case for module."""
 
     def test_find_project_root0(self) -> None:
@@ -43,7 +43,7 @@ class TestConfiguration:
     def test_find_project_root1(self) -> None:
         """Test for find_project_root."""
         directory = Path(gettempdir(), stack()[0][3], 'noproject')
-        directory.mkdir(parents=True, exist_ok=True)
+        directory.joinpath('.venv').mkdir(parents=True, exist_ok=True)
 
         assert pkg.find_project_root(directory) == directory
 
@@ -53,6 +53,10 @@ class TestConfiguration:
         directory.mkdir(parents=True, exist_ok=True)
         directory.joinpath('pyproject.toml').touch()
         assert pkg.find_project_root(directory) == directory
+
+
+class TestConfiguration:
+    """Test case for module."""
 
     def test_configuration_fl0(self) -> None:
         """Test for check_configuration."""
