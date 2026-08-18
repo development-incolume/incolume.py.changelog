@@ -36,6 +36,24 @@ class Entrance:
 class TestConfiguration:
     """Test case for module."""
 
+    def test_find_project_root0(self) -> None:
+        """Test for find_project_root."""
+        assert pkg.find_project_root() == Path(__file__).parent.parent
+
+    def test_find_project_root1(self) -> None:
+        """Test for find_project_root."""
+        directory = Path(gettempdir(), stack()[0][3], 'noproject')
+        directory.mkdir(parents=True, exist_ok=True)
+
+        assert pkg.find_project_root(directory) == directory
+
+    def test_find_project_root2(self) -> None:
+        """Test for find_project_root."""
+        directory = Path(gettempdir(), stack()[0][3], 'project_test')
+        directory.mkdir(parents=True, exist_ok=True)
+        directory.joinpath('pyproject.toml').touch()
+        assert pkg.find_project_root(directory) == directory
+
     def test_configuration_fl0(self) -> None:
         """Test for check_configuration."""
         fl = Path(gettempdir(), stack()[0][3], 'nonexistent_file.toml')
