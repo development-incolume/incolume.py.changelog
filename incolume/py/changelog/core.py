@@ -14,9 +14,9 @@ from icecream import ic
 confproject = Path(__file__).parents[3] / 'pyproject.toml'
 versionfile = Path(__file__).parent / 'version.txt'
 confchangelog = [
-    confproject.with_name('changelog.toml'),
-    confproject.with_name('.changelog.toml'),
-    confproject,
+    'changelog.toml',
+    '.changelog.toml',
+    confproject.name,
 ]
 
 # setting default values for logger variables
@@ -61,13 +61,16 @@ def find_project_root(
 
 
 def select_configuration_fl(
-    conf_changelog_fl: Path | None = None, files: list[Path] | None = None
+    conf_changelog_fl: Path | None = None,
+    files: list[Path] | None = None,
+    project_root: Path | None = None,
 ) -> Path:
     """Check if the configuration file exists."""
+    project_root = project_root or find_project_root()
     files = (
         [conf_changelog_fl, *files]  # type: ignore [list-item]
         if isinstance(files, list)
-        else [conf_changelog_fl, *confchangelog]  # type: ignore [list-item]
+        else [conf_changelog_fl, *(project_root / fl for fl in confchangelog)]  # type: ignore [list-item]
     )
     for file in [f for f in files if f]:
         if file.exists():
