@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 from collections import OrderedDict
-from typing import Any, ClassVar
+import re
+from typing import Any, ClassVar, TYPE_CHECKING
 from inspect import stack
 import logging
 import pytest
@@ -14,6 +15,9 @@ from shutil import rmtree
 from dataclasses import dataclass
 from dotenv import load_dotenv
 from os import getenv
+
+if TYPE_CHECKING:
+    from collections.abc import Generator
 
 
 __author__ = '@britodfbr'  # pragma: no cover
@@ -36,23 +40,69 @@ class Entrance:
 class TestFindProjectRoot:
     """Test case for module."""
 
+    @pytest.fixture(autouse=True, scope='class')
+    @classmethod
+    def class_setup_teardown(cls) -> Generator[stack, None, None]:
+        """Set up/teardown class."""
+        ic(f'Setup Class {cls.__name__}')
+        cls.base_dir = Path(gettempdir(), cls.__name__)
+        yield
+        ic(f'Teardown Class {cls.__name__}')
+
+    @pytest.fixture(autouse=True)
+    def method_setup_teardown(self, request) -> Generator[stack, None, None]:
+        """Set up/teardown method."""
+        ic(f'Setup Method: {request.function.__name__}')
+        self.directory = self.base_dir / request.function.__name__
+        yield
+        ic(f'Teardown Method: {request.function.__name__}')
+
     def test_find_project_root0(self) -> None:
         """Test for find_project_root."""
         assert pkg.find_project_root() == Path(__file__).parent.parent
 
     def test_find_project_root1(self) -> None:
         """Test for find_project_root."""
-        directory = Path(gettempdir(), stack()[0][3], 'noproject')
-        directory.joinpath('.venv').mkdir(parents=True, exist_ok=True)
+        self.directory.joinpath('noproject', 'a', 'b', 'c').mkdir(
+            parents=True, exist_ok=True
+        )
 
-        assert pkg.find_project_root(directory) == directory
+        with pytest.raises(
+            FileNotFoundError,
+            match=re.escape('Project root not found (no markers detected).'),
+        ):
+            pkg.find_project_root(
+                start_dir=self.directory / 'noproject' / 'a' / 'b' / 'c',
+                markers=('pyproject.toml',),
+            )
 
     def test_find_project_root2(self) -> None:
         """Test for find_project_root."""
-        directory = Path(gettempdir(), stack()[0][3], 'project_test')
-        directory.mkdir(parents=True, exist_ok=True)
-        directory.joinpath('pyproject.toml').touch()
-        assert pkg.find_project_root(directory) == directory
+        self.directory.joinpath('project_test').mkdir(
+            parents=True, exist_ok=True
+        )
+        self.directory.joinpath('project_test', 'pyproject.toml').touch()
+        assert (
+            pkg.find_project_root(self.directory / 'project_test')
+            == self.directory / 'project_test'
+        )
+
+    def test_find_project_root3(self) -> None:
+        """Test for find_project_root."""
+        self.directory.joinpath('anotherproject', 'venv').mkdir(
+            parents=True, exist_ok=True
+        )
+        self.directory.joinpath('anotherproject', 'a', 'b', 'c').mkdir(
+            parents=True, exist_ok=True
+        )
+
+        assert (
+            pkg.find_project_root(
+                start_dir=self.directory / 'anotherproject' / 'a' / 'b' / 'c',
+                markers=('venv',),
+            )
+            == self.directory / 'anotherproject'
+        )
 
 
 class TestConfiguration:
