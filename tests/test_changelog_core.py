@@ -285,13 +285,17 @@ class TestChangelogInit:
 
     def setup_method(self, method) -> None:
         """Set up method."""
-        logging.info(ic(f'starting execution ({method}) of {stack()[0][3]}'))
+        logging.info(
+            ic(f'starting execution {stack()[0][3]} for {method.__name__}')
+        )
         self.confproject0.write_text('[tool.poetry]\nversion = "0.1.0"')
         self.confproject1.write_text('[project]\nversion = "0.1.0"')
 
     def teardown_method(self, method) -> None:
         """Tear down method."""
-        logging.info(ic(f'finishing execution ({method}) of {stack()[0][3]}'))
+        logging.info(
+            ic(f'finishing execution ({method.__name__}) .. {stack()[0][3]}')
+        )
         rmtree(self.confproject0, ignore_errors=True)
         rmtree(self.confproject1, ignore_errors=True)
 
