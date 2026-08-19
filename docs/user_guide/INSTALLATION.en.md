@@ -65,7 +65,7 @@ uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.g
 
 Specific revision from git repo:
 ```shell
-uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --rev f8bb0dc6792391f30cdabcac1fa5731160a3c27c   
+uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --rev f8bb0dc6792391f30cdabcac1fa5731160a3c27c
 ```
 
 
@@ -77,8 +77,8 @@ To install package using pip:
 
 ## Detalhes da API ##
 
-Disponível em [docs/api](../api/index.md)
+Disponível em [docs/api](https://development-incolume.github.io/incolume.py.changelog/user_guide/api/index.md)
 
 
 ## Detalhes para desenvolvimento ##
-Disponível em [docs/user_guide/development.md](development.md)
+Disponível em [https://development-incolume.github.io/incolume.py.changelog/user_guide/user_guide/development.md](development.md)
