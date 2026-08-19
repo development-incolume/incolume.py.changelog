@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 from collections import OrderedDict
-from typing import Any, ClassVar
+import re
+from typing import Any, ClassVar, TYPE_CHECKING
 from inspect import stack
 import logging
 import pytest
@@ -14,6 +15,10 @@ from shutil import rmtree
 from dataclasses import dataclass
 from dotenv import load_dotenv
 from os import getenv
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
+    from collections.abc import Generator
 
 
 __author__ = '@britodfbr'  # pragma: no cover
@@ -31,6 +36,80 @@ class Entrance:
 
     fileconfig: Path
     fileversion: Path
+
+
+class TestFindProjectRoot:
+    """Test case for module."""
+
+    base_dir: ClassVar[Path]
+
+    @pytest.fixture(autouse=True, scope='class')
+    @classmethod
+    def class_setup_teardown(
+        cls,
+    ) -> Generator[Callable[..., None], None, None]:
+        """Set up/teardown class."""
+        ic(f'Setup Class {cls.__name__}')
+        cls.base_dir = Path(gettempdir(), cls.__name__)
+        yield  # type: ignore[misc]
+        ic(f'Teardown Class {cls.__name__}')
+
+    @pytest.fixture(autouse=True)
+    def method_setup_teardown(
+        self, request
+    ) -> Generator[Callable[..., None], None, None]:
+        """Set up/teardown method."""
+        ic(f'Setup Method: {request.function.__name__}')
+        self.directory = self.base_dir / request.function.__name__
+        yield  # type: ignore[misc]
+        ic(f'Teardown Method: {request.function.__name__}')
+
+    def test_find_project_root0(self) -> None:
+        """Test for find_project_root."""
+        assert pkg.find_project_root() == Path(__file__).parent.parent
+
+    def test_find_project_root1(self) -> None:
+        """Test for find_project_root."""
+        self.directory.joinpath('noproject', 'a', 'b', 'c').mkdir(
+            parents=True, exist_ok=True
+        )
+
+        with pytest.raises(
+            FileNotFoundError,
+            match=re.escape('Project root not found (no markers detected).'),
+        ):
+            pkg.find_project_root(
+                start_dir=self.directory / 'noproject' / 'a' / 'b' / 'c',
+                markers=('pyproject.toml',),
+            )
+
+    def test_find_project_root2(self) -> None:
+        """Test for find_project_root."""
+        self.directory.joinpath('project_test').mkdir(
+            parents=True, exist_ok=True
+        )
+        self.directory.joinpath('project_test', 'pyproject.toml').touch()
+        assert (
+            pkg.find_project_root(self.directory / 'project_test')
+            == self.directory / 'project_test'
+        )
+
+    def test_find_project_root3(self) -> None:
+        """Test for find_project_root."""
+        self.directory.joinpath('anotherproject', 'venv').mkdir(
+            parents=True, exist_ok=True
+        )
+        self.directory.joinpath('anotherproject', 'a', 'b', 'c').mkdir(
+            parents=True, exist_ok=True
+        )
+
+        assert (
+            pkg.find_project_root(
+                start_dir=self.directory / 'anotherproject' / 'a' / 'b' / 'c',
+                markers=('venv',),
+            )
+            == self.directory / 'anotherproject'
+        )
 
 
 class TestConfiguration:
@@ -206,13 +285,17 @@ class TestChangelogInit:
 
     def setup_method(self, method) -> None:
         """Set up method."""
-        logging.info(ic(f'starting execution ({method}) of {stack()[0][3]}'))
+        logging.info(
+            ic(f'starting execution {stack()[0][3]} for {method.__name__}')
+        )
         self.confproject0.write_text('[tool.poetry]\nversion = "0.1.0"')
         self.confproject1.write_text('[project]\nversion = "0.1.0"')
 
     def teardown_method(self, method) -> None:
         """Tear down method."""
-        logging.info(ic(f'finishing execution ({method}) of {stack()[0][3]}'))
+        logging.info(
+            ic(f'finishing execution ({method.__name__}) .. {stack()[0][3]}')
+        )
         rmtree(self.confproject0, ignore_errors=True)
         rmtree(self.confproject1, ignore_errors=True)
 

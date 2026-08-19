@@ -1,5 +1,3 @@
-# Maintainers / Contributors
-
 # Responsables / Contributeurs
 
 Nom| Responsable     | Développement | Testeur         | Documentaliste     |Contact

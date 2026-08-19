@@ -5,13 +5,13 @@ básicas. Como _estilo de formatação de código_,
 
 ## Código de conduta
 
-Detalhes em [docs/user_guide/code_of_conduct.md](code_of_conduct.md).
+Detalhes em [https://development-incolume.github.io/incolume.py.changelog/user_guide/code_of_conduct.md](code_of_conduct.md).
 
 ## Padrões aplicados
 
 Este projeto segue as recomendações descritas em
-[Tecnologias](../prefacio.md#tecnologias-adotadas) e
-[Convenções](../prefacio.md#convenções-adotadas) Adotadas.
+[Tecnologias](https://development-incolume.github.io/incolume.py.changelog/user_guide/) e
+[Convenções](https://development-incolume.github.io/incolume.py.changelog/user_guide/) Adotadas.
 
 
 ## Prerequisitos
@@ -22,7 +22,7 @@ Este projeto segue as recomendações descritas em
     - pyenv + pip; ou
     - pyenv + poetry 1.2.0+;
     - uv 0.8.11+ (preferencialmente);
-
+https://development-incolume.github.io/incolume.py.changelog/user_guide/zenpy/
 
 ## Iniciando ambiente de desenvolvimento
 
