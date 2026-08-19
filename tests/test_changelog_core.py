@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 from os import getenv
 
 if TYPE_CHECKING:
+    from collections.abc import Callable
     from collections.abc import Generator
 
 
@@ -40,21 +41,27 @@ class Entrance:
 class TestFindProjectRoot:
     """Test case for module."""
 
+    base_dir: ClassVar[Path]
+
     @pytest.fixture(autouse=True, scope='class')
     @classmethod
-    def class_setup_teardown(cls) -> Generator[stack, None, None]:
+    def class_setup_teardown(
+        cls,
+    ) -> Generator[Callable[..., None], None, None]:
         """Set up/teardown class."""
         ic(f'Setup Class {cls.__name__}')
         cls.base_dir = Path(gettempdir(), cls.__name__)
-        yield
+        yield  # type: ignore[misc]
         ic(f'Teardown Class {cls.__name__}')
 
     @pytest.fixture(autouse=True)
-    def method_setup_teardown(self, request) -> Generator[stack, None, None]:
+    def method_setup_teardown(
+        self, request
+    ) -> Generator[Callable[..., None], None, None]:
         """Set up/teardown method."""
         ic(f'Setup Method: {request.function.__name__}')
         self.directory = self.base_dir / request.function.__name__
-        yield
+        yield  # type: ignore[misc]
         ic(f'Teardown Method: {request.function.__name__}')
 
     def test_find_project_root0(self) -> None:
