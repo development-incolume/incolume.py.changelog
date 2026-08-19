@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/tree/1.3.0a7)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/tree/1.3.0)
 
 ---
 
@@ -18,6 +18,14 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Agregado compatibilidade com configuração parcial no changelog.toml;
 ### Security
   - ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF);
+
+## [1.3.0]	 &#8212; 	2026-08-19:
+### Deprecated
+  - Será Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+  - Será Descontinuado suporte a Python 3.11 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
+### Added
+  - Agregado compatibilidade com configuração parcial no changelog.toml;
+  - Acrescentado modo de busca da raiz do projeto nos principais modelos de projetos python;
 
 ## [1.2.1]	 &#8212; 	2026-08-11:
 ### Changed
@@ -509,4 +517,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.1.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.0.0...1.1.0
 [1.2.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.1.0...1.2.0
 [1.2.1]: https://github.com/development-incolume/incolume.py.changelog/compare/1.2.0...1.2.1
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.2.1...Unreleased
+[1.3.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.2.1...1.3.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.3.0...Unreleased
