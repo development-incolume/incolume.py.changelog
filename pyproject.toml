@@ -33,6 +33,7 @@ dependencies = [
     "click>=8.1.5",
     "gitpython>=3.1.43",
     "icecream>=2.1.5",
+    "incolume-py-githooks>=1.18.0",
     "python-dotenv[cli]>=1.0.1",
     "tomlkit>=0.13.3",
     "unidecode>=1.4.0",
