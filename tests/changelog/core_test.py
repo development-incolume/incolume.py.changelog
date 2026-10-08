@@ -66,7 +66,7 @@ class TestFindProjectRoot:
 
     def test_find_project_root0(self) -> None:
         """Test for find_project_root."""
-        assert pkg.find_project_root() == Path(__file__).parent.parent
+        assert pkg.find_project_root() == Path(__file__).parents[2]
 
     def test_find_project_root1(self) -> None:
         """Test for find_project_root."""
