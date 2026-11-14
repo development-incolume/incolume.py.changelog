@@ -54,7 +54,7 @@ repos:
     - id: check-manual-version
     #   args: [--nonexequi|-N, --version|-V]
     - id: check-precommit-installed
-    #   args: [--nonexequi|-N, --version|-V]
+      args: [-N]
     - id: check-type-commit-msg
     #   args: [--nonexequi|-N, --version|-V]
     - id: check-type-from-status
@@ -78,6 +78,6 @@ repos:
     - id: set-type-from-status
     #   args: [--nonexequi|-N, --version|-V]
     - id: set_issue_from_branch_cli
-    #   args: [--nonexequi|-N, --version|-V]
+      args: [-N]
     - id: validate-message-commit
     #   args: [--nonexequi|-N, --version|-V]
