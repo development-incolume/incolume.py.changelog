@@ -944,3 +944,33 @@ class TestClassChangelog:
     ) -> None:
         """Test for iter_logs."""
         assert pkg.Changelog.iter_logs(**entrance) == expected
+
+    def test_changelog_write_unicode_no_windows(
+        self,
+        file_temp: Path,
+    ) -> None:
+        """Gravacao com acentos nao deve falhar no Windows.
+
+        Issue #176: o round-trip encode(iso-8859-1)/decode(utf-8) quebra
+        com anotacoes de tag acentuadas no Windows.
+        """
+        content = [
+            (
+                '1.23.0',
+                {
+                    'date': '2026-11-14',
+                    'key': '1.23.0',
+                    'messages': {
+                        'Added': ['novo hook de validação — correção'],
+                    },
+                },
+            ),
+        ]
+        with mock.patch('sys.platform', 'win32'):
+            result = pkg.changelog_write(
+                content=content,
+                changelog_file=file_temp.as_posix(),
+            )
+
+        assert result
+        assert 'validação' in file_temp.read_text(encoding='utf-8')
