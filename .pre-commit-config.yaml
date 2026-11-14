@@ -17,6 +17,9 @@ repos:
     - id: check-toml
     - id: check-xml
     - id: check-yaml
+      # mkdocs.yml usa tags `!!python/name:` (extensão de emojis); --unsafe
+      # faz somente parse sintático, permitindo construtores customizados.
+      args: [--unsafe]
     - id: detect-private-key
     - id: double-quote-string-fixer
     - id: end-of-file-fixer
