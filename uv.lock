@@ -1421,8 +1421,8 @@ doc = [
 
 [[package]]
 name = "incolume-py-githooks"
-version = "1.23.0"
-source = { git = "https://github.com/development-incolume/incolume.py.githooks?rev=main#079f2f0d3c20c0d11b86f33fe5ce115d035591a5" }
+version = "1.24.0"
+source = { git = "https://github.com/development-incolume/incolume.py.githooks?rev=main#58126a0d5229fd34cda310bb762b21ed2299b4b8" }
 dependencies = [
     { name = "click" },
     { name = "colorama" },
