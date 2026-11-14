@@ -1,6 +1,6 @@
 # File .pre-commit-config.yaml
 
-default_install_hook_types: [pre-commit, pre-push, prepare-commit-msg, post-commit]
+default_install_hook_types: [pre-commit, pre-push, prepare-commit-msg, commit-msg, post-commit]
 repos:
 
 - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -39,8 +39,8 @@ repos:
       args: [--config, ruff.toml]
 
 - repo: https://github.com/development-incolume/incolume.py.githooks
-  # https://github.com/development-incolume/incolume.py.githooks/blob/1.17.0/README.md
-  rev: 1.18.2
+  # https://github.com/development-incolume/incolume.py.githooks/blob/1.23.0/README.md
+  rev: 1.23.0
   hooks:
     - id: check-len-first-line
     #   args: [--nonexequi|-N, --version|-V, --min-first-line=10, --max-first-line=256]
