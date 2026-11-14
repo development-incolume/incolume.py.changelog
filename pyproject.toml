@@ -55,7 +55,7 @@ greeting = 'incolume.py.changelog.cli:greeting'
 
 [dependency-groups]
 dev = [
-  "incolume-py-githooks>=1.23.0",
+  "incolume-py-githooks>=1.24.0",
   "mypy>=1.14.1",
   "mypy-extensions>=1.1.0",
   "poetry>=2.1.4",
