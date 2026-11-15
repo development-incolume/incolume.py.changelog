@@ -40,7 +40,7 @@ caminho de leitura do gerador — não do arquivo.
 | `user_guide/development.md` | ✓ | vazio | vazio | vazio | vazio | vazio | desatualizado |
 | `user_guide/INSTALLATION` | — | ✓ | — | — | — | — | conteúdo errado/órfão |
 | `user_guide/usage` | — | ✓ | — | — | — | — | conteúdo alheio |
-| `user_guide/markdown.md` | ✓ | — | — | — | — | — | conteúdo alheio |
+| `user_guide/markdown.md` | ✓ | — | — | — | — | — | ok (pt apenas; âncoras quebradas) |
 | `user_guide/code_of_conduct` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ok |
 | `user_guide/COVENTIONAL_COMMITS` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | divergente (en 84 × pt 31 linhas) |
 | `user_guide/keep-a-changelog` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ok |
@@ -55,9 +55,12 @@ caminho de leitura do gerador — não do arquivo.
 
 ### A. Conteúdo errado ou de outro projeto
 
-- `user_guide/markdown.md` (992 linhas): é o template do
-  **coding-dojo / `incolume.py.model-2023-07-05`**, não um guia de Markdown.
-- `user_guide/usage.en.md` (412 linhas): o mesmo template, em inglês.
+- `user_guide/usage.en.md` (412 linhas): é o template do
+  **coding-dojo / `incolume.py.model-2023-07-05`**, em inglês — conteúdo de
+  outro repositório.
+- `user_guide/markdown.md` (992 linhas) é um guia de Markdown legítimo (pt),
+  mas possui âncoras quebradas (`#blocos-de-código`, `#ênfase`, `#código`,
+  `#code`, `#ligações`) apontadas em `mkdocs build`.
 - `user_guide/INSTALLATION.en.md`: título "Guia de Uso", mistura pt/en, fixa
   a versão `1.0.0` e aponta links errados (`user_guide/api/index.md`,
   `user_guide/user_guide/development.md`).
@@ -137,7 +140,7 @@ caminho de leitura do gerador — não do arquivo.
 | Sprint | Objetivo | Tarefas | Idiomas | Critério de aceite |
 |---|---|---|---|---|
 | **0 — Crítico** (1 dia) | Parar a sangria | T0.1 corrigir a leitura UTF-8 do gerador (teste vermelho com locale latin-1) e regerar `CHANGELOG.md` via `uv run task changelog`; T0.2 corrigir `docs_ci_cd.yml` (`uv sync --all-groups`, actions atuais); T0.3 corrigir `README.md`; T0.4 corrigir `docs/index.md` | pt | CI de docs verde; CHANGELOG sem mojibake; README sem links/comandos quebrados |
-| **1 — Conteúdo base pt** (3–5 dias) | Docs do projeto corretos | T1.1 reescrever `markdown.md`; T1.2 reescrever `usage.md`; T1.3 criar `INSTALLATION.md` (pt) e remover o `.en` errado; T1.4 reescrever `development.md`; T1.5 documentar `api/index.md` (`core`, `__init__`, exemplos); T1.6 decidir `analysis_artifacts` (criar PRD/ADR/SPEC ou remover); T1.7 ajustar o `nav`; T1.8 revisão textual pt-BR (ortografia, terminologia, links) | pt | Cada doc existente no nav; nenhum template alheio; comandos verificados |
+| **1 — Conteúdo base pt** (3–5 dias) | Docs do projeto corretos | T1.1 revisar `markdown.md` (âncoras quebradas); T1.2 reescrever `usage.md`; T1.3 criar `INSTALLATION.md` (pt) e remover o `.en` errado; T1.4 reescrever `development.md`; T1.5 documentar `api/index.md` (`core`, `__init__`, exemplos); T1.6 decidir `analysis_artifacts` (criar PRD/ADR/SPEC ou remover); T1.7 ajustar o `nav`; T1.8 revisão textual pt-BR (ortografia, terminologia, links) | pt | Cada doc existente no nav; nenhum template alheio; comandos verificados |
 | **2 — i18n** (5–7 dias) | Seis idiomas completos | T2.1 traduzir `index.md`; T2.2 traduzir `markdown`, `development`, `INSTALLATION`, `usage`, `api/index`, `user_guide/README`; T2.3 preencher `development.*` vazios; T2.4 completar `nav_translations`; T2.5 revisar divergência `COVENTIONAL_COMMITS.en`; T2.7 revisão textual das traduções (de/en/es/fr/it) | de/en/es/fr/it | Matriz 100% sem arquivos vazios; nav traduzida |
 | **3 — Qualidade** (3–5 dias) | Sustentável | T3.1 validação de links/encoding no CI; T3.2 padronizar URLs sem `.md`; T3.3 exemplos de API testáveis; T3.4 guia de contribuição (mkdocs/i18n/tags) nos seis idiomas; T3.5 publicar e conferir o site; T3.6 revisão textual final e glossário nos seis idiomas | todos | Deploy verde; site refletindo o repo |
 
