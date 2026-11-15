@@ -23,6 +23,57 @@ jobs:
           python -m pip install -U pip uv
           uv sync --all-groups
 
+      - name: Validate documentation links and encoding
+        run: |
+          uv run python - <<'PY'
+          import os
+          import re
+          import sys
+
+          LINK_RE = re.compile(r'\[[^\]]*\]\(([^)\s]+)\)')
+          SKIP_SCHEMES = ('http:', 'https:', 'mailto:', 'tel:', 'data:', '#')
+          errors = []
+          for root, _dirs, files in os.walk('docs'):
+              for fn in sorted(files):
+                  if not fn.endswith('.md'):
+                      continue
+                  for ln, line in enumerate(
+                          open(os.path.join(root, fn), encoding='utf-8'), 1):
+                      for href in LINK_RE.findall(line):
+                          target = href.split('#', 1)[0].split('?', 1)[0]
+                          if target.startswith(SKIP_SCHEMES):
+                              continue
+                          base = '' if target.startswith('/') else os.path.dirname(
+                              os.path.join(root, fn))
+                          target = target.lstrip('/')
+                          candidates = [target, target + '.md',
+                                        os.path.join(target, 'index.md'),
+                                        os.path.join(target, 'README.md')]
+                          if not any(os.path.exists(os.path.join(base, c))
+                                     for c in candidates):
+                              print('link quebrado: {}:{}: {}'.format(
+                                  os.path.join(root, fn), ln, href),
+                                    file=sys.stderr)
+                              errors.append(1)
+          if errors:
+              print('{} link(s) quebrado(s)'.format(len(errors)), file=sys.stderr)
+              sys.exit(1)
+          print('links internos OK')
+
+          import codecs
+          for root, _dirs, files in os.walk('docs'):
+              for fn in files:
+                  if fn.endswith(('.md', '.txt', '.py', '.yaml', '.yml',
+                                   '.toml')):
+                      p = os.path.join(root, fn)
+                      try:
+                          codecs.open(p, encoding='utf-8', errors='strict').close()
+                      except UnicodeDecodeError as exc:
+                          raise SystemExit('encoding UTF-8 inválido em {}: {}'.format(
+                              p, exc))
+          print('encoding UTF-8 válido em todos os arquivos de docs/')
+          PY
+
       - name: Generate and deploy the documentation
         run: |
           git pull origin
