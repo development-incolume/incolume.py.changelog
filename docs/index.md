@@ -3,7 +3,7 @@
 
 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF)
-[![Codecov](https://img.shields.io/codecov/c/github/development-incolume/incolume.py.changelog?color=00FFFF&label=codecov&logo=codecov)]((https://codecov.io/gh/development-incolume/incolume.py.changelog))
+[![Codecov](https://img.shields.io/codecov/c/github/development-incolume/incolume.py.changelog?color=00FFFF&label=codecov&logo=codecov)](https://codecov.io/gh/development-incolume/incolume.py.changelog)
 ![PyPI - Version](https://img.shields.io/pypi/v/incolume.py.changelog?color=00FFFF&label=pypi+package)
 
 [![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml)
@@ -41,7 +41,7 @@
 ---
 ## Objetivos
 
-Esta API automatiza a criação de um arquivo changelog utilizando os resgistros do git, para gerenciar melhor seus projetos, seguindo a metodologia do Keep a Changelog.
+Esta API automatiza a criação de um arquivo changelog utilizando os registros do git, para gerenciar melhor seus projetos, seguindo a metodologia do Keep a Changelog.
 
 ## Descrição
 
@@ -49,23 +49,23 @@ O funcionamento é através da captura dos registros do comando `git tag -n`,
 obtendo assim data, etiquetas e modificações, gerando então um arquivo de
 gerenciamento de mudanças relevantes para cada versão.
 
-No pacote há ferramentas para Quality Assurance (QA) como ruff, mypy, pylint,
-isort, pydocstyle; além de ferramentas de segurança como bandit, pipaudit e safety.
+No pacote há ferramentas para Quality Assurance (QA) como ruff e mypy;
+além de ferramentas de segurança como bandit, pipaudit e safety.
 
 
 ## Exemplos e Uso
-Disponível em [docs/api](https://development-incolume.github.io/incolume.py.changelog/api/index.md).
+Disponível em [docs/api](https://development-incolume.github.io/incolume.py.changelog/api/).
 
 
 ## Registro de Mudanças
-Disponível em [docs/about/CHANGELOG.md](https://development-incolume.github.io/incolume.py.changelog/about/CHANGELOG.md).
+Disponível em [docs/about/CHANGELOG](https://development-incolume.github.io/incolume.py.changelog/about/CHANGELOG/).
 
 
 ## Contribuidores
-Disponível em [docs/about/CONTRIBUTORS.md](https://development-incolume.github.io/incolume.py.changelog/about/CONTRIBUTORS.md).
+Disponível em [docs/about/CONTRIBUTORS](https://development-incolume.github.io/incolume.py.changelog/about/CONTRIBUTORS/).
 
 
 ## Tecnologias aplicadas
 Deseja aprender mais sobre alguns dos requisitos
 não funcionais utilizados no projeto?
-Consulte a sessão [Padrões Aplicados em Guia de Contribuíção](https://development-incolume.github.io/incolume.py.changelog/user_guide/development.md).
+Consulte a sessão [Padrões Aplicados em Guia de Contribuição](https://development-incolume.github.io/incolume.py.changelog/user_guide/development/).

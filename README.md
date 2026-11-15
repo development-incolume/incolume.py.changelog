@@ -5,7 +5,7 @@
 _Projeto desenvolvido e administrado por incolume.com.br_
 
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF)
-[![Codecov](https://img.shields.io/codecov/c/github/development-incolume/incolume.py.changelog?color=00FFFF&label=codecov&logo=codecov)]((https://codecov.io/gh/development-incolume/incolume.py.changelog))
+[![Codecov](https://img.shields.io/codecov/c/github/development-incolume/incolume.py.changelog?color=00FFFF&label=codecov&logo=codecov)](https://codecov.io/gh/development-incolume/incolume.py.changelog)
 ![PyPI - Version](https://img.shields.io/pypi/v/incolume.py.changelog?color=00FFFF&label=pypi+package)
 
 [![Tests CI/CD](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/development-incolume/incolume.py.changelog/actions/workflows/unit-tests.yml)
@@ -45,7 +45,7 @@ _Projeto desenvolvido e administrado por incolume.com.br_
 
 ### Incolume Python Changelog
 
-Este gera o Changelog a partir dos registros encontrados em `git tag -n`.
+Este projeto gera o CHANGELOG a partir dos registros encontrados em `git tag -n`.
 
 ## Instalar o pacote
 
@@ -69,8 +69,8 @@ poetry add -G dev git+https://github.com/development-incolume/incolume.py.change
 
 ### Instalação com uv
 ```shell
-uv venv -p 3.10
-uv pip add --dev incolume.py.changelog==0.15.0
+uv venv -p 3.12
+uv pip install incolume.py.changelog
 ```
 
 ## Atualizar o pacote
@@ -93,8 +93,7 @@ poetry update -G dev git+https://github.com/development-incolume/incolume.py.cha
 
 ### Atualização com uv
 ```shell
-uv venv -p 3.10
-uv pip add --dev incolume.py.changelog==1.0.0
+uv pip install -U incolume.py.changelog
 ```
 
 ## Gerar pacote a partir dos fontes para instalação
@@ -105,16 +104,16 @@ poetry build
 
 ## Exemplos e Uso
 Exemplos e outras curiosidades sobre este projeto podem
-ser visualizadas em [docs/api](https://development-incolume.github.io/incolume.py.changelog/api/index.md).
+ser visualizadas em [docs/api](https://development-incolume.github.io/incolume.py.changelog/api/).
 
 
-## Registro de Mudanças ##
-Disponível em [docs/about/CHANGELOG.md](https://development-incolume.github.io/incolume.py.changelog/about/CHANGELOG.md).
+## Registro de Mudanças
+Disponível em [docs/about/CHANGELOG](https://development-incolume.github.io/incolume.py.changelog/about/CHANGELOG/).
 
 
-## Contribuidores ##
-Disponível em [docs/about/CONTRIBUTORS.md](https://development-incolume.github.io/incolume.py.changelog/about/CONTRIBUTORS.md).
+## Contribuidores
+Disponível em [docs/about/CONTRIBUTORS](https://development-incolume.github.io/incolume.py.changelog/about/CONTRIBUTORS/).
 
 
 ## Tecnologias adotadas
-Disponível em [docs/user_guide/development.md](https://development-incolume.github.io/incolume.py.changelog/user_guide/development.md).
+Disponível em [docs/user_guide/development](https://development-incolume.github.io/incolume.py.changelog/user_guide/development/).

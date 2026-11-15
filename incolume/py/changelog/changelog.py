@@ -53,6 +53,30 @@ changelog_conf_fl: Final[Mapping[str, dict[str, object]]] = {
 }
 
 
+def get_git_tags() -> str:
+    """Return the ``git tag -n`` output decoded as UTF-8.
+
+    The decoding is explicit so that the CHANGELOG does not depend on the
+    environment locale (mojibake when ``git tag -n`` is decoded as latin-1).
+
+    Return:
+        The annotated tags, one per line.
+
+    Raises:
+        None
+
+    Examples:
+        >>> isinstance(get_git_tags(), str)
+        True
+
+    """
+    return subprocess.run(
+        ['git', 'tag', '-n'],
+        capture_output=True,
+        check=False,
+    ).stdout.decode('utf-8', errors='replace')
+
+
 def generate_changelog_config_model(**kwargs: str | Path) -> Path:
     """Generate a model of changelog configuration file."""
     fl = kwargs.pop('conf_file', None) or 'changelog.toml.sample'
@@ -464,7 +488,7 @@ def update_changelog(
         or 'https://github.com/development-incolume'
         '/incolume.py.changelog/-/compare'
     )
-    content: str = kwargs.pop('content', subprocess.getoutput('git tag -n'))
+    content: str = kwargs.pop('content', get_git_tags())
     logging.info('registros encontrados ..')
     logging.debug('content=%s', content)
 
@@ -722,11 +746,11 @@ def run() -> None:
         None
 
     """
-    msg = subprocess.getoutput('git tag -n').splitlines()[-14]
+    msg = get_git_tags().splitlines()[-14]
     logging.debug(msg)
     logging.debug('msg_classify=%s', msg_classify(msg=msg))
 
-    msg = subprocess.getoutput('git tag -n')
+    msg = get_git_tags()
     result = changelog_messages(text=msg)
 
     logging.debug('result=%s', result)
