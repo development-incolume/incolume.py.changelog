@@ -29,17 +29,6 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Corrigido UnicodeDecodeError na geraÃ§Ã£o do CHANGELOG.md no Windows (#176);
   - Corrigido o upload do codecov no workflow (#146);
 
-## [1.5.0a6]	 &#8212; 	2026-11-14:
-### Added
-  - Aplicado o incolume.py.githooks ao repositÃ³rio (#174);
-  - Criado o AGENTS.md do repositÃ³rio (#178);
-### Changed
-  - Atualizado o incolume.py.githooks para 1.24.0 (#179);
-### Fixed
-  - Corrigido check-yaml no mkdocs.yml (#177);
-  - Corrigido UnicodeDecodeError na geraÃ§Ã£o do CHANGELOG.md no Windows (#176);
-  - Corrigido o upload do codecov no workflow (#146);
-
 ## [1.4.0]	 &#8212; 	2026-10-07:
 ### Removed
   - Descontinuado suporte a Python 3.10 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
@@ -544,6 +533,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.2.1]: https://github.com/development-incolume/incolume.py.changelog/compare/1.2.0...1.2.1
 [1.3.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.2.1...1.3.0
 [1.4.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.3.0...1.4.0
-[1.5.0a6]: https://github.com/development-incolume/incolume.py.changelog/compare/1.4.0...1.5.0a6
-[1.5.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.5.0a6...1.5.0
+[1.5.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.4.0...1.5.0
 [Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.5.0...Unreleased
