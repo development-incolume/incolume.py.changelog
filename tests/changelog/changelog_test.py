@@ -805,16 +805,20 @@ class TestChangeLog:
 
         Em ambiente que decodifica o `git tag -n` como latin-1, o CHANGELOG
         saía com mojibake (ex.: ``repositÃ³rio``). A leitura das tags deve ser
-        UTF-8 explícito.
+        UTF-8 explícito. O teste é hermético: não depende das tags do repo
+        (o `actions/checkout` do CI não as busca).
         """
-        real_getoutput = pkg.subprocess.getoutput
-
-        def fake_getoutput(cmd: str) -> str:
-            """Simula um ambiente que decodifica a saída como latin-1."""
-            output: str = real_getoutput(cmd)
-            return output.encode('utf-8').decode('latin-1')
-
-        with mock.patch('subprocess.getoutput', side_effect=fake_getoutput):
+        proc = mock.Mock(
+            stdout='1.5.0 Added: documento repositório\n'.encode('utf-8'),
+        )
+        with (
+            mock.patch.object(pkg.subprocess, 'run', return_value=proc),
+            mock.patch.object(
+                pkg.subprocess,
+                'getoutput',
+                return_value='2026-11-14',
+            ),
+        ):
             assert pkg.update_changelog(changelog_file=file_temp.as_posix())
 
         assert 'repositório' in file_temp.read_text(encoding='utf-8')
