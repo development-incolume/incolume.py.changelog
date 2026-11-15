@@ -797,6 +797,28 @@ class TestChangeLog:
         ):
             assert pkg.update_changelog(**entrance)
 
+    def test_update_changelog_utf8_com_locale_nao_utf8(
+        self,
+        file_temp: Path,
+    ) -> None:
+        """A geração do CHANGELOG não pode depender do locale do ambiente.
+
+        Em ambiente que decodifica o `git tag -n` como latin-1, o CHANGELOG
+        saía com mojibake (ex.: ``repositÃ³rio``). A leitura das tags deve ser
+        UTF-8 explícito.
+        """
+        real_getoutput = pkg.subprocess.getoutput
+
+        def fake_getoutput(cmd: str) -> str:
+            """Simula um ambiente que decodifica a saída como latin-1."""
+            output: str = real_getoutput(cmd)
+            return output.encode('utf-8').decode('latin-1')
+
+        with mock.patch('subprocess.getoutput', side_effect=fake_getoutput):
+            assert pkg.update_changelog(changelog_file=file_temp.as_posix())
+
+        assert 'repositório' in file_temp.read_text(encoding='utf-8')
+
 
 class TestClassChangelog:
     """Test class."""
