@@ -76,7 +76,7 @@ Para criar uma quebra de linha ou uma nova linha (`<br>`), termine uma linha com
 | E esta é a segunda linha.   | E esta é a segunda linha.</p>    | E esta é a segunda linha.  |
 
 ### Práticas recomendadas para quebra de linha
-#TODO #line-break-best-practices
+<!-- TODO: line-break-best-practices -->
 
 Você pode usar dois ou mais espaços (comumente chamados de "espaços em branco finais") para quebras de linha em quase todos os aplicativos Markdown, mas isso é controverso. É difícil ver espaços em branco no final de um editor, e muitas pessoas acidentalmente ou intencionalmente colocam dois espaços após cada frase. Por esse motivo, você pode querer usar algo diferente de espaços em branco à direita para quebras de linha. Se o seu aplicativo [Markdown suportar HTML](#html), você poderá usar a `<br>` tag HTML.
 
@@ -124,7 +124,7 @@ Para colocar o texto em itálico, adicione um asterisco ou sublinhado antes e de
 | Um `*gato*` miau                             | Um <em>gato</em>> miau                          | Um *gato* miau                           |
 
 #### Melhores práticas em itálico
-#TODO #italic-best-practices
+<!-- TODO: italic-best-practices -->
 
 Os aplicativos Markdown não concordam sobre como lidar com sublinhados no meio de uma palavra. Para compatibilidade, use asteriscos para colocar em itálico o meio de uma palavra para dar ênfase.
 
@@ -133,7 +133,7 @@ Os aplicativos Markdown não concordam sobre como lidar com sublinhados no meio 
 | Um `*gato*` miau       | Um`_gato_`miau         |
 
 ### Negrito e Itálico
-#TODO #bold-and-italic
+<!-- TODO: bold-and-italic -->
 
 Para enfatizar o texto com negrito e itálico ao mesmo tempo, adicione três asteriscos ou sublinhados antes e depois de uma palavra ou frase. Para colocar negrito e itálico no meio de uma palavra para dar ênfase, adicione três asteriscos sem espaços ao redor das letras.
 
@@ -148,7 +148,7 @@ Para enfatizar o texto com negrito e itálico ao mesmo tempo, adicione três ast
 >  ℹ **Observação:** a ordem das tags `em` e `strong` pode ser invertida dependendo do processador Markdown que você está usando.
 
 #### Práticas recomendadas para negrito e itálico
-#TODO #bold-and-italic-best-practices
+<!-- TODO: bold-and-italic-best-practices -->
 
 Os aplicativos Markdown não concordam sobre como lidar com sublinhados no meio de uma palavra. Para compatibilidade, use asteriscos para negrito e itálico no meio de uma palavra para dar ênfase.
 
@@ -168,7 +168,7 @@ A saída renderizada fica assim:
 
 
 ### Citações em bloco com vários parágrafos
-#TODO #blockquotes-with-multiple-paragraphs
+<!-- TODO: blockquotes-with-multiple-paragraphs -->
 
 Aspas em bloco podem conter vários parágrafos. Adicione um `>` nas linhas em branco entre os parágrafos.
 
@@ -185,7 +185,7 @@ A saída renderizada fica assim:
 > A Bruxa ordenou-lhe que limpasse as panelas e as chaleiras, varresse o chão e mantivesse o fogo alimentado com lenha.
 
 ### Citações aninhadas
-#TODO #nested-blockquotes
+<!-- TODO: nested-blockquotes -->
 
 Aspas em bloco podem ser aninhadas. Adicione um `>>` antes do parágrafo que você deseja aninhar.
 
@@ -202,7 +202,7 @@ A saída renderizada fica assim:
 >> A Bruxa ordenou-lhe que limpasse as panelas e as chaleiras, varresse o chão e mantivesse o fogo alimentado com lenha.
 
 ### Blockquotes com outros elementos
-#TODO #blockquotes-with-other-elements
+<!-- TODO: blockquotes-with-other-elements -->
 
 Blockquotes podem conter outros elementos formatados em Markdown. Nem todos os elementos podem ser usados ​`​​​—` você precisará experimentar para ver quais funcionam.
 
@@ -228,7 +228,7 @@ A saída renderizada fica assim:
 > *Tudo* está indo conforme o **planejado**.
 
 ### Práticas recomendadas para citações em bloco
-#TODO #blockquotes-best-practices
+<!-- TODO: blockquotes-best-practices -->
 
 Para compatibilidade, coloque linhas em branco antes e depois das aspas.
 
@@ -245,7 +245,7 @@ Para compatibilidade, coloque linhas em branco antes e depois das aspas.
 Você pode organizar itens em listas ordenadas e não ordenadas.
 
 ### Listas ordenadas
-#TODO #ordered-lists
+<!-- TODO: ordered-lists -->
 
 Para criar uma lista ordenada, adicione itens de linha com números seguidos de pontos. Os números não precisam estar em ordem numérica, mas a lista deve começar com o número um.
 
@@ -257,7 +257,7 @@ Para criar uma lista ordenada, adicione itens de linha com números seguidos de 
 | 1. Primeiro item <br> 2. Segundo item <br> 3. Terceiro item <br>ㅤㅤ1. Item recuado <br>ㅤㅤ2. Item recuado <br> 4. Quarto item | `<ol>`<br>ㅤ`<li>Primeiro item</li>`<br>ㅤ`<li>Segundo item</li>`<br>ㅤ`<li>Terceiro item</li>`<br>ㅤ`<li>Quarto item</li>`<br>`</ol>`| 1. Primeiro item <br> 2. Segundo item <br> 3. Terceiro item <br>ㅤㅤ1. Item recuado <br>ㅤㅤ2. Item recuado <br> 4. Quarto item |
 
 #### Melhores práticas de lista ordenada
-#TODO #ordered-list-best-practices
+<!-- TODO: ordered-list-best-practices -->
 
 CommonMark e algumas outras linguagens de marcação leves permitem usar parênteses `( ))` como delimitador (por exemplo, 1) _First item_), mas nem todo Markdown os aplicativos suportam isso, portanto não é uma ótima opção do ponto de vista de compatibilidade. Para fins de compatibilidade, use apenas pontos.
 
@@ -267,7 +267,7 @@ CommonMark e algumas outras linguagens de marcação leves permitem usar parênt
 |2. Second item     |2) Second item          |
 
 ### Listas não ordenadas
-#TODO #unordered-lists
+<!-- TODO: unordered-lists -->
 
 Para criar uma lista não ordenada, adicione travessões ( `-` ), asteriscos ( `*` ) ou sinais de adição ( `+` ) na frente dos itens de linha. Recue um ou mais itens para criar uma lista aninhada.
 
@@ -279,7 +279,7 @@ Para criar uma lista não ordenada, adicione travessões ( `-` ), asteriscos ( `
 | - Primeiro item <br> - Segundo item <br> - Terceiro item <br>ㅤㅤ- Item recuado <br>ㅤㅤ- Item recuado <br> - Quarto item | `<ul>`<br>ㅤ`<li>Primeiro item</li>`<br>ㅤ`<li>Segundo item</li>`<br>ㅤ`<li>Terceiro item</li>`<br>ㅤ`<li>Quarto item</li>`<br>`</ul>`| • Primeiro item <br> • Segundo item <br> • Terceiro item <br>ㅤㅤ◦ Item recuado <br>ㅤㅤ◦ Item recuado <br> • Quarto item |
 
 #### Iniciando itens de lista não ordenados com números
-#TODO #starting-unordered-list-items-with-numbers
+<!-- TODO: starting-unordered-list-items-with-numbers -->
 
 Se precisar iniciar um item de lista não ordenado com um número seguido de um ponto final, você pode usar uma barra invertida ( `/` ) para [escapar](#caracteres-escapando) do ponto.
 
@@ -288,7 +288,7 @@ Se precisar iniciar um item de lista não ordenado com um número seguido de um 
 | - 1968\. Um ótimo ano!<br>- Acho que 1969 foi o segundo melhor. |`<ul>`<br>ㅤ`<li>1968. Um ótimo ano!</li>`<br>`<li>Acho que 1969 foi o segundo melhor.</li>`<br>`</ul>` |• 1968. Um ótimo ano!<br>• Acho que 1969 foi o segundo melhor.|
 
 #### Práticas recomendadas para lista não ordenada
-#TODO #unordered-list-best-practices
+<!-- TODO: unordered-list-best-practices -->
 
 Os aplicativos Markdown não concordam sobre como lidar com diferentes delimitadores na mesma lista. Para compatibilidade, não misture e combine delimitadores na mesma lista `–` escolha um e mantenha-o.
 
@@ -298,7 +298,7 @@ Os aplicativos Markdown não concordam sobre como lidar com diferentes delimitad
 
 
 ### Adicionando Elementos em Listas
-#TODO #adding-elements-in-lists
+<!-- TODO: adding-elements-in-lists -->
 
 Para adicionar outro elemento a uma lista preservando a continuidade da lista, recue o elemento com quatro espaços ou uma tabulação, conforme mostrado nos exemplos a seguir.
 
@@ -323,7 +323,7 @@ A saída renderizada fica assim:
 * E aqui está o terceiro item da lista.
 
 #### Citações em bloco
-#TODO #blockquotes
+<!-- TODO: blockquotes -->
 
     * Este é o primeiro item da lista.
     * Aqui está o segundo item da lista.
@@ -340,9 +340,9 @@ A saída renderizada fica assim:
 * E aqui está o terceiro item da lista
 
 #### Blocos de códigos
-#TODO #code-blocks-1
+<!-- TODO: code-blocks-1 -->
 
-[Os blocos de código](#blocos-de-código) normalmente são recuados com quatro espaços ou uma tabulação. Quando estiverem em uma lista, recue-os com oito espaços ou duas tabulações.
+[Os blocos de código](#blocos-de-codigos) normalmente são recuados com quatro espaços ou uma tabulação. Quando estiverem em uma lista, recue-os com oito espaços ou duas tabulações.
 
     1. Abra o arquivo.
     2. Encontre o seguinte bloco de código na linha 21:
@@ -367,7 +367,7 @@ A saída renderizada fica assim:
 3. Atualize o título para corresponder ao nome do seu site.
 
 #### Imagens
-#TODO #images
+<!-- TODO: images -->
 
     1. Abra o arquivo que contém o mascote do Linux.
     2. Maravilhe-se com sua beleza.
@@ -386,7 +386,7 @@ A saída renderizada fica assim:
 3. Feche o arquivo.
 
 #### Listas
-#TODO #lists
+<!-- TODO: lists -->
 
 Você pode aninhar uma lista não ordenada em uma lista ordenada ou vice-versa.
 
@@ -415,7 +415,7 @@ Para denotar uma palavra ou frase como código, coloque-a entre crases ( ` ).
 |``No prompt de comando, digite `Nano`.``| No prompt de comando, digite <code>Nano</code>.      |No prompt de comando, digite `nano`.    |
 
 ### Escapando de crases
-#TODO #escaping-backticks
+<!-- TODO: escaping-backticks -->
 
 Se a palavra ou frase que você deseja denotar como código incluir um ou mais crases, você poderá escapar dela colocando a palavra ou frase entre crases duplos `( `` )`.
 
@@ -424,7 +424,7 @@ Se a palavra ou frase que você deseja denotar como código incluir um ou mais c
 |``Use `code` em seu arquivo Markdown.``| <code>Use `code` em seu arquivo Markdown.</code> |Use ´code´ in your Markdown file.|
 
 ### Blocos de código
-#TODO #code-blocks
+<!-- TODO: code-blocks -->
 
 Para criar blocos de código, recue cada linha do bloco com pelo menos quatro espaços ou uma tabulação.
 
@@ -454,7 +454,7 @@ A saída renderizada de todos os três parece idêntica:
 _____________________________________________________
 
 ### Práticas recomendadas para regras horizontais
-#TODO #horizontal-rule-best-practices
+<!-- TODO: horizontal-rule-best-practices -->
 
 Para compatibilidade, coloque linhas em branco antes e depois das réguas horizontais.
 
@@ -476,7 +476,7 @@ Meu mecanismo de pesquisa favorito é [Duck Duck Go](https://duckduckgo.com).
 >  ℹ **Nota:** Para vincular a um elemento na mesma página, consulte [vinculação a IDs de cabeçalho](https://www.markdownguide.org/extended-syntax/#linking-to-heading-ids) . Para criar um link que abre em uma nova guia ou janela, consulte a seção sobre [destinos de link](https://www.markdownguide.org/hacks/#link-targets).
 
 ### Adicionando títulos
-#TODO #adding-titles
+<!-- TODO: adding-titles -->
 
 Opcionalmente, você pode adicionar um título para um link. Isso aparecerá como uma dica quando o usuário passar o mouse sobre o link. Para adicionar um título, coloque-o entre aspas após o URL.
 
@@ -486,7 +486,7 @@ A saída renderizada fica assim:
 Meu mecanismo de pesquisa favorito é [Duck Duck Go](https://duckduckgo.com).
 
 ### URLs e endereços de e-mail
-#TODO #urls-and-email-addresses
+<!-- TODO: urls-and-email-addresses -->
 
 Para transformar rapidamente um URL ou endereço de e-mail em um link, coloque-o entre colchetes angulares.
 
@@ -500,15 +500,15 @@ A saída renderizada fica assim:
  <fake@example.com>
 
 ### Formatando links
-#TODO #formatting-links
+<!-- TODO: formatting-links -->
 
-Para [enfatizar](#ênfase) os links, adicione asteriscos antes e depois dos colchetes e parênteses. Para denotar links como [code](#código), adicione crases entre colchetes.
+Para [enfatizar](#enfase) os links, adicione asteriscos antes e depois dos colchetes e parênteses. Para denotar links como [code](#codigo), adicione crases entre colchetes.
 
     Adoro apoiar a **[EFF](https://eff.org)**.
 
     Este é o *[Markdown Guide](https://www.markdownguide.org)*.
 
-    Consulte a seção sobre [`code`](#code).
+    Consulte a seção sobre [`code`](#codigo).
 
 A saída renderizada fica assim:
 
@@ -516,15 +516,15 @@ Adoro apoiar a **[EFF](https://eff.org)**.
 
 Este é o *[Markdown Guide](https://www.markdownguide.org)*.
 
-Consulte a seção sobre [`code`](#code).
+Consulte a seção sobre [`code`](#codigo).
 
 ### Links de estilo de referência
-#TODO #reference-style-links
+<!-- TODO: reference-style-links -->
 
 Links de estilo de referência são um tipo especial de link que torna os URLs mais fáceis de exibir e ler no Markdown. Os links de estilo de referência são construídos em duas partes: a parte que você mantém alinhada ao seu texto e a parte que você armazena em outro lugar do arquivo para manter o texto fácil de ler.
 
 #### Formatando a primeira parte do link
-#TODO #formatting-the-first-part-of-the-link
+<!-- TODO: formatting-the-first-part-of-the-link -->
 
 A primeira parte de um link de estilo de referência é formatada com dois conjuntos de colchetes. O primeiro conjunto de colchetes circunda o texto que deve aparecer vinculado. O segundo conjunto de colchetes exibe um rótulo usado para apontar para o link que você está armazenando em outro lugar do documento.
 
@@ -536,7 +536,7 @@ Isso significa que os seguintes formatos de exemplo são aproximadamente equival
 * [hobbit-hole][1]
 
 #### Formatando a segunda parte do link
-#TODO #formatting-the-second-part-of-the-link
+<!-- TODO: formatting-the-second-part-of-the-link -->
 
 A segunda parte de um link de estilo de referência é formatada com os seguintes atributos:
 
@@ -557,9 +557,9 @@ Isso significa que os formatos de exemplo a seguir são aproximadamente equivale
 Você pode colocar esta segunda parte do link em qualquer lugar do seu documento Markdown. Algumas pessoas os colocam imediatamente após o parágrafo em que aparecem, enquanto outras os colocam no final do documento (como notas finais ou de rodapé).
 
 #### Um exemplo juntando as peças
-#TODO #an-example-putting-the-parts-together
+<!-- TODO: an-example-putting-the-parts-together -->
 
-Digamos que você adicione um URL como um [link de URL padrão](#ligações) a um parágrafo e ele ficará assim no Markdown:
+Digamos que você adicione um URL como um [link de URL padrão](#ligacoes) a um parágrafo e ele ficará assim no Markdown:
 
     Num buraco no chão vivia um hobbit. Não é um buraco nojento, sujo e molhado, cheio de pontas
     de vermes e com cheiro de lodo, nem um buraco seco, vazio e arenoso, sem nada onde sentar ou onde sentar.
@@ -580,7 +580,7 @@ e o HTML do link seria:
     <a href="https://en.wikipedia.org/wiki/Hobbit#Lifestyle title="Hobbit lifestyles">hobbit-hole</a>
 
 ### Vincular práticas recomendadas
-#TODO #link-best-practices
+<!-- TODO: link-best-practices -->
 
 Os aplicativos Markdown não concordam sobre como lidar com espaços no meio de um URL. Para compatibilidade, tente codificar em URL quaisquer espaços com 20%. Como alternativa, se seu aplicativo Markdown [suportar HTML](#html), você poderá usar a tag HTML.
 
@@ -607,7 +607,7 @@ A saída renderizada fica assim:
 >  ℹ **Nota:** Para redimensionar uma imagem, consulte a seção sobre [tamanho da imagem](https://www.markdownguide.org/hacks/#image-size) . Para adicionar uma legenda, consulte a seção sobre [legendas de imagens](https://www.markdownguide.org/hacks/#image-captions).
 
 ### Vinculando imagens
-#TODO #linking-images
+<!-- TODO: linking-images -->
 
 Para adicionar um link a uma imagem, coloque o Markdown da imagem entre colchetes e adicione o link entre parênteses.
 
@@ -629,7 +629,7 @@ A saída renderizada fica assim:
 * Sem a barra invertida, isso seria um marcador em uma lista não ordenada.
 
 ### Caracteres dos quais você pode escapar
-#TODO #characters-you-can-escape
+<!-- TODO: characters-you-can-escape -->
 
 Você pode usar uma barra invertida para escapar dos seguintes caracteres.
 
@@ -663,7 +663,7 @@ A saída renderizada fica assim:
 Esta **palavra** é ousada. Esta *palavra* está em itálico.
 
 ### Práticas recomendadas de HTML
-#TODO #html-best-practices
+<!-- TODO: html-best-practices -->
 
 Por motivos de segurança, nem todos os aplicativos Markdown suportam HTML em documentos Markdown. Em caso de dúvida, verifique a documentação do seu aplicativo Markdown. Alguns aplicativos suportam apenas um subconjunto de tags HTML.
 
