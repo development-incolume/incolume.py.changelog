@@ -75,5 +75,5 @@ update_changelog(changelog_file='docs/about/CHANGELOG.md', reverse=True)
 ## Ver também
 
 - [Instalação](INSTALLATION.md)
-- [Documentação da API](../api/)
+- [Documentação da API](../api/index.md)
 - [Desenvolvimento](development.md)
