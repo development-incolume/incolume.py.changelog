@@ -1331,7 +1331,7 @@ wheels = [
 
 [[package]]
 name = "incolume-py-changelog"
-version = "1.5.1a2"
+version = "1.5.0a6"
 source = { editable = "." }
 dependencies = [
     { name = "chardet" },
