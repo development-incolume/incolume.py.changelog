@@ -124,7 +124,11 @@ extra:
 nav:
     - Home: index.md
     - API: api/index.md
+    - Instalação: user_guide/INSTALLATION.md
+    - Uso: user_guide/usage.md
+    - Desenvolvimento: user_guide/development.md
     - 'Guia do Usuário':
+        - Convenções: user_guide/README.md
         - Código de Conduta: user_guide/code_of_conduct.md
         - Metodologias:
             - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
@@ -137,3 +141,8 @@ nav:
         - Contribuidores: about/CONTRIBUTORS.md
         - Licença: about/LICENSE.md
         - 'Notas de lançamento': about/CHANGELOG.md
+    - 'Artefatos':
+        - 'Plano de documentação': analysis_artifacts/PLAN-001-documentacao.md
+        - PRD: analysis_artifacts/PRD-001-geracao-changelog.md
+        - ADR: analysis_artifacts/ADR-001-geracao-changelog.md
+        - SPEC: analysis_artifacts/SPEC-001-execucao.md
