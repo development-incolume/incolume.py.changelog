@@ -809,7 +809,8 @@ class TestChangeLog:
         (o `actions/checkout` do CI não as busca).
         """
         proc = mock.Mock(
-            stdout='1.5.0 Added: documento repositório\n'.encode('utf-8'),
+            # subprocess.run().stdout retorna bytes; encode() usa UTF-8.
+            stdout='1.5.0 Added: documento repositório\n'.encode(),
         )
         with (
             mock.patch.object(pkg.subprocess, 'run', return_value=proc),
