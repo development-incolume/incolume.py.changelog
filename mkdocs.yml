@@ -58,60 +58,143 @@ plugins:
           build: true
           name: Deutsch
           nav_translations:
-            Código de Conduta: Verhaltenskodex
-            Contribuidores: Mitwirkende
+            Home: Startseite
+            API: API
+            Instalação: Installation
+            Uso: Verwendung
+            Desenvolvimento: Entwicklung
             Guia do Usuário: Benutzerhandbuch
-            Licença: Lizenz
+            Convenções: Konventionen
+            Código de Conduta: Verhaltenskodex
             Metodologias: Methoden
-            Notas de lançamento: Versionshinweise
-            Sobre: Um
             Conventional Commit: Herkömmliche Verpflichtung
             Keep a CHANGELOG: Führen Sie ein Änderungsprotokoll
+            MarkDown: MarkDown
+            Mkdocs: Mkdocs
+            Semver: Semver
+            Zen Python: Zen Python
+            Sobre: Über
+            Contribuidores: Mitwirkende
+            Licença: Lizenz
+            Notas de lançamento: Versionshinweise
+            Artefatos: Artefakte
+            Plano de documentação: Dokumentationsplan
+            PRD: PRD
+            ADR: ADR
+            SPEC: SPEC
 
         - locale: en
           build: true
           name: English
           nav_translations:
-            Código de Conduta: Conduct's Code
-            Contribuidores: Contributors
+            Home: Home
+            API: API
+            Instalação: Installation
+            Uso: Usage
+            Desenvolvimento: Development
             Guia do Usuário: User Guide
-            Licença: License
-            Metodologias: Metodologies
-            Notas de lançamento: Release Notes
+            Convenções: Conventions
+            Código de Conduta: Code of Conduct
+            Metodologias: Methodologies
+            Conventional Commit: Conventional Commit
+            Keep a CHANGELOG: Keep a CHANGELOG
+            MarkDown: MarkDown
+            Mkdocs: Mkdocs
+            Semver: Semver
+            Zen Python: Zen Python
             Sobre: About
+            Contribuidores: Contributors
+            Licença: License
+            Notas de lançamento: Release Notes
+            Artefatos: Artifacts
+            Plano de documentação: Documentation Plan
+            PRD: PRD
+            ADR: ADR
+            SPEC: SPEC
         - locale: es
           build: true
           name: Español
           nav_translations:
-            Código de Conduta: Código de Conducta
-            Contribuidores: Contribuyentes
+            Home: Inicio
+            API: API
+            Instalação: Instalación
+            Uso: Uso
+            Desenvolvimento: Desarrollo
             Guia do Usuário: Guía de usuario
-            Licença: Licencia
+            Convenções: Convenciones
+            Código de Conduta: Código de Conducta
             Metodologias: Metodologías
-            Notas de lançamento: Notas de lanzamiento
+            Conventional Commit: Commit Convencional
+            Keep a CHANGELOG: Mantenga un CHANGELOG
+            MarkDown: MarkDown
+            Mkdocs: Mkdocs
+            Semver: Semver
+            Zen Python: Zen Python
             Sobre: Acerca de
+            Contribuidores: Contribuyentes
+            Licença: Licencia
+            Notas de lançamento: Notas de lanzamiento
+            Artefatos: Artefactos
+            Plano de documentação: Plan de documentación
+            PRD: PRD
+            ADR: ADR
+            SPEC: SPEC
         - locale: fr
           build: true
           name: Français
           nav_translations:
-            Código de Conduta: Code de conduite
-            Contribuidores: Contributeurs
+            Home: Accueil
+            API: API
+            Instalação: Installation
+            Uso: Utilisation
+            Desenvolvimento: Développement
             Guia do Usuário: Guide de l'utilisateur
-            Licença: Licence
+            Convenções: Conventions
+            Código de Conduta: Code de conduite
             Metodologias: Méthodologies
-            Notas de lançamento: Notes de version
+            Conventional Commit: Commit Conventionnel
+            Keep a CHANGELOG: Tenez un CHANGELOG
+            MarkDown: MarkDown
+            Mkdocs: Mkdocs
+            Semver: Semver
+            Zen Python: Zen Python
             Sobre: À propos
+            Contribuidores: Contributeurs
+            Licença: Licence
+            Notas de lançamento: Notes de version
+            Artefatos: Artefacts
+            Plano de documentação: Plan de documentation
+            PRD: PRD
+            ADR: ADR
+            SPEC: SPEC
         - locale: it
           build: true
           name: Italiano
           nav_translations:
-            Código de Conduta: Codice di comportamento
-            Contribuidores: Contributori
+            Home: Home
+            API: API
+            Instalação: Installazione
+            Uso: Utilizzo
+            Desenvolvimento: Sviluppo
             Guia do Usuário: Guida dell'utente
-            Licença: Licenza
+            Convenções: Convenzioni
+            Código de Conduta: Codice di comportamento
             Metodologias: Metodologie
+            Conventional Commit: Commit Convenzionale
+            Keep a CHANGELOG: Mantenere un CHANGELOG
+            MarkDown: MarkDown
+            Mkdocs: Mkdocs
+            Semver: Semver
+            Zen Python: Zen Python
+            Sobre: Informazioni
+            Contribuidores: Contributori
+            Licença: Licenza
             Notas de lançamento: Note di rilascio
-            Sobre: Di
+            Artefatos: Artefatti
+            Plano de documentação: Piano di documentazione
+            PRD: PRD
+            ADR: ADR
+            SPEC: SPEC
         - locale: pt
           build: true
           name: Português
