@@ -39,9 +39,10 @@
 
 ![PyPI - License](https://img.shields.io/pypi/l/incolume.py.changelog?color=75545d)
 ---
-## Objetivos
+## Guia de Contribuição
 
-Esta API automatiza a criação de um arquivo changelog utilizando os registros do git, para gerenciar melhor seus projetos, seguindo a metodologia do Keep a Changelog.
+Este projeto automatiza a geração de CHANGELOG. Para colaborar, siga o
+[Guia de Contribuição](user_guide/contributing.md).
 
 ## Descrição
 

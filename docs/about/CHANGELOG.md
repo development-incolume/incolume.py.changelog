@@ -17,6 +17,9 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Agregado compatibilidade com configuração parcial no changelog.toml;
 ### Security
   - ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF);
+### Added
+  - T3.3: Exemplos de API testáveis — teste `tests/t33_api_examples_test.py` (4/4 passaram);
+  - T3.4: Guia de contribuição e documentação — `docs/user_guide/contributing.md` e atualização de `docs/index.md`;
 
 ## [1.5.0]	 &#8212; 	2026-11-14:
 ### Added
