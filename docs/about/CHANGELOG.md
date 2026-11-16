@@ -20,6 +20,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Added
   - T3.3: Exemplos de API testáveis — teste `tests/t33_api_examples_test.py` (4/4 passaram);
   - T3.4: Guia de contribuição e documentação — `docs/user_guide/contributing.md` e atualização de `docs/index.md`;
+  - T3.6: Glossário técnico e navegação multilingue — `docs/about/glossario.md`, adição do item no menu `mkdocs.yml` e traduções de todos os idiomas.
 
 ## [1.5.0]	 &#8212; 	2026-11-14:
 ### Added
