@@ -58,30 +58,31 @@ plugins:
           build: true
           name: Deutsch
           nav_translations:
-            Home: Startseite
-            API: API
-            Instalação: Installation
-            Uso: Verwendung
-            Desenvolvimento: Entwicklung
-            Guia do Usuário: Benutzerhandbuch
-            Convenções: Konventionen
-            Código de Conduta: Verhaltenskodex
-            Metodologias: Methoden
-            Conventional Commit: Herkömmliche Verpflichtung
-            Keep a CHANGELOG: Führen Sie ein Änderungsprotokoll
-            MarkDown: MarkDown
-            Mkdocs: Mkdocs
-            Semver: Semver
-            Zen Python: Zen Python
-            Sobre: Über
-            Contribuidores: Mitwirkende
-            Licença: Lizenz
-            Notas de lançamento: Versionshinweise
-            Artefatos: Artefakte
-            Plano de documentação: Dokumentationsplan
-            PRD: PRD
-            ADR: ADR
-            SPEC: SPEC
+                Home: Startseite
+                API: API
+                Instalação: Installation
+                Uso: Verwendung
+                Desenvolvimento: Entwicklung
+                Guia do Usuário: Benutzerhandbuch
+                Convenções: Konventionen
+                Código de Conduta: Verhaltenskodex
+                Metodologias: Methoden
+                Conventional Commit: Herkömmliche Verpflichtung
+                Keep a CHANGELOG: Führen Sie ein Änderungsprotokoll
+                MarkDown: MarkDown
+                Mkdocs: Mkdocs
+                Semver: Semver
+                Zen Python: Zen Python
+                Sobre: Über
+                Contribuidores: Mitwirkende
+                Licença: Lizenz
+                Notas de lançamento: Versionshinweise
+                Artefatos: Artefakte
+                Plano de documentação: Dokumentationsplan
+                PRD: PRD
+                ADR: ADR
+                SPEC: SPEC
+                Glossário: Glossar
 
         - locale: en
           build: true
@@ -111,6 +112,7 @@ plugins:
             PRD: PRD
             ADR: ADR
             SPEC: SPEC
+            Glossário: Glossary
         - locale: es
           build: true
           name: Español
@@ -139,6 +141,7 @@ plugins:
             PRD: PRD
             ADR: ADR
             SPEC: SPEC
+            Glossário: Glosario
         - locale: fr
           build: true
           name: Français
@@ -167,6 +170,7 @@ plugins:
             PRD: PRD
             ADR: ADR
             SPEC: SPEC
+            Glossário: Glossário
         - locale: it
           build: true
           name: Italiano
@@ -195,6 +199,7 @@ plugins:
             PRD: PRD
             ADR: ADR
             SPEC: SPEC
+            Glossário: Glossario
         - locale: pt
           build: true
           name: Português
