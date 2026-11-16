@@ -21,12 +21,12 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ## [1.5.0]	 &#8212; 	2026-11-14:
 ### Added
   - Aplicado o incolume.py.githooks ao repositório (#174);
-  - Criado o AGENTS.md do repositório (#178);
+  - Criado o AGENTS do repositório (#178);
 ### Changed
   - Atualizado o incolume.py.githooks para 1.24.0 (#179);
 ### Fixed
   - Corrigido check-yaml no mkdocs.yml (#177);
-  - Corrigido UnicodeDecodeError na geração do CHANGELOG.md no Windows (#176);
+  - Corrigido UnicodeDecodeError na geração do CHANGELOG no Windows (#176);
   - Corrigido o upload do codecov no workflow (#146);
 
 ## [1.4.0]	 &#8212; 	2026-10-07:
@@ -56,7 +56,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 
 ## [1.1.0]	 &#8212; 	2026-08-05:
 ### Added
-  - Tradução do arquivo LICENSE.md em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo LICENSE em alemão, espanhol, francês, inglês, italiano e português;
   - Configuração via arquivos toml (changelog.toml, .changelog.toml e pyproject.toml);
 ### Security
   - ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF);
@@ -84,7 +84,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ## [0.19.0]	 &#8212; 	2026-07-23:
 ### Changed
   - Correções lint CI/CD;
-  - Geração de path/arquivo de CHANGELOG.md automáticos;
+  - Geração de path/arquivo de CHANGELOG automáticos;
   - Melhoria de performance na execução de rotinas do pacote `core`;
   - Atualização dos pacotes de dependência;
   - Retificado parametros para compatibilidade com `mypy`;
@@ -114,15 +114,15 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ## [0.19.0rc0]	 &#8212; 	2026-07-14:
 ### Changed
   - Correções lint CI/CD;
-  - Geração de path/arquivo de CHANGELOG.md automáticos;
+  - Geração de path/arquivo de CHANGELOG automáticos;
   - Melhoria de performance na execução de rotinas do pacote `core`;
 
 ## [0.18.0]	 &#8212; 	2026-07-13:
 ### Added
-  - Tradução do arquivo COVENTIONAL_COMMITS.md em alemão, espanhol, francês, inglês, italiano e português;
-  - Tradução do arquivo writing-your-docs.md em alemão, espanhol, francês, inglês, italiano e português;
-  - Tradução do arquivo zenpy.md em alemão, espanhol, francês, inglês, italiano e português;
-  - Tradução do arquivo keep-a-changelog.md em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo COVENTIONAL_COMMITS em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo writing-your-docs em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo zenpy em alemão, espanhol, francês, inglês, italiano e português;
+  - Tradução do arquivo keep-a-changelog em alemão, espanhol, francês, inglês, italiano e português;
   - Adicionado pacote `tomlkit`;
 ### Changed
   - Atualização de versão simultânea em `pyproject.toml` e `version.txt` com aplicativos `uv` e `poetry`;
@@ -252,13 +252,13 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Pacote `ruff` adicionado como formatador e validador de estilos;
 ### Changed
   - Ambiente virtual local, para melhor funcionamento em Windows;
-  - Melhoria de performance de metodos da geração de `CHANGELOG.md`;
+  - Melhoria de performance de metodos da geração de `CHANGELOG`;
   - Formatação e validação de código ruff aplicados;
 
 ## [0.9.0]	 &#8212; 	2024-05-14:
 ### Added
   - Acrescentado traduções para `código de conduta` (DE, EN, ES, PT, FR, IT);
-  - Acrescentado traduções para  `semver.md` (DE, EN, ES, PT, FR, IT);
+  - Acrescentado traduções para  `semver` (DE, EN, ES, PT, FR, IT);
 ### Changed
   - Atualizado badges da página inicial da documentação;
   - Atualizado badges do README;
@@ -269,7 +269,7 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ## [0.9.0rc0]	 &#8212; 	2024-01-16:
 ### Added
   - Acrescentado traduções para `código de conduta` (DE, EN, ES, PT, FR, IT);
-  - Acrescentado traduções para  `semver.md` (DE, EN, ES, PT, FR, IT);
+  - Acrescentado traduções para  `semver` (DE, EN, ES, PT, FR, IT);
 ### Changed
   - Exemplos de utilização do programa na documentação.;
 
@@ -283,12 +283,12 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Acrescentado tradução do código de contuda em espanhol;
   - Acrescentado tradução do código de contuda em alemão;
   - Acrescentado tradução do código de contuda em inglês;
-  - Acrescentado tradução do contributors.md em inglês;
-  - Acrescentado tradução do zenpy.md em inglês;
+  - Acrescentado tradução do contributors em inglês;
+  - Acrescentado tradução do zenpy em inglês;
 ### Deprecated
   - Será substituído em breve o pacote `isort`;
 ### Fixed
-  - Redefinido renderização de rodapé do arquivo CHANGELOG.md;
+  - Redefinido renderização de rodapé do arquivo CHANGELOG;
 
 ## [0.7.0]	 &#8212; 	2024-01-05:
 ### Added

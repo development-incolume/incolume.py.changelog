@@ -6,26 +6,26 @@
 - **Status:** Proposta (aguardando revisão)
 - **Autor:** Brito (Britodfbr)
 - **Coautor:** Dr. Nefário OpenBot
-- **Fonte:** derivado do repositório — `README.md`, `docs/`, `pyproject.toml`,
+- **Fonte:** derivado do repositório — `README`, `docs/`, `pyproject.toml`,
   `incolume/py/changelog/`, `.changelog.toml` e issues.
 
 ## 1. Visão geral
 
 O `incolume.py.changelog` é um pacote importável e uma CLI que gera o
-`CHANGELOG.md` de um repositório a partir das anotações das tags
+`CHANGELOG` de um repositório a partir das anotações das tags
 (`git tag -n`), classificando as mensagens em categorias e gravando o arquivo
 no formato Keep a Changelog.
 
 ## 2. Problema
 
-Manter `CHANGELOG.md` à mão é propenso a dessincronia com as tags, omite
+Manter `CHANGELOG` à mão é propenso a dessincronia com as tags, omite
 alterações e gera retrabalho a cada release. A fonte de verdade das mudanças
 já existe — as anotações das tags — mas não há um gerador próprio que as
 converta em CHANGELOG de forma repetível e independente do ambiente.
 
 ## 3. Objetivos
 
-- Gerar o `CHANGELOG.md` de forma determinística a partir de `git tag -n`.
+- Gerar o `CHANGELOG` de forma determinística a partir de `git tag -n`.
 - Padronizar as mensagens nas categorias do Keep a Changelog.
 - Ser reutilizável pelos demais repositórios do ecossistema incolume.
 - Documentar o produto em seis idiomas (pt, en, de, es, fr, it).
@@ -41,7 +41,7 @@ converta em CHANGELOG de forma repetível e independente do ambiente.
 |---|---|---|
 | RF-01 | Ler as anotações das tags (`git tag -n`), decodificando como UTF-8 explícito | `incolume/py/changelog/changelog.py` |
 | RF-02 | Classificar as mensagens em Added/Changed/Deprecated/Removed/Fixed/Security (e equivalentes pt-BR) | `changelog.py::msg_classify` |
-| RF-03 | Gerar `CHANGELOG.md` com cabeçalho, corpo e rodapé (links de compare) | `changelog.py::changelog_write` |
+| RF-03 | Gerar `CHANGELOG` com cabeçalho, corpo e rodapé (links de compare) | `changelog.py::changelog_write` |
 | RF-04 | Ordenar as versões de forma reversa (mais recente primeiro) | `changelog.py::update_changelog` |
 | RF-05 | Expor CLI `changelog`/`gcl`/`gencl`/`gchangelog` e `greeting` | `pyproject.toml::[project.scripts]` |
 | RF-06 | Aceitar configuração em `changelog.toml`, `.changelog.toml` ou `pyproject.toml` | `core.py::load_config` |
@@ -63,14 +63,14 @@ converta em CHANGELOG de forma repetível e independente do ambiente.
 
 ## 7. Fora de escopo
 
-- Edição manual do `CHANGELOG.md` (é saída da ferramenta).
-- Tradução do `CHANGELOG.md` (gerado).
+- Edição manual do `CHANGELOG` (é saída da ferramenta).
+- Tradução do `CHANGELOG` (gerado).
 - Criação/alteração de tags (a anotação é responsabilidade de quem releaseia).
 - Publicação de release e versionamento (tratados no SPEC-001).
 
 ## 8. Métricas de sucesso
 
-- `CHANGELOG.md` gerado sem mojibake e idêntico em qualquer ambiente.
+- `CHANGELOG` gerado sem mojibake e idêntico em qualquer ambiente.
 - Documentação refletindo o repositório (deploy verde no `main`).
 - Cobertura de testes ≥ 99,7% mantida.
 

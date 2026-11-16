@@ -13,7 +13,7 @@ Per una documentazione completa, visitare [mkdocs.org](https://www.mkdocs.org).
 
     mkdocs.yml # Il file di configurazione.
  docs/
- index.md # La pagina di documentazione.
+ index # La pagina di documentazione.
 ...       # Altre pagine markdown, immagini e altri file.
 
 ## Documentazione web applicata alle pagine github

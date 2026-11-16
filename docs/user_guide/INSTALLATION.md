@@ -68,4 +68,4 @@ uv sync --python 3.12
 uv run task setup
 ```
 
-Veja o [Desenvolvimento](development.md) para o ambiente completo.
+Veja o [Desenvolvimento](development) para o ambiente completo.

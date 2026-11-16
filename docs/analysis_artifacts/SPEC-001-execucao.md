@@ -11,7 +11,7 @@
 
 ## 1. Escopo
 
-Como gerar, configurar, validar e publicar o `CHANGELOG.md`, e como manter a
+Como gerar, configurar, validar e publicar o `CHANGELOG`, e como manter a
 documentação do projeto. Detalha o "como" do `PRD-001` sob as decisões do
 `ADR-001`.
 
@@ -28,7 +28,7 @@ documentação do projeto. Detalha o "como" do `PRD-001` sob as decisões do
 uv run task changelog
 ```
 
-O comando (taskipy `changelog`) executa `uv run gcl docs/about/CHANGELOG.md
+O comando (taskipy `changelog`) executa `uv run gcl docs/about/CHANGELOG
 -ru <url_compare>`, isto é, `update_changelog` com o arquivo e a URL de
 compare da configuração.
 

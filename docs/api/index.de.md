@@ -20,14 +20,14 @@ mkdocstrings aus den Docstrings des Codes.
 ```python
 from incolume.py.changelog.changelog import update_changelog
 
-update_changelog(changelog_file='docs/about/CHANGELOG.md', reverse=True)
+update_changelog(changelog_file='docs/about/CHANGELOG', reverse=True)
 ```
 
 Über die CLI:
 
 ```shell
-uv run changelog docs/about/CHANGELOG.md --reverse
+uv run changelog docs/about/CHANGELOG --reverse
 ```
 
-Siehe die [Verwendung](../user_guide/usage.md) und die
-[Installation](../user_guide/INSTALLATION.md).
+Siehe die [Verwendung](../user_guide/usage) und die
+[Installation](../user_guide/INSTALLATION).

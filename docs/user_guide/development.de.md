@@ -4,12 +4,12 @@ Regeln und Konventionen zur Entwicklung von `incolume.py.changelog`.
 
 ## Verhaltenskodex
 
-Details im [Verhaltenskodex](code_of_conduct.md).
+Details im [Verhaltenskodex](code_of_conduct).
 
 ## Angewandte Standards
 
 Methodiken und Konventionen des Projekts in
-[Konventionen und Methodiken](README.md).
+[Konventionen und Methodiken](README).
 
 ## Anforderungen
 

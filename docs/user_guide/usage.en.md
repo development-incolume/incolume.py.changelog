@@ -1,12 +1,12 @@
 # Usage Guide
 
-How to generate and maintain the `CHANGELOG.md` with `incolume.py.changelog`.
+How to generate and maintain the `CHANGELOG` with `incolume.py.changelog`.
 
 ## Requirements
 
 - Git repository with **annotated tags** (the annotation is the source of the CHANGELOG).
 - Environment with Python `>=3.11,<4` and `uv` (see
-  [Installation](INSTALLATION.md)).
+  [Installation](INSTALLATION)).
 
 ## Generate the CHANGELOG
 
@@ -15,7 +15,7 @@ uv run task changelog
 ```
 
 The command reads `git tag -n`, classifies the messages and writes the
-configured file (by default `docs/about/CHANGELOG.md`).
+configured file (by default `docs/about/CHANGELOG`).
 
 The file is **generated** — it must not be edited by hand.
 
@@ -42,7 +42,7 @@ Files looked up, in order: `changelog.toml`, `.changelog.toml`,
 
 ```toml
 [settings]
-file = "docs/about/CHANGELOG.md"
+file = "docs/about/CHANGELOG"
 reverse = true
 url_compare = "https://github.com/development-incolume/incolume.py.changelog/compare"
 url_keepachangelog = "https://keepachangelog.com/en/1.0.0"
@@ -69,11 +69,11 @@ Accepted categories: `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`,
 ```python
 from incolume.py.changelog.changelog import update_changelog
 
-update_changelog(changelog_file='docs/about/CHANGELOG.md', reverse=True)
+update_changelog(changelog_file='docs/about/CHANGELOG', reverse=True)
 ```
 
 ## See also
 
-- [Installation](INSTALLATION.md)
-- [API Documentation](../api/index.md)
-- [Development](development.md)
+- [Installation](INSTALLATION)
+- [API Documentation](../api/index)
+- [Development](development)

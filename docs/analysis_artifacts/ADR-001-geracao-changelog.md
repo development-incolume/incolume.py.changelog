@@ -20,7 +20,7 @@ consequências de cada uma.
 
 ### AD-01 — O CHANGELOG é gerado, nunca editado à mão
 
-- **Decisão:** `docs/about/CHANGELOG.md` é saída do `incolume.py.changelog` a
+- **Decisão:** `docs/about/CHANGELOG` é saída do `incolume.py.changelog` a
   partir das anotações das tags (`git tag -n`).
 - **Consequência:** correções passam por corrigir o gerador ou a anotação da
   tag e regerar (`uv run task changelog`). Nenhuma tarefa de documentação
@@ -87,5 +87,5 @@ consequências de cada uma.
 
 ## Referências
 
-- `PLAN-001-documentacao.md`, `PRD-001-geracao-changelog.md`,
-  `SPEC-001-execucao.md`.
+- `PLAN-001-documentacao`, `PRD-001-geracao-changelog`,
+  `SPEC-001-execucao`.

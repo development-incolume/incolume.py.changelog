@@ -9,13 +9,13 @@
 
 ## 0. Premissa
 
-O `CHANGELOG.md` é **saída do próprio `incolume.py.changelog`**, gerado a
+O `CHANGELOG` é **saída do próprio `incolume.py.changelog`**, gerado a
 partir das anotações das tags (`git tag -n`). Ele **nunca** é editado à mão e
 não é traduzido arquivo a arquivo. Toda correção de conteúdo do CHANGELOG
 passa por corrigir o gerador (ou a anotação da tag) e regerar com
 `uv run task changelog`.
 
-Consequência verificada: o `docs/about/CHANGELOG.md` commitado na `1.5.0`
+Consequência verificada: o `docs/about/CHANGELOG` commitado na `1.5.0`
 saiu com mojibake (`repositÃ³rio`, `SerÃ¡`) porque a leitura de
 `subprocess.getoutput('git tag -n')` usa o locale da máquina. Rodando a
 ferramenta neste ambiente, a saída é UTF-8 correta. O defeito, portanto, é do
@@ -24,7 +24,7 @@ caminho de leitura do gerador — não do arquivo.
 ## 1. Escopo
 
 - Repositório: `incolume.py.changelog`.
-- Documentação varrida: `README.md`, `docs/**` (mkdocs), `mkdocs.yml`,
+- Documentação varrida: `README`, `docs/**` (mkdocs), `mkdocs.yml`,
   `.github/workflows/*.yml`, `.pre-commit-config.yaml`, `.changelog.toml`,
   `tox.toml`, `pyproject.toml` (como fonte de verdade).
 - Idiomas propostos no `mkdocs.yml` (i18n): **pt (default), en, de, es, fr, it**.
@@ -33,14 +33,14 @@ caminho de leitura do gerador — não do arquivo.
 
 | Documento | pt | en | de | es | fr | it | Estado |
 |---|---|---|---|---|---|---|---|
-| `README.md` (repo) | ✓ | — | — | — | — | — | desatualizado |
-| `docs/index.md` | ✓ | — | — | — | — | — | desatualizado |
-| `docs/api/index.md` | ✓ | — | — | — | — | — | incompleto |
-| `user_guide/README.md` | ✓ | — | — | — | — | — | órfão (fora do nav) |
-| `user_guide/development.md` | ✓ | vazio | vazio | vazio | vazio | vazio | desatualizado |
+| `README` (repo) | ✓ | — | — | — | — | — | desatualizado |
+| `docs/index` | ✓ | — | — | — | — | — | desatualizado |
+| `docs/api/index` | ✓ | — | — | — | — | — | incompleto |
+| `user_guide/README` | ✓ | — | — | — | — | — | órfão (fora do nav) |
+| `user_guide/development` | ✓ | vazio | vazio | vazio | vazio | vazio | desatualizado |
 | `user_guide/INSTALLATION` | — | ✓ | — | — | — | — | conteúdo errado/órfão |
 | `user_guide/usage` | — | ✓ | — | — | — | — | conteúdo alheio |
-| `user_guide/markdown.md` | ✓ | — | — | — | — | — | ok (pt apenas; âncoras quebradas) |
+| `user_guide/markdown` | ✓ | — | — | — | — | — | ok (pt apenas; âncoras quebradas) |
 | `user_guide/code_of_conduct` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ok |
 | `user_guide/COVENTIONAL_COMMITS` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | divergente (en 84 × pt 31 linhas) |
 | `user_guide/keep-a-changelog` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ok |
@@ -55,15 +55,15 @@ caminho de leitura do gerador — não do arquivo.
 
 ### A. Conteúdo errado ou de outro projeto
 
-- `user_guide/usage.en.md` (412 linhas): é o template do
+- `user_guide/usage.en` (412 linhas): é o template do
   **coding-dojo / `incolume.py.model-2023-07-05`**, em inglês — conteúdo de
   outro repositório.
-- `user_guide/markdown.md` (992 linhas) é um guia de Markdown legítimo (pt),
+- `user_guide/markdown` (992 linhas) é um guia de Markdown legítimo (pt),
   mas possui âncoras quebradas (`#blocos-de-código`, `#ênfase`, `#código`,
   `#code`, `#ligações`) apontadas em `mkdocs build`.
-- `user_guide/INSTALLATION.en.md`: título "Guia de Uso", mistura pt/en, fixa
-  a versão `1.0.0` e aponta links errados (`user_guide/api/index.md`,
-  `user_guide/user_guide/development.md`).
+- `user_guide/INSTALLATION.en`: título "Guia de Uso", mistura pt/en, fixa
+  a versão `1.0.0` e aponta links errados (`user_guide/api/index`,
+  `user_guide/user_guide/development`).
 
 ### B. Vazios
 
@@ -71,22 +71,22 @@ caminho de leitura do gerador — não do arquivo.
 
 ### C. Desatualizado
 
-- `development.md`: Python 3.10 (o projeto é `>=3.11,<4`); cita
+- `development`: Python 3.10 (o projeto é `>=3.11,<4`); cita
   `black/blue/isort/pydocstyle/pylint/flake8/pylama` (removidos); cita
   `Makefile` (inexistente no repo); tox `py310,py311` (real: 3.11–3.14);
   caminhos `incolumepy/`.
-- `README.md`: `uv pip add` (comando inexistente); pin `==0.15.0` e `==1.0.0`;
+- `README`: `uv pip add` (comando inexistente); pin `==0.15.0` e `==1.0.0`;
   `uv venv -p 3.10`; badge do codecov com `]((https://…` quebrado.
-- `docs/index.md`: typo "resgistros"; cita `pylint/isort/pydocstyle`; typo
+- `docs/index`: typo "resgistros"; cita `pylint/isort/pydocstyle`; typo
   "Contribuíção".
-- `about/CHANGELOG.md`: mojibake (UTF-8 duplo) após a regeneração da 1.5.0.
+- `about/CHANGELOG`: mojibake (UTF-8 duplo) após a regeneração da 1.5.0.
 
 ### D. Faltando
 
-- `docs/api/index.md` só documenta `changelog` e `cli`; faltam `core` e
+- `docs/api/index` só documenta `changelog` e `cli`; faltam `core` e
   `__init__`, e não há exemplos de uso.
 - `docs/analysis_artifacts/` existe e está **vazio**.
-- Sem `README.md` em en/de/es/fr/it.
+- Sem `README` em en/de/es/fr/it.
 - `nav` do mkdocs não expõe `development`, `INSTALLATION`, `usage`,
   `user_guide/README`.
 - `nav_translations`: en/es/fr/it sem `Conventional Commit` e
@@ -108,13 +108,13 @@ caminho de leitura do gerador — não do arquivo.
 
 ### G. Revisão textual (ortografia e terminologia)
 
-- pt-BR: "resgistros" e "Contribuíção" (`docs/index.md`), "documetação" e
-  "menssagem" (`user_guide/writing-your-docs.md`), "Contribudores"
-  (`about/CONTRIBUTORS.md`), "especifícação" (`user_guide/semver.md`),
-  "envolucro" e "diponíveis" (`user_guide/development.md`).
+- pt-BR: "resgistros" e "Contribuíção" (`docs/index`), "documetação" e
+  "menssagem" (`user_guide/writing-your-docs`), "Contribudores"
+  (`about/CONTRIBUTORS`), "especifícação" (`user_guide/semver`),
+  "envolucro" e "diponíveis" (`user_guide/development`).
 - As traduções existentes (de/en/es/fr/it) não tiveram revisão linguística;
   a divergência de extensão já encontrada (`COVENTIONAL_COMMITS.en` 84 ×
-  `COVENTIONAL_COMMITS.md` 31 linhas) indica conteúdo divergente.
+  `COVENTIONAL_COMMITS` 31 linhas) indica conteúdo divergente.
 
 ## 4. Proposta de melhoria
 
@@ -139,9 +139,9 @@ caminho de leitura do gerador — não do arquivo.
 
 | Sprint | Objetivo | Tarefas | Idiomas | Critério de aceite |
 |---|---|---|---|---|
-| **0 — Crítico** (1 dia) | Parar a sangria | T0.1 corrigir a leitura UTF-8 do gerador (teste vermelho com locale latin-1) e regerar `CHANGELOG.md` via `uv run task changelog`; T0.2 corrigir `docs_ci_cd.yml` (`uv sync --all-groups`, actions atuais); T0.3 corrigir `README.md`; T0.4 corrigir `docs/index.md` | pt | CI de docs verde; CHANGELOG sem mojibake; README sem links/comandos quebrados |
-| **1 — Conteúdo base pt** (3–5 dias) | Docs do projeto corretos | T1.1 revisar `markdown.md` (âncoras quebradas); T1.2 reescrever `usage.md`; T1.3 criar `INSTALLATION.md` (pt) e remover o `.en` errado; T1.4 reescrever `development.md`; T1.5 documentar `api/index.md` (`core`, `__init__`, exemplos); T1.6 decidir `analysis_artifacts` (criar PRD/ADR/SPEC ou remover); T1.7 ajustar o `nav`; T1.8 revisão textual pt-BR (ortografia, terminologia, links) | pt | Cada doc existente no nav; nenhum template alheio; comandos verificados |
-| **2 — i18n** (5–7 dias) | Seis idiomas completos | T2.1 traduzir `index.md`; T2.2 traduzir `markdown`, `development`, `INSTALLATION`, `usage`, `api/index`, `user_guide/README`; T2.3 preencher `development.*` vazios; T2.4 completar `nav_translations`; T2.5 revisar divergência `COVENTIONAL_COMMITS.en`; T2.7 revisão textual das traduções (de/en/es/fr/it) | de/en/es/fr/it | Matriz 100% sem arquivos vazios; nav traduzida |
+| **0 — Crítico** (1 dia) | Parar a sangria | T0.1 corrigir a leitura UTF-8 do gerador (teste vermelho com locale latin-1) e regerar `CHANGELOG` via `uv run task changelog`; T0.2 corrigir `docs_ci_cd.yml` (`uv sync --all-groups`, actions atuais); T0.3 corrigir `README`; T0.4 corrigir `docs/index` | pt | CI de docs verde; CHANGELOG sem mojibake; README sem links/comandos quebrados |
+| **1 — Conteúdo base pt** (3–5 dias) | Docs do projeto corretos | T1.1 revisar `markdown` (âncoras quebradas); T1.2 reescrever `usage`; T1.3 criar `INSTALLATION` (pt) e remover o `.en` errado; T1.4 reescrever `development`; T1.5 documentar `api/index` (`core`, `__init__`, exemplos); T1.6 decidir `analysis_artifacts` (criar PRD/ADR/SPEC ou remover); T1.7 ajustar o `nav`; T1.8 revisão textual pt-BR (ortografia, terminologia, links) | pt | Cada doc existente no nav; nenhum template alheio; comandos verificados |
+| **2 — i18n** (5–7 dias) | Seis idiomas completos | T2.1 traduzir `index`; T2.2 traduzir `markdown`, `development`, `INSTALLATION`, `usage`, `api/index`, `user_guide/README`; T2.3 preencher `development.*` vazios; T2.4 completar `nav_translations`; T2.5 revisar divergência `COVENTIONAL_COMMITS.en`; T2.7 revisão textual das traduções (de/en/es/fr/it) | de/en/es/fr/it | Matriz 100% sem arquivos vazios; nav traduzida |
 | **3 — Qualidade** (3–5 dias) | Sustentável | T3.1 validação de links/encoding no CI; T3.2 padronizar URLs sem `.md`; T3.3 exemplos de API testáveis; T3.4 guia de contribuição (mkdocs/i18n/tags) nos seis idiomas; T3.5 publicar e conferir o site; T3.6 revisão textual final e glossário nos seis idiomas | todos | Deploy verde; site refletindo o repo |
 
 ## 6. Riscos e pendências
@@ -155,6 +155,6 @@ caminho de leitura do gerador — não do arquivo.
 
 ## 7. Fora de escopo
 
-- Tradução do `CHANGELOG.md` (gerado).
+- Tradução do `CHANGELOG` (gerado).
 - Mudança de versão, release ou publicação.
 - Reescrita de código fora do gerador de changelog.

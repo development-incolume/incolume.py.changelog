@@ -205,27 +205,27 @@ extra:
     run: incolume
 
 nav:
-    - Home: index.md
-    - API: api/index.md
-    - Instalação: user_guide/INSTALLATION.md
-    - Uso: user_guide/usage.md
-    - Desenvolvimento: user_guide/development.md
+    - Home: index
+    - API: api/index
+    - Instalação: user_guide/INSTALLATION
+    - Uso: user_guide/usage
+    - Desenvolvimento: user_guide/development
     - 'Guia do Usuário':
-        - Convenções: user_guide/README.md
-        - Código de Conduta: user_guide/code_of_conduct.md
+        - Convenções: user_guide/README
+        - Código de Conduta: user_guide/code_of_conduct
         - Metodologias:
-            - Conventional Commit: user_guide/COVENTIONAL_COMMITS.md
-            - Keep a CHANGELOG: user_guide/keep-a-changelog.md
-            - MarkDown: user_guide/markdown.md
-            - Mkdocs: user_guide/writing-your-docs.md
-            - Semver: user_guide/semver.md
-            - Zen Python: user_guide/zenpy.md
+            - Conventional Commit: user_guide/COVENTIONAL_COMMITS
+            - Keep a CHANGELOG: user_guide/keep-a-changelog
+            - MarkDown: user_guide/markdown
+            - Mkdocs: user_guide/writing-your-docs
+            - Semver: user_guide/semver
+            - Zen Python: user_guide/zenpy
     - Sobre:
-        - Contribuidores: about/CONTRIBUTORS.md
-        - Licença: about/LICENSE.md
-        - 'Notas de lançamento': about/CHANGELOG.md
+        - Contribuidores: about/CONTRIBUTORS
+        - Licença: about/LICENSE
+        - 'Notas de lançamento': about/CHANGELOG
     - 'Artefatos':
-        - 'Plano de documentação': analysis_artifacts/PLAN-001-documentacao.md
-        - PRD: analysis_artifacts/PRD-001-geracao-changelog.md
-        - ADR: analysis_artifacts/ADR-001-geracao-changelog.md
-        - SPEC: analysis_artifacts/SPEC-001-execucao.md
+        - 'Plano de documentação': analysis_artifacts/PLAN-001-documentacao
+        - PRD: analysis_artifacts/PRD-001-geracao-changelog
+        - ADR: analysis_artifacts/ADR-001-geracao-changelog
+        - SPEC: analysis_artifacts/SPEC-001-execucao

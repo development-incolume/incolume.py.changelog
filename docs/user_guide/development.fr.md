@@ -4,12 +4,12 @@ Règles et conventions pour développer `incolume.py.changelog`.
 
 ## Code de conduite
 
-Détails dans le [Code de conduite](code_of_conduct.md).
+Détails dans le [Code de conduite](code_of_conduct).
 
 ## Standards appliqués
 
 Méthodologies et conventions du projet dans
-[Conventions et Méthodologies](README.md).
+[Conventions et Méthodologies](README).
 
 ## Prérequis
 
