@@ -106,6 +106,59 @@ explicit = true
 [tool.uv.sources]
 incolume-py-githooks = { git = "https://github.com/development-incolume/incolume.py.githooks", rev = "main" }
 
+[tool.poetry]
+name = "incolume.py.changelog"
+version = "1.6.0a10"
+description = "Generate CHANGELOG.md"
+license = "Unlicense"
+documentation = "https://development-incolume.github.io/incolume.py.changelog/"
+repository = "https://github.com/development-incolume/incolume.py.changelog.git"
+homepage = "https://pypi.org/project/incolume.py.changelog/"
+keywords = ['python', 'utils', 'incolume']
+authors = [
+  "britodfbr <contato@incolume.com.br>",
+]
+maintainers = [
+  "britodfbr <contato@incolume.com.br>",
+]
+readme = [
+  "README.md",
+  "docs/index.md",
+]
+packages = [
+  {include = "incolume", from=""},
+]
+classifiers = [
+  'Development Status :: 5 - Production/Stable',
+  'Operating System :: OS Independent',
+  'Natural Language :: Portuguese (Brazilian)',
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Build Tools",
+  'Topic :: Software Development :: Libraries :: Python Modules',
+  'Topic :: Utilities',
+]
+include = [
+  'README.md',
+  "CHANGELOG.md",
+  'docs/',
+  'pyproject.toml',
+]
+exclude = [
+  "examples/",
+  "ez_setup",
+  "incolumepy/utils/tmp",
+  "my_package/excluded.py",
+  "tests/",
+]
+
+[tool.poetry.group.cli.dependencies]
+
 
 [tool.bandit]
 exclude_dirs = ["tests", "examples", "coverage_report"]
