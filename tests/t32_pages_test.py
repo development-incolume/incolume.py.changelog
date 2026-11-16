@@ -6,9 +6,9 @@ todos usam o caminho de página (sem sufixo).
 
 from pathlib import Path
 
-import pytest
+import re
 
-__author__ = '@britodfbr'  # pragma: no cover
+import pytest
 
 REPO = Path(__file__).resolve().parents[1]
 MKDOCS = REPO / 'mkdocs.yml'
@@ -29,9 +29,7 @@ class TestCase:
 
     def test_docs_sem_link_relativo_dot_md(self) -> None:
         """Nenhum link relativo de docs/ aponta para .md."""
-        import re
-
-        pattern = re.compile(r'\]\(([^)\s]+)\)')
+        pattern = re.compile(r'\]\([^)\s]+\)\)')
         for md in sorted(DOCS.rglob('*.md')):
             for i, line in enumerate(md.read_text(encoding='utf-8'), 1):
                 for href in pattern.findall(line):
@@ -40,3 +38,6 @@ class TestCase:
                     assert not href.endswith('.md'), (
                         f'{md}:{i} link relativo para .md: {href}'
                     )
+
+
+__author__ = '@britodfbr'  # pragma: no cover
