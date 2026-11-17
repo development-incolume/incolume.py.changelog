@@ -3,7 +3,8 @@
 - **Data:** 2026-11-14
 - **Projeto:** incolume.py.changelog
 - **Versão do projeto:** 1.5.0
-- **Status:** Proposta (aguardando revisão)
+- **Status:** Concluído
+- **Dívida residual:** Sprint 2 / T2.7 (#192) — revisão textual das traduções
 - **Autor:** Brito (Britodfbr)
 - **Coautor:** Dr. Nefário OpenBot
 
