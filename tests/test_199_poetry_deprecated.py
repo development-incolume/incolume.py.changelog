@@ -10,7 +10,7 @@ import re
 from pathlib import Path
 
 
-def test_poetry_seção_removida_do_pyproject():
+def test_poetry_secao_removida_do_pyproject() -> None:
     """A seção [tool.poetry] não deve permanecer ativa no pyproject.toml."""
     pyproject_path = Path(__file__).parent.parent / 'pyproject.toml'
     content = pyproject_path.read_text(encoding='utf-8')
@@ -27,7 +27,7 @@ def test_poetry_seção_removida_do_pyproject():
     )
 
 
-def test_poetry_toml_não_deve_representar_configuração_ativa():
+def test_poetry_toml_nao_deve_representar_configuracao_ativa() -> None:
     """O poetry.toml deve ser removido ou claramente obsoleto."""
     poetry_toml = Path(__file__).parent.parent / 'poetry.toml'
     if poetry_toml.exists():
@@ -38,7 +38,7 @@ def test_poetry_toml_não_deve_representar_configuração_ativa():
         )
 
 
-def test_version_atualizada():
+def test_version_atualizada() -> None:
     """A versão deve ser atualizada após o fechamento da issue."""
     version_file = (
         Path(__file__).parent.parent
@@ -55,7 +55,7 @@ def test_version_atualizada():
         )
 
 
-def test_changelog_notifica_depreciação_poetry():
+def test_changelog_notifica_depreciacao_poetry() -> None:
     """O CHANGELOG deve conter notificação sobre a depreciação da Poetry."""
     changelog = (
         Path(__file__).parent.parent / 'docs' / 'about' / 'CHANGELOG.md'
