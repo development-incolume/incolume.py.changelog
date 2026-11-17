@@ -107,6 +107,7 @@ explicit = true
 incolume-py-githooks = { git = "https://github.com/development-incolume/incolume.py.githooks", rev = "main" }
 
 [tool.poetry]
+# deprecated: será removida em release futura; configuração mantida temporariamente
 name = "incolume.py.changelog"
 version = "1.6.0a17"
 description = "Generate CHANGELOG.md"
