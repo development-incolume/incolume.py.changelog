@@ -47,12 +47,12 @@ consequências de cada uma.
 - **Consequência:** `black`, `blue`, `isort`, `pydocstyle` e `pylint` foram
   descontinuados; a documentação do projeto não deve mais citá-los.
 
-### AD-05 — Versão PEP 440 via `uv version`, espelhada em três arquivos
+### AD-05 — Versão PEP 440 via `uv version`, espelhada em dois arquivos
 
 - **Decisão:** a versão vive em `pyproject.toml` (`[project]`) e é refletida em
-  `[tool.poetry]` e em `incolume/py/changelog/version.txt`.
-- **Consequência:** `uv version` não cobre todos os arquivos; o commit de
-  versão é ajustado à mão nos que faltam.
+  `incolume/py/changelog/version.txt`. `[tool.poetry]` está obsoleto (#199/#201).
+- **Consequência:** `uv version` não cobre `version.txt`; o commit de versão é
+  ajustado à mão nesse arquivo.
 
 ### AD-06 — Pacote importável em `incolume/py/changelog/`
 

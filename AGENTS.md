@@ -21,8 +21,7 @@ apenas o que é específico deste projeto.
 
 Semver. A versão vive em `pyproject.toml` e só muda por `uv version`, nunca à mão.
 
-- **O `uv version` não cobre todos os arquivos.** Todo bump atualiza também:
-  - `[tool.poetry] version` em `pyproject.toml`;
+- **O `uv version` não cobre `version.txt`.** Todo bump atualiza também:
   - `incolume/py/changelog/version.txt`.
 - **Primeira tarefa de um ciclo:** `uv version --bump minor --bump alpha`.
 - **Correção de bugs/fix apenas:** `uv version --bump patch --bump alpha`.
