@@ -1,7 +1,7 @@
 # Responsables / Contributeurs
 
-Nom| Responsable     | Développement | Testeur         | Documentaliste     |Contact
----|----------------|-|----------------|----------------|---
+Nom| Responsable     | Développement | Testeur         | Documentaliste     | Contact
+|---|----------------|----------------|----------------|----------------|---
 Brito| :green_circle: | :green_circle:| :green_circle: |   :green_circle:| [@britodfbr](https://github.com/britodfbr)
 Igor Gabriel| :red_circle:   | :green_circle:| :green_circle: |     :green_circle: | [@igorgabrielg](https://github.com/igorgabrielg)
 Frederico Lourenço Cavalcante de Souza | :red_circle:   | :green_circle:| :red_circle:   | :green_circle:  | [@Fredvet00](https://github.com/Fredvet00)

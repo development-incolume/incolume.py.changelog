@@ -38,11 +38,11 @@ Exemples de comportements inacceptables :
 ## Responsabilités d'application
 
 Les dirigeant·e·s de la communauté sont chargé·e·s de clarifier et de faire respecter nos normes de
-comportements acceptables et prendront des mesures correctives appropriées et équitables en
+comportement acceptables et prendront des mesures correctives appropriées et équitables en
 réponse à tout comportement qu'ils ou elles jugent inapproprié, menaçant, offensant ou nuisible.
 
 Les dirigeant·e·s de la communauté ont le droit et la responsabilité de supprimer, modifier ou rejeter
-les commentaires, les contributions, le code, les modifications de wikis, les rapports d'incidents ou de bogues et autres contributions qui
+les commentaires, les commits, le code, les modifications de wikis, les issues et autres contributions qui
 ne sont pas alignés sur ce code de conduite, et communiqueront les raisons des décisions de modération
 le cas échéant.
 
@@ -58,7 +58,7 @@ lors d'un événement en ligne ou hors-ligne.
 ## Application
 
 Les cas de comportements abusifs, harcelants ou tout autre comportement
-inacceptables peuvent être signalés aux dirigeant·e·s de la communauté responsables de l'application du code de conduite à
+inacceptable peuvent être signalés aux dirigeant·e·s de la communauté responsables de l'application du code de conduite à
 [contato@incolume.com.br][mailto].
 Toutes les plaintes seront examinées et feront l'objet d'une enquête rapide et équitable.
 
@@ -83,7 +83,7 @@ le comportement était inapproprié. Des excuses publiques peuvent être demand�
 
 **Impact communautaire** : un non-respect par un seul incident ou une série d'actions.
 
-**Conséquence** : un avertissement avec des conséquences dû à la poursuite du comportement.
+**Conséquence** : un avertissement avec des conséquences dues à la poursuite du comportement.
 Aucune interaction avec les personnes concernées, y compris l'interaction non sollicitée avec
 celles et ceux qui sont chargé·e·s de l'application de ce code de conduite, pendant une période déterminée.
 Cela comprend le fait d'éviter les interactions dans les espaces communautaires ainsi que sur les canaux externes
@@ -114,13 +114,13 @@ la communauté.
 
 Ce code de conduite est adapté du
 [Contributor Covenant][homepage], version 2.1,
-disponible à
+disponible à l'adresse
 [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
 
 Les Directives d'application ont été inspirées par le
 [Code of conduct enforcement ladder][Mozilla CoC] de Mozilla.
 
-Pour obtenir des réponses aux questions courantes sur ce code de conduite, consultez la FAQ à
+Pour obtenir des réponses aux questions courantes sur ce code de conduite, consultez la FAQ à l'adresse
 [https://www.contributor-covenant.org/faq][FAQ]. Les traductions sont disponibles
 sur [https://www.contributor-covenant.org/translations][translations].
 

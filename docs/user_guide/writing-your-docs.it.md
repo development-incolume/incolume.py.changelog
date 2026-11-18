@@ -1,4 +1,4 @@
-## Benvenuti in MkDocs
+## Benvenuto in MkDocs
 
 Per una documentazione completa, visitare [mkdocs.org](https://www.mkdocs.org).
 
@@ -12,9 +12,9 @@ Per una documentazione completa, visitare [mkdocs.org](https://www.mkdocs.org).
 ## Layout del progetto
 
     mkdocs.yml # Il file di configurazione.
- docs/
- index # La pagina di documentazione.
-...       # Altre pagine markdown, immagini e altri file.
+    docs/
+        index.md # La pagina di documentazione.
+        ...       # Altre pagine markdown, immagini e altri file.
 
-## Documentazione web applicata alle pagine github
- mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc
+## Documentazione web applicata a GitHub Pages
+    mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc

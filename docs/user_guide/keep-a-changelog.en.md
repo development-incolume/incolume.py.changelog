@@ -30,13 +30,13 @@ People do. Whether they are consumers or developers, end users of software are h
 
 ## How to apply changelog in this project?
    This project uses the python package incolumepy.utils, which has the
-   prerogative to automatically create a `CHANGELOG` from the
+   prerogative to automatically create a `CHANGELOG.md` from the
 entries in `git tag -n`.
 
 Examples:
 ```shell
-git tag -f Unreleased -m 'added: Added guidelines on Keep a CHANGELOG in docs/user_guide/keep-a-chagelog'
-git tag -f `poetry version -s` -m ‘added: Added guidelines on Keep a CHANGELOG in docs/user_guide/keep-a-chagelog’
+git tag -f Unreleased -m 'added: Added guidelines on Keep a CHANGELOG.md in docs/user_guide/keep-a-chagelog.md'
+git tag -f `poetry version -s` -m 'added: Added guidelines on Keep a CHANGELOG.md in docs/user_guide/keep-a-chagelog.md'
 git tag -f 1.0.0 -m 'Added: for new features;
 Changed: for changes to existing features;
 Deprecated: for features that will be removed in future versions;
@@ -45,7 +45,7 @@ Fixed: for any bug fixes;
 Security: in case of vulnerabilities;'
 ```
 
-### Update CHANGELOG
+### Update CHANGELOG.md
 ```shell
 task gcl
 ```

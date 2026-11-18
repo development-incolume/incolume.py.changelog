@@ -1,5 +1,5 @@
 # Semantic Versioning Specification (SemVer)
-This specification can be viewed in full at its official URL at https://semver.org/.
+This specification can be viewed in full at its official URL: https://semver.org/.
 
 ## Specification
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in RFC 2119.

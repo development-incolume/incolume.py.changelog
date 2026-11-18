@@ -51,7 +51,7 @@ Aus Kompatibilitätsgründen setzen Sie außerdem Leerzeilen vor und nach einer 
 
 Um Absätze zu erstellen, verwenden Sie eine Leerzeile, um eine oder mehrere Textzeilen voneinander zu trennen.
 
-| MarkDown                                    | \tHTML\t                                      | Gerenderte Ausgabe                       |
+| Markdown                                     | \tHTML\t                                      | Gerenderte Ausgabe                       |
 |---------------------------------------------|---------------------------------------------|-----------------------------------------|
 | <code>Paragrafo1.<br><br>Paragrafo2.</code> | `<p>Paragrafo1.</p><p>Paragrafo2.</p>` | <code>Paragrafo1.<br>Paragrafo2.</code> |
 
@@ -82,7 +82,7 @@ Sie können in fast allen Markdown-Anwendungen zwei oder mehr Leerzeichen (umgan
 
 Aus Kompatibilitätsgründen verwenden Sie Leerzeichen am Zeilenende oder das HTML-Tag `<br>` am Ende der Zeile.
 
-Es gibt zwei weitere Optionen, die ich nicht empfehle. CommonMark und einige andere leichte Auszeichnungssprachen erlauben ein Backslash-Zeichen (`\`) am Zeilenende, aber nicht alle Markdown-Anwendungen unterstützen das; aus Kompatibilitätssicht ist es also keine gute Option. Und zumindest einige leichte Auszeichnungssprachen benötigen nichts am Zeilenende – Sie drücken einfach die Eingabetaste und es wird ein Zeilenumbruch erzeugt.
+Es gibt zwei weitere Optionen, die nicht empfehlenswert sind. CommonMark und einige andere leichte Auszeichnungssprachen erlauben ein Backslash-Zeichen (`\`) am Zeilenende, aber nicht alle Markdown-Anwendungen unterstützen das; aus Kompatibilitätssicht ist es also keine gute Option. Und zumindest einige leichte Auszeichnungssprachen benötigen nichts am Zeilenende – Sie drücken einfach die Eingabetaste und es wird ein Zeilenumbruch erzeugt.
 
 | ✅&nbsp; So machen Sie es                       | ❌&nbsp; Nicht so                         |
 | ---------------------------------------- | ----------------------------------------------- |
@@ -230,7 +230,7 @@ Die gerenderte Ausgabe sieht so aus:
 ### Bewährte Praktiken für Blockzitate
 <!-- TODO: blockquotes-best-practices -->
 
-Aus Kompatibilitätsgründen setzen Sie Leerzeilen vor und nach die Zitate.
+Aus Kompatibilitätsgründen setzen Sie Leerzeilen vor und nach den Zitaten.
 
 | ✅&nbsp; So machen Sie es                        | ❌&nbsp; Nicht so                             |
 | ------------------------------------------ | -------------------------------------------------- |
@@ -456,7 +456,7 @@ _____________________________________________________
 ### Bewährte Praktiken für horizontale Linien
 <!-- TODO: horizontal-rule-best-practices -->
 
-Aus Kompatibilitätsgründen setzen Sie Leerzeilen vor und nach die horizontalen Linien.
+Aus Kompatibilitätsgründen setzen Sie Leerzeilen vor und nach den horizontalen Linien.
 
 | ✅&nbsp; So machen Sie es                                                                      | ❌&nbsp; Nicht so |
 |----------------------------------------------------------------------------------------- |------------------------|
@@ -502,7 +502,7 @@ Die gerenderte Ausgabe sieht so aus:
 ### Links formatieren
 <!-- TODO: formatting-links -->
 
-Um Links zu [betonen](#enfase), fügen Sie Sternchen vor und nach die eckigen Klammern und Klammern ein. Um Links als [Code](#codigo) zu kennzeichnen, setzen Sie Backticks zwischen die eckigen Klammern.
+Um Links zu [betonen](#enfase), fügen Sie Sternchen vor und nach den eckigen Klammern und Klammern ein. Um Links als [Code](#codigo) zu kennzeichnen, setzen Sie Backticks zwischen die eckigen Klammern.
 
     Adoro apoiar a **[EFF](https://eff.org)**.
 
@@ -516,7 +516,7 @@ Ich unterstütze gerne die **[EFF](https://eff.org)**.
 
 Dies ist der *[Markdown Guide](https://www.markdownguide.org)*.
 
-Siehe den Abschnitt über [`code`](#codigo).
+Sehen Sie den Abschnitt über [`code`](#codigo).
 
 ### Referenz-Links
 <!-- TODO: reference-style-links -->
@@ -565,7 +565,7 @@ Nehmen wir an, Sie fügen eine URL als [Standard-URL-Link](#ligacoes) in einen A
     de vermes e com cheiro de lodo, nem um buraco seco, vazio e arenoso, sem nada onde sentar ou onde sentar.
     comer: era uma [toca de hobbit](https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"), e isso significa conforto.
 
-Obwohl sie auf zusätzliche interessante Informationen verweisen mag, bringt die angezeigte URL dem vorhandenen Rohtext nicht viel außer dass sie ihn schwieriger lesbar macht. Um dies zu korrigieren, können Sie die URL so formatieren:
+Obwohl sie auf zusätzliche interessante Informationen verweisen mag, bringt die angezeigte URL dem vorhandenen Rohtext nicht viel außer dass sie ihn schwieriger zu lesen macht. Um dies zu korrigieren, können Sie die URL so formatieren:
 
     Em um buraco no chão vivia um hobbit. Não um buraco nojento, sujo e úmido, cheio de pontas de minhocas e com cheiro de lodo, nem ainda um buraco seco, vazio e arenoso, sem nada onde sentar ou comer: era um [buraco de hobbit](https://en.wikipedia.org/wiki/Hobbit#Lifestyle), e isso significa conforto.
 
@@ -628,7 +628,7 @@ Die gerenderte Ausgabe sieht so aus:
 
 * Ohne den Backslash wäre das ein Aufzählungspunkt in einer ungeordneten Liste.
 
-### Zeichen, die escapt werden können
+### Zeichen, die escaped werden können
 <!-- TODO: characters-you-can-escape -->
 
 Sie können einen Backslash verwenden, um die folgenden Zeichen zu escapen.

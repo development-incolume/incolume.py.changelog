@@ -1,12 +1,12 @@
 # Guide d'utilisation
 
-Comment générer et maintenir le `CHANGELOG` avec `incolume.py.changelog`.
+Comment générer et maintenir le `CHANGELOG.md` avec `incolume.py.changelog`.
 
 ## Prérequis
 
 - Dépôt git avec des **tags annotés** (l'annotation est la source du CHANGELOG).
 - Environnement avec Python `>=3.11,<4` et `uv` (voir
-  [Installation](INSTALLATION)).
+  [Installation](INSTALLATION.md)).
 
 ## Générer le CHANGELOG
 
@@ -15,7 +15,7 @@ uv run task changelog
 ```
 
 La commande lit `git tag -n`, classe les messages et écrit le fichier
-configuré (par défaut `docs/about/CHANGELOG`).
+configuré (par défaut `docs/about/CHANGELOG.md`).
 
 Le fichier est **généré** — il ne doit pas être modifié à la main.
 
@@ -42,7 +42,7 @@ Fichiers recherchés, dans l'ordre : `changelog.toml`, `.changelog.toml`,
 
 ```toml
 [settings]
-file = "docs/about/CHANGELOG"
+file = "docs/about/CHANGELOG.md"
 reverse = true
 url_compare = "https://github.com/development-incolume/incolume.py.changelog/compare"
 url_keepachangelog = "https://keepachangelog.com/en/1.0.0"
@@ -61,7 +61,7 @@ Une ligne par tag, avec les catégories séparées par `;` :
 ```
 
 Catégories acceptées : `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`,
-`Security` et les équivalentes pt-BR (`Adicionado`, `Modificado`, `Obsoleto`,
+`Security` et leurs équivalents pt-BR (`Adicionado`, `Modificado`, `Obsoleto`,
 `Removido`, `Corrigido`, `Segurança`).
 
 ## API Python
@@ -69,11 +69,11 @@ Catégories acceptées : `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`,
 ```python
 from incolume.py.changelog.changelog import update_changelog
 
-update_changelog(changelog_file='docs/about/CHANGELOG', reverse=True)
+update_changelog(changelog_file='docs/about/CHANGELOG.md', reverse=True)
 ```
 
 ## Voir aussi
 
-- [Installation](INSTALLATION)
-- [Documentation de l'API](../api/index)
-- [Développement](development)
+- [Installation](INSTALLATION.md)
+- [Documentation de l'API](../api/index.md)
+- [Développement](development.md)
