@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/tree/1.8.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/tree/1.9.0)
 
 ---
 
@@ -21,6 +21,13 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Migração concluída para o ambiente baseado em uv;
 ### Security
   - ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF);
+
+## [1.9.0]	 &#8212; 	2026-11-18:
+### Added
+  - Tasks qa e ty no taskipy (#224);
+  - PLAN-004 registrado (#223);
+### Changed
+  - Taskipy sanitizado, de 25 para 8 tasks (#220, #221, #222);
 
 ## [1.8.0]	 &#8212; 	2026-11-18:
 ### Added
@@ -575,4 +582,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.6.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.5.0...1.6.0
 [1.7.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.6.0...1.7.0
 [1.8.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.7.0...1.8.0
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.8.0...Unreleased
+[1.9.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.8.0...1.9.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.9.0...Unreleased
