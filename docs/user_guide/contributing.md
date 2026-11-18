@@ -4,11 +4,11 @@ Documentação rápida para colaboradores do `incolume.py.changelog`.
 
 ## Onde começa
 
-1. Leia o [AGENTS.md](../AGENTS.md) – regras de trabalho, identidade e fluxo de
+1. Leia o [AGENTS.md](../../AGENTS.md) – regras de trabalho, identidade e fluxo de
    entrega.
-2. Leia o [SPEC-001](docs/analysis_artifacts/spec-001-execucao.md) se precisar
+2. Leia o [SPEC-001](../analysis_artifacts/SPEC-001-execucao.md) se precisar
    do detalhamento da execução.
-3. Leia o [PLAN-001](docs/analysis_artifacts/plan-001-documentacao.md) sobre a
+3. Leia o [PLAN-001](../analysis_artifacts/PLAN-001-documentacao.md) sobre a
    melhoria da documentação.
 
 ## Mas não precisa ler tudo de uma vez
