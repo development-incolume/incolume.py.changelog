@@ -39,19 +39,24 @@ jobs:
     - name: Lint with ruff
       run: |
         source .venv/bin/activate
-        ruff check --fix tests incolume
+        ruff check --fix tests/ incolume/
 
     - name: Format code with ruff
       run: |
         source .venv/bin/activate
-        ruff format tests incolume
+        ruff format tests/ incolume/
+
+    - name: Type check with mypy
+      run: |
+        source .venv/bin/activate
+        mypy tests/ incolume/
 
     - name: Type check with ty
       run: |
         source .venv/bin/activate
-        ty check tests incolume
+        ty check tests/ incolume/
 
     - name: Test with pytest
       run: |
         source .venv/bin/activate
-        pytest tests incolume
+        pytest -vvv tests/ incolume/

@@ -36,9 +36,9 @@ Semver. A versão vive em `pyproject.toml` e só muda por `uv version`, nunca à
 
 ## Qualidade
 
-- Antes de commitar: `ruff check --fix tests incolume`,
-  `ruff format tests incolume`, `ty check tests incolume`,
-  `pytest tests incolume`.
+- Antes de commitar, com `d='tests/ incolume/'`:
+  `ruff check --fix $d`, `ruff format $d`, `mypy $d`, `ty check $d`,
+  `pytest -vvv $d`.
 - Cobertura mínima de 99.7% (`.coveragerc`).
 
 ## Git e entrega

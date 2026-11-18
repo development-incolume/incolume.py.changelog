@@ -80,10 +80,12 @@ Opções do `changelog`: `file_changelog`, `--url/-u`, `--reverse/-r`,
 ## 6. Qualidade
 
 ```shell
-ruff check --fix tests incolume
-ruff format tests incolume
-ty check tests incolume
-pytest tests incolume
+d='tests/ incolume/'
+ruff check --fix $d
+ruff format $d
+mypy $d
+ty check $d
+pytest -vvv $d
 ```
 
 - Cobertura mínima: 99,7%.
