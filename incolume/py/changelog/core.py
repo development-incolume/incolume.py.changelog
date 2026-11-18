@@ -7,7 +7,7 @@ import logging
 import re
 from collections.abc import Container, Mapping
 from pathlib import Path
-from typing import Any, cast
+from typing import Any
 
 import tomlkit as toml
 from icecream import ic
@@ -169,7 +169,7 @@ def load_config(conf_changelog_fl: Path) -> Mapping[str, str | bool]:
         case _:
             msg = f'Invalid configuration: {conf_changelog_fl.as_posix()}'
             raise ValueError(msg)
-    return cast('Mapping[str, str | bool]', config)
+    return config
 
 
 def modify_logger_runtime(
