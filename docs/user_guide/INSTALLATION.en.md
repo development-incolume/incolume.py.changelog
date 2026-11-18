@@ -1,84 +1,71 @@
-# Guia de Uso
-## Instalação
+# Installation
 
-To install it using poetry:
+The `incolume.py.changelog` is published on PyPI and TestPyPI.
 
-More detail can be see in [Python Poetry: Gerenciando dependências de projeto](https://brito.blog.incolume.com.br/2022/01/python-poetry-gerenciando-dependencias.html)
+## Requirements
 
-Last package version from pypi.org:
-```shell
-  poetry add -G dev incolume.py.changelog
-```
-Download package wheel:
-```shell
-  poetry add -G dev incolume.py.changelog-1.0.0-py3-none-any.whl
-```
-Download package tar.gz:
-```shell
-  poetry add -G dev incolume.py.changelog-1.0.0.tar.gz
-```
-Last package version from git repo:
-```shell
-  poetry add -G dev git+https://github.com/development-incolume/incolume.py.changelog.git@main
-```
-Specific version from git repo:
-```shell
-  poetry add -G dev git+https://github.com/development-incolume/incolume.py.changelog.git@"1.0.0"
-```
-Specific branch from git repo:
-```shell
-  poetry add -G dev git+https://github.com/development-incolume/incolume.py.changelog.git@"enhacement-123456789"
-```
+- Python `>=3.11,<4`
+- `pip`, `pipenv`, `poetry` or `uv`
 
-To install package using uv:
-
-Last package version from pypi.org:
-```shell
-  uv add --dev incolume.py.changelog
-```
-
-Download package wheel:
-```shell
-  uv add --dev incolume.py.changelog-1.0.0-py3-none-any.whl
-```
-
-Download package tar.gz:
+## With pip
 
 ```shell
-  uv add --dev incolume.py.changelog-1.0.0.tar.gz
+pip install incolume.py.changelog
 ```
 
-Specific release or tag from git repo:
-```shell
-uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --tag 1.0.0
-uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --tag Unreleased
-uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --tag 0.19.0rc4
-```
-
-Specific branch from git repo:
+## With pipenv
 
 ```shell
-uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --branch main
-uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --branch tags
-uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --branch dev
+pipenv install incolume.py.changelog
 ```
 
-Specific revision from git repo:
-```shell
-uv add --dev git+https://github.com/development-incolume/incolume.py.changelog.git --rev f8bb0dc6792391f30cdabcac1fa5731160a3c27c
-```
-
-
-To install package using pip:
+## With poetry
 
 ```shell
-  pip install incolume.py.changelog
+poetry add incolume.py.changelog
 ```
 
-## Detalhes da API ##
+Directly from the repository:
 
-Disponível em [docs/api](https://development-incolume.github.io/incolume.py.changelog/user_guide/api/index.md)
+```shell
+poetry add git+https://github.com/development-incolume/incolume.py.changelog.git
+```
 
+## With uv
 
-## Detalhes para desenvolvimento ##
-Disponível em [https://development-incolume.github.io/incolume.py.changelog/user_guide/user_guide/development.md](development.md)
+In a project:
+
+```shell
+uv add incolume.py.changelog
+```
+
+In a virtual environment:
+
+```shell
+uv venv -p 3.12
+uv pip install incolume.py.changelog
+```
+
+## Test release (TestPyPI)
+
+```shell
+uv pip install --index-url https://test.pypi.org/simple/ incolume.py.changelog
+```
+
+## Verify the installation
+
+```shell
+uv run changelog --help
+uv run python -c "import incolume.py.changelog as c; print(c.__version__)"
+```
+
+## Installation for development
+
+```shell
+git clone https://github.com/development-incolume/incolume.py.changelog.git
+cd incolume.py.changelog
+uv sync --python 3.12
+uv run task setup
+```
+
+See the [Development](development) guide for the full environment.

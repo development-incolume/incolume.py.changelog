@@ -1,4 +1,4 @@
-# Mantenedores / Contribudores
+# Mantenedores / Contribuidores
 
 Nome| Mantenedor     | Desenvolvedor  | Testador       | Documentador   |Contato
 ---|----------------|----------------|----------------|----------------|---
