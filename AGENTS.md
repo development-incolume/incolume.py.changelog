@@ -40,6 +40,13 @@ Semver. A versão vive em `pyproject.toml` e só muda por `uv version`, nunca à
   `ruff format tests incolume`, `mypy tests incolume`, `pytest tests incolume`.
 - Cobertura mínima de 99.7% (`.coveragerc`).
 
+## Git e entrega
+
+- Merge sempre `--no-ff`.
+- **Nunca faça merge cruzado.** Antes do merge, faça `git rebase dev` na
+  branch — o merge parte do **HEAD de `dev`**.
+- Conflito se resolve na branch, durante o rebase, nunca no commit de merge.
+
 ## Commits
 
 - `<tipo>: #<issue> <descrição>` — português, minúscula, imperativa, sem ponto.
