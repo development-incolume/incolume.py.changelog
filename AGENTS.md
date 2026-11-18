@@ -30,7 +30,7 @@ Semver. A versão vive em `pyproject.toml` e só muda por `uv version`, nunca à
 - **O commit de versão fica sempre em `dev`**, nunca na branch da tarefa, e vem
   depois do merge: `git ci -m "build: $(uv version)"`.
 - O commit de versão não fecha issue e não altera código.
-- `CHANGELOG.md` é **gerado** por `uv run task changelog` (a partir das anotações
+- `CHANGELOG.md` é **gerado** por `uv run gcl` (a partir das anotações
   das tags, `git tag -n`); nunca escrito à mão. O arquivo da raiz só aponta para
   `docs/about/CHANGELOG.md`. Regenerar no commit da versão estável.
 
