@@ -369,7 +369,7 @@ La salida renderizada queda así:
     1. Abre el archivo que contiene la mascota de Linux.
     2. Maravíllate con su belleza.
 
-        ![Tux, the Linux mascot](/assets/images/tux.png)
+        ![Tux, the Linux mascot](https://mdg.imgix.net/assets/images/tux.png?auto=format&fit=clip&q=40&w=100)
 
     3. Cierra el archivo.
 
