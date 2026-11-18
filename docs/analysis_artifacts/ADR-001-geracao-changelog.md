@@ -23,7 +23,7 @@ consequências de cada uma.
 - **Decisão:** `docs/about/CHANGELOG` é saída do `incolume.py.changelog` a
   partir das anotações das tags (`git tag -n`).
 - **Consequência:** correções passam por corrigir o gerador ou a anotação da
-  tag e regerar (`uv run task changelog`). Nenhuma tarefa de documentação
+  tag e regerar (`uv run gcl`). Nenhuma tarefa de documentação
   prevê edição manual.
 - **Evidência:** `changelog.py::update_changelog`, `.changelog.toml`.
 

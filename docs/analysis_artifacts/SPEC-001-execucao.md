@@ -25,12 +25,11 @@ documentação do projeto. Detalha o "como" do `PRD-001` sob as decisões do
 ## 3. Gerar o CHANGELOG
 
 ```shell
-uv run task changelog
+uv run gcl
 ```
 
-O comando (taskipy `changelog`) executa `uv run gcl docs/about/CHANGELOG
--ru <url_compare>`, isto é, `update_changelog` com o arquivo e a URL de
-compare da configuração.
+O comando `uv run gcl` lê `.changelog.toml` e executa `update_changelog` com o
+arquivo, a URL de compare e a ordem configuradas.
 
 - A fonte é `git tag -n`, lida em UTF-8 explícito (`get_git_tags`).
 - O arquivo de saída é definido por `.changelog.toml` (`settings.file`).

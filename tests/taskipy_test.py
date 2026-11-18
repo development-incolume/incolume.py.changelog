@@ -25,12 +25,41 @@ class TestTaskipy:
         'task',
         [
             'bandit',
-            'check-all',
-            'pre_check-all',
-            'post_check-all',
+            'lint',
             'lint_mypy',
+            'lint_ruff',
+            'pre_lint',
+            'pre_sec',
+            'pre_test-all',
+            'safety',
+            'sec',
+            'setup',
+            'test-all',
         ],
     )
     def test_task_presente(self, task: str) -> None:
         """A task está declarada e não comentada."""
         assert task in _tasks(), f'task {task!r} ausente'
+
+    @pytest.mark.parametrize(
+        'task',
+        [
+            'changelog',
+            'check-all',
+            'clean',
+            'clean-all',
+            'docs-build',
+            'docs-serve',
+            'gcl',
+            'post_check-all',
+            'pre_check-all',
+            'pre_changelog',
+            'pre_clean-all',
+            'pre_docs-build',
+            'pre_tests',
+            'tests',
+        ],
+    )
+    def test_task_removida(self, task: str) -> None:
+        """A task redundante foi retirada."""
+        assert task not in _tasks(), f'task {task!r} deveria ter sido retirada'
