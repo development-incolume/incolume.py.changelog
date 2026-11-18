@@ -220,28 +220,14 @@ CHANGELOGFILE = "docs/about/CHANGELOG.md"
 URLCOMPARE = "https://github.com/development-incolume/incolume.py.changelog/compare"
 
 [tool.taskipy.tasks]
-bandit={help='', cmd='poetry run bandit -c pyproject.toml -r {path}', use_vars=true}
-pre_check-all = {cmd='echo Starting Check all ..', help=''}
-check-all = {cmd='poetry run task clean-all; poetry run task lint; poetry run task sec',  help = "Checking all" }
-post_check-all = {cmd='echo Checking finished!', help=''}
-clean = {cmd = "echo -n 'Starting cleanning environment..'; find ./ \\( -wholename '*report_coverage' -o -name '*.pyc' -o -name '*~' -o -name '*.log' -o -name '*.log.*' -o -name '.cache' -o -name '.coverage' \\) -delete ; echo ' ok' ",  help = "Shallow clean into environment (.pyc, .cache, .egg, .log, et all)" }
-pre_clean-all = {cmd='poetry run task clean', help=''}
-clean-all = {cmd = "echo -n 'Starting Deep cleanning ..'; find ./ \\( -name '*_cache' -o -name '*cache__' -o -name dist -o -name build -o -name .tox -o -name site -o -name coverage_report \\) -exec rm -rf {} 2> /dev/null \\; ; echo ' Deep cleaning finished!' ",  help = "Deep cleanning into environment (dist, build, htmlcov, .tox, *_cache, et all)" }
-pre_docs-build={help='Pre docs-build', cmd="uv run task gcl"}
-docs-build = {help="Generate documentation", cmd="uv run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc"}
-docs-serve = {help="Run server documentation", cmd="uv run mkdocs serve"}
+bandit={help='Checking with bandit', cmd='uv run --extra security bandit -c pyproject.toml -r {path}', use_vars=true}
 pre_lint="task lint_ruff"
 lint={help='Checking all linters configurated', cmd=''}
-lint_mypy={help='Checking with mypy', cmd='echo --mypy--; poetry run mypy --check {path}', use_vars=true}
-lint_ruff={help='', cmd='echo --ruff--; uv run ruff check --preview {path}', use_vars=true}
-safety={help='Check safety of packages into project.', cmd='uv run safety check'}
+lint_mypy={help='Checking with mypy', cmd='uv run mypy {path}', use_vars=true}
+lint_ruff={help='Checking with ruff', cmd='uv run ruff check --preview {path}', use_vars=true}
+safety={help='Check safety of packages into project.', cmd='uv run --extra security safety check'}
 pre_sec={help='Securance validations', cmd='uv run task bandit && uv run task safety'}
 sec={help="Checking environment's safety", cmd=''}
-pre_changelog='uv run pytest'
-pre_tests={help='', cmd='task clean-all'}
-tests={help='run all tests', cmd='uv run pytest -m "not webtest"'}
 pre_test-all={help='', cmd='task lint'}
-test-all={help='Test all cases', cmd='task tests'}
-changelog = {help='Update changelog file', cmd = "uv run gcl {CHANGELOGFILE} -ru {URLCOMPARE} && echo CHANGELOG file - {CHANGELOGFILE} - updated with success.;echo", use_vars = true }
-gcl = {help='Update changelog file', cmd='uv run task changelog'}
+test-all={help='Test all cases', cmd='uv run pytest -m "not webtest"'}
 setup = { help = 'Configure environment develop', cmd='git config core.hooksPath .git-hooks/'}
