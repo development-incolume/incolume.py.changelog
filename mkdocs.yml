@@ -2,6 +2,7 @@ site_name: Incolume Python Changelog
 repo_url: https://github.com/development-incolume/incolume.py.changelog
 repo_name: incolume.py.changelog
 edit_uri: tree/dev/docs
+site_url: https://development-incolume.github.io/incolume.py.changelog/
 
 theme:
   name: material
