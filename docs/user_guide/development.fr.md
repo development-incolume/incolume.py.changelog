@@ -4,12 +4,12 @@ Règles et conventions pour développer `incolume.py.changelog`.
 
 ## Code de conduite
 
-Détails dans le [Code de conduite](code_of_conduct).
+Détails dans le [Code de conduite](code_of_conduct.md).
 
-## Standards appliqués
+## Normes appliquées
 
 Méthodologies et conventions du projet dans
-[Conventions et Méthodologies](README).
+[Conventions et Méthodologies](README.md).
 
 ## Prérequis
 
@@ -82,7 +82,7 @@ uv run safety check
 uv version --bump <major|minor|patch|alpha|beta|rc|stable>
 ```
 
-La version vit dans `pyproject.toml` (`[project]`) et doit être reportée dans
+La version se trouve dans `pyproject.toml` (`[project]`) et doit être répercutée dans
 `[tool.poetry]` et dans `incolume/py/changelog/version.txt`. Le commit de version
 est `build: incolume-py-changelog <version>`, sur `dev`, après le merge.
 
@@ -90,5 +90,5 @@ est `build: incolume-py-changelog <version>`, sur `dev`, après le merge.
 
 - Branche dérivée de `dev`, avec une issue ouverte.
 - Test du critère avant l'implémentation.
-- `ruff`/`mypy`/`pytest` vert avant de committer.
+- `ruff`/`mypy`/`pytest` verts avant de committer.
 - Merge `--no-ff` (revu par Kevin).

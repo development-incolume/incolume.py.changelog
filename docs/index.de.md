@@ -64,4 +64,4 @@ Verfügbar unter [docs/about/CONTRIBUTORS](https://development-incolume.github.i
 
 ## Angewandte Technologien
 Möchten Sie mehr über einige der nichtfunktionalen Anforderungen des Projekts erfahren?
-Siehe den Abschnitt [Standards im Beitragsleitfaden](https://development-incolume.github.io/incolume.py.changelog/user_guide/development/).
+Sehen Sie den Abschnitt [Standards im Beitragsleitfaden](https://development-incolume.github.io/incolume.py.changelog/user_guide/development/).

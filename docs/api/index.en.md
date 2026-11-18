@@ -20,14 +20,14 @@ Via Python API:
 ```python
 from incolume.py.changelog.changelog import update_changelog
 
-update_changelog(changelog_file='docs/about/CHANGELOG', reverse=True)
+update_changelog(changelog_file='docs/about/CHANGELOG.md', reverse=True)
 ```
 
 Via CLI:
 
 ```shell
-uv run changelog docs/about/CHANGELOG --reverse
+uv run changelog docs/about/CHANGELOG.md --reverse
 ```
 
-See the [Usage Guide](../user_guide/usage) and the
-[Installation](../user_guide/INSTALLATION).
+See the [Usage Guide](../user_guide/usage.md) and the
+[Installation](../user_guide/INSTALLATION.md).

@@ -18,7 +18,7 @@ Por ejemplo, para crear un título de nivel tres (`<h3>`), usa tres signos de n�
 | Marcado                | 	HTML                       | Salida renderizada       |
 |---------------------|------------------------------|--------------------------|
 | `# Heading level 1` | 	`<h1>Heading level 1</h1>` | <h1>Heading level 1</h1> |
-| `# Heading level 2` | 	`<h2>Heading level 2</h2>` | <h1>Heading level 1</h1> |
+| `# Heading level 2` | 	`<h2>Heading level 2</h2>` | <h2>Heading level 2</h2> |
 | `# Heading level 3` | 	`<h3>Heading level 3</h3>` | <h3>Heading level 3</h3> |
 | `# Heading level 4` | 	`<h4>Heading level 4</h4>` | <h4>Heading level 4</h4> |
 | `# Heading level 5` | 	`<h5>Heading level 5</h5>` | <h5>Heading level 5</h5> |
@@ -53,11 +53,11 @@ Para crear párrafos, usa una línea en blanco para separar una o más líneas d
 
 | Markdown                                   | 	HTML	                                      | Salida renderizada                       |
 |---------------------------------------------|---------------------------------------------|-----------------------------------------|
-| <code>Paragrafo1.<br><br>Paragrafo2.</code> | `<p>Paragrafo1.</p><p>Paragrafo2.</p>` | <code>Paragrafo1.<br>Paragrafo2.</code> |
+| <code>Párrafo1.<br><br>Párrafo2.</code> | `<p>Párrafo1.</p><p>Párrafo2.</p>` | <code>Párrafo1.<br>Párrafo2.</code> |
 
 ## Mejores prácticas de párrafo
 
-A menos que el [párrafo esté en una lista](#adicionando-elementos-em-listas), no sangres los párrafos con espacios ni tabulaciones.
+A menos que el [párrafo esté en una lista](#añadir-elementos-a-las-listas), no sangres los párrafos con espacios ni tabulaciones.
 
 >  ℹ **Nota:** Si necesitas sangrar párrafos en la salida, consulta la sección sobre cómo sangrar (tabulación).
 
@@ -78,11 +78,8 @@ Para crear un salto de línea o una nueva línea (`<br>`), termina la línea con
 ### Prácticas recomendadas para saltos de línea
 <!-- TODO: line-break-best-practices -->
 Puedes usar dos o más espacios (lo que se denomina habitualmente "espacios en blanco finales") para los saltos de línea en casi todas las aplicaciones de Markdown, pero es algo controvertido. Cuesta ver los espacios en blanco al final en un editor, y muchas personas colocan dos espacios de forma accidental o intencionada después de cada frase. Por ese motivo, quizá prefieras usar otra cosa distinta de los espacios en blanco finales para los saltos de línea. Si tu aplicación de Markdown [admite HTML](#html), puedes usar la etiqueta HTML `<br>`.
-Você pode usar dois ou mais espaços (comumente chamados de "espaços em branco finais") para quebras de linha em quase todos os aplicativos Markdown, mas isso é controverso. É difícil ver espaços em branco no final de um editor, e muitas pessoas acidentalmente ou intencionalmente colocam dois espaços após cada frase. Por esse motivo, você pode querer usar algo diferente de espaços em branco à direita para quebras de linha. Se o seu aplicativo [Markdown suportar HTML](#html), você poderá usar a `<br>` tag HTML.
 Por compatibilidad, usa el espacio en blanco final o la etiqueta HTML `<br>` al final de la línea.
-Para compatibilidade, use o espaço em branco final ou a `<br>` tag HTML no final da linha.
 Hay otras dos opciones que no recomiendo usar. CommonMark y algunos otros lenguajes de marcado ligeros permiten escribir una barra invertida ( `\` ) al final de la línea, pero no todas las aplicaciones de Markdown lo admiten, por lo que no es una buena opción en términos de compatibilidad. Y al menos algunos lenguajes de marcado ligeros no necesitan nada al final de la línea: basta con pulsar Enter y crearán un salto de línea.
-Existem duas outras opções que não recomendo usar. CommonMark e algumas outras linguagens de marcação leves permitem digitar uma barra invertida ( `\` ) no final da linha, mas nem todos os aplicativos Markdown suportam isso, portanto, não é uma ótima opção do ponto de vista de compatibilidade. E pelo menos algumas linguagens de marcação leves não exigem nada no final da linha `-` basta digitar return e elas criarão uma quebra de linha.
 
 | ✅&nbsp; Haz esto                     | ❌&nbsp; No hagas esto                       |
 | ---------------------------------------- | ----------------------------------------------- |
@@ -101,8 +98,8 @@ Para el texto en negrita, añade dos asteriscos o guiones bajos antes y después
 
 | Marcado                     | HTML                                        | Salida renderizada               |
 | ------------------------------ | ------------------------------------------- | --------------------------------|
-| Me encanta `**texto en negrita**`. | Me encanta <strong>texto en negrita</strong>. | Me encanta **texto en negrita** . |
-| Me encanta `__texto en negrita__`. | Me encanta <strong>texto en negrita</strong>. | Me encanta __texto en negrita__ . |
+| Me encanta `**texto en negrita**`. | Me encanta <strong>texto en negrita</strong>. | Me encanta **texto en negrita**. |
+| Me encanta `__texto en negrita__`. | Me encanta <strong>texto en negrita</strong>. | Me encanta __texto en negrita__. |
 | El amor `**es**` en negrita        | El amor<strong>es</strong> en negrita        | El amor **es** en negrita        |
 
 #### Mejores prácticas en negrita
@@ -119,9 +116,9 @@ Para poner el texto en cursiva, añade un asterisco o un guion bajo antes y desp
 
 | Marcado                                   | HTML                                            | Salida renderizada                        |
 | -------------------------------------------- | ----------------------------------------------- | ---------------------------------------- |
-| El texto en cursiva es el `*maullido del gato*`.  | El texto en cursiva es el <em>maullido del gato</em>. | El texto en cursiva es el *maullido del gato* . |
-| El texto en cursiva es el `_maullido del gato_`.  | El texto en cursiva es el <em>maullido del gato</em>. | El texto en cursiva es el _maullido del gato_ . |
-| Un `*gato*` maulla                         | Un <em>gato</em>> maulla                    | Un *gato* maulla                         |
+| El texto en cursiva es el `*maullido del gato*`.  | El texto en cursiva es el <em>maullido del gato</em>. | El texto en cursiva es el *maullido del gato*. |
+| El texto en cursiva es el `_maullido del gato_`.  | El texto en cursiva es el <em>maullido del gato</em>. | El texto en cursiva es el _maullido del gato_. |
+| Un `*gato*` maulla                         | Un <em>gato</em> maulla                    | Un *gato* maulla                         |
 
 #### Mejores prácticas en cursiva
 <!-- TODO: italic-best-practices -->
@@ -172,60 +169,60 @@ La salida renderizada queda así:
 
 Las citas en bloque pueden contener varios párrafos. Añade un `>` en las líneas en blanco entre los párrafos.
 
-    > Dorothy a seguiu por muitos dos belos quartos de seu castelo.
+    > Dorothy la siguió por muchas de las hermosas habitaciones de su castillo.
 
     >
 
-    > A Bruxa ordenou-lhe que limpasse as panelas e as chaleiras, varresse o chão e mantivesse o fogo alimentado com lenha.
+    > La Bruja le ordenó que limpiara las cacerolas y los calderos, barriera el suelo y mantuviera el fuego alimentado con leña.
 
 La salida renderizada queda así:
 
 > Dorothy la siguió por muchas de las hermosas habitaciones de su castillo.
 >
-> La Bruja le ordenó que limpiara las cacerolas y los calderos, barrera el suelo y mantuviera el fuego alimentado con leña.
+> La Bruja le ordenó que limpiara las cacerolas y los calderos, barriera el suelo y mantuviera el fuego alimentado con leña.
 
 ### Citas anidadas
 <!-- TODO: nested-blockquotes -->
 
 Las citas en bloque pueden anidarse. Añade un `>>` delante del párrafo que quieras anidar.
 
-    > Dorothy a seguiu por muitos dos belos quartos de seu castelo.
+    > Dorothy la siguió por muchas de las hermosas habitaciones de su castillo.
 
     >
 
-    >> A Bruxa ordenou-lhe que limpasse as panelas e as chaleiras, varresse o chão e mantivesse o fogo alimentado com lenha.
+    >> La Bruja le ordenó que limpiara las cacerolas y los calderos, barriera el suelo y mantuviera el fuego alimentado con leña.
 
 La salida renderizada queda así:
 
 > Dorothy la siguió por muchas de las hermosas habitaciones de su castillo.
 >
-> La Bruja le ordenó que limpiara las cacerolas y los calderos, barrera el suelo y mantuviera el fuego alimentado con leña.
+> La Bruja le ordenó que limpiara las cacerolas y los calderos, barriera el suelo y mantuviera el fuego alimentado con leña.
 
 ### Citas en bloque con otros elementos
 <!-- TODO: blockquotes-with-other-elements -->
 
 Las citas en bloque pueden contener otros elementos formatados en Markdown. No todos los elementos se pueden usar
 
-    > #### Os resultados trimestrais parecem ótimos!
+    > #### ¡Los resultados trimestrales parecen geniales!
 
     >
 
-    > - A receita estava fora do gráfico.
+    > - Los ingresos se salían del gráfico.
 
-    > - Os lucros foram maiores do que nunca.
+    > - Los beneficios fueron mayores que nunca.
 
     >
 
-    > *Tudo* está indo conforme o **planejado** .
+    > *Todo* va según lo **planeado**.
 
 La salida renderizada queda así:
 
 > #### ¡Los resultados trimestrales parecen geniales!
 >
-> - Los ingresos se salían de las gráficas.
+> - Los ingresos se salían del gráfico.
 > - Los beneficios fueron mayores que nunca.
 >
-> *Todo* va según lo **planeado** .
+> *Todo* va según lo **planeado**.
 
 ### Prácticas recomendadas para citas en bloque
 <!-- TODO: blockquotes-best-practices -->
@@ -281,7 +278,7 @@ Para crear una lista desordenada, añade guiones ( `-` ), asteriscos ( `*` ) o s
 #### Iniciar elementos de lista desordenada con números
 <!-- TODO: starting-unordered-list-items-with-numbers -->
 
-Si necesitas iniciar un elemento de lista desordenada con un número seguido de un punto, puedes usar una barra invertida ( `/` ) para [escapar](#caracteres-escapando) del punto.
+Si necesitas iniciar un elemento de lista desordenada con un número seguido de un punto, puedes usar una barra invertida ( `\` ) para [escapar](#escapar-caracteres) del punto.
 
 | Marcado                                                      | HTML                                         | Salida renderizada                    |
 | --------------------------------------------------------------- | -------------------------------------------- | ------------------------------------ |
@@ -294,7 +291,7 @@ Las aplicaciones de Markdown no se ponen de acuerdo sobre cómo tratar los disti
 
 | ✅&nbsp; Haz esto                                                       | ❌&nbsp; No hagas esto |
 | ------------------------------------------------------------------------ | ----------------------- |
-| - Primeiro item<br>- Segundo item<br>- Terceiro item<br>- Quarto item    | + Primeiro item<br>* Segundo item<br>- Terceiro item<br>+ Quarto item|
+| - Primer elemento<br>- Segundo elemento<br>- Tercer elemento<br>- Cuarto elemento    | + Primer elemento<br>* Segundo elemento<br>- Tercer elemento<br>+ Cuarto elemento|
 
 
 ### Añadir elementos a las listas
@@ -306,12 +303,12 @@ Para añadir otro elemento a una lista manteniendo la continuidad de la lista, s
 
 #### Párrafos
 
-    * Este é o primeiro item da lista.
-    * Aqui está o segundo item da lista.
+    * Este es el primer elemento de la lista.
+    * Aquí está el segundo elemento de la lista.
 
-        Preciso adicionar outro parágrafo abaixo do segundo item da lista.
+        Necesito añadir otro párrafo debajo del segundo elemento de la lista.
 
-    * E aqui está o terceiro item da lista.
+    * Y aquí está el tercer elemento de la lista.
 
 La salida renderizada queda así:
 
@@ -325,12 +322,12 @@ La salida renderizada queda así:
 #### Citas en bloque
 <!-- TODO: blockquotes -->
 
-    * Este é o primeiro item da lista.
-    * Aqui está o segundo item da lista.
+    * Este es el primer elemento de la lista.
+    * Aquí está el segundo elemento de la lista.
 
-        > Uma citação em bloco ficaria ótima abaixo do segundo item da lista.
+        > Una cita en bloque quedaría muy bien debajo del segundo elemento de la lista.
 
-    * E aqui está o terceiro item da lista
+    * Y aquí está el tercer elemento de la lista
 
 La salida renderizada queda así:
 
@@ -342,17 +339,17 @@ La salida renderizada queda así:
 #### Bloques de código
 <!-- TODO: code-blocks-1 -->
 
-[Los bloques de código](#blocos-de-codigos) normalmente se sangran con cuatro espacios o una tabulación. Cuando están dentro de una lista, sangra con ocho espacios o dos tabulaciones.
+[Los bloques de código](#bloques-de-código) normalmente se sangran con cuatro espacios o una tabulación. Cuando están dentro de una lista, sangra con ocho espacios o dos tabulaciones.
 
-    1. Abra o arquivo.
-    2. Encontre o seguinte bloco de código na linha 21:
+    1. Abre el archivo.
+    2. Encuentra el siguiente bloque de código en la línea 21:
 
         <html>
           <head>
             <title>Test</title>
           </head>
 
-    3. Atualize o título para corresponder ao nome do seu site.
+    3. Actualiza el título para que coincida con el nombre de tu sitio.
 
 La salida renderizada queda así:
 
@@ -369,12 +366,12 @@ La salida renderizada queda así:
 #### Imágenes
 <!-- TODO: images -->
 
-    1. Abra o arquivo que contém o mascote do Linux.
-    2. Maravilhe-se com sua beleza.
+    1. Abre el archivo que contiene la mascota de Linux.
+    2. Maravíllate con su belleza.
 
         ![Tux, the Linux mascot](/assets/images/tux.png)
 
-    3. Feche o arquivo.
+    3. Cierra el archivo.
 
 La salida renderizada queda así:
 
@@ -390,12 +387,12 @@ La salida renderizada queda así:
 
 Puedes anidar una lista desordenada dentro de una lista ordenada, o viceversa.
 
-    1. Primeiro item
-    2. Segundo item
-    3. Terceiro item
-          - Item recuado
-          - Item recuado
-    4. Quarto item
+    1. Primer elemento
+    2. Segundo elemento
+    3. Tercer elemento
+          - Elemento sangrado
+          - Elemento sangrado
+    4. Cuarto elemento
 
 La salida renderizada queda así:
 
@@ -421,7 +418,7 @@ Si la palabra o frase que quieras denotar como código incluye una o más comill
 
 |Marcado                             |HTML                                              |Salida renderizada           |
 | ------------------------------------- | ------------------------------------------------ | -------------------------  |
-|``Usa `code` en tu archivo Markdown.``| <code>Usa `code` en tu archivo Markdown.</code> |Usa ´code´ en tu archivo Markdown.|
+|``Usa `code` en tu archivo Markdown.``| <code>Usa `code` en tu archivo Markdown.</code> |Usa `code` en tu archivo Markdown.|
 
 ### Bloques de código
 <!-- TODO: code-blocks -->
@@ -449,14 +446,11 @@ Para crear una regla horizontal, usa tres o más asteriscos ( `***` ), guiones (
     ***
     ---
     ______________
-A saída renderizada de todos os três parece idêntica:
 La salida renderizada de los tres parece idéntica:
 _____________________________________________________
 
-### Práticas recomendadas para regras horizontais
 ### Prácticas recomendadas para reglas horizontales
 
-Para compatibilidade, coloque linhas em branco antes e depois das réguas horizontais.
 Por compatibilidad, coloca líneas en blanco antes y después de las reglas horizontales.
 | ✅&nbsp; Haz esto                                                                      | ❌&nbsp; No hagas esto |
 |----------------------------------------------------------------------------------------- |------------------------|
@@ -473,7 +467,7 @@ La salida renderizada queda así:
 
 Mi buscador favorito es [Duck Duck Go](https://duckduckgo.com).
 
->  ℹ **Nota:** Para enlazar a un elemento de la misma página, consulta [enlazar a IDs de encabezado](https://www.markdownguide.org/extended-syntax/#linking-to-heading-ids) . Para crear un enlace que se abra en una pestaña o ventana nueva, consulta la sección sobre [destinos de enlace](https://www.markdownguide.org/hacks/#link-targets).
+>  ℹ **Nota:** Para enlazar a un elemento de la misma página, consulta [enlazar a IDs de encabezado](https://www.markdownguide.org/extended-syntax/#linking-to-heading-ids). Para crear un enlace que se abra en una pestaña o ventana nueva, consulta la sección sobre [destinos de enlace](https://www.markdownguide.org/hacks/#link-targets).
 
 ### Añadir títulos
 <!-- TODO: adding-titles -->
@@ -483,32 +477,29 @@ Opcionalmente, puedes añadir un título a un enlace. Aparecerá como un consejo
     My favorite search engine is [Duck Duck Go](https://duckduckgo.com "The best search engine for privacy").
 
 La salida renderizada queda así:
-Meu mecanismo de pesquisa favorito é [Duck Duck Go](https://duckduckgo.com).
+
 Mi buscador favorito es [Duck Duck Go](https://duckduckgo.com).
-### URLs e endereços de e-mail
+
 ### URLs y direcciones de correo electrónico
 
-Para transformar rapidamente um URL ou endereço de e-mail em um link, coloque-o entre colchetes angulares.
 Para convertir rápidamente una URL o una dirección de correo electrónico en un enlace, enciérrala entre corchetes angulares.
+
     <https://www.markdownguide.org>
     <fake@example.com>
 
-A saída renderizada fica assim:
 La salida renderizada queda así:
  <https://www.markdownguide.org>
 
  <fake@example.com>
 
-### Formatando links
 ### Formato de enlaces
 
-Para [enfatizar](#enfase) os links, adicione asteriscos antes e depois dos colchetes e parênteses. Para denotar links como [code](#codigo), adicione crases entre colchetes.
-Para [enfatizar](#enfase) los enlaces, añade asteriscos antes y después de los corchetes y paréntesis. Para denotar enlaces como [código](#codigo), añade comillas graves entre corchetes.
-    Adoro apoiar a **[EFF](https://eff.org)**.
+Para [enfatizar](#énfase) los enlaces, añade asteriscos antes y después de los corchetes y paréntesis. Para denotar enlaces como [código](#código), añade comillas graves entre corchetes.
+    Me encanta apoyar a **[EFF](https://eff.org)**.
 
-    Este é o *[Markdown Guide](https://www.markdownguide.org)*.
+    Este es el *[Markdown Guide](https://www.markdownguide.org)*.
 
-    Consulte a seção sobre [`code`](#codigo).
+    Consulta la sección sobre [`code`](#código).
 
 La salida renderizada queda así:
 
@@ -516,7 +507,7 @@ Me encanta apoyar a **[EFF](https://eff.org)**.
 
 Este es el *[Markdown Guide](https://www.markdownguide.org)*.
 
-Consulta la sección sobre [`code`](#codigo).
+Consulta la sección sobre [`code`](#código).
 
 ### Enlaces de estilo de referencia
 <!-- TODO: reference-style-links -->
@@ -540,9 +531,9 @@ Esto significa que los siguientes formatos de ejemplo son aproximadamente equiva
 
 La segunda parte de un enlace de estilo de referencia se formatea con los siguientes atributos:
 
-    1. O rótulo, entre colchetes, seguido imediatamente por dois pontos e pelo menos um espaço (por exemplo, [label]: ).
-    2. O URL do link, que você pode colocar opcionalmente entre colchetes angulares.
-    3. O título opcional do link, que você pode colocar entre aspas duplas, aspas simples ou parênteses.
+    1. La etiqueta, entre corchetes, seguida inmediatamente de dos puntos y al menos un espacio (por exemplo, [label]: ).
+    2. La URL del enlace, que puedes colocar opcionalmente entre corchetes angulares.
+    3. El título opcional del enlace, que puedes colocar entre comillas dobles, comillas simples o paréntesis.
 
 Esto significa que los siguientes formatos de ejemplo son aproximadamente equivalentes para la segunda parte del enlace:
 
@@ -559,15 +550,15 @@ Puedes colocar esta segunda parte del enlace en cualquier lugar de tu documento 
 #### Un ejemplo para juntar las piezas
 <!-- TODO: an-example-putting-the-parts-together -->
 
-Imagina que añades una URL como un [enlace de URL estándar](#ligacoes) a un párrafo y que queda así en Markdown:
+Imagina que añades una URL como un [enlace de URL estándar](#enlaces) a un párrafo y que queda así en Markdown:
 
-    Num buraco no chão vivia um hobbit. Não é um buraco nojento, sujo e molhado, cheio de pontas
-    de vermes e com cheiro de lodo, nem um buraco seco, vazio e arenoso, sem nada onde sentar ou onde sentar.
-    comer: era uma [toca de hobbit](https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"), e isso significa conforto.
+    En un agujero en el suelo vivía un hobbit. No era un agujero asqueroso, sucio y húmedo, lleno de extremidades
+    de gusanos y con olor a lodo, ni tampoco un agujero seco, vacío y arenoso, sin nada donde sentarse o comer:
+    era un [agujero de hobbit](https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"), y eso significa comodidad.
 
 Aunque pueda apuntar a información adicional interesante, la URL mostrada no aporta mucho al texto sin formato existente y solo lo hace más difícil de leer. Para corregirlo, puedes formatear la URL así:
 
-    Em um buraco no chão vivia um hobbit. Não um buraco nojento, sujo e úmido, cheio de pontas de minhocas e com cheiro de lodo, nem ainda um buraco seco, vazio e arenoso, sem nada onde sentar ou comer: era um [buraco de hobbit](https://en.wikipedia.org/wiki/Hobbit#Lifestyle), e isso significa conforto.
+    En un agujero en el suelo vivía un hobbit. No un agujero asqueroso, sucio y húmedo, lleno de extremidades de gusanos y con olor a lodo, ni tampoco un agujero seco, vacío y arenoso, sin nada donde sentarse o comer: era un [agujero de hobbit](https://en.wikipedia.org/wiki/Hobbit#Lifestyle), y eso significa comodidad.
 
 En ambos casos anteriores, la salida renderizada sería idéntica:
 
@@ -588,7 +579,7 @@ Las aplicaciones de Markdown no se ponen de acuerdo sobre cómo tratar los espac
 | -------------------------------------------------------- | ------------------------------------------------------|
 |`[link](https://www.example.com/my%20great%20page)`<br><br>`<a href="https://www.example.com/my great page">link</a>`|`[link](https://www.example.com/my great page)`<br><br>|
 
-Los paréntesis en medio de una URL también pueden ser problemáticos. Por compatibilidad, intenta codificar en URL el paréntesis de apertura `(()` con %28 y el paréntesis de cierre `( ))` con %29. Como alternativa, si tu aplicación de Markdown [admite HTML](#html) , puedes usar la etiqueta HTML.
+Los paréntesis en medio de una URL también pueden ser problemáticos. Por compatibilidad, intenta codificar en URL el paréntesis de apertura `(()` con %28 y el paréntesis de cierre `( ))` con %29. Como alternativa, si tu aplicación de Markdown [admite HTML](#html), puedes usar la etiqueta HTML.
 
 | ✅&nbsp; Haz esto                                       | ❌&nbsp; No hagas esto                               |
 | -------------------------------------------------------- | ------------------------------------------------------|
@@ -604,7 +595,7 @@ La salida renderizada queda así:
 
 ![The San Juan Mountains are beautiful!](https://mdg.imgix.net/assets/images/san-juan-mountains.jpg?auto=format&fit=clip&q=40&w=800 "San Juan Mountains")
 
->  ℹ **Nota:** Para cambiar el tamaño de una imagen, consulta la sección sobre [tamaño de imagen](https://www.markdownguide.org/hacks/#image-size) . Para añadir un pie de foto, consulta la sección sobre [pies de imagen](https://www.markdownguide.org/hacks/#image-captions).
+>  ℹ **Nota:** Para cambiar el tamaño de una imagen, consulta la sección sobre [tamaño de imagen](https://www.markdownguide.org/hacks/#image-size). Para añadir un pie de foto, consulta la sección sobre [pies de imagen](https://www.markdownguide.org/hacks/#image-captions).
 
 ### Enlazar imágenes
 <!-- TODO: linking-images -->
@@ -636,14 +627,14 @@ Puedes usar una barra invertida para escapar los siguientes caracteres.
 |Caracteres   |Nombre                                                                            |
 | ----------- | ------------------------------------------------------------------------------ |
 |\            |barra invertida                                                                 |
-|`            |backtick (véase también [escape de backticks en el código](#escapando-de-crases)) |
+|`            |backtick (véase también [escape de backticks en el código](#escapar-comillas-graves)) |
 |*            |asterisco                                                                       |
 |_            |guion bajo                                                                      |
 |{}           |llaves                                                                          |
 |[]           |corchetes                                                                       |
 |<>           |corchetes angulares                                                             |
 |()           |paréntesis                                                                      |
-|#            |almohadilla.                                                                    |
+|#            |almohadilla                                                                     |
 |+            |signo más                                                                       |
 |-            |signo menos (guion)                                                             |
 |.            |punto                                                                           |
@@ -667,10 +658,10 @@ Esta **palabra** está en negrita. Esta *palabra* está en cursiva.
 
 Por motivos de seguridad, no todas las aplicaciones de Markdown admiten HTML en los documentos Markdown. En caso de duda, consulta la documentación de tu aplicación de Markdown. Algunas aplicaciones solo admiten un subconjunto de etiquetas HTML.
 
-Usa líneas en blanco para separar los elementos HTML de nivel de bloque, como , `<div>` y del contenido circundante. Intenta no sangrar las etiquetas con tabulaciones ni espacios — esto puede interferir en el formato.`<table><pre><p>`
+Usa líneas en blanco para separar los elementos HTML de nivel de bloque, como `<table>`, `<pre>` y `<p>`, del contenido circundante. Intenta no sangrar las etiquetas con tabulaciones ni espacios: esto puede interferir en el formato.
 
 No puedes usar la sintaxis Markdown dentro de etiquetas HTML de nivel de bloque. Por ejemplo, `<p>italic and **bold**</p>` no funcionará.
-F
+
 ## Emojis
 
 [Emojis para Markdown](https://gist.github.com/rxaviers/7360908)

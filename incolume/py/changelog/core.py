@@ -7,6 +7,7 @@ import logging
 import re
 from collections.abc import Container, Mapping
 from pathlib import Path
+from typing import Any
 
 import tomlkit as toml
 from icecream import ic
@@ -67,17 +68,17 @@ def select_configuration_fl(
 ) -> Path:
     """Check if the configuration file exists."""
     project_root = project_root or find_project_root()
-    files = (
-        [conf_changelog_fl, *files]  # type: ignore [list-item]
+    candidates: list[Path | None] = (
+        [conf_changelog_fl, *files]
         if isinstance(files, list)
-        else [conf_changelog_fl, *(project_root / fl for fl in confchangelog)]  # type: ignore [list-item]
+        else [conf_changelog_fl, *(project_root / fl for fl in confchangelog)]
     )
-    for file in [f for f in files if f]:
+    for file in [f for f in candidates if f is not None]:
         if file.exists():
             return file
     msg = (
         'Any Configuration file found: '
-        f'{", ".join([file.name for file in files])}'
+        f'{", ".join([file.name for file in candidates if file is not None])}'
     )
     raise FileNotFoundError(msg)
 
@@ -180,7 +181,7 @@ def modify_logger_runtime(
 
 
 def key_versions_2_sort(
-    x: tuple[str, ...] | list[str],
+    x: tuple[str, ...] | list[str] | tuple[str, dict[str, Any]],
     qdig: int = 0,
     regex: str = '',
 ) -> str:

@@ -4,12 +4,12 @@ Reglas y convenciones para desarrollar `incolume.py.changelog`.
 
 ## Código de conducta
 
-Detalles en el [Código de Conducta](code_of_conduct).
+Detalles en [Código de Conducta](code_of_conduct.md).
 
 ## Estándares aplicados
 
 Metodologías y convenciones del proyecto en
-[Convenciones y Metodologías](README).
+[Convenciones y Metodologías](README.md).
 
 ## Requisitos
 
@@ -90,5 +90,5 @@ La versión vive en `pyproject.toml` (`[project]`) y debe reflejarse en
 
 - Branch derivado de `dev`, con una issue abierta.
 - Test del criterio antes de la implementación.
-- `ruff`/`mypy`/`pytest` en verde antes de committer.
+- `ruff`/`mypy`/`pytest` en verde antes de hacer commit.
 - Merge `--no-ff` (revisado por Kevin).

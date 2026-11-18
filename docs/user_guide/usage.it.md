@@ -1,12 +1,12 @@
 # Guida all'uso
 
-Come generare e mantenere il `CHANGELOG` con `incolume.py.changelog`.
+Come generare e mantenere il `CHANGELOG.md` con `incolume.py.changelog`.
 
-## Requisiti
+## Prerequisiti
 
 - Repository git con **tag annotati** (l'annotazione è la fonte del CHANGELOG).
 - Ambiente con Python `>=3.11,<4` e `uv` (vedi
-  [Installazione](INSTALLATION)).
+  [Installazione](INSTALLATION.md)).
 
 ## Generare il CHANGELOG
 
@@ -15,7 +15,7 @@ uv run task changelog
 ```
 
 Il comando legge `git tag -n`, classifica i messaggi e scrive il file
-configurato (per impostazione predefinita `docs/about/CHANGELOG`).
+configurato (per impostazione predefinita `docs/about/CHANGELOG.md`).
 
 Il file è **generato** — non deve essere modificato a mano.
 
@@ -24,12 +24,12 @@ Il file è **generato** — non deve essere modificato a mano.
 | Comando | Descrizione |
 |---|---|
 | `changelog [FILE]` | Genera il CHANGELOG nel file indicato |
-| `gcl`, `gencl`, `gchangelog` | Alias del comando sopra |
+| `gcl`, `gencl`, `gchangelog` | Alias del comando precedente |
 | `greeting [NOME]` | Saluto di esempio |
 
 Opzioni di `changelog`:
 
-| Opzione | Scorcia | Descrizione |
+| Opzione | Scorciatoia | Descrizione |
 |---|---|---|
 | `--url` | `-u` | URL base di confronto |
 | `--reverse` | `-r` | Ordine inverso (il più recente per primo) |
@@ -42,7 +42,7 @@ File cercati, in ordine: `changelog.toml`, `.changelog.toml`,
 
 ```toml
 [settings]
-file = "docs/about/CHANGELOG"
+file = "docs/about/CHANGELOG.md"
 reverse = true
 url_compare = "https://github.com/development-incolume/incolume.py.changelog/compare"
 url_keepachangelog = "https://keepachangelog.com/en/1.0.0"
@@ -69,11 +69,11 @@ Categorie accettate: `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`,
 ```python
 from incolume.py.changelog.changelog import update_changelog
 
-update_changelog(changelog_file='docs/about/CHANGELOG', reverse=True)
+update_changelog(changelog_file='docs/about/CHANGELOG.md', reverse=True)
 ```
 
 ## Vedi anche
 
-- [Installazione](INSTALLATION)
-- [Documentazione dell'API](../api/index)
-- [Sviluppo](development)
+- [Installazione](INSTALLATION.md)
+- [Documentazione dell'API](../api/index.md)
+- [Sviluppo](development.md)

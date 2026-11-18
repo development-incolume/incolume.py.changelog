@@ -11,10 +11,10 @@ Die vollständige Dokumentation finden Sie auf [mkdocs.org](https://www.mkdocs.o
 
 ## Projekt-Layout
 
-    mkdocs.yml # Die Konfigurationsdatei.
- docs/
- index # Die Dokumentationsseite.
-...       # Andere Markdown-Seiten, Bilder und andere Dateien.
+    mkdocs.yml    # Die Konfigurationsdatei.
+    docs/
+        index.md  # Die Dokumentationsseite.
+        ...       # Andere Markdown-Seiten, Bilder und andere Dateien.
 
 ## Web-Dokumentation auf Github-Seiten angewendet
- mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc
+    mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc

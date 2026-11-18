@@ -2,6 +2,7 @@ site_name: Incolume Python Changelog
 repo_url: https://github.com/development-incolume/incolume.py.changelog
 repo_name: incolume.py.changelog
 edit_uri: tree/dev/docs
+site_url: https://development-incolume.github.io/incolume.py.changelog/
 
 theme:
   name: material
@@ -42,6 +43,9 @@ extra_css:
 watch:
   - incolume
 
+exclude_docs: |
+  analysis_artifacts/*
+
 plugins:
   - search
   - mkdocstrings:
@@ -77,7 +81,6 @@ plugins:
                 Contribuidores: Mitwirkende
                 Licença: Lizenz
                 Notas de lançamento: Versionshinweise
-                Artefatos: Artefakte
                 Plano de documentação: Dokumentationsplan
                 PRD: PRD
                 ADR: ADR
@@ -107,7 +110,6 @@ plugins:
             Contribuidores: Contributors
             Licença: License
             Notas de lançamento: Release Notes
-            Artefatos: Artifacts
             Plano de documentação: Documentation Plan
             PRD: PRD
             ADR: ADR
@@ -136,7 +138,6 @@ plugins:
             Contribuidores: Contribuyentes
             Licença: Licencia
             Notas de lançamento: Notas de lanzamiento
-            Artefatos: Artefactos
             Plano de documentação: Plan de documentación
             PRD: PRD
             ADR: ADR
@@ -165,7 +166,6 @@ plugins:
             Contribuidores: Contributeurs
             Licença: Licence
             Notas de lançamento: Notes de version
-            Artefatos: Artefacts
             Plano de documentação: Plan de documentation
             PRD: PRD
             ADR: ADR
@@ -194,7 +194,6 @@ plugins:
             Contribuidores: Contributori
             Licença: Licenza
             Notas de lançamento: Note di rilascio
-            Artefatos: Artefatti
             Plano de documentação: Piano di documentazione
             PRD: PRD
             ADR: ADR
@@ -230,8 +229,3 @@ nav:
         - Licença: about/LICENSE
         - 'Notas de lançamento': about/CHANGELOG
         - Glossário: about/glossario
-    - 'Artefatos':
-        - 'Plano de documentação': analysis_artifacts/PLAN-001-documentacao
-        - PRD: analysis_artifacts/PRD-001-geracao-changelog
-        - ADR: analysis_artifacts/ADR-001-geracao-changelog
-        - SPEC: analysis_artifacts/SPEC-001-execucao

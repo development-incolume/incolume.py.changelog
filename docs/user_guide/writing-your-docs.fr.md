@@ -11,10 +11,10 @@ Pour une documentation complète, consultez [mkdocs.org](https://www.mkdocs.org)
 
 ## Présentation du projet
 
-    mkdocs.yml # Le fichier de configuration.
- docs/
- index # La page de documentation.
-...       # Autres pages markdown, images et autres fichiers.
+    mkdocs.yml    # Le fichier de configuration.
+    docs/
+        index.md  # La page de documentation.
+        ...       # Autres pages markdown, images et autres fichiers.
 
-## Documentation web appliquée aux pages github
- mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc
+## Documentation web appliquée à GitHub Pages
+    mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc

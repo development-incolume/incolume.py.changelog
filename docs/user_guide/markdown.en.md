@@ -18,7 +18,7 @@ For example, to create a level three heading (`<h3>`), use three number signs (e
 | Markup          | 	HTML                       | Rendered output        |
 |---------------------|------------------------------|--------------------------|
 | `# Heading level 1` | 	`<h1>Heading level 1</h1>` | <h1>Heading level 1</h1> |
-| `# Heading level 2` | 	`<h2>Heading level 2</h2>` | <h1>Heading level 1</h1> |
+| `# Heading level 2` | 	`<h2>Heading level 2</h2>` | <h2>Heading level 2</h2> |
 | `# Heading level 3` | 	`<h3>Heading level 3</h3>` | <h3>Heading level 3</h3> |
 | `# Heading level 4` | 	`<h4>Heading level 4</h4>` | <h4>Heading level 4</h4> |
 | `# Heading level 5` | 	`<h5>Heading level 5</h5>` | <h5>Heading level 5</h5> |
@@ -53,11 +53,11 @@ To create paragraphs, use a blank line to separate one or more lines of text.
 
 | Markdown                                    | 	HTML	                                      | Rendered output                       |
 |---------------------------------------------|---------------------------------------------|-----------------------------------------|
-| <code>Paragrafo1.<br><br>Paragrafo2.</code> | `<p>Paragrafo1.</p><p>Paragrafo2.</p>` | <code>Paragrafo1.<br>Paragrafo2.</code> |
+| <code>Paragraph1.<br><br>Paragraph2.</code> | `<p>Paragraph1.</p><p>Paragraph2.</p>` | <code>Paragraph1.<br>Paragraph2.</code> |
 
 ## Paragraph Best Practices
 
-Unless the [paragraph is in a list](#adicionando-elementos-em-listas), don't indent paragraphs with spaces or tabs.
+Unless the [paragraph is in a list](#adding-elements-in-lists), don't indent paragraphs with spaces or tabs.
 
 >  ℹ **Note:** If you need to indent paragraphs in the output, see the section on how to indent (tabs).
 
@@ -72,8 +72,8 @@ To create a line break or a new line (`<br>`), end a line with two or more space
 
 | Markup                  | HTML                             | Rendered output          |
 | --------------------------- | ---------------------------------|----------------------------|
-| Esta é a primeira linha.    | <p>Esta é a primeira linha.<br>  | Esta é a primeira linha.   |
-| E esta é a segunda linha.   | E esta é a segunda linha.</p>    | E esta é a segunda linha.  |
+| This is the first line.    | <p>This is the first line.<br>  | This is the first line.   |
+| And this is the second line.   | And this is the second line.</p>    | And this is the second line.  |
 
 ### Line Break Best Practices
 <!-- TODO: line-break-best-practices -->
@@ -82,7 +82,7 @@ You can use two or more spaces (commonly called "trailing whitespace") for line 
 
 For compatibility, use trailing whitespace or the `<br>` HTML tag at the end of the line.
 
-There are two other options I don't recommend using. CommonMark and some other lightweight markup languages allow you to type a backslash ( `\` ) at the end of the line, but not all Markdown applications support this, so it isn't a great option from a compatibility standpoint. And at least some lightweight markup languages don't require anything at the end of the line ` `-` ` just type return and they will create a line break.
+There are two other options I don't recommend using. CommonMark and some other lightweight markup languages allow you to type a backslash ( `\` ) at the end of the line, but not all Markdown applications support this, so it isn't a great option from a compatibility standpoint. And at least some lightweight markup languages don't require anything at the end of the line — just type return and they will create a line break.
 
 | ✅&nbsp; Do this                       | ❌&nbsp; Don't do this                         |
 | ---------------------------------------- | ----------------------------------------------- |
@@ -281,7 +281,7 @@ To create an unordered list, add dashes (`-`), asterisks (`*`), or plus signs (`
 #### Starting Unordered List Items With Numbers
 <!-- TODO: starting-unordered-list-items-with-numbers -->
 
-If you need to start an unordered list item with a number followed by a period, you can use a backslash (`\`) to [escape](#caracteres-escapando) the period.
+If you need to start an unordered list item with a number followed by a period, you can use a backslash (`\`) to [escape](#escaping-characters) the period.
 
 | Markup                                                      | HTML                                         | Rendered output                    |
 | --------------------------------------------------------------- | -------------------------------------------- | ------------------------------------ |
@@ -342,7 +342,7 @@ The rendered output looks like this:
 #### Code Blocks
 <!-- TODO: code-blocks-1 -->
 
-[Code blocks](#blocos-de-codigos) are normally indented four spaces or one tab. When they're in a list, indent them eight spaces or two tabs.
+[Code blocks](#code-blocks) are normally indented four spaces or one tab. When they're in a list, indent them eight spaces or two tabs.
 
     1. Open the file.
     2. Find the following code block on line 21:
@@ -502,13 +502,13 @@ The rendered output looks like this:
 ### Formatting Links
 <!-- TODO: formatting-links -->
 
-To [emphasize](#enfase) links, add asterisks before and after the brackets and parentheses. To denote links as [code](#codigo), add backticks in the brackets.
+To [emphasize](#emphasis) links, add asterisks before and after the brackets and parentheses. To denote links as [code](#code), add backticks in the brackets.
 
     I love supporting the **[EFF](https://eff.org)**.
 
     This is the *[Markdown Guide](https://www.markdownguide.org)*.
 
-    See the section on [`code`](#codigo).
+    See the section on [`code`](#code).
 
 The rendered output looks like this:
 
@@ -516,7 +516,7 @@ I love supporting the **[EFF](https://eff.org)**.
 
 This is the *[Markdown Guide](https://www.markdownguide.org)*.
 
-See the section on [`code`](#codigo).
+See the section on [`code`](#code).
 
 ### Reference-style Links
 <!-- TODO: reference-style-links -->
@@ -559,7 +559,7 @@ You can place this second part of the link anywhere in your Markdown document. S
 #### An Example Putting the Parts Together
 <!-- TODO: an-example-putting-the-parts-together -->
 
-Say you add a URL as a [standard URL link](#ligacoes) to a paragraph and it looks like this in Markdown:
+Say you add a URL as a [standard URL link](#links) to a paragraph and it looks like this in Markdown:
 
     In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends
     of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to
@@ -582,13 +582,13 @@ and the HTML for the link would be:
 ### Link Best Practices
 <!-- TODO: link-best-practices -->
 
-Markdown applications don't agree on how to handle spaces in the middle of a URL. For compatibility, try to URL encode any spaces with %20. Alternatively, if your Markdown application [supports HTML](#html), you could use the `a` HTML tag.
+Markdown applications don't agree on how to handle spaces in the middle of a URL. For compatibility, try to URL encode any spaces with %20. Alternatively, if your Markdown application [supports HTML](#html), you could use the `<a>` HTML tag.
 
 | ✅&nbsp; Do this                                       | ❌&nbsp; Don't do this                               |
 | -------------------------------------------------------- | ------------------------------------------------------|
 |`[link](https://www.example.com/my%20great%20page)`<br><br>`<a href="https://www.example.com/my great page">link</a>`|`[link](https://www.example.com/my great page)`<br><br>|
 
-Parentheses in the middle of a URL can also be problematic. For compatibility, try to URL encode the opening parenthesis (`(`) with %28 and the closing parenthesis (`)`) with %29. Alternatively, if your Markdown application [supports HTML](#html), you could use the `a` HTML tag.
+Parentheses in the middle of a URL can also be problematic. For compatibility, try to URL encode the opening parenthesis (`(`) with %28 and the closing parenthesis (`)`) with %29. Alternatively, if your Markdown application [supports HTML](#html), you could use the `<a>` HTML tag.
 
 | ✅&nbsp; Do this                                       | ❌&nbsp; Don't do this                               |
 | -------------------------------------------------------- | ------------------------------------------------------|
@@ -636,7 +636,7 @@ You can use a backslash to escape the following characters.
 |Character   |Name                                                                            |
 | ----------- | ------------------------------------------------------------------------------ |
 |\            |backslash                                                                 |
-|`            |backtick (see also [escaping backticks in code](#escapando-de-crases)) |
+|`            |backtick (see also [escaping backticks in code](#escaping-backticks)) |
 |*            |asterisk                                                                       |
 |_            |underscore                                                                      |
 |{}           |curly braces                                                                          |
@@ -673,7 +673,7 @@ You can't use Markdown syntax inside block-level HTML tags. For example, `<p>ita
 
 ## Emojis
 
-[Emoji for MarkDown](https://gist.github.com/rxaviers/7360908)
+[Emoji for Markdown](https://gist.github.com/rxaviers/7360908)
 
 ### People
 
