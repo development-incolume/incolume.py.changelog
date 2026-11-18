@@ -98,7 +98,7 @@ pytest tests incolume
 
 ## 8. Versionamento e release
 
-- `uv version --bump <sem>`; ajustar `[tool.poetry] version` e `version.txt`.
+- `uv version --bump <sem>`; ajustar `version.txt`.
 - Commit de versão em `dev`, após o merge: `build: incolume-py-changelog <v>`.
 - Release: tag anotada → workflow `multplatform-ci-cd.yml` (build, release,
   publicação).
