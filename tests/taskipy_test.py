@@ -26,10 +26,12 @@ class TestTaskipy:
         [
             'bandit',
             'pre_sec',
+            'qa',
             'safety',
             'sec',
             'setup',
             'test-all',
+            'ty',
         ],
     )
     def test_task_presente(self, task: str) -> None:
