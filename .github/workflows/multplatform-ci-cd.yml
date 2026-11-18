@@ -33,9 +33,11 @@ jobs:
           python -m pip install -U pip uv ruff
           uv sync
 
-      - name: Check with mypy
+      - name: Check static type
         continue-on-error: true
-        run: uv run mypy incolume/ tests/
+        run: |
+          uv run mypy incolume/ tests/
+          uv run ty incolume/ tests/
 
       - name: Format with ruff
         continue-on-error: false
