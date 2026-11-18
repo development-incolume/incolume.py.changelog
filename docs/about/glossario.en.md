@@ -47,7 +47,7 @@ category, with the definition and where the term appears in the documentation.
 | **Sprint** | Delivery cycle (usually 1–2 weeks) with previously planned issues. |
 | **Worktree** | Isolated working directory derived from a branch. |
 | **Rebase** | Integration technique that replays commits on top of another branch. |
-| **Fast-forward / Merge --no-ff** | Branch merge strategies; here `--no-ff` is used to preserve the task history. |
+| **Fast-forward / Merge --no-ff** | Merge strategies for branches; here `--no-ff` is used to preserve the task history. |
 
 ---
 
@@ -59,10 +59,10 @@ category, with the definition and where the term appears in the documentation.
 | **mypy** | Static type checker for Python. |
 | **pytest** | Python unit test framework. |
 | **coverage 99.7%** | Minimum code coverage required in tests (quality rule). |
-| **Strict mode** | MkDocs Maximum validation mode (fails on warnings). |
+| **Strict mode** | MkDocs maximum validation mode (fails on warnings). |
 | **broken link** | Internal link pointing to a nonexistent file. |
 | **UTF-8 strict** | UTF-8 encoding validation without replacing invalid characters. |
-| **mojibake** | Text corrupted by an encoding error (e.g., `âÂ` instead of `ã`). |
+| **mojibake** | Text corrupted by an encoding error (e.g., `Ã£` instead of `ã`). |
 | **HTML entity** | Representation of special characters using their numeric encoding (e.g., `&amp;`). |
 | **Badge** | Visual icon in Markdown showing status (green CI, version, etc.) via external services. |
 
@@ -78,7 +78,7 @@ category, with the definition and where the term appears in the documentation.
 | **edit_uri: tree/branch/docs** | Pattern used to generate edit links on GitHub. |
 | **theme** | Look and layout of the site (here: `material`). |
 | **light/dark mode** | Light and dark mode support via the Material palette. |
-| **sidebar** | Side bar with progressive navigation through the topics. |
+| **sidebar** | Sidebar with progressive navigation through the topics. |
 | **permalink** | Permanent URL of a section (generates automatic anchors). |
 | **autolink** | Creates automatic anchors from headings. |
 | **emoji** | Extension that allows using emojis in Markdown. |

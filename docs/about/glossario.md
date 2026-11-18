@@ -59,10 +59,10 @@ por categoria, com a definição e o local onde o termo aparece na documentaçã
 | **mypy** | Checador estático de tipos (type checker) em Python. |
 | **pytest** | Framework de testes unitários em Python. |
 | **coverage 99,7%** | Cobertura mínima de código necessária nos testes (regra de qualidade). |
-| **Strict mode** | Modo de validação Máxima do MkDocs (quebra em warnings). |
+| **Strict mode** | Modo de validação máxima do MkDocs (quebra em warnings). |
 | **broken link** | Link interno que aponta para arquivo inexistente. |
 | **UTF-8 strict** | Validação de encoding UTF-8 sem substituição de caracteres inválidos. |
-| **mojibake** | Texto corrompido por erro de codificação (ex.: `âÂ` em vez de `ã`). |
+| **mojibake** | Texto corrompido por erro de codificação (ex.: `Ã£` em vez de `ã`). |
 | **HTML entity** | Representação de caracteres especiais usando sua codificação numérica (ex.: `&amp;`). |
 | **Badge** | Ícone visual em Markdown com status (CI verde, version, etc.) via serviços externos. |
 
@@ -73,7 +73,7 @@ por categoria, com a definição e o local onde o termo aparece na documentaçã
 | Termo | Definição |
 |---|---|
 | **publish** | Processo de subir a documentação gerada para o servidor de hospedagem. |
-| **site_name** | Título exibido no cabecalho do site gerado. |
+| **site_name** | Título exibido no cabeçalho do site gerado. |
 | **edit_uri** | URI usada para edição direta de páginas pelo GitHub. |
 | **edit_uri: tree/branch/docs** | Padrão usado para gerar links de edição no GitHub. |
 | **theme** | Visual e layout do site (aqui: `material`). |
@@ -81,9 +81,9 @@ por categoria, com a definição e o local onde o termo aparece na documentaçã
 | **sidebar** | Barra lateral com navegação progressiva pelos tópicos. |
 | **permalink** | URL permanente de uma seção (gera âncoras automáticas). |
 | **autolink** | Cria âncoras automáticas a partir de cabeçalhos. |
-| **emoji** |Extensão que permite usaraquiemojis no Markdown. |
+| **emoji** |Extensão que permite usar emojis no Markdown. |
 | **pagetocat** | Gera uma tabela de conteúdo (TOC) no topo da página. |
-| **toc permalink** | Permite clicar no ícone do baldowe para ir a um cabeçalho. |
+| **toc permalink** | Permite clicar no ícone do link para ir a um cabeçalho. |
 
 ---
 

@@ -47,7 +47,7 @@ por categoría, con la definición y el lugar donde aparece el término en la do
 | **Sprint** | Ciclo de entrega (generalmente 1–2 semanas) con issues planificadas previamente. |
 | **Worktree** | Directorio de trabajo aislado derivado de una rama. |
 | **Rebase** | Técnica de integración que reaplica commits sobre otra rama. |
-| **Fast-forward / Merge --no-ff** | Estrategias de merge de ramas; aquí se usa `--no-ff` para mantener el historial de tareas. |
+| **Fast-forward / Merge --no-ff** | Estrategias de fusión de ramas; aquí se usa `--no-ff` para mantener el historial de tareas. |
 
 ---
 
@@ -62,7 +62,7 @@ por categoría, con la definición y el lugar donde aparece el término en la do
 | **Strict mode** | Modo de validación máxima de MkDocs (falla con warnings). |
 | **broken link** | Enlace interno que apunta a un archivo inexistente. |
 | **UTF-8 strict** | Validación de codificación UTF-8 sin sustitución de caracteres inválidos. |
-| **mojibake** | Texto corrupto por error de codificación (ej.: `âÂ` en lugar de `ã`). |
+| **mojibake** | Texto corrupto por error de codificación (ej.: `Ã£` en lugar de `ã`). |
 | **HTML entity** | Representación de caracteres especiales mediante su codificación numérica (ej.: `&amp;`). |
 | **Badge** | Icono visual en Markdown con estado (CI verde, versión, etc.) mediante servicios externos. |
 

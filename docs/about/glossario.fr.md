@@ -3,7 +3,7 @@
 Référentiel des termes techniques utilisés dans la documentation du projet
 `incolume.py.changelog`.
 
-Ce fichier sert de **glossaire** (top 100 des termes du projet), organisés par
+Ce fichier sert de **glossaire** (top 100 des termes du projet), organisé par
 catégorie, avec leur définition et l'endroit où le terme apparaît dans la
 documentation.
 
@@ -26,7 +26,7 @@ documentation.
 | **CHANGELOG.md** | Fichier de suivi des modifications suivant la norme Keep a Changelog. |
 | **ADR** | Architecture Decision Record — document qui consigne les décisions d'architecture. |
 | **PRD** | Product Requirements Document — document des exigences du produit. |
-| **SPEC** | Specification — document d'exécution/spécification technique. |
+| **SPEC** | Spécification — document d'exécution/spécification technique. |
 | **PLAN-001** | Plan d'amélioration de la documentation — document de planification de la sprint. |
 | **CI/CD** | *Continuous Integration / Continuous Deployment* — intégration et livraison continues. |
 | **GitHub Pages** | Service hébergé par GitHub pour publier des sites statiques. |
@@ -47,7 +47,7 @@ documentation.
 | **Sprint** | Cycle de livraison (généralement 1 à 2 semaines) avec des issues planifiées au préalable. |
 | **Worktree** | Répertoire de travail isolé dérivé d'une branche. |
 | **Rebase** | Technique d'intégration qui réapplique des commits au-dessus d'une autre branche. |
-| **Fast-forward / Merge --no-ff** | Stratégies de fusion de branche ; ici, on utilise `--no-ff` pour conserver l'historique des tâches. |
+| **Fast-forward / Merge --no-ff** | Stratégies de fusion de branches ; ici, on utilise `--no-ff` pour conserver l'historique des tâches. |
 
 ---
 

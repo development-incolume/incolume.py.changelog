@@ -20,7 +20,7 @@ core tasks:
 - AC-02, AC-11, AC-12, AC-15, AC-18 and AC-19 issues.
 
 Adapters and sanitization (and now `Bob` in `adapters/office/` and
-`render/`) are no longer the responsibility of whoever reads this document.
+`render/`) are no longer the responsibility of the person reading this document.
 
 ## Prerequisites
 
@@ -115,6 +115,6 @@ git commit -m "build: $(uv version)"
 ## Delivery flow
 
 1. Branch derived from `dev`, with an open issue.
-2. Criterion test **before** the implementation (red → green → refactor).
+2. Test for the criterion **before** the implementation (red → green → refactor).
 3. `ruff`/`mypy`/`pytest` green before committing.
-4. `--no-ff` merge into `dev` with Kevin's review.
+4. `--no-ff` merge into `dev` with review by Kevin.

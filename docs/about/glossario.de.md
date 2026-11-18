@@ -48,7 +48,7 @@ Dokumentation erscheint.
 | **Sprint** | Lieferzyklus (in der Regel 1–2 Wochen) mit zuvor geplanten Issues. |
 | **Worktree** | Isoliertes Arbeitsverzeichnis, das von einem Branch abgeleitet ist. |
 | **Rebase** | Integrationstechnik, die Commits auf einen anderen Branch neu anwendet. |
-| **Fast-forward / Merge --no-ff** | Strategien zum Branch-Merge; hier wird `--no-ff` verwendet, um den Aufgabenverlauf zu erhalten. |
+| **Fast-forward / Merge --no-ff** | Strategien zum Merge von Branches; hier wird `--no-ff` verwendet, um den Aufgabenverlauf zu erhalten. |
 
 ---
 
@@ -63,7 +63,7 @@ Dokumentation erscheint.
 | **Strict mode** | Validierungsmodus „Strict“ von MkDocs (bricht bei Warnungen ab). |
 | **broken link** | Interner Link, der auf eine nicht existierende Datei verweist. |
 | **UTF-8 strict** | Validierung der UTF-8-Kodierung ohne Ersetzung ungültiger Zeichen. |
-| **mojibake** | Durch einen Kodierungsfehler beschädigter Text (z. B. `âÂ` statt `ã`). |
+| **mojibake** | Durch einen Kodierungsfehler beschädigter Text (z. B. `Ã£` statt `ã`). |
 | **HTML entity** | Darstellung von Sonderzeichen über ihre numerische Kodierung (z. B. `&amp;`). |
 | **Badge** | Visuelles Symbol in Markdown mit Status (grüne CI, Version usw.) über externe Dienste. |
 
@@ -79,7 +79,7 @@ Dokumentation erscheint.
 | **edit_uri: tree/branch/docs** | Muster, das zum Erzeugen von Bearbeitungslinks auf GitHub verwendet wird. |
 | **theme** | Erscheinungsbild und Layout der Website (hier: `material`). |
 | **light/dark mode** | Unterstützung für helle und dunkle Darstellung über die Material-Paleta. |
-| **sidebar** | Seitliche Leiste mit schrittweiser Navigation durch die Themen. |
+| **sidebar** | Seitenleiste mit schrittweiser Navigation durch die Themen. |
 | **permalink** | Permanente URL eines Abschnitts (erzeugt automatische Anker). |
 | **autolink** | Erzeugt automatische Anker aus Überschriften. |
 | **emoji** | Erweiterung, die die Verwendung von Emojis in Markdown ermöglicht. |
