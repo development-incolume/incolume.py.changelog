@@ -372,7 +372,7 @@ Le rendu est le suivant :
     1. Ouvrez le fichier contenant la mascotte de Linux.
     2. Admirez sa beauté.
 
-        ![Tux, la mascotte de Linux](/assets/images/tux.png)
+        ![Tux, la mascotte de Linux](https://mdg.imgix.net/assets/images/tux.png?auto=format&fit=clip&q=40&w=100)
 
     3. Fermez le fichier.
 
