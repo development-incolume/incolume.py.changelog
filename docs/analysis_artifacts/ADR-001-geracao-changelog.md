@@ -2,8 +2,8 @@
 
 - **Data:** 2026-11-14
 - **Projeto:** incolume.py.changelog
-- **Versão do produto:** 1.5.0
-- **Status:** Proposta (aguardando revisão)
+- **Versão do produto:** 1.7.0a11
+- **Status:** Aprovado
 - **Autor:** Brito (Britodfbr)
 - **Coautor:** Dr. Nefário OpenBot
 - **Fonte:** derivado do repositório — `incolume/py/changelog/`, `pyproject.toml`,
