@@ -25,6 +25,9 @@ theme:
 markdown_extensions:
   - attr_list
   - admonition
+  - pymdownx.snippets:
+      base_path: .
+      check_paths: true
   - pymdownx.tasklist
   - pymdownx.superfences:
       custom_fences:
@@ -86,6 +89,7 @@ plugins:
                 ADR: ADR
                 SPEC: SPEC
                 Glossário: Glossar
+                Regras do repositório: Regeln des Repositoriums
 
         - locale: en
           build: true
@@ -115,6 +119,7 @@ plugins:
             ADR: ADR
             SPEC: SPEC
             Glossário: Glossary
+            Regras do repositório: Repository Rules
         - locale: es
           build: true
           name: Español
@@ -143,6 +148,7 @@ plugins:
             ADR: ADR
             SPEC: SPEC
             Glossário: Glosario
+            Regras do repositório: Reglas del repositorio
         - locale: fr
           build: true
           name: Français
@@ -171,6 +177,7 @@ plugins:
             ADR: ADR
             SPEC: SPEC
             Glossário: Glossário
+            Regras do repositório: Règles du dépôt
         - locale: it
           build: true
           name: Italiano
@@ -199,6 +206,7 @@ plugins:
             ADR: ADR
             SPEC: SPEC
             Glossário: Glossario
+            Regras do repositório: Regole del repository
         - locale: pt
           build: true
           name: Português
@@ -214,6 +222,7 @@ nav:
     - Instalação: user_guide/INSTALLATION
     - Uso: user_guide/usage
     - Desenvolvimento: user_guide/development
+    - Regras do repositório: agents
     - 'Guia do Usuário':
         - Convenções: user_guide/README
         - Código de Conduta: user_guide/code_of_conduct
