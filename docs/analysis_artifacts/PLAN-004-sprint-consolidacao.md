@@ -3,7 +3,7 @@
 - **Data:** 2026-11-18
 - **Projeto:** incolume.py.changelog
 - **Versão do projeto:** 1.9.0
-- **Status:** Em andamento (sprints 1–2 concluídas)
+- **Status:** Concluído — sprints 1 (QA), 2 (release `1.9.0`) e 4 (traduções, #226) concluídas; sprint 3 (#175) fora do plano
 - **Autor:** Brito (Britodfbr)
 - **Coautor:** Dr. Nefário OpenBot
 
