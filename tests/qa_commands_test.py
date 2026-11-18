@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 QA_COMMANDS = (
     'ruff check --fix tests incolume',
     'ruff format tests incolume',
-    'mypy tests incolume',
+    'ty check tests incolume',
     'pytest tests incolume',
 )
 

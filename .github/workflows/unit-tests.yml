@@ -46,10 +46,10 @@ jobs:
         source .venv/bin/activate
         ruff format tests incolume
 
-    - name: Type check with mypy
+    - name: Type check with ty
       run: |
         source .venv/bin/activate
-        mypy tests incolume
+        ty check tests incolume
 
     - name: Test with pytest
       run: |
