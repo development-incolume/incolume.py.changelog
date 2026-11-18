@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/it/user_guide/semver/">
+      
       
       
       
@@ -918,60 +920,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefatti
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefatti
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -979,98 +927,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Piano di documentazione
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glossario
   
 
     
@@ -1111,6 +975,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#specifica-di-versionamento-semantico-semver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specifica di Versionamento Semantico (SemVer)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1130,22 +1013,46 @@
 
 
 <h1 id="versionamento-semantico-semver">Versionamento Semantico (SemVer)<a class="headerlink" href="#versionamento-semantico-semver" title="Permanent link">#</a></h1>
-<p>Questa specifica può essere vista integralmente al suo indirizzo ufficiale all'indirizzo https://semver.org.</p>
-<h1 id="specifica-di-versionamento-semantico-semver">Specifica di Versionamento Semantico (SemVer)<a class="headerlink" href="#specifica-di-versionamento-semantico-semver" title="Permanent link">#</a></h1>
-<p>Le parole chiave “DEVE” (“MUST”), “NON DEVE” (“MUST NOT”), “REQUIRED”, “SHALL”, “SHALL NOT”, “DOVREBBE” (“SHOULD”), “SHOULD NOT”, “RECOMMENDED”, “PUO’” (“MAY”), e “OPTIONAL” in questo documento sono da interpretarsi come descritto nella RFC 2119.</p>
+<p>Questa specifica può essere consultata integralmente all'indirizzo ufficiale https://semver.org.</p>
+<h2 id="specifica-di-versionamento-semantico-semver">Specifica di Versionamento Semantico (SemVer)<a class="headerlink" href="#specifica-di-versionamento-semantico-semver" title="Permanent link">#</a></h2>
+<p>Le parole chiave “DEVE” (“MUST”), “NON DEVE” (“MUST NOT”), “REQUIRED”, “SHALL”, “SHALL NOT”, “DOVREBBE” (“SHOULD”), “SHOULD NOT”, “RECOMMENDED”, “PUÒ” (“MAY”), e “OPTIONAL” in questo documento sono da interpretarsi come descritto nella RFC 2119.</p>
 <ol>
-<li>Software che usa Versionamento Semantico DEVE dichiarare un’API pubblica. Questa API potrebbe essere dichiarata nel codice stesso oppure essere definita rigorosamente nella documentazione. Indipendentemente da come è dichiarata, dovrebbe essere precisa a completa.</li>
-<li>Un numero di versione normale DEVE essere nella forma X.Y.Z, dove X, Y, e Z sono interi non negativi, e NON DEVONO contenere zeri iniziali. X è la versione major, Y è la versione minor, e Z è la versione patch. Ogni elemento DEVE incrementare come numero a sé. Per esempio: 1.9.0 -&gt; 1.10.0 -&gt; 1.11.0.</li>
+<li>Software che usa Versionamento Semantico DEVE dichiarare un’API pubblica. Questa API potrebbe essere dichiarata nel codice stesso oppure essere definita rigorosamente nella documentazione. Indipendentemente da come è dichiarata, dovrebbe essere precisa e completa.</li>
+<li>Un numero di versione normale DEVE essere nella forma X.Y.Z, dove X, Y, e Z sono interi non negativi, e NON DEVONO contenere zeri iniziali. X è la versione major, Y è la versione minor, e Z è la versione patch. Ogni elemento DEVE incrementare numericamente. Per esempio: 1.9.0 -&gt; 1.10.0 -&gt; 1.11.0.</li>
 <li>Una volta che un pacchetto versionato è stato rilasciato, i contenuti di quella versione NON DEVONO essere modificati. Qualsiasi modifica DEVE essere rilasciata come una nuova versione.</li>
 <li>La versione Major zero (0.y.z) è per lo sviluppo iniziale. Qualunque cosa può cambiare in qualsiasi istante. L’API pubblica non dovrebbe essere considerata stabile.</li>
 <li>La versione 1.0.0 definisce l’API pubblica. Il modo in cui il numero di versione è incrementato dopo questo rilascio dipende da questa API pubblica e da come quest’ultima cambia.</li>
 <li>La versione Patch Z (x.y.Z | x &gt; 0) DEVE essere incrementata solo se sono introdotte correzioni retrocompatibili di bug. Una correzione di un bug è definita come una modifica interna che corregge un comportamento errato.</li>
-<li>La versione Minor Y (x.Y.z | x &gt; 0) DEVE essere incrementata se nell’API pubblica è introdotta una nuova funzionalità retrocompatibile. Essa DEVE essere incrementata se qualsiasi funzionalità dell’API pubblica è marcata come deprecata. Essa PUO’ essere incrementata se sono introdotti all’interno del codice privato nuove funzionalità o miglioramenti sostanziali. Essa PUO’ includere modifiche di livello patch. La versione Patch DEVE essere reimpostata a 0 quando la versione Minor è incrementata.</li>
-<li>La versione Major X (X.y.z | X &gt; 0) DEVE essere incrementata se nell’API pubblica è introdotta qualsiasi modifica non retrocompatibile. Essa PUO’ includere modifiche di livello minor e patch. Le versioni patch e minor DEVONO essere reimpostate a 0 quando la versione major è incrementata.</li>
-<li>Una versione di pre-rilascio PUO’ essere indicata aggiungendo immediatamente dopo la versione patch un trattino e una serie di identificatori separati dal punto. Gli identificatori DEVONO essere composti solo da alfanumerici ASCII e trattini [0-9A-Za-z-]. Gli identificatori NON DEVONO essere vuoti. Gli identificatori numerici NON DEVONO includere zeri iniziali. Le versioni di pre-rilascio hanno una precedenza inferiore rispetto alla versione normale associata. Una versione di pre-rilascio indica che la versione è instabile e potrebbe non soddisfare i requisiti di compatibilità intesi come indicato dalla versione normale ad essa associata. Esempi: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.</li>
-<li>Metadati di build POSSONO essere indicati aggiungendo immediatamente dopo la versione patch o pre-rilascio un segno di addizione e una serie di identificatori separati dal punto. Gli identificatori DEVONO essere composti solo da alfanumerici ASCII e trattini [0-9A-Za-z-]. Gli identificatori NON DEVONO essere vuoti. I metadati di build dovrebbero essere ignorati nella determinazione della precedenza delle versione. Perciò due versioni che differiscono solo per i metadati di build, hanno la stessa precedenza. Esempi: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.</li>
-<li>La precedenza si riferisce a come le versioni sono confrontate l’una con l’altra quando poste in relazione d’ordine. La precedenza DEVE essere calcolata separando gli identificatori nell’ordine seguente: major, minor, patch e pre-release (i metadati di build non compaiono nella precedenza). La precedenza è determinata dalla prima discrepanza quando si confrontano ognuno di tali identificatori da sinistra a destra come segue: le versioni major, minor e patch sono sempre confrontate numericamente. Esempio: 1.0.0 &lt; 2.0.0 &lt; 2.1.0 &lt; 2.1.1. Quando major, minor, e patch sono uguali, una versione di pre-rilascio ha una precedenza inferiore rispetto alla versione normale. Esempio: 1.0.0-alpha &lt; 1.0.0. La precedenza per due versioni di pre-rilascio con la stessa versione major, minor, e patch DEVE essere determinata confrontando ognuno degli identificatori separati dal punto da sinistra a destra finché si trova una discrepanza come segue: gli identificatori costituiti da sole cifre sono confrontati numericamente e gli identificatori con lettere o trattini sono confrontati lessicalmente secondo l’ordinamento ASCII. Gli identificatori numerici hanno sempre una precedenza più bassa rispetto agli identificatori non numerici. Un insieme più grande di identificatori ha una precedenza superiore rispetto ad un insieme più piccolo, se tutti quanti i precedenti identificatori sono uguali. Esempio: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt; 1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.</li>
+<li>La versione Minor Y (x.Y.z | x &gt; 0) DEVE essere incrementata se nell’API pubblica è introdotta una nuova funzionalità retrocompatibile. Essa DEVE essere incrementata se qualsiasi funzionalità dell’API pubblica è marcata come deprecata. Essa PUÒ essere incrementata se sono introdotti all’interno del codice privato nuove funzionalità o miglioramenti sostanziali. Essa PUÒ includere modifiche di livello patch. La versione Patch DEVE essere reimpostata a 0 quando la versione Minor è incrementata.</li>
+<li>La versione Major X (X.y.z | X &gt; 0) DEVE essere incrementata se nell’API pubblica è introdotta qualsiasi modifica non retrocompatibile. Essa PUÒ includere modifiche di livello minor e patch. Le versioni patch e minor DEVONO essere reimpostate a 0 quando la versione major è incrementata.</li>
+<li>Una versione di pre-rilascio PUÒ essere indicata aggiungendo immediatamente dopo la versione patch un trattino e una serie di identificatori separati dal punto. Gli identificatori DEVONO essere composti solo da alfanumerici ASCII e trattini [0-9A-Za-z-]. Gli identificatori NON DEVONO essere vuoti. Gli identificatori numerici NON DEVONO includere zeri iniziali. Le versioni di pre-rilascio hanno una precedenza inferiore rispetto alla versione normale associata. Una versione di pre-rilascio indica che la versione è instabile e potrebbe non soddisfare i requisiti di compatibilità intesi come indicato dalla versione normale ad essa associata. Esempi: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.</li>
+<li>
+<p>Metadati di build POSSONO essere indicati aggiungendo immediatamente dopo la versione patch o pre-rilascio un segno di addizione e una serie di identificatori separati dal punto. Gli identificatori DEVONO essere composti solo da alfanumerici ASCII e trattini [0-9A-Za-z-]. Gli identificatori NON DEVONO essere vuoti. I metadati di build dovrebbero essere ignorati nella determinazione della precedenza delle versioni. Perciò due versioni che differiscono solo per i metadati di build, hanno la stessa precedenza. Esempi: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.</p>
+</li>
+<li>
+<p>La precedenza si riferisce a come le versioni sono confrontate l'una con l'altra quando poste in relazione d'ordine.</p>
+</li>
+<li>
+<p>La precedenza DEVE essere calcolata separando gli identificatori nell'ordine seguente: major, minor, patch e pre-release (i metadati di build non compaiono nella precedenza).</p>
+</li>
 </ol>
+<p>I. La precedenza è determinata dalla prima discrepanza quando si confrontano ognuno di tali identificatori da sinistra a destra come segue: le versioni major, minor e patch sono sempre confrontate numericamente.</p>
+<pre><code>Esempio: 1.0.0 &lt; 2.0.0 &lt; 2.1.0 &lt; 2.1.1.
+</code></pre>
+<p>II. Quando major, minor e patch sono uguali, una versione di pre-rilascio ha una precedenza inferiore rispetto alla versione normale.</p>
+<pre><code>Esempio: 1.0.0-alpha &lt; 1.0.0.
+</code></pre>
+<p>III. La precedenza per due versioni di pre-rilascio con la stessa versione major, minor e patch DEVE essere determinata confrontando ognuno degli identificatori separati dal punto da sinistra a destra finché si trova una discrepanza come segue:</p>
+<blockquote>
+<ul>
+<li>Gli identificatori costituiti da sole cifre sono confrontati numericamente.</li>
+<li>Gli identificatori con lettere o trattini sono confrontati lessicalmente secondo l'ordinamento ASCII.</li>
+<li>Gli identificatori numerici hanno sempre una precedenza più bassa rispetto agli identificatori non numerici.</li>
+<li>Un insieme più grande di identificatori ha una precedenza superiore rispetto a un insieme più piccolo, se tutti gli identificatori precedenti sono uguali.</li>
+</ul>
+</blockquote>
+<pre><code>Esempio: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt; 1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.
+</code></pre>
 
 
 

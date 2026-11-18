@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/it/user_guide/usage/">
+      
       
       
       
@@ -918,60 +920,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefatti
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefatti
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -979,98 +927,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Piano di documentazione
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glossario
   
 
     
@@ -1118,10 +982,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requisiti" class="md-nav__link">
+  <a href="#prerequisiti" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Requisiti
+        Prerequisiti
       
     </span>
   </a>
@@ -1215,18 +1079,18 @@
 
 
 <h1 id="guida-alluso">Guida all'uso<a class="headerlink" href="#guida-alluso" title="Permanent link">#</a></h1>
-<p>Come generare e mantenere il <code>CHANGELOG</code> con <code>incolume.py.changelog</code>.</p>
-<h2 id="requisiti">Requisiti<a class="headerlink" href="#requisiti" title="Permanent link">#</a></h2>
+<p>Come generare e mantenere il <code>CHANGELOG.md</code> con <code>incolume.py.changelog</code>.</p>
+<h2 id="prerequisiti">Prerequisiti<a class="headerlink" href="#prerequisiti" title="Permanent link">#</a></h2>
 <ul>
 <li>Repository git con <strong>tag annotati</strong> (l'annotazione è la fonte del CHANGELOG).</li>
 <li>Ambiente con Python <code>&gt;=3.11,&lt;4</code> e <code>uv</code> (vedi
-  <a href="INSTALLATION">Installazione</a>).</li>
+  <a href="../INSTALLATION/">Installazione</a>).</li>
 </ul>
 <h2 id="generare-il-changelog">Generare il CHANGELOG<a class="headerlink" href="#generare-il-changelog" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>task<span class="w"> </span>changelog
 </code></pre></div>
 <p>Il comando legge <code>git tag -n</code>, classifica i messaggi e scrive il file
-configurato (per impostazione predefinita <code>docs/about/CHANGELOG</code>).</p>
+configurato (per impostazione predefinita <code>docs/about/CHANGELOG.md</code>).</p>
 <p>Il file è <strong>generato</strong> — non deve essere modificato a mano.</p>
 <h2 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">#</a></h2>
 <table>
@@ -1243,7 +1107,7 @@ configurato (per impostazione predefinita <code>docs/about/CHANGELOG</code>).</p
 </tr>
 <tr>
 <td><code>gcl</code>, <code>gencl</code>, <code>gchangelog</code></td>
-<td>Alias del comando sopra</td>
+<td>Alias del comando precedente</td>
 </tr>
 <tr>
 <td><code>greeting [NOME]</code></td>
@@ -1256,7 +1120,7 @@ configurato (per impostazione predefinita <code>docs/about/CHANGELOG</code>).</p
 <thead>
 <tr>
 <th>Opzione</th>
-<th>Scorcia</th>
+<th>Scorciatoia</th>
 <th>Descrizione</th>
 </tr>
 </thead>
@@ -1282,7 +1146,7 @@ configurato (per impostazione predefinita <code>docs/about/CHANGELOG</code>).</p
 <p>File cercati, in ordine: <code>changelog.toml</code>, <code>.changelog.toml</code>,
 <code>pyproject.toml</code> (sezione <code>[tool.changelog.settings]</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="k">[settings]</span>
-<span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"docs/about/CHANGELOG"</span>
+<span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"docs/about/CHANGELOG.md"</span>
 <span class="n">reverse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 <span class="n">url_compare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/development-incolume/incolume.py.changelog/compare"</span>
 <span class="n">url_keepachangelog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://keepachangelog.com/en/1.0.0"</span>
@@ -1300,13 +1164,13 @@ configurato (per impostazione predefinita <code>docs/about/CHANGELOG</code>).</p
 <h2 id="api-python">API Python<a class="headerlink" href="#api-python" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">incolume.py.changelog.changelog</span><span class="w"> </span><span class="kn">import</span> <span class="n">update_changelog</span>
 
-<span class="n">update_changelog</span><span class="p">(</span><span class="n">changelog_file</span><span class="o">=</span><span class="s1">'docs/about/CHANGELOG'</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">update_changelog</span><span class="p">(</span><span class="n">changelog_file</span><span class="o">=</span><span class="s1">'docs/about/CHANGELOG.md'</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="vedi-anche">Vedi anche<a class="headerlink" href="#vedi-anche" title="Permanent link">#</a></h2>
 <ul>
-<li><a href="INSTALLATION">Installazione</a></li>
-<li><a href="../api/index">Documentazione dell'API</a></li>
-<li><a href="development">Sviluppo</a></li>
+<li><a href="../INSTALLATION/">Installazione</a></li>
+<li><a href="../../api/">Documentazione dell'API</a></li>
+<li><a href="../development/">Sviluppo</a></li>
 </ul>
 
 

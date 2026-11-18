@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/it/user_guide/keep-a-changelog/">
+      
       
       
       
@@ -918,60 +920,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefatti
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefatti
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -979,98 +927,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Piano di documentazione
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glossario
   
 
     
@@ -1202,10 +1066,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#aggiornare-changelog" class="md-nav__link">
+  <a href="#aggiornare-il-changelogmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Aggiornare CHANGELOG
+        Aggiornare il CHANGELOG.md
       
     </span>
   </a>
@@ -1252,9 +1116,9 @@
 <h2 id="che-cose-un-changelog">Che cos'è un changelog?<a class="headerlink" href="#che-cose-un-changelog" title="Permanent link">#</a></h2>
 <p>Un changelog è un file che contiene un elenco selezionato, ordinato cronologicamente, delle modifiche significative apportate a ciascuna versione di un progetto.</p>
 <h2 id="perche-tenere-un-changelog">Perché tenere un changelog?<a class="headerlink" href="#perche-tenere-un-changelog" title="Permanent link">#</a></h2>
-<p>Per consentire agli utenti e ai collaboratori di vedere con precisione quali modifiche significative sono state apportate tra ciascuna versione pubblicata di un progetto.</p>
+<p>Per consentire agli utenti e ai collaboratori di vedere con precisione quali modifiche significative sono state apportate tra le varie versioni pubblicate di un progetto.</p>
 <h2 id="chi-ha-bisogno-di-un-changelog">Chi ha bisogno di un changelog?<a class="headerlink" href="#chi-ha-bisogno-di-un-changelog" title="Permanent link">#</a></h2>
-<p>Le persone ne hanno bisogno. Che siano consumatori o sviluppatori, gli utenti finali dei software sono esseri umani che si preoccupano di ciò che è contenuto nel software. Quando il software cambia, le persone vogliono sapere perché e come.</p>
+<p>Le persone ne hanno bisogno. Che siano consumatori o sviluppatori, gli utenti finali del software sono esseri umani che si preoccupano di ciò che è contenuto nel software. Quando il software cambia, le persone vogliono sapere perché e come.</p>
 <h2 id="come-creare-un-buon-changelog">Come creare un buon changelog?<a class="headerlink" href="#come-creare-un-buon-changelog" title="Permanent link">#</a></h2>
 <h3 id="principi-fondamentali">Principi fondamentali<a class="headerlink" href="#principi-fondamentali" title="Permanent link">#</a></h3>
 <ul>
@@ -1277,11 +1141,11 @@
 </ul>
 <h2 id="come-applicare-il-changelog-a-questo-progetto">Come applicare il changelog a questo progetto?<a class="headerlink" href="#come-applicare-il-changelog-a-questo-progetto" title="Permanent link">#</a></h2>
 <p>Questo progetto utilizza il pacchetto python incolumepy.utils, che ha la
-   prerogativa di creare automaticamente un <code>CHANGELOG</code> dalle
+   prerogativa di creare automaticamente un <code>CHANGELOG.md</code> dalle
 voci di <code>git tag -n</code>.</p>
 <p>Esempi:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span>Unreleased<span class="w"> </span>-m<span class="w"> </span><span class="s1">'added: Aggiunte linee guida su Keep a CHANGELOG in docs/user_guide/keep-a-chagelog'</span>
-git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span><span class="sb">`</span>poetry<span class="w"> </span>version<span class="w"> </span>-s<span class="sb">`</span><span class="w"> </span>-m<span class="w"> </span>‘added:<span class="w"> </span>Aggiunte<span class="w"> </span>linee<span class="w"> </span>guida<span class="w"> </span>su<span class="w"> </span>Keep<span class="w"> </span>a<span class="w"> </span>CHANGELOG<span class="w"> </span><span class="k">in</span><span class="w"> </span>docs/user_guide/keep-a-chagelog’
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span>Unreleased<span class="w"> </span>-m<span class="w"> </span><span class="s1">'added: Aggiunte linee guida su Keep a CHANGELOG.md in docs/user_guide/keep-a-chagelog.md'</span>
+git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span><span class="sb">`</span>poetry<span class="w"> </span>version<span class="w"> </span>-s<span class="sb">`</span><span class="w"> </span>-m<span class="w"> </span><span class="s1">'added: Aggiunte linee guida su Keep a CHANGELOG.md in docs/user_guide/keep-a-chagelog.md'</span>
 git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>.0.0<span class="w"> </span>-m<span class="w"> </span><span class="s1">'Added: (Aggiunto) per nuove funzionalità;</span>
 <span class="s1">Changed: (Modificato) per modifiche a funzionalità esistenti;</span>
 <span class="s1">Deprecated: (Obsoleto) per le funzionalità che saranno rimosse nelle prossime versioni;</span>
@@ -1289,7 +1153,7 @@ git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span>
 <span class="s1">Fixed: (Corretto) per qualsiasi correzione di bug;</span>
 <span class="s1">Security: (Sicurezza) in caso di vulnerabilità;'</span>
 </code></pre></div></p>
-<h3 id="aggiornare-changelog">Aggiornare CHANGELOG<a class="headerlink" href="#aggiornare-changelog" title="Permanent link">#</a></h3>
+<h3 id="aggiornare-il-changelogmd">Aggiornare il CHANGELOG.md<a class="headerlink" href="#aggiornare-il-changelogmd" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>task<span class="w"> </span>gcl
 </code></pre></div>
 <h2 id="riferimento">Riferimento<a class="headerlink" href="#riferimento" title="Permanent link">#</a></h2>

@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/es/user_guide/writing-your-docs/">
+      
       
       
       
@@ -914,60 +916,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefactos
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefactos
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -975,98 +923,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Plan de documentación
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glosario
   
 
     
@@ -1145,10 +1009,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentacion-web-aplicada-a-las-paginas-de-github" class="md-nav__link">
+  <a href="#documentacion-web-aplicada-en-github-pages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Documentación web aplicada a las páginas de github
+        Documentación web aplicada en GitHub Pages
       
     </span>
   </a>
@@ -1184,16 +1048,17 @@
 <li><code>mkdocs new [dir-name]</code> - Crea un nuevo proyecto.</li>
 <li><code>mkdocs serve</code> - Inicia la carga automática para el servidor de documentos.</li>
 <li><code>mkdocs build</code> - Construye el sitio de documentación.</li>
-<li><code>mkdocs -h</code> - Mostrar el mensaje de ayuda y salir.</li>
+<li><code>mkdocs -h</code> - Muestra el mensaje de ayuda y sale.</li>
 </ul>
 <h2 id="diseno-del-proyecto">Diseño del proyecto<a class="headerlink" href="#diseno-del-proyecto" title="Permanent link">#</a></h2>
-<pre><code>mkdocs.yml # El archivo de configuración.
+<pre><code>mkdocs.yml    # El archivo de configuración.
+docs/
+    index.md  # La página de documentación.
+    ...       # Otras páginas markdown, imágenes y demás archivos.
 </code></pre>
-<p>docs/
- index # La página de documentación.
-...       # Otras páginas markdown, imágenes y otros archivos.</p>
-<h2 id="documentacion-web-aplicada-a-las-paginas-de-github">Documentación web aplicada a las páginas de github<a class="headerlink" href="#documentacion-web-aplicada-a-las-paginas-de-github" title="Permanent link">#</a></h2>
-<p>mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc</p>
+<h2 id="documentacion-web-aplicada-en-github-pages">Documentación web aplicada en GitHub Pages<a class="headerlink" href="#documentacion-web-aplicada-en-github-pages" title="Permanent link">#</a></h2>
+<pre><code>mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc
+</code></pre>
 
 
 

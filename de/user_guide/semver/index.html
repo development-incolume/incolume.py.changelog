@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/de/user_guide/semver/">
+      
       
       
       
@@ -910,60 +912,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefakte
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefakte
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -971,98 +919,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dokumentationsplan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glossar
   
 
     
@@ -1141,30 +1005,49 @@
 
 
 <h1 id="semantic-versioning-spezifikation-semver">Semantic-Versioning-Spezifikation (SemVer)<a class="headerlink" href="#semantic-versioning-spezifikation-semver" title="Permanent link">#</a></h1>
-<p>Diese Spezifikation kann vollständig unter der offiziellen Adresse eingesehen werden https://semver.org/.</p>
+<p>Diese Spezifikation kann vollständig unter der offiziellen Adresse eingesehen werden: https://semver.org/.</p>
 <h2 id="spezifikation">Spezifikation<a class="headerlink" href="#spezifikation" title="Permanent link">#</a></h2>
 <p>Die Terme „MUST“, „MUST NOT“, „REQUIRED“, „SHALL“, „SHALL NOT“, „SHOULD“, „SHOULD NOT“, „RECOMMENDED“, „MAY“ und „OPTIONAL“ in diesem Dokument sind, wie in RFC 2119 beschrieben, zu interpretieren.</p>
 <ol>
 <li>Software, die Semantic Versioning nutzt, muss (MUST) eine öffentliche API definieren. Die API kann entweder im Code selbst deklariert werden oder in einer Dokumentation enthalten sein. Wie auch immer sie umgesetzt wird, es ist wichtig, dass sie präzise und ausführlich ist.</li>
 <li>Eine gewöhnliche Versionsnummer muss (MUST) dem Format X.Y.Z entsprechen, wobei X, Y und Z Ganzzahlen größer oder gleich Null sind und eine Zahl größer als Null keine führenden Nullen enthalten darf. X ist die Major-Version, Y ist die Minor-Version und Z ist die Patch-Version. Jedes Element muss (MUST) auf numerische Art und Weise erhöht werden. Zum Beispiel: 1.9.0 -&gt; 1.10.0 -&gt; 1.11.0.</li>
 <li>Sobald eine Version eines Projektes veröffentlicht wurde, darf (MUST NOT) der Inhalt dieser Version nicht mehr verändert werden. Eine Änderung am Inhalt muss (MUST) als eine neue Version veröffentlicht werden.</li>
-<li>Versionsnummern mit einer Major Version von 0 (0.y.z) sind für die initiale Entwicklungsphase gedacht. Änderungen können in jeder denkbaren Form und zu jeder Zeit auftreten. Die öffentliche API sollte nicht als stable betrachtet werden.</li>
+<li>Versionsnummern mit einer Major Version von 0 (0.y.z) sind für die initiale Entwicklungsphase gedacht. Änderungen können in jeder denkbaren Form und zu jeder Zeit auftreten. Die öffentliche API sollte nicht als stabil betrachtet werden.</li>
 <li>Die Version 1.0.0 definiert die öffentliche API. Ab dieser Veröffentlichung hängt die Art und Weise, wie die Versionsnummer erhöht und verändert wird, von der öffentlichen API und den Änderungen, die an ihr vollzogen werden, ab.</li>
 <li>Die Patch-Version Z (x.y.Z | x &gt; 0) muss (MUST) erhöht werden, wenn ausschließlich API-kompatible Bugfixes eingeführt werden. Ein Bugfix ist als eine interne Änderung, die ein fehlerhaftes Verhalten korrigiert, definiert.</li>
 <li>Die Minor-Version Y (x.Y.z | x &gt; 0) muss (MUST) erhöht werden, wenn neue Funktionalitäten, die kompatibel zur bisherigen API sind, veröffentlicht werden. Sie muss (MUST) außerdem erhöht werden, wenn eine Funktion der öffentlichen API als deprecated markiert wird. Wenn umfangreiche Änderungen an internem Code eingeführt werden, darf (MAY) die Minor-Version ebenfalls erhöht werden. Wenn diese Versionsnummer erhöht wird, muss (MUST) die Patch-Version auf Null zurückgesetzt werden.</li>
 <li>Die Major-Version X (X.y.z | X &gt; 0) muss (MUST) immer dann erhöht werden, wenn API-inkompatible Änderungen in die öffentlichen API eingeführt werden. Die Änderungen dürfen (MAY) auch Änderungen umfassen, die ansonsten die Minor-Version oder die Patch-Version erhöht hätten. Wenn diese Versionsnummer erhöht wird, muss (MUST) sowohl die Minor-Version als auch die Patch-Version auf Null zurückgesetzt werden.</li>
 <li>
-<p>Eine Vorveröffentlichung kann (MAY) gekennzeichnet werden, indem ein Bindestrich, gefolgt von dem Vorveröffentlichungs-Bezeichner, dessen Elemente durch Punkte voneinander getrennt werden, an die Patch-Version angehängt wird. Die Elemente des Bezeichners dürfen (MUST) nur aus alphanumerischen ASCII-Zeichen und dem Bindestrich ([0-9A-Za-z-]) bestehen. Sie dürfen (MUST NOT) außerdem nicht leer sein. Wenn ein Element ausschließlich aus Ziffern besteht, darf (MUST NOT) es keine führenden Nullen enthalten. Eine Vorveröffentlichungs-Version hat einen niedrigeren Rang als die entsprechende reguläre Version. Ein Vorveröffentlichungs-Bezeichner kennzeichnet, dass die Version als unstable zu betrachten ist und dass sie unter Umständen nicht den Kompatibilitätsanforderungen, die für die entsprechende reguläre Version bestimmt wurden, entspricht.</p>
+<p>Eine Vorveröffentlichung kann (MAY) gekennzeichnet werden, indem ein Bindestrich, gefolgt von dem Vorveröffentlichungs-Bezeichner, dessen Elemente durch Punkte voneinander getrennt werden, an die Patch-Version angehängt wird. Die Elemente des Bezeichners dürfen (MUST) nur aus alphanumerischen ASCII-Zeichen und dem Bindestrich ([0-9A-Za-z-]) bestehen. Sie dürfen (MUST NOT) außerdem nicht leer sein. Wenn ein Element ausschließlich aus Ziffern besteht, darf (MUST NOT) es keine führenden Nullen enthalten. Eine Vorveröffentlichungs-Version hat einen niedrigeren Rang als die entsprechende reguläre Version. Ein Vorveröffentlichungs-Bezeichner kennzeichnet, dass die Version als instabil zu betrachten ist und dass sie unter Umständen nicht den Kompatibilitätsanforderungen, die für die entsprechende reguläre Version bestimmt wurden, entspricht.</p>
 <p><code>Beispiele: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.</code></p>
 </li>
 <li>
 <p>Build-Metadaten können (MAY) ausgezeichnet werden, indem ein Plus-Symbol, gefolgt von den Metadaten, deren Elemente durch Punkte voneinander getrennt werden, an die Patch-Version oder den Vorveröffentlichungs-Bezeichner angehängt wird. Die Elemente der Metadaten dürfen (MUST) nur aus alphanumerischen ASCII-Zeichen und dem Bindestrich ([0-9A-Za-z-]) bestehen. Sie dürfen (MUST NOT) außerdem nicht leer sein. Die Build-Metadaten haben keinerlei Einfluss auf den Rang einer Version, sodass zwei Versionen, deren Versionsnummern sich nur in den Build-Metadaten unterscheiden, denselben Rang einnehmen. Beispiele: 1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85.</p>
 </li>
 <li>
-<p>Der Rang einer Version bestimmt, welche Versionsnummer einer anderen übergeordnet ist, wenn diese bei einer Sortierung miteinander verglichen werden. Der Rang wird (MUST) aus der Major-, Minor- und Patch-Version sowie dem Vorveröffentlichungs-Bezeichner berechnet (die Build-Metadaten haben keinerlei Einfluss auf den Rang einer Version). Er wird bestimmt, indem der erste Unterschied zwischen den oben aufgeführten Elementen ermittelt wird. Dabei wird von links nach rechts, in der oben genannten Reihenfolge vorgegangen. Die Major-, Minor- und Patch-Versionen werden numerisch miteinander verglichen. Beispiel: 1.0.0 &lt; 2.0.0 &lt; 2.1.0 &lt; 2.1.1. Beim Vergleich von zwei Versionsnummern, deren Major-, Minor- und Patch-Versionen gleich sind, nimmt eine Vorveröffentlichung einen niedrigeren Rang als die reguläre Version ein. Beispiel: 1.0.0-alpha &lt; 1.0.0. Sind beide dieser Versionen Vorveröffentlichungen, wird (MUST) der Rang ermittelt, indem jedes Element eines Vorveröffentlichungs-Bezeichners (durch Punkte voneinander getrennt) mit dem der anderen Version verglichen wird, bis ein Unterschied festgestellt wird. Auch hierbei wird von links nach rechts vorgegangen. Elemente, die ausschließlich aus Ziffern bestehen, werden numerisch miteinander verglichen. Der Vergleich aller anderen Elemente erfolgt auf Basis der ASCII-Stellenwerte ihrer Zeichen. Numerische Elemente haben immer einen niedrigeren Rang als solche, die auch andere Zeichen enthalten. Falls alle Elemente identisch sind, nimmt der Bezeichner mit den meisten Elementen den höheren Rang ein.</p>
-<p><code>Beispiel: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt; 1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.</code></p>
+<p>Der Rang einer Version bestimmt, welche Versionsnummer einer anderen übergeordnet ist, wenn diese bei einer Sortierung miteinander verglichen werden.</p>
+</li>
+<li>
+<p>Der Rang wird (MUST) aus der Major-, Minor- und Patch-Version sowie dem Vorveröffentlichungs-Bezeichner berechnet (die Build-Metadaten haben keinerlei Einfluss auf den Rang einer Version).</p>
 </li>
 </ol>
+<p>I. Er wird bestimmt, indem der erste Unterschied zwischen den oben aufgeführten Elementen ermittelt wird. Dabei wird von links nach rechts, in der oben genannten Reihenfolge vorgegangen. Die Major-, Minor- und Patch-Versionen werden numerisch miteinander verglichen.</p>
+<pre><code>Beispiel: 1.0.0 &lt; 2.0.0 &lt; 2.1.0 &lt; 2.1.1.
+</code></pre>
+<p>II. Beim Vergleich von zwei Versionsnummern, deren Major-, Minor- und Patch-Versionen gleich sind, nimmt eine Vorveröffentlichung einen niedrigeren Rang als die reguläre Version ein.</p>
+<pre><code>Beispiel: 1.0.0-alpha &lt; 1.0.0.
+</code></pre>
+<p>III. Sind beide dieser Versionen Vorveröffentlichungen, wird (MUST) der Rang ermittelt, indem jedes Element eines Vorveröffentlichungs-Bezeichners (durch Punkte voneinander getrennt) mit dem der anderen Version verglichen wird, bis ein Unterschied festgestellt wird, wie folgt:</p>
+<blockquote>
+<ul>
+<li>Elemente, die ausschließlich aus Ziffern bestehen, werden numerisch miteinander verglichen.</li>
+<li>Elemente, die auch andere Zeichen enthalten, werden auf Basis der ASCII-Stellenwerte ihrer Zeichen verglichen.</li>
+<li>Numerische Elemente haben immer einen niedrigeren Rang als solche, die auch andere Zeichen enthalten.</li>
+<li>Falls alle Elemente identisch sind, nimmt der Bezeichner mit den meisten Elementen den höheren Rang ein.</li>
+</ul>
+</blockquote>
+<pre><code>Beispiel: 1.0.0-alpha &lt; 1.0.0-alpha.1 &lt; 1.0.0-alpha.beta &lt; 1.0.0-beta &lt; 1.0.0-beta.2 &lt; 1.0.0-beta.11 &lt; 1.0.0-rc.1 &lt; 1.0.0.
+</code></pre>
 
 
 

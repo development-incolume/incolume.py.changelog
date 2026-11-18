@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/it/user_guide/writing-your-docs/">
+      
       
       
       
@@ -96,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#benvenuti-in-mkdocs" class="md-skip">
+        <a href="#benvenuto-in-mkdocs" class="md-skip">
           Vai al contenuto
         </a>
       
@@ -918,60 +920,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefatti
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefatti
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -979,98 +927,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Piano di documentazione
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glossario
   
 
     
@@ -1116,10 +980,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#benvenuti-in-mkdocs" class="md-nav__link">
+  <a href="#benvenuto-in-mkdocs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Benvenuti in MkDocs
+        Benvenuto in MkDocs
       
     </span>
   </a>
@@ -1149,10 +1013,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentazione-web-applicata-alle-pagine-github" class="md-nav__link">
+  <a href="#documentazione-web-applicata-a-github-pages" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Documentazione web applicata alle pagine github
+        Documentazione web applicata a GitHub Pages
       
     </span>
   </a>
@@ -1181,7 +1045,7 @@
 
   <h1>Writing your docs</h1>
 
-<h2 id="benvenuti-in-mkdocs">Benvenuti in MkDocs<a class="headerlink" href="#benvenuti-in-mkdocs" title="Permanent link">#</a></h2>
+<h2 id="benvenuto-in-mkdocs">Benvenuto in MkDocs<a class="headerlink" href="#benvenuto-in-mkdocs" title="Permanent link">#</a></h2>
 <p>Per una documentazione completa, visitare <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
 <h2 id="comandi">Comandi<a class="headerlink" href="#comandi" title="Permanent link">#</a></h2>
 <ul>
@@ -1192,12 +1056,13 @@
 </ul>
 <h2 id="layout-del-progetto">Layout del progetto<a class="headerlink" href="#layout-del-progetto" title="Permanent link">#</a></h2>
 <pre><code>mkdocs.yml # Il file di configurazione.
+docs/
+    index.md # La pagina di documentazione.
+    ...       # Altre pagine markdown, immagini e altri file.
 </code></pre>
-<p>docs/
- index # La pagina di documentazione.
-...       # Altre pagine markdown, immagini e altri file.</p>
-<h2 id="documentazione-web-applicata-alle-pagine-github">Documentazione web applicata alle pagine github<a class="headerlink" href="#documentazione-web-applicata-alle-pagine-github" title="Permanent link">#</a></h2>
-<p>mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc</p>
+<h2 id="documentazione-web-applicata-a-github-pages">Documentazione web applicata a GitHub Pages<a class="headerlink" href="#documentazione-web-applicata-a-github-pages" title="Permanent link">#</a></h2>
+<pre><code>mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc
+</code></pre>
 
 
 

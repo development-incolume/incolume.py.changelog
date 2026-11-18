@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/de/user_guide/usage/">
+      
       
       
       
@@ -910,60 +912,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefakte
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefakte
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -971,98 +919,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dokumentationsplan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glossar
   
 
     
@@ -1207,18 +1071,18 @@
 
 
 <h1 id="verwendung">Verwendung<a class="headerlink" href="#verwendung" title="Permanent link">#</a></h1>
-<p>Wie man das <code>CHANGELOG</code> mit <code>incolume.py.changelog</code> erzeugt und pflegt.</p>
+<p>Wie man das <code>CHANGELOG.md</code> mit <code>incolume.py.changelog</code> erzeugt und pflegt.</p>
 <h2 id="anforderungen">Anforderungen<a class="headerlink" href="#anforderungen" title="Permanent link">#</a></h2>
 <ul>
 <li>Git-Repository mit <strong>annotierten Tags</strong> (die Annotation ist die Quelle des CHANGELOG).</li>
 <li>Umgebung mit Python <code>&gt;=3.11,&lt;4</code> und <code>uv</code> (siehe
-  <a href="INSTALLATION">Installation</a>).</li>
+  <a href="../INSTALLATION/">Installation</a>).</li>
 </ul>
 <h2 id="changelog-erzeugen">CHANGELOG erzeugen<a class="headerlink" href="#changelog-erzeugen" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>task<span class="w"> </span>changelog
 </code></pre></div>
 <p>Der Befehl liest <code>git tag -n</code>, klassifiziert die Meldungen und schreibt die
-konfigurierte Datei (standardmäßig <code>docs/about/CHANGELOG</code>).</p>
+konfigurierte Datei (standardmäßig <code>docs/about/CHANGELOG.md</code>).</p>
 <p>Die Datei wird <strong>erzeugt</strong> — sie sollte nicht von Hand bearbeitet werden.</p>
 <h2 id="cli">CLI<a class="headerlink" href="#cli" title="Permanent link">#</a></h2>
 <table>
@@ -1274,7 +1138,7 @@ konfigurierte Datei (standardmäßig <code>docs/about/CHANGELOG</code>).</p>
 <p>Dateien in dieser Reihenfolge gesucht: <code>changelog.toml</code>, <code>.changelog.toml</code>,
 <code>pyproject.toml</code> (Abschnitt <code>[tool.changelog.settings]</code>).</p>
 <div class="highlight"><pre><span></span><code><span class="k">[settings]</span>
-<span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"docs/about/CHANGELOG"</span>
+<span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"docs/about/CHANGELOG.md"</span>
 <span class="n">reverse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 <span class="n">url_compare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://github.com/development-incolume/incolume.py.changelog/compare"</span>
 <span class="n">url_keepachangelog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"https://keepachangelog.com/en/1.0.0"</span>
@@ -1292,13 +1156,13 @@ konfigurierte Datei (standardmäßig <code>docs/about/CHANGELOG</code>).</p>
 <h2 id="python-api">Python-API<a class="headerlink" href="#python-api" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">incolume.py.changelog.changelog</span><span class="w"> </span><span class="kn">import</span> <span class="n">update_changelog</span>
 
-<span class="n">update_changelog</span><span class="p">(</span><span class="n">changelog_file</span><span class="o">=</span><span class="s1">'docs/about/CHANGELOG'</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">update_changelog</span><span class="p">(</span><span class="n">changelog_file</span><span class="o">=</span><span class="s1">'docs/about/CHANGELOG.md'</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="siehe-auch">Siehe auch<a class="headerlink" href="#siehe-auch" title="Permanent link">#</a></h2>
 <ul>
-<li><a href="INSTALLATION">Installation</a></li>
-<li><a href="../api/index">API-Dokumentation</a></li>
-<li><a href="development">Entwicklung</a></li>
+<li><a href="../INSTALLATION/">Installation</a></li>
+<li><a href="../../api/">API-Dokumentation</a></li>
+<li><a href="../development/">Entwicklung</a></li>
 </ul>
 
 

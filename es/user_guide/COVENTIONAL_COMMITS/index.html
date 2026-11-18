@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/es/user_guide/COVENTIONAL_COMMITS/">
+      
       
       
       
@@ -31,7 +33,7 @@
     
     
       
-        <title>Git commits messages - Incolume Python Changelog</title>
+        <title>Mensajes de commits de Git - Incolume Python Changelog</title>
       
     
     
@@ -92,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git-commits-messages" class="md-skip">
+        <a href="#mensajes-de-commits-de-git" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -127,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Git commits messages
+              Mensajes de commits de Git
             
           </span>
         </div>
@@ -914,60 +916,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefactos
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefactos
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -975,98 +923,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Plan de documentación
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glosario
   
 
     
@@ -1125,29 +989,33 @@
   
 
 
-<h1 id="git-commits-messages">Git commits messages<a class="headerlink" href="#git-commits-messages" title="Permanent link">#</a></h1>
+<h1 id="mensajes-de-commits-de-git">Mensajes de commits de Git<a class="headerlink" href="#mensajes-de-commits-de-git" title="Permanent link">#</a></h1>
 <hr />
 <p>Este proyecto sigue Conventional Commits, una especificación para añadir un significado legible por humanos y máquinas
-a los mensajes de confirmación.</p>
+a los mensajes de commit.</p>
 <div class="highlight"><pre><span></span><code>&lt;tipo&gt;<span class="o">[</span>ámbito<span class="w"> </span>opcional<span class="o">]</span>:<span class="w"> </span>&lt;descripción&gt;
 
 <span class="o">[</span>cuerpo<span class="w"> </span>opcional<span class="o">]</span>
 
 <span class="o">[</span>pie<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>de<span class="w"> </span>página<span class="w"> </span>opcional<span class="o">(</span>es<span class="o">)]</span>
 </code></pre></div>
-<p>La confirmación contiene los siguientes elementos estructurales, para comunicar la intención a los consumidores de su biblioteca:</p>
-<p><strong>type</strong>: el tipo de confirmación (feat|feature, fix|bugfix, chore, refactor, docs, style, test, perf, ci, build, revert)
-    + <strong>feat</strong>: Un commit del tipo feat introduce una nueva característica en el código base (esto se correlaciona con MINOR en el Versionado Semántico).
-    + <strong>fix</strong> o <strong>bugfix</strong>: Una confirmación del tipo fix corrige un error del código base (se corresponde con PATCH en el versionado semántico).
-    + <strong>chore</strong>: Cambios que no están relacionados con una corrección o funcionalidad y no modifican los archivos src o de prueba (por ejemplo, actualización de dependencias);
-    + <strong>refactor</strong>: código refactorizado que no corrige un error ni añade una característica;
-    + <strong>docs</strong>: actualizaciones de la documentación, como el README u otros archivos markdown o rst;
-    + <strong>estilo</strong>: Cambios que no afectan al significado del código, probablemente relacionados con el formato del código, como espacios en blanco, falta de puntos y comas, estilo negro aplicado, etc;
-    + <strong>test</strong>: Inclusión de pruebas nuevas o corrección de pruebas anteriores;
-    + <strong>perf</strong>: mejoras de rendimiento;
-    + <strong>ci</strong>: Relacionados con la integración continua;
-    + <strong>build</strong>: cambios que afectan al sistema de compilación o a dependencias externas;
-    + <strong>revert</strong>: revierte una prueba anterior</p>
+<p>El commit contiene los siguientes elementos estructurales, para comunicar la intención a los consumidores de su biblioteca:</p>
+<ul>
+<li><strong>type</strong>: el tipo de commit (feat|feature, fix|bugfix, chore, refactor, docs, style, test, perf, ci, build, revert)<ul>
+<li><strong>feat</strong>: Un commit de tipo feat introduce una nueva característica en el código base (esto se correlaciona con MINOR en el Versionado Semántico).</li>
+<li><strong>fix</strong> o <strong>bugfix</strong>: Un commit de tipo fix corrige un error del código base (se corresponde con PATCH en el versionado semántico).</li>
+<li><strong>chore</strong>: Cambios que no están relacionados con una corrección o funcionalidad y no modifican los archivos src o de prueba (por ejemplo, actualización de dependencias);</li>
+<li><strong>refactor</strong>: código refactorizado que no corrige un error ni añade una característica;</li>
+<li><strong>docs</strong>: actualizaciones de la documentación, como el README u otros archivos markdown o rst;</li>
+<li><strong>style</strong>: Cambios que no afectan al significado del código, probablemente relacionados con el formato del código, como espacios en blanco, falta de puntos y comas, estilo negro aplicado, etc;</li>
+<li><strong>test</strong>: Inclusión de pruebas nuevas o corrección de pruebas anteriores;</li>
+<li><strong>perf</strong>: mejoras de rendimiento;</li>
+<li><strong>ci</strong>: Relacionadas con la integración continua;</li>
+<li><strong>build</strong>: cambios que afectan al sistema de compilación o a dependencias externas;</li>
+<li><strong>revert</strong>: revierte una prueba anterior</li>
+</ul>
+</li>
+</ul>
 <p>Traducción realizada con la versión gratuita del traductor DeepL.com</p>
 
 

@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/it/user_guide/COVENTIONAL_COMMITS/">
+      
       
       
       
@@ -918,60 +920,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefatti
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefatti
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -979,98 +927,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Piano di documentazione
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glossario
   
 
     
@@ -1131,30 +995,31 @@
 
 <h1 id="messaggi-di-commit-git">Messaggi di commit Git<a class="headerlink" href="#messaggi-di-commit-git" title="Permanent link">#</a></h1>
 <hr />
-<p>Questo progetto segue i commit convenzionali, una specifica per aggiungere ai messaggi di commit un significato leggibile dall'uomo e dalla macchina
-.</p>
-<p>```bash
-<tipo>[scope opzionale]: <descrizione></p>
-<p>[corpo opzionale]</p>
-<p>[piè di pagina opzionali]
-````</p>
+<p>Questo progetto segue i commit convenzionali, una specifica per aggiungere ai messaggi di commit un significato leggibile dall'uomo e dalla macchina.</p>
+<div class="highlight"><pre><span></span><code>&lt;tipo&gt;<span class="o">[</span>scope<span class="w"> </span>opzionale<span class="o">]</span>:<span class="w"> </span>&lt;descrizione&gt;
+
+<span class="o">[</span>corpo<span class="w"> </span>opzionale<span class="o">]</span>
+
+<span class="o">[</span>piè<span class="w"> </span>di<span class="w"> </span>pagina<span class="w"> </span>opzionali<span class="o">]</span>
+</code></pre></div>
 <p>Il commit contiene i seguenti elementi strutturali, per comunicare l'intento ai consumatori della libreria:</p>
 <ul>
 <li><strong>type</strong>: il tipo di commit (feat|feature, fix|bugfix, chore, refactor, docs, style, test, perf, ci, build, revert)<ul>
-<li><strong>feat</strong>: Un commit del tipo feat introduce una nuova caratteristica nella base di codice (questo corrisponde a MINOR nel Semantic Versioning).</li>
-<li><strong>fix</strong> o <strong>bugfix</strong>: Un commit del tipo fix corregge un bug nella base di codice (questo è correlato con PATCH nel versionamento semantico).</li>
-<li><strong>chore</strong>: Modifiche che non riguardano una correzione o una caratteristica e non modificano i file src o di test (per esempio l'aggiornamento delle dipendenze);</li>
+<li><strong>feat</strong>: Un commit del tipo feat introduce una nuova funzionalità nella base di codice (questo corrisponde a MINOR nel versionamento semantico).</li>
+<li><strong>fix</strong> o <strong>bugfix</strong>: Un commit del tipo fix corregge un bug nella base di codice (questo è correlato a PATCH nel versionamento semantico).</li>
+<li><strong>chore</strong>: Modifiche che non riguardano una correzione o una funzionalità e non modificano i file src o di test (per esempio l'aggiornamento delle dipendenze);</li>
 <li><strong>refactor</strong>: codice rifattorizzato che non corregge un bug né aggiunge una funzionalità;</li>
 <li><strong>docs</strong>: aggiornamenti della documentazione come il README o altri file markdown o rst;</li>
-<li><strong>style</strong>: Modifiche che non influiscono sul significato del codice, probabilmente relative alla formattazione del codice come spazi bianchi, punti e virgole mancanti, stile nero applicato e così via;</li>
+<li><strong>style</strong>: Modifiche che non influiscono sul significato del codice, probabilmente relative alla formattazione del codice come spazi bianchi, punti e virgole mancanti, formattazione Black applicata e così via;</li>
 <li><strong>test</strong>: Inclusione di nuovi test o correzione di quelli precedenti;</li>
 <li><strong>perf</strong>: miglioramenti delle prestazioni;</li>
 <li><strong>ci</strong>: Integrazione continua;</li>
 <li><strong>build</strong>: modifiche che riguardano il sistema di compilazione o le dipendenze esterne;</li>
-<li><strong>revert</strong>: ripristina una precedente modifica</li>
+<li><strong>revert</strong>: ripristina un commit precedente</li>
 </ul>
 </li>
 </ul>
+<p>Tradotto con la versione gratuita del traduttore - DeepL.com</p>
 
 
 

@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/es/user_guide/keep-a-changelog/">
+      
       
       
       
@@ -914,60 +916,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefactos
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefactos
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -975,98 +923,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Plan de documentación
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glosario
   
 
     
@@ -1198,10 +1062,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#actualizar-changelog" class="md-nav__link">
+  <a href="#actualizar-el-changelogmd" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Actualizar CHANGELOG
+        Actualizar el CHANGELOG.md
       
     </span>
   </a>
@@ -1273,19 +1137,19 @@
 </ul>
 <h2 id="como-aplicar-el-registro-de-cambios-en-este-proyecto">¿Cómo aplicar el registro de cambios en este proyecto?<a class="headerlink" href="#como-aplicar-el-registro-de-cambios-en-este-proyecto" title="Permanent link">#</a></h2>
 <p>Este proyecto utiliza el paquete python incolumepy.utils, que tiene la
-   prerrogativa de crear un <code>CHANGELOG</code> automáticamente a partir de las
+   prerrogativa de crear un <code>CHANGELOG.md</code> automáticamente a partir de las
 entradas de <code>git tag -n</code>.</p>
 <p>Ejemplos:
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span>Unreleased<span class="w"> </span>-m<span class="w"> </span><span class="s1">'added: Se han añadido instrucciones sobre Keep a CHANGELOG en docs/user_guide/keep-a-chagelog'</span>
-git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span><span class="sb">`</span>poetry<span class="w"> </span>version<span class="w"> </span>-s<span class="sb">`</span><span class="w"> </span>-m<span class="w"> </span>“added:<span class="w"> </span>Se<span class="w"> </span>han<span class="w"> </span>añadido<span class="w"> </span>instrucciones<span class="w"> </span>sobre<span class="w"> </span>Keep<span class="w"> </span>a<span class="w"> </span>CHANGELOG<span class="w"> </span>en<span class="w"> </span>docs/user_guide/keep-a-chagelog”
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span>Unreleased<span class="w"> </span>-m<span class="w"> </span><span class="s1">'added: Se han añadido instrucciones sobre Keep a CHANGELOG.md en docs/user_guide/keep-a-chagelog.md'</span>
+git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span><span class="sb">`</span>poetry<span class="w"> </span>version<span class="w"> </span>-s<span class="sb">`</span><span class="w"> </span>-m<span class="w"> </span><span class="s1">'added: Se han añadido instrucciones sobre Keep a CHANGELOG.md en docs/user_guide/keep-a-chagelog.md'</span>
 git<span class="w"> </span>tag<span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>.0.0<span class="w"> </span>-m<span class="w"> </span><span class="s1">'Added: (Añadido) para nuevas funciones;</span>
 <span class="s1">Changed: (Modificado) para cambios en funciones existentes;</span>
-<span class="s1">Obsoleto: (Obsoleto) para recursos que se eliminarán en próximas versiones;</span>
-<span class="s1">Eliminado: (Eliminado) para recursos eliminados en esta versión;</span>
-<span class="s1">Corregido: (Corregido) para cualquier corrección de errores;</span>
-<span class="s1">Seguridad: (Seguridad) en caso de vulnerabilidades;'</span>
+<span class="s1">Deprecated: (Obsoleto) para características que se eliminarán en próximas versiones;</span>
+<span class="s1">Removed: (Eliminado) para características eliminadas en esta versión;</span>
+<span class="s1">Fixed: (Corregido) para cualquier corrección de errores;</span>
+<span class="s1">Security: (Seguridad) en caso de vulnerabilidades;'</span>
 </code></pre></div></p>
-<h3 id="actualizar-changelog">Actualizar CHANGELOG<a class="headerlink" href="#actualizar-changelog" title="Permanent link">#</a></h3>
+<h3 id="actualizar-el-changelogmd">Actualizar el CHANGELOG.md<a class="headerlink" href="#actualizar-el-changelogmd" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>task<span class="w"> </span>gcl
 </code></pre></div>
 <h2 id="referencia">Referencia<a class="headerlink" href="#referencia" title="Permanent link">#</a></h2>

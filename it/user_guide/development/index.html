@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/it/user_guide/development/">
+      
       
       
       
@@ -918,60 +920,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefatti
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefatti
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -979,98 +927,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Piano di documentazione
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glossario
   
 
     
@@ -1140,10 +1004,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#requisiti" class="md-nav__link">
+  <a href="#prerequisiti" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Requisiti
+        Prerequisiti
       
     </span>
   </a>
@@ -1261,11 +1125,11 @@
 <h1 id="guida-al-contributo-sviluppo">Guida al Contributo (Sviluppo)<a class="headerlink" href="#guida-al-contributo-sviluppo" title="Permanent link">#</a></h1>
 <p>Regole e convenzioni per sviluppare <code>incolume.py.changelog</code>.</p>
 <h2 id="codice-di-condotta">Codice di condotta<a class="headerlink" href="#codice-di-condotta" title="Permanent link">#</a></h2>
-<p>Dettagli nel <a href="code_of_conduct">Codice di condotta</a>.</p>
+<p>Dettagli nel <a href="../code_of_conduct/">Codice di condotta</a>.</p>
 <h2 id="standard-applicati">Standard applicati<a class="headerlink" href="#standard-applicati" title="Permanent link">#</a></h2>
 <p>Metodologie e convenzioni del progetto in
-<a href="README">Convenzioni e Metodologie</a>.</p>
-<h2 id="requisiti">Requisiti<a class="headerlink" href="#requisiti" title="Permanent link">#</a></h2>
+<a href="../">Convenzioni e Metodologie</a>.</p>
+<h2 id="prerequisiti">Prerequisiti<a class="headerlink" href="#prerequisiti" title="Permanent link">#</a></h2>
 <ul>
 <li>Git</li>
 <li>Python <code>&gt;=3.11,&lt;4</code></li>
@@ -1279,7 +1143,7 @@ uv<span class="w"> </span>run<span class="w"> </span>task<span class="w"> </span
 </code></pre></div>
 <ul>
 <li><code>uv sync</code> crea l'ambiente e installa le dipendenze da <code>pyproject.toml</code>
-  come bloccate in <code>uv.lock</code>.</li>
+  come specificato in <code>uv.lock</code>.</li>
 <li><code>uv run task setup</code> imposta <code>git config core.hooksPath .git-hooks/</code>, attivando
   gli hook del progetto.</li>
 </ul>
@@ -1316,15 +1180,15 @@ uv<span class="w"> </span>run<span class="w"> </span>safety<span class="w"> </sp
 <h2 id="versionamento">Versionamento<a class="headerlink" href="#versionamento" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>version<span class="w"> </span>--bump<span class="w"> </span>&lt;major<span class="p">|</span>minor<span class="p">|</span>patch<span class="p">|</span>alpha<span class="p">|</span>beta<span class="p">|</span>rc<span class="p">|</span>stable&gt;
 </code></pre></div>
-<p>La versione vive in <code>pyproject.toml</code> (<code>[project]</code>) e deve essere riportata in
+<p>La versione è definita in <code>pyproject.toml</code> (<code>[project]</code>) e deve essere riportata in
 <code>[tool.poetry]</code> e in <code>incolume/py/changelog/version.txt</code>. Il commit di versione è
-<code>build: incolume-py-changelog &lt;versione&gt;</code>, su <code>dev</code>, dopo il merge.</p>
+<code>build: incolume-py-changelog &lt;versione&gt;</code>, nel branch <code>dev</code>, dopo il merge.</p>
 <h2 id="flusso-di-consegna">Flusso di consegna<a class="headerlink" href="#flusso-di-consegna" title="Permanent link">#</a></h2>
 <ul>
 <li>Branch derivato da <code>dev</code>, con una issue aperta.</li>
 <li>Test del criterio prima dell'implementazione.</li>
 <li><code>ruff</code>/<code>mypy</code>/<code>pytest</code> verdi prima del commit.</li>
-<li>Merge <code>--no-ff</code> (revisionato da Kevin).</li>
+<li>Merge <code>--no-ff</code> (revisione di Kevin).</li>
 </ul>
 
 

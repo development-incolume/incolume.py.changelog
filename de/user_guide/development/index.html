@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://development-incolume.github.io/incolume.py.changelog/de/user_guide/development/">
+      
       
       
       
@@ -910,60 +912,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Artefakte
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Artefakte
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -971,98 +919,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PLAN-001-documentacao" class="md-nav__link">
+      <a href="../../../about/glossario" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dokumentationsplan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/PRD-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PRD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/ADR-001-geracao-changelog" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ADR
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../analysis_artifacts/SPEC-001-execucao" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SPEC
+    Glossar
   
 
     
@@ -1220,10 +1084,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#abliefluss" class="md-nav__link">
+  <a href="#ablieferungsfluss" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Abliefluss
+        Ablieferungsfluss
       
     </span>
   </a>
@@ -1253,10 +1117,10 @@
 <h1 id="beitragsleitfaden-entwicklung">Beitragsleitfaden (Entwicklung)<a class="headerlink" href="#beitragsleitfaden-entwicklung" title="Permanent link">#</a></h1>
 <p>Regeln und Konventionen zur Entwicklung von <code>incolume.py.changelog</code>.</p>
 <h2 id="verhaltenskodex">Verhaltenskodex<a class="headerlink" href="#verhaltenskodex" title="Permanent link">#</a></h2>
-<p>Details im <a href="code_of_conduct">Verhaltenskodex</a>.</p>
+<p>Details im <a href="../code_of_conduct/">Verhaltenskodex</a>.</p>
 <h2 id="angewandte-standards">Angewandte Standards<a class="headerlink" href="#angewandte-standards" title="Permanent link">#</a></h2>
 <p>Methodiken und Konventionen des Projekts in
-<a href="README">Konventionen und Methodiken</a>.</p>
+<a href="../">Konventionen und Methodiken</a>.</p>
 <h2 id="anforderungen">Anforderungen<a class="headerlink" href="#anforderungen" title="Permanent link">#</a></h2>
 <ul>
 <li>Git</li>
@@ -1283,7 +1147,7 @@ uv<span class="w"> </span>run<span class="w"> </span>pytest
 </code></pre></div>
 <ul>
 <li>Minimale Abdeckung: <strong>99,7 %</strong>.</li>
-<li>Tests nicht ändern, damit die Implementierung besteht.</li>
+<li>Tests nicht bearbeiten, damit die Implementierung besteht.</li>
 </ul>
 <h2 id="multi-version-tests">Multi-Version-Tests<a class="headerlink" href="#multi-version-tests" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>tox
@@ -1312,7 +1176,7 @@ uv<span class="w"> </span>run<span class="w"> </span>safety<span class="w"> </sp
 <code>[tool.poetry]</code> sowie in <code>incolume/py/changelog/version.txt</code> übernommen werden.
 Der Versions-Commit ist <code>build: incolume-py-changelog &lt;Version&gt;</code>, auf <code>dev</code>,
 nach dem Merge.</p>
-<h2 id="abliefluss">Abliefluss<a class="headerlink" href="#abliefluss" title="Permanent link">#</a></h2>
+<h2 id="ablieferungsfluss">Ablieferungsfluss<a class="headerlink" href="#ablieferungsfluss" title="Permanent link">#</a></h2>
 <ul>
 <li>Branch abgeleitet von <code>dev</code>, mit geöffneter Issue.</li>
 <li>Kriterientest vor der Implementierung.</li>
