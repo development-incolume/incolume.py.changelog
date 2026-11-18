@@ -20,8 +20,8 @@ Backend-/API-Kerns:
 - Issues AC-02, AC-11, AC-12, AC-15, AC-18 und AC-19.
 
 Adapter, Sanitisierung (und mittlerweile `Bob` in `adapters/office/` und
-`render/`) liegen nicht mehr in der Verantwortung derjenigen, die dieses
-Dokument lesen.
+`render/`) liegen nicht mehr in der Verantwortung der Person, die dieses
+Dokument liest.
 
 ## Voraussetzungen
 
@@ -59,7 +59,7 @@ uv run pytest
 ```
 
 - Minimale Abdeckung: **99,7 %**.
-- Tests nicht bearbeiten, damit die Implementierung besteht.
+- Tests niemals bearbeiten, damit die Implementierung besteht.
 
 ## Multi-Version-Tests
 

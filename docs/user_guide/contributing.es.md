@@ -20,7 +20,7 @@ núcleo de Backend/API:
 - Issues AC-02, AC-11, AC-12, AC-15, AC-18 y AC-19.
 
 Los adaptadores, la sanitización (y ahora `Bob` en `adapters/office/` y
-`render/`) ya no son responsabilidad de quien lee este documento.
+`render/`) ya no son responsabilidad de la persona que lee este documento.
 
 ## Requisitos previos
 

@@ -21,7 +21,7 @@ cœur Backend/API :
 - Issues AC-02, AC-11, AC-12, AC-15, AC-18 et AC-19.
 
 Les adaptateurs et la désinfection ne relèvent plus de la responsabilité de
-celui qui lit ce document (`Bob` se trouvant désormais dans
+la personne qui lit ce document (`Bob` se trouvant désormais dans
 `adapters/office/` et `render/`).
 
 ## Prérequis
