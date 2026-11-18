@@ -41,13 +41,13 @@
 ---
 ## Objetivos
 
-Esta API automatiza la creación de un archivo de registro de cambios utilizando los registros de git, para gestionar mejor tus proyectos, siguiendo la metodología Keep a Changelog.
+Esta API automatiza la creación de un archivo de registro de cambios utilizando los registros de git, para gestionar mejor tus proyectos, siguiendo la metodología de Keep a Changelog.
 
 ## Descripción
 
-Funciona capturando los registros del comando `git tag -n`, obteniendo así la fecha, las etiquetas y los cambios, y generando después un archivo para gestionar los cambios relevantes de cada versión.
+Funciona capturando los registros del comando `git tag -n`, obteniendo así la fecha, las etiquetas y los cambios, y generando después un archivo de gestión de cambios relevantes para cada versión.
 
-El paquete incluye herramientas de control de calidad (QA) como ruff y mypy, así como herramientas de seguridad como bandit, pipaudit y safety.
+El paquete incluye herramientas de garantía de calidad (QA) como ruff y mypy, así como herramientas de seguridad como bandit, pipaudit y safety.
 
 
 ## Ejemplos y uso

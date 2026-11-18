@@ -30,22 +30,22 @@ Las personas lo necesitan. Ya sean consumidores o desarrolladores, los usuarios 
 
 ## ¿Cómo aplicar el registro de cambios en este proyecto?
  Este proyecto utiliza el paquete python incolumepy.utils, que tiene la
-   prerrogativa de crear un `CHANGELOG` automáticamente a partir de las
+   prerrogativa de crear un `CHANGELOG.md` automáticamente a partir de las
 entradas de `git tag -n`.
 
 Ejemplos:
 ```shell
-git tag -f Unreleased -m 'added: Se han añadido instrucciones sobre Keep a CHANGELOG en docs/user_guide/keep-a-chagelog'
-git tag -f `poetry version -s` -m “added: Se han añadido instrucciones sobre Keep a CHANGELOG en docs/user_guide/keep-a-chagelog”
+git tag -f Unreleased -m 'added: Se han añadido instrucciones sobre Keep a CHANGELOG.md en docs/user_guide/keep-a-chagelog.md'
+git tag -f `poetry version -s` -m 'added: Se han añadido instrucciones sobre Keep a CHANGELOG.md en docs/user_guide/keep-a-chagelog.md'
 git tag -f 1.0.0 -m 'Added: (Añadido) para nuevas funciones;
 Changed: (Modificado) para cambios en funciones existentes;
-Obsoleto: (Obsoleto) para recursos que se eliminarán en próximas versiones;
-Eliminado: (Eliminado) para recursos eliminados en esta versión;
-Corregido: (Corregido) para cualquier corrección de errores;
-Seguridad: (Seguridad) en caso de vulnerabilidades;'
+Deprecated: (Obsoleto) para características que se eliminarán en próximas versiones;
+Removed: (Eliminado) para características eliminadas en esta versión;
+Fixed: (Corregido) para cualquier corrección de errores;
+Security: (Seguridad) en caso de vulnerabilidades;'
 ```
 
-### Actualizar CHANGELOG
+### Actualizar el CHANGELOG.md
 ```shell
 task gcl
 ```

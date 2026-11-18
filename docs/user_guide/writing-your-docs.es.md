@@ -7,14 +7,15 @@ Para obtener la documentación completa, visite [mkdocs.org](https://www.mkdocs.
 * `mkdocs new [dir-name]` - Crea un nuevo proyecto.
 * `mkdocs serve` - Inicia la carga automática para el servidor de documentos.
 * `mkdocs build` - Construye el sitio de documentación.
-* `mkdocs -h` - Mostrar el mensaje de ayuda y salir.
+* `mkdocs -h` - Muestra el mensaje de ayuda y sale.
 
 ## Diseño del proyecto
 
-    mkdocs.yml # El archivo de configuración.
- docs/
- index # La página de documentación.
-...       # Otras páginas markdown, imágenes y otros archivos.
+    mkdocs.yml    # El archivo de configuración.
+    docs/
+        index.md  # La página de documentación.
+        ...       # Otras páginas markdown, imágenes y demás archivos.
 
-## Documentación web aplicada a las páginas de github
- mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc
+## Documentación web aplicada en GitHub Pages
+
+    mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc

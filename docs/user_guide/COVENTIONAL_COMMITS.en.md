@@ -22,7 +22,7 @@ The commit contains the following structural elements, to communicate intent to 
     + **refactor**: refactored code that neither fixes a bug nor adds a feature;
     + **docs**: updates to documentation, such as the README or other markdown or rst files;
     + **style**: Changes that do not affect the meaning of the code, likely related to code formatting, such as white-space, missing semi-colons, black style applied, and so on;
-    + **test**: Including new tests or correcting previous ones;
+    + **test**: A commit of the type test includes new tests or corrections to previous ones;
     + **perf**: Performance improvements;
     + **ci**: Continuous integration related;
     + **build**: Changes that affect the build system or external dependencies;

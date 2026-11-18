@@ -6,12 +6,12 @@ Un changelog est un fichier qui contient une liste sélectionnée, classée par 
 ## Pourquoi tenir un changelog ?
 Pour permettre aux utilisateurs et aux contributeurs de voir précisément quels changements significatifs ont été apportés entre chaque version publiée d'un projet.
 
-## Qui a besoin d'un journal des modifications ?
+## Qui a besoin d'un changelog ?
 Les gens en ont besoin. Qu'ils soient consommateurs ou développeurs, les utilisateurs finaux de logiciels sont des êtres humains qui se soucient du contenu du logiciel. Lorsque le logiciel change, les gens veulent savoir pourquoi et comment.
 
-## Comment créer un bon journal des modifications ?
+## Comment créer un bon changelog ?
 ### Principes fondamentaux
-- Les journaux des modifications sont destinés aux humains, pas aux machines.
+- Les changelogs sont destinés aux humains, pas aux machines.
 - Il doit y avoir une entrée pour chaque version.
 - Les modifications du même type doivent être regroupées.
 - Les versions et les sections doivent être liées (avec des liens).
@@ -29,14 +29,14 @@ Les gens en ont besoin. Qu'ils soient consommateurs ou développeurs, les utilis
 - **Security** : (Sécurité) en cas de vulnérabilités.
 
 ## Comment appliquer le changelog à ce projet ?
- Ce projet utilise le paquet python incolumepy.utils, qui a la
-   prerogative de créer automatiquement un `CHANGELOG` à partir des
+Ce projet utilise le paquet python incolumepy.utils, qui a la
+prérogative de créer automatiquement un `CHANGELOG.md` à partir des
 entrées de `git tag -n`.
 
 Exemples :
 ```shell
-git tag -f Unreleased -m 'added: Ajout d'instructions sur Keep a CHANGELOG dans docs/user_guide/keep-a-chagelog'
-git tag -f `poetry version -s` -m “added: Ajout d'instructions sur Keep a CHANGELOG dans docs/user_guide/keep-a-chagelog”
+git tag -f Unreleased -m 'added: Ajout d'instructions sur Keep a CHANGELOG.md dans docs/user_guide/keep-a-chagelog.md'
+git tag -f `poetry version -s` -m 'added: Ajout d'instructions sur Keep a CHANGELOG.md dans docs/user_guide/keep-a-chagelog.md'
 git tag -f 1.0.0 -m 'Added: (Ajouté) pour les nouvelles fonctionnalités ;
 Changed: (Modifié) pour les modifications apportées aux fonctionnalités existantes ;
 Obsolète : pour les fonctionnalités qui seront supprimées dans les prochaines versions ;
@@ -45,7 +45,7 @@ Corrigé : pour toute correction de bug ;
 Sécurité : en cas de vulnérabilités ;'
 ```
 
-### Mettre à jour le fichier CHANGELOG
+### Mettre à jour le fichier CHANGELOG.md
 ```shell
 task gcl
 ```

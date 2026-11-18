@@ -7,11 +7,11 @@
 - Simple vaut mieux que complexe.
 - Complexe vaut mieux que compliqué.
 - Plat vaut mieux qu'imbriqué.
-- Mieux vaut une structure éparse qu'une structure dense.
+- Mieux vaut une structure clairsemée qu'une structure dense.
 - La lisibilité compte.
 - Les cas particuliers ne sont pas assez spéciaux pour enfreindre les règles.
  Même si l'aspect pratique l'emporte sur la pureté.
-- Les erreurs ne devraient jamais être passées sous silence.
+- Les erreurs ne doivent jamais être passées sous silence.
  À moins qu'elles ne soient explicitement réduites au silence.
 - En cas d'ambiguïté, refusez la tentation de deviner.
 - Il doit y avoir une - et de préférence une seule - façon évidente de procéder.

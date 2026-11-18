@@ -15,19 +15,19 @@ mkdocstrings à partir des docstrings du code.
 
 ## Démarrage rapide
 
-Via l'API Python :
+Avec l'API Python :
 
 ```python
 from incolume.py.changelog.changelog import update_changelog
 
-update_changelog(changelog_file='docs/about/CHANGELOG', reverse=True)
+update_changelog(changelog_file='docs/about/CHANGELOG.md', reverse=True)
 ```
 
-Via la CLI :
+Avec la CLI :
 
 ```shell
-uv run changelog docs/about/CHANGELOG --reverse
+uv run changelog docs/about/CHANGELOG.md --reverse
 ```
 
-Voir le [Guide d'utilisation](../user_guide/usage) et
-l'[Installation](../user_guide/INSTALLATION).
+Voir le [Guide d'utilisation](../user_guide/usage.md) et
+l'[Installation](../user_guide/INSTALLATION.md).

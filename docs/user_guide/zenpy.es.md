@@ -14,10 +14,10 @@
 - Los errores nunca deben pasar en silencio.
  A menos que se silencien explícitamente.
 - Ante la ambigüedad, rechaza la tentación de adivinar.
-- Debe haber una -y preferiblemente sólo una- forma obvia de hacerlo.
+- Debe haber una -y preferiblemente solo una- forma obvia de hacerlo.
  Aunque esa manera puede no ser obvia al principio, a menos que seas holandés.
 - Ahora es mejor que nunca.
  Aunque a menudo «nunca» es mejor que «ahora mismo».
-- Si la aplicación es difícil de explicar, es una mala idea.
+- Si la implementación es difícil de explicar, es una mala idea.
 - Si la implementación es fácil de explicar, puede ser una buena idea.
 - Los espacios de nombres son una gran idea: ¡hagamos más!

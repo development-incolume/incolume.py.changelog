@@ -45,7 +45,7 @@ Questa API automatizza la creazione di un file di changelog utilizzando i record
 
 ## Descrizione
 
-Funziona catturando i record del comando `git tag -n`, ottenendo così data, etichette e modifiche, e generando quindi un file per gestire le modifiche rilevanti per ciascuna versione.
+Funziona catturando i record del comando `git tag -n`, ottenendo così la data, i tag e le modifiche, e generando quindi un file per gestire le modifiche rilevanti per ciascuna versione.
 
 Il pacchetto include strumenti di Quality Assurance (QA) come ruff e mypy, oltre a strumenti di sicurezza come bandit, pipaudit e safety.
 
@@ -58,7 +58,7 @@ Disponibile in [docs/api](https://development-incolume.github.io/incolume.py.cha
 Disponibile in [docs/about/CHANGELOG](https://development-incolume.github.io/incolume.py.changelog/about/CHANGELOG/).
 
 
-## Contributori
+## Collaboratori
 Disponibile in [docs/about/CONTRIBUTORS](https://development-incolume.github.io/incolume.py.changelog/about/CONTRIBUTORS/).
 
 

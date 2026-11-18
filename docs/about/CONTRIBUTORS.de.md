@@ -1,7 +1,7 @@
 # Betreuer / Mitwirkende
 
-Name| Betreuer     | Entwicklung | Tester         | Dokumentator     |Kontakt
----|----------------|-|----------------|----------------|---
+Name | Betreuer | Entwickler | Tester | Dokumentator | Kontakt
+|---|---|---|---|---|---|
 Brito| :green_circle: | :green_circle:| :green_circle: |   :green_circle:| [@britodfbr](https://github.com/britodfbr)
 Igor Gabriel| :red_circle:   | :green_circle:| :green_circle: |     :green_circle: | [@igorgabrielg](https://github.com/igorgabrielg)
 Frederico Lourenço Cavalcante de Souza | :red_circle:   | :green_circle:| :red_circle:   | :green_circle:  | [@Fredvet00](https://github.com/Fredvet00)
