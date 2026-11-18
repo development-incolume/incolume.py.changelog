@@ -7,6 +7,7 @@ Critérios de aceitação (AC-199):
 """
 
 import re
+import tomllib
 from pathlib import Path
 
 
@@ -39,7 +40,9 @@ def test_poetry_toml_nao_deve_representar_configuracao_ativa() -> None:
 
 
 def test_version_atualizada() -> None:
-    """A versão deve ser atualizada após o fechamento da issue."""
+    """A versão do version.txt acompanha a versão canônica do projeto."""
+    pyproject_path = Path(__file__).parent.parent / 'pyproject.toml'
+    pyproject = tomllib.loads(pyproject_path.read_text(encoding='utf-8'))
     version_file = (
         Path(__file__).parent.parent
         / 'incolume'
@@ -47,12 +50,11 @@ def test_version_atualizada() -> None:
         / 'changelog'
         / 'version.txt'
     )
-    if version_file.exists():
-        version = version_file.read_text(encoding='utf-8').strip()
-        # Deve ser maior que 1.6.0a15
-        assert version > '1.6.0a15', (
-            f'Versão não atualizada: {version}. Esperado > 1.6.0a15'
-        )
+    version = version_file.read_text(encoding='utf-8').strip()
+    assert version == pyproject['project']['version'], (
+        f'Versão divergente: version.txt={version}, '
+        f'pyproject={pyproject["project"]["version"]}'
+    )
 
 
 def test_changelog_notifica_depreciacao_poetry() -> None:
