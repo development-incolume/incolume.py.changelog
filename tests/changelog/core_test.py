@@ -17,7 +17,6 @@ from dotenv import load_dotenv
 from os import getenv
 
 if TYPE_CHECKING:
-    from collections.abc import Callable
     from collections.abc import Generator
 
 
@@ -47,7 +46,7 @@ class TestFindProjectRoot:
     @classmethod
     def class_setup_teardown(
         cls,
-    ) -> Generator[Callable[..., None], None, None]:
+    ) -> Generator[None, None, None]:
         """Set up/teardown class."""
         ic(f'Setup Class {cls.__name__}')
         cls.base_dir = Path(gettempdir(), cls.__name__)
@@ -55,9 +54,7 @@ class TestFindProjectRoot:
         ic(f'Teardown Class {cls.__name__}')
 
     @pytest.fixture(autouse=True)
-    def method_setup_teardown(
-        self, request
-    ) -> Generator[Callable[..., None], None, None]:
+    def method_setup_teardown(self, request) -> Generator[None, None, None]:
         """Set up/teardown method."""
         ic(f'Setup Method: {request.function.__name__}')
         self.directory = self.base_dir / request.function.__name__
@@ -477,14 +474,14 @@ class TestChangelogInit:
         self,
         *,
         xcpt: Any,
-        entrance: dict[str, str],
+        entrance: dict[str, Any],
         expected: str,
     ) -> None:
         """Test for key_versions_2_sort."""
         try:
             assert pkg.key_versions_2_sort(**entrance) == expected
         except TypeError:
-            with pytest.raises(**xcpt):
+            with pytest.raises(**xcpt):  # ty: ignore[invalid-context-manager]
                 assert pkg.key_versions_2_sort(**entrance) == expected
 
     @pytest.mark.parametrize(
@@ -670,7 +667,7 @@ class TestChangelogInit:
             ),
         ],
     )
-    def test_logger(self, entrance: dict[str, any]) -> None:  # type: ignore[valid-type]
+    def test_logger(self, entrance: dict[str, Any]) -> None:
         """Logger."""
         if isinstance(entrance, dict):
             logg = pkg.logger(**entrance)

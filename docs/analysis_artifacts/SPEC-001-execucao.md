@@ -82,7 +82,7 @@ Opções do `changelog`: `file_changelog`, `--url/-u`, `--reverse/-r`,
 ```shell
 ruff check --fix tests incolume
 ruff format tests incolume
-mypy tests incolume
+ty check tests incolume
 pytest tests incolume
 ```
 

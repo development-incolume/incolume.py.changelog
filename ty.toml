@@ -1,0 +1,32 @@
+# Configuração do verificador de tipos `ty`.
+# Migração da antiga `mypy.ini`.
+# Documentação: https://docs.astral.sh/ty/configuration/
+
+[environment]
+# mypy: python_version = 3.11
+python-version = "3.11"
+# mypy: mypy_path = incolume/
+extra-paths = ["incolume"]
+
+[analysis]
+# mypy: ignore_missing_imports = true
+allowed-unresolved-imports = ["**"]
+# mypy: strict_equality = true
+strict-equality-semantics = true
+
+[rules]
+# mypy: disallow_any_generics = true
+missing-type-argument = "error"
+# mypy: warn_redundant_casts = true
+redundant-cast = "error"
+# mypy: warn_return_any = true
+unsound-return = "error"
+
+# Diretivas do mypy sem equivalente direto no ty:
+# - check_untyped_defs: o ty verifica corpos não anotados por padrão;
+# - no_implicit_optional: o ty segue PEP 484 para Optional por padrão;
+# - show_error_codes: o ty sempre emite o código do diagnostico;
+# - warn_unreachable: sem regra equivalente;
+# - warn_unused_configs: sem equivalente;
+# - no_implicit_reexport: sem regra equivalente;
+# - namespace_packages: sem equivalente.

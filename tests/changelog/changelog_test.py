@@ -10,7 +10,7 @@ from icecream import ic
 import pytest
 
 from incolume.py.changelog import changelog as pkg
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from collections.abc import Generator
@@ -744,7 +744,7 @@ class TestChangeLog:
     )
     def test_changelog_write(
         self,
-        entrance: dict[str, str | Path],
+        entrance: dict[str, Any],
         file_temp: Path,
         return_git_tag: str,
     ) -> None:
@@ -780,7 +780,7 @@ class TestChangeLog:
     )
     def test_update_changelog(
         self,
-        entrance: dict[str, str | Path],
+        entrance: dict[str, Any],
         file_temp: Path,
         return_git_tag: str,
     ) -> None:
@@ -835,7 +835,7 @@ class TestClassChangelog:
             {'reverse': False},
         ],
     )
-    def test_init(self, entrance: dict[str, str | bool]) -> None:
+    def test_init(self, entrance: dict[str, Any]) -> None:
         """Test for init class."""
         o = pkg.Changelog(**entrance)
         assert isinstance(o, pkg.Changelog)
@@ -901,7 +901,7 @@ class TestClassChangelog:
     )
     def test_header(
         self,
-        entrance: dict[str, bool],
+        entrance: dict[str, Any],
         expected: list[str],
     ) -> None:
         """Test for header file."""
@@ -966,7 +966,7 @@ class TestClassChangelog:
     )
     def test_iter_logs(
         self,
-        entrance: dict[str, bool | list[str]],
+        entrance: dict[str, Any],
         expected: list[str],
     ) -> None:
         """Test for iter_logs."""
