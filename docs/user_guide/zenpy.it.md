@@ -7,13 +7,13 @@
 - Semplice è meglio di complesso.
 - Complesso è meglio di complicato.
 - Piatto è meglio di annidato.
-- Sparse è meglio di dense.
+- Sparso è meglio di denso.
 - La leggibilità conta.
 - I casi speciali non sono abbastanza speciali da infrangere le regole.
  Anche se la praticità batte la purezza.
 - Gli errori non dovrebbero mai passare in silenzio.
  A meno che non siano esplicitamente silenziati.
-- Di fronte all'ambiguità, rifiutate la tentazione di tirare a indovinare.
+- Di fronte all'ambiguità, rifiutate la tentazione di indovinare.
 - Dovrebbe esserci un modo ovvio, e preferibilmente uno solo, per farlo.
  Anche se questo modo potrebbe non essere ovvio all'inizio, a meno che non siate olandesi.
 - Ora è meglio che mai.

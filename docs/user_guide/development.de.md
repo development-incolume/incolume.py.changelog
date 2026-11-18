@@ -4,12 +4,12 @@ Regeln und Konventionen zur Entwicklung von `incolume.py.changelog`.
 
 ## Verhaltenskodex
 
-Details im [Verhaltenskodex](code_of_conduct).
+Details im [Verhaltenskodex](code_of_conduct.md).
 
 ## Angewandte Standards
 
 Methodiken und Konventionen des Projekts in
-[Konventionen und Methodiken](README).
+[Konventionen und Methodiken](README.md).
 
 ## Anforderungen
 
@@ -41,7 +41,7 @@ uv run pytest
 ```
 
 - Minimale Abdeckung: **99,7 %**.
-- Tests nicht ändern, damit die Implementierung besteht.
+- Tests nicht bearbeiten, damit die Implementierung besteht.
 
 ## Multi-Version-Tests
 
@@ -87,7 +87,7 @@ Die Version liegt in `pyproject.toml` (`[project]`) und muss in
 Der Versions-Commit ist `build: incolume-py-changelog <Version>`, auf `dev`,
 nach dem Merge.
 
-## Abliefluss
+## Ablieferungsfluss
 
 - Branch abgeleitet von `dev`, mit geöffneter Issue.
 - Kriterientest vor der Implementierung.

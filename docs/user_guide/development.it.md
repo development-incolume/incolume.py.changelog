@@ -4,14 +4,14 @@ Regole e convenzioni per sviluppare `incolume.py.changelog`.
 
 ## Codice di condotta
 
-Dettagli nel [Codice di condotta](code_of_conduct).
+Dettagli nel [Codice di condotta](code_of_conduct.md).
 
 ## Standard applicati
 
 Metodologie e convenzioni del progetto in
-[Convenzioni e Metodologie](README).
+[Convenzioni e Metodologie](README.md).
 
-## Requisiti
+## Prerequisiti
 
 - Git
 - Python `>=3.11,<4`
@@ -27,7 +27,7 @@ uv run task setup
 ```
 
 - `uv sync` crea l'ambiente e installa le dipendenze da `pyproject.toml`
-  come bloccate in `uv.lock`.
+  come specificato in `uv.lock`.
 - `uv run task setup` imposta `git config core.hooksPath .git-hooks/`, attivando
   gli hook del progetto.
 
@@ -82,13 +82,13 @@ uv run safety check
 uv version --bump <major|minor|patch|alpha|beta|rc|stable>
 ```
 
-La versione vive in `pyproject.toml` (`[project]`) e deve essere riportata in
+La versione è definita in `pyproject.toml` (`[project]`) e deve essere riportata in
 `[tool.poetry]` e in `incolume/py/changelog/version.txt`. Il commit di versione è
-`build: incolume-py-changelog <versione>`, su `dev`, dopo il merge.
+`build: incolume-py-changelog <versione>`, nel branch `dev`, dopo il merge.
 
 ## Flusso di consegna
 
 - Branch derivato da `dev`, con una issue aperta.
 - Test del criterio prima dell'implementazione.
 - `ruff`/`mypy`/`pytest` verdi prima del commit.
-- Merge `--no-ff` (revisionato da Kevin).
+- Merge `--no-ff` (revisione di Kevin).

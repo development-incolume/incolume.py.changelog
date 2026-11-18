@@ -29,14 +29,13 @@ Menschen brauchen es. Ob Verbraucher oder Entwickler, die Endnutzer von Software
 - **Security**: (Sicherheit) bei Sicherheitslücken.
 
 ## Wie wendet man das Changelog in diesem Projekt an?
-   Dieses Projekt verwendet das Python-Paket incolumepy.utils, das die
-   die Möglichkeit bietet, automatisch eine `CHANGELOG` aus den
+   Dieses Projekt verwendet das Python-Paket incolumepy.utils, das die Möglichkeit bietet, automatisch eine `CHANGELOG.md` aus den
 Einträgen von `git tag -n` zu erstellen.
 
 Beispiele:
 ```shell
-git tag -f Unreleased -m 'added: Hinzugefügt: Hinweise zu Keep a CHANGELOG in docs/user_guide/keep-a-chagelog'
-git tag -f `poetry version -s` -m ‚added: Hinzugefügt: Anweisungen zu Keep a CHANGELOG in docs/user_guide/keep-a-chagelog‘
+git tag -f Unreleased -m 'added: Hinzugefügt: Hinweise zu Keep a CHANGELOG.md in docs/user_guide/keep-a-chagelog.md'
+git tag -f `poetry version -s` -m ‚added: Hinzugefügt: Anweisungen zu Keep a CHANGELOG.md in docs/user_guide/keep-a-chagelog.md‘
 git tag -f 1.0.0 -m 'Added: (Hinzugefügt) für neue Funktionen;
 Changed: (Geändert) für Änderungen an bestehenden Funktionen;
 Deprecated: (Veraltet) für Funktionen, die in zukünftigen Versionen entfernt werden;
@@ -45,7 +44,7 @@ Fixed: (Behoben) für alle Fehlerbehebungen;
 Security: (Sicherheit) im Falle von Sicherheitslücken;'
 ```
 
-### CHANGELOG aktualisieren
+### CHANGELOG.md aktualisieren
 ```shell
 task gcl
 ```

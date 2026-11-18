@@ -1,12 +1,12 @@
 # Verwendung
 
-Wie man das `CHANGELOG` mit `incolume.py.changelog` erzeugt und pflegt.
+Wie man das `CHANGELOG.md` mit `incolume.py.changelog` erzeugt und pflegt.
 
 ## Anforderungen
 
 - Git-Repository mit **annotierten Tags** (die Annotation ist die Quelle des CHANGELOG).
 - Umgebung mit Python `>=3.11,<4` und `uv` (siehe
-  [Installation](INSTALLATION)).
+  [Installation](INSTALLATION.md)).
 
 ## CHANGELOG erzeugen
 
@@ -15,7 +15,7 @@ uv run task changelog
 ```
 
 Der Befehl liest `git tag -n`, klassifiziert die Meldungen und schreibt die
-konfigurierte Datei (standardmäßig `docs/about/CHANGELOG`).
+konfigurierte Datei (standardmäßig `docs/about/CHANGELOG.md`).
 
 Die Datei wird **erzeugt** — sie sollte nicht von Hand bearbeitet werden.
 
@@ -42,7 +42,7 @@ Dateien in dieser Reihenfolge gesucht: `changelog.toml`, `.changelog.toml`,
 
 ```toml
 [settings]
-file = "docs/about/CHANGELOG"
+file = "docs/about/CHANGELOG.md"
 reverse = true
 url_compare = "https://github.com/development-incolume/incolume.py.changelog/compare"
 url_keepachangelog = "https://keepachangelog.com/en/1.0.0"
@@ -69,11 +69,11 @@ Akzeptierte Kategorien: `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`,
 ```python
 from incolume.py.changelog.changelog import update_changelog
 
-update_changelog(changelog_file='docs/about/CHANGELOG', reverse=True)
+update_changelog(changelog_file='docs/about/CHANGELOG.md', reverse=True)
 ```
 
 ## Siehe auch
 
-- [Installation](INSTALLATION)
-- [API-Dokumentation](../api/index)
-- [Entwicklung](development)
+- [Installation](INSTALLATION.md)
+- [API-Dokumentation](../api/index.md)
+- [Entwicklung](development.md)

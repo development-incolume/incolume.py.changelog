@@ -21,8 +21,7 @@ apenas o que é específico deste projeto.
 
 Semver. A versão vive em `pyproject.toml` e só muda por `uv version`, nunca à mão.
 
-- **O `uv version` não cobre todos os arquivos.** Todo bump atualiza também:
-  - `[tool.poetry] version` em `pyproject.toml`;
+- **O `uv version` não cobre `version.txt`.** Todo bump atualiza também:
   - `incolume/py/changelog/version.txt`.
 - **Primeira tarefa de um ciclo:** `uv version --bump minor --bump alpha`.
 - **Correção de bugs/fix apenas:** `uv version --bump patch --bump alpha`.
@@ -37,9 +36,17 @@ Semver. A versão vive em `pyproject.toml` e só muda por `uv version`, nunca à
 
 ## Qualidade
 
-- Antes de commitar: `ruff check tests incolume`, `ruff format --check`,
-  `mypy tests incolume`, `pytest`.
+- Antes de commitar, com `d='tests/ incolume/'`:
+  `ruff check --fix $d`, `ruff format $d`, `mypy $d`, `ty check $d`,
+  `pytest -vvv $d`.
 - Cobertura mínima de 99.7% (`.coveragerc`).
+
+## Git e entrega
+
+- Merge sempre `--no-ff`.
+- **Nunca faça merge cruzado.** Antes do merge, faça `git rebase dev` na
+  branch — o merge parte do **HEAD de `dev`**.
+- Conflito se resolve na branch, durante o rebase, nunca no commit de merge.
 
 ## Commits
 

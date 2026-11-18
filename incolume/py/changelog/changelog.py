@@ -77,10 +77,10 @@ def get_git_tags() -> str:
     ).stdout.decode('utf-8', errors='replace')
 
 
-def generate_changelog_config_model(**kwargs: str | Path) -> Path:
+def generate_changelog_config_model(**kwargs: str | Path | bool) -> Path:
     """Generate a model of changelog configuration file."""
     fl = kwargs.pop('conf_file', None) or 'changelog.toml.sample'
-    conf_file = Path(fl)
+    conf_file = Path(str(fl))
     if conf_file.exists():
         logging.warning(
             'Configuration file already exists: %s',
@@ -268,7 +268,7 @@ def changelog_messages(
 
 
 def changelog_header(
-    **kwargs: str,
+    **kwargs: str | bool,
 ) -> list[str]:
     r"""Header of changelog file.
 
@@ -329,7 +329,7 @@ def changelog_header(
 def changelog_body(
     content: list[tuple[str, dict[str, Any]]],
     content_formated: list[str],
-    **kwargs: str,
+    **kwargs: str | bool,
 ) -> list[str]:
     """Body of changelog file.
 
@@ -358,7 +358,7 @@ def changelog_body(
 def changelog_footer(
     content: list[tuple[str, dict[str, Any]]],
     content_formated: list[str],
-    **kwargs: str,
+    **kwargs: str | bool,
 ) -> list[str]:
     r"""Footer of changelog file.
 
@@ -397,7 +397,7 @@ def changelog_footer(
         ['\n\n---\n\n', '[1.0.2]: https://github.com/development-incolume/incolume.py.changelog/-/compare/1.0.1...1.0.2\n']
 
     """
-    urlcompare = (
+    urlcompare = str(
         kwargs.get('urlcompare')
         or 'https://github.com/development-incolume/'
         'incolume.py.changelog/-/compare'
@@ -418,7 +418,7 @@ def changelog_footer(
 def changelog_write(
     *,
     content: list[tuple[str, dict[str, Any]]],
-    **kwargs: str,
+    **kwargs: str | bool,
 ) -> bool:
     """Write CHANGELOG.md file formatted.
 
@@ -438,7 +438,9 @@ def changelog_write(
         True
 
     """
-    changelog_file = Path(kwargs.pop('changelog_file', '') or CHANGELOG_FILE)
+    changelog_file = Path(
+        str(kwargs.pop('changelog_file', '') or CHANGELOG_FILE)
+    )
     changelog_file.parent.mkdir(parents=True, exist_ok=True)
     logging.debug('changelog_file=%s', changelog_file)
 
@@ -455,7 +457,7 @@ def update_changelog(
     changelog_file: str = '',
     *,
     reverse: bool = True,
-    **kwargs: str,
+    **kwargs: str | bool,
 ) -> bool:
     """Update Changelog.md file.
 
@@ -483,12 +485,12 @@ def update_changelog(
 
     """
     logging.debug('argumentos=%s,%s,%s', changelog_file, reverse, kwargs)
-    urlcompare: str = (
+    urlcompare: str = str(
         kwargs.pop('urlcompare', '')
         or 'https://github.com/development-incolume'
         '/incolume.py.changelog/-/compare'
     )
-    content: str = kwargs.pop('content', get_git_tags())
+    content: str = str(kwargs.pop('content', get_git_tags()))
     logging.info('registros encontrados ..')
     logging.debug('content=%s', content)
 
@@ -517,7 +519,7 @@ class Changelog:
         url_compare: str = '',
         *,
         reverse: bool = True,
-        **kwargs: str,
+        **kwargs: str | bool,
     ) -> None:
         """Initialize from Changelog class.
 

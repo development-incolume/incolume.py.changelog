@@ -41,7 +41,7 @@
 ---
 ## Objectifs
 
-Cette API automatise la création d'un fichier de journal des modifications à partir des enregistrements git, afin de mieux gérer vos projets, en suivant la méthodologie Keep a Changelog.
+Cette API automatise la création d'un fichier changelog à partir des enregistrements git, afin de mieux gérer vos projets, en suivant la méthodologie Keep a Changelog.
 
 ## Description
 
@@ -63,5 +63,5 @@ Disponible sur [docs/about/CONTRIBUTORS](https://development-incolume.github.io/
 
 
 ## Technologies appliquées
-Vous souhaitez en savoir plus sur certains des exigences non fonctionnelles utilisées dans le projet ?
-Consultez la section [Standards appliqués dans le Guide de contribution](https://development-incolume.github.io/incolume.py.changelog/user_guide/development/).
+Vous souhaitez en savoir plus sur certaines des exigences non fonctionnelles utilisées dans le projet ?
+Consultez la section [Normes appliquées dans le Guide de contribution](https://development-incolume.github.io/incolume.py.changelog/user_guide/development/).

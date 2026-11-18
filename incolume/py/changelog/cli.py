@@ -11,7 +11,9 @@ from incolume.py.changelog.changelog import (
 from incolume.py.changelog.core import load_config, select_configuration_fl
 
 try:
-    config: dict[str, str | bool] = load_config(select_configuration_fl())
+    config: dict[str, str | bool] = dict(
+        load_config(select_configuration_fl())
+    )
 except ValueError:  # pragma: no cover
     config = {}
 

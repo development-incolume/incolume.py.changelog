@@ -55,7 +55,7 @@ Per creare paragrafi, usa una riga vuota per separare una o più righe di testo.
 
 ## Buone pratiche per i paragrafi
 
-A meno che il [paragrafo non sia in un elenco](#adicionando-elementos-em-listas), non indentare i paragrafi con spazi o tabulazioni.
+A meno che il [paragrafo non sia in un elenco](#aggiungere-elementi-agli-elenchi), non indentare i paragrafi con spazi o tabulazioni.
 
 > ℹ **Nota:** Se hai bisogno di indentare i paragrafi nell'output, consulta la sezione su come indentare (tabulazione).
 
@@ -80,7 +80,7 @@ Puoi usare due o più spazi (comunemente chiamati "spazi finali") per le interru
 
 Per compatibilità, usa lo spazio finale o il tag HTML `<br>` alla fine della riga.
 
-Esistono altre due opzioni che non consiglio. CommonMark e alcuni altri linguaggi di markup leggero consentono di digitare una barra rovesciata (`\`) alla fine della riga, ma non tutte le applicazioni Markdown la supportano, quindi non è la scelta migliore dal punto di vista della compatibilità. E in almeno alcuni linguaggi di markup leggero non è richiesto nulla alla fine della riga – basta premere invio e verrà creata un'interruzione di riga.
+Esistono altre due opzioni che non consiglio. CommonMark e alcuni altri linguaggi di markup leggero consentono di digitare una barra rovesciata (`\`) alla fine della riga, ma non tutte le applicazioni Markdown la supportano, quindi non è la scelta migliore dal punto di vista della compatibilità. In almeno alcuni linguaggi di markup leggero non è richiesto nulla alla fine della riga – basta premere invio e verrà creata un'interruzione di riga.
 
 | ✅&nbsp; Fai così                          | ❌&nbsp; Non fare così                             |
 | ------------------------------------------ | -------------------------------------------------- |
@@ -181,10 +181,10 @@ L'output renderizzato è il seguente:
 >
 > La Strega le ordinò di pulire le pentole e i bollitori, di spazzare il pavimento e di mantenere il fuoco alimentato con legna.
 
-### Citazioni annidadas
+### Citazioni annidate
 <!-- TODO: nested-blockquotes -->
 
-Le citazioni in blocco possono essere annidade. Aggiungi un `>>` prima del paragrafo che vuoi annidare.
+Le citazioni in blocco possono essere annidate. Aggiungi un `>>` prima del paragrafo che vuoi annidare.
 
     > Dorothy la seguì attraverso molte delle belle stanze del suo castello.
 
@@ -201,7 +201,7 @@ L'output renderizzato è il seguente:
 ### Blockquote con altri elementi
 <!-- TODO: blockquotes-with-other-elements -->
 
-I blockquote possono contenere altri elementi formattati in Markdown. Non tutti gli elementi possono essere usati ​​`—` dovrai sperimentare per vedere quali funzionano.
+I blockquote possono contenere altri elementi formattati in Markdown. Non tutti gli elementi possono essere usati: dovrai sperimentare per vedere quali funzionano.
 
     > #### I risultati trimestrali sembrano ottimi!
 
@@ -277,7 +277,7 @@ Per creare un elenco non ordinato, aggiungi trattini ( `-` ), asterischi ( `*` )
 #### Iniziare voci di elenco non ordinato con i numeri
 <!-- TODO: starting-unordered-list-items-with-numbers -->
 
-Se devi iniziare una voce di elenco non ordinato con un numero seguito da un punto, puoi usare una barra rovesciata ( `/` ) per [escapare](#caracteres-escapando) del punto.
+Se devi iniziare una voce di elenco non ordinato con un numero seguito da un punto, puoi usare una barra rovesciata ( `/` ) per [escapare](#caratteri-di-escape) del punto.
 
 | Markup                                                      | HTML                                         | Output renderizzato                    |
 | ----------------------------------------------------------- | -------------------------------------------- | -------------------------------------- |
@@ -337,7 +337,7 @@ L'output renderizzato è il seguente:
 #### Blocchi di codice
 <!-- TODO: code-blocks-1 -->
 
-[I blocchi di codice](#blocos-de-codigos) sono normalmente indentati con quattro spazi o una tabulazione. Quando si trovano in un elenco, indentali con otto spazi o due tabulazioni.
+[I blocchi di codice](#blocchi-di-codice) sono normalmente indentati con quattro spazi o una tabulazione. Quando si trovano in un elenco, indentali con otto spazi o due tabulazioni.
 
     1. Apri il file.
     2. Trova il seguente blocco di codice alla riga 21:
@@ -468,7 +468,7 @@ L'output renderizzato è il seguente:
 
 Il mio motore di ricerca preferito è [Duck Duck Go](https://duckduckgo.com).
 
-> ℹ **Nota:** Per collegarti a un elemento nella stessa pagina, consulta [collegamento agli ID dei titoli](https://www.markdownguide.org/extended-syntax/#linking-to-heading-ids) . Per creare un collegamento che si apre in una nuova scheda o finestra, consulta la sezione sui [destini dei collegamenti](https://www.markdownguide.org/hacks/#link-targets).
+> ℹ **Nota:** Per collegarti a un elemento nella stessa pagina, consulta [collegamento agli ID dei titoli](https://www.markdownguide.org/extended-syntax/#linking-to-heading-ids). Per creare un collegamento che si apre in una nuova scheda o finestra, consulta la sezione sui [destini dei collegamenti](https://www.markdownguide.org/hacks/#link-targets).
 
 ### Aggiungere titoli
 <!-- TODO: adding-titles -->
@@ -498,13 +498,13 @@ L'output renderizzato è il seguente:
 ### Formattare i collegamenti
 <!-- TODO: formatting-links -->
 
-Per [enfatizzare](#enfase) i collegamenti, aggiungi asterischi prima e dopo le parentesi quadre e tonde. Per denotare i collegamenti come [codice](#codigo), aggiungi backtick tra le parentesi quadre.
+Per [enfatizzare](#enfasi) i collegamenti, aggiungi asterischi prima e dopo le parentesi quadre e tonde. Per denotare i collegamenti come [codice](#codice), aggiungi backtick tra le parentesi quadre.
 
     Adoro sostenere la **[EFF](https://eff.org)**.
 
     Questo è il *[Markdown Guide](https://www.markdownguide.org)*.
 
-    Consulta la sezione su [`code`](#codigo).
+    Consulta la sezione su [`code`](#codice).
 
 L'output renderizzato è il seguente:
 
@@ -512,17 +512,17 @@ Adoro sostenere la **[EFF](https://eff.org)**.
 
 Questo è il *[Markdown Guide](https://www.markdownguide.org)*.
 
-Consulta la sezione su [`code`](#codigo).
+Consulta la sezione su [`code`](#codice).
 
 ### Collegamenti in stile di riferimento
 <!-- TODO: reference-style-links -->
 
-I collegamenti in stile di riferimento sono un tipo speciale di collegamento che rende gli URL più facili da visualizzare e leggere in Markdown. I collegamenti in stile di riferimento sono costruiti in due parti: la parte che mantieni allineata al tuo testo e la parte che archivi altrove nel file per mantenere il testo facile da leggere.
+I collegamenti in stile di riferimento sono un tipo speciale di collegamento che rende gli URL più facili da visualizzare e leggere in Markdown. I collegamenti in stile di riferimento sono costruiti in due parti: la parte che mantieni allineata al tuo testo e la parte che archivia altrove nel file per mantenere il testo facile da leggere.
 
 #### Formattare la prima parte del collegamento
 <!-- TODO: formatting-the-first-part-of-the-link -->
 
-La prima parte di un collegamento in stile di riferimento è formattata con due coppie di parentesi quadre. La prima coppia di parentesi quadre racchiude il testo che deve apparire collegato. La seconda coppia di parentesi quadre mostra un'etichetta usata per puntare al collegamento che archivi altrove nel documento.
+La prima parte di un collegamento in stile di riferimento è formattata con due coppie di parentesi quadre. La prima coppia di parentesi quadre racchiude il testo che deve apparire collegato. La seconda coppia di parentesi quadre mostra un'etichetta usata per puntare al collegamento che archivia altrove nel documento.
 
 Anche se non è obbligatorio, puoi includere uno spazio tra la prima e la seconda coppia di parentesi quadre. L'etichetta nella seconda coppia di parentesi quadre non distingue maiuscole da minuscole e può includere lettere, numeri, spazi o punteggiatura.
 
@@ -555,7 +555,7 @@ Puoi inserire questa seconda parte del collegamento in qualsiasi punto del tuo d
 #### Un esempio che unisce le parti
 <!-- TODO: an-example-putting-the-parts-together -->
 
-Diciamo che aggiungi un URL come [collegamento URL standard](#ligacoes) a un paragrafo e che nel Markdown risulta così:
+Diciamo che aggiungi un URL come [collegamento URL standard](#collegamenti) a un paragrafo e che nel Markdown risulta così:
 
     In una buca nel terreno viveva un hobbit. Non una buca sporca, sudicia e bagnata, piena di code di vermi e con odore di fango, né una buca secca, vuota e sabbiosa, senza nulla su cui sedersi o da mangiare: era una [tana di hobbit](https://en.wikipedia.org/wiki/Hobbit#Lifestyle "Hobbit lifestyles"), e ciò significa comfort.
 
@@ -598,7 +598,7 @@ L'output renderizzato è il seguente:
 
 ![The San Juan Mountains are beautiful!](https://mdg.imgix.net/assets/images/san-juan-mountains.jpg?auto=format&fit=clip&q=40&w=800 "San Juan Mountains")
 
-> ℹ **Nota:** Per ridimensionare un'immagine, consulta la sezione su [dimensioni delle immagini](https://www.markdownguide.org/hacks/#image-size) . Per aggiungere una didascalia, consulta la sezione sulle [didascalie delle immagini](https://www.markdownguide.org/hacks/#image-captions).
+> ℹ **Nota:** Per ridimensionare un'immagine, consulta la sezione su [dimensioni delle immagini](https://www.markdownguide.org/hacks/#image-size). Per aggiungere una didascalia, consulta la sezione sulle [didascalie delle immagini](https://www.markdownguide.org/hacks/#image-captions).
 
 ### Collegare le immagini
 <!-- TODO: linking-images -->
@@ -630,9 +630,9 @@ Puoi usare una barra rovesciata per eseguire l'escape dei seguenti caratteri.
 |Caratteri   |Nome                                                                            |
 | ----------- | ------------------------------------------------------------------------------ |
 |\            |barra rovesciata                                                                 |
-|`            |backtick (vedi anche [escaping dei backtick nel codice](#escapando-de-crases)) |
+|`            |backtick (vedi anche [escaping dei backtick nel codice](#escaping-dei-backtick)) |
 |*            |asterisco                                                                       |
-|_            |trattini bassi                                                                  |
+|_            |trattino basso                                                                  |
 |{}           |parentesi graffe                                                                 |
 |[]           |parentesi quadre                                                                 |
 |<>           |parentesi angolari                                                             |
@@ -642,7 +642,7 @@ Puoi usare una barra rovesciata per eseguire l'escape dei seguenti caratteri.
 |-            |segno meno (trattino)                                                          |
 |.            |punto                                                                           |
 |!            |punto esclamativo                                                             |
-||            |barra verticale                                                                            |
+|\|            |barra verticale                                                                            |
 
 ## HTML
 
@@ -661,13 +661,13 @@ Questa **parola** è in grassetto. Questa *parola* è in corsivo.
 
 Per motivi di sicurezza, non tutte le applicazioni Markdown supportano HTML nei documenti Markdown. In caso di dubbio, verifica la documentazione della tua applicazione Markdown. Alcune applicazioni supportano solo un sottoinsieme di tag HTML.
 
-Usa righe vuote per separare gli elementi HTML a livello di blocco, come `<table><pre><p>` e `<div>`, dal contenuto circostante. Cerca di non indentare i tag con tabulazioni o spazi — questo può interferire con la formattazione.
+Usa righe vuote per separare gli elementi HTML a livello di blocco, come `<table>`, `<pre>`, `<p>` e `<div>`, dal contenuto circostante. Cerca di non indentare i tag con tabulazioni o spazi — questo può interferire con la formattazione.
 
 Non puoi usare la sintassi Markdown all'interno di tag HTML a livello di blocco. Ad esempio, `<p>italic and **bold**</p>` non funzionerà.
-F
+
 ## Emoji
 
-[Emoji per MarkDown](https://gist.github.com/rxaviers/7360908)
+[Emoji per Markdown](https://gist.github.com/rxaviers/7360908)
 
 ### Persone
 | :bowtie: `:bowtie:`                                             | :smile: `:smile:`                                               | :laughing: `:laughing:`                     |

@@ -2,8 +2,8 @@
 
 - **Data:** 2026-11-14
 - **Projeto:** incolume.py.changelog
-- **Versão do produto:** 1.5.0
-- **Status:** Proposta (aguardando revisão)
+- **Versão do produto:** 1.7.0a11
+- **Status:** Aprovado
 - **Autor:** Brito (Britodfbr)
 - **Coautor:** Dr. Nefário OpenBot
 - **Fonte:** derivado do repositório — `pyproject.toml`, `.changelog.toml`,
@@ -80,10 +80,12 @@ Opções do `changelog`: `file_changelog`, `--url/-u`, `--reverse/-r`,
 ## 6. Qualidade
 
 ```shell
-uv run ruff check --fix tests incolume
-uv run ruff format tests incolume
-uv run mypy tests incolume
-uv run pytest
+d='tests/ incolume/'
+ruff check --fix $d
+ruff format $d
+mypy $d
+ty check $d
+pytest -vvv $d
 ```
 
 - Cobertura mínima: 99,7%.
@@ -98,7 +100,7 @@ uv run pytest
 
 ## 8. Versionamento e release
 
-- `uv version --bump <sem>`; ajustar `[tool.poetry] version` e `version.txt`.
+- `uv version --bump <sem>`; ajustar `version.txt`.
 - Commit de versão em `dev`, após o merge: `build: incolume-py-changelog <v>`.
 - Release: tag anotada → workflow `multplatform-ci-cd.yml` (build, release,
   publicação).

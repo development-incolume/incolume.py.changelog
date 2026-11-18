@@ -57,7 +57,7 @@ Pour créer des paragraphes, utilisez une ligne vide afin de séparer une ou plu
 
 ## Bonnes pratiques pour les paragraphes
 
-À moins que le [paragraphe ne figure dans une liste](#adicionando-elementos-em-listas), n'indentez pas les paragraphes avec des espaces ou des tabulations.
+À moins que le [paragraphe ne figure dans une liste](#ajout-delements-dans-les-listes), n'indentez pas les paragraphes avec des espaces ou des tabulations.
 
 >  ℹ **Note :** Si vous devez indenter des paragraphes dans le rendu, consultez la section consacrée à l'indentation (tabulation).
 
@@ -281,7 +281,7 @@ Pour créer une liste non ordonnée, ajoutez des tirets ( `-` ), des astérisque
 #### Commencer les éléments d'une liste non ordonnée par des nombres
 <!-- TODO: starting-unordered-list-items-with-numbers -->
 
-Si vous devez commencer un élément de liste non ordonnée par un nombre suivi d'un point, vous pouvez utiliser une barre oblique inverse (`\`) pour [échapper](#caracteres-escapando) au point.
+Si vous devez commencer un élément de liste non ordonnée par un nombre suivi d'un point, vous pouvez utiliser une barre oblique inverse (`\`) pour [échapper](#caractres-déchappement) au point.
 
 | Balisage                                                      | HTML                                         | Rendu                    |
 | --------------------------------------------------------------- | -------------------------------------------- | ------------------------------------ |
@@ -342,7 +342,7 @@ Le rendu est le suivant :
 #### Blocs de code
 <!-- TODO: code-blocks-1 -->
 
-Les [blocs de code](#blocos-de-codigos) sont généralement indentés de quatre espaces ou d'une tabulation. Lorsqu'ils figurent dans une liste, indentez-les de huit espaces ou de deux tabulations.
+Les [blocs de code](#blocs-de-code) sont généralement indentés de quatre espaces ou d'une tabulation. Lorsqu'ils figurent dans une liste, indentez-les de huit espaces ou de deux tabulations.
 
     1. Ouvrez le fichier.
     2. Trouvez le bloc de code suivant à la ligne 21 :
@@ -417,7 +417,7 @@ Pour désigner un mot ou une phrase comme du code, placez-le entre des accents g
 ### Échapper aux accents graves
 <!-- TODO: escaping-backticks -->
 
-Si le mot ou la phrase que vous désirez désigner comme code contient un ou plusieurs accents graves, vous pouvez l'échapper en plaçant le mot ou la phrase entre deux accents graves (`` `` ``).
+Si le mot ou la phrase que vous désirez désigner comme code contient un ou plusieurs accents graves, vous pouvez l'échapper en plaçant le mot ou la phrase entre deux accents graves (`` ``).
 
 |Balisage                             |HTML                                              |Rendu           |
 | ------------------------------------- | ------------------------------------------------ | -------------------------  |
@@ -502,13 +502,13 @@ Le rendu est le suivant :
 ### Mise en forme des liens
 <!-- TODO: formatting-links -->
 
-Pour [mettre les liens en emphase](#enfase), ajoutez des astérisques avant et après les crochets et les parenthèses. Pour désigner des liens comme du [code](#codigo), ajoutez des accents graves entre les crochets.
+Pour [mettre les liens en emphase](#emphase), ajoutez des astérisques avant et après les crochets et les parenthèses. Pour désigner des liens comme du [code](#code), ajoutez des accents graves entre les crochets.
 
     J'adore soutenir l'**[EFF](https://eff.org)**.
 
     Ceci est le *[Markdown Guide](https://www.markdownguide.org)*.
 
-    Consultez la section sur le [`code`](#codigo).
+    Consultez la section sur le [`code`](#code).
 
 Le rendu est le suivant :
 
@@ -516,7 +516,7 @@ J'adore soutenir l'**[EFF](https://eff.org)**.
 
 Ceci est le *[Markdown Guide](https://www.markdownguide.org)*.
 
-Consultez la section sur le [`code`](#codigo).
+Consultez la section sur le [`code`](#code).
 
 ### Liens de type référence
 <!-- TODO: reference-style-links -->
@@ -559,7 +559,7 @@ Vous pouvez placer cette seconde partie du lien n'importe où dans votre documen
 #### Un exemple qui assemble les éléments
 <!-- TODO: an-example-putting-the-parts-together -->
 
-Supposons que vous ajoutiez une URL sous forme de [lien d'URL standard](#ligacoes) à un paragraphe et qu'il ressemble à ceci en Markdown :
+Supposons que vous ajoutiez une URL sous forme de [lien d'URL standard](#liens) à un paragraphe et qu'il ressemble à ceci en Markdown :
 
     Dans un trou du sol vivait un hobbit. Ce n'était ni un trou dégoûtant, sale et humide, rempli de bouts
     de vers et suintant une odeur de vase, ni un trou sec, vide et sableux, où il n'y avait rien pour s'asseoir ou pour
@@ -636,7 +636,7 @@ Vous pouvez utiliser une barre oblique inverse pour échapper les caractères su
 |Caractères   |Nom                                                                            |
 | ----------- | ------------------------------------------------------------------------------ |
 |\            |barre oblique inverse                                                           |
-|`            |accent grave (voir aussi [échapper les accents graves dans le code](#escapando-de-crases)) |
+|`            |accent grave (voir aussi [échapper les accents graves dans le code](#échapper-aux-accents-graves)) |
 |*            |astérisque                                                                      |
 |_            |tiret bas                                                                       |
 |{}           |accolades                                                                       |

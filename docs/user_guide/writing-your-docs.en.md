@@ -13,8 +13,8 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
     mkdocs.yml    # The configuration file.
     docs/
-        index  # The documentation homepage.
+        index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
-## Web documentation over github pages
+## Web documentation on GitHub Pages
     mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc
