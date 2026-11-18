@@ -1,53 +1,79 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Docs Generator by CI/CD
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
-      # Setup python environment
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: "3.12"
 
-      # Install dependencies from pack
       - name: Install dependencies
         run: |
           python -m pip install -U pip uv
-          uv sync
+          uv sync --all-groups
 
-      # Generate and deploy the documentation
+      - name: Validate documentation links and encoding
+        run: |
+          uv run python - <<'PY'
+          import os
+          import re
+          import sys
+
+          LINK_RE = re.compile(r'\[[^\]]*\]\(([^)\s]+)\)')
+          SKIP_SCHEMES = ('http:', 'https:', 'mailto:', 'tel:', 'data:', '#')
+          errors = []
+          for root, _dirs, files in os.walk('docs'):
+              for fn in sorted(files):
+                  if not fn.endswith('.md'):
+                      continue
+                  for ln, line in enumerate(
+                          open(os.path.join(root, fn), encoding='utf-8'), 1):
+                      for href in LINK_RE.findall(line):
+                          target = href.split('#', 1)[0].split('?', 1)[0]
+                          if target.startswith(SKIP_SCHEMES):
+                              continue
+                          base = '' if target.startswith('/') else os.path.dirname(
+                              os.path.join(root, fn))
+                          target = target.lstrip('/')
+                          candidates = [target, target + '.md',
+                                        os.path.join(target, 'index.md'),
+                                        os.path.join(target, 'README.md')]
+                          if not any(os.path.exists(os.path.join(base, c))
+                                     for c in candidates):
+                              print('link quebrado: {}:{}: {}'.format(
+                                  os.path.join(root, fn), ln, href),
+                                    file=sys.stderr)
+                              errors.append(1)
+          if errors:
+              print('{} link(s) quebrado(s)'.format(len(errors)), file=sys.stderr)
+              sys.exit(1)
+          print('links internos OK')
+
+          import codecs
+          for root, _dirs, files in os.walk('docs'):
+              for fn in files:
+                  if fn.endswith(('.md', '.txt', '.py', '.yaml', '.yml',
+                                   '.toml')):
+                      p = os.path.join(root, fn)
+                      try:
+                          codecs.open(p, encoding='utf-8', errors='strict').close()
+                      except UnicodeDecodeError as exc:
+                          raise SystemExit('encoding UTF-8 inválido em {}: {}'.format(
+                              p, exc))
+          print('encoding UTF-8 válido em todos os arquivos de docs/')
+          PY
+
       - name: Generate and deploy the documentation
         run: |
           git pull origin
