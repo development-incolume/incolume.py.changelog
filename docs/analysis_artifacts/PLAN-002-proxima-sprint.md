@@ -29,6 +29,7 @@ tem a sua issue, branch e critério de aceite.
 | #204 | Documentação — `[tool.poetry]` obsoleto | aberta |
 | #205 | Release — workflow | aberta |
 | #206 | Documentação — PLAN-001 | aberta |
+| #210 | i18n — seletor de idiomas | aberta |
 | #192 | i18n residual — T2.7 | aberta |
 | #175 | Knowledge Bits (Click config) | fora do plano |
 
@@ -39,7 +40,7 @@ tem a sua issue, branch e critério de aceite.
 | **1 — QA e esteira** | Uma fonte única para os comandos de QA e CI que valida em vez de corrigir | #203 | Um único conjunto de comandos documentado; `AGENTS.md`, SPEC-001, `tox` e CI alinhados; `tox -e lint` e `tox -e typing` coerentes |
 | **2 — Documentação** | Artefatos coerentes com a versão `1.6.0` | #204; atualizar versão/status dos artefatos (`PRD-001`, `ADR-001`, `SPEC-001`, `PLAN-001`) para `1.6.0`; fechar #206 | Artefatos com versão `1.6.0`; nenhum documento manda espelhar versão em `[tool.poetry]`; #206 encerrada |
 | **3 — Release** | Workflow de release alinhado ao ADR-001 AD-09 | #205 | Workflow dispara em `dev` e em PR; actions na versão atual; release não marcada indevidamente como `prerelease` |
-| **4 — i18n residual** | Revisão textual das traduções | #192 | Traduções (de/en/es/fr/it) revisadas por idioma; pendências registradas |
+| **4 — i18n** | Revisão textual das traduções e seletor de idiomas no site | #192, #210 | Traduções (de/en/es/fr/it) revisadas por idioma; links de idioma corrigidos no site |
 
 ## 4. Riscos e pendências
 
