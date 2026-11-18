@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/tree/1.7.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/tree/1.8.0)
 
 ---
 
@@ -21,6 +21,15 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - Migração concluída para o ambiente baseado em uv;
 ### Security
   - ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF);
+
+## [1.8.0]	 &#8212; 	2026-11-18:
+### Added
+  - Plano da proxima sprint (PLAN-003) criado (#219);
+### Changed
+  - Release do workflow tornada idempotente (#217);
+  - Removidos os worktrees orfaos (#218);
+### Fixed
+  - Links quebrados da documentacao corrigidos (#216);
 
 ## [1.7.0]	 &#8212; 	2026-11-18:
 ### Added
@@ -565,4 +574,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.5.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.4.0...1.5.0
 [1.6.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.5.0...1.6.0
 [1.7.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.6.0...1.7.0
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.7.0...Unreleased
+[1.8.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.7.0...1.8.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.8.0...Unreleased

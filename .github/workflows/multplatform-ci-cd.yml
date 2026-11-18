@@ -150,7 +150,19 @@ jobs:
           name: build-package
           path: dist/
 
+      - name: Verifica se a release ja existe
+        id: release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "${{ github.ref_name }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: "marvinpinto/action-automatic-releases@latest"
+        if: steps.release.outputs.exists == 'false'
         continue-on-error: true
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"

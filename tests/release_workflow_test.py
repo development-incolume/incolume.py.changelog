@@ -47,3 +47,9 @@ class TestReleaseWorkflow:
         text = _text()
         assert 'prerelease: true' not in text
         assert 'prerelease: ${{' in text
+
+    def test_release_idempotente(self) -> None:
+        """A release só é criada quando ainda não existe para a tag."""
+        text = _text()
+        assert 'gh release view' in text
+        assert "outputs.exists == 'false'" in text
