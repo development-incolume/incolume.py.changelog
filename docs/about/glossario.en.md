@@ -7,7 +7,7 @@ This file serves as a **glossary** (top-100 project terms), organized by
 category, with the definition and where the term appears in the documentation.
 
 > Last updated: 2026-11-16
-> Product version: 1.6.0a11 (dev)
+> Product version: 1.10.0a5 (dev)
 
 ---
 

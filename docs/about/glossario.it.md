@@ -8,7 +8,7 @@ organizzati per categoria, con la definizione e il punto della documentazione
 in cui compare il termine.
 
 > Ultimo aggiornamento: 2026-11-16
-> Versione del prodotto: 1.6.0a11 (dev)
+> Versione del prodotto: 1.10.0a5 (dev)
 
 ---
 
