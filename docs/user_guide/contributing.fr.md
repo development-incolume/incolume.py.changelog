@@ -5,11 +5,11 @@ Documentation rapide à l'intention des contributeurs du projet
 
 ## Par où commencer
 
-1. Lisez le fichier [AGENTS.md](../../AGENTS.md) — règles de travail, identité et
+1. Lisez le fichier [AGENTS.md](../agents.md) — règles de travail, identité et
    flux de livraison.
-2. Lisez le fichier [SPEC-001](../analysis_artifacts/SPEC-001-execucao.md) si
+2. Lisez le fichier [SPEC-001](https://github.com/development-incolume/incolume.py.changelog/blob/dev/docs/analysis_artifacts/SPEC-001-execucao.md) si
    vous avez besoin du détail de l'exécution.
-3. Lisez le fichier [PLAN-001](../analysis_artifacts/PLAN-001-documentacao.md)
+3. Lisez le fichier [PLAN-001](https://github.com/development-incolume/incolume.py.changelog/blob/dev/docs/analysis_artifacts/PLAN-001-documentacao.md)
    sur l'amélioration de la documentation.
 
 ## Mais vous n'avez pas à tout lire d'un coup
