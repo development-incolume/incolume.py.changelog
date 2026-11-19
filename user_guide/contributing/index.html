@@ -464,6 +464,33 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../agents" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regras do repositório
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
     
@@ -473,10 +500,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   
@@ -494,8 +521,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -576,10 +603,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
             
   
   
@@ -597,8 +624,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -806,10 +833,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
             
   
   
@@ -827,8 +854,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1128,11 +1155,11 @@
 <p>Documentação rápida para colaboradores do <code>incolume.py.changelog</code>.</p>
 <h2 id="onde-comeca">Onde começa<a class="headerlink" href="#onde-comeca" title="Permanent link">#</a></h2>
 <ol>
-<li>Leia o <a href="../../AGENTS.md">AGENTS.md</a> – regras de trabalho, identidade e fluxo de
+<li>Leia o <a href="../../agents/">AGENTS.md</a> – regras de trabalho, identidade e fluxo de
    entrega.</li>
-<li>Leia o <a href="../../analysis_artifacts/SPEC-001-execucao/">SPEC-001</a> se precisar
+<li>Leia o <a href="https://github.com/development-incolume/incolume.py.changelog/blob/dev/docs/analysis_artifacts/SPEC-001-execucao.md">SPEC-001</a> se precisar
    do detalhamento da execução.</li>
-<li>Leia o <a href="../../analysis_artifacts/PLAN-001-documentacao/">PLAN-001</a> sobre a
+<li>Leia o <a href="https://github.com/development-incolume/incolume.py.changelog/blob/dev/docs/analysis_artifacts/PLAN-001-documentacao.md">PLAN-001</a> sobre a
    melhoria da documentação.</li>
 </ol>
 <h2 id="mas-nao-precisa-ler-tudo-de-uma-vez">Mas não precisa ler tudo de uma vez<a class="headerlink" href="#mas-nao-precisa-ler-tudo-de-uma-vez" title="Permanent link">#</a></h2>
@@ -1185,11 +1212,10 @@ uv<span class="w"> </span>run<span class="w"> </span>tox<span class="w"> </span>
 <h2 id="automacao-taskipy">Automação (<code>taskipy</code>)<a class="headerlink" href="#automacao-taskipy" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>task<span class="w"> </span>-l
 </code></pre></div>
-<p>Principais tarefas: <code>tests</code>, <code>lint</code>, <code>changelog</code>, <code>docs-serve</code>, <code>docs-build</code>,
-<code>safety</code>, <code>setup</code>.</p>
+<p>Principais tarefas: <code>qa</code>, <code>ty</code>, <code>test-all</code>, <code>bandit</code>, <code>safety</code>, <code>setup</code>.</p>
 <h2 id="documentacao">Documentação<a class="headerlink" href="#documentacao" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>task<span class="w"> </span>docs-serve<span class="w">   </span><span class="c1"># servidor local</span>
-uv<span class="w"> </span>run<span class="w"> </span>task<span class="w"> </span>docs-build<span class="w">   </span><span class="c1"># gerar e publicar no branch webdoc</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>mkdocs<span class="w"> </span>serve<span class="w">   </span><span class="c1"># servidor local</span>
+uv<span class="w"> </span>run<span class="w"> </span>mkdocs<span class="w"> </span>gh-deploy<span class="w"> </span>--config-file<span class="w"> </span>mkdocs.yml<span class="w"> </span>--remote-branch<span class="w"> </span>webdoc<span class="w">   </span><span class="c1"># gerar e publicar no branch webdoc</span>
 </code></pre></div>
 <h2 id="seguranca">Segurança<a class="headerlink" href="#seguranca" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>bandit<span class="w"> </span>-c<span class="w"> </span>pyproject.toml<span class="w"> </span>-r<span class="w"> </span>incolume/
