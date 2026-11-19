@@ -19,6 +19,16 @@ This file was automatically generated for [incolume.py.changelog](https://github
 ### Security
   - ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF);
 
+## [1.10.0]	 &#8212; 	2026-11-19:
+### Added
+  - Glossario e guia de contribuicao traduzidos para de/en/es/fr/it (#226);
+  - Regras do repositorio publicadas em docs/agents.md (#228);
+  - Tasks citadas no glossario e no contributing alinhadas (#229);
+  - Links do contributing corrigidos (#231);
+  - Python das worktrees fixado em 3.12 (#232);
+### Changed
+  - PLAN-004 registrado e concluido (#223, #225, #227);
+
 ## [1.9.0]	 &#8212; 	2026-11-18:
 ### Added
   - Tasks qa e ty no taskipy (#224);
@@ -580,4 +590,5 @@ This file was automatically generated for [incolume.py.changelog](https://github
 [1.7.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.6.0...1.7.0
 [1.8.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.7.0...1.8.0
 [1.9.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.8.0...1.9.0
-[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.9.0...Unreleased
+[1.10.0]: https://github.com/development-incolume/incolume.py.changelog/compare/1.9.0...1.10.0
+[Unreleased]: https://github.com/development-incolume/incolume.py.changelog/compare/1.10.0...Unreleased
