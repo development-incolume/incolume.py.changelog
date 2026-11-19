@@ -4,11 +4,11 @@ Documentação rápida para colaboradores do `incolume.py.changelog`.
 
 ## Onde começa
 
-1. Leia o [AGENTS.md](../../AGENTS.md) – regras de trabalho, identidade e fluxo de
+1. Leia o [AGENTS.md](../agents.md) – regras de trabalho, identidade e fluxo de
    entrega.
-2. Leia o [SPEC-001](../analysis_artifacts/SPEC-001-execucao.md) se precisar
+2. Leia o [SPEC-001](https://github.com/development-incolume/incolume.py.changelog/blob/dev/docs/analysis_artifacts/SPEC-001-execucao.md) se precisar
    do detalhamento da execução.
-3. Leia o [PLAN-001](../analysis_artifacts/PLAN-001-documentacao.md) sobre a
+3. Leia o [PLAN-001](https://github.com/development-incolume/incolume.py.changelog/blob/dev/docs/analysis_artifacts/PLAN-001-documentacao.md) sobre a
    melhoria da documentação.
 
 ## Mas não precisa ler tudo de uma vez
@@ -75,14 +75,13 @@ uv run tox -e lint
 uv run task -l
 ```
 
-Principais tarefas: `tests`, `lint`, `changelog`, `docs-serve`, `docs-build`,
-`safety`, `setup`.
+Principais tarefas: `qa`, `ty`, `test-all`, `bandit`, `safety`, `setup`.
 
 ## Documentação
 
 ```shell
-uv run task docs-serve   # servidor local
-uv run task docs-build   # gerar e publicar no branch webdoc
+uv run mkdocs serve   # servidor local
+uv run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc   # gerar e publicar no branch webdoc
 ```
 
 ## Segurança
