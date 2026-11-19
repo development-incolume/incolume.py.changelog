@@ -8,7 +8,6 @@ Kategorien, mit der Definition und dem Ort, an dem der Begriff in der
 Dokumentation erscheint.
 
 > Letzte Aktualisierung: 2026-11-16
-> Produktversion: 1.10.0a5 (dev)
 
 ---
 

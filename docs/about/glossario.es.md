@@ -7,7 +7,6 @@ Este archivo sirve como **glosario** (top-100 términos del proyecto), organizad
 por categoría, con la definición y el lugar donde aparece el término en la documentación.
 
 > Última actualización: 2026-11-16
-> Versión del producto: 1.10.0a5 (dev)
 
 ---
 
