@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0), this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) and [Conventional Commit](https://www.conventionalcommits.org/pt-br/v1.0.0).
 
-This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/tree/1.9.0)
+This file was automatically generated for [incolume.py.changelog](https://github.com/development-incolume/incolume.py.changelog/tree/1.10.0)
 
 ---
 
@@ -16,9 +16,6 @@ This file was automatically generated for [incolume.py.changelog](https://github
   - O suporte à Poetry está obsoleto e será removido em breve;
   - Será Descontinuado suporte a Python 3.11 conforme Status of Python versions (https://devguide.python.org/versions/#versions);
   - Pacote `mypy` será substituído pelo pacote `ty`;
-### Changed
-  - Agregado compatibilidade com configuração parcial no changelog.toml;
-  - Migração concluída para o ambiente baseado em uv;
 ### Security
   - ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/incolume.py.changelog?color=00FFFF);
 
