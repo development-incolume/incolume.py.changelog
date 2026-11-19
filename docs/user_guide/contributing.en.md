@@ -4,11 +4,11 @@ Quick documentation for contributors to `incolume.py.changelog`.
 
 ## Where to start
 
-1. Read [AGENTS.md](../../AGENTS.md) – work rules, identity and delivery
+1. Read [AGENTS.md](../agents.md) – work rules, identity and delivery
    flow.
-2. Read [SPEC-001](../analysis_artifacts/SPEC-001-execucao.md) if you need
+2. Read [SPEC-001](https://github.com/development-incolume/incolume.py.changelog/blob/dev/docs/analysis_artifacts/SPEC-001-execucao.md) if you need
    the execution details.
-3. Read [PLAN-001](../analysis_artifacts/PLAN-001-documentacao.md) about the
+3. Read [PLAN-001](https://github.com/development-incolume/incolume.py.changelog/blob/dev/docs/analysis_artifacts/PLAN-001-documentacao.md) about the
    documentation improvement.
 
 ## But you don't need to read it all at once
