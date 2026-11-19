@@ -75,14 +75,13 @@ uv run tox -e lint
 uv run task -l
 ```
 
-Attività principali: `tests`, `lint`, `changelog`, `docs-serve`, `docs-build`,
-`safety`, `setup`.
+Attività principali: `qa`, `ty`, `test-all`, `bandit`, `safety`, `setup`.
 
 ## Documentazione
 
 ```shell
-uv run task docs-serve   # server locale
-uv run task docs-build   # genera e pubblica sul branch webdoc
+uv run mkdocs serve   # server locale
+uv run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc   # genera e pubblica sul branch webdoc
 ```
 
 ## Sicurezza

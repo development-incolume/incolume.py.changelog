@@ -123,7 +123,7 @@ Dokumentation erscheint.
 | `uv run mkdocs serve` | Stellt die Dokumentation auf localhost bereit. |
 | `uv run mkdocs gh-deploy --remote-branch webdoc` | Veröffentlicht die Dokumentation auf GitHub Pages (`webdoc`). |
 | `uv run tox` | Führt die Multi-Version-Testmatrix aus. |
-| `uv run task changelog` | Erzeugt oder aktualisiert `CHANGELOG.md`. |
+| `uv run gcl` | Erzeugt oder aktualisiert `CHANGELOG.md`. |
 | `git tag -n` | Listet Tags mit Anmerkungen; Quelle der Versionen im CHANGELOG. |
 | `uv version` | Erhöht die Paketversion (siehe [semver.org](https://semver.org)). |
 | `git worktree` | Verwaltet mehrere Arbeitsverzeichnisse des Repositorys. |

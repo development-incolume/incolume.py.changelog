@@ -75,14 +75,13 @@ uv run tox -e lint
 uv run task -l
 ```
 
-Tareas principales: `tests`, `lint`, `changelog`, `docs-serve`, `docs-build`,
-`safety`, `setup`.
+Tareas principales: `qa`, `ty`, `test-all`, `bandit`, `safety`, `setup`.
 
 ## Documentación
 
 ```shell
-uv run task docs-serve   # servidor local
-uv run task docs-build   # generar y publicar en la rama webdoc
+uv run mkdocs serve   # servidor local
+uv run mkdocs gh-deploy --config-file mkdocs.yml --remote-branch webdoc   # generar y publicar en la rama webdoc
 ```
 
 ## Seguridad

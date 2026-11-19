@@ -122,7 +122,7 @@ category, with the definition and where the term appears in the documentation.
 | `uv run mkdocs serve` | Serves the documentation on localhost. |
 | `uv run mkdocs gh-deploy --remote-branch webdoc` | Publishes the documentation to GitHub Pages (`webdoc`). |
 | `uv run tox` | Runs the multi-version test matrix. |
-| `uv run task changelog` | Generates or updates `CHANGELOG.md`. |
+| `uv run gcl` | Generates or updates `CHANGELOG.md`. |
 | `git tag -n` | Lists tags with annotations; source of the versions in the CHANGELOG. |
 | `uv version` | Increments the package version (see [semver.org](https://semver.org)). |
 | `git worktree` | Manages multiple working directories of the repository. |
